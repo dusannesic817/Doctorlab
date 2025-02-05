@@ -1,0 +1,49 @@
+<?php
+
+namespace App\Models;
+use \PDO;
+
+use App\Core\DatabaseConnection;
+
+class CategoryModel{
+
+    private $dbc;
+
+    public function __construct(DatabaseConnection &$dbc){
+        $this->dbc = $dbc;
+    }
+
+
+    public function getById(int $id){
+        $sql = "SELECT * FROM category WHERE category_id = ?;";
+        $prep = $this->dbc->getConnection()->prepare($sql);
+        $res = $prep->execute([$id]);
+
+        $category = NULL;
+
+        if($res){
+            $category= $prep->fetch(PDO::FETCH_OBJ);
+        }
+        return $category;
+    }
+
+    public function getAll(){
+        $sql = "SELECT * FROM category";
+        $prep = $this->dbc->getConnection()->prepare($sql);
+        $res = $prep->execute();
+
+        $categories = [];
+
+        if($res){
+            $categories= $prep->fetchAll(PDO::FETCH_OBJ);
+        }
+        return $categories;
+
+    }
+
+
+
+
+
+
+}

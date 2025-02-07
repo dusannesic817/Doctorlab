@@ -1,29 +1,31 @@
 <?php
 
 require 'vendor/autoload.php';
+require_once 'Configruation.php';
 
+use App\Controllers\MainController;
 use App\Core\DatabaseConfiguration;
 use App\Core\DatabaseConnection;
-use App\Models\CategoryModel;
-use App\Models\UserModel;
 
-$databaseConfig= new DatabaseConfiguration('localhost','root','12345678','auction');
+
+$databaseConfig= new DatabaseConfiguration(
+   Configruation::DATABASE_HOST,
+   Configruation::DATABASE_USER,
+   Configruation::DATABASE_PASS,
+   Configruation::DATABASE_NAME
+);
 $databaseConnection = new DatabaseConnection($databaseConfig);
 
-$userModel = new UserModel($databaseConnection);
 
+$controller = new MainController($databaseConnection);
+$controller->home();
+$data= $controller->getData();
 
-$user = $userModel->getById(2);
-
-$message= "Korisnik ne postoji";
-
-if($user){
-   $message= print_r($user,true);
+foreach ($data as $name => $value) {
+   $$name = $value;
 }
 
-echo $message;
+require_once 'views/Main/home.php';
 
-$category = new CategoryModel($databaseConnection);
-$categories = $category->getAll();
 
-print_r($categories);
+

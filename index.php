@@ -17,7 +17,7 @@ $databaseConfig= new DatabaseConfiguration(
 );
 $databaseConnection = new DatabaseConnection($databaseConfig);
 
-$url = filter_input(INPUT_GET,'URL');
+$url = strval(filter_input(INPUT_GET,'URL'));
 
 $httpMethod = filter_input(INPUT_SERVER,'REQUEST_METHOD');
 
@@ -31,23 +31,18 @@ foreach($routes as $route){
 $route = $router->find($httpMethod,$url);
 $arguments = $route->extractArguments($url);
 
-print_r($route);
-print_r($arguments);
-exit();
 
-#Rutiranje!
+$fullControllerName = '\\App\\Controllers\\'. $route->getControllerName(). 'Controller';
 
-#Smatracemo da se uvek trazi MainController i njegoc metod home:
-
-$controller = new MainController($databaseConnection);
-$controller->home();
-$data= $controller->getData();
+$controller = new $fullControllerName($databaseConnection);
+call_user_func_array([$controller,$route->getMethodName()],$arguments);
+$data = $controller->getData();
 
 foreach ($data as $name => $value) {
    $$name = $value;
 }
 
-require_once 'views/Main/home.php';
+require_once 'views/' . $route->getControllerName(). '/'.$route->getMethodName().'.php';
 
 
 

@@ -13,8 +13,7 @@ class AuctionController extends Controller{
      
         $auctionModel = new AuctionModel($this->getDatabaseConnection());
         $auction = $auctionModel->getById($id);
-        $offerModel = new OfferModel($this->getDatabaseConnection());
-        $offers= $offerModel->getAllByOfferID($id);
+        
 
         if(!$auction){
             header('Locataion: /');

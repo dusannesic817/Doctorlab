@@ -62,7 +62,7 @@ class __TwigTemplate_dc866308bcc7757fc5a22bdfbdc3c744 extends Template
 <p>Poslednja cena: ";
         // line 9
         echo twig_escape_filter($this->env, ($context["lastOfferPrice"] ?? null), "html", null, true);
-        echo " Eur </p>
+        echo " Din </p>
 
 
 ";

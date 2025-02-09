@@ -42,31 +42,30 @@ class __TwigTemplate_4cf08ed59d71df07e9a838835caad1f3 extends Template
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 3
+    // line 4
     public function block_main($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 4
+        // line 5
         echo "<nav>
   <ul>
     ";
-        // line 6
+        // line 7
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["categories"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
-            // line 7
+            // line 8
             echo "<li>
   <a href=\"/category/";
-            // line 8
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "category_id", [], "any", false, false, false, 8), "html", null, true);
+            // line 9
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "category_id", [], "any", false, false, false, 9), "html", null, true);
             echo "\">
       ";
-            // line 9
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", [], "any", false, false, false, 9));
+            // line 10
+            echo twig_escape_filter($this->env, twig_title_string_filter($this->env, twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", [], "any", false, false, false, 10))), "html", null, true);
             echo "
   </a>
 </li>
-
   ";
         }
         $_parent = $context['_parent'];
@@ -75,8 +74,12 @@ class __TwigTemplate_4cf08ed59d71df07e9a838835caad1f3 extends Template
         // line 13
         echo "  
 </ul>
-
 </nav>
+<p>Trenutno vreme je: ";
+        // line 16
+        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, "now", "d. m. Y H.i", "Europe/Belgrade"), "html", null, true);
+        echo "</p>
+
 ";
     }
 
@@ -92,7 +95,7 @@ class __TwigTemplate_4cf08ed59d71df07e9a838835caad1f3 extends Template
 
     public function getDebugInfo()
     {
-        return array (  76 => 13,  65 => 9,  61 => 8,  58 => 7,  54 => 6,  50 => 4,  46 => 3,  35 => 1,);
+        return array (  80 => 16,  75 => 13,  65 => 10,  61 => 9,  58 => 8,  54 => 7,  50 => 5,  46 => 4,  35 => 1,);
     }
 
     public function getSourceContext()

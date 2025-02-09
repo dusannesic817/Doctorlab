@@ -37,12 +37,13 @@ use App\Core\Router;
    $controller = new $fullControllerName($databaseConnection);
    call_user_func_array([$controller,$route->getMethodName()],$arguments);
    $data = $controller->getData();
-   
+
 
    $loader = new \Twig\Loader\FilesystemLoader('./views');
    $twig = new \Twig\Environment($loader, [
        'cache' => './twig-cache',
-       'auto_reload'=> false
+       'auto_reload'=> true
+
    ]);
 
    $html = $twig->render(

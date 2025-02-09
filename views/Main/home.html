@@ -1,18 +1,19 @@
 {% extends "_global/index.html" %}
 
+
 {% block main %}
 <nav>
   <ul>
     {% for category in categories %}
 <li>
   <a href="/category/{{category.category_id}}">
-      {{category.name| escape}}
+      {{category.name|escape|title}}
   </a>
 </li>
-
   {%endfor%}  
 </ul>
-
 </nav>
+<p>Trenutno vreme je: {{ "now"|date('d. m. Y H.i', timezone="Europe/Belgrade") }}</p>
+
 {% endblock %}
 

@@ -26,37 +26,74 @@ class __TwigTemplate_434511255de06ded0bee34a5f27effd1 extends Template
 
         $this->blocks = [
             'main' => [$this, 'block_main'],
+            'naslov' => [$this, 'block_naslov'],
         ];
     }
 
     protected function doGetParent(array $context)
     {
-        // line 2
+        // line 1
         return "_global/index.html";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
-        $this->parent = $this->loadTemplate("_global/index.html", "Category/show.html", 2);
+        $this->parent = $this->loadTemplate("_global/index.html", "Category/show.html", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 4
+    // line 3
     public function block_main($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 5
+        // line 4
         echo "
 <h1>";
-        // line 6
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["category"] ?? null), "name", [], "any", false, false, false, 6));
+        // line 5
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["category"] ?? null), "name", [], "any", false, false, false, 5));
         echo "</h1>
-<p>";
-        // line 7
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["category"] ?? null), "category_id", [], "any", false, false, false, 7), "html", null, true);
-        echo "</p>
+<p>Spisak Aukcija u ovoj kategoriji:</p>
+<ul class=\"list-group\">
+  ";
+        // line 8
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(($context["auctionsCategory"] ?? null));
+        foreach ($context['_seq'] as $context["_key"] => $context["auction"]) {
+            // line 9
+            echo "  <li>
+    <a href=\"/auction/";
+            // line 10
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["auction"], "auction_id", [], "any", false, false, false, 10), "html", null, true);
+            echo "\">
+      ";
+            // line 11
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["auction"], "title", [], "any", false, false, false, 11));
+            echo "<br>
+    </a>
+    <p>Desription: ";
+            // line 13
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["auction"], "description", [], "any", false, false, false, 13));
+            echo "</p><br>
+    
+   </li>
+  ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['auction'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 17
+        echo "</ul>
+";
+    }
 
+    // line 20
+    public function block_naslov($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        // line 21
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["category"] ?? null), "name", [], "any", false, false, false, 21));
+        echo "
 ";
     }
 
@@ -72,7 +109,7 @@ class __TwigTemplate_434511255de06ded0bee34a5f27effd1 extends Template
 
     public function getDebugInfo()
     {
-        return array (  57 => 7,  53 => 6,  50 => 5,  46 => 4,  35 => 2,);
+        return array (  95 => 21,  91 => 20,  86 => 17,  76 => 13,  71 => 11,  67 => 10,  64 => 9,  60 => 8,  54 => 5,  51 => 4,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()

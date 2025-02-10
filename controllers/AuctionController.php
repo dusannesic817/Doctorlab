@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Core\Controller;
 use App\Models\AuctionModel;
+use App\Models\AuctionViewModel;
 use App\Models\OfferModel;
 
 class AuctionController extends Controller{
@@ -13,6 +14,19 @@ class AuctionController extends Controller{
      
         $auctionModel = new AuctionModel($this->getDatabaseConnection());
         $auction = $auctionModel->getById($id);
+        $auctionViewModel= new AuctionViewModel($this->getDatabaseConnection());
+
+        $ipAddress = filter_input(INPUT_SERVER,"REMOTE_ADDR");
+        
+        $userAgent = filter_input(INPUT_SERVER,"HTTP_USER_AGENT");
+        
+        $auctionViewModel->add([
+            'auction_id'=> $id,
+            "ip_address"=> $ipAddress,
+            'user_agent'=>$userAgent,
+            
+
+        ]);
         
 
         if(!$auction){

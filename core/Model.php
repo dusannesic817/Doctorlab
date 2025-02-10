@@ -16,6 +16,10 @@ abstract class Model{
         return $this->dbc->getConnection();
     }
 
+    protected function getFields(){
+        return [];
+    }
+
     private function getTableName(){
         $fullName = static::class;
         $matches=[];
@@ -102,6 +106,50 @@ abstract class Model{
         return $items;
     }
 
-    
+
+    final public function add(array $data){
+        # da li se unutar kljuceva $data asoc niza nalaze samo ona imena polja koja poste u ovoj nasoj tabeli, u spisku polja naseg modela
+        $fields =  $this->getFields();
+
+        $supportedFieldsNames = array_keys($fields);
+        $requestedFieldNames = array_keys($data);
+
+        foreach($requestedFieldNames as $value){
+            if(!in_array($value,$supportedFieldsNames)){
+                throw new \Exception("Field is not supported ". $value);
+            }
+        # da li je vrednost u $data asoc nizu za dati kljuc odgovarajuca prema reg izrazu
+            if(!$fields[$value]->isEditable()){
+                throw new \Exception("File is not editable ". $value);
+            }
+
+            if(!$fields[$value]->isValid($data[$value])){
+                throw new \Exception("The value for the field is not valid ". $value);
+            }
+
+
+        }
+        # Priprema INSER INTO ...
+        $sqlFieldNames = implode(', ' ,$requestedFieldNames);
+        $questionMarks = str_repeat('?, ', count($data));
+        $questionMarks = substr($questionMarks,0,-1);
+
+        $sql = "INSERT INTO {$this->getTableName()}  ({$sqlFieldNames}) VALUES (?,?,?)";
+        $prep = $this->dbc->getConnection()->prepare($sql);
+        $result = $prep->execute(array_values($data));
+
+        if(!$result){
+            return false;
+        }
+
+        return $this->dbc->getConnection()->lastInsertId();
+
+
+     
+
+
+
+    }
+
 
 }

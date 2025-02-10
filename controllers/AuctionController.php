@@ -17,7 +17,6 @@ class AuctionController extends Controller{
         $auctionViewModel= new AuctionViewModel($this->getDatabaseConnection());
 
         $ipAddress = filter_input(INPUT_SERVER,"REMOTE_ADDR");
-        
         $userAgent = filter_input(INPUT_SERVER,"HTTP_USER_AGENT");
         
         $auctionViewModel->add([
@@ -60,4 +59,7 @@ class AuctionController extends Controller{
         return $maxPrice;
 
     }
+
+
+    
 }

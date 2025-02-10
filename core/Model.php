@@ -44,12 +44,12 @@ abstract class Model{
         $prep = $this->dbc->getConnection()->prepare($sql);
         $res = $prep->execute([$id]);
 
-        $category = NULL;
+        $item = NULL;
 
         if ($res) {
-            $category = $prep->fetch(PDO::FETCH_OBJ);
+            $item = $prep->fetch(PDO::FETCH_OBJ);
         }
-        return $category;
+        return $item;
     }
     
 
@@ -58,12 +58,12 @@ abstract class Model{
         $prep = $this->dbc->getConnection()->prepare($sql);
         $res = $prep->execute();
 
-        $categories = [];
+        $items = [];
 
         if($res){
-            $categories= $prep->fetchAll(PDO::FETCH_OBJ);
+            $items= $prep->fetchAll(PDO::FETCH_OBJ);
         }
-        return $categories;
+        return $items;
 
     }
 
@@ -105,10 +105,8 @@ abstract class Model{
         }
         return $items;
     }
-
-
-    final public function add(array $data){
-        # da li se unutar kljuceva $data asoc niza nalaze samo ona imena polja koja poste u ovoj nasoj tabeli, u spisku polja naseg modela
+//prepakovati
+    private function checkFields($data){
         $fields =  $this->getFields();
 
         $supportedFieldsNames = array_keys($fields);
@@ -126,11 +124,18 @@ abstract class Model{
             if(!$fields[$value]->isValid($data[$value])){
                 throw new \Exception("The value for the field is not valid ". $value);
             }
-
-
         }
+
+    }
+
+
+    final public function add(array $data){
+        # da li se unutar kljuceva $data asoc niza nalaze samo ona imena polja koja poste u ovoj nasoj tabeli, u spisku polja naseg modela
+
+        $this->checkFields($data);
+        
         # Priprema INSER INTO ...
-        $sqlFieldNames = implode(', ' ,$requestedFieldNames);
+        $sqlFieldNames = implode(', ' ,array_keys($data));
         $questionMarks = str_repeat('?, ', count($data));
         $questionMarks = substr($questionMarks,0,-1);
 
@@ -144,12 +149,42 @@ abstract class Model{
 
         return $this->dbc->getConnection()->lastInsertId();
 
-
-     
-
-
-
     }
 
+    final public function editById(int $id, array $data){
+
+        $this->checkFields($data);
+
+        $editList = [];
+        $values=[];
+
+        foreach($data as $key => $value){
+            $editList[]="{$key}=?";
+            $values[]=$value;
+        }
+
+        $editList = implode(', ', $editList);
+
+        $values[]=$id;
+
+        $sql = "UPDATE {$this->getTableName()} SET {$editList} WHERE {$this->getTableName()}_id=?";
+        $prep = $this->dbc->getConnection()->prepare($sql);
+        return $prep -> execute($values);
+    }
+
+
+    final public function deleteById(int $id) {
+       
+        $sql = "DELETE FROM " . $this->getTableName() . " WHERE " . $this->getPrimaryKeyName() . " = ?";
+        $prep = $this->dbc->getConnection()->prepare($sql);
+        $res = $prep->execute([$id]);
+
+        $item = NULL;
+
+        if ($res) {
+            $item = $prep->fetch(PDO::FETCH_OBJ);
+        }
+        return $item;
+    }
 
 }

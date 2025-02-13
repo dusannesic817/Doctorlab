@@ -1,6 +1,7 @@
 <?php
 
 
+
 final class Configruation{
 
     const DATABASE_HOST = 'localhost';
@@ -8,4 +9,11 @@ final class Configruation{
     const DATABASE_PASS = '12345678';
     const DATABASE_NAME = 'auction';
 
+
+    const SESSION_STORAGE_DATA = ['./sessions/'];
+
+    const SESSION_LIFETIME = 5600;
+
 }
+
+

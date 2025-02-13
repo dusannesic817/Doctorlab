@@ -7,6 +7,10 @@ use App\Controllers\MainController;
 use App\Core\DatabaseConfiguration;
 use App\Core\DatabaseConnection;
 use App\Core\Router;
+use App\Core\Session\FileSessionStorage;
+use App\Core\Session\Session;
+
+
 
 
    $databaseConfig= new DatabaseConfiguration(
@@ -35,7 +39,22 @@ use App\Core\Router;
    $fullControllerName = '\\App\\Controllers\\'. $route->getControllerName(). 'Controller';
 
    $controller = new $fullControllerName($databaseConnection);
+ 
+   $sessionStorageConstructorArguments = Configruation::SESSION_STORAGE_DATA;
+ 
+   $sessionStorage = new FileSessionStorage(...$sessionStorageConstructorArguments);
+  
+
+   $session = new Session($sessionStorage,Configruation::SESSION_LIFETIME);
+
+
+   $controller->setSession($session);
+   $controller->getSession()->relaoad();
+   
+
+
    call_user_func_array([$controller,$route->getMethodName()],$arguments);
+   $controller->getSession()->save();
    $data = $controller->getData();
 
 

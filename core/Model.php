@@ -67,7 +67,7 @@ abstract class Model{
 
     }
 
-    private function isFieldNameValid($fieldName){  
+    private function isFieldNameValid(string $fieldName){  
         return boolval(preg_match('|^[a-z][a-z_0-9]+[a-z0-9]$|',$fieldName));
     }
 
@@ -106,50 +106,55 @@ abstract class Model{
         return $items;
     }
 //prepakovati
-    private function checkFields($data){
-        $fields =  $this->getFields();
+private function checkFields($data) {
 
-        $supportedFieldsNames = array_keys($fields);
-        $requestedFieldNames = array_keys($data);
+    $fields = $this->getFields();
 
-        foreach($requestedFieldNames as $value){
-            if(!in_array($value,$supportedFieldsNames)){
-                throw new \Exception("Field is not supported ". $value);
-            }
-        # da li je vrednost u $data asoc nizu za dati kljuc odgovarajuca prema reg izrazu
-            if(!$fields[$value]->isEditable()){
-                throw new \Exception("File is not editable ". $value);
-            }
+    $supportedFieldsNames = array_keys($fields);
+    $requestedFieldNames = array_keys($data);
 
-            if(!$fields[$value]->isValid($data[$value])){
-                throw new \Exception("The value for the field is not valid ". $value);
-            }
+   // var_dump($supportedFieldsNames); // Prikazuje sva podržana polja
+   // var_dump($requestedFieldNames); // Prikazuje polja koja korisnik pokušava da doda
+
+
+    foreach ($requestedFieldNames as $value) {
+        if (!in_array($value, $supportedFieldsNames)) {
+            throw new \Exception("Field is not supported " . $value);
         }
 
+        if (!$fields[$value]->isEditable()) {
+            throw new \Exception("File is not editable " . $value);
+        }
+
+        if (!$fields[$value]->isValid($data[$value])) {
+            throw new \Exception("The value for the field is not valid " . $value);
+        }
     }
+}
 
 
-    final public function add(array $data){
-        # da li se unutar kljuceva $data asoc niza nalaze samo ona imena polja koja poste u ovoj nasoj tabeli, u spisku polja naseg modela
 
+    final public function add(array $data) {
+        //Provera da li su polja validna
         $this->checkFields($data);
+    
+        //Priprema polja 
+        $sqlFieldNames = implode(', ', array_keys($data));
+        $questionMarks = rtrim(str_repeat('?, ', count($data)), ', '); 
+    
+       
+        $sql = "INSERT INTO {$this->getTableName()} ({$sqlFieldNames}) VALUES ({$questionMarks})";
         
-        # Priprema INSER INTO ...
-        $sqlFieldNames = implode(', ' ,array_keys($data));
-        $questionMarks = str_repeat('?, ', count($data));
-        $questionMarks = substr($questionMarks,0,-1);
-
-        $sql = "INSERT INTO {$this->getTableName()}  ({$sqlFieldNames}) VALUES (?,?,?)";
         $prep = $this->dbc->getConnection()->prepare($sql);
         $result = $prep->execute(array_values($data));
-
-        if(!$result){
+    
+        if (!$result) {
             return false;
         }
-
+    
         return $this->dbc->getConnection()->lastInsertId();
-
     }
+    
 
     final public function editById(int $id, array $data){
 

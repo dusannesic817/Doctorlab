@@ -13,13 +13,13 @@ use App\Core\Model;
 
 class AuctionViewModel extends Model{
 
-    protected function getFields(){
+   /* protected function getFields(){
         return [
             'auction_id'=> new Field('|^[1-9][0-9]{0,10}$|', true),
             'ip_address'=> new Field('|^[0-9]{1,3}(\.[0-9]{1,3}){3}$|', true),
             'user_agent'=> new Field('|^.{0,255}$|', true)
         ];
-    }
+    }*/
     
 
     public function getAllByAuctionID(int $id){

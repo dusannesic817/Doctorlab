@@ -1,19 +1,20 @@
 <?php
 
 namespace App\Core;
+use App\Core\Validator;
 
 final class Field {
 
-    private $pattern;
+    private Validator $validator;
     private $editable;
 
-    public function __construct($pattern,$editable){
-        $this->pattern = $pattern;
+    public function __construct(Validator $validator,$editable=true){
+        $this->validator = $validator;
         $this->editable = $editable;
     }
 
     public function isValid($value){
-        return preg_match($this->pattern, $value);
+        return $this->validator->isValid($value);
     }
 
     public function isEditable(){

@@ -27,6 +27,7 @@ class AuctionController extends Controller{
 
         ]);
         
+        
 
         if(!$auction){
             header('Locataion: /');

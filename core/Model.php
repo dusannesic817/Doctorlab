@@ -67,14 +67,25 @@ abstract class Model{
 
     }
 
-    private function isFieldNameValid(string $fieldName){  
+    /*private function isFieldNameValid(string $fieldName){  
         return boolval(preg_match('|^[a-z][a-z_0-9]+[a-z0-9]$|',$fieldName));
+    }*/
+
+    private function isFieldValueValid($fieldName, $fieldValue){
+        $fields = $this->getFields();
+        $supportedFieldsNames = array_keys($fields);
+
+        if(!in_array($fieldName, $supportedFieldsNames)){
+            return false;
+        }
+
+        return $fields[$fieldName]->isValid($fieldValue);
     }
 
 
     final public function getByFieldName(string $fieldName,$value){
-        if(!$this->isFieldNameValid($fieldName)){
-            throw new \Exception('Invalid field name'. $fieldName);
+        if(!$this->isFieldValueValid($fieldName,$value)){
+            throw new \Exception('Invalid field name or value '. $fieldName);
 
         }
         $sql = "SELECT * FROM " .$this->getTableName()." WHERE ".$fieldName." = ?;";
@@ -90,7 +101,7 @@ abstract class Model{
     }
 
     final public function getAllByFieldName(string $fieldName,$value){
-        if(!$this->isFieldNameValid($fieldName)){
+        if(!$this->isFieldValueValid($fieldName,$value)){
             throw new \Exception('Invalid field name'. $fieldName);
 
         }

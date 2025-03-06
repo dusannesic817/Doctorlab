@@ -16,6 +16,7 @@ use App\Validators\StringValidator;
 #user_profile
 
 class AuctionModel extends Model{
+    
 
     
 

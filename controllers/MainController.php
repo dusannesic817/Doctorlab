@@ -5,6 +5,7 @@ use App\Core\Controller;
 
 use App\Models\CategoryModel;
 use App\Models\AuctionViewModel;
+use App\Models\UserModel;
 
 class MainController extends Controller{
 
@@ -16,14 +17,15 @@ class MainController extends Controller{
 
         //$this->getSession()->put('neki_kljuc', 'Neka vrednost' . rand(100,999));
        
+       
         
 
        $staraVrednost= $this->getSession()->get('neki_kljuc', '/');
        $this->set('podatak',$staraVrednost);
 
-      $categoryModel->add([
-            'name'=>'Novine'
-       ]);
+      /*$categoryModel->add([
+            'name'=>'Starost'
+       ]);*/
        $auctionModel = new AuctionViewModel($this->getDatabaseConnection());
        /*$auctionModel->add([
             'expire_at'=> '2025-03-03 10:00:00',

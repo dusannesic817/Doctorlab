@@ -7,6 +7,11 @@ class Controller{
     private  $session;
     private $data = [];
 
+
+    public function __pre(){
+        
+    }
+
     final public function __construct(DatabaseConnection $dbc) {
         $this->dbc=$dbc;
     }
@@ -41,6 +46,12 @@ class Controller{
 
     final public function getData(){
         return $this->data;
+    }
+
+    protected function redirect($path,$code = 307){
+        ob_clean();
+        header('Location: '. $path,true,$code);
+        exit();
     }
 
 }

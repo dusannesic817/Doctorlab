@@ -50,6 +50,7 @@ use App\Core\Session\Session;
 
    $controller->setSession($session);
    $controller->getSession()->relaoad();
+   $controller->__pre();
    
 
 

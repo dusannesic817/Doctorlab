@@ -1,0 +1,121 @@
+{% extends "_global/index.html" %}
+
+
+{% block main %}
+
+
+ 
+<div class="container">
+  <div class="row d-flex justify-content-center mt-5">
+    <div class="col-lg-8">
+      <div class="card ms-2" style="background-color: #ebf6fc;">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-lg-8">
+              <p><b>Your health. Your data</b></p>
+              <p><small>The confidentiality of your personal information is an absolute priority for Doctolib and guides our daily actions.</small></p>
+              <small><a href="/caregiver/edit/{{ caregiver.user_id }}" style="color: red;">Confirm your profile</a> <i class="bi bi-exclamation-circle-fill" style="color: red;" ></i></small>
+              
+            </div>
+            <div class="col-lg-4">
+                <div class="text-center"><img src="../../assets/images/katanac1.png" alt="" style="width:150px; height: 120px;"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 mt-5">
+      <div class="card border-0">
+        <div class="card-body">
+          <p class="ms-1"><b>Personal information</b></p>
+          <hr style="margin-bottom: -1px;">
+          <a href="#" class="text-decoration-none d-block profile grey">
+            <div class="d-flex justify-content-between p-2 rounded">
+              <div><small><b class="teget"><i class="bi bi-person-fill"></i> My Profile</b></small><br><small >{{caregiver.name}} {{caregiver.surname}}</small></div>
+              <div class="d-flex align-items-center"><i class="bi bi-caret-right-fill grey"></i></div>
+            </div>
+          </a>   
+          <hr style="margin-bottom: -1px; margin-top:-1px;">
+          <a href="#" class="text-decoration-none d-block profile grey">
+            <div class="d-flex justify-content-between p-2 rounded">
+              <div><small><b class="teget"><i class="bi bi-sticky-fill"></i> My Rights</b></small><br><small>See your rights</small></div>
+              <div class="d-flex align-items-center"><i class="bi bi-caret-right-fill grey"></i></div>
+            </div>
+          </a>
+          
+          <p class="mt-4 ms-1"><b>Login</b></p>
+          <hr style="margin-bottom: -1px;">
+          <a href="#" class="text-decoration-none d-block profile grey">
+            <div class="d-flex justify-content-between p-2 rounded">
+              <div><small><b class="teget"><i class="bi bi-telephone-fill"></i> Phones</b></small><br><small>See your rights</small></div>
+              <div class="d-flex align-items-center"><i class="bi bi-caret-right-fill grey"></i></div>
+            </div>
+          </a>
+          <hr style="margin-bottom: -1px; margin-top:-1px;">
+          <a href="#" class="text-decoration-none d-block profile grey">
+            <div class="d-flex justify-content-between p-2 rounded">
+              <div><small><b class="teget"><i class="bi bi-envelope-fill"></i> Email</b></small><br><small >{{caregiver.email}}</small></div>
+              <div class="d-flex align-items-center"><i class="bi bi-caret-right-fill grey"></i></div>
+            </div>
+          </a>
+          <hr style="margin-bottom: -1px; margin-top:-1px;">
+          <a href="#" class="text-decoration-none d-block profile grey">
+            <div class="d-flex justify-content-between p-2 rounded">
+              <div><small><b class="teget"><i class="bi bi-shield-lock-fill"></i> Password</b></small><br><small >...</small></div>
+              <div class="d-flex align-items-center"><i class="bi bi-caret-right-fill grey"></i></div>
+            </div>
+          </a>
+          <p class="mt-4 ms-1"><b>Payments and Billing</b></p>
+          <hr style="margin-bottom: -1px;">
+          <a href="#" class="text-decoration-none d-block profile grey">
+            <div class="d-flex justify-content-between p-2 rounded">
+              <div><small><b class="teget"><i class="bi bi-credit-card-2-back-fill"></i> Payment Methods</b></small><br><small >See your rights</small></div>
+              <div class="d-flex align-items-center"><i class="bi bi-caret-right-fill grey"></i></div>
+            </div>
+          </a>
+          <hr style="margin-bottom: -1px; margin-top:-1px;">
+          <a href="#" class="text-decoration-none d-block profile grey">
+            <div class="d-flex justify-content-between p-2 rounded">
+              <div><small><b class="teget"><i class="bi bi-credit-card-2-back-fill"></i> Online Payment Settings</b></small><br><small >See your rights</small></div>
+              <div class="d-flex align-items-center"><i class="bi bi-caret-right-fill grey"></i></div>
+            </div>
+          </a>
+
+          <p class="mt-4 ms-1"><b>Confidentiality</b></p>
+          <hr style="margin-bottom: -1px;">
+          <a href="#" class="text-decoration-none d-block profile">
+            <div class="d-flex justify-content-between p-2 rounded">
+              <div><small class="grey">Delete Account</small></div>
+              <div class="d-flex align-items-center"><i class="bi bi-caret-right-fill grey"></i></div>
+            </div>
+          </a>
+          <hr style="margin-bottom: -1px; margin-top:-1px;">
+          <a href="#" class="text-decoration-none d-block profile">
+            <div class="d-flex justify-content-between p-2 rounded">
+              <div><small class="grey">Legal Information</small></div>
+              <div class="d-flex align-items-center"><i class="bi bi-caret-right-fill grey"></i></div>
+            </div>
+          </a>
+          <hr class="mb-5"style="margin-bottom: -1px; margin-top:-1px;">
+          <a href="#" class="text-decoration-none d-block profile">
+            <div class="d-flex justify-content-between p-2 rounded">
+              <div><small><b style="color: rgb(145, 25, 25);"><i class="bi bi-box-arrow-right"></i> Log Out</b></small></div>
+              <div class="d-flex align-items-center"><i class="bi bi-caret-right-fill grey"></i></div>
+            </div>
+          </a>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}

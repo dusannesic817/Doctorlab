@@ -9,7 +9,7 @@ use App\Models\OfferModel;
 
 class AuctionController extends Controller{
 
-    public function show($id){
+   /* public function show($id){
 
      
         $auctionModel = new AuctionModel($this->getDatabaseConnection());
@@ -60,7 +60,7 @@ class AuctionController extends Controller{
         return $maxPrice;
 
     }
-
+*/
 
     
 }

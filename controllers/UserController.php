@@ -3,7 +3,6 @@
 namespace App\Controllers;
 
 use App\Core\Controller;
-use App\Core\Role\UserRoleController;
 use App\Models\UserModel;
 use App\Validators\StringValidator;
 
@@ -11,7 +10,7 @@ class UserController extends Controller{
 
 
     public function index(){
-
+        
     }
 
     public function show($id){
@@ -30,26 +29,14 @@ class UserController extends Controller{
         $userModel = new UserModel($this->getDatabaseConnection());
         
         
-        $forname = filter_input(INPUT_POST,'reg_forename');
-        $surname = filter_input(INPUT_POST,'reg_surname');
-        $address = filter_input(INPUT_POST,'reg_address');
-        $email = filter_input(INPUT_POST,'reg_email');
-        $username = filter_input(INPUT_POST,'reg_username');
-        $password1 = filter_input(INPUT_POST,'reg_password_1');
-        $password2 = filter_input(INPUT_POST,'reg_password_2');
-
-
-       /* print_r([
-        $forname ,
-        $surname ,
-        $address ,
-        $email ,
-        $username, 
-        $password1, 
-        $password2 ,
-
-        ]);*/
-
+        $forename = filter_input(INPUT_POST,'first_name');
+        $surname = filter_input(INPUT_POST,'last_name');
+        $email = filter_input(INPUT_POST,'email');
+        $date = filter_input(INPUT_POST,'birth');
+        $gender = filter_input(INPUT_POST, 'gender');
+        $password1 = filter_input(INPUT_POST,'password');
+        $password2 = filter_input(INPUT_POST,'retype_password');
+       
 
         if($password1 !== $password2){
             $this->set('message','Doslo je do greske: Lozinke se ne poklapaju');
@@ -64,28 +51,26 @@ class UserController extends Controller{
 
         }
         $user = $userModel->getByFieldName('email',$email);
-        $user_name = $userModel->getByFieldName('username',$username);
+        
 
         if($user){
             $this->set('message','Doslo je do greske: Email vec postoji');
             return;
         }
 
-        if($user_name){
-            $this->set('message','Doslo je do greske: Username vec postoji');
-            return;
-        }
 
         $pass_hash = password_hash($password1, PASSWORD_DEFAULT);
 
         $user_id=$userModel->add([
-            'forename'=>$forname,
+            'name'=>$forename,
             'surname'=>$surname,
-            'address'=>$address,
+            'gender'=>$gender,
             'email'=>$email,
-            'username'=>$username,
             'password_hash'=>$pass_hash,
-            'is_active'=>1,
+            'role'=>'client',
+            'birth'=>$date,
+           
+            
         ]);
 
         if(!$user_id){
@@ -105,32 +90,51 @@ class UserController extends Controller{
 
    public function authenticate(){
 
-        $username = filter_input(INPUT_POST, 'login_username');
-        $password = filter_input(INPUT_POST, 'login_password');
+        $email = filter_input(INPUT_POST, 'email_login');
+        $password = filter_input(INPUT_POST, 'password_login');
 
 
         $userModel = new UserModel($this->getDatabaseConnection());
-        $user_name = $userModel->getByFieldName('username',$username);
+        $email = $userModel->getByFieldName('email',$email);
 
 
-        if(!$user_name){
-            $this->set('message','Neispravni username');
+        if(!$email){
+            $this->set('message','Invalid password or email');
             return;
         }
 
-       $pass=$user_name->password_hash;
+       $pass=$email->password_hash;
 
        if(!password_verify($password,$pass)){
         sleep(2);
-        $this->set('message','Neispravna lozinka');
+        $this->set('message','Invalid password or email');
         return;
        }
 
-       $this->getSession()->put('user_id',$user_name->user_id);
+       $this->getSession()->put('user_id',$email->user_id);
        $this->getSession()->save();
 
-       $this->redirect('/profile/');
+       if($email->role=='client'){
+        $this->redirect('/user/profile');
+       }else{
+        $this->redirect('/caregiver/profile');
+       }
+
+
+      
 
 
    }
+
+
+   public function logout(){
+
+    if($this->getSession()->clear())
+      
+    $this->redirect('/');
+
+}
+
+
+
 }

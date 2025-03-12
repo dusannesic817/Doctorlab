@@ -38,49 +38,58 @@ class __TwigTemplate_d677f1e064777c11248ea69251f0256e extends Template
         // line 1
         echo "<!DOCTYPE html>
 <html lang=\"en\">
+
 <head>
   <meta charset=\"UTF-8\">
   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
-  <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH\" crossorigin=\"anonymous\">
-  <title>Auction | ";
-        // line 7
+  <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\"
+    integrity=\"sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH\" crossorigin=\"anonymous\">
+  <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css\">
+  <link rel=\"stylesheet\" href=\"../../assets/main.css\">
+  <title>Doctorlab | ";
+        // line 11
         $this->displayBlock('naslov', $context, $blocks);
         echo "</title>
 </head>
+
 <body>
-    <header>
-      ";
-        // line 11
-        $this->loadTemplate("./inc/header.html", "_global/index.html", 11)->display($context);
-        // line 12
-        echo "    </header>
-    <main>
-        ";
-        // line 14
-        $this->displayBlock('main', $context, $blocks);
+  <header>
+    ";
         // line 16
-        echo "    </main>
-    <footer>
-      footer
-    </footer>
-    <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz\" crossorigin=\"anonymous\"></script>
+        $this->loadTemplate("./inc/header.html", "_global/index.html", 16)->display($context);
+        // line 17
+        echo "  </header>
+  <main>
+    ";
+        // line 19
+        $this->displayBlock('main', $context, $blocks);
+        // line 22
+        echo "  </main>
+  <footer>
+    footer
+  </footer>
+  <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js\"
+    integrity=\"sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz\"
+    crossorigin=\"anonymous\"></script>
 </body>
+
 </html>";
     }
 
-    // line 7
+    // line 11
     public function block_naslov($context, array $blocks = [])
     {
         $macros = $this->macros;
         echo "Pocetna";
     }
 
-    // line 14
+    // line 19
     public function block_main($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 15
-        echo "        ";
+        // line 20
+        echo "
+    ";
     }
 
     public function getTemplateName()
@@ -95,7 +104,7 @@ class __TwigTemplate_d677f1e064777c11248ea69251f0256e extends Template
 
     public function getDebugInfo()
     {
-        return array (  83 => 15,  79 => 14,  72 => 7,  62 => 16,  60 => 14,  56 => 12,  54 => 11,  47 => 7,  39 => 1,);
+        return array (  91 => 20,  87 => 19,  80 => 11,  67 => 22,  65 => 19,  61 => 17,  59 => 16,  51 => 11,  39 => 1,);
     }
 
     public function getSourceContext()

@@ -1,0 +1,175 @@
+{
+    "doctors": [
+      {
+        "title": "Cardiologist",
+        "services": [
+          "General consultation",
+          "Follow-up consultation",
+          "Cardiac consultation",
+          "Echocardiogram",
+          "Electrocardiogram (ECG)",
+          "Stress test",
+          "Holter monitoring",
+          "Cardiac catheterization",
+          "Pacemaker evaluation",
+          "Blood pressure management",
+          "Cholesterol screening",
+          "Heart failure treatment"
+        ]
+      },
+      {
+        "title": "Dermatologist",
+        "services": [
+          "General consultation",
+          "Follow-up consultation",
+          "Skin cancer screening",
+          "Acne treatment",
+          "Psoriasis treatment",
+          "Mole removal",
+          "Allergy testing",
+          "Botox injections",
+          "Laser skin treatment",
+          "Wart removal",
+          "Eczema treatment",
+          "Hair loss treatment"
+        ]
+      },
+      {
+        "title": "Neurologist",
+        "services": [
+          "General consultation",
+          "Follow-up consultation",
+          "Neurological consultation",
+          "EEG (Electroencephalogram)",
+          "EMG (Electromyography)",
+          "Migraine treatment",
+          "Multiple sclerosis management",
+          "Parkinson’s disease treatment",
+          "Stroke rehabilitation",
+          "Seizure disorder treatment",
+          "Dementia diagnosis and care",
+          "Sleep disorder management"
+        ]
+      },
+      {
+        "title": "Orthopedic Surgeon",
+        "services": [
+          "General consultation",
+          "Follow-up consultation",
+          "Joint replacement surgery",
+          "Fracture treatment",
+          "Arthroscopy",
+          "Spinal surgery",
+          "Sports injury treatment",
+          "Physical therapy guidance",
+          "Bone density testing",
+          "Tendon repair",
+          "Osteoarthritis management",
+          "Pediatric orthopedics"
+        ]
+      },
+      {
+        "title": "Ophthalmologist",
+        "services": [
+          "General consultation",
+          "Follow-up consultation",
+          "Comprehensive eye exam",
+          "Cataract surgery",
+          "LASIK surgery",
+          "Glaucoma treatment",
+          "Diabetic eye disease treatment",
+          "Macular degeneration management",
+          "Pediatric eye care",
+          "Contact lens prescription",
+          "Dry eye treatment",
+          "Retinal detachment surgery"
+        ]
+      },
+      {
+        "title": "Pediatrician",
+        "services": [
+          "General consultation",
+          "Follow-up consultation",
+          "Well-child visits",
+          "Vaccinations",
+          "Newborn care",
+          "Developmental screenings",
+          "Allergy management",
+          "Common cold and flu treatment",
+          "Asthma management",
+          "Nutritional counseling",
+          "ADHD evaluation and treatment",
+          "School physical exams"
+        ]
+      },
+      {
+        "title": "Psychiatrist",
+        "services": [
+          "General consultation",
+          "Follow-up consultation",
+          "Psychiatric evaluation",
+          "Medication management",
+          "Cognitive Behavioral Therapy (CBT)",
+          "Depression treatment",
+          "Anxiety disorder management",
+          "Bipolar disorder treatment",
+          "Substance abuse counseling",
+          "Schizophrenia management",
+          "PTSD therapy",
+          "Sleep disorder treatment"
+        ]
+      },
+      {
+        "title": "Endocrinologist",
+        "services": [
+          "General consultation",
+          "Follow-up consultation",
+          "Diabetes management",
+          "Thyroid disorder treatment",
+          "Hormone replacement therapy",
+          "Osteoporosis management",
+          "Metabolic disorder treatment",
+          "Adrenal gland disorder treatment",
+          "Obesity and weight management",
+          "Polycystic ovary syndrome (PCOS) treatment",
+          "Pituitary gland disorder management",
+          "Cholesterol disorder treatment"
+        ]
+      },
+      {
+        "title": "Gastroenterologist",
+        "services": [
+          "General consultation",
+          "Follow-up consultation",
+          "Colonoscopy",
+          "Endoscopy",
+          "GERD treatment",
+          "IBS management",
+          "Liver disease treatment",
+          "Pancreatitis treatment",
+          "Celiac disease management",
+          "Ulcerative colitis treatment",
+          "Gallbladder disease diagnosis",
+          "Crohn’s disease treatment"
+        ]
+      },
+      {
+        "title": "Pulmonologist",
+        "services": [
+          "General consultation",
+          "Follow-up consultation",
+          "Asthma treatment",
+          "COPD management",
+          "Sleep apnea treatment",
+          "Lung cancer screening",
+          "Pulmonary function tests",
+          "Bronchoscopy",
+          "Interstitial lung disease treatment",
+          "Cystic fibrosis management",
+          "Tuberculosis diagnosis and treatment",
+          "Pneumonia treatment"
+        ]
+      }
+    ]
+  }
+  

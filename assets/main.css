@@ -1,0 +1,225 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body{
+    font-family: sans-serif;
+}
+
+nav {
+    background-color:#01264d;
+}
+
+nav a{
+    color: white !important;
+}
+
+.background{
+    background-color:#01264d;
+
+}
+
+.search-container h2 {
+    color: white;
+    margin-bottom: 20px;
+}
+.search-box {
+    display: flex;
+    background: white;
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    padding: 4px;
+    position: relative; /* This will help position the button */
+}
+
+.search-field {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.search-field i {
+    margin-right: 10px;
+    color: gray;
+}
+
+.search-field input {
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.divider {
+    width: 1px;
+    background: lightgray;
+    height: 30px;
+}
+
+.search-button {
+    background:#107bcb;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: absolute; /* Fixes the position */
+    right: 0; /* Aligns the button to the right of the search box */
+    margin-right: 6px;
+}
+
+.search-button i {
+    margin-left: 5px;
+}
+.dropdown-menu-custom {
+    width: 600px; /* Adjust the width to your desired size */
+    height: 300px;
+  }
+  
+  @media (max-width: 768px) {
+    .dropdown-menu-custom {
+        width: 100%; /* Širina za mobilne uređaje, koristi 100% širine ekrana */
+        height: auto; /* Visina se automatski prilagođava */
+    }
+  
+}
+
+
+.card-hover {
+    transition: transform 0.3s ease; /* Dodaj smooth animaciju */
+  }
+
+.card-hover:hover {
+    transform: scale(1.05); /* Povećaj karticu na 110% kada je mišem */
+}
+
+.border-success {
+    --bs-border-opacity: 1;
+    border-color: #ffcd4d !important; /* Ispravljeno */
+    background-color: #ffcd4d !important; /* Dodato za pozadinu */
+    
+}
+
+.links a{
+    text-decoration: none;
+    color: #01264d;
+}
+.links a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px; /* Podebljava underline */
+    text-underline-offset: 30px; /* Pomera underline niže */
+}
+.links_2 a{
+    text-decoration: none;
+    color: #01264d;
+}
+.links_2 a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px; 
+    text-underline-offset: 20px; 
+}
+.links_2 a:active {
+    color: blue;
+    text-decoration: underline;
+    text-decoration-thickness: 2px; 
+    text-underline-offset: 20px; 
+}
+
+/* Uklanja strelicu */
+.accordion-button .accordion-button-icon {
+    display: none !important;
+  }
+  
+  /* Uklanja aktivnu strelicu */
+  .accordion-button .accordion-button-active-icon {
+    display: none !important;
+  }
+  
+  /* Uklanja širinu border-a */
+  .accordion-button {
+    border-width: 0 !important;
+  }
+  
+  /* Uklanja boju border-a */
+  .accordion-button {
+    border-color: transparent !important;
+  }
+
+  
+.dugme:hover{
+    background-color: rgb(202, 201, 201);
+}
+
+.custom-hr {
+    border: none;  /* Uklanja default border */
+    height: 1px;   /* Postavlja visinu linije */
+    background-color: #1b1b1b;  /* Postavlja boju linije */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 2); /* Dodaje senku ispod */
+    margin-top: -10px;
+   
+    
+  }
+
+  .full-height {
+    background-color: #e4ecf7;
+    min-height: 100vh;
+    margin-top: -16px;
+}
+
+.choose_type{
+    background-color: #e4ecf7;
+    min-height: 100vh;
+}
+
+.row-health{
+    margin-top: 150px;
+}
+
+.caregivers{
+    color: white !important;
+}
+.caregiver a {
+    text-decoration: none;
+    color: #01264d !important;
+    transition: transform 0.2s ease-in-out, color 0.3s ease-in-out; /* Smooth transition */
+    display: inline-block; /* Allows transform to work */
+    
+}
+
+.caregiver a:hover {
+   
+transform: scale(1.05); /* Slight zoom effect */
+}
+.light-blue{
+    background-color: #e4ecf7;
+}
+
+.teget{
+    color: #01264d !important;
+}
+
+.grey{
+    color: rgb(129, 127, 127) !important;
+}
+
+.profile:hover .d-flex{
+    background-color: #ebf6fc;
+    
+}
+.card-container {
+    position: relative; /* Omogućava apsolutno pozicioniranje unutar */
+    width: 40rem; /* Ista širina za obe kartice */
+    height: 20rem; /* Fiksna visina da se kartice ne pomeraju */
+}
+.card-my-information {
+    position: absolute; /* Sve kartice su na istom mestu */
+    width: 100%; /* Ista širina */
+    height: 100%; /* Ista visina */
+    transition: opacity 0.3s ease-in-out; /* Lepša animacija */
+}
+.hidden {
+    opacity: 0; /* Sakriva karticu */
+    pointer-events: none; /* Onemogućava klik na skrivenu karticu */
+}

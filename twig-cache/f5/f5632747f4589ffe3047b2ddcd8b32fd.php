@@ -47,7 +47,34 @@ class __TwigTemplate_62d0b20061f02797e745a20c2c867649 extends Template
     {
         $macros = $this->macros;
         // line 5
-        echo "<p>Dobro dosli na stranicu</p>
+        echo "
+<body class=\"light-blue\">
+  <div class=\"container d-flex justify-content-center align-items-start min-vh-100 pt-5 mt-5\">
+    <div class=\"row\">
+      <h4 class=\"text-center\"><small><b>Register or Log in</b></small></h4>
+      <div class=\"col-12 d-flex justify-content-center\">
+        <div class=\"card p-4 border-0\" style=\"width: 500px; height: 400px;\">
+          <div class=\"card-body d-flex flex-column justify-content-center align-items-center\">
+            <div class=\"d-flex flex-column mb-3 w-100\">
+              <small class=\"text-center mb-2\"><b>I already have an account</b></small>
+              <a class=\"btn btn-warning mb-2\" href=\"user/login\" role=\"button\"><b>Login</b></a>
+
+              <small class=\"text-center mb-2 mt-5\"><b>Do you have Google Account?</b></small>
+              <button type=\"button\" class=\"btn btn-primary mb-2\"><b>Google</b></button>
+              <small class=\"text-center mb-2\"><b>New to Doctolab?</b></small>
+              <a class=\"btn btn-primary\" href=\"user/register\" role=\"button\"><b>Sing Up</b></a>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
 
 ";
     }

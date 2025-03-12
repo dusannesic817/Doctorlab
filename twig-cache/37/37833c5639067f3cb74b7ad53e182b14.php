@@ -34,48 +34,77 @@ class __TwigTemplate_47eb47f30af045a97f1ed06b366c0bf9 extends Template
     {
         $macros = $this->macros;
         // line 1
-        echo "<nav class=\"navbar navbar-expand-lg bg-info text-light\">
-  <div class=\"container-fluid\">
-    <a class=\"navbar-brand\" href=\"#\">
-      <img src=\"/docs/5.3/assets/brand/bootstrap-logo.svg\" alt=\"Logo\" width=\"30\" height=\"24\" class=\"d-inline-block align-text-top\">
-      Bootstrap
-    </a>
-    <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
-      <span class=\"navbar-toggler-icon\"></span>
-    </button>
-    <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
-      <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">
-        <li class=\"nav-item\">
-          <a class=\"nav-link active\" aria-current=\"page\" href=\"/\">Pocetna</a>
-        </li>
-        <li class=\"nav-item\">
-          <a class=\"nav-link\" href=\"/categories\">Kategorije</a>
-        </li>
-        <li class=\"nav-item dropdown\">
-          <a class=\"nav-link dropdown-toggle\" href=\"#\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
-            Dropdown
-          </a>
-          <ul class=\"dropdown-menu\">
-            <li><a class=\"dropdown-item\" href=\"#\">Action</a></li>
-            <li><a class=\"dropdown-item\" href=\"#\">Another action</a></li>
-            <li><hr class=\"dropdown-divider\"></li>
-            <li><a class=\"dropdown-item\" href=\"#\">Something else here</a></li>
-          </ul>
-        </li>
-        <li class=\"nav-item\">
-          <a class=\"nav-link\" href=\"/profile\">My Profile</a>
-        </li>
-        <li class=\"nav-item\">
-          <a class=\"nav-link\" href=\"/contact\">Contact</a>
-        </li>
-        <li class=\"nav-item\">
-          <a class=\"nav-link\" href=\"/log-out\">Odjava</a>
-        </li>
-      </ul>
+        echo "<div class=\"container-fluid background\">
+  <div class=\"container\">
+    <div class=\"row\">
+      <div class=\"col-12\">
+        <nav class=\"navbar navbar-expand-lg mt-2\">
+          <div class=\"container-fluid\">
+            <a class=\"navbar-brand\" href=\"#\"><img src=\"\" alt=\"\" > </i></a>
+            <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarNav\"
+              aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+              <span class=\"navbar-toggler-icon\"></span>
+            </button>
+            <div class=\"collapse navbar-collapse\" id=\"navbarNav\">
+              <ul class=\"navbar-nav\">
+                <li class=\"nav-item dropdown\">
+                  <a class=\"nav-link \" href=\"#\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
+                    <b><small>Discover Doctorlab</small></b>
+                  </a>
+                  <ul class=\"dropdown-menu dropdown-menu-custom\">
+                    <div class=\"row ps-5 pe-5 mb-4\">
+                      <div class=\"col-12 col-lg-3\">
+                        <li><a href=\"\">Medical - Specilist</a></li>
+                      </div>
+                      <div class=\"col-12 col-lg-3\">
+                        <li><a href=\"\">Dentist</a></li>
+                      </div>
+                      <div class=\"col-12 col-lg-3\">
+                        <li><a href=\"\">Cardiologe</a></li>
+                      </div>
+                      <div class=\"col-12 col-lg-3\">
+                        <li><a href=\"\">aaaaaaaaa</a></li>
+                      </div>
+
+                    </div>
+                    <div class=\"row ps-5 pe-5 gy-5\">
+                      <div class=\"col-12 col-lg-3\">
+                        <li><a href=\"\">A</a></li>
+                      </div>
+                      <div class=\"col-12 col-lg-3\">
+                        <li><a href=\"\">A</a></li>
+                      </div>
+                      <div class=\"col-12 col-lg-3\">
+                        <li><a href=\"\">A</a></li>
+                      </div>
+                      <div class=\"col-12 col-lg-3\">
+                        <li><a href=\"\">A</a></li>
+                      </div>
+                    </div>
+                  </ul>
+                </li>
+                <li class=\"nav-item\">
+                  <a class=\"nav-link\" href=\"/\"><b><small>Tarrifs</small></b></a>
+                </li>
+
+
+              </ul>
+              <ul class=\"navbar-nav ms-auto\">
+                <li class=\"nav-item border rounded me-2 border-success ps-1 pe-1 mb-1\">
+                  <a class=\"nav-link\" href=\"/caregiver/register\"><b><small>Are you a health professional?</small></b></a>
+                </li>
+                <li class=\"nav-item\">
+                  <a class=\"nav-link\" href=\"/login\"><b><small>Make appoitment?</small></b></a>
+                </li>
+                
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
     </div>
   </div>
-</nav>
-";
+</div>";
     }
 
     public function getTemplateName()

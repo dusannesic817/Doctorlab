@@ -5,12 +5,24 @@ use App\Core\Controller;
 
 use App\Models\CategoryModel;
 use App\Models\AuctionViewModel;
+use App\Models\ClinicModel;
 use App\Models\UserModel;
 
 class MainController extends Controller{
 
     public function home(){
-        $categoryModel = new CategoryModel($this->getDatabaseConnection());
+
+     $clinicModel = new ClinicModel($this->getDatabaseConnection());
+     $clinices= $clinicModel->getAll();
+
+     $this->set('clinices',$clinices);
+
+    
+    //$this->getSession()->clear();
+
+
+
+       /* $categoryModel = new CategoryModel($this->getDatabaseConnection());
         $categories = $categoryModel->getAll();
 
         $this->set('categories',$categories);
@@ -23,9 +35,9 @@ class MainController extends Controller{
        $staraVrednost= $this->getSession()->get('neki_kljuc', '/');
        $this->set('podatak',$staraVrednost);
 
-      /*$categoryModel->add([
+      $categoryModel->add([
             'name'=>'Starost'
-       ]);*/
+       ]);
        $auctionModel = new AuctionViewModel($this->getDatabaseConnection());
        /*$auctionModel->add([
             'expire_at'=> '2025-03-03 10:00:00',

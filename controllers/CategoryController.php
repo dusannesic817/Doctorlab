@@ -8,7 +8,7 @@ use App\Models\CategoryModel;
 
 class CategoryController extends Controller{
 
-    public function show($id){
+   /* public function show($id){
 
         $categoryModel = new CategoryModel($this->getDatabaseConnection());
         $category = $categoryModel->getById($id);
@@ -26,5 +26,5 @@ class CategoryController extends Controller{
         $this->set('category',$category);
         $this->set('auctionsCategory',$auctionsCategory);
         
-    }
+    }*/
 }

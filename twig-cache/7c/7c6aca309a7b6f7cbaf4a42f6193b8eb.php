@@ -47,7 +47,8 @@ class __TwigTemplate_832a5658bf547284b5629ee0da318887 extends Template
     {
         $macros = $this->macros;
         // line 5
-        echo "<p>Dobro dosli na stranicu</p>
+        echo "
+<p>Dobro dosli na stranicu</p>
 
 ";
     }

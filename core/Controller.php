@@ -54,4 +54,24 @@ class Controller{
         exit();
     }
 
+
+    protected function getJson($file){
+        
+        $path ='public/json/'.$file;
+        if (!file_exists($path)) {
+        throw new \Exception("File not found: " . $path);
+        }
+        $jsondata = file_get_contents($path);
+
+        $decodedData = json_decode($jsondata, true);
+
+        if ($decodedData === null) {
+            throw new \Exception("Error decoding JSON data from file: " . $path);
+        }
+    
+        return $decodedData;
+
+   }
+
+
 }

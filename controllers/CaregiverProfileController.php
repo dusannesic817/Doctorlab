@@ -27,24 +27,12 @@ class CaregiverProfileController extends UserRoleController{
 
     
    public function edit($id){
+    
     $user = new UserModel($this->getDatabaseConnection());
     $caregiver = $user->getById($id);
 
-
-    $jsonString = file_get_contents('public/json/university_data.json');
-    $data = json_decode($jsonString, true);
-    if ($data === null) {
-        die("Wrong");
-    }
-
-    $jsonCaregiver = file_get_contents('public/json/caregiver_data.json');
-    $caregiverData = json_decode($jsonCaregiver, true);
-
-    if ($caregiverData === null) {
-        die("Wrong");
-    }
-
-
+    $data = $this->getJson('university_data.json');
+    $caregiverData = $this->getJson('caregiver_data.json');
 
     if($caregiver->role=='caregiver'){
 
@@ -65,6 +53,22 @@ class CaregiverProfileController extends UserRoleController{
    }
 
 
+
+   /*private function getJson($path){
+        if (!file_exists($path)) {
+        throw new \Exception("File not found: " . $path);
+        }
+        $jsondata = file_get_contents($path);
+
+        $decodedData = json_decode($jsondata, true);
+
+        if ($decodedData === null) {
+            throw new \Exception("Error decoding JSON data from file: " . $path);
+        }
+    
+        return $decodedData;
+
+   }*/
 
 
 }

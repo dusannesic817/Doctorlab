@@ -48,7 +48,10 @@ class __TwigTemplate_f79e32708b217fdc8131cc648ca5f43b extends Template
         $macros = $this->macros;
         // line 5
         echo "
-
+<form action=\"caregiver/update/";
+        // line 6
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "user_id", [], "any", false, false, false, 6), "html", null, true);
+        echo "\" method=\"POST\" enctype=\"multipart/form-data\">
 <div class=\"container\">
   <div class=\"row d-flex justify-content-center mt-5\">
     <div class=\"col-lg-8\">
@@ -94,7 +97,7 @@ class __TwigTemplate_f79e32708b217fdc8131cc648ca5f43b extends Template
               
             </div>
             <div class=\"mb-3 col-4\">
-              <input class=\"form-control form-control-sm\" id=\"formFileSm\" type=\"file\">
+              <input class=\"form-control form-control-sm\" id=\"image\" name=\"image\" type=\"file\" accept=\"image/*\">
             </div>
         
 
@@ -226,7 +229,7 @@ class __TwigTemplate_f79e32708b217fdc8131cc648ca5f43b extends Template
     </div>
   </div>
 </div>
-
+</form>
 
 
 
@@ -246,7 +249,7 @@ class __TwigTemplate_f79e32708b217fdc8131cc648ca5f43b extends Template
 
     public function getDebugInfo()
     {
-        return array (  178 => 94,  167 => 92,  163 => 91,  154 => 84,  143 => 82,  139 => 81,  117 => 62,  107 => 55,  84 => 37,  50 => 5,  46 => 4,  35 => 1,);
+        return array (  181 => 94,  170 => 92,  166 => 91,  157 => 84,  146 => 82,  142 => 81,  120 => 62,  110 => 55,  87 => 37,  53 => 6,  50 => 5,  46 => 4,  35 => 1,);
     }
 
     public function getSourceContext()

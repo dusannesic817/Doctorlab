@@ -44,9 +44,11 @@
               <div><small><b class="teget"><i class="bi bi-sticky-fill"></i> Profile Photo</b></small><br></div>
               
             </div>
-            <div class="mb-3 col-4">
-              <input class="form-control form-control-sm" id="image" name="profile_photo"  type="file" accept="image/*">
-          </div>
+            <div class="mb-3 col-3">
+              <div><input class="form-control form-control-sm" id="image" name="profile_photo"  type="file" accept="image/*"></div>
+              <div class="mt-1 ms-1 grey"><small>{{caregiver.profile_photo}}</small></div> 
+            </div>
+           
         
 
           <p class="mt-4 ms-1"><b>Login</b></p>
@@ -96,9 +98,10 @@
             </select>
 
             <div class="mt-2">
-              <div><small><b class="teget p-2 "><i class="bi bi-credit-card-2-back-fill"></i> Diploma</b></small><br><small class="grey">Please provide PDF file</small></div>
-              <div class="mb-3 col-4">
-                <input class="form-control form-control-sm mt-2" id="diploma_pdf" name="diploma_pdf" type="file">
+              <div><small><b class="teget p-2 "><i class="bi bi-credit-card-2-back-fill"></i> Diploma</b></small><br><small class="grey ms-1">Please provide PDF file</small></div>
+              <div class="mb-3 col-3">
+                <div><input class="form-control form-control-sm mt-2" id="diploma_pdf" name="diploma_pdf" type="file"></div>
+                <div class="mt-1 ms-1 grey"><small>{{caregiver.diploma_pdf}}</small></div>
               </div>
             </div>
 

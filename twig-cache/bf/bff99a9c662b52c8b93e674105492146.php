@@ -26,6 +26,7 @@ class __TwigTemplate_7c8941106b4a0859f4189e0031b3ed25 extends Template
 
         $this->blocks = [
             'main' => [$this, 'block_main'],
+            'naslov' => [$this, 'block_naslov'],
         ];
     }
 
@@ -219,6 +220,15 @@ class __TwigTemplate_7c8941106b4a0859f4189e0031b3ed25 extends Template
 ";
     }
 
+    // line 154
+    public function block_naslov($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        // line 155
+        echo "Profile
+";
+    }
+
     public function getTemplateName()
     {
         return "CaregiverProfile/show.html";
@@ -231,7 +241,7 @@ class __TwigTemplate_7c8941106b4a0859f4189e0031b3ed25 extends Template
 
     public function getDebugInfo()
     {
-        return array (  129 => 64,  119 => 57,  98 => 41,  78 => 23,  74 => 21,  69 => 19,  66 => 18,  64 => 17,  50 => 5,  46 => 4,  35 => 1,);
+        return array (  228 => 155,  224 => 154,  130 => 64,  120 => 57,  99 => 41,  79 => 23,  75 => 21,  70 => 19,  67 => 18,  65 => 17,  51 => 5,  47 => 4,  36 => 1,);
     }
 
     public function getSourceContext()

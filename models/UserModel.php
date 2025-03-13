@@ -27,7 +27,7 @@ class UserModel extends Model{
             'birth'=>new Field((new DateTimeValidator())->allowDate()),
             'diploma_pdf'=>new Field((new StringValidator())->setMaxLength(150)),
             'caregiver_data'=>new Field((new JSONValidator())),
-            'univeristy_data'=>new Field((new JSONValidator())),
+            'university_data'=>new Field((new JSONValidator())),
             'created_at'=>new Field((new DateTimeValidator())->allowDate()->allowTime(), false),
         ];
     }

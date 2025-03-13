@@ -14,7 +14,13 @@
             <div class="col-lg-8">
               <p><b>Your health. Your data</b></p>
               <p><small>The confidentiality of your personal information is an absolute priority for Doctolib and guides our daily actions.</small></p>
+              {% if caregiver.profile_photo is null or caregiver.diploma_pdf is null or caregiver.caregiver_data is null or caregiver.university_data is null %}
+              
               <small><a href="/caregiver/edit/{{ caregiver.user_id }}" style="color: red;">Confirm your profile</a> <i class="bi bi-exclamation-circle-fill" style="color: red;" ></i></small>
+              {% else %}
+              <small>Confirmed profile <i class="bi bi-check-circle-fill" style="color: green;"></i></small>
+              {%endif%}
+              
               
             </div>
             <div class="col-lg-4">
@@ -48,7 +54,7 @@
           <hr style="margin-bottom: -1px;">
           <a href="#" class="text-decoration-none d-block profile grey">
             <div class="d-flex justify-content-between p-2 rounded">
-              <div><small><b class="teget"><i class="bi bi-telephone-fill"></i> Phones</b></small><br><small>See your rights</small></div>
+              <div><small><b class="teget"><i class="bi bi-telephone-fill"></i> Phones</b></small><br><small>{{caregiver.phone}}</small></div>
               <div class="d-flex align-items-center"><i class="bi bi-caret-right-fill grey"></i></div>
             </div>
           </a>
@@ -62,7 +68,7 @@
           <hr style="margin-bottom: -1px; margin-top:-1px;">
           <a href="#" class="text-decoration-none d-block profile grey">
             <div class="d-flex justify-content-between p-2 rounded">
-              <div><small><b class="teget"><i class="bi bi-shield-lock-fill"></i> Password</b></small><br><small >...</small></div>
+              <div><small><b class="teget"><i class="bi bi-shield-lock-fill"></i> Password</b></small><br><small ><i class="bi bi-three-dots" style="font-size: 24px;"></i><i class="bi bi-three-dots" style="font-size: 24px;"></i></small></div>
               <div class="d-flex align-items-center"><i class="bi bi-caret-right-fill grey"></i></div>
             </div>
           </a>
@@ -84,7 +90,7 @@
 
           <p class="mt-4 ms-1"><b>Confidentiality</b></p>
           <hr style="margin-bottom: -1px;">
-          <a href="#" class="text-decoration-none d-block profile">
+          <a href="" class="text-decoration-none d-block profile" data-bs-toggle="modal" data-bs-target="#delete_profile">
             <div class="d-flex justify-content-between p-2 rounded">
               <div><small class="grey">Delete Account</small></div>
               <div class="d-flex align-items-center"><i class="bi bi-caret-right-fill grey"></i></div>
@@ -107,6 +113,32 @@
           
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="delete_profile" tabindex="-1" aria-labelledby="delete_profile" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <form action="" method="POST">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="delete_profile">
+            <small><b class="teget"><i class="bi bi-person-fill"></i> Delete profile</b></small>
+          </h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          
+        <p>Are you sure you want to Delete profile?</p>
+
+         
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-danger">Delete Profile</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>

@@ -48,9 +48,6 @@ class __TwigTemplate_3dd2510c94f3febf71e2c46887226a7c extends Template
         $macros = $this->macros;
         // line 5
         echo "
-
-
-
 <body class=\"light-blue\">
   <div class=\"container d-flex justify-content-center align-items-start min-vh-100 pt-5 mt-5\">
     <div class=\"row\">
@@ -64,17 +61,14 @@ class __TwigTemplate_3dd2510c94f3febf71e2c46887226a7c extends Template
                   <label for=\"input_email\" class=\"form-label\"><small><b><small class=\"ms-1\"><b><i class=\"bi bi-envelope-fill\"></i> Email address</b></small></label>
                   <input type=\"email\" class=\"form-control\" id=\"email_login\" name=\"email_login\" aria-describedby=\"emailHelp\">
                   <div id=\"emailHelp\" class=\"form-text\">";
-        // line 21
+        // line 18
         echo twig_escape_filter($this->env, ($context["message"] ?? null), "html", null, true);
         echo "</div>
                 </div>
                 <div class=\"mb-3\">
                   <label for=\"input_password_1\" class=\"form-label\"><small><b><i class=\"bi bi-lock-fill\"></i> Password</b></small></label>
                   <input type=\"password\" class=\"form-control\" id=\"password_login\" name=\"password_login\">
-                  <div id=\"passwordHelp\" class=\"form-text\">";
-        // line 26
-        echo twig_escape_filter($this->env, ($context["message"] ?? null), "html", null, true);
-        echo "</div>
+                  
                 </div>
                  
                 <div class=\"mt-5\">
@@ -94,16 +88,6 @@ class __TwigTemplate_3dd2510c94f3febf71e2c46887226a7c extends Template
 
 
 </body>
-
-
-
-
-
-
-
-
-<p>Klikni <a href=\"/user/login\"> za nazad</a></p>
-
 ";
     }
 
@@ -119,7 +103,7 @@ class __TwigTemplate_3dd2510c94f3febf71e2c46887226a7c extends Template
 
     public function getDebugInfo()
     {
-        return array (  76 => 26,  68 => 21,  50 => 5,  46 => 4,  35 => 1,);
+        return array (  65 => 18,  50 => 5,  46 => 4,  35 => 1,);
     }
 
     public function getSourceContext()

@@ -14,6 +14,9 @@ final class Configruation{
 
     const SESSION_LIFETIME = 5600;
 
+    const UPLOAD_DIR_IMAGES = 'assets/uploads/images';
+    const UPLOAD_DIR_PDF = 'assets/uploads/files';
+
 }
 
 

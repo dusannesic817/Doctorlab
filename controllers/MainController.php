@@ -14,8 +14,11 @@ class MainController extends Controller{
 
      $clinicModel = new ClinicModel($this->getDatabaseConnection());
      $clinices= $clinicModel->getAll();
+     //$a=$this->getSession()->get('user_id');
 
+     
      $this->set('clinices',$clinices);
+    
 
     
     //$this->getSession()->clear();

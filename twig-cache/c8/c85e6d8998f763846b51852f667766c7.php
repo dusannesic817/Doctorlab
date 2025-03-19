@@ -42,15 +42,15 @@ class __TwigTemplate_f79e32708b217fdc8131cc648ca5f43b extends Template
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 4
+    // line 5
     public function block_main($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 5
+        // line 6
         echo "
 <form action=\"/caregiver/update/";
-        // line 6
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "user_id", [], "any", false, false, false, 6), "html", null, true);
+        // line 7
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "user_id", [], "any", false, false, false, 7), "html", null, true);
         echo "\" method=\"POST\" enctype=\"multipart/form-data\">
 <div class=\"container\">
   <div class=\"row d-flex justify-content-center mt-5\">
@@ -62,17 +62,28 @@ class __TwigTemplate_f79e32708b217fdc8131cc648ca5f43b extends Template
                 <p><b>Your health. Your data</b></p>
                 <p><small>The confidentiality of your personal information is an absolute priority for Doctolib and
                         guides our daily actions.</small></p>
-                <small><a href=\"\" style=\"color: red;\">Confirm your profile</a> 
-                    <i class=\"bi bi-exclamation-circle-fill\" style=\"color: red;\"></i>
-                </small>
+                
             </div>
             <div class=\"col-lg-4\">
                 <div class=\"text-center\">
-                    <img id=\"preview\" src=\"../../assets/images/katanac1.png\" alt=\"Preview Image\" style=\"width:150px; height: 120px;\">
-                </div>
+                  ";
+        // line 22
+        if ((null === twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "profile_photo", [], "any", false, false, false, 22))) {
+            // line 23
+            echo "                    <img id=\"preview\" class=\"rounded\" src=\"../../assets/images/katanac1.png\" alt=\"Preview Image\" style=\"width:150px; height: 130px;\">
+                  ";
+        } else {
+            // line 25
+            echo "                  <img id=\"preview\" class=\"rounded\" src=\"../../assets/uploads/images/";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "profile_photo", [], "any", false, false, false, 25), "html", null, true);
+            echo "\" alt=\"Preview Image\" style=\"width:150px; height: 130px;\">
+                  ";
+        }
+        // line 27
+        echo "                
+                  </div>
             </div>
         </div>
-
         </div>
       </div>
     </div>
@@ -84,10 +95,10 @@ class __TwigTemplate_f79e32708b217fdc8131cc648ca5f43b extends Template
           <a href=\"#\" class=\"text-decoration-none d-block profile grey\" data-bs-toggle=\"modal\" data-bs-target=\"#name\">
             <div class=\"d-flex justify-content-between p-2 rounded\">
               <div><small><b class=\"teget\"><i class=\"bi bi-person-fill\"></i> My Profile</b></small><br><small>";
-        // line 38
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "name", [], "any", false, false, false, 38), "html", null, true);
+        // line 41
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "name", [], "any", false, false, false, 41), "html", null, true);
         echo " ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "surname", [], "any", false, false, false, 38), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "surname", [], "any", false, false, false, 41), "html", null, true);
         echo "</small></div>
               <div class=\"d-flex align-items-center\"><i class=\"bi bi-caret-right-fill grey\"></i></div>
             </div>
@@ -100,8 +111,8 @@ class __TwigTemplate_f79e32708b217fdc8131cc648ca5f43b extends Template
             <div class=\"mb-3 col-3\">
               <div><input class=\"form-control form-control-sm\" id=\"image\" name=\"profile_photo\"  type=\"file\" accept=\"image/*\"></div>
               <div class=\"mt-1 ms-1 grey\"><small>";
-        // line 49
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "profile_photo", [], "any", false, false, false, 49), "html", null, true);
+        // line 52
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "profile_photo", [], "any", false, false, false, 52), "html", null, true);
         echo "</small></div> 
             </div>
            
@@ -112,8 +123,8 @@ class __TwigTemplate_f79e32708b217fdc8131cc648ca5f43b extends Template
           <a href=\"#\" class=\"text-decoration-none d-block profile grey\" data-bs-toggle=\"modal\" data-bs-target=\"#phone\">
             <div class=\"d-flex justify-content-between p-2 rounded\">
               <div><small><b class=\"teget\"><i class=\"bi bi-telephone-fill\"></i> Phones</b></small><br><small>";
-        // line 58
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "phone", [], "any", false, false, false, 58), "html", null, true);
+        // line 61
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "phone", [], "any", false, false, false, 61), "html", null, true);
         echo "</small></div>
               <div class=\"d-flex align-items-center\"><i class=\"bi bi-caret-right-fill grey\"></i></div>
             </div>
@@ -122,8 +133,8 @@ class __TwigTemplate_f79e32708b217fdc8131cc648ca5f43b extends Template
           <a href=\"\" class=\"text-decoration-none d-block profile grey\">
             <div class=\"d-flex justify-content-between p-2 rounded\">
               <div><small><b class=\"teget\"><i class=\"bi bi-envelope-fill\"></i> Email</b></small><br><small>";
-        // line 65
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "email", [], "any", false, false, false, 65), "html", null, true);
+        // line 68
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "email", [], "any", false, false, false, 68), "html", null, true);
         echo "</small></div>
               <div class=\"d-flex align-items-center\"><i class=\"bi bi-caret-right-fill grey\"></i></div>
             </div>
@@ -142,13 +153,25 @@ class __TwigTemplate_f79e32708b217fdc8131cc648ca5f43b extends Template
               <div><small><b class=\"teget\"><i class=\"bi bi-credit-card-2-back-fill\"></i> Your University</b></small><br></div>
             </div>
             <select class=\"form-select form-select-sm\" name=\"university\"  aria-label=\"Small select example\">
-              <option selected>Provide Your University</option>
               ";
-        // line 84
+        // line 86
+        if ((null === twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "university_data", [], "any", false, false, false, 86))) {
+            // line 87
+            echo "              <option selected>Provide Your University</option>
+              ";
+        } else {
+            // line 89
+            echo "              <option selected>";
+            echo twig_escape_filter($this->env, ($context["university"] ?? null), "html", null, true);
+            echo "</option>
+              ";
+        }
+        // line 91
+        echo "              ";
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($context["data"]);
         foreach ($context['_seq'] as $context["_key"] => $context["data"]) {
-            // line 85
+            // line 92
             echo "              <option value=\"";
             echo twig_escape_filter($this->env, $context["data"], "html", null, true);
             echo "\">";
@@ -159,31 +182,43 @@ class __TwigTemplate_f79e32708b217fdc8131cc648ca5f43b extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['data'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 87
+        // line 94
         echo "            </select>
           
             <div class=\"d-flex justify-content-between p-2 rounded\">
               <div><small><b class=\"teget\"><i class=\"bi bi-credit-card-2-back-fill\"></i> Doctor</b></small><br></div>
             </div>
             <select class=\"form-select form-select-sm\" name=\"title\" aria-label=\"Small select example\">
-              <option selected>Provide Your Docotor</option>
               ";
-        // line 94
+        // line 100
+        if ((null === twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "caregiver_data", [], "any", false, false, false, 100))) {
+            // line 101
+            echo "              <option selected>Provide Your Docotor</option>
+              ";
+        } else {
+            // line 103
+            echo "              <option selected>";
+            echo twig_escape_filter($this->env, ($context["title"] ?? null), "html", null, true);
+            echo "</option>
+              ";
+        }
+        // line 105
+        echo "              ";
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["caregiverData"] ?? null), "doctors", [], "any", false, false, false, 94));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["caregiverData"] ?? null), "doctors", [], "any", false, false, false, 105));
         foreach ($context['_seq'] as $context["_key"] => $context["doctor"]) {
-            // line 95
+            // line 106
             echo "              <option value=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "title", [], "any", false, false, false, 95), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "title", [], "any", false, false, false, 106), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "title", [], "any", false, false, false, 95), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "title", [], "any", false, false, false, 106), "html", null, true);
             echo "</option>
               ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['doctor'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 97
+        // line 108
         echo "             
             </select>
 
@@ -192,8 +227,8 @@ class __TwigTemplate_f79e32708b217fdc8131cc648ca5f43b extends Template
               <div class=\"mb-3 col-3\">
                 <div><input class=\"form-control form-control-sm mt-2\" id=\"diploma_pdf\" name=\"diploma_pdf\" type=\"file\"></div>
                 <div class=\"mt-1 ms-1 grey\"><small>";
-        // line 104
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "diploma_pdf", [], "any", false, false, false, 104), "html", null, true);
+        // line 115
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "diploma_pdf", [], "any", false, false, false, 115), "html", null, true);
         echo "</small></div>
               </div>
             </div>
@@ -224,72 +259,77 @@ class __TwigTemplate_f79e32708b217fdc8131cc648ca5f43b extends Template
 </form>
 
   
+
     <!--Name and Surname modal-->
     <div class=\"modal fade\" id=\"name\" tabindex=\"-1\" aria-labelledby=\"change_name\" aria-hidden=\"true\">
       <div class=\"modal-dialog modal-dialog-centered\">
         <div class=\"modal-content\">
+          <!-- Forma treba da bude pravilno postavljena -->
           <form action=\"/caregiver/update/";
-        // line 138
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "user_id", [], "any", false, false, false, 138), "html", null, true);
-        echo "\" method=\"POST\"></form>
-          <div class=\"modal-header\">
-            <h1 class=\"modal-title fs-5\" id=\"change_name\"><small><b class=\"teget\"><i class=\"bi bi-person-fill\"></i>Edit My Profile</b></small><br><small></small></h1>
-            <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>
-          </div>
-          <div class=\"modal-body\">
-            <label for=\"\" class=\"mb-2 ms-1\"><small><b>Change my name</b></small></label>
-            <input class=\"form-control form-control-sm\" type=\"text\" name=\"new_name\" placeholder=\"";
-        // line 145
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "name", [], "any", false, false, false, 145), "html", null, true);
+        // line 151
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "user_id", [], "any", false, false, false, 151), "html", null, true);
+        echo "\" method=\"POST\">
+            <div class=\"modal-header\">
+              <h1 class=\"modal-title fs-5\" id=\"change_name\"><small><b class=\"teget\"><i class=\"bi bi-person-fill\"></i>Edit My Profile</b></small><br><small></small></h1>
+              <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>
+            </div>
+            <div class=\"modal-body\">
+              <label for=\"\" class=\"mb-2 ms-1\"><small><b>Change my name</b></small></label>
+              <input class=\"form-control form-control-sm\" type=\"text\" name=\"new_name\" placeholder=\"";
+        // line 158
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "name", [], "any", false, false, false, 158), "html", null, true);
         echo " ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "surname", [], "any", false, false, false, 145), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "surname", [], "any", false, false, false, 158), "html", null, true);
         echo "\" aria-label=\".form-control-sm example\">
-          </div>
-          <div class=\"modal-footer\">
-            <button type=\"submit\" class=\"btn btn-primary\">Save changes</button>
-            <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Close</button>
-          </div>
-        </form>
+            </div>
+            <div class=\"modal-footer\">
+              <button type=\"submit\" class=\"btn btn-primary\">Save changes</button>
+              <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Close</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
   
   
-    <!--Phone-->
-    <div class=\"modal fade\" id=\"phone\" tabindex=\"-1\" aria-labelledby=\"change_phone\" aria-hidden=\"true\">
-      <div class=\"modal-dialog modal-dialog-centered\">
-        <div class=\"modal-content\">
-          <form action=\"/caregiver/update/";
-        // line 161
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "user_id", [], "any", false, false, false, 161), "html", null, true);
-        echo "\" method=\"POST\"></form>
-          <div class=\"modal-header\">
-            <h1 class=\"modal-title fs-5\" id=\"change_phone\"><small><b class=\"teget\"><i class=\"bi bi-person-fill\"></i>Edit My Profile</b></small><br><small></small></h1>
-            <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>
-          </div>
-          <div class=\"modal-body\">
-            <label for=\"\" class=\"mb-2 ms-1\"><small><b>Change my phone</b></small></label>
-            <input class=\"form-control form-control-sm\" type=\"text\" name=\"phone\" aria-label=\".form-control-sm example\" value=\"";
-        // line 168
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "phone", [], "any", false, false, false, 168), "html", null, true);
+<!--Phone-->
+<div class=\"modal fade\" id=\"phone\" tabindex=\"-1\" aria-labelledby=\"change_phone\" aria-hidden=\"true\">
+  <div class=\"modal-dialog modal-dialog-centered\">
+    <div class=\"modal-content\">
+      <form action=\"/caregiver/update/";
+        // line 174
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "user_id", [], "any", false, false, false, 174), "html", null, true);
+        echo "\" method=\"POST\">
+        <div class=\"modal-header\">
+          <h1 class=\"modal-title fs-5\" id=\"change_phone\">
+            <small><b class=\"teget\"><i class=\"bi bi-person-fill\"></i>Edit My Profile</b></small><br><small></small>
+          </h1>
+          <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>
+        </div>
+        <div class=\"modal-body\">
+          <label for=\"\" class=\"mb-2 ms-1\"><small><b>Change my phone</b></small></label>
+          <input class=\"form-control form-control-sm\" type=\"text\" name=\"phone\" aria-label=\".form-control-sm example\" value=\"";
+        // line 183
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "phone", [], "any", false, false, false, 183), "html", null, true);
         echo "\">
-          </div>
-          <div class=\"modal-footer\">
-            <button type=\"submit\" class=\"btn btn-primary\">Save changes</button>
-            <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Close</button>
-          </div>
-        </form>
         </div>
-      </div>
+        <div class=\"modal-footer\">
+          <button type=\"submit\" class=\"btn btn-primary\">Save changes</button>
+          <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Close</button>
+        </div>
+      </form>
     </div>
+  </div>
+</div>
+
   
 <!-- Password Change Modal -->
 <div class=\"modal fade\" id=\"password\" tabindex=\"-1\" aria-labelledby=\"change_password\" aria-hidden=\"true\">
   <div class=\"modal-dialog modal-dialog-centered\">
     <div class=\"modal-content\">
       <form action=\"/caregiver/update/";
-        // line 183
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "user_id", [], "any", false, false, false, 183), "html", null, true);
+        // line 199
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "user_id", [], "any", false, false, false, 199), "html", null, true);
         echo "\" method=\"POST\">
         <div class=\"modal-header\">
           <h1 class=\"modal-title fs-5\" id=\"change_password\">
@@ -343,7 +383,7 @@ class __TwigTemplate_f79e32708b217fdc8131cc648ca5f43b extends Template
 
     public function getDebugInfo()
     {
-        return array (  292 => 183,  274 => 168,  264 => 161,  243 => 145,  233 => 138,  196 => 104,  187 => 97,  176 => 95,  172 => 94,  163 => 87,  152 => 85,  148 => 84,  126 => 65,  116 => 58,  104 => 49,  88 => 38,  53 => 6,  50 => 5,  46 => 4,  35 => 1,);
+        return array (  332 => 199,  313 => 183,  301 => 174,  280 => 158,  270 => 151,  231 => 115,  222 => 108,  211 => 106,  206 => 105,  200 => 103,  196 => 101,  194 => 100,  186 => 94,  175 => 92,  170 => 91,  164 => 89,  160 => 87,  158 => 86,  137 => 68,  127 => 61,  115 => 52,  99 => 41,  83 => 27,  77 => 25,  73 => 23,  71 => 22,  53 => 7,  50 => 6,  46 => 5,  35 => 1,);
     }
 
     public function getSourceContext()

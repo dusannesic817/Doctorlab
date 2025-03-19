@@ -49,6 +49,11 @@ final class Session{
     public function clear(){
         $this->sessionData=[];
     }
+    public function remove(string $key){
+        if ($this->exists($key)) {
+            unset($this->sessionData[$key]);
+        }
+    }
     public function exists(string $key): bool{
        return isset($this->sessionData[$key]);
     }

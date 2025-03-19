@@ -223,3 +223,15 @@ transform: scale(1.05); /* Slight zoom effect */
     opacity: 0; /* Sakriva karticu */
     pointer-events: none; /* Onemogućava klik na skrivenu karticu */
 }
+
+.profile_photo{
+    position: relative;
+    width: 150px;
+    height: 120px;
+    overflow: hidden;
+}
+
+.draggablePreview {
+    position: absolute;
+    cursor: move;
+  }

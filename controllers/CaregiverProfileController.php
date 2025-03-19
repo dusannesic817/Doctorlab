@@ -19,9 +19,14 @@ class CaregiverProfileController extends UserRoleController{
         $user = new UserModel($this->getDatabaseConnection());
         $caregiver = $user->getById($id);
 
+        $change=$this->getSession()->get('success_edit');
+
         if($caregiver->role=='caregiver'){
             $this->set('caregiver',$caregiver);
+            $this->set('change',$change);
         }
+
+        $this->getSession()->remove('success_edit');
     }
 
 
@@ -31,15 +36,29 @@ class CaregiverProfileController extends UserRoleController{
     
     $user = new UserModel($this->getDatabaseConnection());
     $caregiver = $user->getById($id);
+    $doctor = $caregiver->caregiver_data;
+    $university_data = $caregiver->university_data;
+    $decodedData = json_decode($doctor, true);
+    $decodeUniversity = json_decode($university_data,true);
+
+    $university = $decodeUniversity['university'];
+    
+
+
+// Izdvajamo vrednost za ključ 'title'
+    $title = $decodedData['title'];
 
     $data = $this->getJson('university_data.json');
     $caregiverData = $this->getJson('caregiver_data.json');
+
 
     if($caregiver->role=='caregiver'){
 
         $this->set('caregiver',$caregiver);
         $this->set('data',$data);
         $this->set('caregiverData',$caregiverData);
+        $this->set('title',$title);
+        $this->set('university',$university);
     }
     
    }
@@ -54,6 +73,8 @@ class CaregiverProfileController extends UserRoleController{
     $user_phone = $user->phone;
     $user_name= $user->name;
     $user_surname=$user->surname;
+  
+   
 
     $doctorFor = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_SPECIAL_CHARS);
     $university = filter_input(INPUT_POST, 'university', FILTER_SANITIZE_SPECIAL_CHARS);
@@ -63,14 +84,13 @@ class CaregiverProfileController extends UserRoleController{
     $phone=filter_input(INPUT_POST,'phone');
 
         
-    if(!password_verify($old_password,$pass)){
-        
-        $this->set('old_password','Invalid old password');
+    if (!empty($old_password) && !password_verify($old_password, $pass)) {
+        $this->set('old_password', 'Invalid old password');
         return;
     }
 
-    $pass_hash = password_hash($new_password, PASSWORD_DEFAULT);
-
+    // Ako je nova lozinka prosleđena, kreiramo hash
+    $pass_hash = !empty($new_password) ? password_hash($new_password, PASSWORD_DEFAULT) : $pass;
 
 
     
@@ -96,11 +116,6 @@ class CaregiverProfileController extends UserRoleController{
         $phone_input = $user_phone;
     }
     
-
-
-
-
-
     $name = "image_".rand(1,100).'_user_id_'.$id;
     if (!empty($_FILES['profile_photo']['name'])) {
         $uploadImage = $this->imageUpload('profile_photo', $name);
@@ -120,6 +135,8 @@ class CaregiverProfileController extends UserRoleController{
     } else {
         $uploadPdf = $pdf; 
     }
+
+
 
     
     $editData=[
@@ -145,9 +162,12 @@ class CaregiverProfileController extends UserRoleController{
         return;
     }
 
- 
+    $this->getSession()->put('success_edit',"Successfully changed data");
+    $this->getSession()->save();
+    
+        $this->redirect("/caregiver/profile/".$id);
 
-    $this->redirect("/caregiver/profile/".$id);
+    
 
    }
    
@@ -156,6 +176,15 @@ class CaregiverProfileController extends UserRoleController{
    public function destroy($id){
 
    }
+
+   public function logout() {
+    $this->getSession()->remove("user_id");
+    $this->getSession()->save();
+
+    sleep(2);
+
+    $this->redirect('/');
+}
 
 
    private function imageUpload($fieldName, $fileName ){
@@ -199,6 +228,8 @@ class CaregiverProfileController extends UserRoleController{
     }
 
 }
+
+
 
 
 

@@ -49,8 +49,11 @@ class __TwigTemplate_7c8941106b4a0859f4189e0031b3ed25 extends Template
         $macros = $this->macros;
         // line 5
         echo "
-
- 
+";
+        // line 6
+        $this->loadTemplate("./inc/edit_banner.html", "CaregiverProfile/show.html", 6)->display($context);
+        // line 7
+        echo " 
 <div class=\"container\">
   <div class=\"row d-flex justify-content-center mt-5\">
     <div class=\"col-lg-8\">
@@ -92,7 +95,7 @@ class __TwigTemplate_7c8941106b4a0859f4189e0031b3ed25 extends Template
         <div class=\"card-body\">
           <p class=\"ms-1\"><b>Personal information</b></p>
           <hr style=\"margin-bottom: -1px;\">
-          <a href=\"#\" class=\"text-decoration-none d-block profile grey\">
+          <a href=\"\" class=\"text-decoration-none d-block profile grey\" data-bs-toggle=\"modal\" data-bs-target=\"#name\">
             <div class=\"d-flex justify-content-between p-2 rounded\">
               <div><small><b class=\"teget\"><i class=\"bi bi-person-fill\"></i> My Profile</b></small><br><small >";
         // line 41
@@ -104,20 +107,21 @@ class __TwigTemplate_7c8941106b4a0859f4189e0031b3ed25 extends Template
             </div>
           </a>   
           <hr style=\"margin-bottom: -1px; margin-top:-1px;\">
-          <a href=\"#\" class=\"text-decoration-none d-block profile grey\">
+          <a href=\"\" class=\"text-decoration-none d-block profile grey\">
             <div class=\"d-flex justify-content-between p-2 rounded\">
               <div><small><b class=\"teget\"><i class=\"bi bi-sticky-fill\"></i> My Rights</b></small><br><small>See your rights</small></div>
               <div class=\"d-flex align-items-center\"><i class=\"bi bi-caret-right-fill grey\"></i></div>
             </div>
           </a>
           
+
           <p class=\"mt-4 ms-1\"><b>Login</b></p>
           <hr style=\"margin-bottom: -1px;\">
-          <a href=\"#\" class=\"text-decoration-none d-block profile grey\">
+          <a href=\"\" class=\"text-decoration-none d-block profile grey\"  data-bs-toggle=\"modal\" data-bs-target=\"#phone\">
             <div class=\"d-flex justify-content-between p-2 rounded\">
               <div><small><b class=\"teget\"><i class=\"bi bi-telephone-fill\"></i> Phones</b></small><br><small>";
-        // line 57
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "phone", [], "any", false, false, false, 57), "html", null, true);
+        // line 58
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "phone", [], "any", false, false, false, 58), "html", null, true);
         echo "</small></div>
               <div class=\"d-flex align-items-center\"><i class=\"bi bi-caret-right-fill grey\"></i></div>
             </div>
@@ -126,14 +130,14 @@ class __TwigTemplate_7c8941106b4a0859f4189e0031b3ed25 extends Template
           <a href=\"#\" class=\"text-decoration-none d-block profile grey\">
             <div class=\"d-flex justify-content-between p-2 rounded\">
               <div><small><b class=\"teget\"><i class=\"bi bi-envelope-fill\"></i> Email</b></small><br><small >";
-        // line 64
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "email", [], "any", false, false, false, 64), "html", null, true);
+        // line 65
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "email", [], "any", false, false, false, 65), "html", null, true);
         echo "</small></div>
               <div class=\"d-flex align-items-center\"><i class=\"bi bi-caret-right-fill grey\"></i></div>
             </div>
           </a>
           <hr style=\"margin-bottom: -1px; margin-top:-1px;\">
-          <a href=\"#\" class=\"text-decoration-none d-block profile grey\">
+          <a href=\"#\" class=\"text-decoration-none d-block profile grey\" data-bs-toggle=\"modal\" data-bs-target=\"#password\">
             <div class=\"d-flex justify-content-between p-2 rounded\">
               <div><small><b class=\"teget\"><i class=\"bi bi-shield-lock-fill\"></i> Password</b></small><br><small ><i class=\"bi bi-three-dots\" style=\"font-size: 24px;\"></i><i class=\"bi bi-three-dots\" style=\"font-size: 24px;\"></i></small></div>
               <div class=\"d-flex align-items-center\"><i class=\"bi bi-caret-right-fill grey\"></i></div>
@@ -171,7 +175,7 @@ class __TwigTemplate_7c8941106b4a0859f4189e0031b3ed25 extends Template
             </div>
           </a>
           <hr class=\"mb-5\"style=\"margin-bottom: -1px; margin-top:-1px;\">
-          <a href=\"#\" class=\"text-decoration-none d-block profile\">
+          <a href=\"/caregiver/logout\" class=\"text-decoration-none d-block profile\">
             <div class=\"d-flex justify-content-between p-2 rounded\">
               <div><small><b style=\"color: rgb(145, 25, 25);\"><i class=\"bi bi-box-arrow-right\"></i> Log Out</b></small></div>
               <div class=\"d-flex align-items-center\"><i class=\"bi bi-caret-right-fill grey\"></i></div>
@@ -184,25 +188,88 @@ class __TwigTemplate_7c8941106b4a0859f4189e0031b3ed25 extends Template
   </div>
 </div>
 
-
-<div class=\"modal fade\" id=\"delete_profile\" tabindex=\"-1\" aria-labelledby=\"delete_profile\" aria-hidden=\"true\">
+    <!--Name and Surname modal-->
+    <div class=\"modal fade\" id=\"name\" tabindex=\"-1\" aria-labelledby=\"change_name\" aria-hidden=\"true\">
+      <div class=\"modal-dialog modal-dialog-centered\">
+        <div class=\"modal-content\">
+          <form action=\"/caregiver/update/";
+        // line 125
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "user_id", [], "any", false, false, false, 125), "html", null, true);
+        echo "\" method=\"POST\">
+            <div class=\"modal-header\">
+              <h1 class=\"modal-title fs-5\" id=\"change_name\"><small><b class=\"teget\"><i class=\"bi bi-person-fill\"></i>Edit My Profile</b></small><br><small></small></h1>
+              <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>
+            </div>
+            <div class=\"modal-body\">
+              <label for=\"\" class=\"mb-2 ms-1\"><small><b>Change my name</b></small></label>
+              <input class=\"form-control form-control-sm\" type=\"text\" name=\"new_name\" placeholder=\"";
+        // line 132
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "name", [], "any", false, false, false, 132), "html", null, true);
+        echo " ";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "surname", [], "any", false, false, false, 132), "html", null, true);
+        echo "\" aria-label=\".form-control-sm example\">
+            </div>
+            <div class=\"modal-footer\">
+              <button type=\"submit\" class=\"btn btn-primary\">Save changes</button>
+              <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Close</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!--Phone-->
+<div class=\"modal fade\" id=\"phone\" tabindex=\"-1\" aria-labelledby=\"change_phone\" aria-hidden=\"true\">
   <div class=\"modal-dialog modal-dialog-centered\">
     <div class=\"modal-content\">
-      <form action=\"\" method=\"POST\">
+      <form action=\"/caregiver/update/";
+        // line 146
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "user_id", [], "any", false, false, false, 146), "html", null, true);
+        echo "\" method=\"POST\">
         <div class=\"modal-header\">
-          <h1 class=\"modal-title fs-5\" id=\"delete_profile\">
-            <small><b class=\"teget\"><i class=\"bi bi-person-fill\"></i> Delete profile</b></small>
+          <h1 class=\"modal-title fs-5\" id=\"change_phone\">
+            <small><b class=\"teget\"><i class=\"bi bi-person-fill\"></i>Edit My Profile</b></small><br><small></small>
           </h1>
           <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>
         </div>
         <div class=\"modal-body\">
-          
-        <p>Are you sure you want to Delete profile?</p>
-
-         
+          <label for=\"\" class=\"mb-2 ms-1\"><small><b>Change my phone</b></small></label>
+          <input class=\"form-control form-control-sm\" type=\"text\" name=\"phone\" aria-label=\".form-control-sm example\" value=\"";
+        // line 155
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "phone", [], "any", false, false, false, 155), "html", null, true);
+        echo "\">
         </div>
         <div class=\"modal-footer\">
-          <button type=\"submit\" class=\"btn btn-danger\">Delete Profile</button>
+          <button type=\"submit\" class=\"btn btn-primary\">Save changes</button>
+          <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Close</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<!-- Password Change Modal -->
+<div class=\"modal fade\" id=\"password\" tabindex=\"-1\" aria-labelledby=\"change_password\" aria-hidden=\"true\">
+  <div class=\"modal-dialog modal-dialog-centered\">
+    <div class=\"modal-content\">
+      <form action=\"/caregiver/update/";
+        // line 171
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "user_id", [], "any", false, false, false, 171), "html", null, true);
+        echo "\" method=\"POST\">
+        <div class=\"modal-header\">
+          <h1 class=\"modal-title fs-5\" id=\"change_password\">
+            <small><b class=\"teget\"><i class=\"bi bi-person-fill\"></i> Edit My Profile</b></small>
+          </h1>
+          <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>
+        </div>
+        <div class=\"modal-body\">
+          <label for=\"old_password\" class=\"mb-2 ms-1\"><small><b>Change my password</b></small></label>
+          <input class=\"form-control form-control-sm mb-2\" type=\"password\" name=\"old_password\" placeholder=\"Your old password\" required>
+
+          <input class=\"form-control form-control-sm\" type=\"password\" name=\"new_password\" placeholder=\"Your new password\" required>
+        </div>
+        <div class=\"modal-footer\">
+          <button type=\"submit\" class=\"btn btn-primary\">Save changes</button>
           <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Close</button>
         </div>
       </form>
@@ -215,16 +282,14 @@ class __TwigTemplate_7c8941106b4a0859f4189e0031b3ed25 extends Template
 
 
 
-
-
 ";
     }
 
-    // line 154
+    // line 199
     public function block_naslov($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 155
+        // line 200
         echo "Profile
 ";
     }
@@ -241,7 +306,7 @@ class __TwigTemplate_7c8941106b4a0859f4189e0031b3ed25 extends Template
 
     public function getDebugInfo()
     {
-        return array (  228 => 155,  224 => 154,  130 => 64,  120 => 57,  99 => 41,  79 => 23,  75 => 21,  70 => 19,  67 => 18,  65 => 17,  51 => 5,  47 => 4,  36 => 1,);
+        return array (  293 => 200,  289 => 199,  257 => 171,  238 => 155,  226 => 146,  207 => 132,  197 => 125,  134 => 65,  124 => 58,  102 => 41,  82 => 23,  78 => 21,  73 => 19,  70 => 18,  68 => 17,  56 => 7,  54 => 6,  51 => 5,  47 => 4,  36 => 1,);
     }
 
     public function getSourceContext()

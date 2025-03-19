@@ -71,6 +71,8 @@ class __TwigTemplate_d677f1e064777c11248ea69251f0256e extends Template
   <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js\"
     integrity=\"sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz\"
     crossorigin=\"anonymous\"></script>
+    
+    <script src=\"../../assets/main.js\"></script>
 </body>
 
 </html>";
@@ -104,7 +106,7 @@ class __TwigTemplate_d677f1e064777c11248ea69251f0256e extends Template
 
     public function getDebugInfo()
     {
-        return array (  91 => 20,  87 => 19,  80 => 11,  67 => 22,  65 => 19,  61 => 17,  59 => 16,  51 => 11,  39 => 1,);
+        return array (  93 => 20,  89 => 19,  82 => 11,  67 => 22,  65 => 19,  61 => 17,  59 => 16,  51 => 11,  39 => 1,);
     }
 
     public function getSourceContext()

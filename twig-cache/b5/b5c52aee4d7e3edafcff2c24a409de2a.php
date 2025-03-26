@@ -26,6 +26,7 @@ class __TwigTemplate_562dcd7e1501bf9ba94f2aecefbec3fc extends Template
 
         $this->blocks = [
             'main' => [$this, 'block_main'],
+            'naslov' => [$this, 'block_naslov'],
         ];
     }
 
@@ -59,7 +60,10 @@ class __TwigTemplate_562dcd7e1501bf9ba94f2aecefbec3fc extends Template
           <div class=\"card p-4 border-0\" style=\"width: 500px; height: 350px;\">
             <div class=\"card-body d-flex flex-column justify-content-center align-items-center\">
               <div class=\"d-flex flex-column mb-3 w-100\">
-                <form action=\"/user/login\" method=\"POST\">
+                <form action=\"";
+        // line 17
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/user/login\" method=\"POST\">
                   <div class=\"mb-3\">
                     <label for=\"input_email\" class=\"form-label\"><small><b><small class=\"ms-1\"><b><i class=\"bi bi-envelope-fill\"></i> Email address</b></small></label>
                     <input type=\"email\" class=\"form-control\" id=\"email_login\" name=\"email_login\" aria-describedby=\"emailHelp\">
@@ -89,26 +93,22 @@ class __TwigTemplate_562dcd7e1501bf9ba94f2aecefbec3fc extends Template
   </body>
 
  
-<!--
-  <div>
-    <label for=\"input_username\">Username</label>
-    <input type=\"text\" name=\"login_username\" id=\"input_username\" required placeholder=\"Please enter your username\">
-  </div>
-
-  <div>
-    <label for=\"input_password_1\">Password</label>
-    <input type=\"password\" name=\"login_password\" id=\"input_password_1\" required placeholder=\"Please enter your passsword\">
-  </div>
-
- 
-  <div>
-    <button type=\"submit\">Login</button>
-  </div>
-
--->
-
+  ";
+        // line 47
+        $this->displayBlock('naslov', $context, $blocks);
+        // line 50
+        echo "
 
 ";
+    }
+
+    // line 47
+    public function block_naslov($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        // line 48
+        echo "    Login
+  ";
     }
 
     public function getTemplateName()
@@ -123,11 +123,11 @@ class __TwigTemplate_562dcd7e1501bf9ba94f2aecefbec3fc extends Template
 
     public function getDebugInfo()
     {
-        return array (  50 => 5,  46 => 4,  35 => 1,);
+        return array (  110 => 48,  106 => 47,  100 => 50,  98 => 47,  65 => 17,  51 => 5,  47 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("", "User/login.html", "C:\\laragon\\www\\auction\\views\\User\\login.html");
+        return new Source("", "User/login.html", "C:\\laragon\\www\\doctorlab\\views\\User\\login.html");
     }
 }

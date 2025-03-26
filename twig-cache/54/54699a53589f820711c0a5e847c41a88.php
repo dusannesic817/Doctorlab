@@ -44,10 +44,18 @@ class __TwigTemplate_d677f1e064777c11248ea69251f0256e extends Template
   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
   <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\"
     integrity=\"sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH\" crossorigin=\"anonymous\">
+  <link rel=\"icon\" type=\"image/png\" href=\"";
+        // line 9
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/assets/images/logo_browser.png\">
   <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css\">
-  <link rel=\"stylesheet\" href=\"../../assets/main.css\">
-  <title>Doctorlab | ";
+  <link rel=\"stylesheet\" href=\"";
         // line 11
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/assets/main.css\">
+
+  <title>Doctorlab | ";
+        // line 13
         $this->displayBlock('naslov', $context, $blocks);
         echo "</title>
 </head>
@@ -55,15 +63,15 @@ class __TwigTemplate_d677f1e064777c11248ea69251f0256e extends Template
 <body>
   <header>
     ";
-        // line 16
-        $this->loadTemplate("./inc/header.html", "_global/index.html", 16)->display($context);
-        // line 17
+        // line 18
+        $this->loadTemplate("./inc/header.html", "_global/index.html", 18)->display($context);
+        // line 19
         echo "  </header>
   <main>
     ";
-        // line 19
+        // line 21
         $this->displayBlock('main', $context, $blocks);
-        // line 22
+        // line 24
         echo "  </main>
   <footer>
     footer
@@ -72,24 +80,27 @@ class __TwigTemplate_d677f1e064777c11248ea69251f0256e extends Template
     integrity=\"sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz\"
     crossorigin=\"anonymous\"></script>
     
-    <script src=\"../../assets/main.js\"></script>
+    <script src=\"";
+        // line 32
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/assets/main.js\"></script>
 </body>
 
 </html>";
     }
 
-    // line 11
+    // line 13
     public function block_naslov($context, array $blocks = [])
     {
         $macros = $this->macros;
-        echo "Pocetna";
+        echo "Home";
     }
 
-    // line 19
+    // line 21
     public function block_main($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 20
+        // line 22
         echo "
     ";
     }
@@ -106,11 +117,11 @@ class __TwigTemplate_d677f1e064777c11248ea69251f0256e extends Template
 
     public function getDebugInfo()
     {
-        return array (  93 => 20,  89 => 19,  82 => 11,  67 => 22,  65 => 19,  61 => 17,  59 => 16,  51 => 11,  39 => 1,);
+        return array (  104 => 22,  100 => 21,  93 => 13,  85 => 32,  75 => 24,  73 => 21,  69 => 19,  67 => 18,  59 => 13,  54 => 11,  49 => 9,  39 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("", "_global/index.html", "C:\\laragon\\www\\auction\\views\\_global\\index.html");
+        return new Source("", "_global/index.html", "C:\\laragon\\www\\doctorlab\\views\\_global\\index.html");
     }
 }

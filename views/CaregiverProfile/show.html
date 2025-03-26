@@ -16,7 +16,7 @@
               <p><small>The confidentiality of your personal information is an absolute priority for Doctolib and guides our daily actions.</small></p>
               {% if caregiver.profile_photo is null or caregiver.diploma_pdf is null or caregiver.caregiver_data is null or caregiver.university_data is null %}
               
-              <small><a href="/caregiver/edit/{{ caregiver.user_id }}" style="color: red;">Confirm your profile</a> <i class="bi bi-exclamation-circle-fill" style="color: red;" ></i></small>
+              <small><a href="{{ base_url }}/caregiver/edit/{{ caregiver.user_id }}" style="color: red;">Confirm your profile</a> <i class="bi bi-exclamation-circle-fill" style="color: red;" ></i></small>
               {% else %}
               <small>Confirmed profile <i class="bi bi-check-circle-fill" style="color: green;"></i></small>
               {%endif%}
@@ -24,7 +24,7 @@
               
             </div>
             <div class="col-lg-4">
-                <div class="text-center"><img src="../../assets/images/katanac1.png" alt="" style="width:150px; height: 120px;"></div>
+                <div class="text-center"><img src="{{ base_url }}/assets/images/katanac1.png" alt="" style="width:150px; height: 120px;"></div>
             </div>
           </div>
 
@@ -105,7 +105,7 @@
             </div>
           </a>
           <hr class="mb-5"style="margin-bottom: -1px; margin-top:-1px;">
-          <a href="/caregiver/logout" class="text-decoration-none d-block profile">
+          <a href="{{ base_url }}/caregiver/logout" class="text-decoration-none d-block profile">
             <div class="d-flex justify-content-between p-2 rounded">
               <div><small><b style="color: rgb(145, 25, 25);"><i class="bi bi-box-arrow-right"></i> Log Out</b></small></div>
               <div class="d-flex align-items-center"><i class="bi bi-caret-right-fill grey"></i></div>
@@ -122,7 +122,7 @@
     <div class="modal fade" id="name" tabindex="-1" aria-labelledby="change_name" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-          <form action="/caregiver/update/{{caregiver.user_id}}" method="POST">
+          <form action="{{ base_url }}/caregiver/update/{{caregiver.user_id}}" method="POST">
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="change_name"><small><b class="teget"><i class="bi bi-person-fill"></i>Edit My Profile</b></small><br><small></small></h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -143,7 +143,7 @@
 <div class="modal fade" id="phone" tabindex="-1" aria-labelledby="change_phone" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
-      <form action="/caregiver/update/{{caregiver.user_id}}" method="POST">
+      <form action="{{ base_url }}/caregiver/update/{{caregiver.user_id}}" method="POST">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="change_phone">
             <small><b class="teget"><i class="bi bi-person-fill"></i>Edit My Profile</b></small><br><small></small>
@@ -168,7 +168,7 @@
 <div class="modal fade" id="password" tabindex="-1" aria-labelledby="change_password" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
-      <form action="/caregiver/update/{{ caregiver.user_id }}" method="POST">
+      <form action="{{ base_url }}/caregiver/update/{{ caregiver.user_id }}" method="POST">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="change_password">
             <small><b class="teget"><i class="bi bi-person-fill"></i> Edit My Profile</b></small>

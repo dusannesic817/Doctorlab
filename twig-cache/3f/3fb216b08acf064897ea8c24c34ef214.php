@@ -66,7 +66,10 @@ class __TwigTemplate_2d0fba3cccfa9a1cb761e922b30e1fda extends Template
               
             </div>
             <div class=\"col-lg-4\">
-                <div class=\"text-center\"><img src=\"../../assets/images/katanac1.png\" alt=\"\" style=\"width:150px; height: 120px;\"></div>
+                <div class=\"text-center\"><img src=\"";
+        // line 21
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/assets/images/katanac1.png\" alt=\"\" style=\"width:150px; height: 120px;\"></div>
             </div>
           </div>
 
@@ -157,7 +160,10 @@ class __TwigTemplate_2d0fba3cccfa9a1cb761e922b30e1fda extends Template
             </div>
           </a>
           <hr class=\"mb-5\"style=\"margin-bottom: -1px; margin-top:-1px;\">
-          <a href=\"/user/logout\" class=\"text-decoration-none d-block profile\">
+          <a href=\"";
+        // line 101
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "//user/logout\" class=\"text-decoration-none d-block profile\">
             <div class=\"d-flex justify-content-between p-2 rounded\">
               <div><small><b style=\"color: rgb(145, 25, 25);\"><i class=\"bi bi-box-arrow-right\"></i> Log Out</b></small></div>
               <div class=\"d-flex align-items-center\"><i class=\"bi bi-caret-right-fill grey\"></i></div>
@@ -176,8 +182,10 @@ class __TwigTemplate_2d0fba3cccfa9a1cb761e922b30e1fda extends Template
     <div class=\"modal fade\" id=\"name\" tabindex=\"-1\" aria-labelledby=\"change_name\" aria-hidden=\"true\">
       <div class=\"modal-dialog modal-dialog-centered\">
         <div class=\"modal-content\">
-          <form action=\"/user/update/";
+          <form action=\"";
         // line 120
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/user/update/";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["client"] ?? null), "user_id", [], "any", false, false, false, 120), "html", null, true);
         echo "\" method=\"POST\">
             <div class=\"modal-header\">
@@ -206,8 +214,10 @@ class __TwigTemplate_2d0fba3cccfa9a1cb761e922b30e1fda extends Template
 <div class=\"modal fade\" id=\"phone\" tabindex=\"-1\" aria-labelledby=\"change_phone\" aria-hidden=\"true\">
   <div class=\"modal-dialog modal-dialog-centered\">
     <div class=\"modal-content\">
-      <form action=\"/user/update/";
+      <form action=\"";
         // line 142
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/user/update/";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["client"] ?? null), "user_id", [], "any", false, false, false, 142), "html", null, true);
         echo "\" method=\"POST\">
         <div class=\"modal-header\">
@@ -236,8 +246,10 @@ class __TwigTemplate_2d0fba3cccfa9a1cb761e922b30e1fda extends Template
 <div class=\"modal fade\" id=\"password\" tabindex=\"-1\" aria-labelledby=\"change_password\" aria-hidden=\"true\">
   <div class=\"modal-dialog modal-dialog-centered\">
     <div class=\"modal-content\">
-      <form action=\"/user/update/";
+      <form action=\"";
         // line 166
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/user/update/";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["client"] ?? null), "user_id", [], "any", false, false, false, 166), "html", null, true);
         echo "\" method=\"POST\">
         <div class=\"modal-header\">
@@ -276,11 +288,11 @@ class __TwigTemplate_2d0fba3cccfa9a1cb761e922b30e1fda extends Template
 
     public function getDebugInfo()
     {
-        return array (  241 => 166,  223 => 151,  211 => 142,  191 => 127,  181 => 120,  116 => 58,  106 => 51,  85 => 35,  55 => 7,  53 => 6,  50 => 5,  46 => 4,  35 => 1,);
+        return array (  251 => 166,  233 => 151,  219 => 142,  199 => 127,  187 => 120,  165 => 101,  119 => 58,  109 => 51,  88 => 35,  71 => 21,  55 => 7,  53 => 6,  50 => 5,  46 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("", "UserProfile/show.html", "C:\\laragon\\www\\auction\\views\\UserProfile\\show.html");
+        return new Source("", "UserProfile/show.html", "C:\\laragon\\www\\doctorlab\\views\\UserProfile\\show.html");
     }
 }

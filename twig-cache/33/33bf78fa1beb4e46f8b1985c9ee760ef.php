@@ -70,7 +70,10 @@ class __TwigTemplate_4cf08ed59d71df07e9a838835caad1f3 extends Template
   <div class=\"row mt-5 h-50 gy-2 justify-content-center\">
     <div class=\"col-12 col-lg-4 d-flex justify-content-center\">
       <div class=\"card shadow-lg card-hover\" style=\"width: 25rem;\">
-        <img src=\"../../assets/images/image_3.png\" class=\"card-img-top\" alt=\"...\">
+        <img src=\"";
+        // line 27
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/assets/images/image_3.png\" class=\"card-img-top\" alt=\"...\">
         <div class=\"card-body\">
           <p class=\"card-text\">Increase the ravenue of your business</p>
         </div>
@@ -78,7 +81,10 @@ class __TwigTemplate_4cf08ed59d71df07e9a838835caad1f3 extends Template
     </div>
     <div class=\"col-12 col-lg-4 d-flex justify-content-center\">
       <div class=\"card shadow-lg card-hover\" style=\"width: 25rem;\">
-        <img src=\"../../assets/images/image_2.jpg\" class=\"card-img-top\" alt=\"...\">
+        <img src=\"";
+        // line 35
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/assets/images/image_2.jpg\" class=\"card-img-top\" alt=\"...\">
         <div class=\"card-body\">
           <p class=\"card-text\">Enjoy a better quality of life </p>
         </div>
@@ -86,7 +92,10 @@ class __TwigTemplate_4cf08ed59d71df07e9a838835caad1f3 extends Template
     </div>
     <div class=\"col-12 col-lg-4 d-flex justify-content-center\">
       <div class=\"card shadow-lg card-hover\" style=\"width: 25rem;\">
-        <img src=\"../../assets/images/image_1.jpg\" class=\"card-img-top\" alt=\"...\">
+        <img src=\"";
+        // line 43
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/assets/images/image_1.jpg\" class=\"card-img-top\" alt=\"...\">
         <div class=\"card-body\">
           <p class=\"card-text\">Provide the best possible care to your patients</p>
         </div>
@@ -102,7 +111,10 @@ class __TwigTemplate_4cf08ed59d71df07e9a838835caad1f3 extends Template
   <div class=\"row ms-5 justify-content-center\">
     <div class=\"col-12 col-md-6 col-lg-4 d-flex justify-content-center\">
       <div class=\"card border-0\" style=\"width: 18rem;\">
-        <img src=\"../../assets/images/cal.png\" class=\"card-img-top\" alt=\"...\">
+        <img src=\"";
+        // line 59
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/assets/images/cal.png\" class=\"card-img-top\" alt=\"...\">
         <div class=\"card-body text-center\">
           <small><b>Access to care more easily</b></small><br>
           <small>Book face to face consultations, and receive reminders so you never miss them</small>
@@ -111,7 +123,10 @@ class __TwigTemplate_4cf08ed59d71df07e9a838835caad1f3 extends Template
     </div>
     <div class=\"col-12 col-md-6 col-lg-4 d-flex justify-content-center\">
       <div class=\"card  border-0\" style=\"width: 18rem;\">
-        <img src=\"../../assets/images/msg.png\" class=\"card-img-top\" alt=\"...\">
+        <img src=\"";
+        // line 68
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/assets/images/msg.png\" class=\"card-img-top\" alt=\"...\">
         <div class=\"card-body text-center mt-4\">
           <small><b>Benefit from personalized care</b></small><br>
           <small>Talk to your caregivers by message, get preventive advice, and receive care when you need</small>
@@ -120,7 +135,10 @@ class __TwigTemplate_4cf08ed59d71df07e9a838835caad1f3 extends Template
     </div>
     <div class=\"col-12 col-md-6 col-lg-4 d-flex justify-content-center\">
       <div class=\"cardborder-0\" style=\"width: 18rem;\">
-        <img src=\"../../assets/images/heart.png\" class=\"card-img-top\" alt=\"...\">
+        <img src=\"";
+        // line 77
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/assets/images/heart.png\" class=\"card-img-top\" alt=\"...\">
         <div class=\"card-body text-center\">
           <small><b>Manage your health</b></small><br>
           <small>Easily gather all of your health information and that of those who matter to you</small>
@@ -135,7 +153,10 @@ class __TwigTemplate_4cf08ed59d71df07e9a838835caad1f3 extends Template
     <div class=\"row\">
       <div class=\"col-lg-3 col-12 d-flex justify-content-center\">
         <div class=\"card\" style=\"width: 100%; max-width: 18rem; border-color: #01264d !important\">
-          <img src=\"../../assets/images/doctor.jpg\" class=\"card-img-top img-fluid rounded-bottom\" alt=\"...\"
+          <img src=\"";
+        // line 92
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/assets/images/doctor.jpg\" class=\"card-img-top img-fluid rounded-bottom\" alt=\"...\"
             style=\"object-fit: cover; width: 100%; height: 100%;\">
         </div>
       </div>
@@ -177,7 +198,10 @@ class __TwigTemplate_4cf08ed59d71df07e9a838835caad1f3 extends Template
       <!-- Image Section -->
       <div class=\"col-4 col-lg-4 mt-2 d-flex justify-content-center\">
         <div class=\"card border-0\" style=\"width: 18rem; background-color: #e4ecf7;\">
-          <img src=\"../../assets/images/ass.png\" class=\"card-img-top\" alt=\"...\">
+          <img src=\"";
+        // line 134
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/assets/images/ass.png\" class=\"card-img-top\" alt=\"...\">
         </div>
       </div>
       <!-- Left Column -->
@@ -253,13 +277,19 @@ class __TwigTemplate_4cf08ed59d71df07e9a838835caad1f3 extends Template
     <hr style=\"color: #6da7f7;\">
     <div class=\"row text-center text-lg-start d-flex justify-content-center align-items-center\">
       <div class=\"col-12 col-lg-4\">
-        <div>DoctorLab</div>
+        <div class=\"mb-2\"><img src=\"";
+        // line 210
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/assets/images/logo_white.png\" alt=\"DoctorLab Logo\" ></div>
         <small class=\"grey\">Copyright 2025 Docotorlab, all right reserved</small>
       </div>
       <div class=\"col-12 col-lg-8 d-flex justify-content-center justify-content-lg-end mt-3 mt-lg-0\">
         <div class=\"d-flex flex-row-reverse\">
           <div class=\"p-2\">
-            <img src=\"../../assets/images/app_download.png\" alt=\"...\" style=\"height: 6rem;\">
+            <img src=\"";
+        // line 216
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/assets/images/app_download.png\" alt=\"...\" style=\"height: 6rem;\">
           </div>
 
         </div>
@@ -302,11 +332,11 @@ class __TwigTemplate_4cf08ed59d71df07e9a838835caad1f3 extends Template
 
     public function getDebugInfo()
     {
-        return array (  52 => 6,  50 => 5,  46 => 4,  35 => 1,);
+        return array (  291 => 216,  282 => 210,  203 => 134,  158 => 92,  140 => 77,  128 => 68,  116 => 59,  97 => 43,  86 => 35,  75 => 27,  52 => 6,  50 => 5,  46 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("", "Main/home.html", "C:\\laragon\\www\\auction\\views\\Main\\home.html");
+        return new Source("", "Main/home.html", "C:\\laragon\\www\\doctorlab\\views\\Main\\home.html");
     }
 }

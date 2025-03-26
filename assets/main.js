@@ -12,3 +12,14 @@ function autoDismissAlert() {
 window.onload = function() {
     autoDismissAlert();
 };
+
+document.addEventListener("DOMContentLoaded", function () {
+    const datumInput = document.getElementById("datum");
+    const prikazDatuma = document.getElementById("prikazDatuma");
+
+    if (datumInput && prikazDatuma) {
+        datumInput.addEventListener("change", function () {
+            prikazDatuma.textContent = this.value;
+        });
+    }
+});

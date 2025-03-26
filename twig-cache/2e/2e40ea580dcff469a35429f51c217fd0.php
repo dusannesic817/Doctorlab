@@ -26,6 +26,7 @@ class __TwigTemplate_415710563d3fdc4c0e62949d3cf71603 extends Template
 
         $this->blocks = [
             'main' => [$this, 'block_main'],
+            'naslov' => [$this, 'block_naslov'],
         ];
     }
 
@@ -56,7 +57,10 @@ class __TwigTemplate_415710563d3fdc4c0e62949d3cf71603 extends Template
         <div class=\"card p-4 border-0\" style=\"width: 500px; height: 800px;\">
           <div class=\"card-body d-flex flex-column justify-content-center align-items-center\">
             <div class=\"d-flex flex-column mb-3 w-100\">
-              <form action=\"/user/register\" method=\"POST\">
+              <form action=\"";
+        // line 14
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/user/register\" method=\"POST\">
                 <div class=\"mb-3\">
                   <label for=\"exampleInputEmail1\" class=\"form-label\"><small class=\"ms-1\"><b><i class=\"bi bi-envelope-fill\"></i> Email
                         address</b></small></label>
@@ -110,8 +114,11 @@ class __TwigTemplate_415710563d3fdc4c0e62949d3cf71603 extends Template
     </div>
   </div>
 
-
-
+  ";
+        // line 68
+        $this->displayBlock('naslov', $context, $blocks);
+        // line 71
+        echo "
 
 
 
@@ -137,6 +144,15 @@ class __TwigTemplate_415710563d3fdc4c0e62949d3cf71603 extends Template
 ";
     }
 
+    // line 68
+    public function block_naslov($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        // line 69
+        echo "    Register
+  ";
+    }
+
     public function getTemplateName()
     {
         return "User/create.html";
@@ -149,11 +165,11 @@ class __TwigTemplate_415710563d3fdc4c0e62949d3cf71603 extends Template
 
     public function getDebugInfo()
     {
-        return array (  50 => 5,  46 => 4,  35 => 1,);
+        return array (  152 => 69,  148 => 68,  121 => 71,  119 => 68,  62 => 14,  51 => 5,  47 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("", "User/create.html", "C:\\laragon\\www\\auction\\views\\User\\create.html");
+        return new Source("", "User/create.html", "C:\\laragon\\www\\doctorlab\\views\\User\\create.html");
     }
 }

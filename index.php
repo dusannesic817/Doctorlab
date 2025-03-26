@@ -65,6 +65,7 @@ use App\Core\Session\Session;
        'auto_reload'=> true
 
    ]);
+   $twig->addGlobal('base_url', 'http://localhost/doctorlab');
 
    $html = $twig->render(
       $route->getControllerName(). '/'. $route->getMethodName(). '.html',

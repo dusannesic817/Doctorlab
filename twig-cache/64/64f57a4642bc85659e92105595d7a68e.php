@@ -26,6 +26,7 @@ class __TwigTemplate_4cd9f71e660e46e67e5cea71e372ed2a extends Template
 
         $this->blocks = [
             'main' => [$this, 'block_main'],
+            'naslov' => [$this, 'block_naslov'],
         ];
     }
 
@@ -56,7 +57,10 @@ class __TwigTemplate_4cd9f71e660e46e67e5cea71e372ed2a extends Template
         <div class=\"card p-4 border-0\" style=\"width: 500px; height: 800px;\">
           <div class=\"card-body d-flex flex-column justify-content-center align-items-center\">
             <div class=\"d-flex flex-column mb-3 w-100\">
-              <form action=\"/caregiver/register\" method=\"POST\">
+              <form action=\"";
+        // line 14
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/caregiver/register\" method=\"POST\">
                 <div class=\"mb-3\">
                   <label for=\"exampleInputEmail1\" class=\"form-label\"><small class=\"ms-1\"><b><i class=\"bi bi-envelope-fill\"></i> Email
                         address</b></small></label>
@@ -112,18 +116,26 @@ class __TwigTemplate_4cd9f71e660e46e67e5cea71e372ed2a extends Template
 
 
 
+  ";
+        // line 70
+        $this->displayBlock('naslov', $context, $blocks);
+        // line 73
+        echo "
 
 
-
-  <script>
-    document.getElementById('datum').addEventListener('change', function () {
-      document.getElementById('prikazDatuma').textContent = this.value;
-    });
-  </script>
 
 </body>
 
 ";
+    }
+
+    // line 70
+    public function block_naslov($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        // line 71
+        echo "  Caregiver Register 
+ ";
     }
 
     public function getTemplateName()
@@ -138,11 +150,11 @@ class __TwigTemplate_4cd9f71e660e46e67e5cea71e372ed2a extends Template
 
     public function getDebugInfo()
     {
-        return array (  50 => 5,  46 => 4,  35 => 1,);
+        return array (  137 => 71,  133 => 70,  123 => 73,  121 => 70,  62 => 14,  51 => 5,  47 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("", "Caregiver/create.html", "C:\\laragon\\www\\auction\\views\\Caregiver\\create.html");
+        return new Source("", "Caregiver/create.html", "C:\\laragon\\www\\doctorlab\\views\\Caregiver\\create.html");
     }
 }

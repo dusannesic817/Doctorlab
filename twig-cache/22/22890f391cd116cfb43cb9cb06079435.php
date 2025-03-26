@@ -56,7 +56,10 @@ class __TwigTemplate_3dd2510c94f3febf71e2c46887226a7c extends Template
         <div class=\"card p-4 border-0\" style=\"width: 500px; height: 350px;\">
           <div class=\"card-body d-flex flex-column justify-content-center align-items-center\">
             <div class=\"d-flex flex-column mb-3 w-100\">
-              <form action=\"/user/login\" method=\"POST\">
+              <form action=\"";
+        // line 14
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/user/login\" method=\"POST\">
                 <div class=\"mb-3\">
                   <label for=\"input_email\" class=\"form-label\"><small><b><small class=\"ms-1\"><b><i class=\"bi bi-envelope-fill\"></i> Email address</b></small></label>
                   <input type=\"email\" class=\"form-control\" id=\"email_login\" name=\"email_login\" aria-describedby=\"emailHelp\">
@@ -103,11 +106,11 @@ class __TwigTemplate_3dd2510c94f3febf71e2c46887226a7c extends Template
 
     public function getDebugInfo()
     {
-        return array (  65 => 18,  50 => 5,  46 => 4,  35 => 1,);
+        return array (  68 => 18,  61 => 14,  50 => 5,  46 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("", "User/authenticate.html", "C:\\laragon\\www\\auction\\views\\User\\authenticate.html");
+        return new Source("", "User/authenticate.html", "C:\\laragon\\www\\doctorlab\\views\\User\\authenticate.html");
     }
 }

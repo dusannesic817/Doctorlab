@@ -49,8 +49,10 @@ class Controller{
     }
 
     protected function redirect($path,$code = 302){
+
+        $baseUrl = 'http://localhost/doctorlab';
         ob_clean();
-        header('Location:'.$path,true,$code);
+        header('Location:' .$baseUrl.$path,true,$code);
         exit();
     }
 

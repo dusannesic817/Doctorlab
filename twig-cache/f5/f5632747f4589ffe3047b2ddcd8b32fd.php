@@ -26,6 +26,7 @@ class __TwigTemplate_62d0b20061f02797e745a20c2c867649 extends Template
 
         $this->blocks = [
             'main' => [$this, 'block_main'],
+            'naslov' => [$this, 'block_naslov'],
         ];
     }
 
@@ -57,12 +58,18 @@ class __TwigTemplate_62d0b20061f02797e745a20c2c867649 extends Template
           <div class=\"card-body d-flex flex-column justify-content-center align-items-center\">
             <div class=\"d-flex flex-column mb-3 w-100\">
               <small class=\"text-center mb-2\"><b>I already have an account</b></small>
-              <a class=\"btn btn-warning mb-2\" href=\"user/login\" role=\"button\"><b>Login</b></a>
+              <a class=\"btn btn-warning mb-2\" href=\"";
+        // line 15
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/user/login\" role=\"button\"><b>Login</b></a>
 
               <small class=\"text-center mb-2 mt-5\"><b>Do you have Google Account?</b></small>
               <button type=\"button\" class=\"btn btn-primary mb-2\"><b>Google</b></button>
               <small class=\"text-center mb-2\"><b>New to Doctolab?</b></small>
-              <a class=\"btn btn-primary\" href=\"user/register\" role=\"button\"><b>Sing Up</b></a>
+              <a class=\"btn btn-primary\" href=\"";
+        // line 20
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/user/register\" role=\"button\"><b>Sing Up</b></a>
 
 
             </div>
@@ -75,7 +82,21 @@ class __TwigTemplate_62d0b20061f02797e745a20c2c867649 extends Template
 
 </body>
 
+";
+        // line 33
+        $this->displayBlock('naslov', $context, $blocks);
+        // line 36
+        echo "
 
+";
+    }
+
+    // line 33
+    public function block_naslov($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        // line 34
+        echo "  Login
 ";
     }
 
@@ -91,11 +112,11 @@ class __TwigTemplate_62d0b20061f02797e745a20c2c867649 extends Template
 
     public function getDebugInfo()
     {
-        return array (  50 => 5,  46 => 4,  35 => 1,);
+        return array (  99 => 34,  95 => 33,  89 => 36,  87 => 33,  71 => 20,  63 => 15,  51 => 5,  47 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("", "User/index.html", "C:\\laragon\\www\\auction\\views\\User\\index.html");
+        return new Source("", "User/index.html", "C:\\laragon\\www\\doctorlab\\views\\User\\index.html");
     }
 }

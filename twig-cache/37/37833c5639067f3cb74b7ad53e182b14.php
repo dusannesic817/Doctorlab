@@ -40,15 +40,28 @@ class __TwigTemplate_47eb47f30af045a97f1ed06b366c0bf9 extends Template
       <div class=\"col-12\">
         <nav class=\"navbar navbar-expand-lg mt-2\">
           <div class=\"container-fluid\">
-            <a class=\"navbar-brand\" href=\"#\"><img src=\"\" alt=\"\" > </i></a>
-            <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarNav\"
-              aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
-              <span class=\"navbar-toggler-icon\"></span>
-            </button>
+            <a class=\"navbar-brand\" href=\"";
+        // line 7
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "\">
+              <img src=\"";
+        // line 8
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/assets/images/home_logo.png\" alt=\"DoctorLab Logo\" >
+          </a>
+          
+          <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarNav\"
+            aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+            <svg width=\"30\" height=\"30\" viewBox=\"0 0 30 30\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">
+                <path stroke=\"white\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-miterlimit=\"10\"
+                    d=\"M4 7h22M4 15h22M4 23h22\" />
+            </svg>
+          </button>
+      
             <div class=\"collapse navbar-collapse\" id=\"navbarNav\">
               <ul class=\"navbar-nav\">
                 <li class=\"nav-item dropdown\">
-                  <a class=\"nav-link \" href=\"#\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
+                  <a class=\"nav-link mt-2\" href=\"\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
                     <b><small>Discover Doctorlab</small></b>
                   </a>
                   <ul class=\"dropdown-menu dropdown-menu-custom\">
@@ -84,17 +97,23 @@ class __TwigTemplate_47eb47f30af045a97f1ed06b366c0bf9 extends Template
                   </ul>
                 </li>
                 <li class=\"nav-item\">
-                  <a class=\"nav-link\" href=\"/\"><b><small>Tarrifs</small></b></a>
+                  <a class=\"nav-link mt-2 ms-2\" href=\"/\"><b><small>Tarrifs</small></b></a>
                 </li>
 
 
               </ul>
-              <ul class=\"navbar-nav ms-auto\">
+              <ul class=\"navbar-nav ms-auto mt-2\">
                 <li class=\"nav-item border rounded me-2 border-success ps-1 pe-1 mb-1\">
-                  <a class=\"nav-link\" href=\"/caregiver/register\"><b><small>Are you a health professional?</small></b></a>
+                  <a class=\"nav-link\" href=\"";
+        // line 65
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/caregiver/register\"><b><small>Are you a health professional?</small></b></a>
                 </li>
                 <li class=\"nav-item\">
-                  <a class=\"nav-link\" href=\"/login\"><b><small>Make appoitment?</small></b></a>
+                  <a class=\"nav-link ms-2\" href=\"";
+        // line 68
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/login\"><b><small>Make appoitment?</small></b></a>
                 </li>
                 
               </ul>
@@ -112,13 +131,18 @@ class __TwigTemplate_47eb47f30af045a97f1ed06b366c0bf9 extends Template
         return "./inc/header.html";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  37 => 1,);
+        return array (  115 => 68,  109 => 65,  49 => 8,  45 => 7,  37 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("", "./inc/header.html", "C:\\laragon\\www\\auction\\views\\inc\\header.html");
+        return new Source("", "./inc/header.html", "C:\\laragon\\www\\doctorlab\\views\\inc\\header.html");
     }
 }

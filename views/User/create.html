@@ -11,7 +11,7 @@
         <div class="card p-4 border-0" style="width: 500px; height: 800px;">
           <div class="card-body d-flex flex-column justify-content-center align-items-center">
             <div class="d-flex flex-column mb-3 w-100">
-              <form action="/user/register" method="POST">
+              <form action="{{ base_url }}/user/register" method="POST">
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label"><small class="ms-1"><b><i class="bi bi-envelope-fill"></i> Email
                         address</b></small></label>
@@ -66,7 +66,7 @@
   </div>
 
   {% block naslov %}
-    Create
+   Client Register 
   {% endblock %}
 
 

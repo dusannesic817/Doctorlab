@@ -4,7 +4,7 @@
 
 {% block main %}
 
-<form action="/caregiver/update/{{caregiver.user_id}}" method="POST" enctype="multipart/form-data">
+<form action="{{ base_url }}/caregiver/update/{{caregiver.user_id}}" method="POST" enctype="multipart/form-data">
 <div class="container">
   <div class="row d-flex justify-content-center mt-5">
     <div class="col-lg-8">
@@ -20,9 +20,9 @@
             <div class="col-lg-4">
                 <div class="text-center">
                   {%if caregiver.profile_photo is null%}
-                    <img id="preview" class="rounded" src="../../assets/images/katanac1.png" alt="Preview Image" style="width:150px; height: 130px;">
+                    <img id="preview" class="rounded" src="{{ base_url }}/assets/images/katanac1.png" alt="Preview Image" style="width:150px; height: 130px;">
                   {%else%}
-                  <img id="preview" class="rounded" src="../../assets/uploads/images/{{ caregiver.profile_photo }}" alt="Preview Image" style="width:150px; height: 130px;">
+                  <img id="preview" class="rounded" src="{{ base_url }}/assets/uploads/images/{{ caregiver.profile_photo }}" alt="Preview Image" style="width:150px; height: 130px;">
                   {%endif%}
                 
                   </div>
@@ -118,14 +118,14 @@
 
           <p class="mt-4 ms-1"><b>Place where you work</b></p>
           <hr style="margin-bottom: -1px;">
-          <a href="#" class="text-decoration-none d-block profile">
+          <a href="" class="text-decoration-none d-block profile">
             <div class="d-flex justify-content-between p-2 rounded">
               <div><small class="grey">Delete Account</small></div>
               <div class="d-flex align-items-center"><i class="bi bi-caret-right-fill grey"></i></div>
             </div>
           </a>
           <hr style="margin-bottom: -1px; margin-top:-1px;">
-          <a href="#" class="text-decoration-none d-block profile">
+          <a href="" class="text-decoration-none d-block profile">
             <div class="d-flex justify-content-between p-2 rounded">
               <div><small class="grey">Legal Information</small></div>
               <div class="d-flex align-items-center"><i class="bi bi-caret-right-fill grey"></i></div>
@@ -148,7 +148,7 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <!-- Forma treba da bude pravilno postavljena -->
-          <form action="/caregiver/update/{{caregiver.user_id}}" method="POST">
+          <form action="{{ base_url }}/caregiver/update/{{caregiver.user_id}}" method="POST">
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="change_name"><small><b class="teget"><i class="bi bi-person-fill"></i>Edit My Profile</b></small><br><small></small></h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -171,7 +171,7 @@
 <div class="modal fade" id="phone" tabindex="-1" aria-labelledby="change_phone" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
-      <form action="/caregiver/update/{{caregiver.user_id}}" method="POST">
+      <form action="{{ base_url }}/caregiver/update/{{caregiver.user_id}}" method="POST">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="change_phone">
             <small><b class="teget"><i class="bi bi-person-fill"></i>Edit My Profile</b></small><br><small></small>
@@ -196,7 +196,7 @@
 <div class="modal fade" id="password" tabindex="-1" aria-labelledby="change_password" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
-      <form action="/caregiver/update/{{ caregiver.user_id }}" method="POST">
+      <form action="{{ base_url }}/caregiver/update/{{ caregiver.user_id }}" method="POST">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="change_password">
             <small><b class="teget"><i class="bi bi-person-fill"></i> Edit My Profile</b></small>
@@ -221,13 +221,13 @@
 
 <script>
   document.getElementById("image").addEventListener("change", function(event) {
-      var file = event.target.files[0]; // Uzimamo prvi fajl
+      var file = event.target.files[0]; 
       if (file) {
           var reader = new FileReader();
           reader.onload = function(e) {
-              document.getElementById("preview").src = e.target.result; // Postavljamo sliku u <img>
+              document.getElementById("preview").src = e.target.result; 
           };
-          reader.readAsDataURL(file); // Čitamo fajl kao URL
+          reader.readAsDataURL(file); 
       }
   });
   </script>

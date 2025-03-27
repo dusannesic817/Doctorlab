@@ -11,7 +11,7 @@ use Exception;
 class CaregiverProfileController extends UserRoleController{
 
 
-    public function index(){
+    public function appointmens(){
         
     }
 
@@ -44,8 +44,6 @@ class CaregiverProfileController extends UserRoleController{
     $university = $decodeUniversity['university'];
     
 
-
-// Izdvajamo vrednost za ključ 'title'
     $title = $decodedData['title'];
 
     $data = $this->getJson('university_data.json');

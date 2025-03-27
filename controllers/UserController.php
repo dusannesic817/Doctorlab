@@ -115,9 +115,9 @@ class UserController extends Controller{
        $this->getSession()->save();
 
        if($email->role=='client'){
-        $this->redirect('/user/profile');
+        $this->redirect('/user/appointmens');
        }else{
-        $this->redirect('/caregiver/profile');
+        $this->redirect('/caregiver/appointmens');
        }
 
 

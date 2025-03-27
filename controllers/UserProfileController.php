@@ -9,7 +9,7 @@ use App\Models\UserModel;
 
 class UserProfileController extends UserRoleController{
 
-   public function index(){
+   public function appointmens(){
     
    }
 
@@ -102,8 +102,6 @@ class UserProfileController extends UserRoleController{
 
     $this->redirect("/user/profile/".$id);
 
-    
-      
          
       
    }

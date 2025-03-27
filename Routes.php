@@ -19,10 +19,14 @@ return [
     
 
     #User and caregiver role routes:
-    App\Core\Route::get('|^user/appointmens/?$|', "UserProfile", 'appointmens'),
     App\Core\Route::get('|^user/profile/([0-9+])/?$|', "UserProfile", 'show'),
     App\Core\Route::post('|^user/update/([0-9+])/?$|', "UserProfile", 'update'),
     App\Core\Route::get('|^user/logout/?$|', "UserProfile", 'logout'),
+
+
+    #Appointement routes:
+    App\Core\Route::get('|^user/appointmens/([0-9+])/?$|', "Appointment", 'show'),
+    App\Core\Route::get('|^caregiver/appointmens/([0-9+])/?$|', "Appointment", 'show'),
    
     App\Core\Route::get('|^caregiver/profile/([0-9+])/?$|', "CaregiverProfile", 'show'),
     App\Core\Route::get('|^caregiver/edit/([0-9+])/?$|', "CaregiverProfile", 'edit'),

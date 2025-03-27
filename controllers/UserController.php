@@ -14,7 +14,7 @@ class UserController extends Controller{
     }
 
     public function show($id){
-
+       
     }
 
    public function create(){
@@ -114,10 +114,15 @@ class UserController extends Controller{
        $this->getSession()->put('user_id',$email->user_id);
        $this->getSession()->save();
 
+       $auth = $this->getSession()->get('user_id');
+       
+
        if($email->role=='client'){
-        $this->redirect('/user/appointmens');
+        $this->redirect('/user/appointmens/'.$auth);
+       
        }else{
-        $this->redirect('/caregiver/appointmens');
+        $this->redirect('/caregiver/appointmens/'.$auth);
+       
        }
 
 

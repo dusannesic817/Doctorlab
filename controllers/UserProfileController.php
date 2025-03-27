@@ -9,9 +9,7 @@ use App\Models\UserModel;
 
 class UserProfileController extends UserRoleController{
 
-   public function appointmens(){
-    
-   }
+
 
    public function show($id){
       

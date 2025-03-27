@@ -11,9 +11,7 @@ use Exception;
 class CaregiverProfileController extends UserRoleController{
 
 
-    public function appointmens(){
-        
-    }
+
 
     public function show($id){
         $user = new UserModel($this->getDatabaseConnection());
@@ -87,12 +85,8 @@ class CaregiverProfileController extends UserRoleController{
         return;
     }
 
-    // Ako je nova lozinka prosleđena, kreiramo hash
+
     $pass_hash = !empty($new_password) ? password_hash($new_password, PASSWORD_DEFAULT) : $pass;
-
-
-    
-
 
     $nameParts = explode(' ', $fullName);
 

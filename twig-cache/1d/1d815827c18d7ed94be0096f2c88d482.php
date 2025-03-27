@@ -12,8 +12,8 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* UserProfile/appointmens.html */
-class __TwigTemplate_f10986018f4ad3bf1a2e07667ffcecaa extends Template
+/* Appointment/show.html */
+class __TwigTemplate_afdb0d0839ef0beb6666a24f75cc9de6 extends Template
 {
     private $source;
     private $macros = [];
@@ -38,7 +38,7 @@ class __TwigTemplate_f10986018f4ad3bf1a2e07667ffcecaa extends Template
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
-        $this->parent = $this->loadTemplate("_global/index.html", "UserProfile/appointmens.html", 1);
+        $this->parent = $this->loadTemplate("_global/index.html", "Appointment/show.html", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
@@ -48,12 +48,17 @@ class __TwigTemplate_f10986018f4ad3bf1a2e07667ffcecaa extends Template
         $macros = $this->macros;
         // line 5
         echo "
+
+
 <body class=\"light-blue\">
 
   <div class=\"container-fluid\">
     <div class=\"row vh-100\">
       <div class=\"col-lg-3 mt-3 text-center border-end border-secondary-subtle  h-100\">
-        <p class=\"mt-4\"><b>Appointment History</b></p>
+        <p class=\"mt-4\"><b>Appointment History ";
+        // line 13
+        echo twig_escape_filter($this->env, ($context["arguments"] ?? null), "html", null, true);
+        echo "</b></p>
         <hr>
         <div class=\"list-group border-0\">
           <button type=\"button\" class=\"list-group-item list-group-item-action light-blue border-0\"
@@ -72,7 +77,7 @@ class __TwigTemplate_f10986018f4ad3bf1a2e07667ffcecaa extends Template
           <!-- Prva kartica (početno vidljiva) -->
           <div id=\"defaultCard\" class=\"card card-my-information text-center border-0 light-blue\">
             <img src=\"";
-        // line 29
+        // line 31
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/assets/images/calendar_transparent.png\" style=\"width: 12rem; height:10rem;\"
               class=\"card-img-top mx-auto d-block\" alt=\"...\">
@@ -146,7 +151,7 @@ class __TwigTemplate_f10986018f4ad3bf1a2e07667ffcecaa extends Template
 
     public function getTemplateName()
     {
-        return "UserProfile/appointmens.html";
+        return "Appointment/show.html";
     }
 
     public function isTraitable()
@@ -156,11 +161,11 @@ class __TwigTemplate_f10986018f4ad3bf1a2e07667ffcecaa extends Template
 
     public function getDebugInfo()
     {
-        return array (  76 => 29,  50 => 5,  46 => 4,  35 => 1,);
+        return array (  81 => 31,  60 => 13,  50 => 5,  46 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("", "UserProfile/appointmens.html", "C:\\laragon\\www\\doctorlab\\views\\UserProfile\\appointmens.html");
+        return new Source("", "Appointment/show.html", "C:\\laragon\\www\\doctorlab\\views\\Appointment\\show.html");
     }
 }

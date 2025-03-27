@@ -3,12 +3,14 @@
 require 'vendor/autoload.php';
 require_once 'Configruation.php';
 
+
 use App\Controllers\MainController;
 use App\Core\DatabaseConfiguration;
 use App\Core\DatabaseConnection;
 use App\Core\Router;
 use App\Core\Session\FileSessionStorage;
 use App\Core\Session\Session;
+
 
 
 
@@ -65,8 +67,17 @@ use App\Core\Session\Session;
        'auto_reload'=> true
 
    ]);
+
+   $pathParts = explode('/', $url);
+   $role = $pathParts[0]; 
+
+
    $twig->addGlobal('base_url', 'http://localhost/doctorlab');
 
+   $auth = $controller->getSession()->get('user_id');
+   $twig->addGlobal('auth', $auth); 
+   $twig->addGlobal('role', $role);
+   
    $html = $twig->render(
       $route->getControllerName(). '/'. $route->getMethodName(). '.html',
       $data

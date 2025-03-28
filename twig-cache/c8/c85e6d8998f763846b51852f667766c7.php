@@ -48,8 +48,10 @@ class __TwigTemplate_f79e32708b217fdc8131cc648ca5f43b extends Template
         $macros = $this->macros;
         // line 6
         echo "
-<form action=\"/caregiver/update/";
+<form action=\"";
         // line 7
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/caregiver/update/";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "user_id", [], "any", false, false, false, 7), "html", null, true);
         echo "\" method=\"POST\" enctype=\"multipart/form-data\">
 <div class=\"container\">
@@ -70,11 +72,15 @@ class __TwigTemplate_f79e32708b217fdc8131cc648ca5f43b extends Template
         // line 22
         if ((null === twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "profile_photo", [], "any", false, false, false, 22))) {
             // line 23
-            echo "                    <img id=\"preview\" class=\"rounded\" src=\"../../assets/images/katanac1.png\" alt=\"Preview Image\" style=\"width:150px; height: 130px;\">
+            echo "                    <img id=\"preview\" class=\"object-fit-cover border rounded\" src=\"";
+            echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+            echo "/assets/images/katanac1.png\" alt=\"Preview Image\" style=\"width:150px; height: 130px;\">
                   ";
         } else {
             // line 25
-            echo "                  <img id=\"preview\" class=\"rounded\" src=\"../../assets/uploads/images/";
+            echo "                  <img id=\"preview\" class=\"object-fit-cover border rounded\" src=\"";
+            echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+            echo "/assets/uploads/images/";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "profile_photo", [], "any", false, false, false, 25), "html", null, true);
             echo "\" alt=\"Preview Image\" style=\"width:150px; height: 130px;\">
                   ";
@@ -235,14 +241,14 @@ class __TwigTemplate_f79e32708b217fdc8131cc648ca5f43b extends Template
 
           <p class=\"mt-4 ms-1\"><b>Place where you work</b></p>
           <hr style=\"margin-bottom: -1px;\">
-          <a href=\"#\" class=\"text-decoration-none d-block profile\">
+          <a href=\"\" class=\"text-decoration-none d-block profile\">
             <div class=\"d-flex justify-content-between p-2 rounded\">
               <div><small class=\"grey\">Delete Account</small></div>
               <div class=\"d-flex align-items-center\"><i class=\"bi bi-caret-right-fill grey\"></i></div>
             </div>
           </a>
           <hr style=\"margin-bottom: -1px; margin-top:-1px;\">
-          <a href=\"#\" class=\"text-decoration-none d-block profile\">
+          <a href=\"\" class=\"text-decoration-none d-block profile\">
             <div class=\"d-flex justify-content-between p-2 rounded\">
               <div><small class=\"grey\">Legal Information</small></div>
               <div class=\"d-flex align-items-center\"><i class=\"bi bi-caret-right-fill grey\"></i></div>
@@ -265,8 +271,10 @@ class __TwigTemplate_f79e32708b217fdc8131cc648ca5f43b extends Template
       <div class=\"modal-dialog modal-dialog-centered\">
         <div class=\"modal-content\">
           <!-- Forma treba da bude pravilno postavljena -->
-          <form action=\"/caregiver/update/";
+          <form action=\"";
         // line 151
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/caregiver/update/";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "user_id", [], "any", false, false, false, 151), "html", null, true);
         echo "\" method=\"POST\">
             <div class=\"modal-header\">
@@ -296,8 +304,10 @@ class __TwigTemplate_f79e32708b217fdc8131cc648ca5f43b extends Template
 <div class=\"modal fade\" id=\"phone\" tabindex=\"-1\" aria-labelledby=\"change_phone\" aria-hidden=\"true\">
   <div class=\"modal-dialog modal-dialog-centered\">
     <div class=\"modal-content\">
-      <form action=\"/caregiver/update/";
+      <form action=\"";
         // line 174
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/caregiver/update/";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "user_id", [], "any", false, false, false, 174), "html", null, true);
         echo "\" method=\"POST\">
         <div class=\"modal-header\">
@@ -327,8 +337,10 @@ class __TwigTemplate_f79e32708b217fdc8131cc648ca5f43b extends Template
 <div class=\"modal fade\" id=\"password\" tabindex=\"-1\" aria-labelledby=\"change_password\" aria-hidden=\"true\">
   <div class=\"modal-dialog modal-dialog-centered\">
     <div class=\"modal-content\">
-      <form action=\"/caregiver/update/";
+      <form action=\"";
         // line 199
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/caregiver/update/";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "user_id", [], "any", false, false, false, 199), "html", null, true);
         echo "\" method=\"POST\">
         <div class=\"modal-header\">
@@ -355,13 +367,13 @@ class __TwigTemplate_f79e32708b217fdc8131cc648ca5f43b extends Template
 
 <script>
   document.getElementById(\"image\").addEventListener(\"change\", function(event) {
-      var file = event.target.files[0]; // Uzimamo prvi fajl
+      var file = event.target.files[0]; 
       if (file) {
           var reader = new FileReader();
           reader.onload = function(e) {
-              document.getElementById(\"preview\").src = e.target.result; // Postavljamo sliku u <img>
+              document.getElementById(\"preview\").src = e.target.result; 
           };
-          reader.readAsDataURL(file); // Čitamo fajl kao URL
+          reader.readAsDataURL(file); 
       }
   });
   </script>
@@ -383,11 +395,11 @@ class __TwigTemplate_f79e32708b217fdc8131cc648ca5f43b extends Template
 
     public function getDebugInfo()
     {
-        return array (  332 => 199,  313 => 183,  301 => 174,  280 => 158,  270 => 151,  231 => 115,  222 => 108,  211 => 106,  206 => 105,  200 => 103,  196 => 101,  194 => 100,  186 => 94,  175 => 92,  170 => 91,  164 => 89,  160 => 87,  158 => 86,  137 => 68,  127 => 61,  115 => 52,  99 => 41,  83 => 27,  77 => 25,  73 => 23,  71 => 22,  53 => 7,  50 => 6,  46 => 5,  35 => 1,);
+        return array (  342 => 199,  323 => 183,  309 => 174,  288 => 158,  276 => 151,  237 => 115,  228 => 108,  217 => 106,  212 => 105,  206 => 103,  202 => 101,  200 => 100,  192 => 94,  181 => 92,  176 => 91,  170 => 89,  166 => 87,  164 => 86,  143 => 68,  133 => 61,  121 => 52,  105 => 41,  89 => 27,  81 => 25,  75 => 23,  73 => 22,  53 => 7,  50 => 6,  46 => 5,  35 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("", "CaregiverProfile/edit.html", "C:\\laragon\\www\\auction\\views\\CaregiverProfile\\edit.html");
+        return new Source("", "CaregiverProfile/edit.html", "C:\\laragon\\www\\doctorlab\\views\\CaregiverProfile\\edit.html");
     }
 }

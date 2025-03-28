@@ -63,10 +63,12 @@ use App\Core\Session\Session;
 
    $loader = new \Twig\Loader\FilesystemLoader('./views');
    $twig = new \Twig\Environment($loader, [
-       'cache' => './twig-cache',
-       'auto_reload'=> true
+      'debug' => true,
+      'cache' => './twig-cache',
+      'auto_reload'=> true
 
    ]);
+   $twig->addExtension(new \Twig\Extension\DebugExtension());
 
 
    $twig->addGlobal('base_url', 'http://localhost/doctorlab');

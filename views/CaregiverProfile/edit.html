@@ -20,9 +20,9 @@
             <div class="col-lg-4">
                 <div class="text-center">
                   {%if caregiver.profile_photo is null%}
-                    <img id="preview" class="rounded" src="{{ base_url }}/assets/images/katanac1.png" alt="Preview Image" style="width:150px; height: 130px;">
+                    <img id="preview" class="object-fit-cover border rounded" src="{{ base_url }}/assets/images/katanac1.png" alt="Preview Image" style="width:150px; height: 130px;">
                   {%else%}
-                  <img id="preview" class="rounded" src="{{ base_url }}/assets/uploads/images/{{ caregiver.profile_photo }}" alt="Preview Image" style="width:150px; height: 130px;">
+                  <img id="preview" class="object-fit-cover border rounded" src="{{ base_url }}/assets/uploads/images/{{ caregiver.profile_photo }}" alt="Preview Image" style="width:150px; height: 130px;">
                   {%endif%}
                 
                   </div>

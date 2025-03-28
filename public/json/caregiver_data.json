@@ -2,6 +2,7 @@
     "doctors": [
       {
         "title": "Cardiologist",
+        "icon": "bi bi-heart-pulse-fill",
         "services": [
           "General consultation",
           "Follow-up consultation",
@@ -70,6 +71,7 @@
       },
       {
         "title": "Ophthalmologist",
+        "icon": "bi bi-eye-fill",
         "services": [
           "General consultation",
           "Follow-up consultation",
@@ -87,6 +89,7 @@
       },
       {
         "title": "Pediatrician",
+        "icon":"bi bi-clipboard-fill",
         "services": [
           "General consultation",
           "Follow-up consultation",

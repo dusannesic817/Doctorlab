@@ -12,6 +12,7 @@ return [
     #Caregiver
     App\Core\Route::get('|^caregiver/register/?$|', "Caregiver", 'create'),
     App\Core\Route::post('|^caregiver/register/?$|', "Caregiver", "store" ),
+    App\Core\Route::get('|^caregiver/show/([0-9+])/?$|', "Caregiver", "show"),
 
     App\Core\Route::get('|^category/([0-9+])/?$|','Category','show'),
     App\Core\Route::get('|^auction/([0-9+])/?$|','Auction','show'),

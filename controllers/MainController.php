@@ -14,14 +14,31 @@ class MainController extends Controller{
 
      $clinicModel = new ClinicModel($this->getDatabaseConnection());
      $clinices= $clinicModel->getAll();
+     $doctors=$this->getJson('caregiver_data.json');
 
+    /* foreach($doctors['doctors'] as $value){
+          var_dump($value['title']);
+     }
+
+     exit();*/
     
-     //$a=$this->getSession()->get('user_id');
+     
 
+     $this->set('doctors', $doctors);
      
      $this->set('clinices',$clinices);
     
+    
+    //$a=$this->getSession()->get('user_id');
 
+    /* foreach($caregiver_data['doctors'] as $value){
+          print_r($value['title']);
+     }
+
+     exit();*/
+     
+
+    
     
     //$this->getSession()->clear();
 

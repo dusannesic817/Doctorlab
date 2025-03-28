@@ -68,13 +68,12 @@ use App\Core\Session\Session;
 
    ]);
 
-   $pathParts = explode('/', $url);
-   $role = $pathParts[0]; 
-
 
    $twig->addGlobal('base_url', 'http://localhost/doctorlab');
 
    $auth = $controller->getSession()->get('user_id');
+   $role = $controller->getSession()->get('role');
+   
    $twig->addGlobal('auth', $auth); 
    $twig->addGlobal('role', $role);
    

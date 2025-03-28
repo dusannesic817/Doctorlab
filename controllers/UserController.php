@@ -113,6 +113,8 @@ class UserController extends Controller{
 
        $this->getSession()->put('user_id',$email->user_id);
        $this->getSession()->save();
+       $this->getSession()->put('role',$email->role);
+       $this->getSession()->save();
 
        $auth = $this->getSession()->get('user_id');
        

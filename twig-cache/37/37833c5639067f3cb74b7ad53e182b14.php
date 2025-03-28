@@ -100,24 +100,62 @@ class __TwigTemplate_47eb47f30af045a97f1ed06b366c0bf9 extends Template
                   <a class=\"nav-link mt-2 ms-2\" href=\"/\"><b><small>Tarrifs</small></b></a>
                 </li>
 
-
+                ";
+        // line 61
+        if (($context["auth"] ?? null)) {
+            // line 62
+            echo "                ";
+            if ((($context["role"] ?? null) == "client")) {
+                echo "               
               </ul>
+              <ul class=\"navbar-nav ms-auto mt-2\">
+                <li class=\"nav-item\">
+                  <a class=\"nav-link ms-2\" href=\"";
+                // line 66
+                echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+                echo "/user/profile/";
+                echo twig_escape_filter($this->env, ($context["auth"] ?? null), "html", null, true);
+                echo "\"><b><small>Profile</small></b></a>
+                </li>
+              </ul>
+              ";
+            } else {
+                // line 70
+                echo "              <ul class=\"navbar-nav ms-auto mt-2\">
+                <li class=\"nav-item\">
+                  <a class=\"nav-link ms-2\" href=\"";
+                // line 72
+                echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+                echo "/caregiver/profile/";
+                echo twig_escape_filter($this->env, ($context["auth"] ?? null), "html", null, true);
+                echo "\"><b><small>Profile</small></b></a>
+                </li>
+              </ul>
+              ";
+            }
+            // line 76
+            echo "              ";
+        } else {
+            // line 77
+            echo "              </ul>
               <ul class=\"navbar-nav ms-auto mt-2\">
                 <li class=\"nav-item border rounded me-2 border-success ps-1 pe-1 mb-1\">
                   <a class=\"nav-link\" href=\"";
-        // line 65
-        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
-        echo "/caregiver/register\"><b><small>Are you a health professional?</small></b></a>
+            // line 80
+            echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+            echo "/caregiver/register\"><b><small>Are you a health professional?</small></b></a>
                 </li>
                 <li class=\"nav-item\">
                   <a class=\"nav-link ms-2\" href=\"";
-        // line 68
-        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
-        echo "/login\"><b><small>Make appoitment?</small></b></a>
+            // line 83
+            echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+            echo "/login\"><b><small>Make appoitment?</small></b></a>
                 </li>
-                
               </ul>
-            </div>
+              ";
+        }
+        // line 87
+        echo "            </div>
           </div>
         </nav>
       </div>
@@ -138,7 +176,7 @@ class __TwigTemplate_47eb47f30af045a97f1ed06b366c0bf9 extends Template
 
     public function getDebugInfo()
     {
-        return array (  115 => 68,  109 => 65,  49 => 8,  45 => 7,  37 => 1,);
+        return array (  158 => 87,  151 => 83,  145 => 80,  140 => 77,  137 => 76,  128 => 72,  124 => 70,  115 => 66,  107 => 62,  105 => 61,  49 => 8,  45 => 7,  37 => 1,);
     }
 
     public function getSourceContext()

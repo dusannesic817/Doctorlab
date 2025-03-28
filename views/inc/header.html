@@ -58,7 +58,22 @@
                   <a class="nav-link mt-2 ms-2" href="/"><b><small>Tarrifs</small></b></a>
                 </li>
 
-
+                {%if auth %}
+                {%if role == 'client' %}               
+              </ul>
+              <ul class="navbar-nav ms-auto mt-2">
+                <li class="nav-item">
+                  <a class="nav-link ms-2" href="{{ base_url }}/user/profile/{{auth}}"><b><small>Profile</small></b></a>
+                </li>
+              </ul>
+              {%else%}
+              <ul class="navbar-nav ms-auto mt-2">
+                <li class="nav-item">
+                  <a class="nav-link ms-2" href="{{ base_url }}/caregiver/profile/{{auth}}"><b><small>Profile</small></b></a>
+                </li>
+              </ul>
+              {%endif%}
+              {%else%}
               </ul>
               <ul class="navbar-nav ms-auto mt-2">
                 <li class="nav-item border rounded me-2 border-success ps-1 pe-1 mb-1">
@@ -67,8 +82,8 @@
                 <li class="nav-item">
                   <a class="nav-link ms-2" href="{{ base_url }}/login"><b><small>Make appoitment?</small></b></a>
                 </li>
-                
               </ul>
+              {%endif%}
             </div>
           </div>
         </nav>

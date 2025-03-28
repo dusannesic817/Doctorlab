@@ -55,9 +55,9 @@ class __TwigTemplate_afdb0d0839ef0beb6666a24f75cc9de6 extends Template
   <div class=\"container-fluid\">
     <div class=\"row vh-100\">
       <div class=\"col-lg-3 mt-3 text-center border-end border-secondary-subtle  h-100\">
-        <p class=\"mt-4\"><b>Appointment History ";
+        <p class=\"mt-4\"><b>Appointment History";
         // line 13
-        echo twig_escape_filter($this->env, ($context["arguments"] ?? null), "html", null, true);
+        echo twig_escape_filter($this->env, ($context["role"] ?? null), "html", null, true);
         echo "</b></p>
         <hr>
         <div class=\"list-group border-0\">

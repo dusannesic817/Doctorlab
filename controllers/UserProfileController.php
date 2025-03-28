@@ -98,7 +98,7 @@ class UserProfileController extends UserRoleController{
     $this->getSession()->put('success_edit',"Successfully changed data");
     $this->getSession()->save();
 
-    $this->redirect("/user/profile/".$id);
+    $this->redirect("/client/profile/".$id);
 
          
       

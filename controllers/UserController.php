@@ -120,7 +120,7 @@ class UserController extends Controller{
        
 
        if($email->role=='client'){
-        $this->redirect('/user/appointmens/'.$auth);
+        $this->redirect('/client/appointmens/'.$auth);
        
        }else{
         $this->redirect('/caregiver/appointmens/'.$auth);

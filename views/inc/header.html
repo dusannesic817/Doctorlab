@@ -59,20 +59,14 @@
                 </li>
 
                 {%if auth %}
-                {%if role == 'client' %}               
+                      
               </ul>
               <ul class="navbar-nav ms-auto mt-2">
                 <li class="nav-item">
-                  <a class="nav-link ms-2" href="{{ base_url }}/user/profile/{{auth}}"><b><small>Profile</small></b></a>
+                  <a class="nav-link ms-2" href="{{ base_url }}/{{role}}/profile/{{auth}}"><b><small>Profile</small></b></a>
                 </li>
               </ul>
-              {%else%}
-              <ul class="navbar-nav ms-auto mt-2">
-                <li class="nav-item">
-                  <a class="nav-link ms-2" href="{{ base_url }}/caregiver/profile/{{auth}}"><b><small>Profile</small></b></a>
-                </li>
-              </ul>
-              {%endif%}
+             
               {%else%}
               </ul>
               <ul class="navbar-nav ms-auto mt-2">

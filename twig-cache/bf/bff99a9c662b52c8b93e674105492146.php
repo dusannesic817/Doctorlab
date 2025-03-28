@@ -68,8 +68,10 @@ class __TwigTemplate_7c8941106b4a0859f4189e0031b3ed25 extends Template
         if (((((null === twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "profile_photo", [], "any", false, false, false, 17)) || (null === twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "diploma_pdf", [], "any", false, false, false, 17))) || (null === twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "caregiver_data", [], "any", false, false, false, 17))) || (null === twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "university_data", [], "any", false, false, false, 17)))) {
             // line 18
             echo "              
-              <small><a href=\"/caregiver/edit/";
+              <small><a href=\"";
             // line 19
+            echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+            echo "/caregiver/edit/";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "user_id", [], "any", false, false, false, 19), "html", null, true);
             echo "\" style=\"color: red;\">Confirm your profile</a> <i class=\"bi bi-exclamation-circle-fill\" style=\"color: red;\" ></i></small>
               ";
@@ -83,7 +85,10 @@ class __TwigTemplate_7c8941106b4a0859f4189e0031b3ed25 extends Template
               
             </div>
             <div class=\"col-lg-4\">
-                <div class=\"text-center\"><img src=\"../../assets/images/katanac1.png\" alt=\"\" style=\"width:150px; height: 120px;\"></div>
+                <div class=\"text-center\"><img src=\"";
+        // line 27
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/assets/images/katanac1.png\" alt=\"\" style=\"width:150px; height: 120px;\"></div>
             </div>
           </div>
 
@@ -175,7 +180,10 @@ class __TwigTemplate_7c8941106b4a0859f4189e0031b3ed25 extends Template
             </div>
           </a>
           <hr class=\"mb-5\"style=\"margin-bottom: -1px; margin-top:-1px;\">
-          <a href=\"/caregiver/logout\" class=\"text-decoration-none d-block profile\">
+          <a href=\"";
+        // line 108
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/caregiver/logout\" class=\"text-decoration-none d-block profile\">
             <div class=\"d-flex justify-content-between p-2 rounded\">
               <div><small><b style=\"color: rgb(145, 25, 25);\"><i class=\"bi bi-box-arrow-right\"></i> Log Out</b></small></div>
               <div class=\"d-flex align-items-center\"><i class=\"bi bi-caret-right-fill grey\"></i></div>
@@ -192,8 +200,10 @@ class __TwigTemplate_7c8941106b4a0859f4189e0031b3ed25 extends Template
     <div class=\"modal fade\" id=\"name\" tabindex=\"-1\" aria-labelledby=\"change_name\" aria-hidden=\"true\">
       <div class=\"modal-dialog modal-dialog-centered\">
         <div class=\"modal-content\">
-          <form action=\"/caregiver/update/";
+          <form action=\"";
         // line 125
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/caregiver/update/";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "user_id", [], "any", false, false, false, 125), "html", null, true);
         echo "\" method=\"POST\">
             <div class=\"modal-header\">
@@ -221,8 +231,10 @@ class __TwigTemplate_7c8941106b4a0859f4189e0031b3ed25 extends Template
 <div class=\"modal fade\" id=\"phone\" tabindex=\"-1\" aria-labelledby=\"change_phone\" aria-hidden=\"true\">
   <div class=\"modal-dialog modal-dialog-centered\">
     <div class=\"modal-content\">
-      <form action=\"/caregiver/update/";
+      <form action=\"";
         // line 146
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/caregiver/update/";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "user_id", [], "any", false, false, false, 146), "html", null, true);
         echo "\" method=\"POST\">
         <div class=\"modal-header\">
@@ -252,8 +264,10 @@ class __TwigTemplate_7c8941106b4a0859f4189e0031b3ed25 extends Template
 <div class=\"modal fade\" id=\"password\" tabindex=\"-1\" aria-labelledby=\"change_password\" aria-hidden=\"true\">
   <div class=\"modal-dialog modal-dialog-centered\">
     <div class=\"modal-content\">
-      <form action=\"/caregiver/update/";
+      <form action=\"";
         // line 171
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/caregiver/update/";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "user_id", [], "any", false, false, false, 171), "html", null, true);
         echo "\" method=\"POST\">
         <div class=\"modal-header\">
@@ -306,11 +320,11 @@ class __TwigTemplate_7c8941106b4a0859f4189e0031b3ed25 extends Template
 
     public function getDebugInfo()
     {
-        return array (  293 => 200,  289 => 199,  257 => 171,  238 => 155,  226 => 146,  207 => 132,  197 => 125,  134 => 65,  124 => 58,  102 => 41,  82 => 23,  78 => 21,  73 => 19,  70 => 18,  68 => 17,  56 => 7,  54 => 6,  51 => 5,  47 => 4,  36 => 1,);
+        return array (  307 => 200,  303 => 199,  269 => 171,  250 => 155,  236 => 146,  217 => 132,  205 => 125,  185 => 108,  139 => 65,  129 => 58,  107 => 41,  90 => 27,  84 => 23,  80 => 21,  73 => 19,  70 => 18,  68 => 17,  56 => 7,  54 => 6,  51 => 5,  47 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("", "CaregiverProfile/show.html", "C:\\laragon\\www\\auction\\views\\CaregiverProfile\\show.html");
+        return new Source("", "CaregiverProfile/show.html", "C:\\laragon\\www\\doctorlab\\views\\CaregiverProfile\\show.html");
     }
 }

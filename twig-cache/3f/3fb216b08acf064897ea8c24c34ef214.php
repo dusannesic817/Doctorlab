@@ -163,7 +163,7 @@ class __TwigTemplate_2d0fba3cccfa9a1cb761e922b30e1fda extends Template
           <a href=\"";
         // line 101
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
-        echo "//user/logout\" class=\"text-decoration-none d-block profile\">
+        echo "/client/logout\" class=\"text-decoration-none d-block profile\">
             <div class=\"d-flex justify-content-between p-2 rounded\">
               <div><small><b style=\"color: rgb(145, 25, 25);\"><i class=\"bi bi-box-arrow-right\"></i> Log Out</b></small></div>
               <div class=\"d-flex align-items-center\"><i class=\"bi bi-caret-right-fill grey\"></i></div>
@@ -185,7 +185,7 @@ class __TwigTemplate_2d0fba3cccfa9a1cb761e922b30e1fda extends Template
           <form action=\"";
         // line 120
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
-        echo "/user/update/";
+        echo "/client/update/";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["client"] ?? null), "user_id", [], "any", false, false, false, 120), "html", null, true);
         echo "\" method=\"POST\">
             <div class=\"modal-header\">
@@ -217,7 +217,7 @@ class __TwigTemplate_2d0fba3cccfa9a1cb761e922b30e1fda extends Template
       <form action=\"";
         // line 142
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
-        echo "/user/update/";
+        echo "/client/update/";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["client"] ?? null), "user_id", [], "any", false, false, false, 142), "html", null, true);
         echo "\" method=\"POST\">
         <div class=\"modal-header\">
@@ -249,7 +249,7 @@ class __TwigTemplate_2d0fba3cccfa9a1cb761e922b30e1fda extends Template
       <form action=\"";
         // line 166
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
-        echo "/user/update/";
+        echo "/client/update/";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["client"] ?? null), "user_id", [], "any", false, false, false, 166), "html", null, true);
         echo "\" method=\"POST\">
         <div class=\"modal-header\">

@@ -18,16 +18,18 @@ return [
 
     
 
-    #User and caregiver role routes:
-    App\Core\Route::get('|^user/profile/([0-9+])/?$|', "UserProfile", 'show'),
-    App\Core\Route::post('|^user/update/([0-9+])/?$|', "UserProfile", 'update'),
-    App\Core\Route::get('|^user/logout/?$|', "UserProfile", 'logout'),
+    #UserProfile
+    App\Core\Route::get('|^client/profile/([0-9+])/?$|', "UserProfile", 'show'),
+    App\Core\Route::post('|^client/update/([0-9+])/?$|', "UserProfile", 'update'),
+    App\Core\Route::get('|^client/logout/?$|', "UserProfile", 'logout'),
 
 
     #Appointement routes:
-    App\Core\Route::get('|^user/appointmens/([0-9+])/?$|', "Appointment", 'show'),
+    App\Core\Route::get('|^client/appointmens/([0-9+])/?$|', "Appointment", 'show'),
     App\Core\Route::get('|^caregiver/appointmens/([0-9+])/?$|', "Appointment", 'show'),
-   
+
+
+    #CaregiverProfie
     App\Core\Route::get('|^caregiver/profile/([0-9+])/?$|', "CaregiverProfile", 'show'),
     App\Core\Route::get('|^caregiver/edit/([0-9+])/?$|', "CaregiverProfile", 'edit'),
     App\Core\Route::post('|^caregiver/update/([0-9+])/?$|', "CaregiverProfile", 'update'),

@@ -64,7 +64,10 @@ class __TwigTemplate_39ed99ce3669a9374e4cac531cad97f9 extends Template
         echo "/user/login\" role=\"button\"><b>Login</b></a>
 
               <small class=\"text-center mb-2 mt-5\"><b>Do you have Google Account?</b></small>
-              <button type=\"button\" class=\"btn btn-primary mb-2\"><b>Google</b></button>
+              <a href=\"";
+        // line 18
+        echo twig_escape_filter($this->env, ($context["googleAuth"] ?? null), "html", null, true);
+        echo "\" class=\"btn btn-primary mb-2\"><b>Google</b></a>
               <small class=\"text-center mb-2\"><b>New to Doctolab?</b></small>
               <a class=\"btn btn-primary\" href=\"";
         // line 20
@@ -112,7 +115,7 @@ class __TwigTemplate_39ed99ce3669a9374e4cac531cad97f9 extends Template
 
     public function getDebugInfo()
     {
-        return array (  99 => 34,  95 => 33,  89 => 36,  87 => 33,  71 => 20,  63 => 15,  51 => 5,  47 => 4,  36 => 1,);
+        return array (  102 => 34,  98 => 33,  92 => 36,  90 => 33,  74 => 20,  69 => 18,  63 => 15,  51 => 5,  47 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -134,7 +137,7 @@ class __TwigTemplate_39ed99ce3669a9374e4cac531cad97f9 extends Template
               <a class=\"btn btn-warning mb-2\" href=\"{{ base_url }}/user/login\" role=\"button\"><b>Login</b></a>
 
               <small class=\"text-center mb-2 mt-5\"><b>Do you have Google Account?</b></small>
-              <button type=\"button\" class=\"btn btn-primary mb-2\"><b>Google</b></button>
+              <a href=\"{{googleAuth}}\" class=\"btn btn-primary mb-2\"><b>Google</b></a>
               <small class=\"text-center mb-2\"><b>New to Doctolab?</b></small>
               <a class=\"btn btn-primary\" href=\"{{ base_url }}/user/register\" role=\"button\"><b>Sing Up</b></a>
 

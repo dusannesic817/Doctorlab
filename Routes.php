@@ -6,6 +6,7 @@ return [
     App\Core\Route::post('|^user/register/?$|', "User", "store" ),
     App\Core\Route::get('|^user/login/?$|', "User", 'login'),
     App\Core\Route::get('|^login/?$|', "User", 'index'),
+    App\Core\Route::get('|^googleauth/?$|', "User", 'googleAuth'),
     App\Core\Route::post('|^user/login/?$|', "User", "authenticate" ),
    
 

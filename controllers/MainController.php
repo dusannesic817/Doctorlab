@@ -21,8 +21,11 @@ class MainController extends Controller{
      }
 
      exit();*/
-    
-     
+
+
+   /*$user = new UserController($this->getDatabaseConnection());
+     $user->googleAuth();
+     exit();*/
 
      $this->set('doctors', $doctors);
      

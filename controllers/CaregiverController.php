@@ -20,6 +20,8 @@ class CaregiverController extends Controller{
            $count++;
         }
 
+      
+
 
         
         $this->set('caregivers', $caregivers);

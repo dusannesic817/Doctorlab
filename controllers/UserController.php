@@ -24,6 +24,9 @@ class UserController extends Controller{
     }
     
     public function googleAuth(){
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
         // Proveri da li je 'code' prisutan u URL-u
         if(!isset($_GET['code'])){
             exit("Login failed: 'code' parameter missing.");
@@ -56,16 +59,28 @@ class UserController extends Controller{
 
     
         // Ako korisnik ne postoji, dodaj ga u bazu
-        if (!$user) {
-            // Loguj podatke pre dodavanja u bazu
-           
-            $user_id = $userModel->add([
-                'name' => $userInfo->given_name,
-                'surname' => $userInfo->family_name,
-                'email' => $userInfo->email,
-            ]);
+        if ($user) {
+            
+        $this->getSession()->put('user_id',$user->user_id);
+        $this->getSession()->put('role',$user->role);
+        $this->getSession()->save();
+        $auth = $this->getSession()->get('user_id');
+
+        var_dump($auth);
+        exit();
+        
+        $this->redirect('/client/appointmens/'.$auth);
+        exit();
            
         }
+
+
+
+        $userModel->add([
+            'name' => $userInfo->given_name,
+            'surname' => $userInfo->family_name,
+            'email' => $userInfo->email,
+        ]);
 
         
         $this->redirect('/');
@@ -202,7 +217,7 @@ class UserController extends Controller{
 
 
     public function googleLogIn() {
-        $token = $this->getSession()->get('access_token');
+        /*$token = $this->getSession()->get('access_token');
     
         if (isset($token)) {
             // Token postoji, korisnik je već prijavljen
@@ -226,7 +241,7 @@ class UserController extends Controller{
             // Redirektuj korisnika na početnu stranicu ili dashboard
             $this->redirect("/");
             exit;
-        }
+        }*/
     
         // Generiši URL za Google login
         $client = new Client();

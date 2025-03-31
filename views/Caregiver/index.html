@@ -1,0 +1,121 @@
+{% extends "_global/index.html" %}
+
+
+{% block main %}
+
+
+<div class="container">
+  <div class="row mt-3">
+    <div class="col-12">
+      <div class="d-flex flex-row mb-3">
+        <div class="p-2 me-2">
+          <div class="dropdown">
+            <button class="btn border rounded-pill dugme" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <small class="pe-2 ps-2">Availabilties</small>
+            </button>
+            <ul class="dropdown-menu p-4 text-body-secondary dropdown-menu-custom">
+              <li><a class="dropdown-item" href="#">Regular link</a></li>
+              <li><a class="dropdown-item disabled" aria-disabled="true">Disabled link</a></li>
+              <li><a class="dropdown-item" href="#">Another link</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="p-2 me-2">
+          <div class="dropdown ">
+            <button class="btn border rounded-pill dugme" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <small class="pe-2 ps-2">Honoriaa</small>
+            </button>
+            <ul class="dropdown-menu p-4 text-body-secondary dropdown-menu-custom">
+              <li><a class="dropdown-item" href="#">Regular link</a></li>
+              <li><a class="dropdown-item disabled" aria-disabled="true">Disabled link</a></li>
+              <li><a class="dropdown-item" href="#">Another link</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="p-2 ">
+
+          <div class="dropdown ">
+            <button class="btn border rounded-pill dugme" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <small class="pe-2 ps-2">Reason for consultation</small>
+            </button>
+            <ul class="dropdown-menu p-4 text-body-secondary dropdown-menu-custom">
+              <li><a class="dropdown-item" href="#">Regular link</a></li>
+              <li><a class="dropdown-item disabled" aria-disabled="true">Disabled link</a></li>
+              <li><a class="dropdown-item" href="#">Another link</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<hr class="custom-hr">
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <small><b>{{count}} Reults</b></small><br>
+      <small>Find in Serbia a Doctor (or a profesional offering acts of cardilogy and vascluar) offering online
+        appointment booking</small>
+    </div>
+  </div>
+  <div class="row mt-3 gy-3">
+    <div class="col-12 col-lg-8">
+      {% for caregiver in caregivers%}
+      <div class="card mb-2 border border-primary-subtle" style="width: 100%;">
+        <div class="row">
+          <div class="col-12 col-lg-4">
+            <div class="d-flex flex-row mb-3">
+              <img src="{{base_url}}/assets/uploads/images/{{caregiver.profile_photo}}" class="rounded-circle ms-3 mt-3" alt="..."
+                style="width: 65px; height: 65px; object-fit: cover;">
+              <div class="p-2 ms-2 mt-3">
+                Dr.{{caregiver.name}} {{caregiver.surname}} <br> <small>{{caregiver.caregiver_data.title}}</small></div>
+            </div>
+            <div class="card-body ms-3">
+              <p class="card-text">Rue De Villiers 7 <br> <small>Paris</small></p>
+
+              <a href="#" class="btn btn-primary " style="width: 100%;">Make Appointment</a>
+            </div>
+          </div>
+          
+          <div class="col-12 col-lg-7">
+            <p>Text</p>
+          </div>
+        </div>
+      </div>
+      {%endfor%}
+   
+
+    </div>
+  <!-- Col-4 for aside content -->
+  <div class="col-12 col-lg-4">
+    <div class="card sticky-top h-75" style="width: 100%;">
+      <div class="card-body p-0"> <!-- Uklanjamo padding da mapa popuni card -->
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d45973.02516856684!2d21.354716326223837!3d43.93217331171238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4756bf451d4d0011%3A0x22d95992c68c3da7!2zxIZ1cHJpamE!5e0!3m2!1sbs!2srs!4v1740178064511!5m2!1sbs!2srs"
+          style="border:0; width: 100%; height: 100%;"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </div>
+  
+  </div>
+</div>
+
+
+
+
+
+
+{% block naslov %}
+  Search
+  
+{% endblock %}
+
+
+{% endblock %}

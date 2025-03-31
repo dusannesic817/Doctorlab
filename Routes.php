@@ -11,6 +11,7 @@ return [
    
 
     #Caregiver
+    App\Core\Route::get('|^caregiver/index/?$|', "Caregiver", 'index'),
     App\Core\Route::get('|^caregiver/register/?$|', "Caregiver", 'create'),
     App\Core\Route::post('|^caregiver/register/?$|', "Caregiver", "store" ),
     App\Core\Route::get('|^caregiver/show/([0-9+])/?$|', "Caregiver", "show"),

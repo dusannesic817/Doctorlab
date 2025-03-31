@@ -11,7 +11,21 @@ class CaregiverController extends Controller{
 
 
     public function index(){
+        $user = new UserModel($this->getDatabaseConnection());
+
+        $caregivers = $user->getAllCaregivers('role','caregiver');
+
+        $count=0;
+        foreach($caregivers as $value){
+           $count++;
+        }
+
+
         
+        $this->set('caregivers', $caregivers);
+        $this->set('count', $count);
+
+
     }
 
     public function show($id){

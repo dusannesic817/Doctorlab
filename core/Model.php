@@ -88,7 +88,8 @@ abstract class Model{
             throw new \Exception('Invalid field name or value '. $fieldName);
 
         }
-        $sql = "SELECT * FROM " .$this->getTableName()." WHERE ".$fieldName." = ?;";
+        $sql = "SELECT * FROM " .$this->getTableName()." WHERE `" . $fieldName . "` = ?;";
+
         $prep = $this->dbc->getConnection()->prepare($sql);
         $res = $prep->execute([$value]);
 
@@ -100,22 +101,20 @@ abstract class Model{
         return $item;
     }
 
-    final public function getAllByFieldName(string $fieldName,$value){
-        if(!$this->isFieldValueValid($fieldName,$value)){
-            throw new \Exception('Invalid field name'. $fieldName);
-
+    final public function getAllByFieldName(string $fieldName, $value) {
+        if (!$this->isFieldValueValid($fieldName, $value)) {
+            throw new \Exception('Invalid field name: ' . $fieldName);
         }
-        $sql = "SELECT * FROM " .$this->getTableName()." WHERE ".$fieldName." = ?;";
+    
+        $sql = "SELECT * FROM " . $this->getTableName() . " WHERE `" . $fieldName . "` = ?;";
         $prep = $this->dbc->getConnection()->prepare($sql);
-        $res = $prep->execute([$value]);
-
-        $items = [];
-
-        if($res){
-            $items= $prep->fetchAll(PDO::FETCH_OBJ);
-        }
+        $prep->execute([$value]);
+    
+        $items = $prep->fetchAll(PDO::FETCH_OBJ);
+    
         return $items;
     }
+    
 //prepakovati
 private function checkFields($data) {
 

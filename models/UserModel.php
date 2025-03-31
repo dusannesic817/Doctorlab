@@ -39,6 +39,16 @@ class UserModel extends Model{
 
 
 
+    public function getAllCaregivers($fieldName,$value){
+        $users=$this->getAllByFieldName($fieldName,$value);
+
+        foreach ($users as $user) {
+            $user->caregiver_data = json_decode($user->caregiver_data, true);
+            $user->university_data = json_decode($user->university_data, true);
+        }
+
+        return $users;
+    }
 
 
 }

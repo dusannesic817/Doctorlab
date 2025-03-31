@@ -8,6 +8,8 @@ return [
     App\Core\Route::get('|^login/?$|', "User", 'index'),
     App\Core\Route::get('|^googleauth/?$|', "User", 'googleAuth'),
     App\Core\Route::post('|^user/login/?$|', "User", "authenticate" ),
+
+  
    
 
     #Caregiver
@@ -25,6 +27,10 @@ return [
     App\Core\Route::get('|^client/profile/([0-9+])/?$|', "UserProfile", 'show'),
     App\Core\Route::post('|^client/update/([0-9+])/?$|', "UserProfile", 'update'),
     App\Core\Route::get('|^client/logout/?$|', "UserProfile", 'logout'),
+
+
+    #MakeAppointment
+    App\Core\Route::get('|^makeappointment/type/([0-9+])/?$|', "MakeAppointment", 'type'),
 
 
     #Appointement routes:

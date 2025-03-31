@@ -175,7 +175,10 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
             quality of life at work</div>
           <div class=\"p-2 d-none  d-lg-block\"><i class=\"bi bi-arrow-right\" style=\"color:  #ffcd4d\"></i> Increase the
             revenue of your business</div>
-          <a class=\"btn btn-primary mt-4\" href=\"#\" role=\"button\">Learn more about our solutions</a>
+          <a class=\"btn btn-primary mt-4\" href=\"";
+        // line 111
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/caregiver/index\" role=\"button\">Learn more about our solutions</a>
         </div>
       </div>
     </div>
@@ -369,7 +372,7 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
 
     public function getDebugInfo()
     {
-        return array (  328 => 221,  319 => 215,  266 => 164,  256 => 160,  252 => 159,  248 => 157,  244 => 156,  235 => 149,  225 => 145,  221 => 144,  217 => 142,  213 => 141,  204 => 135,  159 => 93,  141 => 78,  129 => 69,  117 => 60,  98 => 44,  87 => 36,  76 => 28,  52 => 6,  50 => 5,  46 => 4,  35 => 1,);
+        return array (  331 => 221,  322 => 215,  269 => 164,  259 => 160,  255 => 159,  251 => 157,  247 => 156,  238 => 149,  228 => 145,  224 => 144,  220 => 142,  216 => 141,  207 => 135,  180 => 111,  159 => 93,  141 => 78,  129 => 69,  117 => 60,  98 => 44,  87 => 36,  76 => 28,  52 => 6,  50 => 5,  46 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -484,7 +487,7 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
             quality of life at work</div>
           <div class=\"p-2 d-none  d-lg-block\"><i class=\"bi bi-arrow-right\" style=\"color:  #ffcd4d\"></i> Increase the
             revenue of your business</div>
-          <a class=\"btn btn-primary mt-4\" href=\"#\" role=\"button\">Learn more about our solutions</a>
+          <a class=\"btn btn-primary mt-4\" href=\"{{base_url}}/caregiver/index\" role=\"button\">Learn more about our solutions</a>
         </div>
       </div>
     </div>

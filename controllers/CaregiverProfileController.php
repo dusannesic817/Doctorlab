@@ -11,7 +11,7 @@ use Exception;
 class CaregiverProfileController extends UserRoleController{
 
 
-
+    
 
     public function show($id){
         $user = new UserModel($this->getDatabaseConnection());

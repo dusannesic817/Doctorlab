@@ -1,15 +1,13 @@
 <?php
 
+
 namespace App\Controllers;
-
 use App\Core\Role\UserRoleController;
-use App\Models\AppointmentModel;
 
 
-class AppointmentController extends UserRoleController{
+class AvailabilityController extends UserRoleController{
 
-    
-    
+
     public function index(){
         
     }
@@ -41,5 +39,6 @@ class AppointmentController extends UserRoleController{
     public function destroy($id){
 
     }
+
 
 }

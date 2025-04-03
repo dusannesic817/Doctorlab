@@ -19,7 +19,12 @@ class AvailabilityController extends UserRoleController{
 
 
     public function create(){
+        $timesData = $this->getJson('times.json');
 
+        $months = $this->getMonths();
+
+        $this->set('timesData', $timesData);
+        $this->set('months', $months);
     }
 
     public function store(){
@@ -40,5 +45,20 @@ class AvailabilityController extends UserRoleController{
 
     }
 
+
+    public function getMonths(){
+       
+    $currentDate = new \DateTime();
+    $currentMonth = $currentDate->format('n'); 
+    $months = [];
+
+    for ($month = $currentMonth; $month <= 12; $month++) {
+    $months[] = \DateTime::createFromFormat('n', $month)->format('F'); 
+
+    }
+
+    return $months;
+
+    }
 
 }

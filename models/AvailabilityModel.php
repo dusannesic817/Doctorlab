@@ -17,9 +17,9 @@ class AvailabilityModel extends Model{
         return [
             'availability_id'=>new Field((new NumberValidator())->setIntegerLength(10), false),
             'user_id'=>new Field((new NumberValidator())->setIntegerLength(10)),
-            'days'=>new Field((new JSONValidator())),
-            'start_time'=>new Field((new JSONValidator())),
-            'end_time'=>new Field((new JSONValidator())),
+            'schedule'=>new Field((new JSONValidator())),
+            'created_at'=>new Field((new DateTimeValidator())->allowDate()->allowTime(), false),
+           
             
         ];
     }

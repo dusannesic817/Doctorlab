@@ -14,13 +14,7 @@ class UserRoleController extends Controller{
             return;
         }
 
-        $userModel = new UserModel($this->getDatabaseConnection());
-        $user = $userModel->getById($user_id);
-
-        if ($user === null || $user->user_id != $user_id) {
-            $this->redirect('/user/login');
-            return;
-        }
+     
 
 
     }  

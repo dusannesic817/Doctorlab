@@ -235,3 +235,36 @@ transform: scale(1.05);
     position: absolute;
     cursor: move;
   }
+
+  .verticals {
+    border-right: 2px solid black; /* Deblja crna linija */
+    height: 100%; /* Da se proteže kroz celu visinu kolone */
+  }
+
+  .timeslot {
+    cursor: pointer;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.timeslot:hover {
+    background-color: #f0f0f0;
+}
+
+.timeslot.selected {
+    background-color: #0056b3; /* Tamno plava za selektovane */
+    color: white;
+}
+
+.calendar-input{
+    background-color:#e1f5fe !important;
+}
+
+.calendar-input:hover{
+    background-color:#81cdf0 !important;
+    color: #01264d !important;
+}
+

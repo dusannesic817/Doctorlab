@@ -35,6 +35,8 @@ return [
 
     #Availabilit-auth
     App\Core\Route::get('|^availability/show/([0-9+])/?$|', "Availability", 'show'),
+    App\Core\Route::get('|^availability/create/?$|', "Availability", 'create'),
+    App\Core\Route::post('|^availability/store/?$|', "Availability", 'store'),
 
 
     #CaregiverProfie-auth

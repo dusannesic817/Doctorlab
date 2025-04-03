@@ -116,30 +116,41 @@ class __TwigTemplate_50224a08d9a49685f418e06832038247 extends Template
             echo "/profile/";
             echo twig_escape_filter($this->env, ($context["auth"] ?? null), "html", null, true);
             echo "\"><b><small>Profile</small></b></a>
+                 
+                </li>
+                <li class=\"nav-item\">
+                  <a class=\"nav-link ms-2\" href=\"";
+            // line 70
+            echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+            echo "/";
+            echo twig_escape_filter($this->env, ($context["role"] ?? null), "html", null, true);
+            echo "/appointmens/";
+            echo twig_escape_filter($this->env, ($context["auth"] ?? null), "html", null, true);
+            echo "\"><b><small>My appoitments</small></b></a>
                 </li>
               </ul>
              
               ";
         } else {
-            // line 71
+            // line 75
             echo "              </ul>
               <ul class=\"navbar-nav ms-auto mt-2\">
                 <li class=\"nav-item border rounded me-2 border-success ps-1 pe-1 mb-1\">
                   <a class=\"nav-link\" href=\"";
-            // line 74
+            // line 78
             echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
             echo "/caregiver/register\"><b><small>Are you a health professional?</small></b></a>
                 </li>
                 <li class=\"nav-item\">
                   <a class=\"nav-link ms-2\" href=\"";
-            // line 77
+            // line 81
             echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
             echo "/login\"><b><small>Make appoitment?</small></b></a>
                 </li>
               </ul>
               ";
         }
-        // line 81
+        // line 85
         echo "            </div>
           </div>
         </nav>
@@ -161,7 +172,7 @@ class __TwigTemplate_50224a08d9a49685f418e06832038247 extends Template
 
     public function getDebugInfo()
     {
-        return array (  143 => 81,  136 => 77,  130 => 74,  125 => 71,  113 => 66,  107 => 62,  105 => 61,  49 => 8,  45 => 7,  37 => 1,);
+        return array (  154 => 85,  147 => 81,  141 => 78,  136 => 75,  124 => 70,  113 => 66,  107 => 62,  105 => 61,  49 => 8,  45 => 7,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -232,6 +243,10 @@ class __TwigTemplate_50224a08d9a49685f418e06832038247 extends Template
               <ul class=\"navbar-nav ms-auto mt-2\">
                 <li class=\"nav-item\">
                   <a class=\"nav-link ms-2\" href=\"{{ base_url }}/{{role}}/profile/{{auth}}\"><b><small>Profile</small></b></a>
+                 
+                </li>
+                <li class=\"nav-item\">
+                  <a class=\"nav-link ms-2\" href=\"{{ base_url }}/{{role}}/appointmens/{{auth}}\"><b><small>My appoitments</small></b></a>
                 </li>
               </ul>
              

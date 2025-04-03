@@ -83,7 +83,7 @@ class __TwigTemplate_f632f0baf0787e18abb394f43ba17bc4 extends Template
     <script src=\"";
         // line 32
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
-        echo "/assets/main.js\"></script>
+        echo "/assets/main.js\" defer></script>
 </body>
 
 </html>";
@@ -153,7 +153,7 @@ class __TwigTemplate_f632f0baf0787e18abb394f43ba17bc4 extends Template
     integrity=\"sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz\"
     crossorigin=\"anonymous\"></script>
     
-    <script src=\"{{ base_url }}/assets/main.js\"></script>
+    <script src=\"{{ base_url }}/assets/main.js\" defer></script>
 </body>
 
 </html>", "_global/index.html", "C:\\laragon\\www\\doctorlab\\views\\_global\\index.html");

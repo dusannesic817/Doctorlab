@@ -3,6 +3,7 @@
 
 namespace App\Controllers;
 use App\Core\Role\UserRoleController;
+use App\Models\AvailabilityModel;
 
 
 class AvailabilityController extends UserRoleController{
@@ -22,20 +23,46 @@ class AvailabilityController extends UserRoleController{
         $timesData = $this->getJson('times.json');
         $months = $this->getMonths(); 
         
-        // Trenutni mesec kao broj (index)
-        $currentMonthIndex = date('n')-4; // Mesec kao broj od 0 (0 = januar)
-        $currentMonth = $months[$currentMonthIndex]; // Dohvata naziv trenutnog meseca
+       
+        $currentMonthIndex = date('n')-4; 
+        $currentMonth = $months[$currentMonthIndex]; 
         
-        // Prosleđivanje podataka u view
+      
         $this->set('timesData', $timesData);
         $this->set('months', $months);
-        $this->set('currentMonth', $currentMonth); // Prosledi naziv trenutnog meseca
-        $this->set('currentMonthIndex', $currentMonthIndex); // Prosledi index trenutnog meseca
+        $this->set('currentMonth', $currentMonth); 
+        $this->set('currentMonthIndex', $currentMonthIndex); 
     }
     
     
     public function store(){
 
+
+        $times = filter_input(INPUT_POST, 'time', FILTER_DEFAULT, FILTER_FORCE_ARRAY);
+        $month = filter_input(INPUT_POST,'selected_month');
+        $id= $this->getSession()->get('user_id');
+
+        $file=$this->getUserSchedule($month,$times,$id);
+
+        $availabilityModel = new AvailabilityModel($this->getDatabaseConnection());
+
+        if($file){
+           $available=$availabilityModel->add([
+                'user_id'=>$id,
+                'schedule'=>$file['json'],
+           ]);
+
+        }
+
+        $this->getSession()->put('success_schedule','Slots has been opened successfully ');
+        $this->getSession()->save();
+
+        $this->redirect('/caregiver/appointmens/'.$id);
+
+
+       /* var_dump($times,$month,$id);
+        exit();*/
+       
     }
 
 
@@ -67,5 +94,48 @@ class AvailabilityController extends UserRoleController{
     return $months;
 
     }
+    public function getUserSchedule($monthName, $times, $userId) {
+        $year = date('Y');
+        $month = date('n', strtotime($monthName)); 
+        
+        $schedule = [];
+        $daysInMonth = cal_days_in_month(CAL_GREGORIAN, $month, $year);
+        
+        for ($day = 1; $day <= $daysInMonth; $day++) {
+            $timestamp = strtotime("$year-$month-$day");
+            $dayOfWeek = date('N', $timestamp); 
+            
+            if ($dayOfWeek >= 1 && $dayOfWeek <= 5) { 
+                $monthFullName = date('F', $timestamp); 
+                $dayNum = date('j', $timestamp);        
+                $dayName = date('l', $timestamp);       
+    
+                $schedule[] = [
+                    'date' => "$monthFullName $dayNum $dayName",
+                    'times' => $times
+                ];
+            }
+        }
+    
+        $result = [
+            'user_id' => $userId,
+            'schedule' => $schedule
+        ];
+        
+        $jsonContent = json_encode($result, JSON_PRETTY_PRINT);
+        $fileName = $year.'_schedule_'.$monthFullName."_user_".$userId.".json";
+        $path = 'public/json/'.$fileName;
+    
+        if (file_put_contents($path, $jsonContent)) {
+            return [
+                'filename' => $fileName,
+                'json' => $jsonContent
+            ];
+        }
+    
+        return false;
+    }
+    
+    
 
 }

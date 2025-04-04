@@ -51,7 +51,10 @@ class __TwigTemplate_946462a6d1f6bbabdbd9c929ce2520d4 extends Template
     <div class=\"row\" style=\"height: 100vh;\">
       <div class=\"col-6 d-flex justify-content-center align-items-center border-end border-dark-subtle\">
         <div class=\"card p-3 w-50\">
-          <form method=\"POST\" action=\"\">
+          <form method=\"POST\" action=\"";
+        // line 9
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/availability/store\">
           <h5 class=\"text-center mb-5\"><i class=\"bi bi-calendar-check-fill\"></i> Organize Your Monthly Schedule 2025</h5>
           <h5 class=\"text-center\">
             <span id=\"month-name\" 
@@ -166,7 +169,7 @@ class __TwigTemplate_946462a6d1f6bbabdbd9c929ce2520d4 extends Template
 
     public function getDebugInfo()
     {
-        return array (  134 => 37,  128 => 33,  109 => 30,  103 => 29,  100 => 28,  83 => 27,  71 => 18,  64 => 14,  60 => 13,  50 => 5,  46 => 4,  35 => 1,);
+        return array (  137 => 37,  131 => 33,  112 => 30,  106 => 29,  103 => 28,  86 => 27,  74 => 18,  67 => 14,  63 => 13,  56 => 9,  50 => 5,  46 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -179,7 +182,7 @@ class __TwigTemplate_946462a6d1f6bbabdbd9c929ce2520d4 extends Template
     <div class=\"row\" style=\"height: 100vh;\">
       <div class=\"col-6 d-flex justify-content-center align-items-center border-end border-dark-subtle\">
         <div class=\"card p-3 w-50\">
-          <form method=\"POST\" action=\"\">
+          <form method=\"POST\" action=\"{{base_url}}/availability/store\">
           <h5 class=\"text-center mb-5\"><i class=\"bi bi-calendar-check-fill\"></i> Organize Your Monthly Schedule 2025</h5>
           <h5 class=\"text-center\">
             <span id=\"month-name\" 

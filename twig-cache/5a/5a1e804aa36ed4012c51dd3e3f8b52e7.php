@@ -48,8 +48,11 @@ class __TwigTemplate_55b0bdf23fe62b2b04abf0597d27e7c7 extends Template
         $macros = $this->macros;
         // line 5
         echo "
-
-
+";
+        // line 6
+        $this->loadTemplate("./inc/edit_banner.html", "Appointment/show.html", 6)->display($context);
+        // line 7
+        echo "
 <body class=\"light-blue\">
 
   <div class=\"container-fluid\">
@@ -161,7 +164,7 @@ class __TwigTemplate_55b0bdf23fe62b2b04abf0597d27e7c7 extends Template
 
     public function getDebugInfo()
     {
-        return array (  81 => 31,  60 => 13,  50 => 5,  46 => 4,  35 => 1,);
+        return array (  84 => 31,  63 => 13,  55 => 7,  53 => 6,  50 => 5,  46 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -171,7 +174,7 @@ class __TwigTemplate_55b0bdf23fe62b2b04abf0597d27e7c7 extends Template
 
 {% block main %}
 
-
+{% include './inc/edit_banner.html' %}
 
 <body class=\"light-blue\">
 

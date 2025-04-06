@@ -122,7 +122,7 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
             // line 69
             echo "      <div class=\"card mb-2 border border-primary-subtle\" style=\"width: 100%;\">
         <div class=\"row\">
-          <div class=\"col-12 col-lg-4 border-end\">
+          <div class=\"col-12 col-lg-4\">
             <div class=\"d-flex flex-row mb-3\">
               <img src=\"";
             // line 73
@@ -142,20 +142,95 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
             echo "</small></div>
             </div>
             <div class=\"card-body ms-3\">
-              <p class=\"card-text\">Rue De Villiers 7 <br> <small>Paris</small></p>
+              <p class=\"card-text\"><b><i class=\"bi bi-geo-alt-fill mt-2\"></i></b><small class=\"ms-2\"><b>Rue de Villiers</b></small> <br> <small class=\"ms-4\"><b>Paris</b></small></p>
 
               <a href=\"";
             // line 81
             echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
             echo "/caregiver/show/";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["caregiver"], "user_id", [], "any", false, false, false, 81), "html", null, true);
-            echo "\" class=\"btn btn-primary \" style=\"width: 100%;\">Make Appointment</a>
+            echo "\" class=\"btn btn-primary mt-2\" style=\"width: 100%;\">Make Appointment</a>
             </div>
           </div>
           
-          <div class=\"col-12 col-lg-7\">
-            <header class=\"text-center mt-2\">7 April, Monday</header>
-            <div>aa</div>
+          <div class=\"col-12 col-lg-8\" style=\"margin-left:-2px;\">
+            <div class=\"row\">
+              <div class=\"col-12  mt-2 mb-3\">
+              <div class=\"d-flex justify-content-around\">
+                <i class=\"bi bi-arrow-left-circle-fill\"></i>
+                <header><b>Monday 7 April</b></header>
+                <i class=\"bi bi-arrow-right-circle-fill\"></i>
+            </div>
+              </div>
+            </div>
+           <div class=\"row gx-1 gy-2\" >
+            <div class=\"col-xl-3 col-lg-6 col-md-6 col-sm-12\">
+              <input type=\"checkbox\" class=\"btn-check w-100 calendar-input\" name=\"\" value=\"08:00\" id=\"\">
+              <label class=\"btn calendar-input w-100 text-truncate overflow-hidden\" for=\"\">08:00</label>
+
+            </div>
+            <div class=\"col-xl-3 col-lg-6 col-md-6 col-sm-12\">
+              <input type=\"checkbox\" class=\"btn-check w-100 calendar-input\" disabled>
+              <label class=\"btn calendar-input-busy w-100 text-truncate overflow-hidden\" for=\"\"><i class=\"bi bi-dash\"></i></label>
+
+
+            </div>
+            <div class=\"col-xl-3 col-lg-6 col-md-6 col-sm-12\">
+              <input type=\"checkbox\" class=\"btn-check w-100 calendar-input\" name=\"\" value=\"08:00\" id=\"\">
+              <label class=\"btn calendar-input w-100 text-truncate overflow-hidden\" for=\"\">08:00</label>
+
+            </div>
+            <div class=\"col-xl-3 col-lg-6 col-md-6 col-sm-12\">
+              <input type=\"checkbox\" class=\"btn-check w-100 calendar-input\" name=\"\" value=\"08:00\" id=\"\">
+              <label class=\"btn calendar-input w-100 text-truncate overflow-hidden\" for=\"\">08:00</label>
+
+            </div>
+            <div class=\"col-xl-3 col-lg-6 col-md-6 col-sm-12\">
+              <input type=\"checkbox\" class=\"btn-check w-100 calendar-input\" name=\"\" value=\"08:00\" id=\"\">
+              <label class=\"btn calendar-input w-100 text-truncate overflow-hidden\" for=\"\">08:00</label>
+
+            </div>
+            <div class=\"col-xl-3 col-lg-6 col-md-6 col-sm-12\">
+              <input type=\"checkbox\" class=\"btn-check w-100 calendar-input\" name=\"\" value=\"08:00\" id=\"\">
+              <label class=\"btn calendar-input w-100 text-truncate overflow-hidden\" for=\"\">08:00</label>
+
+            </div>
+            <div class=\"col-xl-3 col-lg-6 col-md-6 col-sm-12\">
+              <input type=\"checkbox\" class=\"btn-check w-100 calendar-input\" name=\"\" value=\"08:00\" id=\"\">
+              <label class=\"btn calendar-input w-100 text-truncate overflow-hidden\" for=\"\">08:00</label>
+
+            </div>
+            <div class=\"col-xl-3 col-lg-6 col-md-6 col-sm-12\">
+              <input type=\"checkbox\" class=\"btn-check w-100 calendar-input\" name=\"\" value=\"08:00\" id=\"\">
+              <label class=\"btn calendar-input w-100 text-truncate overflow-hidden\" for=\"\">08:00</label>
+
+            </div>
+            <div class=\"col-xl-3 col-lg-6 col-md-6 col-sm-12\">
+              <input type=\"checkbox\" class=\"btn-check w-100 calendar-input\" name=\"\" value=\"08:00\" id=\"\">
+              <label class=\"btn calendar-input w-100 text-truncate overflow-hidden\" for=\"\">08:00</label>
+
+            </div>
+            <div class=\"col-xl-3 col-lg-6 col-md-6 col-sm-12\">
+              <input type=\"checkbox\" class=\"btn-check w-100 calendar-input\" name=\"\" value=\"08:00\" id=\"\">
+              <label class=\"btn calendar-input w-100 text-truncate overflow-hidden\" for=\"\">08:00</label>
+
+            </div>
+            <div class=\"col-xl-3 col-lg-6 col-md-6 col-sm-12\">
+              <input type=\"checkbox\" class=\"btn-check w-100 calendar-input\" name=\"\" value=\"08:00\" id=\"\">
+              <label class=\"btn calendar-input w-100 text-truncate overflow-hidden\" for=\"\">08:00</label>
+
+            </div>
+            <div class=\"col-xl-3 col-lg-6 col-md-6 col-sm-12\">
+              <input type=\"checkbox\" class=\"btn-check w-100 calendar-input\" name=\"\" value=\"08:00\" id=\"\">
+              <label class=\"btn calendar-input w-100 text-truncate overflow-hidden\" for=\"\">08:00</label>
+
+            </div>
+            <div class=\"col-xl-3 col-lg-6 col-md-6 col-sm-12\">
+              <input type=\"checkbox\" class=\"btn-check w-100 calendar-input\" name=\"\" value=\"08:00\" id=\"\">
+              <label class=\"btn calendar-input w-100 text-truncate overflow-hidden\" for=\"\">08:00</label>
+
+            </div>
+           </div>
           </div>
         </div>
       </div>
@@ -164,7 +239,7 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['caregiver'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 92
+        // line 167
         echo "   
 
     </div>
@@ -190,19 +265,19 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
 
 
 ";
-        // line 116
+        // line 191
         $this->displayBlock('naslov', $context, $blocks);
-        // line 120
+        // line 195
         echo "
 
 ";
     }
 
-    // line 116
+    // line 191
     public function block_naslov($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 117
+        // line 192
         echo "  Search
   
 ";
@@ -220,7 +295,7 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
 
     public function getDebugInfo()
     {
-        return array (  206 => 117,  202 => 116,  196 => 120,  194 => 116,  168 => 92,  149 => 81,  137 => 76,  129 => 73,  123 => 69,  119 => 68,  109 => 61,  51 => 5,  47 => 4,  36 => 1,);
+        return array (  281 => 192,  277 => 191,  271 => 195,  269 => 191,  243 => 167,  149 => 81,  137 => 76,  129 => 73,  123 => 69,  119 => 68,  109 => 61,  51 => 5,  47 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -295,7 +370,7 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
       {% for caregiver in caregivers%}
       <div class=\"card mb-2 border border-primary-subtle\" style=\"width: 100%;\">
         <div class=\"row\">
-          <div class=\"col-12 col-lg-4 border-end\">
+          <div class=\"col-12 col-lg-4\">
             <div class=\"d-flex flex-row mb-3\">
               <img src=\"{{base_url}}/assets/uploads/images/{{caregiver.profile_photo}}\" class=\"rounded-circle ms-3 mt-3\" alt=\"...\"
                 style=\"width: 65px; height: 65px; object-fit: cover;\">
@@ -303,15 +378,90 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
                 Dr.{{caregiver.name}} {{caregiver.surname}} <br> <small>{{caregiver.caregiver_data.title}}</small></div>
             </div>
             <div class=\"card-body ms-3\">
-              <p class=\"card-text\">Rue De Villiers 7 <br> <small>Paris</small></p>
+              <p class=\"card-text\"><b><i class=\"bi bi-geo-alt-fill mt-2\"></i></b><small class=\"ms-2\"><b>Rue de Villiers</b></small> <br> <small class=\"ms-4\"><b>Paris</b></small></p>
 
-              <a href=\"{{base_url}}/caregiver/show/{{caregiver.user_id}}\" class=\"btn btn-primary \" style=\"width: 100%;\">Make Appointment</a>
+              <a href=\"{{base_url}}/caregiver/show/{{caregiver.user_id}}\" class=\"btn btn-primary mt-2\" style=\"width: 100%;\">Make Appointment</a>
             </div>
           </div>
           
-          <div class=\"col-12 col-lg-7\">
-            <header class=\"text-center mt-2\">7 April, Monday</header>
-            <div>aa</div>
+          <div class=\"col-12 col-lg-8\" style=\"margin-left:-2px;\">
+            <div class=\"row\">
+              <div class=\"col-12  mt-2 mb-3\">
+              <div class=\"d-flex justify-content-around\">
+                <i class=\"bi bi-arrow-left-circle-fill\"></i>
+                <header><b>Monday 7 April</b></header>
+                <i class=\"bi bi-arrow-right-circle-fill\"></i>
+            </div>
+              </div>
+            </div>
+           <div class=\"row gx-1 gy-2\" >
+            <div class=\"col-xl-3 col-lg-6 col-md-6 col-sm-12\">
+              <input type=\"checkbox\" class=\"btn-check w-100 calendar-input\" name=\"\" value=\"08:00\" id=\"\">
+              <label class=\"btn calendar-input w-100 text-truncate overflow-hidden\" for=\"\">08:00</label>
+
+            </div>
+            <div class=\"col-xl-3 col-lg-6 col-md-6 col-sm-12\">
+              <input type=\"checkbox\" class=\"btn-check w-100 calendar-input\" disabled>
+              <label class=\"btn calendar-input-busy w-100 text-truncate overflow-hidden\" for=\"\"><i class=\"bi bi-dash\"></i></label>
+
+
+            </div>
+            <div class=\"col-xl-3 col-lg-6 col-md-6 col-sm-12\">
+              <input type=\"checkbox\" class=\"btn-check w-100 calendar-input\" name=\"\" value=\"08:00\" id=\"\">
+              <label class=\"btn calendar-input w-100 text-truncate overflow-hidden\" for=\"\">08:00</label>
+
+            </div>
+            <div class=\"col-xl-3 col-lg-6 col-md-6 col-sm-12\">
+              <input type=\"checkbox\" class=\"btn-check w-100 calendar-input\" name=\"\" value=\"08:00\" id=\"\">
+              <label class=\"btn calendar-input w-100 text-truncate overflow-hidden\" for=\"\">08:00</label>
+
+            </div>
+            <div class=\"col-xl-3 col-lg-6 col-md-6 col-sm-12\">
+              <input type=\"checkbox\" class=\"btn-check w-100 calendar-input\" name=\"\" value=\"08:00\" id=\"\">
+              <label class=\"btn calendar-input w-100 text-truncate overflow-hidden\" for=\"\">08:00</label>
+
+            </div>
+            <div class=\"col-xl-3 col-lg-6 col-md-6 col-sm-12\">
+              <input type=\"checkbox\" class=\"btn-check w-100 calendar-input\" name=\"\" value=\"08:00\" id=\"\">
+              <label class=\"btn calendar-input w-100 text-truncate overflow-hidden\" for=\"\">08:00</label>
+
+            </div>
+            <div class=\"col-xl-3 col-lg-6 col-md-6 col-sm-12\">
+              <input type=\"checkbox\" class=\"btn-check w-100 calendar-input\" name=\"\" value=\"08:00\" id=\"\">
+              <label class=\"btn calendar-input w-100 text-truncate overflow-hidden\" for=\"\">08:00</label>
+
+            </div>
+            <div class=\"col-xl-3 col-lg-6 col-md-6 col-sm-12\">
+              <input type=\"checkbox\" class=\"btn-check w-100 calendar-input\" name=\"\" value=\"08:00\" id=\"\">
+              <label class=\"btn calendar-input w-100 text-truncate overflow-hidden\" for=\"\">08:00</label>
+
+            </div>
+            <div class=\"col-xl-3 col-lg-6 col-md-6 col-sm-12\">
+              <input type=\"checkbox\" class=\"btn-check w-100 calendar-input\" name=\"\" value=\"08:00\" id=\"\">
+              <label class=\"btn calendar-input w-100 text-truncate overflow-hidden\" for=\"\">08:00</label>
+
+            </div>
+            <div class=\"col-xl-3 col-lg-6 col-md-6 col-sm-12\">
+              <input type=\"checkbox\" class=\"btn-check w-100 calendar-input\" name=\"\" value=\"08:00\" id=\"\">
+              <label class=\"btn calendar-input w-100 text-truncate overflow-hidden\" for=\"\">08:00</label>
+
+            </div>
+            <div class=\"col-xl-3 col-lg-6 col-md-6 col-sm-12\">
+              <input type=\"checkbox\" class=\"btn-check w-100 calendar-input\" name=\"\" value=\"08:00\" id=\"\">
+              <label class=\"btn calendar-input w-100 text-truncate overflow-hidden\" for=\"\">08:00</label>
+
+            </div>
+            <div class=\"col-xl-3 col-lg-6 col-md-6 col-sm-12\">
+              <input type=\"checkbox\" class=\"btn-check w-100 calendar-input\" name=\"\" value=\"08:00\" id=\"\">
+              <label class=\"btn calendar-input w-100 text-truncate overflow-hidden\" for=\"\">08:00</label>
+
+            </div>
+            <div class=\"col-xl-3 col-lg-6 col-md-6 col-sm-12\">
+              <input type=\"checkbox\" class=\"btn-check w-100 calendar-input\" name=\"\" value=\"08:00\" id=\"\">
+              <label class=\"btn calendar-input w-100 text-truncate overflow-hidden\" for=\"\">08:00</label>
+
+            </div>
+           </div>
           </div>
         </div>
       </div>

@@ -262,6 +262,9 @@ transform: scale(1.05);
 .calendar-input{
     background-color:#e1f5fe !important;
 }
+.calendar-input-busy{
+    background-color:#e9f0f3 !important;
+}
 
 .calendar-input:hover{
     background-color:#81cdf0 !important;

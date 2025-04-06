@@ -46,7 +46,6 @@ return [
     App\Core\Route::get('|^caregiver/appointmens/?$|',      "CaregiverProfile", 'appointmens'),
     App\Core\Route::get('|^caregiver/logout/?$|',           "CaregiverProfile", 'logout'),
     
-   
 
     App\Core\Route::any('|^.*$|', 'Main', 'home'),
     

@@ -47,7 +47,7 @@ class AvailabilityController extends UserRoleController{
         $availabilityModel = new AvailabilityModel($this->getDatabaseConnection());
 
         if($file){
-           $available=$availabilityModel->add([
+                $availabilityModel->add([
                 'user_id'=>$id,
                 'schedule'=>$file['json'],
            ]);
@@ -58,10 +58,6 @@ class AvailabilityController extends UserRoleController{
         $this->getSession()->save();
 
         $this->redirect('/caregiver/appointmens/'.$id);
-
-
-       /* var_dump($times,$month,$id);
-        exit();*/
        
     }
 
@@ -105,14 +101,22 @@ class AvailabilityController extends UserRoleController{
             $timestamp = strtotime("$year-$month-$day");
             $dayOfWeek = date('N', $timestamp); 
             
-            if ($dayOfWeek >= 1 && $dayOfWeek <= 5) { 
+            if ($dayOfWeek >= 1 && $dayOfWeek <= 5) { // pon-pet
                 $monthFullName = date('F', $timestamp); 
                 $dayNum = date('j', $timestamp);        
                 $dayName = date('l', $timestamp);       
     
+                $timeSlots = [];
+                foreach ($times as $time) {
+                    $timeSlots[] = [
+                        'time' => $time,
+                        'status' => 'free'
+                    ];
+                }
+    
                 $schedule[] = [
                     'date' => "$monthFullName $dayNum $dayName",
-                    'times' => $times
+                    'times' => $timeSlots
                 ];
             }
         }
@@ -123,8 +127,8 @@ class AvailabilityController extends UserRoleController{
         ];
         
         $jsonContent = json_encode($result, JSON_PRETTY_PRINT);
-        $fileName = $year.'_schedule_'.$monthFullName."_user_".$userId.".json";
-        $path = 'public/json/'.$fileName;
+        $fileName = $year.'_'.$monthFullName."_user_".$userId.".json";
+        $path = 'public/json/schedule/'.$fileName;
     
         if (file_put_contents($path, $jsonContent)) {
             return [
@@ -135,6 +139,7 @@ class AvailabilityController extends UserRoleController{
     
         return false;
     }
+    
     
     
 

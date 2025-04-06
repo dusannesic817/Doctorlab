@@ -122,7 +122,7 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
             // line 69
             echo "      <div class=\"card mb-2 border border-primary-subtle\" style=\"width: 100%;\">
         <div class=\"row\">
-          <div class=\"col-12 col-lg-4\">
+          <div class=\"col-12 col-lg-4 border-end\">
             <div class=\"d-flex flex-row mb-3\">
               <img src=\"";
             // line 73
@@ -154,7 +154,8 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
           </div>
           
           <div class=\"col-12 col-lg-7\">
-            <p>Text</p>
+            <header class=\"text-center mt-2\">7 April, Monday</header>
+            <div>aa</div>
           </div>
         </div>
       </div>
@@ -163,14 +164,14 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['caregiver'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 91
+        // line 92
         echo "   
 
     </div>
   <!-- Col-4 for aside content -->
   <div class=\"col-12 col-lg-4\">
     <div class=\"card sticky-top h-75\" style=\"width: 100%;\">
-      <div class=\"card-body p-0\"> <!-- Uklanjamo padding da mapa popuni card -->
+      <div class=\"card-body p-0\">
         <iframe 
           src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d45973.02516856684!2d21.354716326223837!3d43.93217331171238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4756bf451d4d0011%3A0x22d95992c68c3da7!2zxIZ1cHJpamE!5e0!3m2!1sbs!2srs!4v1740178064511!5m2!1sbs!2srs\"
           style=\"border:0; width: 100%; height: 100%;\"
@@ -189,19 +190,19 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
 
 
 ";
-        // line 115
+        // line 116
         $this->displayBlock('naslov', $context, $blocks);
-        // line 119
+        // line 120
         echo "
 
 ";
     }
 
-    // line 115
+    // line 116
     public function block_naslov($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 116
+        // line 117
         echo "  Search
   
 ";
@@ -219,7 +220,7 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
 
     public function getDebugInfo()
     {
-        return array (  205 => 116,  201 => 115,  195 => 119,  193 => 115,  167 => 91,  149 => 81,  137 => 76,  129 => 73,  123 => 69,  119 => 68,  109 => 61,  51 => 5,  47 => 4,  36 => 1,);
+        return array (  206 => 117,  202 => 116,  196 => 120,  194 => 116,  168 => 92,  149 => 81,  137 => 76,  129 => 73,  123 => 69,  119 => 68,  109 => 61,  51 => 5,  47 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -294,7 +295,7 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
       {% for caregiver in caregivers%}
       <div class=\"card mb-2 border border-primary-subtle\" style=\"width: 100%;\">
         <div class=\"row\">
-          <div class=\"col-12 col-lg-4\">
+          <div class=\"col-12 col-lg-4 border-end\">
             <div class=\"d-flex flex-row mb-3\">
               <img src=\"{{base_url}}/assets/uploads/images/{{caregiver.profile_photo}}\" class=\"rounded-circle ms-3 mt-3\" alt=\"...\"
                 style=\"width: 65px; height: 65px; object-fit: cover;\">
@@ -309,7 +310,8 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
           </div>
           
           <div class=\"col-12 col-lg-7\">
-            <p>Text</p>
+            <header class=\"text-center mt-2\">7 April, Monday</header>
+            <div>aa</div>
           </div>
         </div>
       </div>
@@ -320,7 +322,7 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
   <!-- Col-4 for aside content -->
   <div class=\"col-12 col-lg-4\">
     <div class=\"card sticky-top h-75\" style=\"width: 100%;\">
-      <div class=\"card-body p-0\"> <!-- Uklanjamo padding da mapa popuni card -->
+      <div class=\"card-body p-0\">
         <iframe 
           src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d45973.02516856684!2d21.354716326223837!3d43.93217331171238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4756bf451d4d0011%3A0x22d95992c68c3da7!2zxIZ1cHJpamE!5e0!3m2!1sbs!2srs!4v1740178064511!5m2!1sbs!2srs\"
           style=\"border:0; width: 100%; height: 100%;\"

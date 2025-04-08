@@ -1,5 +1,5 @@
 {
-    "user_id": 3,
+    "user_id": 1,
     "schedule": [
         {
             "date": "April 1 Tuesday",
@@ -10,7 +10,7 @@
                 },
                 {
                     "time": "08:30",
-                    "status": "busy"
+                    "status": "free"
                 },
                 {
                     "time": "09:00",
@@ -30,26 +30,22 @@
                 },
                 {
                     "time": "11:00",
-                    "status": "busy"
+                    "status": "free"
                 },
                 {
                     "time": "11:30",
                     "status": "free"
                 },
                 {
+                    "time": "12:00",
+                    "status": "free"
+                },
+                {
+                    "time": "12:30",
+                    "status": "free"
+                },
+                {
                     "time": "13:00",
-                    "status": "free"
-                },
-                {
-                    "time": "13:30",
-                    "status": "free"
-                },
-                {
-                    "time": "14:00",
-                    "status": "free"
-                },
-                {
-                    "time": "14:30",
                     "status": "free"
                 },
                 {
@@ -58,10 +54,6 @@
                 },
                 {
                     "time": "15:30",
-                    "status": "free"
-                },
-                {
-                    "time": "16:00",
                     "status": "free"
                 }
             ]
@@ -79,7 +71,7 @@
                 },
                 {
                     "time": "09:00",
-                    "status": "busy"
+                    "status": "free"
                 },
                 {
                     "time": "09:30",
@@ -102,19 +94,15 @@
                     "status": "free"
                 },
                 {
+                    "time": "12:00",
+                    "status": "free"
+                },
+                {
+                    "time": "12:30",
+                    "status": "free"
+                },
+                {
                     "time": "13:00",
-                    "status": "free"
-                },
-                {
-                    "time": "13:30",
-                    "status": "free"
-                },
-                {
-                    "time": "14:00",
-                    "status": "free"
-                },
-                {
-                    "time": "14:30",
                     "status": "free"
                 },
                 {
@@ -123,10 +111,6 @@
                 },
                 {
                     "time": "15:30",
-                    "status": "free"
-                },
-                {
-                    "time": "16:00",
                     "status": "free"
                 }
             ]
@@ -167,19 +151,15 @@
                     "status": "free"
                 },
                 {
+                    "time": "12:00",
+                    "status": "free"
+                },
+                {
+                    "time": "12:30",
+                    "status": "free"
+                },
+                {
                     "time": "13:00",
-                    "status": "free"
-                },
-                {
-                    "time": "13:30",
-                    "status": "free"
-                },
-                {
-                    "time": "14:00",
-                    "status": "free"
-                },
-                {
-                    "time": "14:30",
                     "status": "free"
                 },
                 {
@@ -188,10 +168,6 @@
                 },
                 {
                     "time": "15:30",
-                    "status": "free"
-                },
-                {
-                    "time": "16:00",
                     "status": "free"
                 }
             ]
@@ -232,19 +208,15 @@
                     "status": "free"
                 },
                 {
+                    "time": "12:00",
+                    "status": "free"
+                },
+                {
+                    "time": "12:30",
+                    "status": "free"
+                },
+                {
                     "time": "13:00",
-                    "status": "free"
-                },
-                {
-                    "time": "13:30",
-                    "status": "free"
-                },
-                {
-                    "time": "14:00",
-                    "status": "free"
-                },
-                {
-                    "time": "14:30",
                     "status": "free"
                 },
                 {
@@ -253,10 +225,6 @@
                 },
                 {
                     "time": "15:30",
-                    "status": "free"
-                },
-                {
-                    "time": "16:00",
                     "status": "free"
                 }
             ]
@@ -297,19 +265,15 @@
                     "status": "free"
                 },
                 {
+                    "time": "12:00",
+                    "status": "free"
+                },
+                {
+                    "time": "12:30",
+                    "status": "free"
+                },
+                {
                     "time": "13:00",
-                    "status": "free"
-                },
-                {
-                    "time": "13:30",
-                    "status": "free"
-                },
-                {
-                    "time": "14:00",
-                    "status": "free"
-                },
-                {
-                    "time": "14:30",
                     "status": "free"
                 },
                 {
@@ -318,10 +282,6 @@
                 },
                 {
                     "time": "15:30",
-                    "status": "free"
-                },
-                {
-                    "time": "16:00",
                     "status": "free"
                 }
             ]
@@ -343,7 +303,7 @@
                 },
                 {
                     "time": "09:30",
-                    "status": "busy"
+                    "status": "free"
                 },
                 {
                     "time": "10:00",
@@ -355,27 +315,23 @@
                 },
                 {
                     "time": "11:00",
-                    "status": "busy"
+                    "status": "free"
                 },
                 {
                     "time": "11:30",
                     "status": "free"
                 },
                 {
+                    "time": "12:00",
+                    "status": "free"
+                },
+                {
+                    "time": "12:30",
+                    "status": "free"
+                },
+                {
                     "time": "13:00",
                     "status": "free"
-                },
-                {
-                    "time": "13:30",
-                    "status": "free"
-                },
-                {
-                    "time": "14:00",
-                    "status": "free"
-                },
-                {
-                    "time": "14:30",
-                    "status": "busy"
                 },
                 {
                     "time": "15:00",
@@ -384,10 +340,6 @@
                 {
                     "time": "15:30",
                     "status": "free"
-                },
-                {
-                    "time": "16:00",
-                    "status": "busy"
                 }
             ]
         },
@@ -427,19 +379,15 @@
                     "status": "free"
                 },
                 {
+                    "time": "12:00",
+                    "status": "free"
+                },
+                {
+                    "time": "12:30",
+                    "status": "free"
+                },
+                {
                     "time": "13:00",
-                    "status": "free"
-                },
-                {
-                    "time": "13:30",
-                    "status": "free"
-                },
-                {
-                    "time": "14:00",
-                    "status": "free"
-                },
-                {
-                    "time": "14:30",
                     "status": "free"
                 },
                 {
@@ -448,10 +396,6 @@
                 },
                 {
                     "time": "15:30",
-                    "status": "free"
-                },
-                {
-                    "time": "16:00",
                     "status": "free"
                 }
             ]
@@ -492,19 +436,15 @@
                     "status": "free"
                 },
                 {
+                    "time": "12:00",
+                    "status": "free"
+                },
+                {
+                    "time": "12:30",
+                    "status": "free"
+                },
+                {
                     "time": "13:00",
-                    "status": "free"
-                },
-                {
-                    "time": "13:30",
-                    "status": "free"
-                },
-                {
-                    "time": "14:00",
-                    "status": "free"
-                },
-                {
-                    "time": "14:30",
                     "status": "free"
                 },
                 {
@@ -513,10 +453,6 @@
                 },
                 {
                     "time": "15:30",
-                    "status": "free"
-                },
-                {
-                    "time": "16:00",
                     "status": "free"
                 }
             ]
@@ -557,19 +493,15 @@
                     "status": "free"
                 },
                 {
+                    "time": "12:00",
+                    "status": "free"
+                },
+                {
+                    "time": "12:30",
+                    "status": "free"
+                },
+                {
                     "time": "13:00",
-                    "status": "free"
-                },
-                {
-                    "time": "13:30",
-                    "status": "free"
-                },
-                {
-                    "time": "14:00",
-                    "status": "free"
-                },
-                {
-                    "time": "14:30",
                     "status": "free"
                 },
                 {
@@ -578,10 +510,6 @@
                 },
                 {
                     "time": "15:30",
-                    "status": "free"
-                },
-                {
-                    "time": "16:00",
                     "status": "free"
                 }
             ]
@@ -622,19 +550,15 @@
                     "status": "free"
                 },
                 {
+                    "time": "12:00",
+                    "status": "free"
+                },
+                {
+                    "time": "12:30",
+                    "status": "free"
+                },
+                {
                     "time": "13:00",
-                    "status": "free"
-                },
-                {
-                    "time": "13:30",
-                    "status": "free"
-                },
-                {
-                    "time": "14:00",
-                    "status": "free"
-                },
-                {
-                    "time": "14:30",
                     "status": "free"
                 },
                 {
@@ -643,10 +567,6 @@
                 },
                 {
                     "time": "15:30",
-                    "status": "free"
-                },
-                {
-                    "time": "16:00",
                     "status": "free"
                 }
             ]
@@ -687,19 +607,15 @@
                     "status": "free"
                 },
                 {
+                    "time": "12:00",
+                    "status": "free"
+                },
+                {
+                    "time": "12:30",
+                    "status": "free"
+                },
+                {
                     "time": "13:00",
-                    "status": "free"
-                },
-                {
-                    "time": "13:30",
-                    "status": "free"
-                },
-                {
-                    "time": "14:00",
-                    "status": "free"
-                },
-                {
-                    "time": "14:30",
                     "status": "free"
                 },
                 {
@@ -708,10 +624,6 @@
                 },
                 {
                     "time": "15:30",
-                    "status": "free"
-                },
-                {
-                    "time": "16:00",
                     "status": "free"
                 }
             ]
@@ -752,19 +664,15 @@
                     "status": "free"
                 },
                 {
+                    "time": "12:00",
+                    "status": "free"
+                },
+                {
+                    "time": "12:30",
+                    "status": "free"
+                },
+                {
                     "time": "13:00",
-                    "status": "free"
-                },
-                {
-                    "time": "13:30",
-                    "status": "free"
-                },
-                {
-                    "time": "14:00",
-                    "status": "free"
-                },
-                {
-                    "time": "14:30",
                     "status": "free"
                 },
                 {
@@ -773,10 +681,6 @@
                 },
                 {
                     "time": "15:30",
-                    "status": "free"
-                },
-                {
-                    "time": "16:00",
                     "status": "free"
                 }
             ]
@@ -817,19 +721,15 @@
                     "status": "free"
                 },
                 {
+                    "time": "12:00",
+                    "status": "free"
+                },
+                {
+                    "time": "12:30",
+                    "status": "free"
+                },
+                {
                     "time": "13:00",
-                    "status": "free"
-                },
-                {
-                    "time": "13:30",
-                    "status": "free"
-                },
-                {
-                    "time": "14:00",
-                    "status": "free"
-                },
-                {
-                    "time": "14:30",
                     "status": "free"
                 },
                 {
@@ -838,10 +738,6 @@
                 },
                 {
                     "time": "15:30",
-                    "status": "free"
-                },
-                {
-                    "time": "16:00",
                     "status": "free"
                 }
             ]
@@ -882,19 +778,15 @@
                     "status": "free"
                 },
                 {
+                    "time": "12:00",
+                    "status": "free"
+                },
+                {
+                    "time": "12:30",
+                    "status": "free"
+                },
+                {
                     "time": "13:00",
-                    "status": "free"
-                },
-                {
-                    "time": "13:30",
-                    "status": "free"
-                },
-                {
-                    "time": "14:00",
-                    "status": "free"
-                },
-                {
-                    "time": "14:30",
                     "status": "free"
                 },
                 {
@@ -903,10 +795,6 @@
                 },
                 {
                     "time": "15:30",
-                    "status": "free"
-                },
-                {
-                    "time": "16:00",
                     "status": "free"
                 }
             ]
@@ -947,19 +835,15 @@
                     "status": "free"
                 },
                 {
+                    "time": "12:00",
+                    "status": "free"
+                },
+                {
+                    "time": "12:30",
+                    "status": "free"
+                },
+                {
                     "time": "13:00",
-                    "status": "free"
-                },
-                {
-                    "time": "13:30",
-                    "status": "free"
-                },
-                {
-                    "time": "14:00",
-                    "status": "free"
-                },
-                {
-                    "time": "14:30",
                     "status": "free"
                 },
                 {
@@ -968,10 +852,6 @@
                 },
                 {
                     "time": "15:30",
-                    "status": "free"
-                },
-                {
-                    "time": "16:00",
                     "status": "free"
                 }
             ]
@@ -1012,19 +892,15 @@
                     "status": "free"
                 },
                 {
+                    "time": "12:00",
+                    "status": "free"
+                },
+                {
+                    "time": "12:30",
+                    "status": "free"
+                },
+                {
                     "time": "13:00",
-                    "status": "free"
-                },
-                {
-                    "time": "13:30",
-                    "status": "free"
-                },
-                {
-                    "time": "14:00",
-                    "status": "free"
-                },
-                {
-                    "time": "14:30",
                     "status": "free"
                 },
                 {
@@ -1033,10 +909,6 @@
                 },
                 {
                     "time": "15:30",
-                    "status": "free"
-                },
-                {
-                    "time": "16:00",
                     "status": "free"
                 }
             ]
@@ -1077,19 +949,15 @@
                     "status": "free"
                 },
                 {
+                    "time": "12:00",
+                    "status": "free"
+                },
+                {
+                    "time": "12:30",
+                    "status": "free"
+                },
+                {
                     "time": "13:00",
-                    "status": "free"
-                },
-                {
-                    "time": "13:30",
-                    "status": "free"
-                },
-                {
-                    "time": "14:00",
-                    "status": "free"
-                },
-                {
-                    "time": "14:30",
                     "status": "free"
                 },
                 {
@@ -1098,10 +966,6 @@
                 },
                 {
                     "time": "15:30",
-                    "status": "free"
-                },
-                {
-                    "time": "16:00",
                     "status": "free"
                 }
             ]
@@ -1142,19 +1006,15 @@
                     "status": "free"
                 },
                 {
+                    "time": "12:00",
+                    "status": "free"
+                },
+                {
+                    "time": "12:30",
+                    "status": "free"
+                },
+                {
                     "time": "13:00",
-                    "status": "free"
-                },
-                {
-                    "time": "13:30",
-                    "status": "free"
-                },
-                {
-                    "time": "14:00",
-                    "status": "free"
-                },
-                {
-                    "time": "14:30",
                     "status": "free"
                 },
                 {
@@ -1163,10 +1023,6 @@
                 },
                 {
                     "time": "15:30",
-                    "status": "free"
-                },
-                {
-                    "time": "16:00",
                     "status": "free"
                 }
             ]
@@ -1207,19 +1063,15 @@
                     "status": "free"
                 },
                 {
+                    "time": "12:00",
+                    "status": "free"
+                },
+                {
+                    "time": "12:30",
+                    "status": "free"
+                },
+                {
                     "time": "13:00",
-                    "status": "free"
-                },
-                {
-                    "time": "13:30",
-                    "status": "free"
-                },
-                {
-                    "time": "14:00",
-                    "status": "free"
-                },
-                {
-                    "time": "14:30",
                     "status": "free"
                 },
                 {
@@ -1228,10 +1080,6 @@
                 },
                 {
                     "time": "15:30",
-                    "status": "free"
-                },
-                {
-                    "time": "16:00",
                     "status": "free"
                 }
             ]
@@ -1272,19 +1120,15 @@
                     "status": "free"
                 },
                 {
+                    "time": "12:00",
+                    "status": "free"
+                },
+                {
+                    "time": "12:30",
+                    "status": "free"
+                },
+                {
                     "time": "13:00",
-                    "status": "free"
-                },
-                {
-                    "time": "13:30",
-                    "status": "free"
-                },
-                {
-                    "time": "14:00",
-                    "status": "free"
-                },
-                {
-                    "time": "14:30",
                     "status": "free"
                 },
                 {
@@ -1293,10 +1137,6 @@
                 },
                 {
                     "time": "15:30",
-                    "status": "free"
-                },
-                {
-                    "time": "16:00",
                     "status": "free"
                 }
             ]
@@ -1337,19 +1177,15 @@
                     "status": "free"
                 },
                 {
+                    "time": "12:00",
+                    "status": "free"
+                },
+                {
+                    "time": "12:30",
+                    "status": "free"
+                },
+                {
                     "time": "13:00",
-                    "status": "free"
-                },
-                {
-                    "time": "13:30",
-                    "status": "free"
-                },
-                {
-                    "time": "14:00",
-                    "status": "free"
-                },
-                {
-                    "time": "14:30",
                     "status": "free"
                 },
                 {
@@ -1358,10 +1194,6 @@
                 },
                 {
                     "time": "15:30",
-                    "status": "free"
-                },
-                {
-                    "time": "16:00",
                     "status": "free"
                 }
             ]
@@ -1402,19 +1234,15 @@
                     "status": "free"
                 },
                 {
+                    "time": "12:00",
+                    "status": "free"
+                },
+                {
+                    "time": "12:30",
+                    "status": "free"
+                },
+                {
                     "time": "13:00",
-                    "status": "free"
-                },
-                {
-                    "time": "13:30",
-                    "status": "free"
-                },
-                {
-                    "time": "14:00",
-                    "status": "free"
-                },
-                {
-                    "time": "14:30",
                     "status": "free"
                 },
                 {
@@ -1423,10 +1251,6 @@
                 },
                 {
                     "time": "15:30",
-                    "status": "free"
-                },
-                {
-                    "time": "16:00",
                     "status": "free"
                 }
             ]

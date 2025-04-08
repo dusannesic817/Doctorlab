@@ -10,8 +10,7 @@
       <div class="d-flex flex-row mb-3">
         <div class="p-2 me-2">
           <div class="dropdown">
-            <button class="btn border rounded-pill dugme" type="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
+            <button class="btn border rounded-pill dugme" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               <small class="pe-2 ps-2">Availabilties</small>
             </button>
             <ul class="dropdown-menu p-4 text-body-secondary dropdown-menu-custom">
@@ -23,8 +22,7 @@
         </div>
         <div class="p-2 me-2">
           <div class="dropdown ">
-            <button class="btn border rounded-pill dugme" type="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
+            <button class="btn border rounded-pill dugme" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               <small class="pe-2 ps-2">Honoriaa</small>
             </button>
             <ul class="dropdown-menu p-4 text-body-secondary dropdown-menu-custom">
@@ -37,8 +35,7 @@
         <div class="p-2 ">
 
           <div class="dropdown ">
-            <button class="btn border rounded-pill dugme" type="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
+            <button class="btn border rounded-pill dugme" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               <small class="pe-2 ps-2">Reason for consultation</small>
             </button>
             <ul class="dropdown-menu p-4 text-body-secondary dropdown-menu-custom">
@@ -70,116 +67,57 @@
         <div class="row">
           <div class="col-12 col-lg-4">
             <div class="d-flex flex-row mb-3">
-              <img src="{{base_url}}/assets/uploads/images/{{caregiver.profile_photo}}" class="rounded-circle ms-3 mt-3" alt="..."
-                style="width: 65px; height: 65px; object-fit: cover;">
+              <img src="{{base_url}}/assets/uploads/images/{{caregiver.profile_photo}}" class="rounded-circle ms-3 mt-3"
+                alt="..." style="width: 65px; height: 65px; object-fit: cover;">
               <div class="p-2 ms-2 mt-3">
-                Dr.{{caregiver.name}} {{caregiver.surname}} <br> <small>{{caregiver.caregiver_data.title}}</small></div>
+                <b>Dr. {{caregiver.name}} {{caregiver.surname}}</b> <br> <small>{{caregiver.doctor}}</small></div>
             </div>
             <div class="card-body ms-3">
-              <p class="card-text"><b><i class="bi bi-geo-alt-fill mt-2"></i></b><small class="ms-2"><b>Rue de Villiers</b></small> <br> <small class="ms-4"><b>Paris</b></small></p>
+              <p class="card-text"><b><i class="bi bi-geo-alt-fill mt-2"></i></b><small class="ms-2"><b>Rue de
+                    Villiers</b></small> <br> <small class="ms-4"><b>Paris</b></small></p>
 
-              <a href="{{base_url}}/caregiver/show/{{caregiver.user_id}}" class="btn btn-primary mt-2" style="width: 100%;">Make Appointment</a>
+              <a href="{{base_url}}/caregiver/show/{{caregiver.user_id}}" class="btn btn-primary mt-2"
+                style="width: 100%;">Make Appointment</a>
             </div>
           </div>
-          
+
           <div class="col-12 col-lg-8" style="margin-left:-2px;">
             <div class="row">
               <div class="col-12  mt-2 mb-3">
-              <div class="d-flex justify-content-around">
-                <i class="bi bi-arrow-left-circle-fill"></i>
-                <header><b>Monday 7 April</b></header>
-                <i class="bi bi-arrow-right-circle-fill"></i>
-            </div>
+                <div class="d-flex justify-content-around">
+                  <i class="bi bi-arrow-left-circle-fill" id="prevDate"></i>
+                  <header><b>April 7 Monday</b></header>
+                  <i class="bi bi-arrow-right-circle-fill" id="nextDate"></i>
+              </div>
               </div>
             </div>
-           <div class="row gx-1 gy-2" >
-            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-              <input type="checkbox" class="btn-check w-100 calendar-input" name="" value="08:00" id="">
-              <label class="btn calendar-input w-100 text-truncate overflow-hidden" for="">08:00</label>
+            <div class="row gx-1 gy-2">
+              <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                <input type="checkbox" class="btn-check w-100 calendar-input" name="" value="08:00" id="">
+                <label class="btn calendar-input w-100 text-truncate overflow-hidden" for="">08:00</label>
+              </div>
 
             </div>
-            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-              <input type="checkbox" class="btn-check w-100 calendar-input" disabled>
-              <label class="btn calendar-input-busy w-100 text-truncate overflow-hidden" for=""><i class="bi bi-dash"></i></label>
-
-
-            </div>
-            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-              <input type="checkbox" class="btn-check w-100 calendar-input" name="" value="08:00" id="">
-              <label class="btn calendar-input w-100 text-truncate overflow-hidden" for="">08:00</label>
-
-            </div>
-            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-              <input type="checkbox" class="btn-check w-100 calendar-input" name="" value="08:00" id="">
-              <label class="btn calendar-input w-100 text-truncate overflow-hidden" for="">08:00</label>
-
-            </div>
-            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-              <input type="checkbox" class="btn-check w-100 calendar-input" name="" value="08:00" id="">
-              <label class="btn calendar-input w-100 text-truncate overflow-hidden" for="">08:00</label>
-
-            </div>
-            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-              <input type="checkbox" class="btn-check w-100 calendar-input" name="" value="08:00" id="">
-              <label class="btn calendar-input w-100 text-truncate overflow-hidden" for="">08:00</label>
-
-            </div>
-            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-              <input type="checkbox" class="btn-check w-100 calendar-input" name="" value="08:00" id="">
-              <label class="btn calendar-input w-100 text-truncate overflow-hidden" for="">08:00</label>
-
-            </div>
-            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-              <input type="checkbox" class="btn-check w-100 calendar-input" name="" value="08:00" id="">
-              <label class="btn calendar-input w-100 text-truncate overflow-hidden" for="">08:00</label>
-
-            </div>
-            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-              <input type="checkbox" class="btn-check w-100 calendar-input" name="" value="08:00" id="">
-              <label class="btn calendar-input w-100 text-truncate overflow-hidden" for="">08:00</label>
-
-            </div>
-            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-              <input type="checkbox" class="btn-check w-100 calendar-input" name="" value="08:00" id="">
-              <label class="btn calendar-input w-100 text-truncate overflow-hidden" for="">08:00</label>
-
-            </div>
-            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-              <input type="checkbox" class="btn-check w-100 calendar-input" name="" value="08:00" id="">
-              <label class="btn calendar-input w-100 text-truncate overflow-hidden" for="">08:00</label>
-
-            </div>
-            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-              <input type="checkbox" class="btn-check w-100 calendar-input" name="" value="08:00" id="">
-              <label class="btn calendar-input w-100 text-truncate overflow-hidden" for="">08:00</label>
-
-            </div>
-            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-              <input type="checkbox" class="btn-check w-100 calendar-input" name="" value="08:00" id="">
-              <label class="btn calendar-input w-100 text-truncate overflow-hidden" for="">08:00</label>
-
-            </div>
-           </div>
           </div>
         </div>
       </div>
       {%endfor%}
-   
+
 
     </div>
-  <!-- Col-4 for aside content -->
-  <div class="col-12 col-lg-4">
-    <div class="card sticky-top h-75" style="width: 100%;">
-      <div class="card-body p-0">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d45973.02516856684!2d21.354716326223837!3d43.93217331171238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4756bf451d4d0011%3A0x22d95992c68c3da7!2zxIZ1cHJpamE!5e0!3m2!1sbs!2srs!4v1740178064511!5m2!1sbs!2srs"
-          style="border:0; width: 100%; height: 100%;"
-          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+    <!-- Col-4 for aside content -->
+    <div class="col-12 col-lg-4">
+      <div class="card sticky-top h-75" style="width: 100%;">
+        <div class="card-body p-0">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d45973.02516856684!2d21.354716326223837!3d43.93217331171238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4756bf451d4d0011%3A0x22d95992c68c3da7!2zxIZ1cHJpamE!5e0!3m2!1sbs!2srs!4v1740178064511!5m2!1sbs!2srs"
+            style="border:0; width: 100%; height: 100%;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
       </div>
     </div>
-  </div>
-  
+
   </div>
 </div>
 
@@ -189,9 +127,11 @@
 
 
 {% block naslov %}
-  Search
-  
+Search
+
 {% endblock %}
 
 
 {% endblock %}
+
+

@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Core\Controller;
 use App\Core\Role\UserRoleController;
+use App\Models\AvailabilityModel;
 use App\Models\UserModel;
 use App\Validators\StringValidator;
 
@@ -11,19 +12,61 @@ class CaregiverController extends Controller{
 
 
     public function index(){
-        $user = new UserModel($this->getDatabaseConnection());
 
-        $caregivers = $user->getAllCaregivers('role','caregiver');
+        $caregiver = new AvailabilityModel($this->getDatabaseConnection());
+
+        $data = $caregiver->getCaregiversAvailability();
+
+        date_default_timezone_set("Europe/Belgrade");
+        $date = date("F j l");
+
+
+
+     /* var_dump($caregivers);
+        exit();*/
+
+        $niz = [];
+        $novi = [];
+        $caregivers = [];
+        
+        foreach ($data as $value) {
+            $prikazuj = false;
+        
+          
+            foreach ($value->schedule['schedule'] as $v) {
+               
+                if ($v['date'] === $date) {
+                    $prikazuj = true;
+                }
+               
+                if ($prikazuj) {
+                    $niz[$v['date']] = [
+                        'times' => $v['times'] 
+                    ];
+                }
+            }
+            
+            $novi[$value->user_id] = $niz;
+            $caregivers[] = [
+                'user_id' => $value->user_id,
+                'name' => $value->name,
+                'surname' => $value->surname,
+                'profile_photo'=>$value->profile_photo,
+                'doctor' => $value->caregiver_data['title'],
+                'schedule' => $novi[$value->user_id]  
+            ];
+        }
+        /*var_dump($caregivers);
+        exit();*/
+
+      
 
         $count=0;
         foreach($caregivers as $value){
            $count++;
         }
 
-      
 
-
-        
         $this->set('caregivers', $caregivers);
         $this->set('count', $count);
 

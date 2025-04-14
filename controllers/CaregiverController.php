@@ -57,20 +57,7 @@ class CaregiverController extends Controller{
             ];
         }
         
-    /*  foreach($caregivers as $caregiver){
-            foreach($caregiver['schedule'] as $day=>$value){
-               foreach($value['times'] as $v){
-                var_dump($v['time']);
-               }
-               
-            }
-
-            exit();
-        }
-   
-        var_dump($caregivers);
-        exit();
-      */
+        
 
         $count=0;
         foreach($caregivers as $value){

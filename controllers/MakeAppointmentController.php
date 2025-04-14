@@ -12,7 +12,7 @@ class MakeAppointmentController extends Controller{
     
 
     public function type($id){
-        $userModel = new UserModel($this->getDatabaseConnection());
+       /* $userModel = new UserModel($this->getDatabaseConnection());
     
         $caregiver = $userModel->getById($id);
     
@@ -34,7 +34,7 @@ class MakeAppointmentController extends Controller{
         }else{
             $this->redirect('/');
         }
-    var_dump($caregiver);
+    var_dump($caregiver);*/
     }
     
     

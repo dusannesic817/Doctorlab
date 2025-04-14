@@ -271,3 +271,10 @@ transform: scale(1.05);
     color: #01264d !important;
 }
 
+input.calendar-input:checked + label.calendar-input {
+    background-color: #0d6efd; /* Plava boja */
+    color: white;
+    border: 1px solid #0d6efd;
+  }
+  
+

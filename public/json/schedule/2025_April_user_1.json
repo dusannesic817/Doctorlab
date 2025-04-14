@@ -291,7 +291,7 @@
             "times": [
                 {
                     "time": "08:00",
-                    "status": "free"
+                    "status": "busy"
                 },
                 {
                     "time": "08:30",
@@ -299,7 +299,7 @@
                 },
                 {
                     "time": "09:00",
-                    "status": "free"
+                    "status": "busy"
                 },
                 {
                     "time": "09:30",
@@ -348,11 +348,11 @@
             "times": [
                 {
                     "time": "08:00",
-                    "status": "free"
+                    "status": "busy"
                 },
                 {
                     "time": "08:30",
-                    "status": "free"
+                    "status": "busy"
                 },
                 {
                     "time": "09:00",

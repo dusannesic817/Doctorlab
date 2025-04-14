@@ -55,22 +55,23 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <small><b>{{count}} Reults</b></small><br>
-      <small>Find in Serbia a Doctor (or a profesional offering acts of cardilogy and vascluar) offering online
+      <small><b>{{count}} Results</b></small><br>
+      <small>Find in Serbia a Doctor (or a professional offering acts of cardiology and vascular) offering online
         appointment booking</small>
     </div>
   </div>
   <div class="row mt-3 gy-3">
     <div class="col-12 col-lg-8">
-      {% for caregiver in caregivers%}
-      <div class="card mb-2 border border-primary-subtle" style="width: 100%;">
+      {% for caregiver in caregivers %}
+      <div class="card mb-2 border border-primary-subtle" style="width: 100%;" id="caregiver-{{ caregiver.user_id }}">
         <div class="row">
           <div class="col-12 col-lg-4">
             <div class="d-flex flex-row mb-3">
               <img src="{{base_url}}/assets/uploads/images/{{caregiver.profile_photo}}" class="rounded-circle ms-3 mt-3"
                 alt="..." style="width: 65px; height: 65px; object-fit: cover;">
               <div class="p-2 ms-2 mt-3">
-                <b>Dr. {{caregiver.name}} {{caregiver.surname}}</b> <br> <small>{{caregiver.doctor}}</small></div>
+                <b>Dr. {{caregiver.name}} {{caregiver.surname}}</b> <br> <small>{{caregiver.doctor}}</small>
+              </div>
             </div>
             <div class="card-body ms-3">
               <p class="card-text"><b><i class="bi bi-geo-alt-fill mt-2"></i></b><small class="ms-2"><b>Rue de
@@ -83,28 +84,52 @@
 
           <div class="col-12 col-lg-8" style="margin-left:-2px;">
             <div class="row">
-              <div class="col-12  mt-2 mb-3">
+              <div class="col-12 mt-2 mb-3">
                 <div class="d-flex justify-content-around">
-                  <i class="bi bi-arrow-left-circle-fill" id="prevDate"></i>
-                  <header><b>April 7 Monday</b></header>
-                  <i class="bi bi-arrow-right-circle-fill" id="nextDate"></i>
+                  <i class="bi bi-arrow-left-circle-fill prevDate" id="prevDate-{{caregiver.user_id}}" style="cursor: pointer;"></i>
+                  {% for day, value in caregiver.schedule %}
+                  <header class="day" data-caregiver-id="{{caregiver.user_id}}" data-day="{{ day }}">
+                    <b>{{ day }}</b>
+                  </header>
+                  {% endfor %}
+                  <i class="bi bi-arrow-right-circle-fill nextDate" id="nextDate-{{caregiver.user_id}}" style="cursor: pointer;"></i>
+              
+                </div>
               </div>
-              </div>
+
             </div>
-            <div class="row gx-1 gy-2">
-              <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                <input type="checkbox" class="btn-check w-100 calendar-input" name="" value="08:00" id="">
-                <label class="btn calendar-input w-100 text-truncate overflow-hidden" for="">08:00</label>
+            <div class="row gx-1 gy-2 time-slots" data-caregiver-id="{{caregiver.user_id}}">
+              {% set index = 0 %}
+              {% for day, times in caregiver.schedule %}
+              {% for time in times.times %}
+              {% set input_id = 'time_' ~ caregiver.user_id ~ '_' ~ day ~ '_' ~ index %}
+              {% if time.status == "free" %}
+              <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 time-slot" data-day="{{day}}"
+                data-caregiver-id="{{caregiver.user_id}}">
+                <input type="checkbox" class="btn-check w-100 calendar-input" value="{{time.time}}" id="{{ input_id }}">
+                <label class="btn calendar-input w-100 text-truncate overflow-hidden"
+                  for="{{ input_id }}">{{time.time}}</label>
               </div>
+              {% else %}
+              <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 time-slot" data-day="{{day}}"
+                data-caregiver-id="{{caregiver.user_id}}">
+                <input type="checkbox" class="btn-check w-100 calendar-input" value="" id="{{ input_id }}" disabled>
+                <label class="btn calendar-input-busy w-100 text-truncate overflow-hidden"
+                  for="{{ input_id }}">-</label>
+              </div>
+              {% endif %}
+              {% set index = index + 1 %}
+              {% endfor %}
+              {% endfor %}
+
 
             </div>
           </div>
         </div>
       </div>
-      {%endfor%}
-
-
+      {% endfor %}
     </div>
+
     <!-- Col-4 for aside content -->
     <div class="col-12 col-lg-4">
       <div class="card sticky-top h-75" style="width: 100%;">
@@ -120,8 +145,80 @@
 
   </div>
 </div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+
+    const allCaregivers = document.querySelectorAll(".day[data-caregiver-id]");
+    const caregivers = {};
+
+    allCaregivers.forEach(dayEl => {
+      const caregiverId = dayEl.dataset.caregiverId;
+
+      if (!caregivers[caregiverId]) {
+        caregivers[caregiverId] = {
+          days: [],
+          currentIndex: 0
+        };
+      }
+
+      caregivers[caregiverId].days.push(dayEl);
+    });
+
+    function updateDisplay(caregiverId) {
+      const caregiver = caregivers[caregiverId];
+      const currentDayEl = caregiver.days[caregiver.currentIndex];
+      const currentDay = currentDayEl.dataset.day;
+
+      caregiver.days.forEach(day => day.style.display = "none");
+      currentDayEl.style.display = "block";
+
+      const timeSlots = document.querySelectorAll(`.time-slot[data-caregiver-id="${caregiverId}"]`);
+      timeSlots.forEach(slot => {
+        if (slot.dataset.day === currentDay) {
+          slot.style.display = "block";
+        } else {
+          slot.style.display = "none";
+        }
+      });
+    }
 
 
+    for (const id in caregivers) {
+      updateDisplay(id);
+
+      const prevBtn = document.getElementById(`prevDate-${id}`);
+      const nextBtn = document.getElementById(`nextDate-${id}`);
+
+      prevBtn?.addEventListener("click", () => {
+        caregivers[id].currentIndex = (caregivers[id].currentIndex - 1 + caregivers[id].days.length) % caregivers[id].days.length;
+        updateDisplay(id);
+      });
+
+      nextBtn?.addEventListener("click", () => {
+        caregivers[id].currentIndex = (caregivers[id].currentIndex + 1) % caregivers[id].days.length;
+        updateDisplay(id);
+      });
+    }
+  });
+
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const inputs = document.querySelectorAll('.calendar-input');
+
+    inputs.forEach(input => {
+      input.addEventListener('change', function () {
+        if (this.checked) {
+          inputs.forEach(i => {
+            if (i !== this) i.checked = false;
+          });
+        }
+      });
+    });
+  });
+
+</script>
 
 
 
@@ -133,5 +230,3 @@ Search
 
 
 {% endblock %}
-
-

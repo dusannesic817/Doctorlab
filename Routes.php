@@ -20,6 +20,10 @@ return [
     #MakeAppointment
     App\Core\Route::get('|^makeappointment/type/([0-9+])/?$|', "MakeAppointment", 'type'),
 
+    App\Core\Route::post('|^makeappointment/create/?$|', "MakeAppointment", 'create'),
+
+
+
 
     #Appointement routes:
     App\Core\Route::get('|^client/appointmens/([0-9+])/?$|',    "Appointment", 'show'),

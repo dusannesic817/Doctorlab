@@ -9,10 +9,33 @@ use App\Models\UserModel;
 
 class MakeAppointmentController extends Controller{
 
+
+    public function create()
+    {
+    
+        $caregiverId = filter_input(INPUT_POST, 'caregiver_id', FILTER_SANITIZE_NUMBER_INT);
+        $caregiverName = filter_input(INPUT_POST, 'caregiver_name', );
+        $day = filter_input(INPUT_POST, 'day', );
+        $time = filter_input(INPUT_POST, 'time', );
+    
+   
+        $this->getSession()->put("appointment", [
+            'caregiver_id' => $caregiverId,
+            'caregiver_name' => $caregiverName,
+            'day' => $day,
+            'time' => $time,
+        ]);
+    
+
+    }
+    
     
 
     public function type($id){
-       /* $userModel = new UserModel($this->getDatabaseConnection());
+
+       
+
+       $userModel = new UserModel($this->getDatabaseConnection());
     
         $caregiver = $userModel->getById($id);
     
@@ -34,7 +57,10 @@ class MakeAppointmentController extends Controller{
         }else{
             $this->redirect('/');
         }
-    var_dump($caregiver);*/
+
+        $this->set('caregiver',$caregiver);
+        
+       
     }
     
     

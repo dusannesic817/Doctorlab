@@ -50,10 +50,7 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
         // line 5
         echo "
 
-<form action=\"";
-        // line 7
-        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
-        echo "/appointment/submit\" method=\"POST\" id=\"appointmentForm\">
+<form action=\"\" method=\"POST\" id=\"appointmentForm\">
   <div class=\"container\">
     <div class=\"row mt-3 gy-3\">
       <div class=\"col-12 col-lg-8\">
@@ -168,69 +165,76 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
                         // line 52
                         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["caregiver"], "user_id", [], "any", false, false, false, 52), "html", null, true);
                         echo "\">
-                  <input type=\"checkbox\" class=\"btn-check w-100 calendar-input\" value=\"";
+                <input type=\"checkbox\" class=\"btn-check w-100 calendar-input\" value=\"";
                         // line 53
                         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["time"], "time", [], "any", false, false, false, 53), "html", null, true);
-                        echo "\" name=\"appointment[";
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["caregiver"], "user_id", [], "any", false, false, false, 53), "html", null, true);
+                        echo "\" 
+                name=\"appointment[";
+                        // line 54
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["caregiver"], "user_id", [], "any", false, false, false, 54), "html", null, true);
                         echo "][";
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["caregiver"], "name", [], "any", false, false, false, 53), "html", null, true);
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["caregiver"], "name", [], "any", false, false, false, 54), "html", null, true);
                         echo "][";
                         echo twig_escape_filter($this->env, $context["day"], "html", null, true);
                         echo "][]\" 
-    id=\"";
-                        // line 54
+                id=\"";
+                        // line 55
                         echo twig_escape_filter($this->env, ($context["input_id"] ?? null), "html", null, true);
                         echo "\" data-caregiver-id=\"";
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["caregiver"], "user_id", [], "any", false, false, false, 54), "html", null, true);
-                        echo "\" data-day=\"";
-                        echo twig_escape_filter($this->env, $context["day"], "html", null, true);
-                        echo "\" onclick=\"redirectToPage(this)\">
-              
-              <label class=\"btn calendar-input w-100 text-truncate overflow-hidden\" for=\"";
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["caregiver"], "user_id", [], "any", false, false, false, 55), "html", null, true);
+                        echo "\" data-caregiver-name=\"";
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["caregiver"], "name", [], "any", false, false, false, 55), "html", null, true);
+                        echo "\" 
+                data-day=\"";
                         // line 56
+                        echo twig_escape_filter($this->env, $context["day"], "html", null, true);
+                        echo "\" onclick=\"saveToSession(this)\">
+            
+            <label class=\"btn calendar-input w-100 text-truncate overflow-hidden\" for=\"";
+                        // line 58
                         echo twig_escape_filter($this->env, ($context["input_id"] ?? null), "html", null, true);
                         echo "\">";
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["time"], "time", [], "any", false, false, false, 56), "html", null, true);
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["time"], "time", [], "any", false, false, false, 58), "html", null, true);
                         echo "</label>
+            
                 </div>
                 ";
                     } else {
-                        // line 59
+                        // line 62
                         echo "                <div class=\"col-xl-3 col-lg-6 col-md-6 col-sm-12 time-slot\" data-day=\"";
                         echo twig_escape_filter($this->env, $context["day"], "html", null, true);
                         echo "\"
                   data-caregiver-id=\"";
-                        // line 60
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["caregiver"], "user_id", [], "any", false, false, false, 60), "html", null, true);
+                        // line 63
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["caregiver"], "user_id", [], "any", false, false, false, 63), "html", null, true);
                         echo "\">
                   <input type=\"checkbox\" class=\"btn-check w-100 calendar-input\" value=\"\" id=\"";
-                        // line 61
+                        // line 64
                         echo twig_escape_filter($this->env, ($context["input_id"] ?? null), "html", null, true);
                         echo "\" disabled>
                   <label class=\"btn calendar-input-busy w-100 text-truncate overflow-hidden\" for=\"";
-                        // line 62
+                        // line 65
                         echo twig_escape_filter($this->env, ($context["input_id"] ?? null), "html", null, true);
                         echo "\">-</label>
                 </div>
                 ";
                     }
-                    // line 65
+                    // line 68
                     echo "                ";
                     $context["index"] = (($context["index"] ?? null) + 1);
-                    // line 66
+                    // line 69
                     echo "                ";
                 }
                 $_parent = $context['_parent'];
                 unset($context['_seq'], $context['_iterated'], $context['_key'], $context['time'], $context['_parent'], $context['loop']);
                 $context = array_intersect_key($context, $_parent) + $_parent;
-                // line 67
+                // line 70
                 echo "                ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['day'], $context['times'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 68
+            // line 71
             echo "              </div>
             </div>
           </div>
@@ -240,7 +244,7 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['caregiver'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 73
+        // line 76
         echo "      </div>
     </div>
   </div>
@@ -322,39 +326,72 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
 
 </script>
 <script>
-  function redirectToPage(checkbox) {
-      const caregiverId = checkbox.getAttribute('data-caregiver-id');
-      const day = checkbox.getAttribute('data-day');
-      const time = checkbox.value;
-
-      // Create the URL you want to redirect to, with dynamic parameters
-      const redirectUrl = '";
-        // line 160
+  function saveToSession(checkbox) {
+    const caregiverId = checkbox.getAttribute('data-caregiver-id');
+    const caregiverName = checkbox.getAttribute('data-caregiver-name');
+    const day = checkbox.getAttribute('data-day');
+    const time = checkbox.value;
+  
+    const xhr = new XMLHttpRequest();
+    const params = new URLSearchParams({
+        caregiver_id: caregiverId,
+        caregiver_name: caregiverName,
+        day: day,
+        time: time
+    });
+  
+    const url = '";
+        // line 171
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
-        echo "/makeappointment/type/'+caregiverId;
-      
-      // Redirect to the URL
-      window.location.href = redirectUrl;
+        echo "/makeappointment/create/';
+    xhr.open('POST', url, true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  
+
+  
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            console.log('✅ Session updated, server response:', xhr.responseText);
+            
+           
+             window.location.href = '";
+        // line 182
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/makeappointment/type/' + caregiverId;
+        } else {
+            console.error('❌ Greška prilikom slanja POST zahteva');
+        }
+    };
+  
+    xhr.onerror = function() {
+        console.error('❌ Greška u mrežnom zahtevu');
+    };
+  
+    xhr.send(params.toString());
   }
-</script>
+  </script>
+  
+
+
+
 
 
 
 
 ";
-        // line 170
+        // line 203
         $this->displayBlock('naslov', $context, $blocks);
-        // line 174
+        // line 207
         echo "
 
 ";
     }
 
-    // line 170
+    // line 203
     public function block_naslov($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 171
+        // line 204
         echo "Search
 
 ";
@@ -372,7 +409,7 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
 
     public function getDebugInfo()
     {
-        return array (  358 => 171,  354 => 170,  348 => 174,  346 => 170,  333 => 160,  244 => 73,  234 => 68,  228 => 67,  222 => 66,  219 => 65,  213 => 62,  209 => 61,  205 => 60,  200 => 59,  192 => 56,  183 => 54,  173 => 53,  169 => 52,  164 => 51,  161 => 50,  158 => 49,  153 => 48,  148 => 47,  146 => 46,  142 => 45,  133 => 40,  124 => 37,  117 => 36,  113 => 35,  109 => 34,  95 => 25,  82 => 19,  74 => 16,  66 => 12,  62 => 11,  55 => 7,  51 => 5,  47 => 4,  36 => 1,);
+        return array (  395 => 204,  391 => 203,  385 => 207,  383 => 203,  359 => 182,  345 => 171,  248 => 76,  238 => 71,  232 => 70,  226 => 69,  223 => 68,  217 => 65,  213 => 64,  209 => 63,  204 => 62,  195 => 58,  190 => 56,  182 => 55,  174 => 54,  170 => 53,  166 => 52,  161 => 51,  158 => 50,  155 => 49,  150 => 48,  145 => 47,  143 => 46,  139 => 45,  130 => 40,  121 => 37,  114 => 36,  110 => 35,  106 => 34,  92 => 25,  79 => 19,  71 => 16,  63 => 12,  59 => 11,  51 => 5,  47 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -383,7 +420,7 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
 {% block main %}
 
 
-<form action=\"{{base_url}}/appointment/submit\" method=\"POST\" id=\"appointmentForm\">
+<form action=\"\" method=\"POST\" id=\"appointmentForm\">
   <div class=\"container\">
     <div class=\"row mt-3 gy-3\">
       <div class=\"col-12 col-lg-8\">
@@ -429,10 +466,13 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
                 {% if time.status == \"free\" %}
                 <div class=\"col-xl-3 col-lg-6 col-md-6 col-sm-12 time-slot\" data-day=\"{{day}}\"
                   data-caregiver-id=\"{{caregiver.user_id}}\">
-                  <input type=\"checkbox\" class=\"btn-check w-100 calendar-input\" value=\"{{ time.time }}\" name=\"appointment[{{ caregiver.user_id }}][{{ caregiver.name }}][{{ day }}][]\" 
-    id=\"{{ input_id }}\" data-caregiver-id=\"{{ caregiver.user_id }}\" data-day=\"{{ day }}\" onclick=\"redirectToPage(this)\">
-              
-              <label class=\"btn calendar-input w-100 text-truncate overflow-hidden\" for=\"{{ input_id }}\">{{ time.time }}</label>
+                <input type=\"checkbox\" class=\"btn-check w-100 calendar-input\" value=\"{{ time.time }}\" 
+                name=\"appointment[{{ caregiver.user_id }}][{{ caregiver.name }}][{{ day }}][]\" 
+                id=\"{{ input_id }}\" data-caregiver-id=\"{{ caregiver.user_id }}\" data-caregiver-name=\"{{ caregiver.name }}\" 
+                data-day=\"{{ day }}\" onclick=\"saveToSession(this)\">
+            
+            <label class=\"btn calendar-input w-100 text-truncate overflow-hidden\" for=\"{{ input_id }}\">{{ time.time }}</label>
+            
                 </div>
                 {% else %}
                 <div class=\"col-xl-3 col-lg-6 col-md-6 col-sm-12 time-slot\" data-day=\"{{day}}\"
@@ -530,18 +570,48 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
 
 </script>
 <script>
-  function redirectToPage(checkbox) {
-      const caregiverId = checkbox.getAttribute('data-caregiver-id');
-      const day = checkbox.getAttribute('data-day');
-      const time = checkbox.value;
+  function saveToSession(checkbox) {
+    const caregiverId = checkbox.getAttribute('data-caregiver-id');
+    const caregiverName = checkbox.getAttribute('data-caregiver-name');
+    const day = checkbox.getAttribute('data-day');
+    const time = checkbox.value;
+  
+    const xhr = new XMLHttpRequest();
+    const params = new URLSearchParams({
+        caregiver_id: caregiverId,
+        caregiver_name: caregiverName,
+        day: day,
+        time: time
+    });
+  
+    const url = '{{ base_url }}/makeappointment/create/';
+    xhr.open('POST', url, true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  
 
-      // Create the URL you want to redirect to, with dynamic parameters
-      const redirectUrl = '{{base_url}}/makeappointment/type/'+caregiverId;
-      
-      // Redirect to the URL
-      window.location.href = redirectUrl;
+  
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            console.log('✅ Session updated, server response:', xhr.responseText);
+            
+           
+             window.location.href = '{{ base_url }}/makeappointment/type/' + caregiverId;
+        } else {
+            console.error('❌ Greška prilikom slanja POST zahteva');
+        }
+    };
+  
+    xhr.onerror = function() {
+        console.error('❌ Greška u mrežnom zahtevu');
+    };
+  
+    xhr.send(params.toString());
   }
-</script>
+  </script>
+  
+
+
+
 
 
 

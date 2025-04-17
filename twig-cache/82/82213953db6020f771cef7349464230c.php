@@ -65,14 +65,25 @@ class __TwigTemplate_9084df527555b8ebe45fbfbc96762bc4 extends Template
           <div class=\"card-body\">
             <p class=\"ms-2 mb-4\"><small><b>Choose your piace of consultation</b></small></p>
             <div class=\"list-group\">
-              <button type=\"button\" class=\"list-group-item list-group-item-action\"><small>A second button item</small></button>
-              <button type=\"button\" class=\"list-group-item list-group-item-action\"><small>A second button item</small></button>
-              <button type=\"button\" class=\"list-group-item list-group-item-action\"><small>A second button item</small></button>
-              <button type=\"button\" class=\"list-group-item list-group-item-action\" ><small>A second button item</small></button>
-              <button type=\"button\" class=\"list-group-item list-group-item-action\"><small>A second button item</small></button>
-              <button type=\"button\" class=\"list-group-item list-group-item-action\"><small>A second button item</small></button>
-              <button type=\"button\" class=\"list-group-item list-group-item-action\" ><small>A second button item</small></button>
-               
+              ";
+        // line 22
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "caregiver_data", [], "any", false, false, false, 22), "services", [], "any", false, false, false, 22));
+        foreach ($context['_seq'] as $context["_key"] => $context["service"]) {
+            // line 23
+            echo "                
+              <button type=\"button\" class=\"list-group-item list-group-item-action\"><small>";
+            // line 24
+            echo twig_escape_filter($this->env, $context["service"], "html", null, true);
+            echo "</small></button>
+              
+             ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['service'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 27
+        echo "               
             </div>
           </div>
         </div>
@@ -81,7 +92,10 @@ class __TwigTemplate_9084df527555b8ebe45fbfbc96762bc4 extends Template
         <div class=\"card\" style=\"width: 18rem;\">
           <img src=\"...\" class=\"card-img-top\" alt=\"...\">
           <div class=\"card-body\">
-            <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <p class=\"card-text\">";
+        // line 36
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "name", [], "any", false, false, false, 36), "html", null, true);
+        echo "</p>
           </div>
         </div>
       </div>
@@ -94,18 +108,18 @@ class __TwigTemplate_9084df527555b8ebe45fbfbc96762bc4 extends Template
 
 
 ";
-        // line 50
+        // line 48
         $this->displayBlock('naslov', $context, $blocks);
-        // line 53
+        // line 51
         echo "
 ";
     }
 
-    // line 50
+    // line 48
     public function block_naslov($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 51
+        // line 49
         echo "Type
 ";
     }
@@ -122,7 +136,7 @@ class __TwigTemplate_9084df527555b8ebe45fbfbc96762bc4 extends Template
 
     public function getDebugInfo()
     {
-        return array (  109 => 51,  105 => 50,  100 => 53,  98 => 50,  51 => 5,  47 => 4,  36 => 1,);
+        return array (  123 => 49,  119 => 48,  114 => 51,  112 => 48,  97 => 36,  86 => 27,  77 => 24,  74 => 23,  70 => 22,  51 => 5,  47 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -148,13 +162,11 @@ class __TwigTemplate_9084df527555b8ebe45fbfbc96762bc4 extends Template
           <div class=\"card-body\">
             <p class=\"ms-2 mb-4\"><small><b>Choose your piace of consultation</b></small></p>
             <div class=\"list-group\">
-              <button type=\"button\" class=\"list-group-item list-group-item-action\"><small>A second button item</small></button>
-              <button type=\"button\" class=\"list-group-item list-group-item-action\"><small>A second button item</small></button>
-              <button type=\"button\" class=\"list-group-item list-group-item-action\"><small>A second button item</small></button>
-              <button type=\"button\" class=\"list-group-item list-group-item-action\" ><small>A second button item</small></button>
-              <button type=\"button\" class=\"list-group-item list-group-item-action\"><small>A second button item</small></button>
-              <button type=\"button\" class=\"list-group-item list-group-item-action\"><small>A second button item</small></button>
-              <button type=\"button\" class=\"list-group-item list-group-item-action\" ><small>A second button item</small></button>
+              {%for service in caregiver.caregiver_data.services %}
+                
+              <button type=\"button\" class=\"list-group-item list-group-item-action\"><small>{{service}}</small></button>
+              
+             {%endfor%}
                
             </div>
           </div>
@@ -164,7 +176,7 @@ class __TwigTemplate_9084df527555b8ebe45fbfbc96762bc4 extends Template
         <div class=\"card\" style=\"width: 18rem;\">
           <img src=\"...\" class=\"card-img-top\" alt=\"...\">
           <div class=\"card-body\">
-            <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <p class=\"card-text\">{{caregiver.name}}</p>
           </div>
         </div>
       </div>

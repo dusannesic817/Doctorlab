@@ -48,6 +48,8 @@
                 {% for time in times.times %}
                 {% set input_id = 'time_' ~ caregiver.user_id ~ '_' ~ day ~ '_' ~ index %}
                 {% if time.status == "free" %}
+                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 time-slot" data-day="{{day}}"
+                  data-caregiver-id="{{caregiver.user_id}}">
                 <input type="checkbox" class="btn-check w-100 calendar-input" value="{{ time.time }}" 
                 name="appointment[{{ caregiver.user_id }}][{{ caregiver.name }}][{{ day }}][]" 
                 id="{{ input_id }}" data-caregiver-id="{{ caregiver.user_id }}" data-caregiver-name="{{ caregiver.name }}" 
@@ -153,31 +155,43 @@
 </script>
 <script>
   function saveToSession(checkbox) {
-      // Prikupljanje podataka sa checkbox-a
-      const caregiverId = checkbox.getAttribute('data-caregiver-id');
-      const caregiverName = checkbox.getAttribute('data-caregiver-name');
-      const day = checkbox.getAttribute('data-day');
-      const time = checkbox.value;
+    const caregiverId = checkbox.getAttribute('data-caregiver-id');
+    const caregiverName = checkbox.getAttribute('data-caregiver-name');
+    const day = checkbox.getAttribute('data-day');
+    const time = checkbox.value;
+  
+    const xhr = new XMLHttpRequest();
+    const params = new URLSearchParams({
+        caregiver_id: caregiverId,
+        caregiver_name: caregiverName,
+        day: day,
+        time: time
+    });
+  
+    const url = '{{ base_url }}/makeappointment/create/';
+    xhr.open('POST', url, true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  
 
-      // Slanje podataka u PHP sesiju putem AJAX-a
-      const xhr = new XMLHttpRequest();
-      xhr.open('POST', 'putanja', true);
-      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  
+    xhr.onload = function() {
+        if (xhr.status === 200) {
 
-      xhr.onload = function() {
-          if (xhr.status === 200) {
-              console.log('Session updated');
-              // Ako je sesija uspešno ažurirana, izvrši redirekciju
-              window.location.href = '{{base_url}}/makeappointment/type/'+caregiverId;  // Ovdje zameniti sa URL-om na koji treba da se redirektuješ
-          } else {
-              console.log('Error updating session');
-          }
-      };
-
-      // Slanje podataka
-      xhr.send('caregiver_id=' + caregiverId + '&caregiver_name=' + caregiverName + '&day=' + day + '&time=' + time);
+             window.location.href = '{{ base_url }}/makeappointment/type/' + caregiverId;
+        } else {
+            console.error('Error');
+        }
+    };
+  
+    xhr.onerror = function() {
+        console.error('Error');
+    };
+  
+    xhr.send(params.toString());
   }
-</script>
+  </script>
+  
+
 
 
 

@@ -64,27 +64,38 @@ class __TwigTemplate_9084df527555b8ebe45fbfbc96762bc4 extends Template
           <p class=\"mt-5 ms-5\"><small><b>Previous step</b></small></p>
           <div class=\"card-body\">
             <p class=\"ms-2 mb-4\"><small><b>Choose your piace of consultation</b></small></p>
-            <div class=\"list-group\">
+            <div class=\"list-group\" id=\"services-list\">
               ";
         // line 22
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "caregiver_data", [], "any", false, false, false, 22), "services", [], "any", false, false, false, 22));
         foreach ($context['_seq'] as $context["_key"] => $context["service"]) {
             // line 23
-            echo "                
-              <button type=\"button\" class=\"list-group-item list-group-item-action\"><small>";
-            // line 24
+            echo "                <label class=\"list-group-item list-group-item-action\" style=\"cursor: pointer;\">
+                  <input type=\"checkbox\"
+                         class=\"d-none\"
+                         name=\"caregiver_data\"
+                         value=\"";
+            // line 27
             echo twig_escape_filter($this->env, $context["service"], "html", null, true);
-            echo "</small></button>
-              
-             ";
+            echo "\"
+                         onclick=\"saveToSession(this)\"
+                         data-caregiver-data=\"";
+            // line 29
+            echo twig_escape_filter($this->env, $context["service"], "html", null, true);
+            echo "\">
+                  <small>";
+            // line 30
+            echo twig_escape_filter($this->env, $context["service"], "html", null, true);
+            echo "</small>
+                </label>
+              ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['service'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 27
-        echo "               
-            </div>
+        // line 33
+        echo "            </div>
           </div>
         </div>
       </div>
@@ -93,8 +104,8 @@ class __TwigTemplate_9084df527555b8ebe45fbfbc96762bc4 extends Template
           <img src=\"...\" class=\"card-img-top\" alt=\"...\">
           <div class=\"card-body\">
             <p class=\"card-text\">";
-        // line 36
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "name", [], "any", false, false, false, 36), "html", null, true);
+        // line 41
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "name", [], "any", false, false, false, 41), "html", null, true);
         echo "</p>
           </div>
         </div>
@@ -105,21 +116,54 @@ class __TwigTemplate_9084df527555b8ebe45fbfbc96762bc4 extends Template
 
 
 </body>
+<script>
+  function saveToSession(checkbox) {
+    const caregiver_data = checkbox.getAttribute('data-caregiver-data');
 
+    const xhr = new XMLHttpRequest();
+    const params = new URLSearchParams({
+      caregiver_data: caregiver_data
+    });
+
+    const url = '";
+        // line 60
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/makeappointment/store/';
+    xhr.open('POST', url, true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+    xhr.onload = function() {
+      if (xhr.status === 200) {
+        window.location.href = '";
+        // line 66
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/makeappointment/create/';
+      } else {
+        console.error('Greška u odgovoru sa servera.');
+      }
+    };
+
+    xhr.onerror = function() {
+      console.error('Greška prilikom slanja zahteva.');
+    };
+
+    xhr.send(params.toString());
+  }
+</script>
 
 ";
-        // line 48
+        // line 80
         $this->displayBlock('naslov', $context, $blocks);
-        // line 51
+        // line 83
         echo "
 ";
     }
 
-    // line 48
+    // line 80
     public function block_naslov($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 49
+        // line 81
         echo "Type
 ";
     }
@@ -136,7 +180,7 @@ class __TwigTemplate_9084df527555b8ebe45fbfbc96762bc4 extends Template
 
     public function getDebugInfo()
     {
-        return array (  123 => 49,  119 => 48,  114 => 51,  112 => 48,  97 => 36,  86 => 27,  77 => 24,  74 => 23,  70 => 22,  51 => 5,  47 => 4,  36 => 1,);
+        return array (  167 => 81,  163 => 80,  158 => 83,  156 => 80,  139 => 66,  130 => 60,  108 => 41,  98 => 33,  89 => 30,  85 => 29,  80 => 27,  74 => 23,  70 => 22,  51 => 5,  47 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -161,13 +205,18 @@ class __TwigTemplate_9084df527555b8ebe45fbfbc96762bc4 extends Template
           <p class=\"mt-5 ms-5\"><small><b>Previous step</b></small></p>
           <div class=\"card-body\">
             <p class=\"ms-2 mb-4\"><small><b>Choose your piace of consultation</b></small></p>
-            <div class=\"list-group\">
-              {%for service in caregiver.caregiver_data.services %}
-                
-              <button type=\"button\" class=\"list-group-item list-group-item-action\"><small>{{service}}</small></button>
-              
-             {%endfor%}
-               
+            <div class=\"list-group\" id=\"services-list\">
+              {% for service in caregiver.caregiver_data.services %}
+                <label class=\"list-group-item list-group-item-action\" style=\"cursor: pointer;\">
+                  <input type=\"checkbox\"
+                         class=\"d-none\"
+                         name=\"caregiver_data\"
+                         value=\"{{ service }}\"
+                         onclick=\"saveToSession(this)\"
+                         data-caregiver-data=\"{{ service }}\">
+                  <small>{{ service }}</small>
+                </label>
+              {% endfor %}
             </div>
           </div>
         </div>
@@ -186,7 +235,34 @@ class __TwigTemplate_9084df527555b8ebe45fbfbc96762bc4 extends Template
 
 
 </body>
+<script>
+  function saveToSession(checkbox) {
+    const caregiver_data = checkbox.getAttribute('data-caregiver-data');
 
+    const xhr = new XMLHttpRequest();
+    const params = new URLSearchParams({
+      caregiver_data: caregiver_data
+    });
+
+    const url = '{{ base_url }}/makeappointment/store/';
+    xhr.open('POST', url, true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+    xhr.onload = function() {
+      if (xhr.status === 200) {
+        window.location.href = '{{ base_url }}/makeappointment/create/';
+      } else {
+        console.error('Greška u odgovoru sa servera.');
+      }
+    };
+
+    xhr.onerror = function() {
+      console.error('Greška prilikom slanja zahteva.');
+    };
+
+    xhr.send(params.toString());
+  }
+</script>
 
 {% block naslov %}
 Type

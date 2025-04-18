@@ -13,20 +13,31 @@ class MakeAppointmentController extends Controller{
     public function create()
     {
     
+        
+    
+
+    }
+    public function store(){
         $caregiverId = filter_input(INPUT_POST, 'caregiver_id', FILTER_SANITIZE_NUMBER_INT);
         $caregiverName = filter_input(INPUT_POST, 'caregiver_name', );
         $day = filter_input(INPUT_POST, 'day', );
         $time = filter_input(INPUT_POST, 'time', );
-    
-   
-        $this->getSession()->put("appointment", [
+        $caregiver_data = filter_input(INPUT_POST, 'caregiver_data', );
+
+        // Kreiramo niz sa svim podacima
+        $appointmentData = [
             'caregiver_id' => $caregiverId,
             'caregiver_name' => $caregiverName,
             'day' => $day,
             'time' => $time,
-        ]);
+            'caregiver_data'=>$caregiver_data
+            
+        ];
     
-
+       
+        $this->getSession()->put("appointment", $appointmentData);
+    
+       
     }
     
     

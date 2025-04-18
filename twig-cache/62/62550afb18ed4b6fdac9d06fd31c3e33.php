@@ -343,7 +343,7 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
     const url = '";
         // line 171
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
-        echo "/makeappointment/create/';
+        echo "/makeappointment/store/';
     xhr.open('POST', url, true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   
@@ -351,20 +351,18 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
   
     xhr.onload = function() {
         if (xhr.status === 200) {
-            console.log('✅ Session updated, server response:', xhr.responseText);
-            
-           
+
              window.location.href = '";
-        // line 182
+        // line 180
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/makeappointment/type/' + caregiverId;
         } else {
-            console.error('❌ Greška prilikom slanja POST zahteva');
+            console.error('Error');
         }
     };
   
     xhr.onerror = function() {
-        console.error('❌ Greška u mrežnom zahtevu');
+        console.error('Error');
     };
   
     xhr.send(params.toString());
@@ -379,19 +377,19 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
 
 
 ";
-        // line 203
+        // line 201
         $this->displayBlock('naslov', $context, $blocks);
-        // line 207
+        // line 205
         echo "
 
 ";
     }
 
-    // line 203
+    // line 201
     public function block_naslov($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 204
+        // line 202
         echo "Search
 
 ";
@@ -409,7 +407,7 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
 
     public function getDebugInfo()
     {
-        return array (  395 => 204,  391 => 203,  385 => 207,  383 => 203,  359 => 182,  345 => 171,  248 => 76,  238 => 71,  232 => 70,  226 => 69,  223 => 68,  217 => 65,  213 => 64,  209 => 63,  204 => 62,  195 => 58,  190 => 56,  182 => 55,  174 => 54,  170 => 53,  166 => 52,  161 => 51,  158 => 50,  155 => 49,  150 => 48,  145 => 47,  143 => 46,  139 => 45,  130 => 40,  121 => 37,  114 => 36,  110 => 35,  106 => 34,  92 => 25,  79 => 19,  71 => 16,  63 => 12,  59 => 11,  51 => 5,  47 => 4,  36 => 1,);
+        return array (  393 => 202,  389 => 201,  383 => 205,  381 => 201,  357 => 180,  345 => 171,  248 => 76,  238 => 71,  232 => 70,  226 => 69,  223 => 68,  217 => 65,  213 => 64,  209 => 63,  204 => 62,  195 => 58,  190 => 56,  182 => 55,  174 => 54,  170 => 53,  166 => 52,  161 => 51,  158 => 50,  155 => 49,  150 => 48,  145 => 47,  143 => 46,  139 => 45,  130 => 40,  121 => 37,  114 => 36,  110 => 35,  106 => 34,  92 => 25,  79 => 19,  71 => 16,  63 => 12,  59 => 11,  51 => 5,  47 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -584,7 +582,7 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
         time: time
     });
   
-    const url = '{{ base_url }}/makeappointment/create/';
+    const url = '{{ base_url }}/makeappointment/store/';
     xhr.open('POST', url, true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   
@@ -592,17 +590,15 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
   
     xhr.onload = function() {
         if (xhr.status === 200) {
-            console.log('✅ Session updated, server response:', xhr.responseText);
-            
-           
+
              window.location.href = '{{ base_url }}/makeappointment/type/' + caregiverId;
         } else {
-            console.error('❌ Greška prilikom slanja POST zahteva');
+            console.error('Error');
         }
     };
   
     xhr.onerror = function() {
-        console.error('❌ Greška u mrežnom zahtevu');
+        console.error('Error');
     };
   
     xhr.send(params.toString());

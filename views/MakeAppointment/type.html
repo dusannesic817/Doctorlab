@@ -18,13 +18,18 @@
           <p class="mt-5 ms-5"><small><b>Previous step</b></small></p>
           <div class="card-body">
             <p class="ms-2 mb-4"><small><b>Choose your piace of consultation</b></small></p>
-            <div class="list-group">
-              {%for service in caregiver.caregiver_data.services %}
-                
-              <button type="button" class="list-group-item list-group-item-action"><small>{{service}}</small></button>
-              
-             {%endfor%}
-               
+            <div class="list-group" id="services-list">
+              {% for service in caregiver.caregiver_data.services %}
+                <label class="list-group-item list-group-item-action" style="cursor: pointer;">
+                  <input type="checkbox"
+                         class="d-none"
+                         name="caregiver_data"
+                         value="{{ service }}"
+                         onclick="saveToSession(this)"
+                         data-caregiver-data="{{ service }}">
+                  <small>{{ service }}</small>
+                </label>
+              {% endfor %}
             </div>
           </div>
         </div>
@@ -43,7 +48,34 @@
 
 
 </body>
+<script>
+  function saveToSession(checkbox) {
+    const caregiver_data = checkbox.getAttribute('data-caregiver-data');
 
+    const xhr = new XMLHttpRequest();
+    const params = new URLSearchParams({
+      caregiver_data: caregiver_data
+    });
+
+    const url = '{{ base_url }}/makeappointment/store/';
+    xhr.open('POST', url, true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+    xhr.onload = function() {
+      if (xhr.status === 200) {
+        window.location.href = '{{ base_url }}/makeappointment/create/';
+      } else {
+        console.error('Greška u odgovoru sa servera.');
+      }
+    };
+
+    xhr.onerror = function() {
+      console.error('Greška prilikom slanja zahteva.');
+    };
+
+    xhr.send(params.toString());
+  }
+</script>
 
 {% block naslov %}
 Type

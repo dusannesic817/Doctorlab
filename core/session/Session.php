@@ -67,6 +67,16 @@ final class Session{
 
     }
 
+    public function update($key, $newValue){
+        if ($this->exists($key)) {
+            $this->sessionData[$key]=$newValue;
+            
+        }
+       
+    }
+    
+    
+
     public function save(){
         $jsonData = json_encode($this->sessionData);
         $this->sessionStorage->save($this->sessionId,$jsonData);

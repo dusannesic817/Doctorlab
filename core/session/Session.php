@@ -67,13 +67,23 @@ final class Session{
 
     }
 
-    public function update($key, $newValue){
-        if ($this->exists($key)) {
-            $this->sessionData[$key]=$newValue;
-            
+
+    public function update(string $key, array $newValues): void {
+        if (!$this->exists($key)) {
+            $this->put($key, $newValues);
+            return;
         }
-       
+    
+        $existingData = $this->get($key);
+        
+        // Samo ako je niz
+        if (is_array($existingData)) {
+            $merged = array_merge($existingData, $newValues);
+            $this->put($key, $merged);
+        }
     }
+    
+    
     
     
 

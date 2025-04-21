@@ -13,31 +13,38 @@ class MakeAppointmentController extends Controller{
     public function create()
     {
     
+        $appointment= $this->getSession()->get("appointment");
+
+        var_dump($appointment);
         
     
 
     }
-    public function store(){
-        $caregiverId = filter_input(INPUT_POST, 'caregiver_id', FILTER_SANITIZE_NUMBER_INT);
-        $caregiverName = filter_input(INPUT_POST, 'caregiver_name', );
-        $day = filter_input(INPUT_POST, 'day', );
-        $time = filter_input(INPUT_POST, 'time', );
-        $caregiver_data = filter_input(INPUT_POST, 'caregiver_data', );
-
-        // Kreiramo niz sa svim podacima
-        $appointmentData = [
+    public function store() {
+       
+        if (isset($_POST['caregiver_data']) && !isset($_POST['caregiver_id'])) {
+            $caregiverData = filter_input(INPUT_POST, 'caregiver_data');
+            $this->getSession()->update('appointment', ['caregiver_data' => $caregiverData]);
+            return;
+        }
+    
+        
+        $caregiverId = filter_input(INPUT_POST, 'caregiver_id');
+        $caregiverName = filter_input(INPUT_POST, 'caregiver_name');
+        $day = filter_input(INPUT_POST, 'day');
+        $time = filter_input(INPUT_POST, 'time');
+    
+        $this->getSession()->put("appointment", [
             'caregiver_id' => $caregiverId,
             'caregiver_name' => $caregiverName,
             'day' => $day,
             'time' => $time,
-            'caregiver_data'=>$caregiver_data
-            
-        ];
-    
-       
-        $this->getSession()->put("appointment", $appointmentData);
-    
-       
+            'caregiver_data' => null,
+            'user_id'=>null
+        ]);
+
+
+
     }
     
     

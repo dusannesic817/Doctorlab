@@ -15,7 +15,17 @@ class MakeAppointmentController extends Controller{
     
         $appointment= $this->getSession()->get("appointment");
 
-        var_dump($appointment);
+       if(!isset($appointment)){
+        $this->redirect('/');
+       }
+       $userModel= new UserModel($this->getDatabaseConnection());
+       $caregiver = $userModel->getCaregiver($appointment['caregiver_id']);
+
+       var_dump($caregiver);
+
+       $this->set('caregiver',$caregiver);
+       $this->set('appointment',$appointment);
+
         
     
 
@@ -55,7 +65,7 @@ class MakeAppointmentController extends Controller{
 
         $appointment = $this->getSession()->get("appointment");
 
-        // Pripremi niz podataka koji ide u bazu
+       
         $dataToInsert = [
             'user_id' => 2,
             'provider_id' => $appointment['caregiver_id'],
@@ -69,6 +79,11 @@ class MakeAppointmentController extends Controller{
         
         $makeAppointmentModel = new AppointmentModel($this->getDatabaseConnection());
         $makeAppointmentModel->add($dataToInsert);
+
+       /* if($makeAppointmentModel){
+            $this->getSession()->remove('appointment');
+            $this->redirect('/');
+        }*/
 
         $this->redirect('/');
     }

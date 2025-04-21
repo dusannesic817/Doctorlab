@@ -17,9 +17,6 @@ class MainController extends Controller{
      $doctors=$this->getJson('caregiver_data.json');
 
 
-     $this->getSession()->put("proba",['vrednost'=>1,'vrednost_2'=>2]);
-     $this->getSession()->update('proba',['vrednost_3'=>3]);
-
     /* foreach($doctors['doctors'] as $value){
           var_dump($value['title']);
      }

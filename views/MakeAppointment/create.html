@@ -15,11 +15,11 @@
     <div class="row ms-5">
       <div class="col-12 col-lg-6 mt-4">
         <div class="card">
-          <p class="mt-5 ms-5"><small><b>Previous step</b></small></p>
+          <p class="mt-5 ms-4"><a href="{{base_url}}/makeappointment/type/{{appointment.caregiver_id}}"><small><b><i class="bi bi-arrow-left"></i> Previous step</b></small></a></p>
           <div class="card-body">
             <p class="ms-2 mb-4"><small><b>Confirm the appointment time</b></small></p>
             <div class="text-center">
-              <small>You have selected the <b>Tuesday 22 April 2025</b> to <b>16:45</b></small>
+              <small>You have selected the <b>{{appointment.day}}</b> to <b>{{appointment.time}}</b></small>
               <button type="button" class="btn btn-primary  w-100  mt-3 mb-3" data-bs-toggle="modal"
                 data-bs-target="#staticBackdrop"><b>Continue</b></button>
 
@@ -39,9 +39,9 @@
                   <div class="modal-body">
                     <h5 class="text-center">Read before making an appointemt</h5>
                     <small>Reason of consultation</small>
-                    <p class="border-bottom">aaaaaaaaaaaaaaaaa</p>
-                    <small>Instruciton</small>
-                    <p>if not slot is avalibale during the day please call 061302131312</p>
+                    <p ><small><b>{{appointment.caregiver_data}}</b></small></p>
+                    <p class="border-top mt-2"><small>Instruciton</small></p>
+                    <p>If not slot is avalibale during the day please call {{caregiver.phone}}</p>
                     <p>An appointment is dedicated to a single patient. For the same family member, please make an
                       appointemt per person.</p>
                   </div>
@@ -59,9 +59,17 @@
       </div>
       <div class="col-12 col-lg-4 mt-4">
         <div class="card" style="width: 18rem;">
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card-body">
-            <p class="card-text">{{caregiver.name}}</p>
+          <div>
+            <img src="..." class="card-img-top " alt="...">
+            
+          </div>
+          <div>
+          <p><small><b>{{caregiver.name}} {{caregiver.surname}}</b></small></p>
+          <small>{{caregiver.caregiver_data.title}}</small>
+          </div>
+          <div class="card-body text-center border-top">
+            <div class="card-text"><small><b>Your appointment in detail</b></small></div>
+            <small class="grey"> <i class="bi bi-check2"></i> {{appointment.day}} {{appointment.time}}</small>
           </div>
         </div>
       </div>

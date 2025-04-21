@@ -53,9 +53,7 @@ class UserModel extends Model{
     public function getCaregiver($id){
         $caregiver = $this->getById($id);
 
-        
-
-        if ($caregiver) { // Proveri da li je rezultat validan
+        if ($caregiver) {
             $caregiver->caregiver_data = json_decode($caregiver->caregiver_data, true);
         }
 

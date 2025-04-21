@@ -22,6 +22,7 @@ return [
 
     App\Core\Route::get('|^makeappointment/create/?$|', "MakeAppointment", 'create'),
     App\Core\Route::post('|^makeappointment/store/?$|', "MakeAppointment", 'store'),
+    App\Core\Route::post('|^makeappointment/storeappointment/?$|', "MakeAppointment", 'storeAppointment'),
 
 
 

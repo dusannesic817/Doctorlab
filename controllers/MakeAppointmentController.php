@@ -29,10 +29,14 @@ class MakeAppointmentController extends Controller{
         }
     
         
-        $caregiverId = filter_input(INPUT_POST, 'caregiver_id');
+        $caregiverId = (int) filter_input(INPUT_POST, 'caregiver_id', FILTER_SANITIZE_NUMBER_INT);
         $caregiverName = filter_input(INPUT_POST, 'caregiver_name');
-        $day = filter_input(INPUT_POST, 'day');
-        $time = filter_input(INPUT_POST, 'time');
+        $dayRaw = filter_input(INPUT_POST, 'day'); 
+        $day = (new \DateTime($dayRaw))->format('Y-m-d');
+       
+        $timeRaw = filter_input(INPUT_POST, 'time');
+        $time = (new \DateTime($timeRaw))->format('H:i:s');
+      
     
         $this->getSession()->put("appointment", [
             'caregiver_id' => $caregiverId,
@@ -45,6 +49,28 @@ class MakeAppointmentController extends Controller{
 
 
 
+    }
+
+    public function storeAppointment(){
+
+        $appointment = $this->getSession()->get("appointment");
+
+        // Pripremi niz podataka koji ide u bazu
+        $dataToInsert = [
+            'user_id' => 2,
+            'provider_id' => $appointment['caregiver_id'],
+            'caregiver_data' => $appointment['caregiver_data'],
+            'appointment_date' => $appointment['day'],
+            'start_time' => $appointment['time'],
+            'status' => 'scheduled'
+        ];
+
+       
+        
+        $makeAppointmentModel = new AppointmentModel($this->getDatabaseConnection());
+        $makeAppointmentModel->add($dataToInsert);
+
+        $this->redirect('/');
     }
     
     

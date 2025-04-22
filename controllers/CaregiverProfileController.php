@@ -10,9 +10,6 @@ use Exception;
 
 class CaregiverProfileController extends UserRoleController{
 
-
-    
-
     public function show($id){
         $user = new UserModel($this->getDatabaseConnection());
         $caregiver = $user->getById($id);
@@ -28,8 +25,6 @@ class CaregiverProfileController extends UserRoleController{
     }
 
 
-
-    
    public function edit($id){
     
     $user = new UserModel($this->getDatabaseConnection());
@@ -140,10 +135,6 @@ class CaregiverProfileController extends UserRoleController{
     ];
 
    
-   
-   
-
-    
     $edit = $userModel->editById($id,$editData);
 
     if(!$edit){

@@ -54,14 +54,12 @@ class MakeAppointmentController extends Controller{
         ]);
 
 
-
     }
 
     public function storeAppointment(){
 
         $appointment = $this->getSession()->get("appointment");
 
-       
         $dataToInsert = [
             'user_id' => 2,
             'provider_id' => $appointment['caregiver_id'],
@@ -88,20 +86,17 @@ class MakeAppointmentController extends Controller{
 
     public function type($id){
 
-       
-
-       $userModel = new UserModel($this->getDatabaseConnection());
+        $userModel = new UserModel($this->getDatabaseConnection());
     
         $caregiver = $userModel->getById($id);
-    
-      
+
         $caregiverData = $this->getJson('caregiver_data.json');
         
-        if ($caregiver->role =='caregiver') {
+        if ($caregiver->role =='caregiver'){
             $caregiver->caregiver_data = json_decode($caregiver->caregiver_data, true);
             $title = $caregiver->caregiver_data['title'] ?? null;
     
-            if ($title) {
+            if ($title){
                 foreach ($caregiverData['doctors'] as $doctor) {
                     if ($doctor['title'] === $title) {
                         $caregiver->caregiver_data = array_merge($caregiver->caregiver_data, $doctor);

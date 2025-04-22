@@ -128,10 +128,6 @@ class CaregiverProfileController extends UserRoleController{
         $uploadPdf = $pdf; 
     }
 
-
-
-    
-    
     $editData=[
         'name'=>$first_name,
         'surname'=>$last_name,

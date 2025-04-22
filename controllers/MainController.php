@@ -33,18 +33,7 @@ class MainController extends Controller{
      $this->set('clinices',$clinices);
     
     
-    //$a=$this->getSession()->get('user_id');
 
-    /* foreach($caregiver_data['doctors'] as $value){
-          print_r($value['title']);
-     }
-
-     exit();*/
-     
-
-    
-    
-    //$this->getSession()->clear();
 
 
 

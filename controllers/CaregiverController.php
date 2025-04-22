@@ -21,10 +21,6 @@ class CaregiverController extends Controller{
         $date = date("F j l");
 
 
-
-     /* var_dump($caregivers);
-        exit();*/
-
         $niz = [];
         $novi = [];
         $caregivers = [];

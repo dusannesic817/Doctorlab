@@ -21,13 +21,9 @@ class MakeAppointmentController extends Controller{
        $userModel= new UserModel($this->getDatabaseConnection());
        $caregiver = $userModel->getCaregiver($appointment['caregiver_id']);
 
-       var_dump($caregiver);
-
        $this->set('caregiver',$caregiver);
        $this->set('appointment',$appointment);
 
-        
-    
 
     }
     public function store() {

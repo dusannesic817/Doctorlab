@@ -82,7 +82,7 @@ class __TwigTemplate_cce75a21795928050b04daac702e06bb extends Template
             </div>
 
             <!-- Modal -->
-          <form  action=\"";
+          <form id=\"autoSubmitForm\" action=\"";
         // line 29
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/makeappointment/storeappointment\" method=\"POST\" >
@@ -221,7 +221,7 @@ class __TwigTemplate_cce75a21795928050b04daac702e06bb extends Template
             </div>
 
             <!-- Modal -->
-          <form  action=\"{{base_url}}/makeappointment/storeappointment\" method=\"POST\" >
+          <form id=\"autoSubmitForm\" action=\"{{base_url}}/makeappointment/storeappointment\" method=\"POST\" >
             <div class=\"modal fade\" id=\"staticBackdrop\" data-bs-backdrop=\"static\" data-bs-keyboard=\"false\" tabindex=\"-1\"
               aria-labelledby=\"staticBackdropLabel\" aria-hidden=\"true\">
               <div class=\"modal-dialog modal-dialog-centered\">

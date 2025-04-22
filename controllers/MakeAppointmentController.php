@@ -28,58 +28,65 @@ class MakeAppointmentController extends Controller{
     }
     public function store() {
        
-        if (isset($_POST['caregiver_data']) && !isset($_POST['caregiver_id'])) {
-            $caregiverData = filter_input(INPUT_POST, 'caregiver_data');
-            $this->getSession()->update('appointment', ['caregiver_data' => $caregiverData]);
+        if (!empty($_POST['caregiver_data']) && empty($_POST['caregiver_id'])) {
+            $this->getSession()->update('appointment', [
+                'caregiver_data' => filter_input(INPUT_POST, 'caregiver_data')
+            ]);
             return;
         }
-    
-        
-        $caregiverId = (int) filter_input(INPUT_POST, 'caregiver_id', FILTER_SANITIZE_NUMBER_INT);
-        $caregiverName = filter_input(INPUT_POST, 'caregiver_name');
-        $dayRaw = filter_input(INPUT_POST, 'day'); 
-        $day = (new \DateTime($dayRaw))->format('Y-m-d');
-       
-        $timeRaw = filter_input(INPUT_POST, 'time');
-        $time = (new \DateTime($timeRaw))->format('H:i:s');
-      
-    
-        $this->getSession()->put("appointment", [
-            'caregiver_id' => $caregiverId,
-            'caregiver_name' => $caregiverName,
-            'day' => $day,
-            'time' => $time,
-            'caregiver_data' => null,
-            'user_id'=>null
-        ]);
 
+    
+        if (!empty($_POST['caregiver_id'])) {
+            $caregiverId   = (int) filter_input(INPUT_POST, 'caregiver_id', FILTER_SANITIZE_NUMBER_INT);
+            $caregiverName = filter_input(INPUT_POST, 'caregiver_name', FILTER_SANITIZE_STRING);
+            $day           = (new \DateTime(filter_input(INPUT_POST, 'day')))->format('Y-m-d');
+            $time          = (new \DateTime(filter_input(INPUT_POST, 'time')))->format('H:i:s');
+    
+            $this->getSession()->put('appointment', [
+                'caregiver_id'   => $caregiverId,
+                'caregiver_name' => $caregiverName,
+                'day'            => $day,
+                'time'           => $time,
+                'caregiver_data' => null,
+                'user_id'        => $this->getSession()->get('user_id')
+            ]);
+            return;
+        }
 
     }
+    
 
-    public function storeAppointment(){
+    public function storeAppointment() {
+        // 0) Provera autentifikacije
+        $user_id = $this->getSession()->get('user_id');
 
-        $appointment = $this->getSession()->get("appointment");
+        if ($user_id === null) {
+            $this->getSession()->put('post_login_redirect', urldecode('/makeappointment/storeappointment'));
 
+            $this->getSession()->save();
+            return $this->redirect('/user/login');
+        }
+    
+        // 1) Priprema podataka
+        $appointment = $this->getSession()->get('appointment');
         $dataToInsert = [
-            'user_id' => 2,
-            'provider_id' => $appointment['caregiver_id'],
-            'caregiver_data' => $appointment['caregiver_data'],
+            'user_id'          => $user_id,
+            'provider_id'      => $appointment['caregiver_id'],
+            'caregiver_data'   => $appointment['caregiver_data'],
             'appointment_date' => $appointment['day'],
-            'start_time' => $appointment['time'],
-            'status' => 'scheduled'
+            'start_time'       => $appointment['time'],
+            'status'           => 'scheduled'
         ];
-
-       
         
-        $makeAppointmentModel = new AppointmentModel($this->getDatabaseConnection());
-        $makeAppointmentModel->add($dataToInsert);
-
-       /* if($makeAppointmentModel){
-            $this->getSession()->remove('appointment');
-            $this->redirect('/');
-        }*/
-
-        $this->redirect('/');
+        var_dump($dataToInsert);
+        exit();
+       
+        $model = new AppointmentModel($this->getDatabaseConnection());
+        $model->add($dataToInsert);
+    
+        // 3) Čišćenje sesije i redirect
+        $this->getSession()->remove('appointment');
+        return $this->redirect('/client/appointments/'.$user_id);
     }
     
     

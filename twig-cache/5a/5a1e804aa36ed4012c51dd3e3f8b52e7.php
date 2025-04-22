@@ -110,15 +110,11 @@ class __TwigTemplate_55b0bdf23fe62b2b04abf0597d27e7c7 extends Template
               <small>Jagodina</small><br>
               <p><small>9 Rue Yvarm, 34562 Jagodina</small></p>
               <small>Vrsta Pregleda</small>
-
             </div>
           </div>
-
         </div>
       </div>
-
     </div>
-
   </div>
 
 
@@ -130,8 +126,6 @@ class __TwigTemplate_55b0bdf23fe62b2b04abf0597d27e7c7 extends Template
             <a class=\"btn btn-primary\" href=\"#\" role=\"button\" style=\"width: 400px;\">Book an Appointment</a>
           </div>
         </div>-->
-
-
 
   <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js\"
     integrity=\"sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz\"
@@ -227,15 +221,11 @@ class __TwigTemplate_55b0bdf23fe62b2b04abf0597d27e7c7 extends Template
               <small>Jagodina</small><br>
               <p><small>9 Rue Yvarm, 34562 Jagodina</small></p>
               <small>Vrsta Pregleda</small>
-
             </div>
           </div>
-
         </div>
       </div>
-
     </div>
-
   </div>
 
 
@@ -247,8 +237,6 @@ class __TwigTemplate_55b0bdf23fe62b2b04abf0597d27e7c7 extends Template
             <a class=\"btn btn-primary\" href=\"#\" role=\"button\" style=\"width: 400px;\">Book an Appointment</a>
           </div>
         </div>-->
-
-
 
   <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js\"
     integrity=\"sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz\"

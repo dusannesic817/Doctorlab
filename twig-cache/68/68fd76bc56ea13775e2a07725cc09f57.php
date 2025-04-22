@@ -48,11 +48,7 @@ class __TwigTemplate_22b8ebdfd845176830f2a2fd3e10787a extends Template
     {
         $macros = $this->macros;
         // line 5
-        echo "
-
-
-
-  <body class=\"light-blue\">
+        echo "  <body class=\"light-blue\">
     <div class=\"container d-flex justify-content-center align-items-start min-vh-100 pt-5 mt-5\">
       <div class=\"row\">
         <h4 class=\"text-center\"><small><b>Login</b></small></h4>
@@ -61,7 +57,7 @@ class __TwigTemplate_22b8ebdfd845176830f2a2fd3e10787a extends Template
             <div class=\"card-body d-flex flex-column justify-content-center align-items-center\">
               <div class=\"d-flex flex-column mb-3 w-100\">
                 <form action=\"";
-        // line 17
+        // line 13
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/user/login\" method=\"POST\">
                   <div class=\"mb-3\">
@@ -75,38 +71,32 @@ class __TwigTemplate_22b8ebdfd845176830f2a2fd3e10787a extends Template
                   </div>
                    
                   <div class=\"mt-5\">
-                    <button type=\"submit\" class=\"btn btn-primary\" style=\"width: 100%;\">Submit</button>
-                    
+                    <button type=\"submit\" class=\"btn btn-primary\" style=\"width: 100%;\">Submit</button>                    
                   </div>
-                 
                 </form>
-  
-  
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  
-  
   </body>
 
  
   ";
-        // line 47
+        // line 37
         $this->displayBlock('naslov', $context, $blocks);
-        // line 50
+        // line 40
         echo "
 
 ";
     }
 
-    // line 47
+    // line 37
     public function block_naslov($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 48
+        // line 38
         echo "    Login
   ";
     }
@@ -123,7 +113,7 @@ class __TwigTemplate_22b8ebdfd845176830f2a2fd3e10787a extends Template
 
     public function getDebugInfo()
     {
-        return array (  110 => 48,  106 => 47,  100 => 50,  98 => 47,  65 => 17,  51 => 5,  47 => 4,  36 => 1,);
+        return array (  100 => 38,  96 => 37,  90 => 40,  88 => 37,  61 => 13,  51 => 5,  47 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -132,10 +122,6 @@ class __TwigTemplate_22b8ebdfd845176830f2a2fd3e10787a extends Template
 
 
 {% block main %}
-
-
-
-
   <body class=\"light-blue\">
     <div class=\"container d-flex justify-content-center align-items-start min-vh-100 pt-5 mt-5\">
       <div class=\"row\">
@@ -156,21 +142,15 @@ class __TwigTemplate_22b8ebdfd845176830f2a2fd3e10787a extends Template
                   </div>
                    
                   <div class=\"mt-5\">
-                    <button type=\"submit\" class=\"btn btn-primary\" style=\"width: 100%;\">Submit</button>
-                    
+                    <button type=\"submit\" class=\"btn btn-primary\" style=\"width: 100%;\">Submit</button>                    
                   </div>
-                 
                 </form>
-  
-  
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  
-  
   </body>
 
  

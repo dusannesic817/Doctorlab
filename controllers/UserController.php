@@ -162,47 +162,50 @@ class UserController extends Controller{
 
     public function login(){
 
-   }
+    }
 
-   public function authenticate(){
-
+    public function authenticate(){
         $email = filter_input(INPUT_POST, 'email_login');
         $password = filter_input(INPUT_POST, 'password_login');
-
-
+    
         $userModel = new UserModel($this->getDatabaseConnection());
-        $email = $userModel->getByFieldName('email',$email);
-
-
-        if(!$email){
-            $this->set('message','Invalid password or email');
+        $email = $userModel->getByFieldName('email', $email);
+    
+        if (!$email) {
+            $this->set('message', 'Invalid password or email');
             return;
         }
-
-       $pass=$email->password_hash;
-
-       if(!password_verify($password,$pass)){
-        sleep(2);
-        $this->set('message','Invalid password or email');
-        return;
-       }
-
-       $this->getSession()->put('user_id',$email->user_id);
-       $this->getSession()->save();
-       $this->getSession()->put('role',$email->role);
-       $this->getSession()->save();
-
-       $auth = $this->getSession()->get('user_id');
-       
-
-       if($email->role=='client'){
-        $this->redirect('/client/appointmens/'.$auth);
-       
-       }else{
-        $this->redirect('/caregiver/appointmens/'.$auth);
-       
-       }
-   }
+    
+        $pass = $email->password_hash;
+    
+        if (!password_verify($password, $pass)) {
+            sleep(2);
+            $this->set('message', 'Invalid password or email');
+            return;
+        }
+    
+        $this->getSession()->put('user_id', $email->user_id);
+        $this->getSession()->save();
+        $this->getSession()->put('role', $email->role);
+        $this->getSession()->save();
+    
+        // Get post-login redirect
+       $redirect = $this->getSession()->get('post_login_redirect');
+        
+        if ($redirect) {
+            // Remove post-login redirect and pass it
+            //$this->getSession()->remove('post_login_redirect');
+             $this->redirect($redirect);  // This will redirect to /makeappointment/storeappointment
+        }
+    
+        // Default redirection based on role
+        if ($email->role == 'client') {
+            $this->redirect('/client/appointments/' . $email->user_id);
+        } else {
+            $this->redirect('/caregiver/appointments/' . $email->user_id);
+        }
+    }
+    
 
 
    public function logout(){

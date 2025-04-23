@@ -24,7 +24,7 @@ class MakeAppointmentController extends Controller{
 
        $this->set('caregiver',$caregiver);
        $this->set('appointment',$appointment);
-
+      
     }
 
     public function store() {
@@ -126,6 +126,13 @@ class MakeAppointmentController extends Controller{
         $this->set('caregiver',$caregiver);
         
        
+    }
+
+  public function cancelAppointment() {
+        $this->getSession()->remove('appointment');
+        $this->getSession()->remove('post_login_redirect');
+        $this->getSession()->save();
+        return $this->redirect('/'); 
     }
     
     

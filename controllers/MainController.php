@@ -17,28 +17,16 @@ class MainController extends Controller{
      $doctors=$this->getJson('caregiver_data.json');
 
      $appointment = $this->getSession()->get('appointment');
+     $user_id = $this->getSession()->get('user_id');
+
+     if(isset($appointment) && !isset($user_id)){
      $this->set('appointment',$appointment);
-
-
-    /* foreach($doctors['doctors'] as $value){
-          var_dump($value['title']);
      }
-
-     exit();*/
-
-
-   /*$user = new UserController($this->getDatabaseConnection());
-     $user->googleAuth();
-     exit();*/
 
      $this->set('doctors', $doctors);
      
      $this->set('clinices',$clinices);
     
-    
-
-
-
 
        /* $categoryModel = new CategoryModel($this->getDatabaseConnection());
         $categories = $categoryModel->getAll();

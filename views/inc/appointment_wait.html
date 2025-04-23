@@ -6,20 +6,16 @@
         <div class="col-12">
           <div class="alert rounded-0" role="alert">
             <div class="d-flex justify-content-center align-items-start flex-wrap">
-
-              <!-- Left side: Info and buttons -->
+              <!--Left-->
               <div class="text-center me-0 me-lg-4 mt-2">
                 <small><b>Attention: your appointment is not confirmed yet!</b></small><br>
                 <small>You must confirm your appointment to finalize the reservation.</small><br>
-
                 <div class="mt-4">
-                  <button type="button" class="btn btn-outline-primary me-2">Cancel this App</button>
+                  <a href="{{ base_url }}/makeappointment/cancel" class="btn btn-outline-primary me-2">Cancel this App</a>
                   <a href="{{ base_url }}/user/login" class="btn btn-primary">Confirm this App</a>
-
                 </div>
               </div>
-
-              <!-- Right side: Appointment card -->
+               <!--Right-->
               <div class="ms-0 ms-lg-5 mt-3 mt-lg-0">
                 <div class="card" style="width: 300px; height: 130px;">
                   <div class="card-header text-white background">

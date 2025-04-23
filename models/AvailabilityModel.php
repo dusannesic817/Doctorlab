@@ -49,4 +49,48 @@ class AvailabilityModel extends Model{
     }
 
 
+    public function editAvailabilty(int $id, array $data){
+
+        $editList = [];
+        $values=[];
+
+        foreach($data as $key => $value){
+            $editList[]="{$key}=?";
+            $values[]=$value;
+        }
+
+        $editList = implode(', ', $editList);
+
+        $values[]=$id;
+
+        $sql = "UPDATE availability SET ";
+        $prep = $this->getConnection()->prepare($sql);
+        return $prep -> execute($values);
+    }
+
+
+    /*RESENJE
+$scheduleJson = '[{"date":"April 1 Tuesday","times":[{"time":"08:00","status":"free"},{"time":"12:00","status":"free"}]}]'; ucitam raspored iz baze
+
+$schedule = json_decode($scheduleJson, true);
+
+// Tražimo dan i vreme koje želimo da menjamo
+foreach ($schedule as &$day) {
+    if ($day['date'] === 'April 1 Tuesday') {
+        foreach ($day['times'] as &$timeSlot) {
+            if ($timeSlot['time'] === '12:00') {
+                $timeSlot['status'] = 'busy';
+            }
+        }
+    }
+}
+
+$newScheduleJson = json_encode($schedule);
+
+// Sad ažuriraj u bazi:
+$userId = 5;
+$sql = "UPDATE availability SET schedule = ? WHERE user_id = ?";
+$stmt = $pdo->prepare($sql);
+$stmt->execute([$newScheduleJson, $userId]);
+*/
 }

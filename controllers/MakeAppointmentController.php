@@ -86,15 +86,23 @@ class MakeAppointmentController extends Controller{
         }
  
         
-        var_dump($dataToInsert);
-        exit();
+   
        
         $model = new AppointmentModel($this->getDatabaseConnection());
-        $model->add($dataToInsert);
+        $insert=$model->add($dataToInsert);
+
+     
+
+
+        if($insert){
+            $caregiverModel = new UserModel($this->getDatabaseConnection());
+           // $edit = $caregiverModel->editById($appointment['caregiver_id'],);
+        }
     
-       
         $this->getSession()->remove('appointment');
-        return $this->redirect('/client/appointments/'.$user_id);
+        $this->redirect('/client/appointments/'.$user_id);
+
+
     }
     
     

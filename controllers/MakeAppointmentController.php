@@ -57,17 +57,18 @@ class MakeAppointmentController extends Controller{
     
 
     public function storeAppointment() {
-        // 0) Provera autentifikacije
+       
         $user_id = $this->getSession()->get('user_id');
 
         if ($user_id === null) {
-            $this->getSession()->put('post_login_redirect', urldecode('/makeappointment/storeappointment'));
-
+           
+            $this->getSession()->put('post_login_redirect', '/makeappointment/storeappointment');
             $this->getSession()->save();
-            return $this->redirect('/user/login');
+           
+            $this->redirect('/user/login');
+            
         }
-    
-        // 1) Priprema podataka
+        
         $appointment = $this->getSession()->get('appointment');
         $dataToInsert = [
             'user_id'          => $user_id,
@@ -84,7 +85,7 @@ class MakeAppointmentController extends Controller{
         $model = new AppointmentModel($this->getDatabaseConnection());
         $model->add($dataToInsert);
     
-        // 3) Čišćenje sesije i redirect
+       
         $this->getSession()->remove('appointment');
         return $this->redirect('/client/appointments/'.$user_id);
     }

@@ -189,16 +189,16 @@ class UserController extends Controller{
         $this->getSession()->put('role', $email->role);
         $this->getSession()->save();
     
-        // Get post-login redirect
+       
        $redirect = $this->getSession()->get('post_login_redirect');
         
-        if ($redirect) {
-            // Remove post-login redirect and pass it
-            //$this->getSession()->remove('post_login_redirect');
-             $this->redirect($redirect);  // This will redirect to /makeappointment/storeappointment
-        }
+       if ($redirect) {
+       // $this->getSession()->remove('redirect_after_login');
     
-        // Default redirection based on role
+        $this->redirect($redirect);
+       
+    }
+      
         if ($email->role == 'client') {
             $this->redirect('/client/appointments/' . $email->user_id);
         } else {
@@ -311,4 +311,5 @@ class UserController extends Controller{
         }*/
 
 
+        
 }

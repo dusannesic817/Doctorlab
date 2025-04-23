@@ -157,21 +157,29 @@ class __TwigTemplate_cce75a21795928050b04daac702e06bb extends Template
 
 
 </body>
-
+<script>
+  window.onload = function() {
+    // Proveri da li je form na stranici
+    var form = document.getElementById('autoSubmitForm'); // Pretpostavljamo da je forma sa id \"appointmentForm\"
+    if (form) {
+        form.submit(); // Automatski šalje formu
+    }
+};
+</script>
 
 ";
-        // line 84
+        // line 92
         $this->displayBlock('naslov', $context, $blocks);
-        // line 87
+        // line 95
         echo "
 ";
     }
 
-    // line 84
+    // line 92
     public function block_naslov($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 85
+        // line 93
         echo "Type
 ";
     }
@@ -188,7 +196,7 @@ class __TwigTemplate_cce75a21795928050b04daac702e06bb extends Template
 
     public function getDebugInfo()
     {
-        return array (  175 => 85,  171 => 84,  166 => 87,  164 => 84,  147 => 72,  140 => 68,  134 => 67,  108 => 44,  103 => 42,  87 => 29,  75 => 22,  66 => 18,  51 => 5,  47 => 4,  36 => 1,);
+        return array (  183 => 93,  179 => 92,  174 => 95,  172 => 92,  147 => 72,  140 => 68,  134 => 67,  108 => 44,  103 => 42,  87 => 29,  75 => 22,  66 => 18,  51 => 5,  47 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -274,7 +282,15 @@ class __TwigTemplate_cce75a21795928050b04daac702e06bb extends Template
 
 
 </body>
-
+<script>
+  window.onload = function() {
+    // Proveri da li je form na stranici
+    var form = document.getElementById('autoSubmitForm'); // Pretpostavljamo da je forma sa id \"appointmentForm\"
+    if (form) {
+        form.submit(); // Automatski šalje formu
+    }
+};
+</script>
 
 {% block naslov %}
 Type

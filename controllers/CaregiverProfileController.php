@@ -15,7 +15,7 @@ class CaregiverProfileController extends UserRoleController{
         $caregiver = $user->getById($id);
 
         $change=$this->getSession()->get('success_edit');
-
+    
         if($caregiver->role=='caregiver'){
             $this->set('caregiver',$caregiver);
             $this->set('change',$change);

@@ -13,19 +13,20 @@ class MakeAppointmentController extends Controller{
     public function create()
     {
     
-        $appointment= $this->getSession()->get("appointment");
+       $appointment= $this->getSession()->get("appointment");
 
        if(!isset($appointment)){
         $this->redirect('/');
        }
+       
        $userModel= new UserModel($this->getDatabaseConnection());
        $caregiver = $userModel->getCaregiver($appointment['caregiver_id']);
 
        $this->set('caregiver',$caregiver);
        $this->set('appointment',$appointment);
 
-
     }
+
     public function store() {
        
         if (!empty($_POST['caregiver_data']) && empty($_POST['caregiver_id'])) {

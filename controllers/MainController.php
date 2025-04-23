@@ -16,6 +16,9 @@ class MainController extends Controller{
      $clinices= $clinicModel->getAll();
      $doctors=$this->getJson('caregiver_data.json');
 
+     $appointment = $this->getSession()->get('appointment');
+     $this->set('appointment',$appointment);
+
 
     /* foreach($doctors['doctors'] as $value){
           var_dump($value['title']);

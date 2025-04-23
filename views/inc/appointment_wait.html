@@ -1,0 +1,52 @@
+{% if appointment %}
+
+  <div class="container-fluid " style="background-color: #ffe4e9;">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="alert rounded-0" role="alert">
+            <div class="d-flex justify-content-center align-items-start flex-wrap">
+
+              <!-- Left side: Info and buttons -->
+              <div class="text-center me-0 me-lg-4 mt-2">
+                <small><b>Attention: your appointment is not confirmed yet!</b></small><br>
+                <small>You must confirm your appointment to finalize the reservation.</small><br>
+
+                <div class="mt-4">
+                  <button type="button" class="btn btn-outline-primary me-2">Cancel this App</button>
+                  <a href="{{ base_url }}/user/login" class="btn btn-primary">Confirm this App</a>
+
+                </div>
+              </div>
+
+              <!-- Right side: Appointment card -->
+              <div class="ms-0 ms-lg-5 mt-3 mt-lg-0">
+                <div class="card" style="width: 300px; height: 130px;">
+                  <div class="card-header text-white background">
+                    <small><i class="bi bi-calendar-event me-2"></i> {{ appointment['day']|date("F j, l") }}
+                       <i class="bi bi-clock ms-2 me-1"></i> {{ appointment['time']|date("H:i") }}
+                    </small>
+                  </div>
+                  <div class="card-body">
+                    <div class="d-flex align-items-center">
+                      <div class="p-2">
+                        <div class="rounded bg-secondary" style="width: 40px; height: 40px;"></div> 
+                      </div>
+                      <div class="p-2">
+                        <small><b>Dr. Matheu Areo</b></small><br>
+                        <small>Cardiology</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div> 
+          </div> 
+        </div>
+      </div>
+    </div>
+  </div>
+{%else%}
+<div></div>
+{%endif%}

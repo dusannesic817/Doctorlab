@@ -193,7 +193,8 @@ class UserController extends Controller{
        $redirect = $this->getSession()->get('post_login_redirect');
         
        if ($redirect) {
-       // $this->getSession()->remove('redirect_after_login');
+        $this->getSession()->remove('post_login_redirect');
+        $this->getSession()->save();
     
         $this->redirect($redirect);
        

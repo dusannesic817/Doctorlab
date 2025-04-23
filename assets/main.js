@@ -5,10 +5,10 @@ function autoDismissAlert() {
             alert.classList.remove("show");
             alert.classList.add("fade");
         }
-    }, 3000); // 3000 milisekundi = 3 sekunde
+    }, 3000); 
 }
 
-// Pozivanje funkcije kada stranica bude ucitana
+
 window.onload = function() {
     autoDismissAlert();
 };
@@ -24,24 +24,22 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById('selected_month').value = monthArray[currentMonthIndex];
     }
   
-    // Funkcija za sledeći mesec
+   
     document.getElementById('next-month').addEventListener('click', function() {
       currentMonthIndex = (currentMonthIndex + 1) % monthArray.length;
       updateMonth();
     });
   
-    // Funkcija za prethodni mesec
     document.getElementById('prev-month').addEventListener('click', function() {
       currentMonthIndex = (currentMonthIndex - 1 + monthArray.length) % monthArray.length;
       updateMonth();
     });
   
-    // Prvo ažuriraj mesec pri učitavanju stranice
+   
     updateMonth();
   });
 
-  
-  
+
   
   
   

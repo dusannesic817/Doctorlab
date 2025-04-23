@@ -38,7 +38,7 @@ class MakeAppointmentController extends Controller{
     
         if (!empty($_POST['caregiver_id'])) {
             $caregiverId   = (int) filter_input(INPUT_POST, 'caregiver_id', FILTER_SANITIZE_NUMBER_INT);
-            $caregiverName = filter_input(INPUT_POST, 'caregiver_name', FILTER_SANITIZE_STRING);
+            $caregiverName = filter_input(INPUT_POST, 'caregiver_name');
             $day           = (new \DateTime(filter_input(INPUT_POST, 'day')))->format('Y-m-d');
             $time          = (new \DateTime(filter_input(INPUT_POST, 'time')))->format('H:i:s');
     
@@ -70,14 +70,20 @@ class MakeAppointmentController extends Controller{
         }
         
         $appointment = $this->getSession()->get('appointment');
-        $dataToInsert = [
-            'user_id'          => $user_id,
-            'provider_id'      => $appointment['caregiver_id'],
-            'caregiver_data'   => $appointment['caregiver_data'],
-            'appointment_date' => $appointment['day'],
-            'start_time'       => $appointment['time'],
-            'status'           => 'scheduled'
-        ];
+
+        if($appointment){
+            $dataToInsert = [
+                'user_id'          => $user_id,
+                'provider_id'      => $appointment['caregiver_id'],
+                'caregiver_data'   => $appointment['caregiver_data'],
+                'appointment_date' => $appointment['day'],
+                'start_time'       => $appointment['time'],
+                'status'           => 'scheduled'
+            ];
+        }else{
+            return $this->redirect('/');
+        }
+ 
         
         var_dump($dataToInsert);
         exit();

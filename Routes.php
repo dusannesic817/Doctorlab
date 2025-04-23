@@ -25,13 +25,10 @@ return [
     App\Core\Route::any('|^makeappointment/storeappointment/?$|', "MakeAppointment", 'storeAppointment'),
 
 
-
-
     #Appointement routes:
     App\Core\Route::get('|^client/appointmens/([0-9+])/?$|',    "Appointment", 'show'),
     App\Core\Route::get('|^caregiver/appointmens/([0-9+])/?$|', "Appointment", 'show'),
-
-    
+   
 
     #UserProfile-auth
     App\Core\Route::get( '|^client/profile/([0-9+])/?$|', "UserProfile", 'show'),

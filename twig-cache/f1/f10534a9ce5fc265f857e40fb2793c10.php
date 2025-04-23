@@ -159,12 +159,12 @@ class __TwigTemplate_cce75a21795928050b04daac702e06bb extends Template
 </body>
 <script>
   window.onload = function() {
-    // Proveri da li je form na stranici
-    var form = document.getElementById('autoSubmitForm'); // Pretpostavljamo da je forma sa id \"appointmentForm\"
+    var form = document.getElementById('autoSubmitForm');
     if (form) {
-        form.submit(); // Automatski šalje formu
+        form.submit(); 
     }
 };
+  
 </script>
 
 ";
@@ -284,12 +284,12 @@ class __TwigTemplate_cce75a21795928050b04daac702e06bb extends Template
 </body>
 <script>
   window.onload = function() {
-    // Proveri da li je form na stranici
-    var form = document.getElementById('autoSubmitForm'); // Pretpostavljamo da je forma sa id \"appointmentForm\"
+    var form = document.getElementById('autoSubmitForm');
     if (form) {
-        form.submit(); // Automatski šalje formu
+        form.submit(); 
     }
 };
+  
 </script>
 
 {% block naslov %}

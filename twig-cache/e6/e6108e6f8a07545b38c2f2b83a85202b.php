@@ -124,7 +124,7 @@ class __TwigTemplate_50224a08d9a49685f418e06832038247 extends Template
             echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
             echo "/";
             echo twig_escape_filter($this->env, ($context["role"] ?? null), "html", null, true);
-            echo "/appointmens/";
+            echo "/appointments/";
             echo twig_escape_filter($this->env, ($context["auth"] ?? null), "html", null, true);
             echo "\"><b><small>My appoitments</small></b></a>
                 </li>
@@ -246,7 +246,7 @@ class __TwigTemplate_50224a08d9a49685f418e06832038247 extends Template
                  
                 </li>
                 <li class=\"nav-item\">
-                  <a class=\"nav-link ms-2\" href=\"{{ base_url }}/{{role}}/appointmens/{{auth}}\"><b><small>My appoitments</small></b></a>
+                  <a class=\"nav-link ms-2\" href=\"{{ base_url }}/{{role}}/appointments/{{auth}}\"><b><small>My appoitments</small></b></a>
                 </li>
               </ul>
              

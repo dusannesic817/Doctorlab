@@ -71,8 +71,6 @@ class AvailabilityModel extends Model{
         }
     
         $updatedSchedule = json_encode($schedule);
-
-        var_dump($updatedSchedule);
     
         $sql = "UPDATE availability SET schedule = ? WHERE user_id = ?";
         $prep = $this->getConnection()->prepare($sql);

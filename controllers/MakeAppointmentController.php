@@ -96,18 +96,21 @@ class MakeAppointmentController extends Controller{
         $formatted_date = $date->format('F j l');
 
         $time = new \DateTime($appointment['time']);
-        $formatted_time = $time->format('H:i'); 
+        $formatted_time = $time->format('H:i');
+        $id = $appointment['caregiver_id'];
 
 
-
+       
 
 
         if($insert){
             $avalabilityModel = new AvailabilityModel($this->getDatabaseConnection());
-            $avalabilityModel->editAvailability($appointment['careviger_id'],$formatted_date,$formatted_time);
+            $avalabilityModel->editAvailability($id,$formatted_date,$formatted_time);
         }
     
         $this->getSession()->remove('appointment');
+        $this->getSession()->save();
+        sleep(2);
         $this->redirect('/client/appointments/'.$user_id);
 
 

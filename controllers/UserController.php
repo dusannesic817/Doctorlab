@@ -188,11 +188,8 @@ class UserController extends Controller{
         $this->getSession()->save();
         $this->getSession()->put('role', $email->role);
         $this->getSession()->save();
-
-        $auth= $this->getSession()->get('user_id');
     
-       
-     /*  $redirect = $this->getSession()->get('post_login_redirect');
+       $redirect = $this->getSession()->get('post_login_redirect');
         
         if ($redirect) {
         $this->getSession()->remove('post_login_redirect');
@@ -200,12 +197,14 @@ class UserController extends Controller{
     
         $this->redirect($redirect);
        
-        }*/
+        }
       
         if ($email->role == 'client') {
-            $this->redirect('/client/appointments/' . $auth);
+            sleep(2);
+            $this->redirect('/client/appointments/' . $email->user_id);
         } else {
-            $this->redirect('/caregiver/appointments/' .$auth);
+            sleep(2);
+            $this->redirect('/caregiver/appointments/' . $email->user_id);
         }
     }
     

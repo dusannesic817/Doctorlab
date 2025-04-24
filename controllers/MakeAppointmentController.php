@@ -11,8 +11,7 @@ use App\Models\UserModel;
 class MakeAppointmentController extends Controller{
 
 
-    public function create()
-    {
+    public function create(){
     
        $appointment= $this->getSession()->get("appointment");
 
@@ -98,10 +97,6 @@ class MakeAppointmentController extends Controller{
         $time = new \DateTime($appointment['time']);
         $formatted_time = $time->format('H:i');
         $id = $appointment['caregiver_id'];
-
-
-       
-
 
         if($insert){
             $avalabilityModel = new AvailabilityModel($this->getDatabaseConnection());

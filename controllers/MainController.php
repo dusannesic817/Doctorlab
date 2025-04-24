@@ -5,8 +5,10 @@ use App\Core\Controller;
 
 use App\Models\CategoryModel;
 use App\Models\AuctionViewModel;
+use App\Models\AvailabilityModel;
 use App\Models\ClinicModel;
 use App\Models\UserModel;
+use Google\Service\Doubleclicksearch\Availability;
 
 class MainController extends Controller{
 
@@ -26,7 +28,7 @@ class MainController extends Controller{
      $this->set('doctors', $doctors);
      
      $this->set('clinices',$clinices);
-    
+
 
        /* $categoryModel = new CategoryModel($this->getDatabaseConnection());
         $categories = $categoryModel->getAll();

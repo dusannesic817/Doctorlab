@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Core\Controller;
 use App\Models\AppointmentModel;
+use App\Models\AvailabilityModel;
 use App\Models\UserModel;
 
 
@@ -90,13 +91,20 @@ class MakeAppointmentController extends Controller{
        
         $model = new AppointmentModel($this->getDatabaseConnection());
         $insert=$model->add($dataToInsert);
-
      
+        $date = new \DateTime($appointment['day']);
+        $formatted_date = $date->format('F j l');
+
+        $time = new \DateTime($appointment['time']);
+        $formatted_time = $time->format('H:i'); 
+
+
+
 
 
         if($insert){
-            $caregiverModel = new UserModel($this->getDatabaseConnection());
-           // $edit = $caregiverModel->editById($appointment['caregiver_id'],);
+            $avalabilityModel = new AvailabilityModel($this->getDatabaseConnection());
+            $avalabilityModel->editAvailability($appointment['careviger_id'],$formatted_date,$formatted_time);
         }
     
         $this->getSession()->remove('appointment');

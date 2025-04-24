@@ -49,24 +49,40 @@ class AvailabilityModel extends Model{
     }
 
 
-    public function editAvailabilty(int $id, array $data){
 
-        $editList = [];
-        $values=[];
-
-        foreach($data as $key => $value){
-            $editList[]="{$key}=?";
-            $values[]=$value;
-        }
-
-        $editList = implode(', ', $editList);
-
-        $values[]=$id;
-
-        $sql = "UPDATE availability SET ";
+    public function editAvailability($id, $date, $time) {
+        $sql = "SELECT schedule FROM availability WHERE user_id=?";
         $prep = $this->getConnection()->prepare($sql);
-        return $prep -> execute($values);
+        $prep->execute([$id]);
+    
+        $scheduleJson = $prep->fetchColumn(); 
+        $schedule = json_decode($scheduleJson, true);
+    
+        foreach ($schedule['schedule'] as &$day) {
+            if ($day['date'] === $date) {
+                foreach ($day['times'] as &$slot) {
+                    if ($slot['time'] === $time) {
+                        $slot['status'] = 'busy';
+                        break;
+                    }
+                }
+                break;
+            }
+        }
+    
+        $updatedSchedule = json_encode($schedule);
+
+        var_dump($updatedSchedule);
+    
+        $sql = "UPDATE availability SET schedule = ? WHERE user_id = ?";
+        $prep = $this->getConnection()->prepare($sql);
+        return $prep->execute([$updatedSchedule, $id]);
     }
+    
+
+
+
+
 
 
     /*RESENJE
@@ -74,7 +90,7 @@ $scheduleJson = '[{"date":"April 1 Tuesday","times":[{"time":"08:00","status":"f
 
 $schedule = json_decode($scheduleJson, true);
 
-// Tražimo dan i vreme koje želimo da menjamo
+//  dan i vreme koje želimo da menjamo
 foreach ($schedule as &$day) {
     if ($day['date'] === 'April 1 Tuesday') {
         foreach ($day['times'] as &$timeSlot) {

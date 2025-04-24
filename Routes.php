@@ -27,7 +27,7 @@ return [
 
 
     #Appointement routes:
-    App\Core\Route::get('|^client/appointmens/([0-9+])/?$|',    "Appointment", 'show'),
+    App\Core\Route::get('|^client/appointments/([0-9+])/?$|',    "Appointment", 'show'),
     App\Core\Route::get('|^caregiver/appointmens/([0-9+])/?$|', "Appointment", 'show'),
    
 
@@ -47,7 +47,7 @@ return [
     App\Core\Route::get('|^caregiver/profile/([0-9+])/?$|', "CaregiverProfile", 'show'),
     App\Core\Route::get('|^caregiver/edit/([0-9+])/?$|',    "CaregiverProfile", 'edit'),
     App\Core\Route::post('|^caregiver/update/([0-9+])/?$|', "CaregiverProfile", 'update'),
-    App\Core\Route::get('|^caregiver/appointmens/?$|',      "CaregiverProfile", 'appointmens'),
+    App\Core\Route::get('|^caregiver/appointments/?$|',      "CaregiverProfile", 'appointmens'),
     App\Core\Route::get('|^caregiver/logout/?$|',           "CaregiverProfile", 'logout'),
     
 

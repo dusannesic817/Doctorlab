@@ -24,4 +24,33 @@ class AppointmentModel extends Model{
             
         ];
     }
+
+
+    public function getSchedule($id){
+
+        $sql='SELECT 
+                appointment.*,
+                u1.name AS patient_name,
+                u2.name AS provider_name,
+                u2.surname AS provider_name,
+                u2.caregiver_data as doctor,
+                c.*
+            FROM appointment 
+            LEFT JOIN user AS u1 ON appointment.user_id = u1.user_id
+            LEFT JOIN user AS u2 ON appointment.provider_id = u2.user_id
+            LEFT JOIN clinic AS c ON u2.clinic_id = c.clinic_id
+            WHERE appointment.user_id = ?;';
+
+        $prep = $this->getConnection()->prepare($sql);
+        $res = $prep->execute([$id]);
+
+        $schedule =[];
+
+        if($res){
+            $schedule = $prep->fetchAll(\PDO::FETCH_OBJ);
+        }
+
+        return $schedule;
+
+    }
 }

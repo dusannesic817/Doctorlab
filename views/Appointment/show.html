@@ -13,12 +13,16 @@
         <p class="mt-4"><b>Appointment History</b></p>
         <hr>
         <div class="list-group border-0">
-          {% for schedule in schedules%}
-          <button type="button" class="list-group-item list-group-item-action light-blue border-0"
-            style="color: #0d6efd !important;" onclick="toggleCards()">
-            <b>{{schedule.caregiver_data}}</b>
+          {% for schedule in schedules %}
+          <button type="button"
+                  class="list-group-item list-group-item-action light-blue border-0"
+                  style="color: #0d6efd !important;"
+                  onclick="toggleCards('card{{ loop.index }}')">
+
+            <b>{{ schedule.caregiver_data }}</b>
           </button>
-          {%endfor%}
+        {% endfor %}
+        
         </div>
       </div>
       <div class="col-lg-9 d-flex align-items-center justify-content-center">
@@ -38,7 +42,7 @@
           <!-- Druga kartica (prikazuje se kada kliknes dugme) -->
           
           {%for schedule in schedules%}           
-          <div id="secondCard" class="card  card-my-information hidden mb-5" style="width: 600px; height:320px">
+          <div id="card{{ loop.index }}" class="card card-my-information hidden mb-5" style="width: 600px; height:320px">
             <header class="pb-1 pt-3 rounded-top" style="background-color: #01264d">
               <p class="ms-3" style="color:white !important"> <b><i class="bi bi-calendar2-event me-1"></i> {{schedule.appointment_date|date("F j, l")}}
                   <span class="ms-4"><i class="bi bi-clock-fill"></i> {{schedule.start_time|date("H:i")}}</span></b></p>
@@ -80,15 +84,18 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
   <script>
-    function toggleCards() {
-      document.getElementById("defaultCard").classList.add("hidden");
-      document.getElementById("secondCard").classList.remove("hidden");
+    function toggleCards(cardId) {
+      // Sakrij sve kartice
+      const cards = document.querySelectorAll(".card-my-information");
+      cards.forEach(card => card.classList.add("hidden"));
+    
+      // Prikazi odgovarajuću
+      const selectedCard = document.getElementById(cardId);
+      if (selectedCard) {
+        selectedCard.classList.remove("hidden");
+      }
     }
-
-    window.onload = function () {
-      document.getElementById("defaultCard").classList.remove("hidden");
-      document.getElementById("secondCard").classList.add("hidden");
-    };
+    
   </script>
 </body>
 

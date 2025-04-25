@@ -18,11 +18,11 @@ class AppointmentController extends UserRoleController{
     public function show($id){
 
         $appointmentModel = new AppointmentModel($this->getDatabaseConnection());
-        $schedule = $appointmentModel->getSchedule($id);
+        $schedules = $appointmentModel->getSchedule($id);
 
         $change=$this->getSession()->get('success_schedule');
         $this->set('change',$change);
-        $this->set('schedule',$schedule);
+        $this->set('schedules',$schedules);
 
 
         $this->getSession()->remove('success_schedule');

@@ -31,8 +31,9 @@ class AppointmentModel extends Model{
         $sql='SELECT 
                 appointment.*,
                 u1.name AS patient_name,
-                u2.name AS provider_name,
-                u2.surname AS provider_name,
+                u2.name AS doctor_name,
+                u2.surname AS doctor_surname,
+                 u2.profile_photo as photo,
                 u2.caregiver_data as doctor,
                 c.*
             FROM appointment 

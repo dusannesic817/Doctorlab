@@ -19,10 +19,20 @@ class AppointmentController extends UserRoleController{
 
         $appointmentModel = new AppointmentModel($this->getDatabaseConnection());
         $schedules = $appointmentModel->getSchedule($id);
+        $schedulesDoctor  = $appointmentModel->getScheduleDoctor($id);
+      
 
         $change=$this->getSession()->get('success_schedule');
         $this->set('change',$change);
-        $this->set('schedules',$schedules);
+
+        if($this->getSession()->get('role') =='client'){           
+            $this->set('schedules',$schedules);
+        }elseif($this->getSession()->get('role') =='caregiver'){
+            $this->set('schedulesDoctor', $schedulesDoctor);
+
+        }
+       
+       
 
 
         $this->getSession()->remove('success_schedule');

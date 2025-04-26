@@ -71,25 +71,17 @@ class __TwigTemplate_83ad43a2c00f54a2edb316a897bfa79a extends Template
                 <div class=\"mb-3\">
                   <label for=\"input_password_1\" class=\"form-label\"><small><b><i class=\"bi bi-lock-fill\"></i> Password</b></small></label>
                   <input type=\"password\" class=\"form-control\" id=\"password_login\" name=\"password_login\">
-                  
                 </div>
-                 
                 <div class=\"mt-5\">
                   <button type=\"submit\" class=\"btn btn-primary\" style=\"width: 100%;\">Submit</button>
-                  
                 </div>
-               
               </form>
-
-
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-
 </body>
 ";
     }
@@ -133,25 +125,17 @@ class __TwigTemplate_83ad43a2c00f54a2edb316a897bfa79a extends Template
                 <div class=\"mb-3\">
                   <label for=\"input_password_1\" class=\"form-label\"><small><b><i class=\"bi bi-lock-fill\"></i> Password</b></small></label>
                   <input type=\"password\" class=\"form-control\" id=\"password_login\" name=\"password_login\">
-                  
                 </div>
-                 
                 <div class=\"mt-5\">
                   <button type=\"submit\" class=\"btn btn-primary\" style=\"width: 100%;\">Submit</button>
-                  
                 </div>
-               
               </form>
-
-
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-
 </body>
 {% endblock %}
 ", "User/authenticate.html", "C:\\laragon\\www\\doctorlab\\views\\User\\authenticate.html");

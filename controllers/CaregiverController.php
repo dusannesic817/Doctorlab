@@ -17,6 +17,8 @@ class CaregiverController extends Controller{
 
         $data = $caregiver->getCaregiversAvailability();
 
+    
+
         date_default_timezone_set("Europe/Belgrade");
         $date = date("F j l");
 
@@ -52,8 +54,6 @@ class CaregiverController extends Controller{
                 'schedule' => $novi[$value->user_id]  
             ];
         }
-        
-        
 
         $count=0;
         foreach($caregivers as $value){

@@ -28,7 +28,7 @@ return [
 
     #Appointement routes:
     App\Core\Route::get('|^client/appointments/([0-9+])/?$|',    "Appointment", 'show'),
-    App\Core\Route::get('|^caregiver/appointmens/([0-9+])/?$|', "Appointment", 'show'),
+    App\Core\Route::get('|^caregiver/appointments/([0-9+])/?$|', "Appointment", 'show'),
    
 
     #UserProfile-auth

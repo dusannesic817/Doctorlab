@@ -20,6 +20,7 @@
       },
       {
         "title": "Dermatologist",
+        "icon": "fa-solid fa-hand-dots",
         "services": [
           "General consultation",
           "Follow-up consultation",
@@ -37,6 +38,7 @@
       },
       {
         "title": "Neurologist",
+        "icon" : "fa-solid fa-brain",
         "services": [
           "General consultation",
           "Follow-up consultation",
@@ -54,6 +56,7 @@
       },
       {
         "title": "Orthopedic Surgeon",
+        "icon" : "fa-solid fa-bone",
         "services": [
           "General consultation",
           "Follow-up consultation",
@@ -71,7 +74,7 @@
       },
       {
         "title": "Ophthalmologist",
-        "icon": "bi bi-eye-fill",
+        "icon": "fa-solid fa-eye",
         "services": [
           "General consultation",
           "Follow-up consultation",
@@ -107,6 +110,7 @@
       },
       {
         "title": "Psychiatrist",
+        "icon" : "fa-solid fa-face-smile",
         "services": [
           "General consultation",
           "Follow-up consultation",
@@ -124,6 +128,7 @@
       },
       {
         "title": "Endocrinologist",
+        "icon" : "fa-solid fa-person-breastfeeding",
         "services": [
           "General consultation",
           "Follow-up consultation",
@@ -141,6 +146,7 @@
       },
       {
         "title": "Gastroenterologist",
+        "icon" : "fa-solid fa-stethoscope",
         "services": [
           "General consultation",
           "Follow-up consultation",
@@ -158,6 +164,7 @@
       },
       {
         "title": "Pulmonologist",
+        "icon" : "fa-solid fa-lungs",
         "services": [
           "General consultation",
           "Follow-up consultation",

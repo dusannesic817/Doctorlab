@@ -3,8 +3,7 @@
 namespace App\Controllers;
 use App\Core\Controller;
 
-use App\Models\CategoryModel;
-use App\Models\AuctionViewModel;
+
 use App\Models\AvailabilityModel;
 use App\Models\ClinicModel;
 use App\Models\UserModel;

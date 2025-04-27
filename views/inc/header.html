@@ -23,36 +23,38 @@
                     <b><small>Discover Doctorlab</small></b>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-custom">
-                    <div class="row ps-5 pe-5 mb-4">
-                      <div class="col-12 col-lg-3">
-                        <li><a href="">Medical - Specilist</a></li>
-                      </div>
-                      <div class="col-12 col-lg-3">
-                        <li><a href="">Dentist</a></li>
-                      </div>
-                      <div class="col-12 col-lg-3">
-                        <li><a href="">Cardiologe</a></li>
-                      </div>
-                      <div class="col-12 col-lg-3">
-                        <li><a href="">aaaaaaaaa</a></li>
-                      </div>
-
+                    <div class="row ps-5 pt-3">
+                      <small><b>Chose your tretmant</b></small>
                     </div>
-                    <div class="row ps-5 pe-5 gy-5">
-                      <div class="col-12 col-lg-3">
-                        <li><a href="">A</a></li>
+                    <div class="mt-5 mb-5">
+                      <div class="d-flex flex-column flex-lg-row mb-3 justify-content-start ms-5 caregiver">
+                        {% for doctor in doctors.doctors|slice(0, 4) %}
+                          <div class="p-2 mb-2 me-2">
+                            <li><a href="" style="color: black !important;"><i class="{{ doctor.icon }}"></i><b> {{ doctor.title }}</b> </a></li>
+                          </div>
+                        {% endfor %}
                       </div>
-                      <div class="col-12 col-lg-3">
-                        <li><a href="">A</a></li>
+                      
+                      <div class="d-flex flex-column flex-lg-row mb-3 justify-content-start ms-5 caregiver">
+                        {% for doctor in doctors.doctors|slice(4,4) %}
+                          <div class="p-2  mb-2 me-2">
+                            <li><a href="" style="color: black !important;"><i class="{{ doctor.icon }} "></i> <b> {{ doctor.title }}</b></a></li>
+                          </div>
+                        {% endfor %}
                       </div>
-                      <div class="col-12 col-lg-3">
-                        <li><a href="">A</a></li>
-                      </div>
-                      <div class="col-12 col-lg-3">
-                        <li><a href="">A</a></li>
+                      <div class="d-flex flex-column flex-lg-row mb-3 justify-content-start ms-5 caregiver">
+                        {% for doctor in doctors.doctors|slice(8,2) %}
+                          <div class="p-2  mb-2 me-2">
+                            <li><a href="" style="color: black !important;"><i class="{{ doctor.icon }}"></i> <b> {{ doctor.title }}</b></a></li>
+                          </div>
+                        {% endfor %}
                       </div>
                     </div>
                   </ul>
+                  
+                
+       
+                  
                 </li>
                 <li class="nav-item">
                   <a class="nav-link mt-2 ms-2" href="/"><b><small>Tarrifs</small></b></a>

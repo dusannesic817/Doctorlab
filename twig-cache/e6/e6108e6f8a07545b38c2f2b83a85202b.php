@@ -65,51 +65,98 @@ class __TwigTemplate_50224a08d9a49685f418e06832038247 extends Template
                     <b><small>Discover Doctorlab</small></b>
                   </a>
                   <ul class=\"dropdown-menu dropdown-menu-custom\">
-                    <div class=\"row ps-5 pe-5 mb-4\">
-                      <div class=\"col-12 col-lg-3\">
-                        <li><a href=\"\">Medical - Specilist</a></li>
-                      </div>
-                      <div class=\"col-12 col-lg-3\">
-                        <li><a href=\"\">Dentist</a></li>
-                      </div>
-                      <div class=\"col-12 col-lg-3\">
-                        <li><a href=\"\">Cardiologe</a></li>
-                      </div>
-                      <div class=\"col-12 col-lg-3\">
-                        <li><a href=\"\">aaaaaaaaa</a></li>
-                      </div>
-
+                    <div class=\"row ps-5 pt-3\">
+                      <small><b>Chose your tretmant</b></small>
                     </div>
-                    <div class=\"row ps-5 pe-5 gy-5\">
-                      <div class=\"col-12 col-lg-3\">
-                        <li><a href=\"\">A</a></li>
-                      </div>
-                      <div class=\"col-12 col-lg-3\">
-                        <li><a href=\"\">A</a></li>
-                      </div>
-                      <div class=\"col-12 col-lg-3\">
-                        <li><a href=\"\">A</a></li>
-                      </div>
-                      <div class=\"col-12 col-lg-3\">
-                        <li><a href=\"\">A</a></li>
-                      </div>
+                    <div class=\"mt-5 mb-5\">
+                      <div class=\"d-flex flex-column flex-lg-row mb-3 justify-content-start ms-5 caregiver\">
+                        ";
+        // line 31
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_slice($this->env, twig_get_attribute($this->env, $this->source, ($context["doctors"] ?? null), "doctors", [], "any", false, false, false, 31), 0, 4));
+        foreach ($context['_seq'] as $context["_key"] => $context["doctor"]) {
+            // line 32
+            echo "                          <div class=\"p-2 mb-2 me-2\">
+                            <li><a href=\"\" style=\"color: black !important;\"><i class=\"";
+            // line 33
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "icon", [], "any", false, false, false, 33), "html", null, true);
+            echo "\"></i><b> ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "title", [], "any", false, false, false, 33), "html", null, true);
+            echo "</b> </a></li>
+                          </div>
+                        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['doctor'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 36
+        echo "                      </div>
+                      
+                      <div class=\"d-flex flex-column flex-lg-row mb-3 justify-content-start ms-5 caregiver\">
+                        ";
+        // line 39
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_slice($this->env, twig_get_attribute($this->env, $this->source, ($context["doctors"] ?? null), "doctors", [], "any", false, false, false, 39), 4, 4));
+        foreach ($context['_seq'] as $context["_key"] => $context["doctor"]) {
+            // line 40
+            echo "                          <div class=\"p-2  mb-2 me-2\">
+                            <li><a href=\"\" style=\"color: black !important;\"><i class=\"";
+            // line 41
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "icon", [], "any", false, false, false, 41), "html", null, true);
+            echo " \"></i> <b> ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "title", [], "any", false, false, false, 41), "html", null, true);
+            echo "</b></a></li>
+                          </div>
+                        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['doctor'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 44
+        echo "                      </div>
+                      <div class=\"d-flex flex-column flex-lg-row mb-3 justify-content-start ms-5 caregiver\">
+                        ";
+        // line 46
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_slice($this->env, twig_get_attribute($this->env, $this->source, ($context["doctors"] ?? null), "doctors", [], "any", false, false, false, 46), 8, 2));
+        foreach ($context['_seq'] as $context["_key"] => $context["doctor"]) {
+            // line 47
+            echo "                          <div class=\"p-2  mb-2 me-2\">
+                            <li><a href=\"\" style=\"color: black !important;\"><i class=\"";
+            // line 48
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "icon", [], "any", false, false, false, 48), "html", null, true);
+            echo "\"></i> <b> ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "title", [], "any", false, false, false, 48), "html", null, true);
+            echo "</b></a></li>
+                          </div>
+                        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['doctor'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 51
+        echo "                      </div>
                     </div>
                   </ul>
+                  
+                
+       
+                  
                 </li>
                 <li class=\"nav-item\">
                   <a class=\"nav-link mt-2 ms-2\" href=\"/\"><b><small>Tarrifs</small></b></a>
                 </li>
 
                 ";
-        // line 61
+        // line 63
         if (($context["auth"] ?? null)) {
-            // line 62
+            // line 64
             echo "                      
               </ul>
               <ul class=\"navbar-nav ms-auto mt-2\">
                 <li class=\"nav-item\">
                   <a class=\"nav-link ms-2\" href=\"";
-            // line 66
+            // line 68
             echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
             echo "/";
             echo twig_escape_filter($this->env, ($context["role"] ?? null), "html", null, true);
@@ -120,7 +167,7 @@ class __TwigTemplate_50224a08d9a49685f418e06832038247 extends Template
                 </li>
                 <li class=\"nav-item\">
                   <a class=\"nav-link ms-2\" href=\"";
-            // line 70
+            // line 72
             echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
             echo "/";
             echo twig_escape_filter($this->env, ($context["role"] ?? null), "html", null, true);
@@ -132,25 +179,25 @@ class __TwigTemplate_50224a08d9a49685f418e06832038247 extends Template
              
               ";
         } else {
-            // line 75
+            // line 77
             echo "              </ul>
               <ul class=\"navbar-nav ms-auto mt-2\">
                 <li class=\"nav-item border rounded me-2 border-success ps-1 pe-1 mb-1\">
                   <a class=\"nav-link\" href=\"";
-            // line 78
+            // line 80
             echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
             echo "/caregiver/register\"><b><small>Are you a health professional?</small></b></a>
                 </li>
                 <li class=\"nav-item\">
                   <a class=\"nav-link ms-2\" href=\"";
-            // line 81
+            // line 83
             echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
             echo "/login\"><b><small>Make appoitment?</small></b></a>
                 </li>
               </ul>
               ";
         }
-        // line 85
+        // line 87
         echo "            </div>
           </div>
         </nav>
@@ -172,7 +219,7 @@ class __TwigTemplate_50224a08d9a49685f418e06832038247 extends Template
 
     public function getDebugInfo()
     {
-        return array (  154 => 85,  147 => 81,  141 => 78,  136 => 75,  124 => 70,  113 => 66,  107 => 62,  105 => 61,  49 => 8,  45 => 7,  37 => 1,);
+        return array (  201 => 87,  194 => 83,  188 => 80,  183 => 77,  171 => 72,  160 => 68,  154 => 64,  152 => 63,  138 => 51,  127 => 48,  124 => 47,  120 => 46,  116 => 44,  105 => 41,  102 => 40,  98 => 39,  93 => 36,  82 => 33,  79 => 32,  75 => 31,  49 => 8,  45 => 7,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -202,36 +249,38 @@ class __TwigTemplate_50224a08d9a49685f418e06832038247 extends Template
                     <b><small>Discover Doctorlab</small></b>
                   </a>
                   <ul class=\"dropdown-menu dropdown-menu-custom\">
-                    <div class=\"row ps-5 pe-5 mb-4\">
-                      <div class=\"col-12 col-lg-3\">
-                        <li><a href=\"\">Medical - Specilist</a></li>
-                      </div>
-                      <div class=\"col-12 col-lg-3\">
-                        <li><a href=\"\">Dentist</a></li>
-                      </div>
-                      <div class=\"col-12 col-lg-3\">
-                        <li><a href=\"\">Cardiologe</a></li>
-                      </div>
-                      <div class=\"col-12 col-lg-3\">
-                        <li><a href=\"\">aaaaaaaaa</a></li>
-                      </div>
-
+                    <div class=\"row ps-5 pt-3\">
+                      <small><b>Chose your tretmant</b></small>
                     </div>
-                    <div class=\"row ps-5 pe-5 gy-5\">
-                      <div class=\"col-12 col-lg-3\">
-                        <li><a href=\"\">A</a></li>
+                    <div class=\"mt-5 mb-5\">
+                      <div class=\"d-flex flex-column flex-lg-row mb-3 justify-content-start ms-5 caregiver\">
+                        {% for doctor in doctors.doctors|slice(0, 4) %}
+                          <div class=\"p-2 mb-2 me-2\">
+                            <li><a href=\"\" style=\"color: black !important;\"><i class=\"{{ doctor.icon }}\"></i><b> {{ doctor.title }}</b> </a></li>
+                          </div>
+                        {% endfor %}
                       </div>
-                      <div class=\"col-12 col-lg-3\">
-                        <li><a href=\"\">A</a></li>
+                      
+                      <div class=\"d-flex flex-column flex-lg-row mb-3 justify-content-start ms-5 caregiver\">
+                        {% for doctor in doctors.doctors|slice(4,4) %}
+                          <div class=\"p-2  mb-2 me-2\">
+                            <li><a href=\"\" style=\"color: black !important;\"><i class=\"{{ doctor.icon }} \"></i> <b> {{ doctor.title }}</b></a></li>
+                          </div>
+                        {% endfor %}
                       </div>
-                      <div class=\"col-12 col-lg-3\">
-                        <li><a href=\"\">A</a></li>
-                      </div>
-                      <div class=\"col-12 col-lg-3\">
-                        <li><a href=\"\">A</a></li>
+                      <div class=\"d-flex flex-column flex-lg-row mb-3 justify-content-start ms-5 caregiver\">
+                        {% for doctor in doctors.doctors|slice(8,2) %}
+                          <div class=\"p-2  mb-2 me-2\">
+                            <li><a href=\"\" style=\"color: black !important;\"><i class=\"{{ doctor.icon }}\"></i> <b> {{ doctor.title }}</b></a></li>
+                          </div>
+                        {% endfor %}
                       </div>
                     </div>
                   </ul>
+                  
+                
+       
+                  
                 </li>
                 <li class=\"nav-item\">
                   <a class=\"nav-link mt-2 ms-2\" href=\"/\"><b><small>Tarrifs</small></b></a>

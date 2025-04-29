@@ -58,7 +58,19 @@ class AppointmentController extends UserRoleController{
 
 
     public function destroy($id){
+        $auth= $this->getSession()->get('user_id');
+
+        $appointmentModel= new AppointmentModel($this->getDatabaseConnection());
+
+        $deleteAppointment = $appointmentModel->deleteById($id);
+
+       if($deleteAppointment){
+        $this->redirect('/client/appointments/'.$auth);
+       }
 
     }
+
+
+
 
 }

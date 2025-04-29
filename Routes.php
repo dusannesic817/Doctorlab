@@ -24,11 +24,13 @@ return [
     App\Core\Route::post('|^makeappointment/store/?$|', "MakeAppointment", 'store'),
     App\Core\Route::any('|^makeappointment/storeappointment/?$|', "MakeAppointment", 'storeAppointment'),
     App\Core\Route::get('|^makeappointment/cancel/?$|', "MakeAppointment", 'cancelAppointment'),
+   
 
 
     #Appointement routes:
     App\Core\Route::get('|^client/appointments/([0-9+])/?$|',    "Appointment", 'show'),
     App\Core\Route::get('|^caregiver/appointments/([0-9+])/?$|', "Appointment", 'show'),
+    App\Core\Route::post('|^client/appointments/delete/([0-9+])/?$|', "Appointment", 'destroy'),
    
 
     #UserProfile-auth

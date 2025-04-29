@@ -148,6 +148,8 @@ class MakeAppointmentController extends Controller{
         $this->getSession()->save();
         return $this->redirect('/'); 
     }
+
+
     
     
 

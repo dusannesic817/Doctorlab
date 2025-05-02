@@ -7,9 +7,6 @@ use App\Models\AppointmentModel;
 
 
 class AppointmentController extends UserRoleController{
-
-    
-    
     public function index(){
         
     }

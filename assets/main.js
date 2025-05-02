@@ -13,8 +13,6 @@ window.onload = function() {
     autoDismissAlert();
 };
 
-
-
 document.addEventListener("DOMContentLoaded", function () {
     const monthArray = document.getElementById('month-name').getAttribute('data-months').split(', ');
     let currentMonthIndex = parseInt(document.getElementById('month-name').getAttribute('data-current-month'));

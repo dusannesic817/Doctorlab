@@ -45,12 +45,10 @@ class UserController extends Controller{
         $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
         $client->setAccessToken($token['access_token']);
     
-        // Dobavi korisničke podatke
         $oauth2 = new Oauth2($client);
         $userInfo = $oauth2->userinfo->get();
     
-        /*var_dump($userInfo->givenName, $userInfo->familyName, $userInfo->email);
-        exit();*/
+    
     
         // Proveri da li korisnik postoji u bazi
         $userModel = new UserModel($this->getDatabaseConnection());

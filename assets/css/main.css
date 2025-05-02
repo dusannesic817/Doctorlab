@@ -5,6 +5,9 @@ body{
 }
 
 nav {
+    background-color:#107aca;
+}
+.background {
     background-color:#01264d;
 }
 
@@ -12,8 +15,8 @@ nav a{
     color: white !important;
 }
 
-.background{
-    background-color:#01264d;
+.background-navbar{
+    background-color:#107aca;
 
 }
 
@@ -97,14 +100,14 @@ nav a{
     height: auto; 
     padding-top: 10px; 
     padding-bottom: 10px;
-    transition: opacity 1.8s ease, height 1.8s ease;
+    transition: opacity 1s ease, height 1s ease;
   }
   .dropdown-menu {
     display: none; 
     opacity: 0; 
     height: 0; 
     overflow: hidden; 
-    transition: opacity 1.8s ease, height 1.8s ease; 
+    transition: opacity 1s ease, height 1s ease; 
   }
 
 

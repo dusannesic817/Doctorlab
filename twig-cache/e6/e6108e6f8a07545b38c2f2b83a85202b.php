@@ -34,7 +34,7 @@ class __TwigTemplate_50224a08d9a49685f418e06832038247 extends Template
     {
         $macros = $this->macros;
         // line 1
-        echo "<div class=\"container-fluid background\">
+        echo "<div class=\"container-fluid background-navbar\">
   <div class=\"container\">
     <div class=\"row\">
       <div class=\"col-12\">
@@ -47,7 +47,7 @@ class __TwigTemplate_50224a08d9a49685f418e06832038247 extends Template
               <img src=\"";
         // line 8
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
-        echo "/assets/images/home_logo.png\" alt=\"DoctorLab Logo\" >
+        echo "/assets/images/logos.png\" alt=\"DoctorLab Logo\" >
           </a>
           
           <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarNav\"
@@ -224,14 +224,14 @@ class __TwigTemplate_50224a08d9a49685f418e06832038247 extends Template
 
     public function getSourceContext()
     {
-        return new Source("<div class=\"container-fluid background\">
+        return new Source("<div class=\"container-fluid background-navbar\">
   <div class=\"container\">
     <div class=\"row\">
       <div class=\"col-12\">
         <nav class=\"navbar navbar-expand-lg mt-2\">
           <div class=\"container-fluid\">
             <a class=\"navbar-brand\" href=\"{{ base_url }}\">
-              <img src=\"{{ base_url }}/assets/images/home_logo.png\" alt=\"DoctorLab Logo\" >
+              <img src=\"{{ base_url }}/assets/images/logos.png\" alt=\"DoctorLab Logo\" >
           </a>
           
           <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarNav\"

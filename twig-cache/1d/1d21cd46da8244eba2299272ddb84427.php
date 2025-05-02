@@ -36,7 +36,7 @@ class __TwigTemplate_7cb3473b22529ae5a95449f2f730985a extends Template
         // line 1
         echo "<div class=\"container-fluid\">
   <!--Search-->
-  <div class=\"row background d-flex align-items-center justify-content-center\" style=\"height: 50vh;\">
+  <div class=\"row background-navbar d-flex align-items-center justify-content-center\" style=\"height: 50vh;\">
     <div class=\"col-xxl-4 col-xl-6 col-lg-6 col-md-8 col-sm-12 text-left\">
       <h1 class=\"ms-1 pb-4\" style=\"color: white;\"><b>Live a <span style=\"color: #9dc6ff;\">healthier life</span></b></h1>
       <div class=\"search-container\">
@@ -76,7 +76,7 @@ class __TwigTemplate_7cb3473b22529ae5a95449f2f730985a extends Template
     {
         return new Source("<div class=\"container-fluid\">
   <!--Search-->
-  <div class=\"row background d-flex align-items-center justify-content-center\" style=\"height: 50vh;\">
+  <div class=\"row background-navbar d-flex align-items-center justify-content-center\" style=\"height: 50vh;\">
     <div class=\"col-xxl-4 col-xl-6 col-lg-6 col-md-8 col-sm-12 text-left\">
       <h1 class=\"ms-1 pb-4\" style=\"color: white;\"><b>Live a <span style=\"color: #9dc6ff;\">healthier life</span></b></h1>
       <div class=\"search-container\">

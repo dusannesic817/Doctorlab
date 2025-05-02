@@ -45,7 +45,7 @@ class __TwigTemplate_1c4767be4b327fe3a5ec49f8b229842c extends Template
       <img src=\"";
         // line 6
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
-        echo "/assets/images/home_logo.png\" alt=\"\">
+        echo "/assets/images/logos.png\" alt=\"\">
     </div>
    
 
@@ -183,7 +183,7 @@ class __TwigTemplate_1c4767be4b327fe3a5ec49f8b229842c extends Template
   <!-- Sidebar - Brand -->
   <a class=\"sidebar-brand d-flex align-items-center justify-content-center\" href=\"{{base_url}}\" >
     <div class=\"sidebar-brand-icon \">
-      <img src=\"{{base_url}}/assets/images/home_logo.png\" alt=\"\">
+      <img src=\"{{base_url}}/assets/images/logos.png\" alt=\"\">
     </div>
    
 

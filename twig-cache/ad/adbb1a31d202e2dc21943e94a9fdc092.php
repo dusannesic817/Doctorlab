@@ -62,7 +62,10 @@ class __TwigTemplate_fae9d0472aedbce00fff93847cc82574 extends Template
                 <td>179</td>
                 <td>
                   <div class=\"d-flex align-items-center\">
-                    <img src=\"img/undraw_profile.svg\" alt=\"user-image\" class=\"rounded-circle me-2\"
+                    <img src=\"";
+        // line 29
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/assets/images/undraw_profile.svg\" alt=\"user-image\" class=\"rounded-circle me-2\"
                       style=\"width: 30px; height: 30px;\">
                     <div>
                       <h6 class=\"mb-0\">Addie Bass</h6>
@@ -158,9 +161,14 @@ class __TwigTemplate_fae9d0472aedbce00fff93847cc82574 extends Template
         return "./inc/caregiver/tabel.html";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  37 => 1,);
+        return array (  67 => 29,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -193,7 +201,7 @@ class __TwigTemplate_fae9d0472aedbce00fff93847cc82574 extends Template
                 <td>179</td>
                 <td>
                   <div class=\"d-flex align-items-center\">
-                    <img src=\"img/undraw_profile.svg\" alt=\"user-image\" class=\"rounded-circle me-2\"
+                    <img src=\"{{base_url}}/assets/images/undraw_profile.svg\" alt=\"user-image\" class=\"rounded-circle me-2\"
                       style=\"width: 30px; height: 30px;\">
                     <div>
                       <h6 class=\"mb-0\">Addie Bass</h6>

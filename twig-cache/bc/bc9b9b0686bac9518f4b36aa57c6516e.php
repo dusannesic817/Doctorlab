@@ -50,7 +50,7 @@ class __TwigTemplate_647fa31cf132783b89117ed0f0373249 extends Template
         echo "
 ";
         // line 6
-        $this->loadTemplate("./inc/edit_banner.html", "UserProfile/show.html", 6)->display($context);
+        $this->loadTemplate("./inc/session_alerts/edit_banner.html", "UserProfile/show.html", 6)->display($context);
         // line 7
         echo "
 <div class=\"container\">
@@ -298,7 +298,7 @@ class __TwigTemplate_647fa31cf132783b89117ed0f0373249 extends Template
 
 {% block main %}
 
-{% include './inc/edit_banner.html' %}
+{% include './inc/session_alerts/edit_banner.html' %}
 
 <div class=\"container\">
   <div class=\"row d-flex justify-content-center mt-5\">

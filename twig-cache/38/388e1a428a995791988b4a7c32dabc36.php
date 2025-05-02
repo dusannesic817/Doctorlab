@@ -53,10 +53,12 @@ class __TwigTemplate_f632f0baf0787e18abb394f43ba17bc4 extends Template
   <link rel=\"stylesheet\" href=\"";
         // line 12
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
-        echo "/assets/main.css\">
+        echo "/assets/css/main.css\">
+  
+ 
 
   <title>Doctorlab | ";
-        // line 14
+        // line 16
         $this->displayBlock('naslov', $context, $blocks);
         echo "</title>
 </head>
@@ -64,15 +66,15 @@ class __TwigTemplate_f632f0baf0787e18abb394f43ba17bc4 extends Template
 <body>
   <header>
     ";
-        // line 19
-        $this->loadTemplate("./inc/header.html", "_global/index.html", 19)->display($context);
-        // line 20
+        // line 21
+        $this->loadTemplate("./inc/header.html", "_global/index.html", 21)->display($context);
+        // line 22
         echo "  </header>
   <main>
     ";
-        // line 22
+        // line 24
         $this->displayBlock('main', $context, $blocks);
-        // line 25
+        // line 27
         echo "  </main>
   <footer>
     footer
@@ -82,7 +84,7 @@ class __TwigTemplate_f632f0baf0787e18abb394f43ba17bc4 extends Template
     crossorigin=\"anonymous\"></script>
     
     <script src=\"";
-        // line 33
+        // line 35
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/assets/main.js\" defer></script>
 </body>
@@ -90,18 +92,18 @@ class __TwigTemplate_f632f0baf0787e18abb394f43ba17bc4 extends Template
 </html>";
     }
 
-    // line 14
+    // line 16
     public function block_naslov($context, array $blocks = [])
     {
         $macros = $this->macros;
         echo "Home";
     }
 
-    // line 22
+    // line 24
     public function block_main($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 23
+        // line 25
         echo "
     ";
     }
@@ -118,7 +120,7 @@ class __TwigTemplate_f632f0baf0787e18abb394f43ba17bc4 extends Template
 
     public function getDebugInfo()
     {
-        return array (  105 => 23,  101 => 22,  94 => 14,  86 => 33,  76 => 25,  74 => 22,  70 => 20,  68 => 19,  60 => 14,  55 => 12,  49 => 9,  39 => 1,);
+        return array (  107 => 25,  103 => 24,  96 => 16,  88 => 35,  78 => 27,  76 => 24,  72 => 22,  70 => 21,  62 => 16,  55 => 12,  49 => 9,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -134,7 +136,9 @@ class __TwigTemplate_f632f0baf0787e18abb394f43ba17bc4 extends Template
   <link rel=\"icon\" type=\"image/png\" href=\"{{ base_url }}/assets/images/logo_browser.png\">
   <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css\">
   <script src=\"https://kit.fontawesome.com/3f1d14d928.js\" crossorigin=\"anonymous\"></script>
-  <link rel=\"stylesheet\" href=\"{{ base_url }}/assets/main.css\">
+  <link rel=\"stylesheet\" href=\"{{ base_url }}/assets/css/main.css\">
+  
+ 
 
   <title>Doctorlab | {%block naslov%}Home{%endblock%}</title>
 </head>

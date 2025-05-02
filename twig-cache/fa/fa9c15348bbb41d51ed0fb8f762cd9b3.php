@@ -25,7 +25,7 @@ class __TwigTemplate_6a4b6f667460a2b073a48bd6ad13f285 extends Template
         $this->source = $this->getSourceContext();
 
         $this->blocks = [
-            'main' => [$this, 'block_main'],
+            'caregiver' => [$this, 'block_caregiver'],
             'naslov' => [$this, 'block_naslov'],
         ];
     }
@@ -33,25 +33,25 @@ class __TwigTemplate_6a4b6f667460a2b073a48bd6ad13f285 extends Template
     protected function doGetParent(array $context)
     {
         // line 1
-        return "_global/index.html";
+        return "_global/caregiver_index.html";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
-        $this->parent = $this->loadTemplate("_global/index.html", "CaregiverProfile/show.html", 1);
+        $this->parent = $this->loadTemplate("_global/caregiver_index.html", "CaregiverProfile/show.html", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
     // line 4
-    public function block_main($context, array $blocks = [])
+    public function block_caregiver($context, array $blocks = [])
     {
         $macros = $this->macros;
         // line 5
         echo "
 ";
         // line 6
-        $this->loadTemplate("./inc/edit_banner.html", "CaregiverProfile/show.html", 6)->display($context);
+        $this->loadTemplate("./inc/session_alerts/edit_banner.html", "CaregiverProfile/show.html", 6)->display($context);
         // line 7
         echo " 
 <div class=\"container\">
@@ -325,12 +325,12 @@ class __TwigTemplate_6a4b6f667460a2b073a48bd6ad13f285 extends Template
 
     public function getSourceContext()
     {
-        return new Source("{% extends \"_global/index.html\" %}
+        return new Source("{% extends \"_global/caregiver_index.html\" %}
 
 
-{% block main %}
+{% block caregiver %}
 
-{% include './inc/edit_banner.html' %}
+{% include './inc/session_alerts/edit_banner.html' %}
  
 <div class=\"container\">
   <div class=\"row d-flex justify-content-center mt-5\">

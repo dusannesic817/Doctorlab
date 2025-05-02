@@ -34,14 +34,20 @@ class __TwigTemplate_1c4767be4b327fe3a5ec49f8b229842c extends Template
     {
         $macros = $this->macros;
         // line 1
-        echo "<ul class=\"navbar-nav bg-gradient-primary sidebar sidebar-dark accordion\" id=\"accordionSidebar\">
+        echo "<ul class=\"navbar-nav  sidebar sidebar-dark accordion\" id=\"accordionSidebar\" style=\"background-color: #107aca !important;\">
 
   <!-- Sidebar - Brand -->
-  <a class=\"sidebar-brand d-flex align-items-center justify-content-center\" href=\"index.html\">
-    <div class=\"sidebar-brand-icon rotate-n-15\">
-      <i class=\"fas fa-laugh-wink\"></i>
+  <a class=\"sidebar-brand d-flex align-items-center justify-content-center\" href=\"";
+        // line 4
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "\" >
+    <div class=\"sidebar-brand-icon \">
+      <img src=\"";
+        // line 6
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/assets/images/home_logo.png\" alt=\"\">
     </div>
-    <div class=\"sidebar-brand-text mx-3\">Doctorlab</div>
+   
 
   </a>
 
@@ -50,8 +56,8 @@ class __TwigTemplate_1c4767be4b327fe3a5ec49f8b229842c extends Template
 
   <!-- Nav Item - Dashboard -->
   <li class=\"nav-item active\">
-    <a class=\"nav-link\" href=\"index.html\">
-      <i class=\"fas fa-fw fa-tachometer-alt\"></i>
+    <a class=\"nav-link\" href=\"\">
+      
       <span>Dashboard</span>
     </a>
   </li>
@@ -160,21 +166,26 @@ class __TwigTemplate_1c4767be4b327fe3a5ec49f8b229842c extends Template
         return "./inc/caregiver/sidebar.html";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  37 => 1,);
+        return array (  47 => 6,  42 => 4,  37 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<ul class=\"navbar-nav bg-gradient-primary sidebar sidebar-dark accordion\" id=\"accordionSidebar\">
+        return new Source("<ul class=\"navbar-nav  sidebar sidebar-dark accordion\" id=\"accordionSidebar\" style=\"background-color: #107aca !important;\">
 
   <!-- Sidebar - Brand -->
-  <a class=\"sidebar-brand d-flex align-items-center justify-content-center\" href=\"index.html\">
-    <div class=\"sidebar-brand-icon rotate-n-15\">
-      <i class=\"fas fa-laugh-wink\"></i>
+  <a class=\"sidebar-brand d-flex align-items-center justify-content-center\" href=\"{{base_url}}\" >
+    <div class=\"sidebar-brand-icon \">
+      <img src=\"{{base_url}}/assets/images/home_logo.png\" alt=\"\">
     </div>
-    <div class=\"sidebar-brand-text mx-3\">Doctorlab</div>
+   
 
   </a>
 
@@ -183,8 +194,8 @@ class __TwigTemplate_1c4767be4b327fe3a5ec49f8b229842c extends Template
 
   <!-- Nav Item - Dashboard -->
   <li class=\"nav-item active\">
-    <a class=\"nav-link\" href=\"index.html\">
-      <i class=\"fas fa-fw fa-tachometer-alt\"></i>
+    <a class=\"nav-link\" href=\"\">
+      
       <span>Dashboard</span>
     </a>
   </li>

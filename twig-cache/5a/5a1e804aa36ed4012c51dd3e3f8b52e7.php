@@ -47,15 +47,16 @@ class __TwigTemplate_55b0bdf23fe62b2b04abf0597d27e7c7 extends Template
     {
         $macros = $this->macros;
         // line 4
-        $this->loadTemplate("./inc/edit_banner.html", "Appointment/show.html", 4)->display($context);
-        // line 5
-        $this->loadTemplate("./inc/caregiver/cards.html", "Appointment/show.html", 5)->display($context);
-        // line 6
-        $this->loadTemplate("./inc/caregiver/tabel.html", "Appointment/show.html", 6)->display($context);
-        // line 7
         echo "
-
-
+";
+        // line 5
+        $this->loadTemplate("./inc/session_alerts/edit_banner.html", "Appointment/show.html", 5)->display($context);
+        // line 6
+        $this->loadTemplate("./inc/caregiver/cards.html", "Appointment/show.html", 6)->display($context);
+        // line 7
+        $this->loadTemplate("./inc/caregiver/tabel.html", "Appointment/show.html", 7)->display($context);
+        // line 8
+        echo "
 ";
     }
 
@@ -71,7 +72,7 @@ class __TwigTemplate_55b0bdf23fe62b2b04abf0597d27e7c7 extends Template
 
     public function getDebugInfo()
     {
-        return array (  56 => 7,  54 => 6,  52 => 5,  50 => 4,  46 => 3,  35 => 1,);
+        return array (  59 => 8,  57 => 7,  55 => 6,  53 => 5,  50 => 4,  46 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -79,11 +80,10 @@ class __TwigTemplate_55b0bdf23fe62b2b04abf0597d27e7c7 extends Template
         return new Source("{% extends \"_global/caregiver_index.html\" %}
 
 {% block caregiver %}
-{% include './inc/edit_banner.html' %}
+
+{% include './inc/session_alerts/edit_banner.html' %}
 {% include './inc/caregiver/cards.html' %}
 {% include './inc/caregiver/tabel.html' %}
-
-
 
 {% endblock %}", "Appointment/show.html", "C:\\laragon\\www\\doctorlab\\views\\Appointment\\show.html");
     }

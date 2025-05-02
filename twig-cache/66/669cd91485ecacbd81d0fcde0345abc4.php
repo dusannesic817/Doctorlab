@@ -47,7 +47,7 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
     {
         $macros = $this->macros;
         // line 5
-        $this->loadTemplate("./inc/appointment_wait.html", "Main/home.html", 5)->display($context);
+        $this->loadTemplate("./inc/session_alerts/appointment_wait.html", "Main/home.html", 5)->display($context);
         // line 6
         $this->loadTemplate("./inc/search.html", "Main/home.html", 6)->display($context);
         // line 7
@@ -379,7 +379,7 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
 
 
 {% block main %}
-{% include './inc/appointment_wait.html'%}
+{% include './inc/session_alerts/appointment_wait.html'%}
 {% include './inc/search.html'%}
 
 

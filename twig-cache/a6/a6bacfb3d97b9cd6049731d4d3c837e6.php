@@ -52,9 +52,21 @@ class __TwigTemplate_a29a5bec64a54d218342957734980288 extends Template
         // line 5
         $this->loadTemplate("./inc/session_alerts/edit_banner.html", "Appointment/index.html", 5)->display($context);
         // line 6
-        $this->loadTemplate("./inc/caregiver/tabel.html", "Appointment/index.html", 6)->display($context);
-        // line 7
         echo "
+<div class=\"container-fluid\">
+  <div class=\"row\">
+    <div class=\"col-12\">
+      ";
+        // line 10
+        $this->loadTemplate("./inc/caregiver/tabel.html", "Appointment/index.html", 10)->display($context);
+        // line 11
+        echo "    </div>
+  </div>
+</div>
+
+
+
+
 ";
     }
 
@@ -70,7 +82,7 @@ class __TwigTemplate_a29a5bec64a54d218342957734980288 extends Template
 
     public function getDebugInfo()
     {
-        return array (  57 => 7,  55 => 6,  53 => 5,  50 => 4,  46 => 3,  35 => 1,);
+        return array (  63 => 11,  61 => 10,  55 => 6,  53 => 5,  50 => 4,  46 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -80,7 +92,17 @@ class __TwigTemplate_a29a5bec64a54d218342957734980288 extends Template
 {% block caregiver %}
 
 {% include './inc/session_alerts/edit_banner.html' %}
-{% include './inc/caregiver/tabel.html' %}
+
+<div class=\"container-fluid\">
+  <div class=\"row\">
+    <div class=\"col-12\">
+      {% include './inc/caregiver/tabel.html' %}
+    </div>
+  </div>
+</div>
+
+
+
 
 {% endblock %}", "Appointment/index.html", "C:\\laragon\\www\\doctorlab\\views\\Appointment\\index.html");
     }

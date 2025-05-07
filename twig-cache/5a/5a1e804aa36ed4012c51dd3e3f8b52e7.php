@@ -54,9 +54,19 @@ class __TwigTemplate_55b0bdf23fe62b2b04abf0597d27e7c7 extends Template
         // line 6
         $this->loadTemplate("./inc/caregiver/cards.html", "Appointment/show.html", 6)->display($context);
         // line 7
-        $this->loadTemplate("./inc/caregiver/tabel.html", "Appointment/show.html", 7)->display($context);
-        // line 8
         echo "
+<div class=\"container-fluid\">
+  <div class=\"row\">
+    <div class=\"col-8\">
+      ";
+        // line 11
+        $this->loadTemplate("./inc/caregiver/tabel.html", "Appointment/show.html", 11)->display($context);
+        // line 12
+        echo "    </div>
+  </div>
+</div>
+
+
 ";
     }
 
@@ -72,7 +82,7 @@ class __TwigTemplate_55b0bdf23fe62b2b04abf0597d27e7c7 extends Template
 
     public function getDebugInfo()
     {
-        return array (  59 => 8,  57 => 7,  55 => 6,  53 => 5,  50 => 4,  46 => 3,  35 => 1,);
+        return array (  65 => 12,  63 => 11,  57 => 7,  55 => 6,  53 => 5,  50 => 4,  46 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -83,7 +93,15 @@ class __TwigTemplate_55b0bdf23fe62b2b04abf0597d27e7c7 extends Template
 
 {% include './inc/session_alerts/edit_banner.html' %}
 {% include './inc/caregiver/cards.html' %}
-{% include './inc/caregiver/tabel.html' %}
+
+<div class=\"container-fluid\">
+  <div class=\"row\">
+    <div class=\"col-8\">
+      {% include './inc/caregiver/tabel.html' %}
+    </div>
+  </div>
+</div>
+
 
 {% endblock %}", "Appointment/show.html", "C:\\laragon\\www\\doctorlab\\views\\Appointment\\show.html");
     }

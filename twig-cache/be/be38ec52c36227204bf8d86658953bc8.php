@@ -136,9 +136,12 @@ class __TwigTemplate_1c4767be4b327fe3a5ec49f8b229842c extends Template
 
   <!-- Nav Item - Charts -->
   <li class=\"nav-item\">
-    <a class=\"nav-link\" href=\"#\">
+    <a class=\"nav-link\" href=\"";
+        // line 97
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/caregiver/appointments\">
       <i class=\"fas fa-fw fa-chart-area\"></i>
-      <span>Chart</span>
+      <span>My clients</span>
     </a>
   </li>
 
@@ -176,7 +179,7 @@ class __TwigTemplate_1c4767be4b327fe3a5ec49f8b229842c extends Template
 
     public function getDebugInfo()
     {
-        return array (  149 => 105,  47 => 6,  42 => 4,  37 => 1,);
+        return array (  152 => 105,  141 => 97,  47 => 6,  42 => 4,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -277,9 +280,9 @@ class __TwigTemplate_1c4767be4b327fe3a5ec49f8b229842c extends Template
 
   <!-- Nav Item - Charts -->
   <li class=\"nav-item\">
-    <a class=\"nav-link\" href=\"#\">
+    <a class=\"nav-link\" href=\"{{base_url}}/caregiver/appointments\">
       <i class=\"fas fa-fw fa-chart-area\"></i>
-      <span>Chart</span>
+      <span>My clients</span>
     </a>
   </li>
 

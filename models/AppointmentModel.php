@@ -61,6 +61,7 @@ class AppointmentModel extends Model{
                 appointment.*,
                 u1.name AS patient_name,
                 u1.surname AS patient_surname,
+                u1.email as patient_email,
                 u1.profile_photo AS patient_photo,
                 u1.phone AS patient_phone,
                 u1.profile_photo AS patient_photo,

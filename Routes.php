@@ -28,6 +28,7 @@ return [
 
 
     #Appointement routes:
+    App\Core\Route::get('|^caregiver/appointments/?$|',    "Appointment", 'index'),
     App\Core\Route::get('|^client/appointments/([0-9+])/?$|',    "Appointment", 'show'),
     App\Core\Route::get('|^caregiver/appointments/([0-9+])/?$|', "Appointment", 'show'),
     App\Core\Route::post('|^client/appointments/delete/([0-9+])/?$|', "Appointment", 'destroy'),

@@ -9,6 +9,17 @@ use App\Models\AppointmentModel;
 class AppointmentController extends UserRoleController{
     public function index(){
         
+        $appointmentModel = new AppointmentModel($this->getDatabaseConnection());
+
+        $user_id=$this->getSession()->get('user_id');
+
+        $myclients = $appointmentModel->getScheduleDoctor($user_id);
+
+        $this->set('myclients',$myclients);
+
+
+       
+        
     }
 
 
@@ -16,7 +27,7 @@ class AppointmentController extends UserRoleController{
 
         $appointmentModel = new AppointmentModel($this->getDatabaseConnection());
         $schedules = $appointmentModel->getSchedule($id);
-        $schedulesDoctor  = $appointmentModel->getScheduleDoctor($id);
+        $myclients  = $appointmentModel->getScheduleDoctor($id);
       
 
         $change=$this->getSession()->get('success_schedule');
@@ -25,13 +36,11 @@ class AppointmentController extends UserRoleController{
         if($this->getSession()->get('role') =='client'){           
             $this->set('schedules',$schedules);
         }elseif($this->getSession()->get('role') =='caregiver'){
-            $this->set('schedulesDoctor', $schedulesDoctor);
+            $this->set('myclients', $myclients);
 
         }
        
-       
-
-
+    
         $this->getSession()->remove('success_schedule');
     }
 

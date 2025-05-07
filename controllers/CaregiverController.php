@@ -17,7 +17,6 @@ class CaregiverController extends Controller{
 
         $data = $caregiver->getCaregiversAvailability();
 
-    
 
         date_default_timezone_set("Europe/Belgrade");
 

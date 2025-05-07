@@ -20,49 +20,62 @@ class CaregiverController extends Controller{
     
 
         date_default_timezone_set("Europe/Belgrade");
+
         $today = new \DateTime();
-
-        $dayOfWeek = $today->format('N'); 
+        $dayOfWeek = $today->format('N');
+        
         if ($dayOfWeek == 6) {
-           
-            $today->modify('+2 days');
+            $today->modify('+2 days'); 
         } elseif ($dayOfWeek == 7) {
-            
-            $today->modify('+1 day');
+            $today->modify('+1 day'); 
         }
-        $date = $today->format('F j l');
-
-
-        $niz = [];
-        $novi = [];
+        
         $caregivers = [];
         
         foreach ($data as $value) {
-            $prikazuj = false;
+            $scheduleEntries = [];
         
             foreach ($value->schedule['schedule'] as $v) {
+                $dateObj = \DateTime::createFromFormat('F j l', $v['date']);
+                
                
-                if ($v['date'] === $date) {
-                    $prikazuj = true;
-                }
-               
-                if ($prikazuj) {
-                    $niz[$v['date']] = [
-                        'times' => $v['times'] 
+                if ($dateObj && $dateObj >= $today) {
+
+                    $scheduleEntries[] = [
+                        'original_date' => $v['date'],
+                        'date_obj' => $dateObj,
+                        'times' => $v['times']
                     ];
                 }
             }
+        
             
-            $novi[$value->user_id] = $niz;
-            $caregivers[] = [
-                'user_id' => $value->user_id,
-                'name' => $value->name,
-                'surname' => $value->surname,
-                'profile_photo'=>$value->profile_photo,
-                'doctor' => $value->caregiver_data['title'],
-                'schedule' => $novi[$value->user_id]  
-            ];
+            usort($scheduleEntries, function ($a, $b) {
+                return $a['date_obj'] <=> $b['date_obj'];
+            });
+        
+            
+            $sortedSchedule = [];
+            foreach ($scheduleEntries as $entry) {
+                $sortedSchedule[$entry['original_date']] = [
+                    'times' => $entry['times']
+                ];
+            }
+        
+            if (!empty($sortedSchedule)) {
+                $caregivers[] = [
+                    'user_id' => $value->user_id,
+                    'name' => $value->name,
+                    'surname' => $value->surname,
+                    'profile_photo' => $value->profile_photo,
+                    'doctor' => $value->caregiver_data['title'],
+                    'schedule' => $sortedSchedule
+                ];
+            }
         }
+
+   
+
 
         $count=0;
         foreach($caregivers as $value){

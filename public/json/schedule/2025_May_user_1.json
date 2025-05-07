@@ -1,8 +1,8 @@
 {
-    "user_id": 3,
+    "user_id": 1,
     "schedule": [
         {
-            "date": "June 2 Monday",
+            "date": "May 1 Thursday",
             "times": [
                 {
                     "time": "08:00",
@@ -29,19 +29,11 @@
                     "status": "free"
                 },
                 {
-                    "time": "11:00",
+                    "time": "13:00",
                     "status": "free"
                 },
                 {
-                    "time": "11:30",
-                    "status": "free"
-                },
-                {
-                    "time": "12:00",
-                    "status": "free"
-                },
-                {
-                    "time": "12:30",
+                    "time": "13:30",
                     "status": "free"
                 },
                 {
@@ -50,16 +42,12 @@
                 },
                 {
                     "time": "14:30",
-                    "status": "free"
-                },
-                {
-                    "time": "15:00",
                     "status": "free"
                 }
             ]
         },
         {
-            "date": "June 3 Tuesday",
+            "date": "May 2 Friday",
             "times": [
                 {
                     "time": "08:00",
@@ -86,19 +74,11 @@
                     "status": "free"
                 },
                 {
-                    "time": "11:00",
+                    "time": "13:00",
                     "status": "free"
                 },
                 {
-                    "time": "11:30",
-                    "status": "free"
-                },
-                {
-                    "time": "12:00",
-                    "status": "free"
-                },
-                {
-                    "time": "12:30",
+                    "time": "13:30",
                     "status": "free"
                 },
                 {
@@ -107,16 +87,12 @@
                 },
                 {
                     "time": "14:30",
-                    "status": "free"
-                },
-                {
-                    "time": "15:00",
                     "status": "free"
                 }
             ]
         },
         {
-            "date": "June 4 Wednesday",
+            "date": "May 5 Monday",
             "times": [
                 {
                     "time": "08:00",
@@ -143,19 +119,11 @@
                     "status": "free"
                 },
                 {
-                    "time": "11:00",
+                    "time": "13:00",
                     "status": "free"
                 },
                 {
-                    "time": "11:30",
-                    "status": "free"
-                },
-                {
-                    "time": "12:00",
-                    "status": "free"
-                },
-                {
-                    "time": "12:30",
+                    "time": "13:30",
                     "status": "free"
                 },
                 {
@@ -164,16 +132,12 @@
                 },
                 {
                     "time": "14:30",
-                    "status": "free"
-                },
-                {
-                    "time": "15:00",
                     "status": "free"
                 }
             ]
         },
         {
-            "date": "June 5 Thursday",
+            "date": "May 6 Tuesday",
             "times": [
                 {
                     "time": "08:00",
@@ -200,19 +164,11 @@
                     "status": "free"
                 },
                 {
-                    "time": "11:00",
+                    "time": "13:00",
                     "status": "free"
                 },
                 {
-                    "time": "11:30",
-                    "status": "free"
-                },
-                {
-                    "time": "12:00",
-                    "status": "free"
-                },
-                {
-                    "time": "12:30",
+                    "time": "13:30",
                     "status": "free"
                 },
                 {
@@ -221,16 +177,12 @@
                 },
                 {
                     "time": "14:30",
-                    "status": "free"
-                },
-                {
-                    "time": "15:00",
                     "status": "free"
                 }
             ]
         },
         {
-            "date": "June 6 Friday",
+            "date": "May 7 Wednesday",
             "times": [
                 {
                     "time": "08:00",
@@ -257,19 +209,11 @@
                     "status": "free"
                 },
                 {
-                    "time": "11:00",
+                    "time": "13:00",
                     "status": "free"
                 },
                 {
-                    "time": "11:30",
-                    "status": "free"
-                },
-                {
-                    "time": "12:00",
-                    "status": "free"
-                },
-                {
-                    "time": "12:30",
+                    "time": "13:30",
                     "status": "free"
                 },
                 {
@@ -278,16 +222,12 @@
                 },
                 {
                     "time": "14:30",
-                    "status": "free"
-                },
-                {
-                    "time": "15:00",
                     "status": "free"
                 }
             ]
         },
         {
-            "date": "June 9 Monday",
+            "date": "May 8 Thursday",
             "times": [
                 {
                     "time": "08:00",
@@ -314,19 +254,11 @@
                     "status": "free"
                 },
                 {
-                    "time": "11:00",
+                    "time": "13:00",
                     "status": "free"
                 },
                 {
-                    "time": "11:30",
-                    "status": "free"
-                },
-                {
-                    "time": "12:00",
-                    "status": "free"
-                },
-                {
-                    "time": "12:30",
+                    "time": "13:30",
                     "status": "free"
                 },
                 {
@@ -335,16 +267,12 @@
                 },
                 {
                     "time": "14:30",
-                    "status": "free"
-                },
-                {
-                    "time": "15:00",
                     "status": "free"
                 }
             ]
         },
         {
-            "date": "June 10 Tuesday",
+            "date": "May 9 Friday",
             "times": [
                 {
                     "time": "08:00",
@@ -371,19 +299,11 @@
                     "status": "free"
                 },
                 {
-                    "time": "11:00",
+                    "time": "13:00",
                     "status": "free"
                 },
                 {
-                    "time": "11:30",
-                    "status": "free"
-                },
-                {
-                    "time": "12:00",
-                    "status": "free"
-                },
-                {
-                    "time": "12:30",
+                    "time": "13:30",
                     "status": "free"
                 },
                 {
@@ -392,16 +312,12 @@
                 },
                 {
                     "time": "14:30",
-                    "status": "free"
-                },
-                {
-                    "time": "15:00",
                     "status": "free"
                 }
             ]
         },
         {
-            "date": "June 11 Wednesday",
+            "date": "May 12 Monday",
             "times": [
                 {
                     "time": "08:00",
@@ -428,19 +344,11 @@
                     "status": "free"
                 },
                 {
-                    "time": "11:00",
+                    "time": "13:00",
                     "status": "free"
                 },
                 {
-                    "time": "11:30",
-                    "status": "free"
-                },
-                {
-                    "time": "12:00",
-                    "status": "free"
-                },
-                {
-                    "time": "12:30",
+                    "time": "13:30",
                     "status": "free"
                 },
                 {
@@ -449,16 +357,12 @@
                 },
                 {
                     "time": "14:30",
-                    "status": "free"
-                },
-                {
-                    "time": "15:00",
                     "status": "free"
                 }
             ]
         },
         {
-            "date": "June 12 Thursday",
+            "date": "May 13 Tuesday",
             "times": [
                 {
                     "time": "08:00",
@@ -485,19 +389,11 @@
                     "status": "free"
                 },
                 {
-                    "time": "11:00",
+                    "time": "13:00",
                     "status": "free"
                 },
                 {
-                    "time": "11:30",
-                    "status": "free"
-                },
-                {
-                    "time": "12:00",
-                    "status": "free"
-                },
-                {
-                    "time": "12:30",
+                    "time": "13:30",
                     "status": "free"
                 },
                 {
@@ -506,16 +402,12 @@
                 },
                 {
                     "time": "14:30",
-                    "status": "free"
-                },
-                {
-                    "time": "15:00",
                     "status": "free"
                 }
             ]
         },
         {
-            "date": "June 13 Friday",
+            "date": "May 14 Wednesday",
             "times": [
                 {
                     "time": "08:00",
@@ -542,19 +434,11 @@
                     "status": "free"
                 },
                 {
-                    "time": "11:00",
+                    "time": "13:00",
                     "status": "free"
                 },
                 {
-                    "time": "11:30",
-                    "status": "free"
-                },
-                {
-                    "time": "12:00",
-                    "status": "free"
-                },
-                {
-                    "time": "12:30",
+                    "time": "13:30",
                     "status": "free"
                 },
                 {
@@ -563,16 +447,12 @@
                 },
                 {
                     "time": "14:30",
-                    "status": "free"
-                },
-                {
-                    "time": "15:00",
                     "status": "free"
                 }
             ]
         },
         {
-            "date": "June 16 Monday",
+            "date": "May 15 Thursday",
             "times": [
                 {
                     "time": "08:00",
@@ -599,19 +479,11 @@
                     "status": "free"
                 },
                 {
-                    "time": "11:00",
+                    "time": "13:00",
                     "status": "free"
                 },
                 {
-                    "time": "11:30",
-                    "status": "free"
-                },
-                {
-                    "time": "12:00",
-                    "status": "free"
-                },
-                {
-                    "time": "12:30",
+                    "time": "13:30",
                     "status": "free"
                 },
                 {
@@ -620,16 +492,12 @@
                 },
                 {
                     "time": "14:30",
-                    "status": "free"
-                },
-                {
-                    "time": "15:00",
                     "status": "free"
                 }
             ]
         },
         {
-            "date": "June 17 Tuesday",
+            "date": "May 16 Friday",
             "times": [
                 {
                     "time": "08:00",
@@ -656,19 +524,11 @@
                     "status": "free"
                 },
                 {
-                    "time": "11:00",
+                    "time": "13:00",
                     "status": "free"
                 },
                 {
-                    "time": "11:30",
-                    "status": "free"
-                },
-                {
-                    "time": "12:00",
-                    "status": "free"
-                },
-                {
-                    "time": "12:30",
+                    "time": "13:30",
                     "status": "free"
                 },
                 {
@@ -677,16 +537,12 @@
                 },
                 {
                     "time": "14:30",
-                    "status": "free"
-                },
-                {
-                    "time": "15:00",
                     "status": "free"
                 }
             ]
         },
         {
-            "date": "June 18 Wednesday",
+            "date": "May 19 Monday",
             "times": [
                 {
                     "time": "08:00",
@@ -713,19 +569,11 @@
                     "status": "free"
                 },
                 {
-                    "time": "11:00",
+                    "time": "13:00",
                     "status": "free"
                 },
                 {
-                    "time": "11:30",
-                    "status": "free"
-                },
-                {
-                    "time": "12:00",
-                    "status": "free"
-                },
-                {
-                    "time": "12:30",
+                    "time": "13:30",
                     "status": "free"
                 },
                 {
@@ -734,16 +582,12 @@
                 },
                 {
                     "time": "14:30",
-                    "status": "free"
-                },
-                {
-                    "time": "15:00",
                     "status": "free"
                 }
             ]
         },
         {
-            "date": "June 19 Thursday",
+            "date": "May 20 Tuesday",
             "times": [
                 {
                     "time": "08:00",
@@ -770,19 +614,11 @@
                     "status": "free"
                 },
                 {
-                    "time": "11:00",
+                    "time": "13:00",
                     "status": "free"
                 },
                 {
-                    "time": "11:30",
-                    "status": "free"
-                },
-                {
-                    "time": "12:00",
-                    "status": "free"
-                },
-                {
-                    "time": "12:30",
+                    "time": "13:30",
                     "status": "free"
                 },
                 {
@@ -791,16 +627,12 @@
                 },
                 {
                     "time": "14:30",
-                    "status": "free"
-                },
-                {
-                    "time": "15:00",
                     "status": "free"
                 }
             ]
         },
         {
-            "date": "June 20 Friday",
+            "date": "May 21 Wednesday",
             "times": [
                 {
                     "time": "08:00",
@@ -827,19 +659,11 @@
                     "status": "free"
                 },
                 {
-                    "time": "11:00",
+                    "time": "13:00",
                     "status": "free"
                 },
                 {
-                    "time": "11:30",
-                    "status": "free"
-                },
-                {
-                    "time": "12:00",
-                    "status": "free"
-                },
-                {
-                    "time": "12:30",
+                    "time": "13:30",
                     "status": "free"
                 },
                 {
@@ -848,16 +672,12 @@
                 },
                 {
                     "time": "14:30",
-                    "status": "free"
-                },
-                {
-                    "time": "15:00",
                     "status": "free"
                 }
             ]
         },
         {
-            "date": "June 23 Monday",
+            "date": "May 22 Thursday",
             "times": [
                 {
                     "time": "08:00",
@@ -884,19 +704,11 @@
                     "status": "free"
                 },
                 {
-                    "time": "11:00",
+                    "time": "13:00",
                     "status": "free"
                 },
                 {
-                    "time": "11:30",
-                    "status": "free"
-                },
-                {
-                    "time": "12:00",
-                    "status": "free"
-                },
-                {
-                    "time": "12:30",
+                    "time": "13:30",
                     "status": "free"
                 },
                 {
@@ -905,16 +717,12 @@
                 },
                 {
                     "time": "14:30",
-                    "status": "free"
-                },
-                {
-                    "time": "15:00",
                     "status": "free"
                 }
             ]
         },
         {
-            "date": "June 24 Tuesday",
+            "date": "May 23 Friday",
             "times": [
                 {
                     "time": "08:00",
@@ -941,19 +749,11 @@
                     "status": "free"
                 },
                 {
-                    "time": "11:00",
+                    "time": "13:00",
                     "status": "free"
                 },
                 {
-                    "time": "11:30",
-                    "status": "free"
-                },
-                {
-                    "time": "12:00",
-                    "status": "free"
-                },
-                {
-                    "time": "12:30",
+                    "time": "13:30",
                     "status": "free"
                 },
                 {
@@ -962,16 +762,12 @@
                 },
                 {
                     "time": "14:30",
-                    "status": "free"
-                },
-                {
-                    "time": "15:00",
                     "status": "free"
                 }
             ]
         },
         {
-            "date": "June 25 Wednesday",
+            "date": "May 26 Monday",
             "times": [
                 {
                     "time": "08:00",
@@ -998,19 +794,11 @@
                     "status": "free"
                 },
                 {
-                    "time": "11:00",
+                    "time": "13:00",
                     "status": "free"
                 },
                 {
-                    "time": "11:30",
-                    "status": "free"
-                },
-                {
-                    "time": "12:00",
-                    "status": "free"
-                },
-                {
-                    "time": "12:30",
+                    "time": "13:30",
                     "status": "free"
                 },
                 {
@@ -1019,16 +807,12 @@
                 },
                 {
                     "time": "14:30",
-                    "status": "free"
-                },
-                {
-                    "time": "15:00",
                     "status": "free"
                 }
             ]
         },
         {
-            "date": "June 26 Thursday",
+            "date": "May 27 Tuesday",
             "times": [
                 {
                     "time": "08:00",
@@ -1055,19 +839,11 @@
                     "status": "free"
                 },
                 {
-                    "time": "11:00",
+                    "time": "13:00",
                     "status": "free"
                 },
                 {
-                    "time": "11:30",
-                    "status": "free"
-                },
-                {
-                    "time": "12:00",
-                    "status": "free"
-                },
-                {
-                    "time": "12:30",
+                    "time": "13:30",
                     "status": "free"
                 },
                 {
@@ -1076,16 +852,12 @@
                 },
                 {
                     "time": "14:30",
-                    "status": "free"
-                },
-                {
-                    "time": "15:00",
                     "status": "free"
                 }
             ]
         },
         {
-            "date": "June 27 Friday",
+            "date": "May 28 Wednesday",
             "times": [
                 {
                     "time": "08:00",
@@ -1112,19 +884,11 @@
                     "status": "free"
                 },
                 {
-                    "time": "11:00",
+                    "time": "13:00",
                     "status": "free"
                 },
                 {
-                    "time": "11:30",
-                    "status": "free"
-                },
-                {
-                    "time": "12:00",
-                    "status": "free"
-                },
-                {
-                    "time": "12:30",
+                    "time": "13:30",
                     "status": "free"
                 },
                 {
@@ -1133,16 +897,12 @@
                 },
                 {
                     "time": "14:30",
-                    "status": "free"
-                },
-                {
-                    "time": "15:00",
                     "status": "free"
                 }
             ]
         },
         {
-            "date": "June 30 Monday",
+            "date": "May 29 Thursday",
             "times": [
                 {
                     "time": "08:00",
@@ -1169,19 +929,11 @@
                     "status": "free"
                 },
                 {
-                    "time": "11:00",
+                    "time": "13:00",
                     "status": "free"
                 },
                 {
-                    "time": "11:30",
-                    "status": "free"
-                },
-                {
-                    "time": "12:00",
-                    "status": "free"
-                },
-                {
-                    "time": "12:30",
+                    "time": "13:30",
                     "status": "free"
                 },
                 {
@@ -1191,9 +943,50 @@
                 {
                     "time": "14:30",
                     "status": "free"
+                }
+            ]
+        },
+        {
+            "date": "May 30 Friday",
+            "times": [
+                {
+                    "time": "08:00",
+                    "status": "free"
                 },
                 {
-                    "time": "15:00",
+                    "time": "08:30",
+                    "status": "free"
+                },
+                {
+                    "time": "09:00",
+                    "status": "free"
+                },
+                {
+                    "time": "09:30",
+                    "status": "free"
+                },
+                {
+                    "time": "10:00",
+                    "status": "free"
+                },
+                {
+                    "time": "10:30",
+                    "status": "free"
+                },
+                {
+                    "time": "13:00",
+                    "status": "free"
+                },
+                {
+                    "time": "13:30",
+                    "status": "free"
+                },
+                {
+                    "time": "14:00",
+                    "status": "free"
+                },
+                {
+                    "time": "14:30",
                     "status": "free"
                 }
             ]

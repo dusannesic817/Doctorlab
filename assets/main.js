@@ -1,13 +1,12 @@
 function autoDismissAlert() {
-    setTimeout(function() {
-        var alert = document.getElementById("successAlert");
-        if (alert) {
-            alert.classList.remove("show");
-            alert.classList.add("fade");
-        }
-    }, 3000); 
+  setTimeout(function() {
+      var alert = document.getElementById("successAlert");
+      if (alert) {
+          alert.classList.remove("show");
+          alert.classList.add("fade");
+      }
+  }, 3000); 
 }
-
 
 window.onload = function() {
     autoDismissAlert();

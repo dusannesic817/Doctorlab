@@ -87,4 +87,7 @@ class AppointmentModel extends Model{
         return $schedule;
 
     }
+
+
+    
 }

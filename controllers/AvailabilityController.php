@@ -44,20 +44,32 @@ class AvailabilityController extends UserRoleController{
 
         $file=$this->getUserSchedule($month,$times,$id);
 
+        $name= $this->getJson('/schedule'.'/'.$file['filename']);
+
+        $date=[];
+
+        foreach($name['schedule'] as $value){
+            $date[]=$value;
+        }
+
         $availabilityModel = new AvailabilityModel($this->getDatabaseConnection());
 
-        if($file){
-                $availabilityModel->add([
-                'user_id'=>$id,
-                'schedule'=>$file['json'],
-           ]);
+        $user_id = $availabilityModel->getByFieldName('user_id',$id);
 
-        }
+    
+        if($user_id !== false){
+            $availabilityModel->updateAvailability($id,$date);
+     }else{
+         $availabilityModel->add([
+             'user_id'=>$id,
+             'schedule'=>$file['json'],
+        ]);
+     }
 
         $this->getSession()->put('success_schedule','Slots has been opened successfully ');
         $this->getSession()->save();
 
-        $this->redirect('/caregiver/appointmens/'.$id);
+        $this->redirect('/caregiver/appointments/'.$id);
        
     }
 

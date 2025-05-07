@@ -76,35 +76,25 @@ class AvailabilityModel extends Model{
         $prep = $this->getConnection()->prepare($sql);
         return $prep->execute([$updatedSchedule, $id]);
     }
+
+
+    public function updateAvailability($id,$array){
+        $sql='SELECT schedule FROM availability WHERE user_id=?';
+        $prep=$this->getConnection()->prepare($sql);
+        $prep->execute([$id]);
+
+        $scheduleJson = $prep->fetchColumn(); 
+        $data = json_decode($scheduleJson, true);
+
+        $data['schedule'] = array_merge($data['schedule'], $array);
+
+        $updatedJson = json_encode($data, JSON_UNESCAPED_UNICODE);
+
+        $sql2= "UPDATE availability SET schedule = ? WHERE user_id =?";
+        $prep = $this->getConnection()->prepare($sql2);
+        return $prep->execute([$updatedJson, $id]);
+
+    }
     
 
-
-
-
-
-
-    /*RESENJE
-$scheduleJson = '[{"date":"April 1 Tuesday","times":[{"time":"08:00","status":"free"},{"time":"12:00","status":"free"}]}]'; ucitam raspored iz baze
-
-$schedule = json_decode($scheduleJson, true);
-
-//  dan i vreme koje želimo da menjamo
-foreach ($schedule as &$day) {
-    if ($day['date'] === 'April 1 Tuesday') {
-        foreach ($day['times'] as &$timeSlot) {
-            if ($timeSlot['time'] === '12:00') {
-                $timeSlot['status'] = 'busy';
-            }
-        }
-    }
-}
-
-$newScheduleJson = json_encode($schedule);
-
-// Sad ažuriraj u bazi:
-$userId = 5;
-$sql = "UPDATE availability SET schedule = ? WHERE user_id = ?";
-$stmt = $pdo->prepare($sql);
-$stmt->execute([$newScheduleJson, $userId]);
-*/
 }

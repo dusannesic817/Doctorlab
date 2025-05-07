@@ -20,7 +20,17 @@ class CaregiverController extends Controller{
     
 
         date_default_timezone_set("Europe/Belgrade");
-        $date = date("F j l");
+        $today = new \DateTime();
+
+        $dayOfWeek = $today->format('N'); 
+        if ($dayOfWeek == 6) {
+           
+            $today->modify('+2 days');
+        } elseif ($dayOfWeek == 7) {
+            
+            $today->modify('+1 day');
+        }
+        $date = $today->format('F j l');
 
 
         $niz = [];
@@ -30,7 +40,6 @@ class CaregiverController extends Controller{
         foreach ($data as $value) {
             $prikazuj = false;
         
-          
             foreach ($value->schedule['schedule'] as $v) {
                
                 if ($v['date'] === $date) {

@@ -113,7 +113,7 @@ class AvailabilityController extends UserRoleController{
             $timestamp = strtotime("$year-$month-$day");
             $dayOfWeek = date('N', $timestamp); 
             
-            if ($dayOfWeek >= 1 && $dayOfWeek <= 5) { // pon-pet
+            if ($dayOfWeek >= 1 && $dayOfWeek <= 5) { 
                 $monthFullName = date('F', $timestamp); 
                 $dayNum = date('j', $timestamp);        
                 $dayName = date('l', $timestamp);       

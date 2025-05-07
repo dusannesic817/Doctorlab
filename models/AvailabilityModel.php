@@ -92,6 +92,7 @@ class AvailabilityModel extends Model{
 
         $sql2= "UPDATE availability SET schedule = ? WHERE user_id =?";
         $prep = $this->getConnection()->prepare($sql2);
+        
         return $prep->execute([$updatedJson, $id]);
 
     }

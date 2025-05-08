@@ -187,6 +187,13 @@ private function checkFields($data) {
         return $prep -> execute($values);
     }
 
+    public function updateByField(string $field, int $id, string $columnToUpdate, $newValue): bool {
+        
+        $sql = "UPDATE " . $this->getTableName() . " SET $columnToUpdate = ? WHERE $field = ?";
+        $prep = $this->dbc->getConnection()->prepare($sql);
+        return $prep->execute([$newValue, $id]);
+    }
+
 
     final public function deleteById(int $id) {
        
@@ -202,4 +209,10 @@ private function checkFields($data) {
         return $item;
     }
 
+    final public function deleteByField(string $field, int $id): bool {
+        $sql = "DELETE FROM " . $this->getTableName() . " WHERE $field = ?";
+        $prep = $this->dbc->getConnection()->prepare($sql);
+        return $prep->execute([$id]);
+    }
+    
 }

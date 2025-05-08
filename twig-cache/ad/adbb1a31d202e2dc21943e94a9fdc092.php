@@ -128,32 +128,58 @@ $context["client"], "status", [], "any", false, false, false, 41) == "canceled")
             echo "    </td>
     <td class=\"text-center\">
       <ul class=\"list-inline me-auto mb-0\">
-        <li class=\"list-inline-item\" data-bs-toggle=\"tooltip\" title=\"View\">
-          <a href=\"#\" class=\"avtar avtar-xs btn-link-secondary\" data-bs-toggle=\"modal\"
-            data-bs-target=\"#user-modal\">
-            <i class=\"fa-solid fa-circle-check\" style=\"color: green;\"></i>
+        <li class=\"list-inline-item\" data-bs-toggle=\"tooltip\" title=\"Complete\">
+          <form id=\"complete-form-";
+            // line 50
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "user_id", [], "any", false, false, false, 50), "html", null, true);
+            echo "\" action=\"";
+            echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+            echo "/appointments/update/";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "user_id", [], "any", false, false, false, 50), "html", null, true);
+            echo "\" method=\"POST\" class=\"d-inline\">
+            <a href=\"#\" class=\"avtar avtar-xs btn-link-secondary\" onclick=\"event.preventDefault(); document.getElementById('complete-form-";
+            // line 51
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "user_id", [], "any", false, false, false, 51), "html", null, true);
+            echo "').submit();\">
+              <i class=\"fa-solid fa-circle-check\" style=\"color: green;\"></i>
+            </a>
+          </form>
+        </li>
+    
+        <li class=\"list-inline-item\" data-bs-toggle=\"tooltip\" title=\"Contact\">
+          <a href=\"#\" class=\"avtar avtar-xs btn-link-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#user-edit_add-modal\">
+            <i class=\"fa-solid fa-envelope\"></i>
           </a>
         </li>
-        <li class=\"list-inline-item\" data-bs-toggle=\"tooltip\" title=\"Edit\">
-          <a href=\"#\" class=\"avtar avtar-xs btn-link-primary\" data-bs-toggle=\"modal\"
-            data-bs-target=\"#user-edit_add-modal\">
-            <i class=\"fa-solid fa-trash\" style=\"color: rgb(156, 7, 7);\"></i>
+    
+        <li class=\"list-inline-item\" data-bs-toggle=\"tooltip\" title=\"Cancel\">
+          <form id=\"cancel-form-";
+            // line 64
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "user_id", [], "any", false, false, false, 64), "html", null, true);
+            echo "\" action=\"";
+            echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+            echo "/appointments/cancel/";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "user_id", [], "any", false, false, false, 64), "html", null, true);
+            echo "\" method=\"POST\" class=\"d-inline\">
+            <a href=\"#\" class=\"avtar avtar-xs btn-link-danger\" onclick=\"event.preventDefault(); document.getElementById('cancel-form-";
+            // line 65
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "user_id", [], "any", false, false, false, 65), "html", null, true);
+            echo "').submit();\">
+            <i class=\"fa-solid fa-user-slash\" style=\"color: rgb(212, 7, 7);\"></i>
           </a>
+        </form>
         </li>
-        <li class=\"list-inline-item\" data-bs-toggle=\"tooltip\" title=\"Delete\">
-          <a href=\"#\" class=\"avtar avtar-xs btn-link-danger\">
-            <i class=\"fa-solid fa-user-slash\"></i>
-          </a>
-        </li>
+    
       </ul>
     </td>
+    
   </tr>
   ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['client'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 70
+        // line 76
         echo "  </tbody>
   </table>
 </div>";
@@ -171,7 +197,7 @@ $context["client"], "status", [], "any", false, false, false, 41) == "canceled")
 
     public function getDebugInfo()
     {
-        return array (  157 => 70,  128 => 46,  122 => 44,  116 => 42,  114 => 41,  109 => 40,  107 => 39,  102 => 37,  96 => 36,  92 => 35,  85 => 31,  79 => 30,  73 => 27,  67 => 24,  59 => 18,  55 => 17,  37 => 1,);
+        return array (  183 => 76,  166 => 65,  158 => 64,  142 => 51,  134 => 50,  128 => 46,  122 => 44,  116 => 42,  114 => 41,  109 => 40,  107 => 39,  102 => 37,  96 => 36,  92 => 35,  85 => 31,  79 => 30,  73 => 27,  67 => 24,  59 => 18,  55 => 17,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -224,25 +250,31 @@ $context["client"], "status", [], "any", false, false, false, 41) == "canceled")
     </td>
     <td class=\"text-center\">
       <ul class=\"list-inline me-auto mb-0\">
-        <li class=\"list-inline-item\" data-bs-toggle=\"tooltip\" title=\"View\">
-          <a href=\"#\" class=\"avtar avtar-xs btn-link-secondary\" data-bs-toggle=\"modal\"
-            data-bs-target=\"#user-modal\">
-            <i class=\"fa-solid fa-circle-check\" style=\"color: green;\"></i>
+        <li class=\"list-inline-item\" data-bs-toggle=\"tooltip\" title=\"Complete\">
+          <form id=\"complete-form-{{ client.user_id }}\" action=\"{{ base_url }}/appointments/update/{{ client.user_id }}\" method=\"POST\" class=\"d-inline\">
+            <a href=\"#\" class=\"avtar avtar-xs btn-link-secondary\" onclick=\"event.preventDefault(); document.getElementById('complete-form-{{ client.user_id }}').submit();\">
+              <i class=\"fa-solid fa-circle-check\" style=\"color: green;\"></i>
+            </a>
+          </form>
+        </li>
+    
+        <li class=\"list-inline-item\" data-bs-toggle=\"tooltip\" title=\"Contact\">
+          <a href=\"#\" class=\"avtar avtar-xs btn-link-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#user-edit_add-modal\">
+            <i class=\"fa-solid fa-envelope\"></i>
           </a>
         </li>
-        <li class=\"list-inline-item\" data-bs-toggle=\"tooltip\" title=\"Edit\">
-          <a href=\"#\" class=\"avtar avtar-xs btn-link-primary\" data-bs-toggle=\"modal\"
-            data-bs-target=\"#user-edit_add-modal\">
-            <i class=\"fa-solid fa-trash\" style=\"color: rgb(156, 7, 7);\"></i>
+    
+        <li class=\"list-inline-item\" data-bs-toggle=\"tooltip\" title=\"Cancel\">
+          <form id=\"cancel-form-{{ client.user_id }}\" action=\"{{ base_url }}/appointments/cancel/{{ client.user_id }}\" method=\"POST\" class=\"d-inline\">
+            <a href=\"#\" class=\"avtar avtar-xs btn-link-danger\" onclick=\"event.preventDefault(); document.getElementById('cancel-form-{{ client.user_id }}').submit();\">
+            <i class=\"fa-solid fa-user-slash\" style=\"color: rgb(212, 7, 7);\"></i>
           </a>
+        </form>
         </li>
-        <li class=\"list-inline-item\" data-bs-toggle=\"tooltip\" title=\"Delete\">
-          <a href=\"#\" class=\"avtar avtar-xs btn-link-danger\">
-            <i class=\"fa-solid fa-user-slash\"></i>
-          </a>
-        </li>
+    
       </ul>
     </td>
+    
   </tr>
   {%endfor%}
   </tbody>

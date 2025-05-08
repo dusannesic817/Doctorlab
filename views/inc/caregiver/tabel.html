@@ -46,25 +46,31 @@
     </td>
     <td class="text-center">
       <ul class="list-inline me-auto mb-0">
-        <li class="list-inline-item" data-bs-toggle="tooltip" title="View">
-          <a href="#" class="avtar avtar-xs btn-link-secondary" data-bs-toggle="modal"
-            data-bs-target="#user-modal">
-            <i class="fa-solid fa-circle-check" style="color: green;"></i>
+        <li class="list-inline-item" data-bs-toggle="tooltip" title="Complete">
+          <form id="complete-form-{{ client.user_id }}" action="{{ base_url }}/appointments/update/{{ client.user_id }}" method="POST" class="d-inline">
+            <a href="#" class="avtar avtar-xs btn-link-secondary" onclick="event.preventDefault(); document.getElementById('complete-form-{{ client.user_id }}').submit();">
+              <i class="fa-solid fa-circle-check" style="color: green;"></i>
+            </a>
+          </form>
+        </li>
+    
+        <li class="list-inline-item" data-bs-toggle="tooltip" title="Contact">
+          <a href="#" class="avtar avtar-xs btn-link-primary" data-bs-toggle="modal" data-bs-target="#user-edit_add-modal">
+            <i class="fa-solid fa-envelope"></i>
           </a>
         </li>
-        <li class="list-inline-item" data-bs-toggle="tooltip" title="Edit">
-          <a href="#" class="avtar avtar-xs btn-link-primary" data-bs-toggle="modal"
-            data-bs-target="#user-edit_add-modal">
-            <i class="fa-solid fa-trash" style="color: rgb(156, 7, 7);"></i>
+    
+        <li class="list-inline-item" data-bs-toggle="tooltip" title="Cancel">
+          <form id="cancel-form-{{ client.user_id }}" action="{{ base_url }}/appointments/cancel/{{ client.user_id }}" method="POST" class="d-inline">
+            <a href="#" class="avtar avtar-xs btn-link-danger" onclick="event.preventDefault(); document.getElementById('cancel-form-{{ client.user_id }}').submit();">
+            <i class="fa-solid fa-user-slash" style="color: rgb(212, 7, 7);"></i>
           </a>
+        </form>
         </li>
-        <li class="list-inline-item" data-bs-toggle="tooltip" title="Delete">
-          <a href="#" class="avtar avtar-xs btn-link-danger">
-            <i class="fa-solid fa-user-slash"></i>
-          </a>
-        </li>
+    
       </ul>
     </td>
+    
   </tr>
   {%endfor%}
   </tbody>

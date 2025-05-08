@@ -32,6 +32,8 @@ return [
     App\Core\Route::get('|^client/appointments/([0-9+])/?$|',    "Appointment", 'show'),
     App\Core\Route::get('|^caregiver/appointments/([0-9+])/?$|', "Appointment", 'show'),
     App\Core\Route::post('|^client/appointments/delete/([0-9+])/?$|', "Appointment", 'destroy'),
+    App\Core\Route::post('|^appointments/update/([0-9+])/?$|', "Appointment", 'update'),
+    App\Core\Route::post('|^appointments/cancel/([0-9+])/?$|', "Appointment", 'cancel'),
    
 
     #UserProfile-auth

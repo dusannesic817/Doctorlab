@@ -96,6 +96,9 @@ class AvailabilityModel extends Model{
         return $prep->execute([$updatedJson, $id]);
 
     }
+
+
+
     
 
 }

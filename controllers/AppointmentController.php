@@ -57,11 +57,26 @@ class AppointmentController extends UserRoleController{
 
 
     public function edit($id){
-
+        $appointmentModel= new AppointmentModel($this->getDatabaseConnection());
     }
 
     public function update($id){
-
+        $auth = $this->getSession()->get('user_id');
+        $appointmentModel = new AppointmentModel($this->getDatabaseConnection());
+        $updateStatus = $appointmentModel->updateByField('user_id', $id, 'status', 'completed');
+    
+        if ($updateStatus) {
+            $this->redirect('/client/appointments/' . $auth);
+        }
+    }
+    public function cancel($id){
+        $auth = $this->getSession()->get('user_id');
+        $appointmentModel = new AppointmentModel($this->getDatabaseConnection());
+        $updateStatus = $appointmentModel->updateByField('user_id', $id, 'status', 'canceled');
+    
+        if ($updateStatus) {
+            $this->redirect('/client/appointments/' . $auth);
+        }
     }
 
 

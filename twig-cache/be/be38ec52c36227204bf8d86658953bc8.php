@@ -56,7 +56,12 @@ class __TwigTemplate_1c4767be4b327fe3a5ec49f8b229842c extends Template
 
   <!-- Nav Item - Dashboard -->
   <li class=\"nav-item active\">
-    <a class=\"nav-link\" href=\"\">
+    <a class=\"nav-link\" href=\"";
+        // line 17
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/caregiver/appointments/";
+        echo twig_escape_filter($this->env, ($context["auth"] ?? null), "html", null, true);
+        echo "\">
       
       <span>Dashboard</span>
     </a>
@@ -179,7 +184,7 @@ class __TwigTemplate_1c4767be4b327fe3a5ec49f8b229842c extends Template
 
     public function getDebugInfo()
     {
-        return array (  152 => 105,  141 => 97,  47 => 6,  42 => 4,  37 => 1,);
+        return array (  157 => 105,  146 => 97,  61 => 17,  47 => 6,  42 => 4,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -200,7 +205,7 @@ class __TwigTemplate_1c4767be4b327fe3a5ec49f8b229842c extends Template
 
   <!-- Nav Item - Dashboard -->
   <li class=\"nav-item active\">
-    <a class=\"nav-link\" href=\"\">
+    <a class=\"nav-link\" href=\"{{base_url}}/caregiver/appointments/{{auth}}\">
       
       <span>Dashboard</span>
     </a>

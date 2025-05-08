@@ -78,19 +78,34 @@ class __TwigTemplate_66540d55b76e2b27fbb4bb1a9c8ee6e3 extends Template
       <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"userDropdown\" role=\"button\" data-bs-toggle=\"dropdown\"
         aria-haspopup=\"true\" aria-expanded=\"false\">
         <span class=\"mr-2 d-none d-lg-inline text-gray-600 small\">Douglas McGee</span>
-        <img class=\"img-profile rounded-circle\" src=\"img/undraw_profile.svg\" />
+        <img class=\"img-profile rounded-circle\" src=\"\" />
       </a>
       <!-- Dropdown - User Information -->
       <div class=\"dropdown-menu dropdown-menu-end shadow animated--grow-in\" aria-labelledby=\"userDropdown\">
-        <a class=\"dropdown-item\" href=\"#\">
+        <a class=\"dropdown-item\" href=\"";
+        // line 49
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/";
+        echo twig_escape_filter($this->env, ($context["role"] ?? null), "html", null, true);
+        echo "/profile/";
+        echo twig_escape_filter($this->env, ($context["auth"] ?? null), "html", null, true);
+        echo "\">
           <i class=\"fas fa-user fa-sm fa-fw mr-2 text-gray-400\"></i> Profile
         </a>
-        <a class=\"dropdown-item\" href=\"#\">
+        <a class=\"dropdown-item\" href=\"";
+        // line 52
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/caregiver/edit/";
+        echo twig_escape_filter($this->env, ($context["auth"] ?? null), "html", null, true);
+        echo "\">
           <i class=\"fas fa-cogs fa-sm fa-fw mr-2 text-gray-400\"></i> Settings
         </a>
 
         <div class=\"dropdown-divider\"></div>
-        <a class=\"dropdown-item\" href=\"#\" data-bs-toggle=\"modal\" data-bs-target=\"#logoutModal\">
+        <a class=\"dropdown-item\" href=\"";
+        // line 57
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/caregiver/logout\" data-bs-toggle=\"modal\" data-bs-target=\"#logoutModal\">
           <i class=\"fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400\"></i> Logout
         </a>
       </div>
@@ -106,9 +121,14 @@ class __TwigTemplate_66540d55b76e2b27fbb4bb1a9c8ee6e3 extends Template
         return "./inc/caregiver/topbar_caregiver.html";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  37 => 1,);
+        return array (  107 => 57,  97 => 52,  87 => 49,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -157,19 +177,19 @@ class __TwigTemplate_66540d55b76e2b27fbb4bb1a9c8ee6e3 extends Template
       <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"userDropdown\" role=\"button\" data-bs-toggle=\"dropdown\"
         aria-haspopup=\"true\" aria-expanded=\"false\">
         <span class=\"mr-2 d-none d-lg-inline text-gray-600 small\">Douglas McGee</span>
-        <img class=\"img-profile rounded-circle\" src=\"img/undraw_profile.svg\" />
+        <img class=\"img-profile rounded-circle\" src=\"\" />
       </a>
       <!-- Dropdown - User Information -->
       <div class=\"dropdown-menu dropdown-menu-end shadow animated--grow-in\" aria-labelledby=\"userDropdown\">
-        <a class=\"dropdown-item\" href=\"#\">
+        <a class=\"dropdown-item\" href=\"{{ base_url }}/{{role}}/profile/{{auth}}\">
           <i class=\"fas fa-user fa-sm fa-fw mr-2 text-gray-400\"></i> Profile
         </a>
-        <a class=\"dropdown-item\" href=\"#\">
+        <a class=\"dropdown-item\" href=\"{{base_url}}/caregiver/edit/{{auth}}\">
           <i class=\"fas fa-cogs fa-sm fa-fw mr-2 text-gray-400\"></i> Settings
         </a>
 
         <div class=\"dropdown-divider\"></div>
-        <a class=\"dropdown-item\" href=\"#\" data-bs-toggle=\"modal\" data-bs-target=\"#logoutModal\">
+        <a class=\"dropdown-item\" href=\"{{base_url}}/caregiver/logout\" data-bs-toggle=\"modal\" data-bs-target=\"#logoutModal\">
           <i class=\"fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400\"></i> Logout
         </a>
       </div>

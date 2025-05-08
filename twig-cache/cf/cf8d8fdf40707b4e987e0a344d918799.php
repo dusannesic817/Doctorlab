@@ -25,25 +25,25 @@ class __TwigTemplate_ef0ddbf4fa78c87c3895315fdfd1b6ff extends Template
         $this->source = $this->getSourceContext();
 
         $this->blocks = [
-            'main' => [$this, 'block_main'],
+            'caregiver' => [$this, 'block_caregiver'],
         ];
     }
 
     protected function doGetParent(array $context)
     {
         // line 1
-        return "_global/index.html";
+        return "_global/caregiver_index.html";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
-        $this->parent = $this->loadTemplate("_global/index.html", "CaregiverProfile/edit.html", 1);
+        $this->parent = $this->loadTemplate("_global/caregiver_index.html", "CaregiverProfile/edit.html", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
     // line 5
-    public function block_main($context, array $blocks = [])
+    public function block_caregiver($context, array $blocks = [])
     {
         $macros = $this->macros;
         // line 6
@@ -400,11 +400,11 @@ class __TwigTemplate_ef0ddbf4fa78c87c3895315fdfd1b6ff extends Template
 
     public function getSourceContext()
     {
-        return new Source("{% extends \"_global/index.html\" %}
+        return new Source("{% extends \"_global/caregiver_index.html\" %}
 
 
 
-{% block main %}
+{% block caregiver %}
 
 <form action=\"{{ base_url }}/caregiver/update/{{caregiver.user_id}}\" method=\"POST\" enctype=\"multipart/form-data\">
 <div class=\"container\">

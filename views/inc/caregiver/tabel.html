@@ -37,7 +37,7 @@
     <td>{{client.caregiver_data}}</td>
     <td>
       {% if client.status == 'scheduled' %}
-        <span class="badge bg-success rounded-pill" style="font-size: 12px;">{{ client.status|capitalize }}</span>
+        <span class="badge bg-success rounded-pill" style="font-size: 12px;">Verify</span>
       {% elseif client.status == 'canceled' %}
         <span class="badge bg-danger rounded-pill" style="font-size: 12px;">{{ client.status|capitalize }}</span>
       {% else %}

@@ -106,9 +106,7 @@ class __TwigTemplate_fae9d0472aedbce00fff93847cc82574 extends Template
             // line 39
             if ((twig_get_attribute($this->env, $this->source, $context["client"], "status", [], "any", false, false, false, 39) == "scheduled")) {
                 // line 40
-                echo "        <span class=\"badge bg-success rounded-pill\" style=\"font-size: 12px;\">";
-                echo twig_escape_filter($this->env, twig_capitalize_string_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "status", [], "any", false, false, false, 40)), "html", null, true);
-                echo "</span>
+                echo "        <span class=\"badge bg-success rounded-pill\" style=\"font-size: 12px;\">Verify</span>
       ";
             } elseif ((twig_get_attribute($this->env, $this->source,             // line 41
 $context["client"], "status", [], "any", false, false, false, 41) == "canceled")) {
@@ -197,7 +195,7 @@ $context["client"], "status", [], "any", false, false, false, 41) == "canceled")
 
     public function getDebugInfo()
     {
-        return array (  183 => 76,  166 => 65,  158 => 64,  142 => 51,  134 => 50,  128 => 46,  122 => 44,  116 => 42,  114 => 41,  109 => 40,  107 => 39,  102 => 37,  96 => 36,  92 => 35,  85 => 31,  79 => 30,  73 => 27,  67 => 24,  59 => 18,  55 => 17,  37 => 1,);
+        return array (  181 => 76,  164 => 65,  156 => 64,  140 => 51,  132 => 50,  126 => 46,  120 => 44,  114 => 42,  112 => 41,  109 => 40,  107 => 39,  102 => 37,  96 => 36,  92 => 35,  85 => 31,  79 => 30,  73 => 27,  67 => 24,  59 => 18,  55 => 17,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -241,7 +239,7 @@ $context["client"], "status", [], "any", false, false, false, 41) == "canceled")
     <td>{{client.caregiver_data}}</td>
     <td>
       {% if client.status == 'scheduled' %}
-        <span class=\"badge bg-success rounded-pill\" style=\"font-size: 12px;\">{{ client.status|capitalize }}</span>
+        <span class=\"badge bg-success rounded-pill\" style=\"font-size: 12px;\">Verify</span>
       {% elseif client.status == 'canceled' %}
         <span class=\"badge bg-danger rounded-pill\" style=\"font-size: 12px;\">{{ client.status|capitalize }}</span>
       {% else %}

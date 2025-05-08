@@ -36,8 +36,13 @@
     <td>{{client.appointment_date|date("F j, l")}} - {{client.start_time|date("H:i")}}</td>
     <td>{{client.caregiver_data}}</td>
     <td>
-      <span class="badge bg-success rounded-pill" style="font-size: 12px;">{{client.status|capitalize}}</span>
-
+      {% if client.status == 'scheduled' %}
+        <span class="badge bg-success rounded-pill" style="font-size: 12px;">{{ client.status|capitalize }}</span>
+      {% elseif client.status == 'canceled' %}
+        <span class="badge bg-danger rounded-pill" style="font-size: 12px;">{{ client.status|capitalize }}</span>
+      {% else %}
+        <span class="badge bg-primary rounded-pill" style="font-size: 12px;">{{ client.status|capitalize }}</span>
+      {% endif %}
     </td>
     <td class="text-center">
       <ul class="list-inline me-auto mb-0">

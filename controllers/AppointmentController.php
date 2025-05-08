@@ -16,9 +16,6 @@ class AppointmentController extends UserRoleController{
         $myclients = $appointmentModel->getScheduleDoctor($user_id);
 
         $this->set('myclients',$myclients);
-
-
-       
         
     }
 
@@ -27,18 +24,23 @@ class AppointmentController extends UserRoleController{
 
         $appointmentModel = new AppointmentModel($this->getDatabaseConnection());
         $schedules = $appointmentModel->getSchedule($id);
-        $myclients  = $appointmentModel->getScheduleDoctor($id);
-      
+        $doctor_schedule  = $appointmentModel->getScheduleDoctor($id);
 
+        $myclients=[];
+        foreach($doctor_schedule as $value){
+            if($value->status=='scheduled'){
+               $myclients[]=$value;
+            }
+        }
+
+        
         $change=$this->getSession()->get('success_schedule');
         $this->set('change',$change);
-
-        if($this->getSession()->get('role') =='client'){           
-            $this->set('schedules',$schedules);
-        }elseif($this->getSession()->get('role') =='caregiver'){
+     
+            $this->set('schedules',$schedules);      
             $this->set('myclients', $myclients);
 
-        }
+    
        
     
         $this->getSession()->remove('success_schedule');

@@ -102,28 +102,29 @@ class __TwigTemplate_fae9d0472aedbce00fff93847cc82574 extends Template
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "caregiver_data", [], "any", false, false, false, 37), "html", null, true);
             echo "</td>
     <td>
-      <span class=\"badge bg-light-success rounded-pill f-12\">";
+      <span class=\"badge bg-success rounded-pill\" style=\"font-size: 12px;\">";
             // line 39
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "status", [], "any", false, false, false, 39), "html", null, true);
+            echo twig_escape_filter($this->env, twig_capitalize_string_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "status", [], "any", false, false, false, 39)), "html", null, true);
             echo "</span>
+
     </td>
     <td class=\"text-center\">
       <ul class=\"list-inline me-auto mb-0\">
         <li class=\"list-inline-item\" data-bs-toggle=\"tooltip\" title=\"View\">
           <a href=\"#\" class=\"avtar avtar-xs btn-link-secondary\" data-bs-toggle=\"modal\"
             data-bs-target=\"#user-modal\">
-            <i class=\"ti ti-eye f-18\"></i>
+            <i class=\"fa-solid fa-circle-check\" style=\"color: green;\"></i>
           </a>
         </li>
         <li class=\"list-inline-item\" data-bs-toggle=\"tooltip\" title=\"Edit\">
           <a href=\"#\" class=\"avtar avtar-xs btn-link-primary\" data-bs-toggle=\"modal\"
             data-bs-target=\"#user-edit_add-modal\">
-            <i class=\"ti ti-edit-circle f-18\"></i>
+            <i class=\"fa-solid fa-trash\" style=\"color: rgb(156, 7, 7);\"></i>
           </a>
         </li>
         <li class=\"list-inline-item\" data-bs-toggle=\"tooltip\" title=\"Delete\">
           <a href=\"#\" class=\"avtar avtar-xs btn-link-danger\">
-            <i class=\"ti ti-trash f-18\"></i>
+            <i class=\"fa-solid fa-user-slash\"></i>
           </a>
         </li>
       </ul>
@@ -134,7 +135,7 @@ class __TwigTemplate_fae9d0472aedbce00fff93847cc82574 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['client'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 64
+        // line 65
         echo "  </tbody>
   </table>
 </div>";
@@ -152,7 +153,7 @@ class __TwigTemplate_fae9d0472aedbce00fff93847cc82574 extends Template
 
     public function getDebugInfo()
     {
-        return array (  138 => 64,  107 => 39,  102 => 37,  96 => 36,  92 => 35,  85 => 31,  79 => 30,  73 => 27,  67 => 24,  59 => 18,  55 => 17,  37 => 1,);
+        return array (  139 => 65,  107 => 39,  102 => 37,  96 => 36,  92 => 35,  85 => 31,  79 => 30,  73 => 27,  67 => 24,  59 => 18,  55 => 17,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -195,25 +196,26 @@ class __TwigTemplate_fae9d0472aedbce00fff93847cc82574 extends Template
     <td>{{client.appointment_date|date(\"F j, l\")}} - {{client.start_time|date(\"H:i\")}}</td>
     <td>{{client.caregiver_data}}</td>
     <td>
-      <span class=\"badge bg-light-success rounded-pill f-12\">{{client.status}}</span>
+      <span class=\"badge bg-success rounded-pill\" style=\"font-size: 12px;\">{{client.status|capitalize}}</span>
+
     </td>
     <td class=\"text-center\">
       <ul class=\"list-inline me-auto mb-0\">
         <li class=\"list-inline-item\" data-bs-toggle=\"tooltip\" title=\"View\">
           <a href=\"#\" class=\"avtar avtar-xs btn-link-secondary\" data-bs-toggle=\"modal\"
             data-bs-target=\"#user-modal\">
-            <i class=\"ti ti-eye f-18\"></i>
+            <i class=\"fa-solid fa-circle-check\" style=\"color: green;\"></i>
           </a>
         </li>
         <li class=\"list-inline-item\" data-bs-toggle=\"tooltip\" title=\"Edit\">
           <a href=\"#\" class=\"avtar avtar-xs btn-link-primary\" data-bs-toggle=\"modal\"
             data-bs-target=\"#user-edit_add-modal\">
-            <i class=\"ti ti-edit-circle f-18\"></i>
+            <i class=\"fa-solid fa-trash\" style=\"color: rgb(156, 7, 7);\"></i>
           </a>
         </li>
         <li class=\"list-inline-item\" data-bs-toggle=\"tooltip\" title=\"Delete\">
           <a href=\"#\" class=\"avtar avtar-xs btn-link-danger\">
-            <i class=\"ti ti-trash f-18\"></i>
+            <i class=\"fa-solid fa-user-slash\"></i>
           </a>
         </li>
       </ul>

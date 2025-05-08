@@ -36,25 +36,26 @@
     <td>{{client.appointment_date|date("F j, l")}} - {{client.start_time|date("H:i")}}</td>
     <td>{{client.caregiver_data}}</td>
     <td>
-      <span class="badge bg-light-success rounded-pill f-12">{{client.status}}</span>
+      <span class="badge bg-success rounded-pill" style="font-size: 12px;">{{client.status|capitalize}}</span>
+
     </td>
     <td class="text-center">
       <ul class="list-inline me-auto mb-0">
         <li class="list-inline-item" data-bs-toggle="tooltip" title="View">
           <a href="#" class="avtar avtar-xs btn-link-secondary" data-bs-toggle="modal"
             data-bs-target="#user-modal">
-            <i class="ti ti-eye f-18"></i>
+            <i class="fa-solid fa-circle-check" style="color: green;"></i>
           </a>
         </li>
         <li class="list-inline-item" data-bs-toggle="tooltip" title="Edit">
           <a href="#" class="avtar avtar-xs btn-link-primary" data-bs-toggle="modal"
             data-bs-target="#user-edit_add-modal">
-            <i class="ti ti-edit-circle f-18"></i>
+            <i class="fa-solid fa-trash" style="color: rgb(156, 7, 7);"></i>
           </a>
         </li>
         <li class="list-inline-item" data-bs-toggle="tooltip" title="Delete">
           <a href="#" class="avtar avtar-xs btn-link-danger">
-            <i class="ti ti-trash f-18"></i>
+            <i class="fa-solid fa-user-slash"></i>
           </a>
         </li>
       </ul>

@@ -113,14 +113,14 @@ class UserController extends Controller{
        
 
         if($password1 !== $password2){
-            $this->set('message','Doslo je do greske: Lozinke se ne poklapaju');
+            $this->set('message',"The password doesn't match.");
             return;
 
         }
 
         $stringValidator = (new StringValidator())->setMinLength(7)->setMaxLength(120);
         if(!$stringValidator->isValid(($password1))){
-            $this->set('message','Doslo je do greske: Lozinke nije ispravnog formata');
+            $this->set('message',' Your password must be more than 8 characters long');
             return;
 
         }
@@ -128,7 +128,7 @@ class UserController extends Controller{
         
 
         if($user){
-            $this->set('message','Doslo je do greske: Email vec postoji');
+            $this->set('messageEmail','Email already exist.');
             return;
         }
 

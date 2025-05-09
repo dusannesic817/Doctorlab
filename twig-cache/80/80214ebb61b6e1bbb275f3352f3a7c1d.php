@@ -12,8 +12,8 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* User/create.html */
-class __TwigTemplate_ecd1ffa695c0260ea6b51f2a0a31984c extends Template
+/* User/store.html */
+class __TwigTemplate_62595fdf2e8eb24e2ad37fbe475ff47b extends Template
 {
     private $source;
     private $macros = [];
@@ -39,7 +39,7 @@ class __TwigTemplate_ecd1ffa695c0260ea6b51f2a0a31984c extends Template
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
-        $this->parent = $this->loadTemplate("_global/index.html", "User/create.html", 1);
+        $this->parent = $this->loadTemplate("_global/index.html", "User/store.html", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
@@ -48,8 +48,7 @@ class __TwigTemplate_ecd1ffa695c0260ea6b51f2a0a31984c extends Template
     {
         $macros = $this->macros;
         // line 5
-        echo "
-<body class=\"light-blue\">
+        echo "<body class=\"light-blue\">
   <div class=\"container d-flex justify-content-center align-items-start min-vh-100 pt-5 mt-2\">
     <div class=\"row\">
       <h4 class=\"text-center\"><small><b>Sing Up</b></small></h4>
@@ -58,14 +57,17 @@ class __TwigTemplate_ecd1ffa695c0260ea6b51f2a0a31984c extends Template
           <div class=\"card-body d-flex flex-column justify-content-center align-items-center\">
             <div class=\"d-flex flex-column mb-3 w-100\">
               <form action=\"";
-        // line 14
+        // line 13
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/user/register\" method=\"POST\">
                 <div class=\"mb-3\">
                   <label for=\"exampleInputEmail1\" class=\"form-label\"><small class=\"ms-1\"><b><i class=\"bi bi-envelope-fill\"></i> Email
                         address</b></small></label>
                   <input type=\"email\" class=\"form-control\" id=\"email\" name=\"email\" placeholder=\"Your email\">
-                  
+                  <div id=\"emailHelp\" class=\"form-text\">";
+        // line 18
+        echo twig_escape_filter($this->env, ($context["messageEmail"] ?? null), "html", null, true);
+        echo "</div>
                 </div>
                 <div class=\"mb-2\">
                   <label for=\"exampleInputPassword1\" class=\"form-label\"><small
@@ -103,12 +105,15 @@ class __TwigTemplate_ecd1ffa695c0260ea6b51f2a0a31984c extends Template
                 </div>
                 <div class=\"mb-5\">            
                   <input type=\"password\" class=\"form-control\" id=\"retype_password\"  name=\"retype_password\" placeholder=\"Retype Password\">
-                 
+                  <div id=\"emailHelp\" class=\"form-text\">";
+        // line 56
+        echo twig_escape_filter($this->env, ($context["message"] ?? null), "html", null, true);
+        echo "</div>
                 </div>
                 <button type=\"submit\" class=\"btn btn-primary w-100\">Register</button>
               </form>
               <div class=\"text-center mt-2\"><a href=\"";
-        // line 61
+        // line 60
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/user/login\">Already have account?</a></div>
             </div>
@@ -119,9 +124,9 @@ class __TwigTemplate_ecd1ffa695c0260ea6b51f2a0a31984c extends Template
   </div>
 
   ";
-        // line 69
+        // line 68
         $this->displayBlock('naslov', $context, $blocks);
-        // line 72
+        // line 71
         echo "
 
 
@@ -139,27 +144,21 @@ class __TwigTemplate_ecd1ffa695c0260ea6b51f2a0a31984c extends Template
 
 
 
-
-
-
-
-
-
 ";
     }
 
-    // line 69
+    // line 68
     public function block_naslov($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 70
+        // line 69
         echo "   Client Register 
   ";
     }
 
     public function getTemplateName()
     {
-        return "User/create.html";
+        return "User/store.html";
     }
 
     public function isTraitable()
@@ -169,7 +168,7 @@ class __TwigTemplate_ecd1ffa695c0260ea6b51f2a0a31984c extends Template
 
     public function getDebugInfo()
     {
-        return array (  156 => 70,  152 => 69,  125 => 72,  123 => 69,  112 => 61,  62 => 14,  51 => 5,  47 => 4,  36 => 1,);
+        return array (  155 => 69,  151 => 68,  130 => 71,  128 => 68,  117 => 60,  110 => 56,  69 => 18,  61 => 13,  51 => 5,  47 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -178,7 +177,6 @@ class __TwigTemplate_ecd1ffa695c0260ea6b51f2a0a31984c extends Template
 
 
 {% block main %}
-
 <body class=\"light-blue\">
   <div class=\"container d-flex justify-content-center align-items-start min-vh-100 pt-5 mt-2\">
     <div class=\"row\">
@@ -192,7 +190,7 @@ class __TwigTemplate_ecd1ffa695c0260ea6b51f2a0a31984c extends Template
                   <label for=\"exampleInputEmail1\" class=\"form-label\"><small class=\"ms-1\"><b><i class=\"bi bi-envelope-fill\"></i> Email
                         address</b></small></label>
                   <input type=\"email\" class=\"form-control\" id=\"email\" name=\"email\" placeholder=\"Your email\">
-                  
+                  <div id=\"emailHelp\" class=\"form-text\">{{messageEmail}}</div>
                 </div>
                 <div class=\"mb-2\">
                   <label for=\"exampleInputPassword1\" class=\"form-label\"><small
@@ -230,7 +228,7 @@ class __TwigTemplate_ecd1ffa695c0260ea6b51f2a0a31984c extends Template
                 </div>
                 <div class=\"mb-5\">            
                   <input type=\"password\" class=\"form-control\" id=\"retype_password\"  name=\"retype_password\" placeholder=\"Retype Password\">
-                 
+                  <div id=\"emailHelp\" class=\"form-text\">{{message}}</div>
                 </div>
                 <button type=\"submit\" class=\"btn btn-primary w-100\">Register</button>
               </form>
@@ -262,12 +260,7 @@ class __TwigTemplate_ecd1ffa695c0260ea6b51f2a0a31984c extends Template
 
 
 
-
-
-
-
-
-
-{% endblock %}", "User/create.html", "C:\\laragon\\www\\doctorlab\\views\\User\\create.html");
+{% endblock %}
+", "User/store.html", "C:\\laragon\\www\\doctorlab\\views\\User\\store.html");
     }
 }

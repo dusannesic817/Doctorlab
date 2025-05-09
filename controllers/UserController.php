@@ -7,6 +7,7 @@ use Google\Client;
 use Google\Service\Oauth2;
 use App\Core\Controller;
 use App\Models\UserModel;
+use App\Validators\NumberValidator;
 use App\Validators\StringValidator;
 
 class UserController extends Controller{
@@ -118,12 +119,14 @@ class UserController extends Controller{
 
         }
 
-        $stringValidator = (new StringValidator())->setMinLength(7)->setMaxLength(120);
-        if(!$stringValidator->isValid(($password1))){
-            $this->set('message',' Your password must be more than 8 characters long');
+        $stringValidator = (new StringValidator())->setMinLength(7)->setMaxLength(30)->firstCharUpper();
+        $numberValidator = (new NumberValidator())->setMustContainDigit();
+       
+       if (!$stringValidator->isValid($password1) || !$numberValidator->isValid($password1)){
+            $this->set('message', 'Your password must be 8-30 characters long, start with an uppercase letter, and contain numbers.');
             return;
-
         }
+
         $user = $userModel->getByFieldName('email',$email);
         
 
@@ -144,7 +147,6 @@ class UserController extends Controller{
             'role'=>'client',
             'birth'=>$date,
            
-            
         ]);
 
         if(!$user_id){
@@ -156,7 +158,6 @@ class UserController extends Controller{
         $this->set("message", "Napravljen je novi nalog");
 
    }
-
 
     public function login(){
 

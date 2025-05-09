@@ -47,12 +47,20 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
     {
         $macros = $this->macros;
         // line 5
-        $this->loadTemplate("./inc/session_alerts/appointment_wait.html", "Main/home.html", 5)->display($context);
+        echo "
+";
         // line 6
-        $this->loadTemplate("./inc/search.html", "Main/home.html", 6)->display($context);
+        $this->loadTemplate("./inc/session_alerts/success_registration.html", "Main/home.html", 6)->display($context);
         // line 7
+        $this->loadTemplate("./inc/session_alerts/appointment_wait.html", "Main/home.html", 7)->display($context);
+        // line 8
         echo "
 
+";
+        // line 10
+        $this->loadTemplate("./inc/search.html", "Main/home.html", 10)->display($context);
+        // line 11
+        echo "
 <div class=\"container\">
   <div class=\"row mt-5\">
     <div class=\"col-12\">
@@ -74,7 +82,7 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
     <div class=\"col-12 col-lg-4 d-flex justify-content-center\">
       <div class=\"card shadow-lg card-hover\" style=\"width: 25rem;\">
         <img src=\"";
-        // line 29
+        // line 32
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/assets/images/image_3.png\" class=\"card-img-top\" alt=\"...\">
         <div class=\"card-body\">
@@ -85,7 +93,7 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
     <div class=\"col-12 col-lg-4 d-flex justify-content-center\">
       <div class=\"card shadow-lg card-hover\" style=\"width: 25rem;\">
         <img src=\"";
-        // line 37
+        // line 40
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/assets/images/image_2.jpg\" class=\"card-img-top\" alt=\"...\">
         <div class=\"card-body\">
@@ -96,7 +104,7 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
     <div class=\"col-12 col-lg-4 d-flex justify-content-center\">
       <div class=\"card shadow-lg card-hover\" style=\"width: 25rem;\">
         <img src=\"";
-        // line 45
+        // line 48
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/assets/images/image_1.jpg\" class=\"card-img-top\" alt=\"...\">
         <div class=\"card-body\">
@@ -116,7 +124,7 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
     <div class=\"col-12 col-md-6 col-lg-4 d-flex justify-content-center\">
       <div class=\"card border-0\" style=\"width: 18rem;\">
         <img src=\"";
-        // line 62
+        // line 65
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/assets/images/cal.png\" class=\"card-img-top\" alt=\"...\">
         <div class=\"card-body text-center\">
@@ -128,7 +136,7 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
     <div class=\"col-12 col-md-6 col-lg-4 d-flex justify-content-center\">
       <div class=\"card  border-0\" style=\"width: 18rem;\">
         <img src=\"";
-        // line 71
+        // line 74
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/assets/images/msg.png\" class=\"card-img-top\" alt=\"...\">
         <div class=\"card-body text-center mt-4\">
@@ -140,7 +148,7 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
     <div class=\"col-12 col-md-6 col-lg-4 d-flex justify-content-center\">
       <div class=\"cardborder-0\" style=\"width: 18rem;\">
         <img src=\"";
-        // line 80
+        // line 83
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/assets/images/heart.png\" class=\"card-img-top\" alt=\"...\">
         <div class=\"card-body text-center\">
@@ -158,7 +166,7 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
       <div class=\"col-lg-3 col-12 d-flex justify-content-center\">
         <div class=\"card\" style=\"width: 100%; max-width: 18rem; border-color: #01264d !important\">
           <img src=\"";
-        // line 95
+        // line 98
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/assets/images/doctor.jpg\" class=\"card-img-top img-fluid rounded-bottom\" alt=\"...\"
             style=\"object-fit: cover; width: 100%; height: 100%;\">
@@ -179,7 +187,7 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
           <div class=\"p-2 d-none  d-lg-block\"><i class=\"bi bi-arrow-right\" style=\"color:  #ffcd4d\"></i> Increase the
             revenue of your business</div>
           <a class=\"btn btn-primary mt-4\" href=\"";
-        // line 113
+        // line 116
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/caregiver/index\" role=\"button\">Learn more about our solutions</a>
         </div>
@@ -201,7 +209,7 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
       <div class=\"col-4 col-lg-4 mt-2 d-flex justify-content-center\">
         <div class=\"card border-0\" style=\"width: 18rem; background-color: #e4ecf7;\">
           <img src=\"";
-        // line 132
+        // line 135
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/assets/images/ass.png\" class=\"card-img-top\" alt=\"...\">
         </div>
@@ -210,20 +218,20 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
       <div class=\"col-4 col-lg-3 mt-4 d-flex flex-column align-items-center\">
         <div class=\"d-flex flex-column mb-3  text-start caregiver\">
             ";
-        // line 138
+        // line 141
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_slice($this->env, twig_get_attribute($this->env, $this->source, ($context["doctors"] ?? null), "doctors", [], "any", false, false, false, 138), 0, 5));
+        $context['_seq'] = twig_ensure_traversable(twig_slice($this->env, twig_get_attribute($this->env, $this->source, ($context["doctors"] ?? null), "doctors", [], "any", false, false, false, 141), 0, 5));
         foreach ($context['_seq'] as $context["_key"] => $context["doctor"]) {
-            // line 139
+            // line 142
             echo "                <div class=\"p-2\">
                     <a href=\"#\">
                         <b>";
-            // line 141
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "title", [], "any", false, false, false, 141), "html", null, true);
+            // line 144
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "title", [], "any", false, false, false, 144), "html", null, true);
             echo "</b>
                         <i class=\"";
-            // line 142
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "icon", [], "any", false, false, false, 142), "html", null, true);
+            // line 145
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "icon", [], "any", false, false, false, 145), "html", null, true);
             echo "\"></i>
                     </a>
                 </div>
@@ -232,7 +240,7 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['doctor'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 146
+        // line 149
         echo "        </div>
     </div>
     
@@ -241,20 +249,20 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
       <div class=\"col-4 col-lg-3 mt-4 d-flex flex-column align-items-center\">
         <div class=\"d-flex flex-column mb-3 text-start caregiver\">
           ";
-        // line 153
+        // line 156
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_slice($this->env, twig_get_attribute($this->env, $this->source, ($context["doctors"] ?? null), "doctors", [], "any", false, false, false, 153), 5, 10));
+        $context['_seq'] = twig_ensure_traversable(twig_slice($this->env, twig_get_attribute($this->env, $this->source, ($context["doctors"] ?? null), "doctors", [], "any", false, false, false, 156), 5, 10));
         foreach ($context['_seq'] as $context["_key"] => $context["doctor"]) {
-            // line 154
+            // line 157
             echo "                <div class=\"p-2\">
                     <a href=\"#\">
                         <b>";
-            // line 156
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "title", [], "any", false, false, false, 156), "html", null, true);
+            // line 159
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "title", [], "any", false, false, false, 159), "html", null, true);
             echo "</b>
                         <i class=\"";
-            // line 157
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "icon", [], "any", false, false, false, 157), "html", null, true);
+            // line 160
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "icon", [], "any", false, false, false, 160), "html", null, true);
             echo "\"></i>
                     </a>
                 </div>
@@ -263,7 +271,7 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['doctor'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 161
+        // line 164
         echo "        </div>
       </div>
     </div>
@@ -316,7 +324,7 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
     <div class=\"row text-center text-lg-start d-flex justify-content-center align-items-center\">
       <div class=\"col-12 col-lg-4\">
         <div class=\"mb-2\"><img src=\"";
-        // line 212
+        // line 215
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/assets/images/logo_white.png\" alt=\"DoctorLab Logo\" ></div>
         <small class=\"grey\">Copyright 2025 Docotorlab, all right reserved</small>
@@ -325,7 +333,7 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
         <div class=\"d-flex flex-row-reverse\">
           <div class=\"p-2\">
             <img src=\"";
-        // line 218
+        // line 221
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/assets/images/app_download.png\" alt=\"...\" style=\"height: 6rem;\">
           </div>
@@ -370,7 +378,7 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
 
     public function getDebugInfo()
     {
-        return array (  329 => 218,  320 => 212,  267 => 161,  257 => 157,  253 => 156,  249 => 154,  245 => 153,  236 => 146,  226 => 142,  222 => 141,  218 => 139,  214 => 138,  205 => 132,  183 => 113,  162 => 95,  144 => 80,  132 => 71,  120 => 62,  100 => 45,  89 => 37,  78 => 29,  54 => 7,  52 => 6,  50 => 5,  46 => 4,  35 => 1,);
+        return array (  337 => 221,  328 => 215,  275 => 164,  265 => 160,  261 => 159,  257 => 157,  253 => 156,  244 => 149,  234 => 145,  230 => 144,  226 => 142,  222 => 141,  213 => 135,  191 => 116,  170 => 98,  152 => 83,  140 => 74,  128 => 65,  108 => 48,  97 => 40,  86 => 32,  63 => 11,  61 => 10,  57 => 8,  55 => 7,  53 => 6,  50 => 5,  46 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -379,9 +387,12 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
 
 
 {% block main %}
-{% include './inc/session_alerts/appointment_wait.html'%}
-{% include './inc/search.html'%}
 
+{% include './inc/session_alerts/success_registration.html'%}
+{% include './inc/session_alerts/appointment_wait.html'%}
+
+
+{% include './inc/search.html'%}
 
 <div class=\"container\">
   <div class=\"row mt-5\">

@@ -19,15 +19,24 @@ class MainController extends Controller{
 
      $appointment = $this->getSession()->get('appointment');
      $user_id = $this->getSession()->get('user_id');
+     $successRegistration = $this->getSession()->get('successRegistration');
 
      if(isset($appointment) && !isset($user_id)){
      $this->set('appointment',$appointment);
      }
 
+    
+
+
      $this->set('doctors', $doctors);
      
      $this->set('clinices',$clinices);
 
+      if(isset($successRegistration)){
+         $this->set('successRegistration',$successRegistration);
+     }
+      $this->getSession()->remove('successRegistration');
+        $this->getSession()->save();
 
     }
 }

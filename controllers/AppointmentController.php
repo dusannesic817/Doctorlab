@@ -4,6 +4,8 @@ namespace App\Controllers;
 
 use App\Core\Role\UserRoleController;
 use App\Models\AppointmentModel;
+use App\Models\AvailabilityModel;
+use Google\Service\Doubleclicksearch\Availability;
 
 
 class AppointmentController extends UserRoleController{
@@ -32,6 +34,10 @@ class AppointmentController extends UserRoleController{
                $myclients[]=$value;
             }
         }
+
+
+        var_dump($myclients);
+        exit();
 
         
         $change=$this->getSession()->get('success_schedule');
@@ -64,19 +70,23 @@ class AppointmentController extends UserRoleController{
         $auth = $this->getSession()->get('user_id');
         $appointmentModel = new AppointmentModel($this->getDatabaseConnection());
         $updateStatus = $appointmentModel->updateByField('user_id', $id, 'status', 'completed');
-    
+
         if ($updateStatus) {
             $this->redirect('/client/appointments/' . $auth);
         }
     }
+
     public function cancel($id){
         $auth = $this->getSession()->get('user_id');
         $appointmentModel = new AppointmentModel($this->getDatabaseConnection());
         $updateStatus = $appointmentModel->updateByField('user_id', $id, 'status', 'canceled');
+       
     
         if ($updateStatus) {
-            $this->redirect('/client/appointments/' . $auth);
+            $availabilityModel = new AvailabilityModel($this->getDatabaseConnection());
         }
+
+        $this->redirect('/client/appointments/' . $auth);
     }
 
 

@@ -35,6 +35,7 @@ class AvailabilityController extends UserRoleController{
     }
     
     
+    
     public function store(){
 
 

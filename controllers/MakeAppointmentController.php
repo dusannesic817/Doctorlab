@@ -100,7 +100,7 @@ class MakeAppointmentController extends Controller{
 
         if($insert){
             $avalabilityModel = new AvailabilityModel($this->getDatabaseConnection());
-            $avalabilityModel->editAvailability($id,$formatted_date,$formatted_time);
+            $avalabilityModel->editAvailability($id,$formatted_date,$formatted_time,'busy');
         }
     
         $this->getSession()->remove('appointment');

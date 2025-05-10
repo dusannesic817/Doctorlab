@@ -50,7 +50,7 @@ class AvailabilityModel extends Model{
 
 
 
-    public function editAvailability($id, $date, $time) {
+    public function editAvailability($id, $date, $time,$type) {
         $sql = "SELECT schedule FROM availability WHERE user_id=?";
         $prep = $this->getConnection()->prepare($sql);
         $prep->execute([$id]);
@@ -62,7 +62,7 @@ class AvailabilityModel extends Model{
             if ($day['date'] === $date) {
                 foreach ($day['times'] as &$slot) {
                     if ($slot['time'] === $time) {
-                        $slot['status'] = 'busy';
+                        $slot['status'] = $type;
                         break;
                     }
                 }
@@ -96,6 +96,7 @@ class AvailabilityModel extends Model{
         return $prep->execute([$updatedJson, $id]);
 
     }
+
 
 
 

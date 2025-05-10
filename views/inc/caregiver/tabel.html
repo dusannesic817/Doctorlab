@@ -47,8 +47,8 @@
     <td class="text-center">
       <ul class="list-inline me-auto mb-0">
         <li class="list-inline-item" data-bs-toggle="tooltip" title="Complete">
-          <form id="complete-form-{{ client.user_id }}" action="{{ base_url }}/appointments/update/{{ client.user_id }}" method="POST" class="d-inline">
-            <a href="#" class="avtar avtar-xs btn-link-secondary" onclick="event.preventDefault(); document.getElementById('complete-form-{{ client.user_id }}').submit();">
+          <form id="complete-form-{{ client.appointment_id }}" action="{{ base_url }}/appointments/update/{{ client.appointment_id }}" method="POST" class="d-inline">
+            <a href="#" class="avtar avtar-xs btn-link-secondary" onclick="event.preventDefault(); document.getElementById('complete-form-{{ client.appointment_id }}').submit();">
               <i class="fa-solid fa-circle-check" style="color: green;"></i>
             </a>
           </form>
@@ -61,8 +61,8 @@
         </li>
     
         <li class="list-inline-item" data-bs-toggle="tooltip" title="Cancel">
-          <form id="cancel-form-{{ client.user_id }}" action="{{ base_url }}/appointments/cancel/{{ client.user_id }}" method="POST" class="d-inline">
-            <a href="#" class="avtar avtar-xs btn-link-danger" onclick="event.preventDefault(); document.getElementById('cancel-form-{{ client.user_id }}').submit();">
+          <form id="cancel-form-{{ client.appointment_id }}" action="{{ base_url }}/appointments/cancel/{{  client.appointment_id}}" method="POST" class="d-inline">
+            <a href="#" class="avtar avtar-xs btn-link-danger" onclick="event.preventDefault(); document.getElementById('cancel-form-{{ client.appointment_id }}').submit();">
             <i class="fa-solid fa-user-slash" style="color: rgb(212, 7, 7);"></i>
           </a>
         </form>

@@ -35,11 +35,6 @@ class AppointmentController extends UserRoleController{
             }
         }
 
-
-        var_dump($myclients);
-        exit();
-
-        
         $change=$this->getSession()->get('success_schedule');
         $this->set('change',$change);
      
@@ -69,24 +64,44 @@ class AppointmentController extends UserRoleController{
     public function update($id){
         $auth = $this->getSession()->get('user_id');
         $appointmentModel = new AppointmentModel($this->getDatabaseConnection());
-        $updateStatus = $appointmentModel->updateByField('user_id', $id, 'status', 'completed');
+        $updateStatus = $appointmentModel->editById($id,['status'=>'completed']);
 
         if ($updateStatus) {
-            $this->redirect('/client/appointments/' . $auth);
+            $referer = $_SERVER['HTTP_REFERER'] ?? '/caregiver/appointments/' . $auth;
+            $this->redirect($referer);
+
         }
     }
 
     public function cancel($id){
         $auth = $this->getSession()->get('user_id');
         $appointmentModel = new AppointmentModel($this->getDatabaseConnection());
-        $updateStatus = $appointmentModel->updateByField('user_id', $id, 'status', 'canceled');
+        $details = $appointmentModel->getById($id);
+
+        $caregiver_id=$details->provider_id;
+
+        $appointment_date= $details->appointment_date;
+        $date = new \DateTime($appointment_date);
        
-    
+        $formatted_date = $date->format('F j l');
+        
+
+        $time_start =$details->start_time;
+        $time = new \DateTime($time_start);
+        $formatted_time = $time->format('H:i');
+
+
+        $updateStatus = $appointmentModel->editById($id,['status'=>'canceled']);
+        
         if ($updateStatus) {
             $availabilityModel = new AvailabilityModel($this->getDatabaseConnection());
+            $availabilityModel->editAvailability($caregiver_id,$formatted_date,$formatted_time,'free');
         }
 
-        $this->redirect('/client/appointments/' . $auth);
+        $referer = $_SERVER['HTTP_REFERER'] ?? '/caregiver/appointments/' . $auth;
+        $this->redirect($referer);
+
+
     }
 
 
@@ -98,7 +113,7 @@ class AppointmentController extends UserRoleController{
         $deleteAppointment = $appointmentModel->deleteById($id);
 
        if($deleteAppointment){
-        $this->redirect('/client/appointments/'.$auth);
+        $this->redirect('/caregiver/appointments/'.$auth);
        }
 
     }

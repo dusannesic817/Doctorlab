@@ -48,13 +48,19 @@ class Controller{
         return $this->data;
     }
 
-    protected function redirect($path,$code = 302){
+protected function redirect($path, $code = 302) {
+    $baseUrl = 'http://localhost/doctorlab';
 
-        $baseUrl = 'http://localhost/doctorlab';
-        ob_clean();
-        header('Location:' .$baseUrl.$path,true,$code);
-        exit();
+    ob_clean();
+
+    if (str_starts_with($path, 'http')) {
+        header('Location: ' . $path, true, $code);
+    } else {
+        header('Location: ' . $baseUrl . $path, true, $code);
     }
+
+    exit();
+}
 
 
     protected function getJson($file){

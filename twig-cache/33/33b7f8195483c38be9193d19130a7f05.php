@@ -164,43 +164,45 @@ class __TwigTemplate_9eeab2894a4594ac53078db2037a1741 extends Template
             // line 49
             if ((twig_get_attribute($this->env, $this->source, $context["schedule"], "status", [], "any", false, false, false, 49) != "canceled")) {
                 // line 50
-                echo "                <p>
+                echo "                
                 <form action=\"";
                 // line 51
                 echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
                 echo "/appointments/cancel/";
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["schedule"], "appointment_id", [], "any", false, false, false, 51), "html", null, true);
                 echo "\" method=\"POST\">
+                  <p class=\"me-3\">
                   <button type=\"submit\" class=\"btn btn-primary ms-3\"
                     style=\"--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;\">
                     Cancel appointment
                   </button>
+                  </p>
                 </form>
-                </p>
+                
                 ";
             }
-            // line 59
+            // line 61
             echo "              </div>
             </header>
             <div class=\"card-body\">
               <div class=\"d-flex flex-row mb-3\">
                 <img src=\"";
-            // line 63
+            // line 65
             echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
             echo "/assets/uploads/images/";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["schedule"], "photo", [], "any", false, false, false, 63), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["schedule"], "photo", [], "any", false, false, false, 65), "html", null, true);
             echo "\" class=\"rounded-circle ms-3 mt-3\"
                   alt=\"...\" style=\"width: 65px; height: 65px; object-fit: cover;\">
                 <div class=\"p-2 ms-2 mt-3\">
                   <b class=\"teget\">Dr ";
-            // line 66
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["schedule"], "doctor_name", [], "any", false, false, false, 66), "html", null, true);
+            // line 68
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["schedule"], "doctor_name", [], "any", false, false, false, 68), "html", null, true);
             echo " ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["schedule"], "doctor_surname", [], "any", false, false, false, 66), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["schedule"], "doctor_surname", [], "any", false, false, false, 68), "html", null, true);
             echo "</b><br>
                   <small>";
-            // line 67
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["schedule"], "docotor", [], "any", false, false, false, 67), "title", [], "any", false, false, false, 67), "html", null, true);
+            // line 69
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["schedule"], "docotor", [], "any", false, false, false, 69), "title", [], "any", false, false, false, 69), "html", null, true);
             echo "</small>
                 </div>
               </div>
@@ -209,8 +211,8 @@ class __TwigTemplate_9eeab2894a4594ac53078db2037a1741 extends Template
               <small>Jagodina</small><br>
               <p><small>9 Rue Yvarm, 34562 Jagodina</small></p>
               <small>";
-            // line 74
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["schedule"], "caregiver_data", [], "any", false, false, false, 74), "html", null, true);
+            // line 76
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["schedule"], "caregiver_data", [], "any", false, false, false, 76), "html", null, true);
             echo "</small>
             </div>
 
@@ -228,25 +230,16 @@ class __TwigTemplate_9eeab2894a4594ac53078db2037a1741 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['schedule'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 79
+        // line 81
         echo "        </div>
       </div>
     </div>
   </div>
 
 
-  <!--<div class=\"card text-center border-0 light-blue\" style=\"width: 40rem;\">
-          <img src=\"images/calendar_transparent.png\" style=\"width: 12rem; height:10rem;\" class=\"card-img-top mx-auto d-block\" alt=\"...\">
-          <div class=\"card-body\">
-            <p class=\"card-text\"><b>No upcoming appointments</b></p>
-            <p><small>Take charge of your health. Easily book your next appointment through Doctorlab</small></p>
-            <a class=\"btn btn-primary\" href=\"#\" role=\"button\" style=\"width: 400px;\">Book an Appointment</a>
-          </div>
-        </div>-->
 
-  <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js\"
-    integrity=\"sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz\"
-    crossorigin=\"anonymous\"></script>
+
+
   <script>
     function toggleCards(cardId) {
       // Sakrij sve kartice
@@ -278,7 +271,7 @@ class __TwigTemplate_9eeab2894a4594ac53078db2037a1741 extends Template
 
     public function getDebugInfo()
     {
-        return array (  232 => 79,  213 => 74,  203 => 67,  197 => 66,  189 => 63,  183 => 59,  170 => 51,  167 => 50,  165 => 49,  160 => 47,  156 => 46,  147 => 41,  130 => 40,  117 => 30,  107 => 22,  90 => 19,  86 => 18,  83 => 17,  66 => 16,  55 => 7,  53 => 6,  50 => 5,  46 => 4,  35 => 1,);
+        return array (  234 => 81,  215 => 76,  205 => 69,  199 => 68,  191 => 65,  185 => 61,  170 => 51,  167 => 50,  165 => 49,  160 => 47,  156 => 46,  147 => 41,  130 => 40,  117 => 30,  107 => 22,  90 => 19,  86 => 18,  83 => 17,  66 => 16,  55 => 7,  53 => 6,  50 => 5,  46 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -332,14 +325,16 @@ class __TwigTemplate_9eeab2894a4594ac53078db2037a1741 extends Template
                     <span class=\"ms-4\"><i class=\"bi bi-clock-fill\"></i> {{schedule.start_time|date(\"H:i\")}}</span></b>
                 </p>
                 {% if schedule.status != 'canceled' %}
-                <p>
+                
                 <form action=\"{{ base_url }}/appointments/cancel/{{ schedule.appointment_id }}\" method=\"POST\">
+                  <p class=\"me-3\">
                   <button type=\"submit\" class=\"btn btn-primary ms-3\"
                     style=\"--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;\">
                     Cancel appointment
                   </button>
+                  </p>
                 </form>
-                </p>
+                
                 {%endif%}
               </div>
             </header>
@@ -367,18 +362,9 @@ class __TwigTemplate_9eeab2894a4594ac53078db2037a1741 extends Template
   </div>
 
 
-  <!--<div class=\"card text-center border-0 light-blue\" style=\"width: 40rem;\">
-          <img src=\"images/calendar_transparent.png\" style=\"width: 12rem; height:10rem;\" class=\"card-img-top mx-auto d-block\" alt=\"...\">
-          <div class=\"card-body\">
-            <p class=\"card-text\"><b>No upcoming appointments</b></p>
-            <p><small>Take charge of your health. Easily book your next appointment through Doctorlab</small></p>
-            <a class=\"btn btn-primary\" href=\"#\" role=\"button\" style=\"width: 400px;\">Book an Appointment</a>
-          </div>
-        </div>-->
 
-  <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js\"
-    integrity=\"sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz\"
-    crossorigin=\"anonymous\"></script>
+
+
   <script>
     function toggleCards(cardId) {
       // Sakrij sve kartice

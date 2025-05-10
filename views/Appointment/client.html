@@ -46,14 +46,16 @@
                     {{schedule.appointment_date|date("F j, l")}}
                     <span class="ms-4"><i class="bi bi-clock-fill"></i> {{schedule.start_time|date("H:i")}}</span></b>
                 </p>
+                {% if schedule.status != 'canceled' %}
                 <p>
-                <form action="{{ base_url }}/appointments/cancel/{{schedule.appointment_id}}" method="POST">
+                <form action="{{ base_url }}/appointments/cancel/{{ schedule.appointment_id }}" method="POST">
                   <button type="submit" class="btn btn-primary ms-3"
                     style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                     Cancel appointment
                   </button>
                 </form>
                 </p>
+                {%endif%}
               </div>
             </header>
             <div class="card-body">

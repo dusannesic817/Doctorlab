@@ -48,12 +48,14 @@ class AppointmentController extends UserRoleController{
     }
 
     public function client($id){
-        
+
         $appointmentModel = new AppointmentModel($this->getDatabaseConnection());
         $schedules = $appointmentModel->getSchedule($id);
          $change=$this->getSession()->get('success_schedule');
-        $this->set('change',$change);
-     
+
+
+
+            $this->set('change',$change);
             $this->set('schedules',$schedules);  
     }
 
@@ -88,6 +90,7 @@ class AppointmentController extends UserRoleController{
         $appointmentModel = new AppointmentModel($this->getDatabaseConnection());
         $details = $appointmentModel->getById($id);
 
+       
         $caregiver_id=$details->provider_id;
 
         $appointment_date= $details->appointment_date;

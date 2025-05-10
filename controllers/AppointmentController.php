@@ -47,6 +47,16 @@ class AppointmentController extends UserRoleController{
         $this->getSession()->remove('success_schedule');
     }
 
+    public function client($id){
+        
+        $appointmentModel = new AppointmentModel($this->getDatabaseConnection());
+        $schedules = $appointmentModel->getSchedule($id);
+         $change=$this->getSession()->get('success_schedule');
+        $this->set('change',$change);
+     
+            $this->set('schedules',$schedules);  
+    }
+
 
     public function create(){
 

@@ -14,11 +14,11 @@ return [
     App\Core\Route::get('|^caregiver/index/?$|',         "Caregiver", 'index'),
     App\Core\Route::get('|^caregiver/register/?$|',      "Caregiver", 'create'),
     App\Core\Route::post('|^caregiver/register/?$|',     "Caregiver", "store" ),
-    App\Core\Route::get('|^caregiver/show/([0-9+])/?$|', "Caregiver", "show"),
+    App\Core\Route::get('|^caregiver/show/([0-9]+)/?$|', "Caregiver", "show"),
 
 
     #MakeAppointment
-    App\Core\Route::get('|^makeappointment/type/([0-9+])/?$|', "MakeAppointment", 'type'),
+    App\Core\Route::get('|^makeappointment/type/([0-9]+)/?$|', "MakeAppointment", 'type'),
 
     App\Core\Route::get('|^makeappointment/create/?$|', "MakeAppointment", 'create'),
     App\Core\Route::post('|^makeappointment/store/?$|', "MakeAppointment", 'store'),
@@ -29,29 +29,29 @@ return [
 
     #Appointement routes-auth:
     App\Core\Route::get('|^caregiver/appointments/?$|',    "Appointment", 'index'),
-    App\Core\Route::get('|^client/appointments/([0-9+])/?$|',    "Appointment", 'client'),
-    App\Core\Route::get('|^caregiver/appointments/([0-9+])/?$|', "Appointment", 'show'),
-    App\Core\Route::post('|^client/appointments/delete/([0-9+])/?$|', "Appointment", 'destroy'),
-    App\Core\Route::post('|^appointments/update/([0-9+])/?$|', "Appointment", 'update'),
-    App\Core\Route::post('|^appointments/cancel/([0-9+])/?$|', "Appointment", 'cancel'),
+    App\Core\Route::get('|^client/appointments/([0-9]+)/?$|',    "Appointment", 'client'),
+    App\Core\Route::get('|^caregiver/appointments/([0-9]+)/?$|', "Appointment", 'show'),
+    App\Core\Route::post('|^client/appointments/delete/([0-9]+)/?$|', "Appointment", 'destroy'),
+    App\Core\Route::post('|^appointments/update/([0-9]+)/?$|', "Appointment", 'update'),
+    App\Core\Route::post('|^appointments/cancel/([0-9]+)/?$|', "Appointment", 'cancel'),
    
 
     #UserProfile-auth
-    App\Core\Route::get( '|^client/profile/([0-9+])/?$|', "UserProfile", 'show'),
-    App\Core\Route::post('|^client/update/([0-9+])/?$|',  "UserProfile", 'update'),
+    App\Core\Route::get( '|^client/profile/([0-9]+)/?$|', "UserProfile", 'show'),
+    App\Core\Route::post('|^client/update/([0-9]+)/?$|',  "UserProfile", 'update'),
     App\Core\Route::get( '|^client/logout/?$|',           "UserProfile", 'logout'),
 
 
     #Availabilit-auth
-    App\Core\Route::get('|^availability/show/([0-9+])/?$|', "Availability", 'show'),
+    App\Core\Route::get('|^availability/show/([0-9]+)/?$|', "Availability", 'show'),
     App\Core\Route::get('|^availability/create/?$|', "Availability", 'create'),
     App\Core\Route::post('|^availability/store/?$|', "Availability", 'store'),
 
 
     #CaregiverProfie-auth
-    App\Core\Route::get('|^caregiver/profile/([0-9+])/?$|', "CaregiverProfile", 'show'),
-    App\Core\Route::get('|^caregiver/edit/([0-9+])/?$|',    "CaregiverProfile", 'edit'),
-    App\Core\Route::post('|^caregiver/update/([0-9+])/?$|', "CaregiverProfile", 'update'),
+    App\Core\Route::get('|^caregiver/profile/([0-9]+)/?$|', "CaregiverProfile", 'show'),
+    App\Core\Route::get('|^caregiver/edit/([0-9]+)/?$|',    "CaregiverProfile", 'edit'),
+    App\Core\Route::post('|^caregiver/update/([0-9]+)/?$|', "CaregiverProfile", 'update'),
     App\Core\Route::get('|^caregiver/appointments/?$|',      "CaregiverProfile", 'appointmens'),
     App\Core\Route::get('|^caregiver/logout/?$|',           "CaregiverProfile", 'logout'),
     

@@ -55,13 +55,11 @@ class NumberValidator implements Validator {
         return $this;
     }
 
-    public function containsNumber($value): bool {
-        return preg_match('/\d/', $value) === 1;
-    }
+
 
     public function isValid($value): bool {
         
-        if ($this->mustContainDigit && !$this->containsNumber($value)) {
+        if ($this->mustContainDigit && !preg_match('/[0-9]/', $value)) {
             return false;
         }
 

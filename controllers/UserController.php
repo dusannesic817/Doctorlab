@@ -120,10 +120,10 @@ class UserController extends Controller{
         }
 
         $stringValidator = (new StringValidator())->setMinLength(7)->setMaxLength(30)->firstCharUpper();
-       // $numberValidator = (new NumberValidator())->setMustContainDigit();
+        $numberValidator = (new NumberValidator())->setMustContainDigit();
        
-       if (!$stringValidator->isValid($password1)){
-            $this->set('message', 'Your password must be 8-30 characters long, with an uppercase letter, and contain numbers.');
+        if (!$stringValidator->isValid($password1) || !$numberValidator->isValid($password1)){
+            $this->set('message', 'Your password must be 8-30 characters long, with an uppercase letter and contain numbers.');
             return;
         }
 

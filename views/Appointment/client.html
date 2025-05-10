@@ -13,7 +13,7 @@
         <p class="mt-4"><b>Appointment History</b></p>
         <hr>
         <div class="list-group border-0">
-          {% for schedule in role == 'client' ? schedules : schedulesDoctor %}
+          {% for schedule in schedules %}
           <button type="button" class="list-group-item list-group-item-action light-blue border-0"
             style="color: #0d6efd !important;" onclick="toggleCards('card{{ loop.index }}')">
             <b>{{ schedule.caregiver_data }}</b>
@@ -37,7 +37,6 @@
           </div>
 
           <!-- Druga kartica (prikazuje se kada kliknem dugme) -->
-          {% if role == 'client' %}
           {%for schedule in schedules%}
           <div id="card{{ loop.index }}" class="card card-my-information hidden mb-5"
             style="width: 600px; height:320px">
@@ -48,7 +47,7 @@
                     <span class="ms-4"><i class="bi bi-clock-fill"></i> {{schedule.start_time|date("H:i")}}</span></b>
                 </p>
                 <p>
-                <form action="{{base_url}}/client/appointments/delete/{{schedule.appointment_id}}" method="POST">
+                <form action="{{ base_url }}/appointments/cancel/{{schedule.appointment_id}}" method="POST">
                   <button type="submit" class="btn btn-primary ms-3"
                     style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                     Cancel appointment
@@ -56,9 +55,7 @@
                 </form>
                 </p>
               </div>
-
             </header>
-
             <div class="card-body">
               <div class="d-flex flex-row mb-3">
                 <img src="{{base_url}}/assets/uploads/images/{{schedule.photo}}" class="rounded-circle ms-3 mt-3"
@@ -77,42 +74,6 @@
 
           </div>
           {%endfor%}
-          {% else %}
-          {%for schedule in schedulesDoctor%}
-          <div id="card{{ loop.index }}" class="card card-my-information hidden mb-5"
-            style="width: 600px; height:320px">
-            <header class="pb-1 pt-3 rounded-top" style="background-color: #01264d">
-              <p class="ms-3" style="color:white !important"> <b><i class="bi bi-calendar2-event me-1"></i>
-                  {{schedule.appointment_date|date("F j, l")}}
-                  <span class="ms-4"><i class="bi bi-clock-fill"></i> {{schedule.start_time|date("H:i")}}</span></b></p>
-            </header>
-
-            <div class="card-body">
-              <div class="d-flex flex-row mb-3">
-                {% if schedule.patient_photo %}
-                <img src="{{base_url}}/assets/uploads/images/{{schedule.patient_photo}}"
-                  class="rounded-circle ms-3 mt-3" alt="..." style="width: 65px; height: 65px; object-fit: cover;">
-                {%else%}
-                <img src="{{base_url}}/assets/images/profile_unknown.png" class="rounded-circle ms-3 mt-3" alt="..."
-                  style="width: 65px; height: 65px; object-fit: cover;">
-                {%endif%}
-
-                <div class="p-2 ms-2 mt-3">
-                  <b class="teget"> Patient: {{schedule.patient_name}} {{schedule.patient_surname}}</b><br>
-                  <small>{{schedule.patient_phone}}</small>
-                </div>
-              </div>
-              <hr>
-              <p style="margin-bottom: -4px;"><small><b class="teget">Your appointment details:</b></small></p>
-              <small>Jagodina</small><br>
-              <p><small>9 Rue Yvarm, 34562 Jagodina</small></p>
-              <small>{{schedule.caregiver_data}}</small>
-            </div>
-
-          </div>
-          {%endfor%}
-
-          {%endif%}
         </div>
       </div>
     </div>

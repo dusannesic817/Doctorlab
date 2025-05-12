@@ -2,18 +2,21 @@
 
 namespace Pusher;
 
+use Pusher\Pusher as PusherClient; 
+
 class PusherInstance
 {
     private static $instance = null;
-    private static $app_id = '';
-    private static $secret = '';
-    private static $api_key = '';
+    private static $app_id = '1990392';
+    private static $secret = '690a0689023958211929';
+    private static $api_key = '6d7d51c13b5451452dd9';
+    private static $cluster = 'eu';
 
     /**
-     * Get the pusher singleton instance.
+     * Get the Pusher singleton instance.
      *
-     * @return Pusher
-     * @throws PusherException
+     * @return PusherClient
+     * @throws \Pusher\PusherException
      */
     public static function get_pusher()
     {
@@ -21,10 +24,14 @@ class PusherInstance
             return self::$instance;
         }
 
-        self::$instance = new Pusher(
+        self::$instance = new PusherClient(
             self::$api_key,
             self::$secret,
-            self::$app_id
+            self::$app_id,
+            [
+                'cluster' => self::$cluster,
+                'useTLS' => true
+            ]
         );
 
         return self::$instance;

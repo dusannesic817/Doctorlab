@@ -25,8 +25,6 @@ class MainController extends Controller{
      $this->set('appointment',$appointment);
      }
 
-    
-
 
      $this->set('doctors', $doctors);
      

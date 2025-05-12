@@ -53,6 +53,7 @@ class __TwigTemplate_ce3700ee9ca62a1743c37422bb0a3af3 extends Template
         // line 12
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/assets/css/sb-admin-2.min.css\">
+   <script src=\"https://js.pusher.com/8.4.0/pusher.min.js\"></script>
 
   <title>Change</title>
 
@@ -73,23 +74,23 @@ class __TwigTemplate_ce3700ee9ca62a1743c37422bb0a3af3 extends Template
   <div id=\"wrapper\">
 
     ";
-        // line 32
-        $this->loadTemplate("./inc/caregiver/sidebar.html", "_global/caregiver_index.html", 32)->display($context);
         // line 33
+        $this->loadTemplate("./inc/caregiver/sidebar.html", "_global/caregiver_index.html", 33)->display($context);
+        // line 34
         echo "
     <div id=\"content-wrapper\" class=\"d-flex flex-column\">
       <!-- Main Content -->
       <div id=\"content\">
         ";
-        // line 37
-        $this->loadTemplate("./inc/caregiver/topbar_caregiver.html", "_global/caregiver_index.html", 37)->display($context);
         // line 38
+        $this->loadTemplate("./inc/caregiver/topbar_caregiver.html", "_global/caregiver_index.html", 38)->display($context);
+        // line 39
         echo "       
 
         ";
-        // line 40
+        // line 41
         $this->displayBlock('caregiver', $context, $blocks);
-        // line 43
+        // line 44
         echo "
       </div>
     </div>
@@ -98,16 +99,17 @@ class __TwigTemplate_ce3700ee9ca62a1743c37422bb0a3af3 extends Template
 
   <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js\"></script>
   <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js\"></script>
+  
 </body>
 
 </html>";
     }
 
-    // line 40
+    // line 41
     public function block_caregiver($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 41
+        // line 42
         echo "
         ";
     }
@@ -124,7 +126,7 @@ class __TwigTemplate_ce3700ee9ca62a1743c37422bb0a3af3 extends Template
 
     public function getDebugInfo()
     {
-        return array (  111 => 41,  107 => 40,  93 => 43,  91 => 40,  87 => 38,  85 => 37,  79 => 33,  77 => 32,  54 => 12,  48 => 9,  38 => 1,);
+        return array (  113 => 42,  109 => 41,  94 => 44,  92 => 41,  88 => 39,  86 => 38,  80 => 34,  78 => 33,  54 => 12,  48 => 9,  38 => 1,);
     }
 
     public function getSourceContext()
@@ -141,6 +143,7 @@ class __TwigTemplate_ce3700ee9ca62a1743c37422bb0a3af3 extends Template
   <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css\">
   <script src=\"https://kit.fontawesome.com/3f1d14d928.js\" crossorigin=\"anonymous\"></script>
   <link rel=\"stylesheet\" href=\"{{ base_url }}/assets/css/sb-admin-2.min.css\">
+   <script src=\"https://js.pusher.com/8.4.0/pusher.min.js\"></script>
 
   <title>Change</title>
 
@@ -179,6 +182,7 @@ class __TwigTemplate_ce3700ee9ca62a1743c37422bb0a3af3 extends Template
 
   <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js\"></script>
   <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js\"></script>
+  
 </body>
 
 </html>", "_global/caregiver_index.html", "C:\\laragon\\www\\doctorlab\\views\\_global\\caregiver_index.html");

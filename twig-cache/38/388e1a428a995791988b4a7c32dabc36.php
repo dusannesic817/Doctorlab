@@ -50,15 +50,16 @@ class __TwigTemplate_f632f0baf0787e18abb394f43ba17bc4 extends Template
         echo "/assets/images/logo_browser.png\">
   <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css\">
   <script src=\"https://kit.fontawesome.com/3f1d14d928.js\" crossorigin=\"anonymous\"></script>
+   <script src=\"https://js.pusher.com/8.4.0/pusher.min.js\"></script>
   <link rel=\"stylesheet\" href=\"";
-        // line 12
+        // line 13
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/assets/css/main.css\">
   
  
 
   <title>Doctorlab | ";
-        // line 16
+        // line 17
         $this->displayBlock('naslov', $context, $blocks);
         echo "</title>
 </head>
@@ -66,15 +67,15 @@ class __TwigTemplate_f632f0baf0787e18abb394f43ba17bc4 extends Template
 <body>
   <header>
     ";
-        // line 21
-        $this->loadTemplate("./inc/header.html", "_global/index.html", 21)->display($context);
         // line 22
+        $this->loadTemplate("./inc/header.html", "_global/index.html", 22)->display($context);
+        // line 23
         echo "  </header>
   <main>
     ";
-        // line 24
+        // line 25
         $this->displayBlock('main', $context, $blocks);
-        // line 27
+        // line 28
         echo "  </main>
   <footer>
     footer
@@ -84,7 +85,7 @@ class __TwigTemplate_f632f0baf0787e18abb394f43ba17bc4 extends Template
     crossorigin=\"anonymous\"></script>
     
     <script src=\"";
-        // line 35
+        // line 36
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/assets/main.js\" defer></script>
 </body>
@@ -92,18 +93,18 @@ class __TwigTemplate_f632f0baf0787e18abb394f43ba17bc4 extends Template
 </html>";
     }
 
-    // line 16
+    // line 17
     public function block_naslov($context, array $blocks = [])
     {
         $macros = $this->macros;
         echo "Home";
     }
 
-    // line 24
+    // line 25
     public function block_main($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 25
+        // line 26
         echo "
     ";
     }
@@ -120,7 +121,7 @@ class __TwigTemplate_f632f0baf0787e18abb394f43ba17bc4 extends Template
 
     public function getDebugInfo()
     {
-        return array (  107 => 25,  103 => 24,  96 => 16,  88 => 35,  78 => 27,  76 => 24,  72 => 22,  70 => 21,  62 => 16,  55 => 12,  49 => 9,  39 => 1,);
+        return array (  108 => 26,  104 => 25,  97 => 17,  89 => 36,  79 => 28,  77 => 25,  73 => 23,  71 => 22,  63 => 17,  56 => 13,  49 => 9,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -136,6 +137,7 @@ class __TwigTemplate_f632f0baf0787e18abb394f43ba17bc4 extends Template
   <link rel=\"icon\" type=\"image/png\" href=\"{{ base_url }}/assets/images/logo_browser.png\">
   <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css\">
   <script src=\"https://kit.fontawesome.com/3f1d14d928.js\" crossorigin=\"anonymous\"></script>
+   <script src=\"https://js.pusher.com/8.4.0/pusher.min.js\"></script>
   <link rel=\"stylesheet\" href=\"{{ base_url }}/assets/css/main.css\">
   
  

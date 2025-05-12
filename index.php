@@ -4,7 +4,6 @@ require 'vendor/autoload.php';
 require_once 'Configruation.php';
 
 
-use App\Controllers\MainController;
 use App\Core\DatabaseConfiguration;
 use App\Core\DatabaseConnection;
 use App\Core\Router;
@@ -75,16 +74,21 @@ use App\Core\Session\Session;
 
    $auth = $controller->getSession()->get('user_id');
    $role = $controller->getSession()->get('role');
+   $caregiver_id = $controller->getSession()->get('caregiver_id');
    
    $twig->addGlobal('auth', $auth); 
    $twig->addGlobal('role', $role);
+   $twig->addGlobal('caregiver_id', $caregiver_id);
    
-   $html = $twig->render(
-      $route->getControllerName(). '/'. $route->getMethodName(). '.html',
-      $data
-);
+  if (!str_starts_with($route->getControllerName(), 'Api')) {
+    $html = $twig->render(
+        $route->getControllerName() . '/' . $route->getMethodName() . '.html',
+        $data
+    );
+    echo $html;
+}
 
-echo $html;
+
 
 
 

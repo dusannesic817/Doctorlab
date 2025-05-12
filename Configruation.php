@@ -17,6 +17,9 @@ final class Configruation{
     const UPLOAD_DIR_IMAGES = 'assets/uploads/images';
     const UPLOAD_DIR_PDF = 'assets/uploads/files';
 
+    
+
+
 }
 
 

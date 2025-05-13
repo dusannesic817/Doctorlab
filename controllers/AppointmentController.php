@@ -131,7 +131,13 @@ class AppointmentController extends UserRoleController{
 
     }
 
+    public function getNotification(){
 
-
+        $appointmentModel = new AppointmentModel($this->getDatabaseConnection());
+        $api = $appointmentModel->getNotification(1);
+        header('Content-Type: application/json');
+        echo json_encode($api);
+        exit; 
+    }
 
 }

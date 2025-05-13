@@ -89,6 +89,27 @@ class AppointmentModel extends Model{
 
     }
 
+    public function getNotification($id){
+        $sql=" SELECT a.appointment_id AS appointment_id, 
+                    a.status, 
+                    a.appointment_date, 
+                    a.start_time, 
+                    a.updated_at,
+                    u.name AS user_name, 
+                    u.surname AS user_surname
+                FROM appointment AS a
+                LEFT JOIN user AS u ON u.user_id = a.user_id
+                WHERE a.provider_id = ?  
+                AND a.status IN ('scheduled', 'canceled')
+                ORDER BY a.updated_at DESC";
 
+
+        $prep = $this->getConnection()->prepare($sql);
+        $res = $prep->execute([$id]);
+        $appointments = $prep->fetchAll(\PDO::FETCH_OBJ);
+
+        return $appointments;
+
+    }
     
 }

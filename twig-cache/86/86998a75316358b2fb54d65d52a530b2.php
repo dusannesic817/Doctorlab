@@ -111,24 +111,7 @@ class __TwigTemplate_66540d55b76e2b27fbb4bb1a9c8ee6e3 extends Template
 
 
 </div>
-<script>
-  var caregiver = \"";
-        // line 64
-        echo twig_escape_filter($this->env, ($context["caregiver_id"] ?? null), "html", null, true);
-        echo "\"; // bez navodnika ako je broj
- 
 
-  Pusher.logToConsole = true;
-
-  var pusher = new Pusher('6d7d51c13b5451452dd9', {
-    cluster: 'eu'
-  });
-
-  var channel = pusher.subscribe('notification');
-  channel.bind('cancel-' + caregiver, function(data) {
-    alert(JSON.stringify(data));
-  });
-</script>
 
 
 ";
@@ -146,7 +129,7 @@ class __TwigTemplate_66540d55b76e2b27fbb4bb1a9c8ee6e3 extends Template
 
     public function getDebugInfo()
     {
-        return array (  117 => 64,  103 => 53,  94 => 49,  84 => 46,  37 => 1,);
+        return array (  103 => 53,  94 => 49,  84 => 46,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -213,21 +196,7 @@ class __TwigTemplate_66540d55b76e2b27fbb4bb1a9c8ee6e3 extends Template
 
 
 </div>
-<script>
-  var caregiver = \"{{caregiver_id}}\"; // bez navodnika ako je broj
- 
 
-  Pusher.logToConsole = true;
-
-  var pusher = new Pusher('6d7d51c13b5451452dd9', {
-    cluster: 'eu'
-  });
-
-  var channel = pusher.subscribe('notification');
-  channel.bind('cancel-' + caregiver, function(data) {
-    alert(JSON.stringify(data));
-  });
-</script>
 
 
 ", "./inc/caregiver/topbar_caregiver.html", "C:\\laragon\\www\\doctorlab\\views\\inc\\caregiver\\topbar_caregiver.html");

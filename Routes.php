@@ -56,8 +56,9 @@ return [
     App\Core\Route::get('|^caregiver/logout/?$|',           "CaregiverProfile", 'logout'),
     
 
-    #ApiSession
-    App\Core\Route::get('|^api/session/?$|', "ApiSession", "getCaregiverId"),
+    #Api
+   App\Core\Route::get('|^api/appointments/notifications?$|', "Appointment", "getNotification"),
+
 
     App\Core\Route::any('|^.*$|', 'Main', 'home'),
     

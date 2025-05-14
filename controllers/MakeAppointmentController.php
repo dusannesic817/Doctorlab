@@ -101,6 +101,7 @@ class MakeAppointmentController extends Controller{
         if($insert){
             $avalabilityModel = new AvailabilityModel($this->getDatabaseConnection());
             $avalabilityModel->editAvailability($id,$formatted_date,$formatted_time,'busy');
+           
         }
     
         $this->getSession()->remove('appointment');
@@ -150,7 +151,40 @@ class MakeAppointmentController extends Controller{
     }
 
 
-    
+        public function sendNotification($id){
+
+        $appointmentModel = new AppointmentModel($this->getDatabaseConnection());
+        $appointments = $appointmentModel->getNotification($id);
+
+        $notifications=[];
+
+        foreach($appointments as $appointment){
+
+            if($appointment->status=='canceled'){
+               $message = "Appointment by {$appointment->user_name} {$appointment->user_surname} has been canceled.";
+              $icon='<i class="fa-solid fa-triangle-exclamation" style="color:red;"></i>';
+            }elseif($appointment->status=='scheduled'){
+               $message = "Appointment by {$appointment->user_name} {$appointment->user_surname} has been scheduled.";
+                $icon='<i class="fa-solid fa-circle-check" style="color:green;"></i>';
+               
+            }
+
+             $notifications[] = [
+        'message' => $message,
+        'icon'=>$icon,
+        'appointment_date' => $appointment->appointment_date,
+        'start_time' => $appointment->start_time,
+        'appointment_type' => $appointment->caregiver_data,
+        'updated_at' => $appointment->updated_at,
+    ];
+
+        }
+
+
+        header('Content-Type: application/json');
+        echo json_encode($notifications);
+        exit; 
+    }
     
 
 

@@ -91,10 +91,11 @@ class AppointmentModel extends Model{
 
     public function getNotification($id){
         $sql=" SELECT a.appointment_id AS appointment_id, 
-                    a.status, 
-                    a.appointment_date, 
-                    a.start_time, 
-                    a.updated_at,
+                    a.status as status, 
+                    a.appointment_date as appointment_date,
+                    a.caregiver_data as caregiver_data, 
+                    a.start_time as start_time, 
+                    a.updated_at as updated_at,
                     u.name AS user_name, 
                     u.surname AS user_surname
                 FROM appointment AS a

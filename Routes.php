@@ -57,7 +57,7 @@ return [
     
 
     #Api
-   App\Core\Route::get('|^api/appointments/notifications?$|', "Appointment", "getNotification"),
+   App\Core\Route::get('|^api/appointments/notifications?$|', "Appointment", "sendNotification"),
 
 
     App\Core\Route::any('|^.*$|', 'Main', 'home'),

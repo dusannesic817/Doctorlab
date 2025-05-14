@@ -44,30 +44,23 @@ class __TwigTemplate_66540d55b76e2b27fbb4bb1a9c8ee6e3 extends Template
     <!-- Topbar Navbar -->
     <ul class=\"navbar-nav ms-auto\">
       <!-- Nav Item - Alerts -->
-      <li class=\"nav-item dropdown no-arrow mx-1\">
-        <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"alertsDropdown\" role=\"button\" data-bs-toggle=\"dropdown\"
-           aria-haspopup=\"true\" aria-expanded=\"false\">
-          <i class=\"fas fa-bell fa-fw\"></i>
-          <span id=\"notification-count\" class=\"badge bg-danger\" style=\"display: none;\">3+</span>
-        </a>
-        <!-- Dropdown - Alerts -->
-        <div class=\"dropdown-menu dropdown-menu-end shadow animated--grow-in\" aria-labelledby=\"alertsDropdown\">
-          <h6 class=\"dropdown-header\">
-            Alerts Center
-          </h6>
-          <a class=\"dropdown-item d-flex align-items-center\" href=\"#\">
-            <div class=\"mr-3\">
-              <div class=\"icon-circle bg-primary\">
-                <i class=\"fas fa-file-alt text-white\"></i>
-              </div>
-            </div>
-            <div>
-              <div class=\"small text-gray-500\">Just now</div>
-              <span id=\"notification\" class=\"font-weight-bold\"></span>
-            </div>
-          </a>
-        </div>
-      </li>
+     <li class=\"nav-item dropdown no-arrow mx-1\">
+  <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"alertsDropdown\" role=\"button\" data-bs-toggle=\"dropdown\"
+     aria-haspopup=\"true\" aria-expanded=\"false\">
+    <i class=\"fas fa-bell fa-fw\"></i>
+    <span id=\"notification-count\" class=\"badge bg-danger\" style=\"display: none;\">0</span>
+  </a>
+
+  <div class=\"dropdown-menu dropdown-menu-end shadow animated--grow-in\" aria-labelledby=\"alertsDropdown\">
+    <h6 class=\"dropdown-header\">
+      Alerts Center
+    </h6>
+
+    <!-- Ovde ćemo dinamički dodavati notifikacije -->
+    <div id=\"notification-list\"></div>
+  </div>
+</li>
+
 
       <!-- Nav Item - User Information -->
       <div class=\"topbar-divider d-none d-sm-block\"></div>
@@ -80,7 +73,7 @@ class __TwigTemplate_66540d55b76e2b27fbb4bb1a9c8ee6e3 extends Template
         <!-- Dropdown - User Information -->
         <div class=\"dropdown-menu dropdown-menu-end shadow animated--grow-in\" aria-labelledby=\"userDropdown\">
           <a class=\"dropdown-item\" href=\"";
-        // line 46
+        // line 39
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/";
         echo twig_escape_filter($this->env, ($context["role"] ?? null), "html", null, true);
@@ -90,7 +83,7 @@ class __TwigTemplate_66540d55b76e2b27fbb4bb1a9c8ee6e3 extends Template
             <i class=\"fas fa-user fa-sm fa-fw mr-2 text-gray-400\"></i> Profile
           </a>
           <a class=\"dropdown-item\" href=\"";
-        // line 49
+        // line 42
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/caregiver/edit/";
         echo twig_escape_filter($this->env, ($context["auth"] ?? null), "html", null, true);
@@ -99,7 +92,7 @@ class __TwigTemplate_66540d55b76e2b27fbb4bb1a9c8ee6e3 extends Template
           </a>
           <div class=\"dropdown-divider\"></div>
           <a class=\"dropdown-item\" href=\"";
-        // line 53
+        // line 46
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/caregiver/logout\" data-bs-toggle=\"modal\" data-bs-target=\"#logoutModal\">
             <i class=\"fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400\"></i> Logout
@@ -113,7 +106,51 @@ class __TwigTemplate_66540d55b76e2b27fbb4bb1a9c8ee6e3 extends Template
 </div>
 
 
+<script>
+  function fetchNotifications() {
+    \$.ajax({
+        url: '/api/appointment/notifications', // Tvoja ruta
+        method: 'GET',
+        success: function(data) {
+            const \$notificationCount = \$('#notification-count');
+            const \$notificationList = \$('#notification-list');
 
+            \$notificationList.empty(); // Očisti stare notifikacije
+
+            if (data.length > 0) {
+                \$notificationCount.text(data.length).show();
+
+                data.forEach(notification => {
+                    const html = `
+                        <a class=\"dropdown-item d-flex align-items-center\" href=\"#\">
+                            <div class=\"me-3\">\${notification.icon}</div>
+                            <div>
+                                <div class=\"small text-gray-500\">\${notification.appointment_date} \${notification.start_time}</div>
+                                <span class=\"font-weight-bold\">\${notification.message}</span>
+                            </div>
+                        </a>`;
+                    \$notificationList.append(html);
+                });
+            } else {
+                \$notificationCount.hide();
+            }
+        },
+        error: function() {
+            console.error('Došlo je do greške pri učitavanju notifikacija.');
+        }
+    });
+}
+
+// Inicijalno učitavanje + interval za polling
+fetchNotifications();
+setInterval(fetchNotifications, 3000); // Svakih 10 sekundi
+
+// Kada korisnik klikne na zvonce, skloni crvenu tačku
+\$('#alertsDropdown').on('click', function () {
+    \$('#notification-count').hide();
+});
+
+</script>
 ";
     }
 
@@ -129,7 +166,7 @@ class __TwigTemplate_66540d55b76e2b27fbb4bb1a9c8ee6e3 extends Template
 
     public function getDebugInfo()
     {
-        return array (  103 => 53,  94 => 49,  84 => 46,  37 => 1,);
+        return array (  96 => 46,  87 => 42,  77 => 39,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -144,30 +181,23 @@ class __TwigTemplate_66540d55b76e2b27fbb4bb1a9c8ee6e3 extends Template
     <!-- Topbar Navbar -->
     <ul class=\"navbar-nav ms-auto\">
       <!-- Nav Item - Alerts -->
-      <li class=\"nav-item dropdown no-arrow mx-1\">
-        <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"alertsDropdown\" role=\"button\" data-bs-toggle=\"dropdown\"
-           aria-haspopup=\"true\" aria-expanded=\"false\">
-          <i class=\"fas fa-bell fa-fw\"></i>
-          <span id=\"notification-count\" class=\"badge bg-danger\" style=\"display: none;\">3+</span>
-        </a>
-        <!-- Dropdown - Alerts -->
-        <div class=\"dropdown-menu dropdown-menu-end shadow animated--grow-in\" aria-labelledby=\"alertsDropdown\">
-          <h6 class=\"dropdown-header\">
-            Alerts Center
-          </h6>
-          <a class=\"dropdown-item d-flex align-items-center\" href=\"#\">
-            <div class=\"mr-3\">
-              <div class=\"icon-circle bg-primary\">
-                <i class=\"fas fa-file-alt text-white\"></i>
-              </div>
-            </div>
-            <div>
-              <div class=\"small text-gray-500\">Just now</div>
-              <span id=\"notification\" class=\"font-weight-bold\"></span>
-            </div>
-          </a>
-        </div>
-      </li>
+     <li class=\"nav-item dropdown no-arrow mx-1\">
+  <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"alertsDropdown\" role=\"button\" data-bs-toggle=\"dropdown\"
+     aria-haspopup=\"true\" aria-expanded=\"false\">
+    <i class=\"fas fa-bell fa-fw\"></i>
+    <span id=\"notification-count\" class=\"badge bg-danger\" style=\"display: none;\">0</span>
+  </a>
+
+  <div class=\"dropdown-menu dropdown-menu-end shadow animated--grow-in\" aria-labelledby=\"alertsDropdown\">
+    <h6 class=\"dropdown-header\">
+      Alerts Center
+    </h6>
+
+    <!-- Ovde ćemo dinamički dodavati notifikacije -->
+    <div id=\"notification-list\"></div>
+  </div>
+</li>
+
 
       <!-- Nav Item - User Information -->
       <div class=\"topbar-divider d-none d-sm-block\"></div>
@@ -198,7 +228,51 @@ class __TwigTemplate_66540d55b76e2b27fbb4bb1a9c8ee6e3 extends Template
 </div>
 
 
+<script>
+  function fetchNotifications() {
+    \$.ajax({
+        url: '/api/appointment/notifications', // Tvoja ruta
+        method: 'GET',
+        success: function(data) {
+            const \$notificationCount = \$('#notification-count');
+            const \$notificationList = \$('#notification-list');
 
+            \$notificationList.empty(); // Očisti stare notifikacije
+
+            if (data.length > 0) {
+                \$notificationCount.text(data.length).show();
+
+                data.forEach(notification => {
+                    const html = `
+                        <a class=\"dropdown-item d-flex align-items-center\" href=\"#\">
+                            <div class=\"me-3\">\${notification.icon}</div>
+                            <div>
+                                <div class=\"small text-gray-500\">\${notification.appointment_date} \${notification.start_time}</div>
+                                <span class=\"font-weight-bold\">\${notification.message}</span>
+                            </div>
+                        </a>`;
+                    \$notificationList.append(html);
+                });
+            } else {
+                \$notificationCount.hide();
+            }
+        },
+        error: function() {
+            console.error('Došlo je do greške pri učitavanju notifikacija.');
+        }
+    });
+}
+
+// Inicijalno učitavanje + interval za polling
+fetchNotifications();
+setInterval(fetchNotifications, 3000); // Svakih 10 sekundi
+
+// Kada korisnik klikne na zvonce, skloni crvenu tačku
+\$('#alertsDropdown').on('click', function () {
+    \$('#notification-count').hide();
+});
+
+</script>
 ", "./inc/caregiver/topbar_caregiver.html", "C:\\laragon\\www\\doctorlab\\views\\inc\\caregiver\\topbar_caregiver.html");
     }
 }

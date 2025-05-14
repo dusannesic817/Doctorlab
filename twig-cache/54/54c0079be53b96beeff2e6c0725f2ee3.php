@@ -49,8 +49,9 @@ class __TwigTemplate_ce3700ee9ca62a1743c37422bb0a3af3 extends Template
         echo "/assets/images/logo_browser.png\">
   <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css\">
   <script src=\"https://kit.fontawesome.com/3f1d14d928.js\" crossorigin=\"anonymous\"></script>
+  <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
   <link rel=\"stylesheet\" href=\"";
-        // line 12
+        // line 13
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/assets/css/sb-admin-2.min.css\">
    <script src=\"https://js.pusher.com/8.4.0/pusher.min.js\"></script>
@@ -74,23 +75,23 @@ class __TwigTemplate_ce3700ee9ca62a1743c37422bb0a3af3 extends Template
   <div id=\"wrapper\">
 
     ";
-        // line 33
-        $this->loadTemplate("./inc/caregiver/sidebar.html", "_global/caregiver_index.html", 33)->display($context);
         // line 34
+        $this->loadTemplate("./inc/caregiver/sidebar.html", "_global/caregiver_index.html", 34)->display($context);
+        // line 35
         echo "
     <div id=\"content-wrapper\" class=\"d-flex flex-column\">
       <!-- Main Content -->
       <div id=\"content\">
         ";
-        // line 38
-        $this->loadTemplate("./inc/caregiver/topbar_caregiver.html", "_global/caregiver_index.html", 38)->display($context);
         // line 39
+        $this->loadTemplate("./inc/caregiver/topbar_caregiver.html", "_global/caregiver_index.html", 39)->display($context);
+        // line 40
         echo "       
 
         ";
-        // line 41
+        // line 42
         $this->displayBlock('caregiver', $context, $blocks);
-        // line 44
+        // line 45
         echo "
       </div>
     </div>
@@ -105,11 +106,11 @@ class __TwigTemplate_ce3700ee9ca62a1743c37422bb0a3af3 extends Template
 </html>";
     }
 
-    // line 41
+    // line 42
     public function block_caregiver($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 42
+        // line 43
         echo "
         ";
     }
@@ -126,7 +127,7 @@ class __TwigTemplate_ce3700ee9ca62a1743c37422bb0a3af3 extends Template
 
     public function getDebugInfo()
     {
-        return array (  113 => 42,  109 => 41,  94 => 44,  92 => 41,  88 => 39,  86 => 38,  80 => 34,  78 => 33,  54 => 12,  48 => 9,  38 => 1,);
+        return array (  114 => 43,  110 => 42,  95 => 45,  93 => 42,  89 => 40,  87 => 39,  81 => 35,  79 => 34,  55 => 13,  48 => 9,  38 => 1,);
     }
 
     public function getSourceContext()
@@ -142,6 +143,7 @@ class __TwigTemplate_ce3700ee9ca62a1743c37422bb0a3af3 extends Template
   <link rel=\"icon\" type=\"image/png\" href=\"{{ base_url }}/assets/images/logo_browser.png\">
   <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css\">
   <script src=\"https://kit.fontawesome.com/3f1d14d928.js\" crossorigin=\"anonymous\"></script>
+  <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
   <link rel=\"stylesheet\" href=\"{{ base_url }}/assets/css/sb-admin-2.min.css\">
    <script src=\"https://js.pusher.com/8.4.0/pusher.min.js\"></script>
 

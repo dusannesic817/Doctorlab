@@ -109,6 +109,7 @@ class AppointmentController extends UserRoleController{
         if ($updateStatus) {
             $availabilityModel = new AvailabilityModel($this->getDatabaseConnection());
             $availabilityModel->editAvailability($caregiver_id,$formatted_date,$formatted_time,'free');
+           
         }
 
         $referer = $_SERVER['HTTP_REFERER'] ?? '/caregiver/appointments/' . $auth;
@@ -131,13 +132,60 @@ class AppointmentController extends UserRoleController{
 
     }
 
-    public function getNotification(){
 
+    public function getNotification($id){
+       
+
+    }
+
+    public function sendNotification(){
+
+        $id= $this->getSession()->get("user_id");
         $appointmentModel = new AppointmentModel($this->getDatabaseConnection());
-        $api = $appointmentModel->getNotification(1);
+        $appointments = $appointmentModel->getNotification($id);
+
+        $notifications=[];
+
+        foreach($appointments as $appointment){
+
+            if($appointment->status=='canceled'){
+               $message = "Appointment by {$appointment->user_name} {$appointment->user_surname} has been canceled.";
+              $icon='<i class="fa-solid fa-triangle-exclamation" style="color:red;"></i>';
+            }elseif($appointment->status=='scheduled'){
+               $message = "Appointment by {$appointment->user_name} {$appointment->user_surname} has been scheduled.";
+                $icon='<i class="fa-solid fa-circle-check" style="color:green;"></i>';
+               
+            }
+
+             $notifications[] = [
+            'message' => $message,
+            'icon'=>$icon,
+            'appointment_date' => $appointment->appointment_date,
+            'start_time' => $appointment->start_time,
+            'appointment_type' => $appointment->caregiver_data,
+            'updated_at' => $appointment->updated_at,
+        ];
+
+        }
+
+
+
         header('Content-Type: application/json');
-        echo json_encode($api);
+        echo json_encode($notifications);
         exit; 
     }
+
+
+/*
+
+             $notifications[] = [
+            'message' => $message,
+            'appointment_date' => $appointment['appointment_date'],
+            'start_time' => $appointment['start_time'],
+            'appointment_type'=>$appointment['caregiver_data'],
+            'updated_at' => $appointment['updated_at'],
+        ];
+
+*/ 
 
 }

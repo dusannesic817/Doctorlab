@@ -8,30 +8,23 @@
     <!-- Topbar Navbar -->
     <ul class="navbar-nav ms-auto">
       <!-- Nav Item - Alerts -->
-      <li class="nav-item dropdown no-arrow mx-1">
-        <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-bs-toggle="dropdown"
-           aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-bell fa-fw"></i>
-          <span id="notification-count" class="badge bg-danger" style="display: none;">3+</span>
-        </a>
-        <!-- Dropdown - Alerts -->
-        <div class="dropdown-menu dropdown-menu-end shadow animated--grow-in" aria-labelledby="alertsDropdown">
-          <h6 class="dropdown-header">
-            Alerts Center
-          </h6>
-          <a class="dropdown-item d-flex align-items-center" href="#">
-            <div class="mr-3">
-              <div class="icon-circle bg-primary">
-                <i class="fas fa-file-alt text-white"></i>
-              </div>
-            </div>
-            <div>
-              <div class="small text-gray-500">Just now</div>
-              <span id="notification" class="font-weight-bold"></span>
-            </div>
-          </a>
-        </div>
-      </li>
+     <li class="nav-item dropdown no-arrow mx-1">
+  <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-bs-toggle="dropdown"
+     aria-haspopup="true" aria-expanded="false">
+    <i class="fas fa-bell fa-fw"></i>
+    <span id="notification-count" class="badge bg-danger" style="display: none;">0</span>
+  </a>
+
+  <div class="dropdown-menu dropdown-menu-end shadow animated--grow-in" aria-labelledby="alertsDropdown">
+    <h6 class="dropdown-header">
+      Alerts Center
+    </h6>
+
+    <!-- Ovde ćemo dinamički dodavati notifikacije -->
+    <div id="notification-list"></div>
+  </div>
+</li>
+
 
       <!-- Nav Item - User Information -->
       <div class="topbar-divider d-none d-sm-block"></div>
@@ -62,4 +55,48 @@
 </div>
 
 
+<script>
+  function fetchNotifications() {
+    $.ajax({
+        url: '/api/appointment/notifications', // Tvoja ruta
+        method: 'GET',
+        success: function(data) {
+            const $notificationCount = $('#notification-count');
+            const $notificationList = $('#notification-list');
 
+            $notificationList.empty(); // Očisti stare notifikacije
+
+            if (data.length > 0) {
+                $notificationCount.text(data.length).show();
+
+                data.forEach(notification => {
+                    const html = `
+                        <a class="dropdown-item d-flex align-items-center" href="#">
+                            <div class="me-3">${notification.icon}</div>
+                            <div>
+                                <div class="small text-gray-500">${notification.appointment_date} ${notification.start_time}</div>
+                                <span class="font-weight-bold">${notification.message}</span>
+                            </div>
+                        </a>`;
+                    $notificationList.append(html);
+                });
+            } else {
+                $notificationCount.hide();
+            }
+        },
+        error: function() {
+            console.error('Došlo je do greške pri učitavanju notifikacija.');
+        }
+    });
+}
+
+// Inicijalno učitavanje + interval za polling
+fetchNotifications();
+setInterval(fetchNotifications, 3000); // Svakih 10 sekundi
+
+// Kada korisnik klikne na zvonce, skloni crvenu tačku
+$('#alertsDropdown').on('click', function () {
+    $('#notification-count').hide();
+});
+
+</script>

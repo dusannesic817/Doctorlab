@@ -79,7 +79,8 @@ class MakeAppointmentController extends Controller{
                 'caregiver_data'   => $appointment['caregiver_data'],
                 'appointment_date' => $appointment['day'],
                 'start_time'       => $appointment['time'],
-                'status'           => 'scheduled'
+                'status'           => 'scheduled',
+                
             ];
         }else{
             return $this->redirect('/');

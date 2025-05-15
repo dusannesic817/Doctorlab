@@ -4,6 +4,7 @@
 namespace App\Models;
 use App\Core\Model;
 use App\Core\Field;
+use App\Validators\BitValidator;
 use App\Validators\StringValidator;
 use App\Validators\DateTimeValidator;
 use App\Validators\NumberValidator;
@@ -19,7 +20,7 @@ class AppointmentModel extends Model{
             'appointment_date'=>new Field((new DateTimeValidator())->allowDate() ),
             'start_time'=>new Field((new DateTimeValidator())->allowTime()),
             'status'=>new Field((new StringValidator())->setMaxLength(20)),
-            'created_at'=>new Field((new DateTimeValidator())->allowDate()->allowTime(), false),
+            'created_at'=>new Field((new DateTimeValidator())->allowDate()->allowTime(), false),    
             'updated_at'=>new Field((new DateTimeValidator())->allowDate()->allowTime(), false),
             
         ];

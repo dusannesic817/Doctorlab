@@ -5,8 +5,6 @@
 
 {% include './inc/session_alerts/success_registration.html'%}
 {% include './inc/session_alerts/appointment_wait.html'%}
-
-
 {% include './inc/search.html'%}
 
 <div class="container">
@@ -52,7 +50,7 @@
       </div>
     </div>
   </div>
-  
+
   <!--Your health partner every day-->
   <div class="row row-health mb-5">
     <div class="col-12">
@@ -113,13 +111,13 @@
             quality of life at work</div>
           <div class="p-2 d-none  d-lg-block"><i class="bi bi-arrow-right" style="color:  #ffcd4d"></i> Increase the
             revenue of your business</div>
-          <a class="btn btn-primary mt-4" href="{{base_url}}/caregiver/index" role="button">Learn more about our solutions</a>
+          <a class="btn btn-primary mt-4" href="{{base_url}}/caregiver/index" role="button">Learn more about our
+            solutions</a>
         </div>
       </div>
     </div>
   </div>
 </div>
-
 
 <div class="container-fluid  d-flex align-items-center" style="background-color: #e4ecf7; height: 50vh;">
   <div class="container">
@@ -138,29 +136,27 @@
       <!-- Left Column -->
       <div class="col-4 col-lg-3 mt-4 d-flex flex-column align-items-center">
         <div class="d-flex flex-column mb-3  text-start caregiver">
-            {% for doctor in doctors.doctors|slice(0, 5) %}
-                <div class="p-2">
-                    <a href="{{base_url}}/caregiver/{{ doctor.title|lower }}">
-                        <b>{{ doctor.title }}</b>
-                        <i class="{{ doctor.icon }}"></i>
-                    </a>
-                </div>
-            {% endfor %}
+          {% for doctor in doctors.doctors|slice(0, 5) %}
+          <div class="p-2">
+            <a href="{{base_url}}/caregiver/{{ doctor.title|lower }}">
+              <b>{{ doctor.title }}</b>
+              <i class="{{ doctor.icon }}"></i>
+            </a>
+          </div>
+          {% endfor %}
         </div>
-    </div>
-    
-    
+      </div>
       <!-- Right Column -->
       <div class="col-4 col-lg-3 mt-4 d-flex flex-column align-items-center">
         <div class="d-flex flex-column mb-3 text-start caregiver">
           {% for doctor in doctors.doctors|slice(5, 10) %}
-                <div class="p-2">
-                    <a href="{{base_url}}/caregiver/{{ doctor.title|lower }}">
-                        <b>{{ doctor.title }}</b>
-                        <i class="{{doctor.icon}}"></i>
-                    </a>
-                </div>
-            {% endfor %}
+          <div class="p-2">
+            <a href="{{base_url}}/caregiver/{{ doctor.title|lower }}">
+              <b>{{ doctor.title }}</b>
+              <i class="{{doctor.icon}}"></i>
+            </a>
+          </div>
+          {% endfor %}
         </div>
       </div>
     </div>
@@ -212,7 +208,7 @@
     <hr style="color: #6da7f7;">
     <div class="row text-center text-lg-start d-flex justify-content-center align-items-center">
       <div class="col-12 col-lg-4">
-        <div class="mb-2"><img src="{{ base_url }}/assets/images/logo_white.png" alt="DoctorLab Logo" ></div>
+        <div class="mb-2"><img src="{{ base_url }}/assets/images/logo_white.png" alt="DoctorLab Logo"></div>
         <small class="grey">Copyright 2025 Docotorlab, all right reserved</small>
       </div>
       <div class="col-12 col-lg-8 d-flex justify-content-center justify-content-lg-end mt-3 mt-lg-0">
@@ -247,4 +243,3 @@
 </div>
 
 {% endblock %}
-

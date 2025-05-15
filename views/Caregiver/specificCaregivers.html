@@ -1,0 +1,207 @@
+{% extends "_global/index.html" %}
+
+
+{% block main %}
+
+
+<form action="" method="POST" id="appointmentForm">
+  <div class="container">
+    <div class="row mt-3 gy-3">
+      <div class="col-12 col-lg-8">
+        {% for caregiver in caregivers %}
+        <div class="card mb-2 border border-primary-subtle" style="width: 100%;" id="caregiver-{{ caregiver.user_id }}">
+          <div class="row">
+            <div class="col-12 col-lg-4">
+              <div class="d-flex flex-row mb-3">
+                <img src="{{base_url}}/assets/uploads/images/{{caregiver.profile_photo}}" class="rounded-circle ms-3 mt-3"
+                  alt="..." style="width: 65px; height: 65px; object-fit: cover;">
+                <div class="p-2 ms-2 mt-3">
+                  <b>Dr. {{caregiver.name}} {{caregiver.surname}}</b> <br> <small>{{caregiver.doctor}}</small>
+                </div>
+              </div>
+              <div class="card-body ms-3">
+                <p class="card-text"><b><i class="bi bi-geo-alt-fill mt-2"></i></b><small class="ms-2"><b>Rue de
+                      Villiers</b></small> <br> <small class="ms-4"><b>Paris</b></small></p>
+                <a href="{{base_url}}/caregiver/show/{{caregiver.user_id}}" class="btn btn-primary mt-2"
+                  style="width: 100%;">Make Appointment</a>
+              </div>
+            </div>
+
+            <div class="col-12 col-lg-8" style="margin-left:-2px;">
+              <div class="row">
+                <div class="col-12 mt-2 mb-3">
+                  <div class="d-flex justify-content-around">
+                    <i class="bi bi-arrow-left-circle-fill prevDate" id="prevDate-{{caregiver.user_id}}" style="cursor: pointer;"></i>
+                    {% for day, value in caregiver.schedule %}
+                    <header class="day" data-caregiver-id="{{caregiver.user_id}}" data-day="{{ day }}">
+                      <b>{{ day }}</b>
+                    </header>
+                    {% endfor %}
+                    <i class="bi bi-arrow-right-circle-fill nextDate" id="nextDate-{{caregiver.user_id}}" style="cursor: pointer;"></i>
+                  </div>
+                </div>
+
+              </div>
+              <div class="row gx-1 gy-2 time-slots" data-caregiver-id="{{caregiver.user_id}}">
+                {% set index = 0 %}
+                {% for day, times in caregiver.schedule %}
+                {% for time in times.times %}
+                {% set input_id = 'time_' ~ caregiver.user_id ~ '_' ~ day ~ '_' ~ index %}
+                {% if time.status == "free" %}
+                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 time-slot" data-day="{{day}}"
+                  data-caregiver-id="{{caregiver.user_id}}">
+                <input type="checkbox" class="btn-check w-100 calendar-input" value="{{ time.time }}" 
+                name="appointment[{{ caregiver.user_id }}][{{ caregiver.name }}][{{ day }}][]" 
+                id="{{ input_id }}" data-caregiver-id="{{ caregiver.user_id }}" data-caregiver-name="{{ caregiver.name }}" 
+                data-day="{{ day }}" onclick="saveToSession(this)">
+            
+            <label class="btn calendar-input w-100 text-truncate overflow-hidden" for="{{ input_id }}">{{ time.time }}</label>
+            
+                </div>
+                {% else %}
+                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 time-slot" data-day="{{day}}"
+                  data-caregiver-id="{{caregiver.user_id}}">
+                  <input type="checkbox" class="btn-check w-100 calendar-input" value="" id="{{ input_id }}" disabled>
+                  <label class="btn calendar-input-busy w-100 text-truncate overflow-hidden" for="{{ input_id }}">-</label>
+                </div>
+                {% endif %}
+                {% set index = index + 1 %}
+                {% endfor %}
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</form>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+
+    const allCaregivers = document.querySelectorAll(".day[data-caregiver-id]");
+    const caregivers = {};
+
+    allCaregivers.forEach(dayEl => {
+      const caregiverId = dayEl.dataset.caregiverId;
+
+      if (!caregivers[caregiverId]) {
+        caregivers[caregiverId] = {
+          days: [],
+          currentIndex: 0
+        };
+      }
+
+      caregivers[caregiverId].days.push(dayEl);
+    });
+
+    function updateDisplay(caregiverId) {
+      const caregiver = caregivers[caregiverId];
+      const currentDayEl = caregiver.days[caregiver.currentIndex];
+      const currentDay = currentDayEl.dataset.day;
+
+      caregiver.days.forEach(day => day.style.display = "none");
+      currentDayEl.style.display = "block";
+
+      const timeSlots = document.querySelectorAll(`.time-slot[data-caregiver-id="${caregiverId}"]`);
+      timeSlots.forEach(slot => {
+        if (slot.dataset.day === currentDay) {
+          slot.style.display = "block";
+        } else {
+          slot.style.display = "none";
+        }
+      });
+    }
+
+
+    for (const id in caregivers) {
+      updateDisplay(id);
+
+      const prevBtn = document.getElementById(`prevDate-${id}`);
+      const nextBtn = document.getElementById(`nextDate-${id}`);
+
+      prevBtn?.addEventListener("click", () => {
+        caregivers[id].currentIndex = (caregivers[id].currentIndex - 1 + caregivers[id].days.length) % caregivers[id].days.length;
+        updateDisplay(id);
+      });
+
+      nextBtn?.addEventListener("click", () => {
+        caregivers[id].currentIndex = (caregivers[id].currentIndex + 1) % caregivers[id].days.length;
+        updateDisplay(id);
+      });
+    }
+  });
+
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const inputs = document.querySelectorAll('.calendar-input');
+
+    inputs.forEach(input => {
+      input.addEventListener('change', function () {
+        if (this.checked) {
+          inputs.forEach(i => {
+            if (i !== this) i.checked = false;
+          });
+        }
+      });
+    });
+  });
+
+</script>
+<script>
+  function saveToSession(checkbox) {
+    const caregiverId = checkbox.getAttribute('data-caregiver-id');
+    const caregiverName = checkbox.getAttribute('data-caregiver-name');
+    const day = checkbox.getAttribute('data-day');
+    const time = checkbox.value;
+  
+    const xhr = new XMLHttpRequest();
+    const params = new URLSearchParams({
+        caregiver_id: caregiverId,
+        caregiver_name: caregiverName,
+        day: day,
+        time: time
+    });
+  
+    const url = '{{ base_url }}/makeappointment/store/';
+    xhr.open('POST', url, true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  
+
+  
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+
+             window.location.href = '{{ base_url }}/makeappointment/type/' + caregiverId;
+        } else {
+            console.error('Error');
+        }
+    };
+  
+    xhr.onerror = function() {
+        console.error('Error');
+    };
+  
+    xhr.send(params.toString());
+  }
+  </script>
+  
+
+
+
+
+
+
+
+{% block naslov %}
+Search
+
+{% endblock %}
+
+
+{% endblock %}

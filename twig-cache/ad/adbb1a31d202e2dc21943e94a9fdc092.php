@@ -34,11 +34,23 @@ class __TwigTemplate_fae9d0472aedbce00fff93847cc82574 extends Template
     {
         $macros = $this->macros;
         // line 1
-        echo "<div class=\"card\">
+        echo "<div class=\"card mt-3\">
+    <nav class=\"navbar\">
+  <div class=\"container-fluid justify-content-end\">
+    <form class=\"d-flex\" role=\"search\">
+      <div class=\"input-group\">
+        <input class=\"form-control\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\" />
+        <button class=\"btn btn-outline-primary\" type=\"submit\">Search</button>
+      </div>
+    </form>
+  </div>
+</nav>
   <div class=\"table-responsive pe-3 ps-3\">
+
     <table class=\"table table-hover align-middle\" id=\"pc-dt-simple\">
+      
       <thead>
-        <tr >
+        <tr>
           <th></th>
           <th>#</th>
           <th>Patient</th>
@@ -50,150 +62,178 @@ class __TwigTemplate_fae9d0472aedbce00fff93847cc82574 extends Template
         </tr>
       </thead>
       <tbody>
-      ";
-        // line 17
+        ";
+        // line 29
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["myclients"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["client"]) {
-            // line 18
-            echo "  <tr>
-    <td>
-      <div class=\"form-check\">
-        <input class=\"form-check-input\" type=\"checkbox\">
-      </div>
-    </td>
-    <td>";
-            // line 24
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "user_id", [], "any", false, false, false, 24), "html", null, true);
-            echo "</td>
-    <td>
-      <div class=\"d-flex align-items-center\">
-        <img src=\"";
-            // line 27
-            echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
-            echo "/assets/images/undraw_profile.svg\" alt=\"user-image\"
-                class=\"rounded-circle me-2\" style=\"width: 30px; height: 30px;\">
-        <div>
-          <h6 class=\"mb-0\">";
             // line 30
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "patient_name", [], "any", false, false, false, 30), "html", null, true);
-            echo " ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "patient_surname", [], "any", false, false, false, 30), "html", null, true);
-            echo "</h6>
-          <p class=\"text-muted f-12 mb-0 text-truncate\" style=\"max-width: 150px;\">";
-            // line 31
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "patient_email", [], "any", false, false, false, 31), "html", null, true);
-            echo "</p>
-        </div>
-      </div>
-    </td>
-    <td class=\"text-nowrap\">";
-            // line 35
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "patient_phone", [], "any", false, false, false, 35), "html", null, true);
-            echo "</td>
-    <td>";
+            echo "        <tr>
+          <td>
+            <div class=\"form-check\">
+              <input class=\"form-check-input\" type=\"checkbox\">
+            </div>
+          </td>
+          <td>";
             // line 36
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "appointment_date", [], "any", false, false, false, 36), "F j, l"), "html", null, true);
-            echo " - ";
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "start_time", [], "any", false, false, false, 36), "H:i"), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "user_id", [], "any", false, false, false, 36), "html", null, true);
             echo "</td>
-    <td>";
-            // line 37
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "caregiver_data", [], "any", false, false, false, 37), "html", null, true);
-            echo "</td>
-    <td>
-      ";
+          <td>
+            <div class=\"d-flex align-items-center\">
+              <img src=\"";
             // line 39
-            if ((twig_get_attribute($this->env, $this->source, $context["client"], "status", [], "any", false, false, false, 39) == "scheduled")) {
-                // line 40
-                echo "        <span class=\"badge bg-success rounded-pill\" style=\"font-size: 12px;\">Verify</span>
-      ";
-            } elseif ((twig_get_attribute($this->env, $this->source,             // line 41
-$context["client"], "status", [], "any", false, false, false, 41) == "canceled")) {
-                // line 42
-                echo "        <span class=\"badge bg-danger rounded-pill\" style=\"font-size: 12px;\">";
-                echo twig_escape_filter($this->env, twig_capitalize_string_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "status", [], "any", false, false, false, 42)), "html", null, true);
-                echo "</span>
-      ";
-            } else {
-                // line 44
-                echo "        <span class=\"badge bg-primary rounded-pill\" style=\"font-size: 12px;\">";
-                echo twig_escape_filter($this->env, twig_capitalize_string_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "status", [], "any", false, false, false, 44)), "html", null, true);
-                echo "</span>
-      ";
-            }
-            // line 46
-            echo "    </td>
-    <td class=\"text-center\">
-      <ul class=\"list-inline me-auto mb-0\">
-        ";
+            echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+            echo "/assets/images/undraw_profile.svg\" alt=\"user-image\" class=\"rounded-circle me-2\"
+                style=\"width: 30px; height: 30px;\">
+              <div>
+                <h6 class=\"mb-0\">";
+            // line 42
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "patient_name", [], "any", false, false, false, 42), "html", null, true);
+            echo " ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "patient_surname", [], "any", false, false, false, 42), "html", null, true);
+            echo "</h6>
+                <p class=\"text-muted f-12 mb-0 text-truncate\" style=\"max-width: 150px;\">";
+            // line 43
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "patient_email", [], "any", false, false, false, 43), "html", null, true);
+            echo "</p>
+              </div>
+            </div>
+          </td>
+          <td class=\"text-nowrap\">";
+            // line 47
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "patient_phone", [], "any", false, false, false, 47), "html", null, true);
+            echo "</td>
+          <td>";
+            // line 48
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "appointment_date", [], "any", false, false, false, 48), "F j, l"), "html", null, true);
+            echo " - ";
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "start_time", [], "any", false, false, false, 48), "H:i"), "html", null, true);
+            echo "</td>
+          <td>";
             // line 49
-            if ((twig_get_attribute($this->env, $this->source, $context["client"], "status", [], "any", false, false, false, 49) == "scheduled")) {
-                // line 50
-                echo "        <li class=\"list-inline-item\" data-bs-toggle=\"tooltip\" title=\"Complete\">
-          <form id=\"complete-form-";
-                // line 51
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "appointment_id", [], "any", false, false, false, 51), "html", null, true);
-                echo "\" action=\"";
-                echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
-                echo "/appointments/update/";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "appointment_id", [], "any", false, false, false, 51), "html", null, true);
-                echo "\" method=\"POST\" class=\"d-inline\">
-            <a href=\"#\" class=\"avtar avtar-xs btn-link-secondary\" onclick=\"event.preventDefault(); document.getElementById('complete-form-";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "caregiver_data", [], "any", false, false, false, 49), "html", null, true);
+            echo "</td>
+          <td>
+            ";
+            // line 51
+            if ((twig_get_attribute($this->env, $this->source, $context["client"], "status", [], "any", false, false, false, 51) == "scheduled")) {
                 // line 52
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "appointment_id", [], "any", false, false, false, 52), "html", null, true);
-                echo "').submit();\">
-              <i class=\"fa-solid fa-circle-check\" style=\"color: green;\"></i>
-            </a>
-          </form>
-        </li>
-        ";
+                echo "            <span class=\"badge bg-success rounded-pill\" style=\"font-size: 12px;\">Verify</span>
+            ";
+            } elseif ((twig_get_attribute($this->env, $this->source,             // line 53
+$context["client"], "status", [], "any", false, false, false, 53) == "canceled")) {
+                // line 54
+                echo "            <span class=\"badge bg-danger rounded-pill\" style=\"font-size: 12px;\">";
+                echo twig_escape_filter($this->env, twig_capitalize_string_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "status", [], "any", false, false, false, 54)), "html", null, true);
+                echo "</span>
+            ";
+            } else {
+                // line 56
+                echo "            <span class=\"badge bg-primary rounded-pill\" style=\"font-size: 12px;\">";
+                echo twig_escape_filter($this->env, twig_capitalize_string_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "status", [], "any", false, false, false, 56)), "html", null, true);
+                echo "</span>
+            ";
             }
             // line 58
-            echo "        <li class=\"list-inline-item\" data-bs-toggle=\"tooltip\" title=\"Contact\">
-          <a href=\"#\" class=\"avtar avtar-xs btn-link-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#user-edit_add-modal\">
-            <i class=\"fa-solid fa-envelope\"></i>
-          </a>
-        </li>
-      ";
-            // line 63
-            if ((twig_get_attribute($this->env, $this->source, $context["client"], "status", [], "any", false, false, false, 63) == "scheduled")) {
+            echo "          </td>
+          <td class=\"text-center\">
+            <ul class=\"list-inline me-auto mb-0\">
+              ";
+            // line 61
+            if ((twig_get_attribute($this->env, $this->source, $context["client"], "status", [], "any", false, false, false, 61) == "scheduled")) {
+                // line 62
+                echo "              <li class=\"list-inline-item\" data-bs-toggle=\"tooltip\" title=\"Complete\">
+                <form id=\"complete-form-";
+                // line 63
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "appointment_id", [], "any", false, false, false, 63), "html", null, true);
+                echo "\"
+                  action=\"";
                 // line 64
-                echo "        <li class=\"list-inline-item\" data-bs-toggle=\"tooltip\" title=\"Cancel\">
-          <form id=\"cancel-form-";
-                // line 65
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "appointment_id", [], "any", false, false, false, 65), "html", null, true);
-                echo "\" action=\"";
+                echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+                echo "/appointments/update/";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "appointment_id", [], "any", false, false, false, 64), "html", null, true);
+                echo "\" method=\"POST\"
+                  class=\"d-inline\">
+                  <a href=\"#\" class=\"avtar avtar-xs btn-link-secondary\"
+                    onclick=\"event.preventDefault(); document.getElementById('complete-form-";
+                // line 67
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "appointment_id", [], "any", false, false, false, 67), "html", null, true);
+                echo "').submit();\">
+                    <i class=\"fa-solid fa-circle-check\" style=\"color: green;\"></i>
+                  </a>
+                </form>
+              </li>
+              ";
+            }
+            // line 73
+            echo "              <li class=\"list-inline-item\" data-bs-toggle=\"tooltip\" title=\"Contact\">
+                <a href=\"#\" class=\"avtar avtar-xs btn-link-primary\" data-bs-toggle=\"modal\"
+                  data-bs-target=\"#user-edit_add-modal\">
+                  <i class=\"fa-solid fa-envelope\"></i>
+                </a>
+              </li>
+              ";
+            // line 79
+            if ((twig_get_attribute($this->env, $this->source, $context["client"], "status", [], "any", false, false, false, 79) == "scheduled")) {
+                // line 80
+                echo "              <li class=\"list-inline-item\" data-bs-toggle=\"tooltip\" title=\"Cancel\">
+                <form id=\"cancel-form-";
+                // line 81
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "appointment_id", [], "any", false, false, false, 81), "html", null, true);
+                echo "\"
+                  action=\"";
+                // line 82
                 echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
                 echo "/appointments/cancel/";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "appointment_id", [], "any", false, false, false, 65), "html", null, true);
-                echo "\" method=\"POST\" class=\"d-inline\">
-            <a href=\"#\" class=\"avtar avtar-xs btn-link-danger\" onclick=\"event.preventDefault(); document.getElementById('cancel-form-";
-                // line 66
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "appointment_id", [], "any", false, false, false, 66), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "appointment_id", [], "any", false, false, false, 82), "html", null, true);
+                echo "\" method=\"POST\"
+                  class=\"d-inline\">
+                  <a href=\"#\" class=\"avtar avtar-xs btn-link-danger\"
+                    onclick=\"event.preventDefault(); document.getElementById('cancel-form-";
+                // line 85
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "appointment_id", [], "any", false, false, false, 85), "html", null, true);
                 echo "').submit();\">
-            <i class=\"fa-solid fa-user-slash\" style=\"color: rgb(212, 7, 7);\"></i>
-          </a>
-        </form>
-        </li>
-        ";
+                    <i class=\"fa-solid fa-user-slash\" style=\"color: rgb(212, 7, 7);\"></i>
+                  </a>
+                </form>
+              </li>
+              ";
             }
-            // line 72
-            echo "       
-    
-      </ul>
-    </td>
-    
-  </tr>
-  ";
+            // line 91
+            echo "
+
+            </ul>
+          </td>
+
+        </tr>
+        
+        ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['client'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 79
-        echo "  </tbody>
-  </table>
-</div>";
+        // line 99
+        echo "
+      </tbody>
+      
+    </table>
+
+<nav aria-label=\"...\" class=\"mt-5\">
+ <ul class=\"pagination justify-content-end\">
+    <li class=\"page-item disabled\">
+      <a class=\"page-link\">Previous</a>
+    </li>
+    <li class=\"page-item\"><a class=\"page-link\" href=\"#\">1</a></li>
+    <li class=\"page-item active\">
+      <a class=\"page-link\" href=\"#\" aria-current=\"page\">2</a>
+    </li>
+    <li class=\"page-item\"><a class=\"page-link\" href=\"#\">3</a></li>
+    <li class=\"page-item\">
+      <a class=\"page-link\" href=\"#\">Next</a>
+    </li>
+  </ul>
+</nav>
+  </div>";
     }
 
     public function getTemplateName()
@@ -208,16 +248,28 @@ $context["client"], "status", [], "any", false, false, false, 41) == "canceled")
 
     public function getDebugInfo()
     {
-        return array (  194 => 79,  182 => 72,  173 => 66,  165 => 65,  162 => 64,  160 => 63,  153 => 58,  144 => 52,  136 => 51,  133 => 50,  131 => 49,  126 => 46,  120 => 44,  114 => 42,  112 => 41,  109 => 40,  107 => 39,  102 => 37,  96 => 36,  92 => 35,  85 => 31,  79 => 30,  73 => 27,  67 => 24,  59 => 18,  55 => 17,  37 => 1,);
+        return array (  216 => 99,  203 => 91,  194 => 85,  186 => 82,  182 => 81,  179 => 80,  177 => 79,  169 => 73,  160 => 67,  152 => 64,  148 => 63,  145 => 62,  143 => 61,  138 => 58,  132 => 56,  126 => 54,  124 => 53,  121 => 52,  119 => 51,  114 => 49,  108 => 48,  104 => 47,  97 => 43,  91 => 42,  85 => 39,  79 => 36,  71 => 30,  67 => 29,  37 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<div class=\"card\">
+        return new Source("<div class=\"card mt-3\">
+    <nav class=\"navbar\">
+  <div class=\"container-fluid justify-content-end\">
+    <form class=\"d-flex\" role=\"search\">
+      <div class=\"input-group\">
+        <input class=\"form-control\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\" />
+        <button class=\"btn btn-outline-primary\" type=\"submit\">Search</button>
+      </div>
+    </form>
+  </div>
+</nav>
   <div class=\"table-responsive pe-3 ps-3\">
+
     <table class=\"table table-hover align-middle\" id=\"pc-dt-simple\">
+      
       <thead>
-        <tr >
+        <tr>
           <th></th>
           <th>#</th>
           <th>Patient</th>
@@ -229,70 +281,96 @@ $context["client"], "status", [], "any", false, false, false, 41) == "canceled")
         </tr>
       </thead>
       <tbody>
-      {% for client in myclients %}
-  <tr>
-    <td>
-      <div class=\"form-check\">
-        <input class=\"form-check-input\" type=\"checkbox\">
-      </div>
-    </td>
-    <td>{{client.user_id}}</td>
-    <td>
-      <div class=\"d-flex align-items-center\">
-        <img src=\"{{base_url}}/assets/images/undraw_profile.svg\" alt=\"user-image\"
-                class=\"rounded-circle me-2\" style=\"width: 30px; height: 30px;\">
-        <div>
-          <h6 class=\"mb-0\">{{client.patient_name}} {{client.patient_surname}}</h6>
-          <p class=\"text-muted f-12 mb-0 text-truncate\" style=\"max-width: 150px;\">{{client.patient_email}}</p>
-        </div>
-      </div>
-    </td>
-    <td class=\"text-nowrap\">{{client.patient_phone}}</td>
-    <td>{{client.appointment_date|date(\"F j, l\")}} - {{client.start_time|date(\"H:i\")}}</td>
-    <td>{{client.caregiver_data}}</td>
-    <td>
-      {% if client.status == 'scheduled' %}
-        <span class=\"badge bg-success rounded-pill\" style=\"font-size: 12px;\">Verify</span>
-      {% elseif client.status == 'canceled' %}
-        <span class=\"badge bg-danger rounded-pill\" style=\"font-size: 12px;\">{{ client.status|capitalize }}</span>
-      {% else %}
-        <span class=\"badge bg-primary rounded-pill\" style=\"font-size: 12px;\">{{ client.status|capitalize }}</span>
-      {% endif %}
-    </td>
-    <td class=\"text-center\">
-      <ul class=\"list-inline me-auto mb-0\">
-        {%if client.status=='scheduled'%}
-        <li class=\"list-inline-item\" data-bs-toggle=\"tooltip\" title=\"Complete\">
-          <form id=\"complete-form-{{ client.appointment_id }}\" action=\"{{ base_url }}/appointments/update/{{ client.appointment_id }}\" method=\"POST\" class=\"d-inline\">
-            <a href=\"#\" class=\"avtar avtar-xs btn-link-secondary\" onclick=\"event.preventDefault(); document.getElementById('complete-form-{{ client.appointment_id }}').submit();\">
-              <i class=\"fa-solid fa-circle-check\" style=\"color: green;\"></i>
-            </a>
-          </form>
-        </li>
-        {%endif%}
-        <li class=\"list-inline-item\" data-bs-toggle=\"tooltip\" title=\"Contact\">
-          <a href=\"#\" class=\"avtar avtar-xs btn-link-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#user-edit_add-modal\">
-            <i class=\"fa-solid fa-envelope\"></i>
-          </a>
-        </li>
-      {%if client.status=='scheduled'%}
-        <li class=\"list-inline-item\" data-bs-toggle=\"tooltip\" title=\"Cancel\">
-          <form id=\"cancel-form-{{ client.appointment_id }}\" action=\"{{ base_url }}/appointments/cancel/{{  client.appointment_id}}\" method=\"POST\" class=\"d-inline\">
-            <a href=\"#\" class=\"avtar avtar-xs btn-link-danger\" onclick=\"event.preventDefault(); document.getElementById('cancel-form-{{ client.appointment_id }}').submit();\">
-            <i class=\"fa-solid fa-user-slash\" style=\"color: rgb(212, 7, 7);\"></i>
-          </a>
-        </form>
-        </li>
-        {%endif%}
-       
-    
-      </ul>
-    </td>
-    
-  </tr>
-  {%endfor%}
-  </tbody>
-  </table>
-</div>", "./inc/caregiver/tabel.html", "C:\\laragon\\www\\doctorlab\\views\\inc\\caregiver\\tabel.html");
+        {% for client in myclients %}
+        <tr>
+          <td>
+            <div class=\"form-check\">
+              <input class=\"form-check-input\" type=\"checkbox\">
+            </div>
+          </td>
+          <td>{{client.user_id}}</td>
+          <td>
+            <div class=\"d-flex align-items-center\">
+              <img src=\"{{base_url}}/assets/images/undraw_profile.svg\" alt=\"user-image\" class=\"rounded-circle me-2\"
+                style=\"width: 30px; height: 30px;\">
+              <div>
+                <h6 class=\"mb-0\">{{client.patient_name}} {{client.patient_surname}}</h6>
+                <p class=\"text-muted f-12 mb-0 text-truncate\" style=\"max-width: 150px;\">{{client.patient_email}}</p>
+              </div>
+            </div>
+          </td>
+          <td class=\"text-nowrap\">{{client.patient_phone}}</td>
+          <td>{{client.appointment_date|date(\"F j, l\")}} - {{client.start_time|date(\"H:i\")}}</td>
+          <td>{{client.caregiver_data}}</td>
+          <td>
+            {% if client.status == 'scheduled' %}
+            <span class=\"badge bg-success rounded-pill\" style=\"font-size: 12px;\">Verify</span>
+            {% elseif client.status == 'canceled' %}
+            <span class=\"badge bg-danger rounded-pill\" style=\"font-size: 12px;\">{{ client.status|capitalize }}</span>
+            {% else %}
+            <span class=\"badge bg-primary rounded-pill\" style=\"font-size: 12px;\">{{ client.status|capitalize }}</span>
+            {% endif %}
+          </td>
+          <td class=\"text-center\">
+            <ul class=\"list-inline me-auto mb-0\">
+              {%if client.status=='scheduled'%}
+              <li class=\"list-inline-item\" data-bs-toggle=\"tooltip\" title=\"Complete\">
+                <form id=\"complete-form-{{ client.appointment_id }}\"
+                  action=\"{{ base_url }}/appointments/update/{{ client.appointment_id }}\" method=\"POST\"
+                  class=\"d-inline\">
+                  <a href=\"#\" class=\"avtar avtar-xs btn-link-secondary\"
+                    onclick=\"event.preventDefault(); document.getElementById('complete-form-{{ client.appointment_id }}').submit();\">
+                    <i class=\"fa-solid fa-circle-check\" style=\"color: green;\"></i>
+                  </a>
+                </form>
+              </li>
+              {%endif%}
+              <li class=\"list-inline-item\" data-bs-toggle=\"tooltip\" title=\"Contact\">
+                <a href=\"#\" class=\"avtar avtar-xs btn-link-primary\" data-bs-toggle=\"modal\"
+                  data-bs-target=\"#user-edit_add-modal\">
+                  <i class=\"fa-solid fa-envelope\"></i>
+                </a>
+              </li>
+              {%if client.status=='scheduled'%}
+              <li class=\"list-inline-item\" data-bs-toggle=\"tooltip\" title=\"Cancel\">
+                <form id=\"cancel-form-{{ client.appointment_id }}\"
+                  action=\"{{ base_url }}/appointments/cancel/{{  client.appointment_id}}\" method=\"POST\"
+                  class=\"d-inline\">
+                  <a href=\"#\" class=\"avtar avtar-xs btn-link-danger\"
+                    onclick=\"event.preventDefault(); document.getElementById('cancel-form-{{ client.appointment_id }}').submit();\">
+                    <i class=\"fa-solid fa-user-slash\" style=\"color: rgb(212, 7, 7);\"></i>
+                  </a>
+                </form>
+              </li>
+              {%endif%}
+
+
+            </ul>
+          </td>
+
+        </tr>
+        
+        {%endfor%}
+
+      </tbody>
+      
+    </table>
+
+<nav aria-label=\"...\" class=\"mt-5\">
+ <ul class=\"pagination justify-content-end\">
+    <li class=\"page-item disabled\">
+      <a class=\"page-link\">Previous</a>
+    </li>
+    <li class=\"page-item\"><a class=\"page-link\" href=\"#\">1</a></li>
+    <li class=\"page-item active\">
+      <a class=\"page-link\" href=\"#\" aria-current=\"page\">2</a>
+    </li>
+    <li class=\"page-item\"><a class=\"page-link\" href=\"#\">3</a></li>
+    <li class=\"page-item\">
+      <a class=\"page-link\" href=\"#\">Next</a>
+    </li>
+  </ul>
+</nav>
+  </div>", "./inc/caregiver/tabel.html", "C:\\laragon\\www\\doctorlab\\views\\inc\\caregiver\\tabel.html");
     }
 }

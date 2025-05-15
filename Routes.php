@@ -15,6 +15,7 @@ return [
     App\Core\Route::get('|^caregiver/register/?$|',      "Caregiver", 'create'),
     App\Core\Route::post('|^caregiver/register/?$|',     "Caregiver", "store" ),
     App\Core\Route::get('|^caregiver/show/([0-9]+)/?$|', "Caregiver", "show"),
+    App\Core\Route::get('|^caregiver/([a-z]+)/?$|',     "Caregiver", "specificCaregivers"),
 
 
     #MakeAppointment
@@ -51,13 +52,13 @@ return [
     App\Core\Route::get('|^caregiver/profile/([0-9]+)/?$|', "CaregiverProfile", 'show'),
     App\Core\Route::get('|^caregiver/edit/([0-9]+)/?$|',    "CaregiverProfile", 'edit'),
     App\Core\Route::post('|^caregiver/update/([0-9]+)/?$|', "CaregiverProfile", 'update'),
-    App\Core\Route::get('|^caregiver/appointments/?$|',      "CaregiverProfile", 'appointmens'),
+    App\Core\Route::get('|^caregiver/appointments/?$|',     "CaregiverProfile",'appointmens'),
     App\Core\Route::get('|^caregiver/logout/?$|',           "CaregiverProfile", 'logout'),
     
 
     #Api
-    App\Core\Route::get('|^api/appointments/notifications?$|', "Appointment", "sendNotification"),
-    App\Core\Route::post('|^api/appointments/notifications/read?$|', "Appointment", "readNotification"),
+    App\Core\Route::get( '|^api/appointments/notifications?$|',       "Appointment", "sendNotification"),
+    App\Core\Route::post('|^api/appointments/notifications/read?$|',  "Appointment", "readNotification"),
 
 
 

@@ -47,6 +47,31 @@ class AvailabilityModel extends Model{
         return $data;
 
     }
+        public function getCaregiverData(string $title){
+
+        $sql = "SELECT * FROM availability 
+                    LEFT JOIN user ON user.user_id = availability.user_id
+                    WHERE user.role = 'caregiver' 
+                    AND JSON_UNQUOTE(JSON_EXTRACT(caregiver_data, '$.title')) = ?;
+                    ";
+        
+        $prep = $this->getConnection()->prepare($sql);
+        $res = $prep->execute([$title]);
+
+        $data = [];
+
+        if($res){
+            $data = $prep->fetchAll(\PDO::FETCH_OBJ);
+
+           foreach($data as $value){
+                $value->schedule = json_decode($value->schedule,true);
+                $value->caregiver_data = json_decode($value->caregiver_data, true);
+            }
+        }
+
+        return $data;
+
+    }
 
 
 

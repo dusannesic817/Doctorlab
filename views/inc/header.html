@@ -30,7 +30,7 @@
                       <div class="d-flex flex-column flex-lg-row mb-3 justify-content-start ms-5 caregiver">
                         {% for doctor in doctors.doctors|slice(0, 4) %}
                           <div class="p-2 mb-2 me-2">
-                            <li><a href="" style="color: black !important;"><i class="{{ doctor.icon }}"></i><b> {{ doctor.title }}</b> </a></li>
+                            <li><a href="{{base_url}}/caregiver/{{ doctor.title|lower }}" style="color: black !important;"><i class="{{ doctor.icon }}"></i><b> {{ doctor.title }}</b> </a></li>
                           </div>
                         {% endfor %}
                       </div>
@@ -38,14 +38,14 @@
                       <div class="d-flex flex-column flex-lg-row mb-3 justify-content-start ms-5 caregiver">
                         {% for doctor in doctors.doctors|slice(4,4) %}
                           <div class="p-2  mb-2 me-2">
-                            <li><a href="" style="color: black !important;"><i class="{{ doctor.icon }} "></i> <b> {{ doctor.title }}</b></a></li>
+                            <li><a href="{{base_url}}/caregiver/{{ doctor.title|lower }}" style="color: black !important;"><i class="{{ doctor.icon }} "></i> <b> {{ doctor.title }}</b></a></li>
                           </div>
                         {% endfor %}
                       </div>
                       <div class="d-flex flex-column flex-lg-row mb-3 justify-content-start ms-5 caregiver">
                         {% for doctor in doctors.doctors|slice(8,2) %}
                           <div class="p-2  mb-2 me-2">
-                            <li><a href="" style="color: black !important;"><i class="{{ doctor.icon }}"></i> <b> {{ doctor.title }}</b></a></li>
+                            <li><a href="{{base_url}}/caregiver/{{ doctor.title|lower }}" style="color: black !important;"><i class="{{ doctor.icon }}"></i> <b> {{ doctor.title }}</b></a></li>
                           </div>
                         {% endfor %}
                       </div>

@@ -77,8 +77,12 @@ class __TwigTemplate_50224a08d9a49685f418e06832038247 extends Template
         foreach ($context['_seq'] as $context["_key"] => $context["doctor"]) {
             // line 32
             echo "                          <div class=\"p-2 mb-2 me-2\">
-                            <li><a href=\"\" style=\"color: black !important;\"><i class=\"";
+                            <li><a href=\"";
             // line 33
+            echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+            echo "/caregiver/";
+            echo twig_escape_filter($this->env, twig_lower_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "title", [], "any", false, false, false, 33)), "html", null, true);
+            echo "\" style=\"color: black !important;\"><i class=\"";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "icon", [], "any", false, false, false, 33), "html", null, true);
             echo "\"></i><b> ";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "title", [], "any", false, false, false, 33), "html", null, true);
@@ -100,8 +104,12 @@ class __TwigTemplate_50224a08d9a49685f418e06832038247 extends Template
         foreach ($context['_seq'] as $context["_key"] => $context["doctor"]) {
             // line 40
             echo "                          <div class=\"p-2  mb-2 me-2\">
-                            <li><a href=\"\" style=\"color: black !important;\"><i class=\"";
+                            <li><a href=\"";
             // line 41
+            echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+            echo "/caregiver/";
+            echo twig_escape_filter($this->env, twig_lower_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "title", [], "any", false, false, false, 41)), "html", null, true);
+            echo "\" style=\"color: black !important;\"><i class=\"";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "icon", [], "any", false, false, false, 41), "html", null, true);
             echo " \"></i> <b> ";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "title", [], "any", false, false, false, 41), "html", null, true);
@@ -122,8 +130,12 @@ class __TwigTemplate_50224a08d9a49685f418e06832038247 extends Template
         foreach ($context['_seq'] as $context["_key"] => $context["doctor"]) {
             // line 47
             echo "                          <div class=\"p-2  mb-2 me-2\">
-                            <li><a href=\"\" style=\"color: black !important;\"><i class=\"";
+                            <li><a href=\"";
             // line 48
+            echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+            echo "/caregiver/";
+            echo twig_escape_filter($this->env, twig_lower_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "title", [], "any", false, false, false, 48)), "html", null, true);
+            echo "\" style=\"color: black !important;\"><i class=\"";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "icon", [], "any", false, false, false, 48), "html", null, true);
             echo "\"></i> <b> ";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "title", [], "any", false, false, false, 48), "html", null, true);
@@ -218,7 +230,7 @@ class __TwigTemplate_50224a08d9a49685f418e06832038247 extends Template
 
     public function getDebugInfo()
     {
-        return array (  200 => 86,  193 => 82,  187 => 79,  182 => 76,  170 => 71,  160 => 68,  154 => 64,  152 => 63,  138 => 51,  127 => 48,  124 => 47,  120 => 46,  116 => 44,  105 => 41,  102 => 40,  98 => 39,  93 => 36,  82 => 33,  79 => 32,  75 => 31,  49 => 8,  45 => 7,  37 => 1,);
+        return array (  212 => 86,  205 => 82,  199 => 79,  194 => 76,  182 => 71,  172 => 68,  166 => 64,  164 => 63,  150 => 51,  135 => 48,  132 => 47,  128 => 46,  124 => 44,  109 => 41,  106 => 40,  102 => 39,  97 => 36,  82 => 33,  79 => 32,  75 => 31,  49 => 8,  45 => 7,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -255,7 +267,7 @@ class __TwigTemplate_50224a08d9a49685f418e06832038247 extends Template
                       <div class=\"d-flex flex-column flex-lg-row mb-3 justify-content-start ms-5 caregiver\">
                         {% for doctor in doctors.doctors|slice(0, 4) %}
                           <div class=\"p-2 mb-2 me-2\">
-                            <li><a href=\"\" style=\"color: black !important;\"><i class=\"{{ doctor.icon }}\"></i><b> {{ doctor.title }}</b> </a></li>
+                            <li><a href=\"{{base_url}}/caregiver/{{ doctor.title|lower }}\" style=\"color: black !important;\"><i class=\"{{ doctor.icon }}\"></i><b> {{ doctor.title }}</b> </a></li>
                           </div>
                         {% endfor %}
                       </div>
@@ -263,14 +275,14 @@ class __TwigTemplate_50224a08d9a49685f418e06832038247 extends Template
                       <div class=\"d-flex flex-column flex-lg-row mb-3 justify-content-start ms-5 caregiver\">
                         {% for doctor in doctors.doctors|slice(4,4) %}
                           <div class=\"p-2  mb-2 me-2\">
-                            <li><a href=\"\" style=\"color: black !important;\"><i class=\"{{ doctor.icon }} \"></i> <b> {{ doctor.title }}</b></a></li>
+                            <li><a href=\"{{base_url}}/caregiver/{{ doctor.title|lower }}\" style=\"color: black !important;\"><i class=\"{{ doctor.icon }} \"></i> <b> {{ doctor.title }}</b></a></li>
                           </div>
                         {% endfor %}
                       </div>
                       <div class=\"d-flex flex-column flex-lg-row mb-3 justify-content-start ms-5 caregiver\">
                         {% for doctor in doctors.doctors|slice(8,2) %}
                           <div class=\"p-2  mb-2 me-2\">
-                            <li><a href=\"\" style=\"color: black !important;\"><i class=\"{{ doctor.icon }}\"></i> <b> {{ doctor.title }}</b></a></li>
+                            <li><a href=\"{{base_url}}/caregiver/{{ doctor.title|lower }}\" style=\"color: black !important;\"><i class=\"{{ doctor.icon }}\"></i> <b> {{ doctor.title }}</b></a></li>
                           </div>
                         {% endfor %}
                       </div>

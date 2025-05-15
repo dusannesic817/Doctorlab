@@ -12,80 +12,37 @@ class CaregiverController extends Controller{
 
 
     public function index(){
-
+        
         $caregiver = new AvailabilityModel($this->getDatabaseConnection());
-
         $data = $caregiver->getCaregiversAvailability();
-
-
-        date_default_timezone_set("Europe/Belgrade");
-
-        $today = new \DateTime();
-        $dayOfWeek = $today->format('N');
-        
-        if ($dayOfWeek == 6) {
-            $today->modify('+2 days'); 
-        } elseif ($dayOfWeek == 7) {
-            $today->modify('+1 day'); 
-        }
-        
-        $caregivers = [];
-        
-        foreach ($data as $value) {
-            $scheduleEntries = [];
-        
-            foreach ($value->schedule['schedule'] as $v) {
-                $dateObj = \DateTime::createFromFormat('F j l', $v['date']);
-                
-               
-                if ($dateObj && $dateObj >= $today) {
-
-                    $scheduleEntries[] = [
-                        'original_date' => $v['date'],
-                        'date_obj' => $dateObj,
-                        'times' => $v['times']
-                    ];
-                }
-            }
-        
-            
-            usort($scheduleEntries, function ($a, $b) {
-                return $a['date_obj'] <=> $b['date_obj'];
-            });
-        
-            
-            $sortedSchedule = [];
-            foreach ($scheduleEntries as $entry) {
-                $sortedSchedule[$entry['original_date']] = [
-                    'times' => $entry['times']
-                ];
-            }
-        
-            if (!empty($sortedSchedule)) {
-                $caregivers[] = [
-                    'user_id' => $value->user_id,
-                    'name' => $value->name,
-                    'surname' => $value->surname,
-                    'profile_photo' => $value->profile_photo,
-                    'doctor' => $value->caregiver_data['title'],
-                    'schedule' => $sortedSchedule
-                ];
-            }
-        }
-
-   
-
+        $caregivers=$this->caregiverData($data);
 
         $count=0;
         foreach($caregivers as $value){
            $count++;
         }
-
-
+        
         $this->set('caregivers', $caregivers);
         $this->set('count', $count);
 
 
+    }
+
+    public function specificCaregivers(string $title){
+        
+        $title = ucfirst(strtolower($title)); 
+        $caregiver = new AvailabilityModel($this->getDatabaseConnection());
+        $data = $caregiver->getCaregiverData($title);
+        $caregivers=$this->caregiverData($data);
+
+          $count=0;
+        foreach($caregivers as $value){
+           $count++;
+        }
+
+        
+        $this->set('caregivers', $caregivers);
+        $this->set('count', $count);
     }
 
     public function show($id){
@@ -97,14 +54,14 @@ class CaregiverController extends Controller{
         }
     }
 
-   public function create(){
+    public function create(){
 
 
-   }
+    }
 
 
 
-   public function store(){
+    public function store(){
 
         $userModel = new UserModel($this->getDatabaseConnection());
         
@@ -161,14 +118,14 @@ class CaregiverController extends Controller{
 
         $this->set("message", "Napravljen je novi nalog");
 
-   }
+    }
 
 
     public function login(){
 
-   }
+    }
 
-   public function authenticate(){
+    public function authenticate(){
 
         $email = filter_input(INPUT_POST, 'email_login');
         $password = filter_input(INPUT_POST, 'password_login');
@@ -197,7 +154,69 @@ class CaregiverController extends Controller{
        $this->redirect('/profile');
 
 
-   }
+    }
+
+
+    public function caregiverData($data){
+    
+       
+
+        date_default_timezone_set("Europe/Belgrade");
+        $today = new \DateTime();
+        $today->setTime(0, 0, 0);  
+
+        $dayOfWeek = $today->format('N');
+        if ($dayOfWeek == 6) {
+            $today->modify('+2 days'); 
+        } elseif ($dayOfWeek == 7) {
+            $today->modify('+1 day'); 
+        }
+
+        $caregivers = [];
+
+        foreach ($data as $value) {
+            $scheduleEntries = [];
+
+            foreach ($value->schedule['schedule'] as $v){
+                $dateObj = \DateTime::createFromFormat('F j l', $v['date']);
+                
+                if ($dateObj) {
+                    $dateObj->setTime(0, 0, 0);
+                }
+
+                if ($dateObj && $dateObj >= $today) {
+                    $scheduleEntries[] = [
+                        'original_date' => $v['date'],
+                        'date_obj' => $dateObj,
+                        'times' => $v['times']
+                    ];
+                }
+            }
+            usort($scheduleEntries, function ($a, $b) {
+                return $a['date_obj'] <=> $b['date_obj'];
+            });
+
+            $sortedSchedule = [];
+            foreach ($scheduleEntries as $entry){
+                $sortedSchedule[$entry['original_date']] = [
+                    'times' => $entry['times']
+                ];
+            }
+
+            if (!empty($sortedSchedule)){
+                $caregivers[] = [
+                    'user_id' => $value->user_id,
+                    'name' => $value->name,
+                    'surname' => $value->surname,
+                    'profile_photo' => $value->profile_photo,
+                    'doctor' => $value->caregiver_data['title'],
+                    'schedule' => $sortedSchedule
+                ];
+            }
+        }
+
+        return $caregivers;
+    }
 
    
 }

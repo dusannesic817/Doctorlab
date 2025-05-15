@@ -107,49 +107,94 @@ class __TwigTemplate_66540d55b76e2b27fbb4bb1a9c8ee6e3 extends Template
 
 
 <script>
-  function fetchNotifications() {
+let isDropdownOpen = false;
+let lastNotificationCount = 0;
+
+function formatDateToReadable(dateString) {
+    const date = new Date(dateString);
+    const options = { month: 'short', day: 'numeric', weekday: 'long' };
+    // month: 'short' daje May, day: 'numeric' daje 15, weekday: 'long' daje Monday
+    return date.toLocaleDateString('en-US', options);
+}
+
+function fetchNotifications() {
     \$.ajax({
-        url: '/api/appointment/notifications', // Tvoja ruta
+        url: '";
+        // line 71
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/api/appointments/notifications', // Dobavlja nepročitane notifikacije
         method: 'GET',
         success: function(data) {
             const \$notificationCount = \$('#notification-count');
             const \$notificationList = \$('#notification-list');
 
-            \$notificationList.empty(); // Očisti stare notifikacije
+            // Ako dropdown je otvoren i broj je isti, ništa ne menjaj
+            if (data.length === lastNotificationCount && isDropdownOpen) return;
 
-            if (data.length > 0) {
-                \$notificationCount.text(data.length).show();
+            lastNotificationCount = data.length;
+            \$notificationList.empty();
 
-                data.forEach(notification => {
-                    const html = `
-                        <a class=\"dropdown-item d-flex align-items-center\" href=\"#\">
-                            <div class=\"me-3\">\${notification.icon}</div>
-                            <div>
-                                <div class=\"small text-gray-500\">\${notification.appointment_date} \${notification.start_time}</div>
-                                <span class=\"font-weight-bold\">\${notification.message}</span>
-                            </div>
-                        </a>`;
-                    \$notificationList.append(html);
-                });
+            if (data.length > 0 && !isDropdownOpen) {
+                let displayCount = data.length > 3 ? '3+' : data.length;
+                \$notificationCount.text(displayCount).show();
             } else {
                 \$notificationCount.hide();
             }
+
+            data.forEach(notification => {
+                const formattedDate = formatDateToReadable(notification.appointment_date);
+                const html = `
+                    <a class=\"dropdown-item d-flex align-items-center\" href=\"#\">
+                        <div class=\"me-3\">\${notification.icon}</div>
+                        <div>
+                            <div class=\"small text-gray-500\">\${formattedDate} \${notification.start_time} \${notification.caregiver_data}</div>
+                            <span class=\"font-weight-bold\">\${notification.message}</span>
+                        </div>
+                    </a>`;
+                \$notificationList.append(html);
+            });
         },
-        error: function() {
-            console.error('Došlo je do greške pri učitavanju notifikacija.');
+        error: function(xhr, status, error) {
+            console.error('Greška prilikom učitavanja notifikacija:', status, error);
+            console.log(xhr.responseText);
         }
     });
 }
 
-// Inicijalno učitavanje + interval za polling
 fetchNotifications();
-setInterval(fetchNotifications, 3000); // Svakih 10 sekundi
+setInterval(fetchNotifications, 3000);
 
-// Kada korisnik klikne na zvonce, skloni crvenu tačku
+// Kada korisnik klikne na zvonce
 \$('#alertsDropdown').on('click', function () {
-    \$('#notification-count').hide();
+    isDropdownOpen = true;
+    // Ne sakrivaj odmah brojčanik ovde, čeka se zatvaranje dropdowna
 });
 
+// Kada se dropdown zatvori (koristeći Bootstrap event 'hidden.bs.dropdown')
+\$('#alertsDropdown').on('hidden.bs.dropdown', function () {
+    isDropdownOpen = false;
+
+    // Obeležavamo notifikacije kao pročitane tek kad korisnik zatvori dropdown
+    \$.ajax({
+        url: '";
+        // line 125
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/api/appointments/notifications/read',
+        method: 'POST',
+        success: function() {
+            console.log('Notifikacije označene kao pročitane.');
+            \$('#notification-count').hide();  // Sada sakrijemo brojčanik
+        },
+        error: function() {
+            console.error('Greška prilikom označavanja notifikacija.');
+        }
+    });
+});
+
+// Opcionalno: ako želiš da korisnik može da zatvori dropdown i mišem van dropdowna
+\$('.dropdown-menu').on('mouseleave', function () {
+    isDropdownOpen = false;
+});
 </script>
 ";
     }
@@ -166,7 +211,7 @@ setInterval(fetchNotifications, 3000); // Svakih 10 sekundi
 
     public function getDebugInfo()
     {
-        return array (  96 => 46,  87 => 42,  77 => 39,  37 => 1,);
+        return array (  181 => 125,  124 => 71,  96 => 46,  87 => 42,  77 => 39,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -229,49 +274,88 @@ setInterval(fetchNotifications, 3000); // Svakih 10 sekundi
 
 
 <script>
-  function fetchNotifications() {
+let isDropdownOpen = false;
+let lastNotificationCount = 0;
+
+function formatDateToReadable(dateString) {
+    const date = new Date(dateString);
+    const options = { month: 'short', day: 'numeric', weekday: 'long' };
+    // month: 'short' daje May, day: 'numeric' daje 15, weekday: 'long' daje Monday
+    return date.toLocaleDateString('en-US', options);
+}
+
+function fetchNotifications() {
     \$.ajax({
-        url: '/api/appointment/notifications', // Tvoja ruta
+        url: '{{base_url}}/api/appointments/notifications', // Dobavlja nepročitane notifikacije
         method: 'GET',
         success: function(data) {
             const \$notificationCount = \$('#notification-count');
             const \$notificationList = \$('#notification-list');
 
-            \$notificationList.empty(); // Očisti stare notifikacije
+            // Ako dropdown je otvoren i broj je isti, ništa ne menjaj
+            if (data.length === lastNotificationCount && isDropdownOpen) return;
 
-            if (data.length > 0) {
-                \$notificationCount.text(data.length).show();
+            lastNotificationCount = data.length;
+            \$notificationList.empty();
 
-                data.forEach(notification => {
-                    const html = `
-                        <a class=\"dropdown-item d-flex align-items-center\" href=\"#\">
-                            <div class=\"me-3\">\${notification.icon}</div>
-                            <div>
-                                <div class=\"small text-gray-500\">\${notification.appointment_date} \${notification.start_time}</div>
-                                <span class=\"font-weight-bold\">\${notification.message}</span>
-                            </div>
-                        </a>`;
-                    \$notificationList.append(html);
-                });
+            if (data.length > 0 && !isDropdownOpen) {
+                let displayCount = data.length > 3 ? '3+' : data.length;
+                \$notificationCount.text(displayCount).show();
             } else {
                 \$notificationCount.hide();
             }
+
+            data.forEach(notification => {
+                const formattedDate = formatDateToReadable(notification.appointment_date);
+                const html = `
+                    <a class=\"dropdown-item d-flex align-items-center\" href=\"#\">
+                        <div class=\"me-3\">\${notification.icon}</div>
+                        <div>
+                            <div class=\"small text-gray-500\">\${formattedDate} \${notification.start_time} \${notification.caregiver_data}</div>
+                            <span class=\"font-weight-bold\">\${notification.message}</span>
+                        </div>
+                    </a>`;
+                \$notificationList.append(html);
+            });
         },
-        error: function() {
-            console.error('Došlo je do greške pri učitavanju notifikacija.');
+        error: function(xhr, status, error) {
+            console.error('Greška prilikom učitavanja notifikacija:', status, error);
+            console.log(xhr.responseText);
         }
     });
 }
 
-// Inicijalno učitavanje + interval za polling
 fetchNotifications();
-setInterval(fetchNotifications, 3000); // Svakih 10 sekundi
+setInterval(fetchNotifications, 3000);
 
-// Kada korisnik klikne na zvonce, skloni crvenu tačku
+// Kada korisnik klikne na zvonce
 \$('#alertsDropdown').on('click', function () {
-    \$('#notification-count').hide();
+    isDropdownOpen = true;
+    // Ne sakrivaj odmah brojčanik ovde, čeka se zatvaranje dropdowna
 });
 
+// Kada se dropdown zatvori (koristeći Bootstrap event 'hidden.bs.dropdown')
+\$('#alertsDropdown').on('hidden.bs.dropdown', function () {
+    isDropdownOpen = false;
+
+    // Obeležavamo notifikacije kao pročitane tek kad korisnik zatvori dropdown
+    \$.ajax({
+        url: '{{base_url}}/api/appointments/notifications/read',
+        method: 'POST',
+        success: function() {
+            console.log('Notifikacije označene kao pročitane.');
+            \$('#notification-count').hide();  // Sada sakrijemo brojčanik
+        },
+        error: function() {
+            console.error('Greška prilikom označavanja notifikacija.');
+        }
+    });
+});
+
+// Opcionalno: ako želiš da korisnik može da zatvori dropdown i mišem van dropdowna
+\$('.dropdown-menu').on('mouseleave', function () {
+    isDropdownOpen = false;
+});
 </script>
 ", "./inc/caregiver/topbar_caregiver.html", "C:\\laragon\\www\\doctorlab\\views\\inc\\caregiver\\topbar_caregiver.html");
     }

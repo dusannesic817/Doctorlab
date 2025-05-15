@@ -58,6 +58,8 @@ return [
 
     #Api
    App\Core\Route::get('|^api/appointments/notifications?$|', "Appointment", "sendNotification"),
+   App\Core\Route::post('|^api/appointments/notifications/read?$|', "Appointment", "readNotification"),
+
 
 
     App\Core\Route::any('|^.*$|', 'Main', 'home'),

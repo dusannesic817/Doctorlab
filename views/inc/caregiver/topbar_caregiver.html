@@ -56,47 +56,81 @@
 
 
 <script>
-  function fetchNotifications() {
+let isDropdownOpen = false;
+let lastNotificationCount = 0;
+
+function formatDateToReadable(dateString) {
+    const date = new Date(dateString);
+    const options = { month: 'short', day: 'numeric', weekday: 'long' };
+    return date.toLocaleDateString('en-US', options);
+}
+
+function fetchNotifications() {
     $.ajax({
-        url: '/api/appointment/notifications', // Tvoja ruta
+        url: '{{base_url}}/api/appointments/notifications', 
         method: 'GET',
         success: function(data) {
             const $notificationCount = $('#notification-count');
             const $notificationList = $('#notification-list');
 
-            $notificationList.empty(); // Očisti stare notifikacije
+            if (data.length === lastNotificationCount && isDropdownOpen) return;
 
-            if (data.length > 0) {
-                $notificationCount.text(data.length).show();
+            lastNotificationCount = data.length;
+            $notificationList.empty();
 
-                data.forEach(notification => {
-                    const html = `
-                        <a class="dropdown-item d-flex align-items-center" href="#">
-                            <div class="me-3">${notification.icon}</div>
-                            <div>
-                                <div class="small text-gray-500">${notification.appointment_date} ${notification.start_time}</div>
-                                <span class="font-weight-bold">${notification.message}</span>
-                            </div>
-                        </a>`;
-                    $notificationList.append(html);
-                });
+            if (data.length > 0 && !isDropdownOpen) {
+                let displayCount = data.length > 3 ? '3+' : data.length;
+                $notificationCount.text(displayCount).show();
             } else {
                 $notificationCount.hide();
             }
+
+            data.forEach(notification => {
+                const formattedDate = formatDateToReadable(notification.appointment_date);
+                const html = `
+                    <a class="dropdown-item d-flex align-items-center" href="#">
+                        <div class="me-3">${notification.icon}</div>
+                        <div>
+                            <div class="small text-gray-500">${formattedDate} ${notification.start_time} ${notification.appointment_type}</div>
+                            <span class="font-weight-bold">${notification.message}</span>
+                        </div>
+                    </a>`;
+                $notificationList.append(html);
+            });
         },
-        error: function() {
-            console.error('Došlo je do greške pri učitavanju notifikacija.');
+        error: function(xhr, status, error) {
+            console.error('Greška prilikom učitavanja notifikacija:', status, error);
+            console.log(xhr.responseText);
         }
     });
 }
 
-// Inicijalno učitavanje + interval za polling
 fetchNotifications();
-setInterval(fetchNotifications, 3000); // Svakih 10 sekundi
+setInterval(fetchNotifications, 3000);
 
-// Kada korisnik klikne na zvonce, skloni crvenu tačku
 $('#alertsDropdown').on('click', function () {
-    $('#notification-count').hide();
+    isDropdownOpen = true;
+   
 });
 
+$('#alertsDropdown').on('hidden.bs.dropdown', function () {
+    isDropdownOpen = false;
+   
+    $.ajax({
+        url: '{{base_url}}/api/appointments/notifications/read',
+        method: 'POST',
+        success: function() {
+            console.log('Notifikacije označene kao pročitane.');
+            $('#notification-count').hide();  
+        },
+        error: function() {
+            console.error('Greška prilikom označavanja notifikacija.');
+        }
+    });
+});
+
+
+$('.dropdown-menu').on('mouseleave', function () {
+    isDropdownOpen = false;
+});
 </script>

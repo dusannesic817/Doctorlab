@@ -132,11 +132,21 @@ class AppointmentController extends UserRoleController{
 
     }
 
+    public function readNotification() {
+        $id = $this->getSession()->get("user_id");
+        $appointmentModel = new AppointmentModel($this->getDatabaseConnection());
 
-    public function getNotification($id){
-       
+        $read = $appointmentModel->updateByField('provider_id', $id, 'is_read', 1);
 
+        header('Content-Type: application/json');
+        if ($read) {
+            echo json_encode(['status' => 'success']);
+        } else {
+            http_response_code(500);
+            echo json_encode(['status' => 'error']);
+        }
     }
+
 
     public function sendNotification(){
 
@@ -175,17 +185,5 @@ class AppointmentController extends UserRoleController{
         exit; 
     }
 
-
-/*
-
-             $notifications[] = [
-            'message' => $message,
-            'appointment_date' => $appointment['appointment_date'],
-            'start_time' => $appointment['start_time'],
-            'appointment_type'=>$appointment['caregiver_data'],
-            'updated_at' => $appointment['updated_at'],
-        ];
-
-*/ 
 
 }

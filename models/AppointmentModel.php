@@ -90,19 +90,21 @@ class AppointmentModel extends Model{
     }
 
     public function getNotification($id){
-        $sql=" SELECT a.appointment_id AS appointment_id, 
-                    a.status as status, 
-                    a.appointment_date as appointment_date,
-                    a.caregiver_data as caregiver_data, 
-                    a.start_time as start_time, 
-                    a.updated_at as updated_at,
-                    u.name AS user_name, 
-                    u.surname AS user_surname
-                FROM appointment AS a
-                LEFT JOIN user AS u ON u.user_id = a.user_id
-                WHERE a.provider_id = ?  
-                AND a.status IN ('scheduled', 'canceled')
-                ORDER BY a.updated_at DESC";
+       $sql = "SELECT 
+            a.appointment_id AS appointment_id, 
+            a.status as status, 
+            a.appointment_date as appointment_date,
+            a.caregiver_data as caregiver_data, 
+            a.start_time as start_time, 
+            a.updated_at as updated_at,
+            u.name AS user_name, 
+            u.surname AS user_surname
+        FROM appointment AS a
+        LEFT JOIN user AS u ON u.user_id = a.user_id
+        WHERE a.provider_id = ?  
+          AND a.status IN ('scheduled', 'canceled')
+          AND a.is_read = 0
+        ORDER BY a.updated_at DESC";
 
 
         $prep = $this->getConnection()->prepare($sql);

@@ -224,7 +224,12 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
         foreach ($context['_seq'] as $context["_key"] => $context["doctor"]) {
             // line 142
             echo "                <div class=\"p-2\">
-                    <a href=\"#\">
+                    <a href=\"";
+            // line 143
+            echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+            echo "/caregiver/";
+            echo twig_escape_filter($this->env, twig_lower_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "title", [], "any", false, false, false, 143)), "html", null, true);
+            echo "\">
                         <b>";
             // line 144
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "title", [], "any", false, false, false, 144), "html", null, true);
@@ -255,7 +260,12 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
         foreach ($context['_seq'] as $context["_key"] => $context["doctor"]) {
             // line 157
             echo "                <div class=\"p-2\">
-                    <a href=\"#\">
+                    <a href=\"";
+            // line 158
+            echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+            echo "/caregiver/";
+            echo twig_escape_filter($this->env, twig_lower_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "title", [], "any", false, false, false, 158)), "html", null, true);
+            echo "\">
                         <b>";
             // line 159
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "title", [], "any", false, false, false, 159), "html", null, true);
@@ -378,7 +388,7 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
 
     public function getDebugInfo()
     {
-        return array (  337 => 221,  328 => 215,  275 => 164,  265 => 160,  261 => 159,  257 => 157,  253 => 156,  244 => 149,  234 => 145,  230 => 144,  226 => 142,  222 => 141,  213 => 135,  191 => 116,  170 => 98,  152 => 83,  140 => 74,  128 => 65,  108 => 48,  97 => 40,  86 => 32,  63 => 11,  61 => 10,  57 => 8,  55 => 7,  53 => 6,  50 => 5,  46 => 4,  35 => 1,);
+        return array (  347 => 221,  338 => 215,  285 => 164,  275 => 160,  271 => 159,  265 => 158,  262 => 157,  258 => 156,  249 => 149,  239 => 145,  235 => 144,  229 => 143,  226 => 142,  222 => 141,  213 => 135,  191 => 116,  170 => 98,  152 => 83,  140 => 74,  128 => 65,  108 => 48,  97 => 40,  86 => 32,  63 => 11,  61 => 10,  57 => 8,  55 => 7,  53 => 6,  50 => 5,  46 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -525,7 +535,7 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
         <div class=\"d-flex flex-column mb-3  text-start caregiver\">
             {% for doctor in doctors.doctors|slice(0, 5) %}
                 <div class=\"p-2\">
-                    <a href=\"#\">
+                    <a href=\"{{base_url}}/caregiver/{{ doctor.title|lower }}\">
                         <b>{{ doctor.title }}</b>
                         <i class=\"{{ doctor.icon }}\"></i>
                     </a>
@@ -540,7 +550,7 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
         <div class=\"d-flex flex-column mb-3 text-start caregiver\">
           {% for doctor in doctors.doctors|slice(5, 10) %}
                 <div class=\"p-2\">
-                    <a href=\"#\">
+                    <a href=\"{{base_url}}/caregiver/{{ doctor.title|lower }}\">
                         <b>{{ doctor.title }}</b>
                         <i class=\"{{doctor.icon}}\"></i>
                     </a>

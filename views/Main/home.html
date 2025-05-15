@@ -140,7 +140,7 @@
         <div class="d-flex flex-column mb-3  text-start caregiver">
             {% for doctor in doctors.doctors|slice(0, 5) %}
                 <div class="p-2">
-                    <a href="#">
+                    <a href="{{base_url}}/caregiver/{{ doctor.title|lower }}">
                         <b>{{ doctor.title }}</b>
                         <i class="{{ doctor.icon }}"></i>
                     </a>
@@ -155,7 +155,7 @@
         <div class="d-flex flex-column mb-3 text-start caregiver">
           {% for doctor in doctors.doctors|slice(5, 10) %}
                 <div class="p-2">
-                    <a href="#">
+                    <a href="{{base_url}}/caregiver/{{ doctor.title|lower }}">
                         <b>{{ doctor.title }}</b>
                         <i class="{{doctor.icon}}"></i>
                     </a>

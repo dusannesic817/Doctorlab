@@ -159,8 +159,6 @@ class CaregiverController extends Controller{
 
     public function caregiverData($data){
     
-       
-
         date_default_timezone_set("Europe/Belgrade");
         $today = new \DateTime();
         $today->setTime(0, 0, 0);  

@@ -6,7 +6,7 @@ use App\Core\Controller;
 use App\Models\AppointmentModel;
 use App\Models\AvailabilityModel;
 use App\Models\UserModel;
-
+use App\Core\MailService;
 
 class MakeAppointmentController extends Controller{
 
@@ -60,6 +60,9 @@ class MakeAppointmentController extends Controller{
     public function storeAppointment() {
        
         $user_id = $this->getSession()->get('user_id');
+        $userModel= new UserModel($this->getDatabaseConnection());
+        $user= $userModel->getById($user_id);
+        $user_email=$user->email;
 
         if ($user_id === null) {
            
@@ -102,6 +105,9 @@ class MakeAppointmentController extends Controller{
         if($insert){
             $avalabilityModel = new AvailabilityModel($this->getDatabaseConnection());
             $avalabilityModel->editAvailability($id,$formatted_date,$formatted_time,'busy');
+            $mailer = new MailService();
+            $mailer->sendMail($user_email,"You scheduled your appointment","Your appointment has been scheduled. Time: ".$formatted_date ." at ". $formatted_time);
+              
            
         }
     

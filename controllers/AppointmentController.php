@@ -2,9 +2,11 @@
 
 namespace App\Controllers;
 
+use App\Core\MailService;
 use App\Core\Role\UserRoleController;
 use App\Models\AppointmentModel;
 use App\Models\AvailabilityModel;
+use App\Models\UserModel;
 
 
 
@@ -89,9 +91,19 @@ class AppointmentController extends UserRoleController{
         $auth = $this->getSession()->get('user_id');
         $appointmentModel = new AppointmentModel($this->getDatabaseConnection());
         $details = $appointmentModel->getById($id);
+        $user_id = $details->user_id;
+
+        $userModel = new UserModel($this->getDatabaseConnection());
+        $user = $userModel->getById($user_id);
+
+        $user_email = $user->email;
+       
 
        
         $caregiver_id=$details->provider_id;
+
+        $doctor = $userModel->getById($caregiver_id);
+        $role = $doctor->role;
 
         $appointment_date= $details->appointment_date;
         $date = new \DateTime($appointment_date);
@@ -106,10 +118,14 @@ class AppointmentController extends UserRoleController{
 
         $updateStatus = $appointmentModel->editById($id,['status'=>'canceled']);
         
-        if ($updateStatus) {
+        if ($updateStatus){
+
             $availabilityModel = new AvailabilityModel($this->getDatabaseConnection());
             $availabilityModel->editAvailability($caregiver_id,$formatted_date,$formatted_time,'free');
-           
+   
+            $mailer = new MailService();
+            $mailer->sendMail($user_email,"The appointment is canceled","Your appointment has been canceled. Please schedule a new one");
+              
         }
 
         $referer = $_SERVER['HTTP_REFERER'] ?? '/caregiver/appointments/' . $auth;

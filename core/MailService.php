@@ -21,7 +21,8 @@ class MailService
         $this->mailer->Password   = \Configruation::MAIL_PASSWORD;
         $this->mailer->SMTPSecure = \Configruation::MAIL_PROTOCOL;
         $this->mailer->Port       = \Configruation::MAIL_PORT;
-        $this->mailer->setFrom(\Configruation::MAIL_USERNAME);
+        $this->mailer->setFrom(\Configruation::MAIL_USERNAME, 'DoctorLab Notifiaction');
+
         $this->mailer->isHTML(true);
     }
 
@@ -35,8 +36,11 @@ class MailService
             $this->mailer->send();
             return true;
         } catch (Exception $e) {
-            
-            return false;
-        }
+    echo 'Mailer Error: ' . $this->mailer->ErrorInfo . "<br>";
+    echo 'Exception Message: ' . $e->getMessage();
+    return false;
+}
+
+
     }
 }

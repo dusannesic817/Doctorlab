@@ -54,12 +54,15 @@ class __TwigTemplate_a29a5bec64a54d218342957734980288 extends Template
         // line 6
         echo "
 <div class=\"container-fluid\">
+       <div class=\"d-sm-flex align-items-center justify-content-between mb-4\">
+            <h1 class=\"h3 mb-0 text-gray-800\">Clients</h1>
+          </div>
   <div class=\"row\">
     <div class=\"col-12\">
       ";
-        // line 10
-        $this->loadTemplate("./inc/caregiver/tabel.html", "Appointment/index.html", 10)->display($context);
-        // line 11
+        // line 13
+        $this->loadTemplate("./inc/caregiver/tabel.html", "Appointment/index.html", 13)->display($context);
+        // line 14
         echo "    </div>
   </div>
 </div>
@@ -82,7 +85,7 @@ class __TwigTemplate_a29a5bec64a54d218342957734980288 extends Template
 
     public function getDebugInfo()
     {
-        return array (  63 => 11,  61 => 10,  55 => 6,  53 => 5,  50 => 4,  46 => 3,  35 => 1,);
+        return array (  66 => 14,  64 => 13,  55 => 6,  53 => 5,  50 => 4,  46 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -94,6 +97,9 @@ class __TwigTemplate_a29a5bec64a54d218342957734980288 extends Template
 {% include './inc/session_alerts/edit_banner.html' %}
 
 <div class=\"container-fluid\">
+       <div class=\"d-sm-flex align-items-center justify-content-between mb-4\">
+            <h1 class=\"h3 mb-0 text-gray-800\">Clients</h1>
+          </div>
   <div class=\"row\">
     <div class=\"col-12\">
       {% include './inc/caregiver/tabel.html' %}

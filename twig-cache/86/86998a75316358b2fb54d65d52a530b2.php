@@ -44,36 +44,34 @@ class __TwigTemplate_66540d55b76e2b27fbb4bb1a9c8ee6e3 extends Template
     <!-- Topbar Navbar -->
     <ul class=\"navbar-nav ms-auto\">
       <!-- Nav Item - Alerts -->
-     <li class=\"nav-item dropdown no-arrow mx-1\">
-  <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"alertsDropdown\" role=\"button\" data-bs-toggle=\"dropdown\"
-     aria-haspopup=\"true\" aria-expanded=\"false\">
-    <i class=\"fas fa-bell fa-fw\"></i>
-    <span id=\"notification-count\" class=\"badge bg-danger\" style=\"display: none;\">0</span>
-  </a>
+      <li class=\"nav-item dropdown no-arrow mx-1\">
+        <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"alertsDropdown\" role=\"button\" data-bs-toggle=\"dropdown\"
+          aria-haspopup=\"true\" aria-expanded=\"false\">
+          <i class=\"fas fa-bell fa-fw\"></i>
+          <span id=\"notification-count\" class=\"badge bg-danger\" style=\"display: none;\">0</span>
+        </a>
 
-  <div class=\"dropdown-menu dropdown-menu-end shadow animated--grow-in\" aria-labelledby=\"alertsDropdown\">
-    <h6 class=\"dropdown-header\">
-      Alerts Center
-    </h6>
+        <div class=\"dropdown-menu dropdown-menu-end shadow animated--grow-in\" aria-labelledby=\"alertsDropdown\">
+          <h6 class=\"dropdown-header\">
+            Alerts Center
+          </h6>
 
-    <!-- Ovde ćemo dinamički dodavati notifikacije -->
-    <div id=\"notification-list\"></div>
-  </div>
-</li>
-
+          <div id=\"notification-list\"></div>
+        </div>
+      </li>
 
       <!-- Nav Item - User Information -->
       <div class=\"topbar-divider d-none d-sm-block\"></div>
       <li class=\"nav-item dropdown no-arrow\">
         <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"userDropdown\" role=\"button\" data-bs-toggle=\"dropdown\"
-           aria-haspopup=\"true\" aria-expanded=\"false\">
+          aria-haspopup=\"true\" aria-expanded=\"false\">
           <span class=\"mr-2 d-none d-lg-inline text-gray-600 small\"></span>
           <img class=\"img-profile rounded-circle\" src=\"\" />
         </a>
         <!-- Dropdown - User Information -->
         <div class=\"dropdown-menu dropdown-menu-end shadow animated--grow-in\" aria-labelledby=\"userDropdown\">
           <a class=\"dropdown-item\" href=\"";
-        // line 39
+        // line 37
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/";
         echo twig_escape_filter($this->env, ($context["role"] ?? null), "html", null, true);
@@ -83,7 +81,7 @@ class __TwigTemplate_66540d55b76e2b27fbb4bb1a9c8ee6e3 extends Template
             <i class=\"fas fa-user fa-sm fa-fw mr-2 text-gray-400\"></i> Profile
           </a>
           <a class=\"dropdown-item\" href=\"";
-        // line 42
+        // line 40
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/caregiver/edit/";
         echo twig_escape_filter($this->env, ($context["auth"] ?? null), "html", null, true);
@@ -92,9 +90,10 @@ class __TwigTemplate_66540d55b76e2b27fbb4bb1a9c8ee6e3 extends Template
           </a>
           <div class=\"dropdown-divider\"></div>
           <a class=\"dropdown-item\" href=\"";
-        // line 46
+        // line 44
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
-        echo "/caregiver/logout\" data-bs-toggle=\"modal\" data-bs-target=\"#logoutModal\">
+        echo "/caregiver/logout\" data-bs-toggle=\"modal\"
+            data-bs-target=\"#logoutModal\">
             <i class=\"fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400\"></i> Logout
           </a>
         </div>
@@ -107,96 +106,90 @@ class __TwigTemplate_66540d55b76e2b27fbb4bb1a9c8ee6e3 extends Template
 
 
 <script>
-let isDropdownOpen = false;
-let lastNotificationCount = 0;
+  let isDropdownOpen = false;
+  let lastNotificationCount = 0;
 
-function formatDateToReadable(dateString) {
+  function formatDateToReadable(dateString) {
     const date = new Date(dateString);
     const options = { month: 'short', day: 'numeric', weekday: 'long' };
-    // month: 'short' daje May, day: 'numeric' daje 15, weekday: 'long' daje Monday
     return date.toLocaleDateString('en-US', options);
-}
+  }
 
-function fetchNotifications() {
+  function fetchNotifications() {
     \$.ajax({
-        url: '";
-        // line 71
+      url: '";
+        // line 69
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
-        echo "/api/appointments/notifications', // Dobavlja nepročitane notifikacije
-        method: 'GET',
-        success: function(data) {
-            const \$notificationCount = \$('#notification-count');
-            const \$notificationList = \$('#notification-list');
+        echo "/api/appointments/notifications',
+      method: 'GET',
+      success: function (data) {
+        const \$notificationCount = \$('#notification-count');
+        const \$notificationList = \$('#notification-list');
 
-            // Ako dropdown je otvoren i broj je isti, ništa ne menjaj
-            if (data.length === lastNotificationCount && isDropdownOpen) return;
+        if (data.length === lastNotificationCount && isDropdownOpen) return;
 
-            lastNotificationCount = data.length;
-            \$notificationList.empty();
+        lastNotificationCount = data.length;
+        \$notificationList.empty();
 
-            if (data.length > 0 && !isDropdownOpen) {
-                let displayCount = data.length > 3 ? '3+' : data.length;
-                \$notificationCount.text(displayCount).show();
-            } else {
-                \$notificationCount.hide();
-            }
+        if (data.length > 0 && !isDropdownOpen) {
+          let displayCount = data.length > 3 ? '3+' : data.length;
+          \$notificationCount.text(displayCount).show();
+        } else {
+          \$notificationCount.hide();
+        }
 
-            data.forEach(notification => {
-                const formattedDate = formatDateToReadable(notification.appointment_date);
-                const html = `
+        data.forEach(notification => {
+          const formattedDate = formatDateToReadable(notification.appointment_date);
+          const html = `
                     <a class=\"dropdown-item d-flex align-items-center\" href=\"#\">
                         <div class=\"me-3\">\${notification.icon}</div>
                         <div>
-                            <div class=\"small text-gray-500\">\${formattedDate} \${notification.start_time} \${notification.caregiver_data}</div>
+                            <div class=\"small text-gray-500\">\${formattedDate} \${notification.start_time} \${notification.appointment_type}</div>
                             <span class=\"font-weight-bold\">\${notification.message}</span>
                         </div>
                     </a>`;
-                \$notificationList.append(html);
-            });
-        },
-        error: function(xhr, status, error) {
-            console.error('Greška prilikom učitavanja notifikacija:', status, error);
-            console.log(xhr.responseText);
-        }
+          \$notificationList.append(html);
+        });
+      },
+      error: function (xhr, status, error) {
+        console.error('Greška prilikom učitavanja notifikacija:', status, error);
+        console.log(xhr.responseText);
+      }
     });
-}
+  }
 
-fetchNotifications();
-setInterval(fetchNotifications, 3000);
+  fetchNotifications();
+  setInterval(fetchNotifications, 3000);
 
-// Kada korisnik klikne na zvonce
-\$('#alertsDropdown').on('click', function () {
+  \$('#alertsDropdown').on('click', function () {
     isDropdownOpen = true;
-    // Ne sakrivaj odmah brojčanik ovde, čeka se zatvaranje dropdowna
-});
 
-// Kada se dropdown zatvori (koristeći Bootstrap event 'hidden.bs.dropdown')
-\$('#alertsDropdown').on('hidden.bs.dropdown', function () {
+  });
+
+  \$('#alertsDropdown').on('hidden.bs.dropdown', function () {
     isDropdownOpen = false;
 
-    // Obeležavamo notifikacije kao pročitane tek kad korisnik zatvori dropdown
     \$.ajax({
-        url: '";
-        // line 125
+      url: '";
+        // line 119
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/api/appointments/notifications/read',
-        method: 'POST',
-        success: function() {
-            console.log('Notifikacije označene kao pročitane.');
-            \$('#notification-count').hide();  // Sada sakrijemo brojčanik
-        },
-        error: function() {
-            console.error('Greška prilikom označavanja notifikacija.');
-        }
+      method: 'POST',
+      success: function () {
+        console.log('Notifikacije označene kao pročitane.');
+        \$('#notification-count').hide();
+      },
+      error: function () {
+        console.error('Greška prilikom označavanja notifikacija.');
+      }
     });
-});
+  });
 
-// Opcionalno: ako želiš da korisnik može da zatvori dropdown i mišem van dropdowna
-\$('.dropdown-menu').on('mouseleave', function () {
+
+  \$('.dropdown-menu').on('mouseleave', function () {
     isDropdownOpen = false;
-});
-</script>
-";
+  });
+</script>";
     }
 
     public function getTemplateName()
@@ -211,7 +204,7 @@ setInterval(fetchNotifications, 3000);
 
     public function getDebugInfo()
     {
-        return array (  181 => 125,  124 => 71,  96 => 46,  87 => 42,  77 => 39,  37 => 1,);
+        return array (  175 => 119,  122 => 69,  94 => 44,  85 => 40,  75 => 37,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -226,29 +219,27 @@ setInterval(fetchNotifications, 3000);
     <!-- Topbar Navbar -->
     <ul class=\"navbar-nav ms-auto\">
       <!-- Nav Item - Alerts -->
-     <li class=\"nav-item dropdown no-arrow mx-1\">
-  <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"alertsDropdown\" role=\"button\" data-bs-toggle=\"dropdown\"
-     aria-haspopup=\"true\" aria-expanded=\"false\">
-    <i class=\"fas fa-bell fa-fw\"></i>
-    <span id=\"notification-count\" class=\"badge bg-danger\" style=\"display: none;\">0</span>
-  </a>
+      <li class=\"nav-item dropdown no-arrow mx-1\">
+        <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"alertsDropdown\" role=\"button\" data-bs-toggle=\"dropdown\"
+          aria-haspopup=\"true\" aria-expanded=\"false\">
+          <i class=\"fas fa-bell fa-fw\"></i>
+          <span id=\"notification-count\" class=\"badge bg-danger\" style=\"display: none;\">0</span>
+        </a>
 
-  <div class=\"dropdown-menu dropdown-menu-end shadow animated--grow-in\" aria-labelledby=\"alertsDropdown\">
-    <h6 class=\"dropdown-header\">
-      Alerts Center
-    </h6>
+        <div class=\"dropdown-menu dropdown-menu-end shadow animated--grow-in\" aria-labelledby=\"alertsDropdown\">
+          <h6 class=\"dropdown-header\">
+            Alerts Center
+          </h6>
 
-    <!-- Ovde ćemo dinamički dodavati notifikacije -->
-    <div id=\"notification-list\"></div>
-  </div>
-</li>
-
+          <div id=\"notification-list\"></div>
+        </div>
+      </li>
 
       <!-- Nav Item - User Information -->
       <div class=\"topbar-divider d-none d-sm-block\"></div>
       <li class=\"nav-item dropdown no-arrow\">
         <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"userDropdown\" role=\"button\" data-bs-toggle=\"dropdown\"
-           aria-haspopup=\"true\" aria-expanded=\"false\">
+          aria-haspopup=\"true\" aria-expanded=\"false\">
           <span class=\"mr-2 d-none d-lg-inline text-gray-600 small\"></span>
           <img class=\"img-profile rounded-circle\" src=\"\" />
         </a>
@@ -261,7 +252,8 @@ setInterval(fetchNotifications, 3000);
             <i class=\"fas fa-cogs fa-sm fa-fw mr-2 text-gray-400\"></i> Settings
           </a>
           <div class=\"dropdown-divider\"></div>
-          <a class=\"dropdown-item\" href=\"{{base_url}}/caregiver/logout\" data-bs-toggle=\"modal\" data-bs-target=\"#logoutModal\">
+          <a class=\"dropdown-item\" href=\"{{base_url}}/caregiver/logout\" data-bs-toggle=\"modal\"
+            data-bs-target=\"#logoutModal\">
             <i class=\"fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400\"></i> Logout
           </a>
         </div>
@@ -274,89 +266,83 @@ setInterval(fetchNotifications, 3000);
 
 
 <script>
-let isDropdownOpen = false;
-let lastNotificationCount = 0;
+  let isDropdownOpen = false;
+  let lastNotificationCount = 0;
 
-function formatDateToReadable(dateString) {
+  function formatDateToReadable(dateString) {
     const date = new Date(dateString);
     const options = { month: 'short', day: 'numeric', weekday: 'long' };
-    // month: 'short' daje May, day: 'numeric' daje 15, weekday: 'long' daje Monday
     return date.toLocaleDateString('en-US', options);
-}
+  }
 
-function fetchNotifications() {
+  function fetchNotifications() {
     \$.ajax({
-        url: '{{base_url}}/api/appointments/notifications', // Dobavlja nepročitane notifikacije
-        method: 'GET',
-        success: function(data) {
-            const \$notificationCount = \$('#notification-count');
-            const \$notificationList = \$('#notification-list');
+      url: '{{base_url}}/api/appointments/notifications',
+      method: 'GET',
+      success: function (data) {
+        const \$notificationCount = \$('#notification-count');
+        const \$notificationList = \$('#notification-list');
 
-            // Ako dropdown je otvoren i broj je isti, ništa ne menjaj
-            if (data.length === lastNotificationCount && isDropdownOpen) return;
+        if (data.length === lastNotificationCount && isDropdownOpen) return;
 
-            lastNotificationCount = data.length;
-            \$notificationList.empty();
+        lastNotificationCount = data.length;
+        \$notificationList.empty();
 
-            if (data.length > 0 && !isDropdownOpen) {
-                let displayCount = data.length > 3 ? '3+' : data.length;
-                \$notificationCount.text(displayCount).show();
-            } else {
-                \$notificationCount.hide();
-            }
+        if (data.length > 0 && !isDropdownOpen) {
+          let displayCount = data.length > 3 ? '3+' : data.length;
+          \$notificationCount.text(displayCount).show();
+        } else {
+          \$notificationCount.hide();
+        }
 
-            data.forEach(notification => {
-                const formattedDate = formatDateToReadable(notification.appointment_date);
-                const html = `
+        data.forEach(notification => {
+          const formattedDate = formatDateToReadable(notification.appointment_date);
+          const html = `
                     <a class=\"dropdown-item d-flex align-items-center\" href=\"#\">
                         <div class=\"me-3\">\${notification.icon}</div>
                         <div>
-                            <div class=\"small text-gray-500\">\${formattedDate} \${notification.start_time} \${notification.caregiver_data}</div>
+                            <div class=\"small text-gray-500\">\${formattedDate} \${notification.start_time} \${notification.appointment_type}</div>
                             <span class=\"font-weight-bold\">\${notification.message}</span>
                         </div>
                     </a>`;
-                \$notificationList.append(html);
-            });
-        },
-        error: function(xhr, status, error) {
-            console.error('Greška prilikom učitavanja notifikacija:', status, error);
-            console.log(xhr.responseText);
-        }
+          \$notificationList.append(html);
+        });
+      },
+      error: function (xhr, status, error) {
+        console.error('Greška prilikom učitavanja notifikacija:', status, error);
+        console.log(xhr.responseText);
+      }
     });
-}
+  }
 
-fetchNotifications();
-setInterval(fetchNotifications, 3000);
+  fetchNotifications();
+  setInterval(fetchNotifications, 3000);
 
-// Kada korisnik klikne na zvonce
-\$('#alertsDropdown').on('click', function () {
+  \$('#alertsDropdown').on('click', function () {
     isDropdownOpen = true;
-    // Ne sakrivaj odmah brojčanik ovde, čeka se zatvaranje dropdowna
-});
 
-// Kada se dropdown zatvori (koristeći Bootstrap event 'hidden.bs.dropdown')
-\$('#alertsDropdown').on('hidden.bs.dropdown', function () {
+  });
+
+  \$('#alertsDropdown').on('hidden.bs.dropdown', function () {
     isDropdownOpen = false;
 
-    // Obeležavamo notifikacije kao pročitane tek kad korisnik zatvori dropdown
     \$.ajax({
-        url: '{{base_url}}/api/appointments/notifications/read',
-        method: 'POST',
-        success: function() {
-            console.log('Notifikacije označene kao pročitane.');
-            \$('#notification-count').hide();  // Sada sakrijemo brojčanik
-        },
-        error: function() {
-            console.error('Greška prilikom označavanja notifikacija.');
-        }
+      url: '{{base_url}}/api/appointments/notifications/read',
+      method: 'POST',
+      success: function () {
+        console.log('Notifikacije označene kao pročitane.');
+        \$('#notification-count').hide();
+      },
+      error: function () {
+        console.error('Greška prilikom označavanja notifikacija.');
+      }
     });
-});
+  });
 
-// Opcionalno: ako želiš da korisnik može da zatvori dropdown i mišem van dropdowna
-\$('.dropdown-menu').on('mouseleave', function () {
+
+  \$('.dropdown-menu').on('mouseleave', function () {
     isDropdownOpen = false;
-});
-</script>
-", "./inc/caregiver/topbar_caregiver.html", "C:\\laragon\\www\\doctorlab\\views\\inc\\caregiver\\topbar_caregiver.html");
+  });
+</script>", "./inc/caregiver/topbar_caregiver.html", "C:\\laragon\\www\\doctorlab\\views\\inc\\caregiver\\topbar_caregiver.html");
     }
 }

@@ -203,19 +203,18 @@ class AppointmentController extends UserRoleController{
 
     public function search(){
 
-            $appointmentModel = new AppointmentModel($this->getDatabaseConnection());
-            $q = filter_input(INPUT_POST, 'query');
-            $keywords = trim($q);
-            $keywords = preg_replace('/ +/', " ", $keywords);
-            
+        $appointmentModel = new AppointmentModel($this->getDatabaseConnection());
+        $q = filter_input(INPUT_POST, 'query');
+        $keywords = trim($q);
+        $keywords = preg_replace('/ +/', ' ', $keywords);
 
-            $users = $appointmentModel->getAllSearch($keywords);
+        $users = $appointmentModel->getAllSearch($keywords);
 
-            $this->set('users',$users);
-             header('Content-Type: application/json');
-        echo json_encode($users);
-        exit; 
+       var_dump($users);
+       exit();
     }
+
+
 
 
 

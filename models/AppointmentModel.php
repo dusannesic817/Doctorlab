@@ -119,10 +119,19 @@ class AppointmentModel extends Model{
 
         public function getAllSearch(string $keywords){
 
-        $sql= "SELECT * 
-        FROM `appointment`
-        LEFT JOIN `user` on appointment.user_id = user.user_id 
-        WHERE `name` LIKE ? OR `surname` LIKE ? OR `phone` LIKE ? ;";
+        $sql= "SELECT  a.appointment_id AS appointment_id, 
+            a.status as status, 
+            a.appointment_date as appointment_date,
+            a.caregiver_data as type, 
+            a.start_time as start_time, 
+            a.updated_at as updated_at,
+            u.name AS user_name, 
+            u.surname AS user_surname,
+            u.email as user_email
+          FROM `appointment` AS a
+          LEFT JOIN `user` AS u ON a.user_id = u.user_id
+          WHERE u.name LIKE ? OR u.surname LIKE ? OR u.phone LIKE ?";
+
         $keywords = '%'.$keywords.'%';
         $prep = $this->getConnection()->prepare($sql);
 

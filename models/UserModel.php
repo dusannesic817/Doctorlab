@@ -8,6 +8,7 @@ use App\Core\Field;
 use App\Validators\JSONValidator;
 use App\Validators\NumberValidator;
 use App\Validators\StringValidator;
+use PDO;
 
 class UserModel extends Model{
 
@@ -50,7 +51,7 @@ class UserModel extends Model{
         return $users;
     }
 
-    public function getCaregiver($id){
+    public function getCaregiver(int $id){
         $caregiver = $this->getById($id);
 
         if ($caregiver) {
@@ -61,6 +62,9 @@ class UserModel extends Model{
 
         
     }
+
+
+
 
 
 }

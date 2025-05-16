@@ -92,9 +92,8 @@ class __TwigTemplate_66540d55b76e2b27fbb4bb1a9c8ee6e3 extends Template
           <a class=\"dropdown-item\" href=\"";
         // line 44
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
-        echo "/caregiver/logout\" data-bs-toggle=\"modal\"
-            data-bs-target=\"#logoutModal\">
-            <i class=\"fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400\"></i> Logout
+        echo "/caregiver/logout/out\">
+          <i class=\"fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400\"></i> Logout
           </a>
         </div>
       </li>
@@ -118,7 +117,7 @@ class __TwigTemplate_66540d55b76e2b27fbb4bb1a9c8ee6e3 extends Template
   function fetchNotifications() {
     \$.ajax({
       url: '";
-        // line 69
+        // line 68
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/api/appointments/notifications',
       method: 'GET',
@@ -171,7 +170,7 @@ class __TwigTemplate_66540d55b76e2b27fbb4bb1a9c8ee6e3 extends Template
 
     \$.ajax({
       url: '";
-        // line 119
+        // line 118
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/api/appointments/notifications/read',
       method: 'POST',
@@ -204,7 +203,7 @@ class __TwigTemplate_66540d55b76e2b27fbb4bb1a9c8ee6e3 extends Template
 
     public function getDebugInfo()
     {
-        return array (  175 => 119,  122 => 69,  94 => 44,  85 => 40,  75 => 37,  37 => 1,);
+        return array (  174 => 118,  121 => 68,  94 => 44,  85 => 40,  75 => 37,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -252,9 +251,8 @@ class __TwigTemplate_66540d55b76e2b27fbb4bb1a9c8ee6e3 extends Template
             <i class=\"fas fa-cogs fa-sm fa-fw mr-2 text-gray-400\"></i> Settings
           </a>
           <div class=\"dropdown-divider\"></div>
-          <a class=\"dropdown-item\" href=\"{{base_url}}/caregiver/logout\" data-bs-toggle=\"modal\"
-            data-bs-target=\"#logoutModal\">
-            <i class=\"fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400\"></i> Logout
+          <a class=\"dropdown-item\" href=\"{{ base_url }}/caregiver/logout/out\">
+          <i class=\"fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400\"></i> Logout
           </a>
         </div>
       </li>

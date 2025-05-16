@@ -115,5 +115,29 @@ class AppointmentModel extends Model{
         return $appointments;
 
     }
+
+
+        public function getAllSearch(string $keywords){
+
+        $sql= "SELECT * 
+        FROM `appointment`
+        LEFT JOIN `user` on appointment.user_id = user.user_id 
+        WHERE `name` LIKE ? OR `surname` LIKE ? OR `phone` LIKE ? ;";
+        $keywords = '%'.$keywords.'%';
+        $prep = $this->getConnection()->prepare($sql);
+
+        if(!$prep){
+            return [];
+        }
+
+        $res = $prep->execute([$keywords,$keywords,$keywords]);
+        if(!$res){
+            return [];
+        }
+
+        return $prep->fetchAll(\PDO::FETCH_OBJ);
+
+
+    }
     
 }

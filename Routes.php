@@ -34,12 +34,15 @@ return [
     App\Core\Route::post('|^client/appointments/delete/([0-9]+)/?$|', "Appointment", 'destroy'),
     App\Core\Route::post('|^appointments/update/([0-9]+)/?$|', "Appointment", 'update'),
     App\Core\Route::post('|^appointments/cancel/([0-9]+)/?$|', "Appointment", 'cancel'),
+    App\Core\Route::post( '|^appointment/search/?$|',          "Appointment", 'search'),
    
 
     #UserProfile-auth
     App\Core\Route::get( '|^client/profile/([0-9]+)/?$|', "UserProfile", 'show'),
     App\Core\Route::post('|^client/update/([0-9]+)/?$|',  "UserProfile", 'update'),
     App\Core\Route::get( '|^client/logout/?$|',           "UserProfile", 'logout'),
+    
+
 
 
     #Availabilit-auth
@@ -59,7 +62,7 @@ return [
     #Api
     App\Core\Route::get( '|^api/appointments/notifications?$|',       "Appointment", "sendNotification"),
     App\Core\Route::post('|^api/appointments/notifications/read?$|',  "Appointment", "readNotification"),
-
+    App\Core\Route::any( '|^api/appointments/search/?$|',             "Appointment", 'search'),
 
 
 

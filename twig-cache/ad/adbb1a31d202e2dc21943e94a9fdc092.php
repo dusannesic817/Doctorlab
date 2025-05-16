@@ -37,9 +37,12 @@ class __TwigTemplate_fae9d0472aedbce00fff93847cc82574 extends Template
         echo "<div class=\"card mt-3\">
   <nav class=\"navbar\">
     <div class=\"container-fluid justify-content-end\">
-      <form class=\"d-flex\" role=\"search\">
+      <form class=\"d-flex\" role=\"search\"  method=\"POST\" action=\"";
+        // line 4
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/appointment/search\">
         <div class=\"input-group\">
-          <input class=\"form-control\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\" />
+          <input class=\"form-control\" type=\"search\" name=\"query\" placeholder=\"Search\" aria-label=\"Search\" />
           <button class=\"btn btn-outline-primary\" type=\"submit\">Search</button>
         </div>
       </form>
@@ -251,7 +254,7 @@ $context["client"], "status", [], "any", false, false, false, 53) == "canceled")
 
     public function getDebugInfo()
     {
-        return array (  219 => 99,  206 => 91,  197 => 85,  189 => 82,  185 => 81,  182 => 80,  180 => 79,  172 => 74,  169 => 73,  160 => 67,  152 => 64,  148 => 63,  145 => 62,  143 => 61,  138 => 58,  132 => 56,  126 => 54,  124 => 53,  121 => 52,  119 => 51,  114 => 49,  108 => 48,  104 => 47,  97 => 43,  91 => 42,  85 => 39,  79 => 36,  71 => 30,  67 => 29,  37 => 1,);
+        return array (  222 => 99,  209 => 91,  200 => 85,  192 => 82,  188 => 81,  185 => 80,  183 => 79,  175 => 74,  172 => 73,  163 => 67,  155 => 64,  151 => 63,  148 => 62,  146 => 61,  141 => 58,  135 => 56,  129 => 54,  127 => 53,  124 => 52,  122 => 51,  117 => 49,  111 => 48,  107 => 47,  100 => 43,  94 => 42,  88 => 39,  82 => 36,  74 => 30,  70 => 29,  42 => 4,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -259,9 +262,9 @@ $context["client"], "status", [], "any", false, false, false, 53) == "canceled")
         return new Source("<div class=\"card mt-3\">
   <nav class=\"navbar\">
     <div class=\"container-fluid justify-content-end\">
-      <form class=\"d-flex\" role=\"search\">
+      <form class=\"d-flex\" role=\"search\"  method=\"POST\" action=\"{{ base_url }}/appointment/search\">
         <div class=\"input-group\">
-          <input class=\"form-control\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\" />
+          <input class=\"form-control\" type=\"search\" name=\"query\" placeholder=\"Search\" aria-label=\"Search\" />
           <button class=\"btn btn-outline-primary\" type=\"submit\">Search</button>
         </div>
       </form>

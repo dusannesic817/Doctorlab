@@ -64,6 +64,9 @@ class CaregiverProfileController extends UserRoleController{
     $user_phone = $user->phone;
     $user_name= $user->name;
     $user_surname=$user->surname;
+    $caregiverData = json_decode($user->caregiver_data, true);
+    $universityData = json_decode($user->university_data, true);
+
   
    
 
@@ -102,6 +105,12 @@ class CaregiverProfileController extends UserRoleController{
     }else{
         $phone_input = $user_phone;
     }
+
+    $oldDoctorFor = $caregiverData['title'] ?? '';
+    $oldUniversity = $universityData['university'] ?? '';
+
+    $finalDoctorFor = !empty($doctorFor) ? $doctorFor : $oldDoctorFor;
+    $finalUniversity = !empty($university) ? $university : $oldUniversity;
     
     $name = "image_".rand(1,100).'_user_id_'.$id;
     if (!empty($_FILES['profile_photo']['name'])) {
@@ -130,8 +139,8 @@ class CaregiverProfileController extends UserRoleController{
         'password_hash'=>$pass_hash,
         'profile_photo' => $uploadImage,
         'diploma_pdf'=>$uploadPdf,
-        'caregiver_data' => json_encode(["title" => $doctorFor]),
-        'university_data' => json_encode(["university" => $university]),
+        'caregiver_data' => json_encode(["title" => $finalDoctorFor]),
+        'university_data' => json_encode(["university" => $finalUniversity]),
     ];
 
    

@@ -183,7 +183,7 @@ class __TwigTemplate_6a4b6f667460a2b073a48bd6ad13f285 extends Template
           <a href=\"";
         // line 108
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
-        echo "/caregiver/logout\" class=\"text-decoration-none d-block profile\">
+        echo "/caregiver/logout/out\" class=\"text-decoration-none d-block profile\">
             <div class=\"d-flex justify-content-between p-2 rounded\">
               <div><small><b style=\"color: rgb(145, 25, 25);\"><i class=\"bi bi-box-arrow-right\"></i> Log Out</b></small></div>
               <div class=\"d-flex align-items-center\"><i class=\"bi bi-caret-right-fill grey\"></i></div>
@@ -432,7 +432,7 @@ class __TwigTemplate_6a4b6f667460a2b073a48bd6ad13f285 extends Template
             </div>
           </a>
           <hr class=\"mb-5\"style=\"margin-bottom: -1px; margin-top:-1px;\">
-          <a href=\"{{ base_url }}/caregiver/logout\" class=\"text-decoration-none d-block profile\">
+          <a href=\"{{ base_url }}/caregiver/logout/out\" class=\"text-decoration-none d-block profile\">
             <div class=\"d-flex justify-content-between p-2 rounded\">
               <div><small><b style=\"color: rgb(145, 25, 25);\"><i class=\"bi bi-box-arrow-right\"></i> Log Out</b></small></div>
               <div class=\"d-flex align-items-center\"><i class=\"bi bi-caret-right-fill grey\"></i></div>

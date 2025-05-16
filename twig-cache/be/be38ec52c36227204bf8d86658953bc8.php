@@ -144,7 +144,7 @@ class __TwigTemplate_1c4767be4b327fe3a5ec49f8b229842c extends Template
     <a class=\"nav-link\" href=\"";
         // line 97
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
-        echo "/caregiver/appointments\">
+        echo "/caregiver/appointments/index\">
       <i class=\"fas fa-fw fa-chart-area\"></i>
       <span>My clients</span>
     </a>
@@ -285,7 +285,7 @@ class __TwigTemplate_1c4767be4b327fe3a5ec49f8b229842c extends Template
 
   <!-- Nav Item - Charts -->
   <li class=\"nav-item\">
-    <a class=\"nav-link\" href=\"{{base_url}}/caregiver/appointments\">
+    <a class=\"nav-link\" href=\"{{base_url}}/caregiver/appointments/index\">
       <i class=\"fas fa-fw fa-chart-area\"></i>
       <span>My clients</span>
     </a>

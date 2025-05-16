@@ -28,7 +28,7 @@ return [
 
 
     #Appointement routes-auth:
-    App\Core\Route::get('|^caregiver/appointments/?$|',    "Appointment", 'index'),
+    App\Core\Route::get('|^caregiver/appointments/index?$|',    "Appointment", 'index'),
     App\Core\Route::get('|^client/appointments/([0-9]+)/?$|',    "Appointment", 'client'),
     App\Core\Route::get('|^caregiver/appointments/([0-9]+)/?$|', "Appointment", 'show'),
     App\Core\Route::post('|^client/appointments/delete/([0-9]+)/?$|', "Appointment", 'destroy'),
@@ -53,7 +53,7 @@ return [
     App\Core\Route::get('|^caregiver/edit/([0-9]+)/?$|',    "CaregiverProfile", 'edit'),
     App\Core\Route::post('|^caregiver/update/([0-9]+)/?$|', "CaregiverProfile", 'update'),
     App\Core\Route::get('|^caregiver/appointments/?$|',     "CaregiverProfile",'appointmens'),
-    App\Core\Route::get('|^caregiver/logout/?$|',           "CaregiverProfile", 'logout'),
+    App\Core\Route::get('|^caregiver/logout/out?$|',           "CaregiverProfile", 'logout'),
     
 
     #Api

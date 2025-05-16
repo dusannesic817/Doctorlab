@@ -35,20 +35,20 @@ class __TwigTemplate_fae9d0472aedbce00fff93847cc82574 extends Template
         $macros = $this->macros;
         // line 1
         echo "<div class=\"card mt-3\">
-    <nav class=\"navbar\">
-  <div class=\"container-fluid justify-content-end\">
-    <form class=\"d-flex\" role=\"search\">
-      <div class=\"input-group\">
-        <input class=\"form-control\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\" />
-        <button class=\"btn btn-outline-primary\" type=\"submit\">Search</button>
-      </div>
-    </form>
-  </div>
-</nav>
+  <nav class=\"navbar\">
+    <div class=\"container-fluid justify-content-end\">
+      <form class=\"d-flex\" role=\"search\">
+        <div class=\"input-group\">
+          <input class=\"form-control\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\" />
+          <button class=\"btn btn-outline-primary\" type=\"submit\">Search</button>
+        </div>
+      </form>
+    </div>
+  </nav>
   <div class=\"table-responsive pe-3 ps-3\">
 
     <table class=\"table table-hover align-middle\" id=\"pc-dt-simple\">
-      
+
       <thead>
         <tr>
           <th></th>
@@ -167,11 +167,14 @@ $context["client"], "status", [], "any", false, false, false, 53) == "canceled")
             }
             // line 73
             echo "              <li class=\"list-inline-item\" data-bs-toggle=\"tooltip\" title=\"Contact\">
-                <a href=\"#\" class=\"avtar avtar-xs btn-link-primary\" data-bs-toggle=\"modal\"
-                  data-bs-target=\"#user-edit_add-modal\">
+                <a href=\"mailto:";
+            // line 74
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["client"], "patient_email", [], "any", false, false, false, 74), "html", null, true);
+            echo "\" class=\"avtar avtar-xs btn-link-primary\">
                   <i class=\"fa-solid fa-envelope\"></i>
                 </a>
               </li>
+
               ";
             // line 79
             if ((twig_get_attribute($this->env, $this->source, $context["client"], "status", [], "any", false, false, false, 79) == "scheduled")) {
@@ -206,7 +209,7 @@ $context["client"], "status", [], "any", false, false, false, 53) == "canceled")
           </td>
 
         </tr>
-        
+
         ";
         }
         $_parent = $context['_parent'];
@@ -215,24 +218,24 @@ $context["client"], "status", [], "any", false, false, false, 53) == "canceled")
         // line 99
         echo "
       </tbody>
-      
+
     </table>
 
-<nav aria-label=\"...\" class=\"mt-5\">
- <ul class=\"pagination justify-content-end\">
-    <li class=\"page-item disabled\">
-      <a class=\"page-link\">Previous</a>
-    </li>
-    <li class=\"page-item\"><a class=\"page-link\" href=\"#\">1</a></li>
-    <li class=\"page-item active\">
-      <a class=\"page-link\" href=\"#\" aria-current=\"page\">2</a>
-    </li>
-    <li class=\"page-item\"><a class=\"page-link\" href=\"#\">3</a></li>
-    <li class=\"page-item\">
-      <a class=\"page-link\" href=\"#\">Next</a>
-    </li>
-  </ul>
-</nav>
+    <nav aria-label=\"...\" class=\"mt-5\">
+      <ul class=\"pagination justify-content-end\">
+        <li class=\"page-item disabled\">
+          <a class=\"page-link\">Previous</a>
+        </li>
+        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">1</a></li>
+        <li class=\"page-item active\">
+          <a class=\"page-link\" href=\"#\" aria-current=\"page\">2</a>
+        </li>
+        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">3</a></li>
+        <li class=\"page-item\">
+          <a class=\"page-link\" href=\"#\">Next</a>
+        </li>
+      </ul>
+    </nav>
   </div>";
     }
 
@@ -248,26 +251,26 @@ $context["client"], "status", [], "any", false, false, false, 53) == "canceled")
 
     public function getDebugInfo()
     {
-        return array (  216 => 99,  203 => 91,  194 => 85,  186 => 82,  182 => 81,  179 => 80,  177 => 79,  169 => 73,  160 => 67,  152 => 64,  148 => 63,  145 => 62,  143 => 61,  138 => 58,  132 => 56,  126 => 54,  124 => 53,  121 => 52,  119 => 51,  114 => 49,  108 => 48,  104 => 47,  97 => 43,  91 => 42,  85 => 39,  79 => 36,  71 => 30,  67 => 29,  37 => 1,);
+        return array (  219 => 99,  206 => 91,  197 => 85,  189 => 82,  185 => 81,  182 => 80,  180 => 79,  172 => 74,  169 => 73,  160 => 67,  152 => 64,  148 => 63,  145 => 62,  143 => 61,  138 => 58,  132 => 56,  126 => 54,  124 => 53,  121 => 52,  119 => 51,  114 => 49,  108 => 48,  104 => 47,  97 => 43,  91 => 42,  85 => 39,  79 => 36,  71 => 30,  67 => 29,  37 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("<div class=\"card mt-3\">
-    <nav class=\"navbar\">
-  <div class=\"container-fluid justify-content-end\">
-    <form class=\"d-flex\" role=\"search\">
-      <div class=\"input-group\">
-        <input class=\"form-control\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\" />
-        <button class=\"btn btn-outline-primary\" type=\"submit\">Search</button>
-      </div>
-    </form>
-  </div>
-</nav>
+  <nav class=\"navbar\">
+    <div class=\"container-fluid justify-content-end\">
+      <form class=\"d-flex\" role=\"search\">
+        <div class=\"input-group\">
+          <input class=\"form-control\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\" />
+          <button class=\"btn btn-outline-primary\" type=\"submit\">Search</button>
+        </div>
+      </form>
+    </div>
+  </nav>
   <div class=\"table-responsive pe-3 ps-3\">
 
     <table class=\"table table-hover align-middle\" id=\"pc-dt-simple\">
-      
+
       <thead>
         <tr>
           <th></th>
@@ -326,11 +329,11 @@ $context["client"], "status", [], "any", false, false, false, 53) == "canceled")
               </li>
               {%endif%}
               <li class=\"list-inline-item\" data-bs-toggle=\"tooltip\" title=\"Contact\">
-                <a href=\"#\" class=\"avtar avtar-xs btn-link-primary\" data-bs-toggle=\"modal\"
-                  data-bs-target=\"#user-edit_add-modal\">
+                <a href=\"mailto:{{client.patient_email}}\" class=\"avtar avtar-xs btn-link-primary\">
                   <i class=\"fa-solid fa-envelope\"></i>
                 </a>
               </li>
+
               {%if client.status=='scheduled'%}
               <li class=\"list-inline-item\" data-bs-toggle=\"tooltip\" title=\"Cancel\">
                 <form id=\"cancel-form-{{ client.appointment_id }}\"
@@ -349,28 +352,28 @@ $context["client"], "status", [], "any", false, false, false, 53) == "canceled")
           </td>
 
         </tr>
-        
+
         {%endfor%}
 
       </tbody>
-      
+
     </table>
 
-<nav aria-label=\"...\" class=\"mt-5\">
- <ul class=\"pagination justify-content-end\">
-    <li class=\"page-item disabled\">
-      <a class=\"page-link\">Previous</a>
-    </li>
-    <li class=\"page-item\"><a class=\"page-link\" href=\"#\">1</a></li>
-    <li class=\"page-item active\">
-      <a class=\"page-link\" href=\"#\" aria-current=\"page\">2</a>
-    </li>
-    <li class=\"page-item\"><a class=\"page-link\" href=\"#\">3</a></li>
-    <li class=\"page-item\">
-      <a class=\"page-link\" href=\"#\">Next</a>
-    </li>
-  </ul>
-</nav>
+    <nav aria-label=\"...\" class=\"mt-5\">
+      <ul class=\"pagination justify-content-end\">
+        <li class=\"page-item disabled\">
+          <a class=\"page-link\">Previous</a>
+        </li>
+        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">1</a></li>
+        <li class=\"page-item active\">
+          <a class=\"page-link\" href=\"#\" aria-current=\"page\">2</a>
+        </li>
+        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">3</a></li>
+        <li class=\"page-item\">
+          <a class=\"page-link\" href=\"#\">Next</a>
+        </li>
+      </ul>
+    </nav>
   </div>", "./inc/caregiver/tabel.html", "C:\\laragon\\www\\doctorlab\\views\\inc\\caregiver\\tabel.html");
     }
 }

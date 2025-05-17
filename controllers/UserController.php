@@ -9,6 +9,7 @@ use App\Core\Controller;
 use App\Models\UserModel;
 use App\Validators\NumberValidator;
 use App\Validators\StringValidator;
+use App\Core\MailService;
 
 class UserController extends Controller{
 
@@ -135,7 +136,7 @@ class UserController extends Controller{
             return;
         }
 
-
+        $verify_token = bin2hex(random_bytes(16));
         $pass_hash = password_hash($password1, PASSWORD_DEFAULT);
 
         $user_id=$userModel->add([
@@ -146,6 +147,7 @@ class UserController extends Controller{
             'password_hash'=>$pass_hash,
             'role'=>'client',
             'birth'=>$date,
+            'verfiy_token'=>$verify_token,
            
         ]);
 
@@ -154,6 +156,7 @@ class UserController extends Controller{
             return;
         }
 
+          
         $this->getSession()->put('successRegistration',"Thank you, registration has been completed.");
         $this->getSession()->save();
         $this->redirect('/');
@@ -218,6 +221,21 @@ class UserController extends Controller{
     $this->redirect('/');
 
     }
+
+   /* PRILAGODITI 
+   public function verify($token)
+{
+    $userModel = new User(); // assuming User model exists
+    $user = $userModel->findByToken($token); // metoda koja pronalazi korisnika po tokenu
+
+    if ($user) {
+        $userModel->verifyUser($token); // metoda koja setuje is_verified = 1 i verify_token = null
+        echo "Uspešno ste verifikovali nalog!";
+    } else {
+        echo "Nevažeći ili istekao verifikacioni link.";
+    }
+}*/
+
 
 
 

@@ -65,25 +65,22 @@ class __TwigTemplate_5ea54c7ed6922403a42678871894b191 extends Template
       <div class=\"card flex-grow-1 mb-3\" style=\"height: 75vh;\">
         <div class=\"card-body d-flex flex-column-reverse overflow-auto\" style=\"height: 100%;\">
           <!-- poruke -->
-      
           <div class=\"d-flex justify-content-end align-items-center\">
             <span class=\"d-inline p-2 text-bg-primary rounded\">Moja poruka koju cu pitati nesto gpt</span>
             <img src=\"";
-        // line 26
+        // line 25
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/assets/images/undraw_profile.svg\" alt=\"Avatar\" class=\"rounded-circle ms-2 img-fluid\"
               style=\"width: 40px; height: 40px;\">
           </div>
-              <div class=\"d-flex justify-content-start align-items-center mb-2\">
+          <div class=\"d-flex justify-content-start align-items-center mb-2\">
             <img src=\"";
-        // line 30
+        // line 29
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/assets/images/doctor.jpg\" alt=\"Avatar\" class=\"rounded-circle me-2 img-fluid\"
               style=\"width: 40px; height: 40px;\">
             <span class=\"d-inline p-2 text-bg-info rounded text-white\">Poruka gpt</span>
           </div>
-          
-          <!-- više poruka -->
         </div>
       </div>
       <form>
@@ -117,7 +114,7 @@ class __TwigTemplate_5ea54c7ed6922403a42678871894b191 extends Template
 
     public function getDebugInfo()
     {
-        return array (  80 => 30,  73 => 26,  50 => 5,  46 => 4,  35 => 1,);
+        return array (  79 => 29,  72 => 25,  50 => 5,  46 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -144,19 +141,16 @@ class __TwigTemplate_5ea54c7ed6922403a42678871894b191 extends Template
       <div class=\"card flex-grow-1 mb-3\" style=\"height: 75vh;\">
         <div class=\"card-body d-flex flex-column-reverse overflow-auto\" style=\"height: 100%;\">
           <!-- poruke -->
-      
           <div class=\"d-flex justify-content-end align-items-center\">
             <span class=\"d-inline p-2 text-bg-primary rounded\">Moja poruka koju cu pitati nesto gpt</span>
             <img src=\"{{base_url}}/assets/images/undraw_profile.svg\" alt=\"Avatar\" class=\"rounded-circle ms-2 img-fluid\"
               style=\"width: 40px; height: 40px;\">
           </div>
-              <div class=\"d-flex justify-content-start align-items-center mb-2\">
+          <div class=\"d-flex justify-content-start align-items-center mb-2\">
             <img src=\"{{base_url}}/assets/images/doctor.jpg\" alt=\"Avatar\" class=\"rounded-circle me-2 img-fluid\"
               style=\"width: 40px; height: 40px;\">
             <span class=\"d-inline p-2 text-bg-info rounded text-white\">Poruka gpt</span>
           </div>
-          
-          <!-- više poruka -->
         </div>
       </div>
       <form>

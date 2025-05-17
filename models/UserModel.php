@@ -26,6 +26,7 @@ class UserModel extends Model{
             'profile_photo'=>new Field((new StringValidator())->setMaxLength(150)),
             'role'=>new Field((new StringValidator())->setMaxLength(20)),
             'birth'=>new Field((new DateTimeValidator())->allowDate()),
+            'verfiy_token'=>new Field((new StringValidator())->setMaxLength(255)),
             'diploma_pdf'=>new Field((new StringValidator())->setMaxLength(150)),
             'caregiver_data'=>new Field((new JSONValidator())),
             'university_data'=>new Field((new JSONValidator())),
@@ -62,8 +63,20 @@ class UserModel extends Model{
 
         
     }
+/* PRILAGODITI 
 
+    public function findByToken($token)
+{
+    $stmt = $this->db->prepare("SELECT * FROM users WHERE verify_token = ?");
+    $stmt->execute([$token]);
+    return $stmt->fetch();
+}
 
+public function verifyUser($token)
+{
+    $stmt = $this->db->prepare("UPDATE users SET is_verified = 1, verify_token = NULL WHERE verify_token = ?");
+    $stmt->execute([$token]);
+}*/
 
 
 

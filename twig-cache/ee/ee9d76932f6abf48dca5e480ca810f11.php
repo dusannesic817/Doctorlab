@@ -25,25 +25,25 @@ class __TwigTemplate_946462a6d1f6bbabdbd9c929ce2520d4 extends Template
         $this->source = $this->getSourceContext();
 
         $this->blocks = [
-            'main' => [$this, 'block_main'],
+            'caregiver' => [$this, 'block_caregiver'],
         ];
     }
 
     protected function doGetParent(array $context)
     {
         // line 1
-        return "_global/index.html";
+        return "_global/caregiver_index.html";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
-        $this->parent = $this->loadTemplate("_global/index.html", "Availability/create.html", 1);
+        $this->parent = $this->loadTemplate("_global/caregiver_index.html", "Availability/create.html", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
     // line 4
-    public function block_main($context, array $blocks = [])
+    public function block_caregiver($context, array $blocks = [])
     {
         $macros = $this->macros;
         // line 5
@@ -174,10 +174,10 @@ class __TwigTemplate_946462a6d1f6bbabdbd9c929ce2520d4 extends Template
 
     public function getSourceContext()
     {
-        return new Source("{% extends \"_global/index.html\" %}
+        return new Source("{% extends \"_global/caregiver_index.html\" %}
 
 
-{% block main %}
+{% block caregiver %}
   <div class=\"container-fluid\">
     <div class=\"row\" style=\"height: 100vh;\">
       <div class=\"col-6 d-flex justify-content-center align-items-center border-end border-dark-subtle\">

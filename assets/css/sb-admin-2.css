@@ -11279,3 +11279,27 @@ footer.sticky-footer .copyright {
 body.sidebar-toggled footer.sticky-footer {
   width: 100%;
 }
+.calendar-input{
+    background-color:#e1f5fe !important;
+}
+.calendar-input-busy{
+    background-color:#e9f0f3 !important;
+}
+
+.calendar-input:hover{
+    background-color:#81cdf0 !important;
+    color: #01264d !important;
+}
+
+input.calendar-input:checked + label.calendar-input {
+    background-color: #0d6efd; /* Plava boja */
+    color: white;
+    border: 1px solid #0d6efd;
+  }
+.teget{
+    color: #01264d !important;
+}
+
+.override-card {
+    background-color: #ffffff !important; /* zameni sa željenom bojom */
+}

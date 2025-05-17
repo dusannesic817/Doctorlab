@@ -72,42 +72,28 @@ class __TwigTemplate_1c4767be4b327fe3a5ec49f8b229842c extends Template
 
   <!-- Heading -->
   <div class=\"sidebar-heading\">
-    Interface
+    My Profile
   </div>
 
   <!-- Nav Item - Pages Collapse Menu -->
-  <li class=\"nav-item\">
-    <a class=\"nav-link collapsed\" href=\"#\" data-bs-toggle=\"collapse\" data-bs-target=\"#collapseTwo\"
-      aria-expanded=\"true\" aria-controls=\"collapseTwo\">
-      <i class=\"fas fa-fw fa-cog\"></i>
-      <span>Components</span>
+    <li class=\"nav-item\">
+    <a class=\"nav-link\" href=\"";
+        // line 33
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/caregiver/profile/";
+        echo twig_escape_filter($this->env, ($context["auth"] ?? null), "html", null, true);
+        echo "\">
+      <i class=\"fa-solid fa-user\"></i>
+      <span>Profile</span>
     </a>
-    <div id=\"collapseTwo\" class=\"collapse\" aria-labelledby=\"headingTwo\" data-bs-parent=\"#accordionSidebar\">
-      <div class=\"bg-white py-2 collapse-inner rounded\">
-        <h6 class=\"collapse-header\">Custom Components:</h6>
-        <a class=\"collapse-item\" href=\"buttons.html\">Buttons</a>
-        <a class=\"collapse-item\" href=\"cards.html\">Cards</a>
-      </div>
-    </div>
   </li>
 
   <!-- Nav Item - Utilities Collapse Menu -->
   <li class=\"nav-item\">
-    <a class=\"nav-link collapsed\" href=\"#\" data-bs-toggle=\"collapse\" data-bs-target=\"#collapseUtilities\"
-      aria-expanded=\"true\" aria-controls=\"collapseUtilities\">
-      <i class=\"fas fa-fw fa-wrench\"></i>
-      <span>Utilities</span>
+    <a class=\"nav-link\" href=\"\">
+      <i class=\"fas fa-fw fa-chart-area\"></i>
+      <span>Smisliti sta staviti</span>
     </a>
-    <div id=\"collapseUtilities\" class=\"collapse\" aria-labelledby=\"headingUtilities\"
-      data-bs-parent=\"#accordionSidebar\">
-      <div class=\"bg-white py-2 collapse-inner rounded\">
-        <h6 class=\"collapse-header\">Custom Utilities:</h6>
-        <a class=\"collapse-item\" href=\"utilities-color.html\">Colors</a>
-        <a class=\"collapse-item\" href=\"utilities-border.html\">Borders</a>
-        <a class=\"collapse-item\" href=\"utilities-animation.html\">Animations</a>
-        <a class=\"collapse-item\" href=\"utilities-other.html\">Other</a>
-      </div>
-    </div>
   </li>
 
   <!-- Divider -->
@@ -115,7 +101,7 @@ class __TwigTemplate_1c4767be4b327fe3a5ec49f8b229842c extends Template
 
   <!-- Heading -->
   <div class=\"sidebar-heading\">
-    Addons
+    Clients
   </div>
 
   <!-- Nav Item - Pages Collapse Menu -->
@@ -142,10 +128,10 @@ class __TwigTemplate_1c4767be4b327fe3a5ec49f8b229842c extends Template
   <!-- Nav Item - Charts -->
   <li class=\"nav-item\">
     <a class=\"nav-link\" href=\"";
-        // line 97
+        // line 78
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/caregiver/appointments/index\">
-      <i class=\"fas fa-fw fa-chart-area\"></i>
+      <i class=\"fa-solid fa-user-group\"></i>
       <span>My clients</span>
     </a>
   </li>
@@ -153,7 +139,7 @@ class __TwigTemplate_1c4767be4b327fe3a5ec49f8b229842c extends Template
   <!-- Nav Item - Tables -->
   <li class=\"nav-item\">
     <a class=\"nav-link\" href=\"";
-        // line 105
+        // line 86
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/availability/create\">
       <i class=\"fas fa-fw fa-table\"></i>
@@ -164,10 +150,7 @@ class __TwigTemplate_1c4767be4b327fe3a5ec49f8b229842c extends Template
   <!-- Divider -->
   <hr class=\"sidebar-divider d-none d-md-block\">
 
-  <!-- Sidebar Toggler (Sidebar) -->
-  <div class=\"text-center d-none d-md-inline\">
-    <button class=\"rounded-circle border-0\" id=\"sidebarToggle\"></button>
-  </div>
+
 
 </ul>";
     }
@@ -184,7 +167,7 @@ class __TwigTemplate_1c4767be4b327fe3a5ec49f8b229842c extends Template
 
     public function getDebugInfo()
     {
-        return array (  157 => 105,  146 => 97,  61 => 17,  47 => 6,  42 => 4,  37 => 1,);
+        return array (  143 => 86,  132 => 78,  82 => 33,  61 => 17,  47 => 6,  42 => 4,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -216,42 +199,23 @@ class __TwigTemplate_1c4767be4b327fe3a5ec49f8b229842c extends Template
 
   <!-- Heading -->
   <div class=\"sidebar-heading\">
-    Interface
+    My Profile
   </div>
 
   <!-- Nav Item - Pages Collapse Menu -->
-  <li class=\"nav-item\">
-    <a class=\"nav-link collapsed\" href=\"#\" data-bs-toggle=\"collapse\" data-bs-target=\"#collapseTwo\"
-      aria-expanded=\"true\" aria-controls=\"collapseTwo\">
-      <i class=\"fas fa-fw fa-cog\"></i>
-      <span>Components</span>
+    <li class=\"nav-item\">
+    <a class=\"nav-link\" href=\"{{base_url}}/caregiver/profile/{{auth}}\">
+      <i class=\"fa-solid fa-user\"></i>
+      <span>Profile</span>
     </a>
-    <div id=\"collapseTwo\" class=\"collapse\" aria-labelledby=\"headingTwo\" data-bs-parent=\"#accordionSidebar\">
-      <div class=\"bg-white py-2 collapse-inner rounded\">
-        <h6 class=\"collapse-header\">Custom Components:</h6>
-        <a class=\"collapse-item\" href=\"buttons.html\">Buttons</a>
-        <a class=\"collapse-item\" href=\"cards.html\">Cards</a>
-      </div>
-    </div>
   </li>
 
   <!-- Nav Item - Utilities Collapse Menu -->
   <li class=\"nav-item\">
-    <a class=\"nav-link collapsed\" href=\"#\" data-bs-toggle=\"collapse\" data-bs-target=\"#collapseUtilities\"
-      aria-expanded=\"true\" aria-controls=\"collapseUtilities\">
-      <i class=\"fas fa-fw fa-wrench\"></i>
-      <span>Utilities</span>
+    <a class=\"nav-link\" href=\"\">
+      <i class=\"fas fa-fw fa-chart-area\"></i>
+      <span>Smisliti sta staviti</span>
     </a>
-    <div id=\"collapseUtilities\" class=\"collapse\" aria-labelledby=\"headingUtilities\"
-      data-bs-parent=\"#accordionSidebar\">
-      <div class=\"bg-white py-2 collapse-inner rounded\">
-        <h6 class=\"collapse-header\">Custom Utilities:</h6>
-        <a class=\"collapse-item\" href=\"utilities-color.html\">Colors</a>
-        <a class=\"collapse-item\" href=\"utilities-border.html\">Borders</a>
-        <a class=\"collapse-item\" href=\"utilities-animation.html\">Animations</a>
-        <a class=\"collapse-item\" href=\"utilities-other.html\">Other</a>
-      </div>
-    </div>
   </li>
 
   <!-- Divider -->
@@ -259,7 +223,7 @@ class __TwigTemplate_1c4767be4b327fe3a5ec49f8b229842c extends Template
 
   <!-- Heading -->
   <div class=\"sidebar-heading\">
-    Addons
+    Clients
   </div>
 
   <!-- Nav Item - Pages Collapse Menu -->
@@ -286,7 +250,7 @@ class __TwigTemplate_1c4767be4b327fe3a5ec49f8b229842c extends Template
   <!-- Nav Item - Charts -->
   <li class=\"nav-item\">
     <a class=\"nav-link\" href=\"{{base_url}}/caregiver/appointments/index\">
-      <i class=\"fas fa-fw fa-chart-area\"></i>
+      <i class=\"fa-solid fa-user-group\"></i>
       <span>My clients</span>
     </a>
   </li>
@@ -302,10 +266,7 @@ class __TwigTemplate_1c4767be4b327fe3a5ec49f8b229842c extends Template
   <!-- Divider -->
   <hr class=\"sidebar-divider d-none d-md-block\">
 
-  <!-- Sidebar Toggler (Sidebar) -->
-  <div class=\"text-center d-none d-md-inline\">
-    <button class=\"rounded-circle border-0\" id=\"sidebarToggle\"></button>
-  </div>
+
 
 </ul>", "./inc/caregiver/sidebar.html", "C:\\laragon\\www\\doctorlab\\views\\inc\\caregiver\\sidebar.html");
     }

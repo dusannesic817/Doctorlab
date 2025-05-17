@@ -57,8 +57,8 @@ class __TwigTemplate_6a4b6f667460a2b073a48bd6ad13f285 extends Template
 <div class=\"container\">
   <div class=\"row d-flex justify-content-center mt-5\">
     <div class=\"col-lg-8\">
-      <div class=\"card ms-2\" style=\"background-color: #ebf6fc;\">
-        <div class=\"card-body\">
+      <div class=\"card ms-2\" style=\"background-color: #ebf6fc !important;\">
+        <div class=\"card-body\" >
           <div class=\"row\">
             <div class=\"col-lg-8\">
               <p><b>Your health. Your data</b></p>
@@ -91,22 +91,21 @@ class __TwigTemplate_6a4b6f667460a2b073a48bd6ad13f285 extends Template
         echo "/assets/images/katanac1.png\" alt=\"\" style=\"width:150px; height: 120px;\"></div>
             </div>
           </div>
-
         </div>
       </div>
     </div>
     <div class=\"col-lg-8 mt-5\">
-      <div class=\"card border-0\">
+      <div class=\"card border-0\" style=\"background-color: #f8f9fc !important;\">
         <div class=\"card-body\">
           <p class=\"ms-1\"><b>Personal information</b></p>
           <hr style=\"margin-bottom: -1px;\">
           <a href=\"\" class=\"text-decoration-none d-block profile grey\" data-bs-toggle=\"modal\" data-bs-target=\"#name\">
             <div class=\"d-flex justify-content-between p-2 rounded\">
-              <div><small><b class=\"teget\"><i class=\"bi bi-person-fill\"></i> My Profile</b></small><br><small >";
-        // line 41
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "name", [], "any", false, false, false, 41), "html", null, true);
+              <div><small><b class=\"teget\" style=\"color: #01264d !important;\"><i class=\"bi bi-person-fill\"></i> My Profile</b></small><br><small >";
+        // line 40
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "name", [], "any", false, false, false, 40), "html", null, true);
         echo " ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "surname", [], "any", false, false, false, 41), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "surname", [], "any", false, false, false, 40), "html", null, true);
         echo "</small></div>
               <div class=\"d-flex align-items-center\"><i class=\"bi bi-caret-right-fill grey\"></i></div>
             </div>
@@ -114,7 +113,7 @@ class __TwigTemplate_6a4b6f667460a2b073a48bd6ad13f285 extends Template
           <hr style=\"margin-bottom: -1px; margin-top:-1px;\">
           <a href=\"\" class=\"text-decoration-none d-block profile grey\">
             <div class=\"d-flex justify-content-between p-2 rounded\">
-              <div><small><b class=\"teget\"><i class=\"bi bi-sticky-fill\"></i> My Rights</b></small><br><small>See your rights</small></div>
+              <div><small><b class=\"teget\" style=\"color: #01264d !important;\"><i class=\"bi bi-sticky-fill\"></i> My Rights</b></small><br><small>See your rights</small></div>
               <div class=\"d-flex align-items-center\"><i class=\"bi bi-caret-right-fill grey\"></i></div>
             </div>
           </a>
@@ -124,9 +123,9 @@ class __TwigTemplate_6a4b6f667460a2b073a48bd6ad13f285 extends Template
           <hr style=\"margin-bottom: -1px;\">
           <a href=\"\" class=\"text-decoration-none d-block profile grey\"  data-bs-toggle=\"modal\" data-bs-target=\"#phone\">
             <div class=\"d-flex justify-content-between p-2 rounded\">
-              <div><small><b class=\"teget\"><i class=\"bi bi-telephone-fill\"></i> Phones</b></small><br><small>";
-        // line 58
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "phone", [], "any", false, false, false, 58), "html", null, true);
+              <div><small><b class=\"teget\" style=\"color: #01264d !important;\"><i class=\"bi bi-telephone-fill\"></i> Phones</b></small><br><small>";
+        // line 57
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "phone", [], "any", false, false, false, 57), "html", null, true);
         echo "</small></div>
               <div class=\"d-flex align-items-center\"><i class=\"bi bi-caret-right-fill grey\"></i></div>
             </div>
@@ -134,9 +133,9 @@ class __TwigTemplate_6a4b6f667460a2b073a48bd6ad13f285 extends Template
           <hr style=\"margin-bottom: -1px; margin-top:-1px;\">
           <a href=\"#\" class=\"text-decoration-none d-block profile grey\">
             <div class=\"d-flex justify-content-between p-2 rounded\">
-              <div><small><b class=\"teget\"><i class=\"bi bi-envelope-fill\"></i> Email</b></small><br><small >";
-        // line 65
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "email", [], "any", false, false, false, 65), "html", null, true);
+              <div><small><b class=\"teget\" style=\"color: #01264d !important;\"><i class=\"bi bi-envelope-fill\"></i> Email</b></small><br><small >";
+        // line 64
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "email", [], "any", false, false, false, 64), "html", null, true);
         echo "</small></div>
               <div class=\"d-flex align-items-center\"><i class=\"bi bi-caret-right-fill grey\"></i></div>
             </div>
@@ -144,7 +143,7 @@ class __TwigTemplate_6a4b6f667460a2b073a48bd6ad13f285 extends Template
           <hr style=\"margin-bottom: -1px; margin-top:-1px;\">
           <a href=\"#\" class=\"text-decoration-none d-block profile grey\" data-bs-toggle=\"modal\" data-bs-target=\"#password\">
             <div class=\"d-flex justify-content-between p-2 rounded\">
-              <div><small><b class=\"teget\"><i class=\"bi bi-shield-lock-fill\"></i> Password</b></small><br><small ><i class=\"bi bi-three-dots\" style=\"font-size: 24px;\"></i><i class=\"bi bi-three-dots\" style=\"font-size: 24px;\"></i></small></div>
+              <div><small><b class=\"teget\" style=\"color: #01264d !important;\"><i class=\"bi bi-shield-lock-fill\"></i> Password</b></small><br><small ><i class=\"bi bi-three-dots\" style=\"font-size: 24px;\"></i><i class=\"bi bi-three-dots\" style=\"font-size: 24px;\"></i></small></div>
               <div class=\"d-flex align-items-center\"><i class=\"bi bi-caret-right-fill grey\"></i></div>
             </div>
           </a>
@@ -152,14 +151,14 @@ class __TwigTemplate_6a4b6f667460a2b073a48bd6ad13f285 extends Template
           <hr style=\"margin-bottom: -1px;\">
           <a href=\"#\" class=\"text-decoration-none d-block profile grey\">
             <div class=\"d-flex justify-content-between p-2 rounded\">
-              <div><small><b class=\"teget\"><i class=\"bi bi-credit-card-2-back-fill\"></i> Payment Methods</b></small><br><small >See your rights</small></div>
+              <div><small><b class=\"teget\" style=\"color: #01264d !important;\"><i class=\"bi bi-credit-card-2-back-fill\"></i> Payment Methods</b></small><br><small >See your rights</small></div>
               <div class=\"d-flex align-items-center\"><i class=\"bi bi-caret-right-fill grey\"></i></div>
             </div>
           </a>
           <hr style=\"margin-bottom: -1px; margin-top:-1px;\">
           <a href=\"#\" class=\"text-decoration-none d-block profile grey\">
             <div class=\"d-flex justify-content-between p-2 rounded\">
-              <div><small><b class=\"teget\"><i class=\"bi bi-credit-card-2-back-fill\"></i> Online Payment Settings</b></small><br><small >See your rights</small></div>
+              <div><small><b class=\"teget\" style=\"color: #01264d !important;\"><i class=\"bi bi-credit-card-2-back-fill\"></i> Online Payment Settings</b></small><br><small >See your rights</small></div>
               <div class=\"d-flex align-items-center\"><i class=\"bi bi-caret-right-fill grey\"></i></div>
             </div>
           </a>
@@ -181,7 +180,7 @@ class __TwigTemplate_6a4b6f667460a2b073a48bd6ad13f285 extends Template
           </a>
           <hr class=\"mb-5\"style=\"margin-bottom: -1px; margin-top:-1px;\">
           <a href=\"";
-        // line 108
+        // line 107
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/caregiver/logout/out\" class=\"text-decoration-none d-block profile\">
             <div class=\"d-flex justify-content-between p-2 rounded\">
@@ -201,10 +200,10 @@ class __TwigTemplate_6a4b6f667460a2b073a48bd6ad13f285 extends Template
       <div class=\"modal-dialog modal-dialog-centered\">
         <div class=\"modal-content\">
           <form action=\"";
-        // line 125
+        // line 124
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/caregiver/update/";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "user_id", [], "any", false, false, false, 125), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "user_id", [], "any", false, false, false, 124), "html", null, true);
         echo "\" method=\"POST\">
             <div class=\"modal-header\">
               <h1 class=\"modal-title fs-5\" id=\"change_name\"><small><b class=\"teget\"><i class=\"bi bi-person-fill\"></i>Edit My Profile</b></small><br><small></small></h1>
@@ -213,10 +212,10 @@ class __TwigTemplate_6a4b6f667460a2b073a48bd6ad13f285 extends Template
             <div class=\"modal-body\">
               <label for=\"\" class=\"mb-2 ms-1\"><small><b>Change my name</b></small></label>
               <input class=\"form-control form-control-sm\" type=\"text\" name=\"new_name\" placeholder=\"";
-        // line 132
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "name", [], "any", false, false, false, 132), "html", null, true);
+        // line 131
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "name", [], "any", false, false, false, 131), "html", null, true);
         echo " ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "surname", [], "any", false, false, false, 132), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "surname", [], "any", false, false, false, 131), "html", null, true);
         echo "\" aria-label=\".form-control-sm example\">
             </div>
             <div class=\"modal-footer\">
@@ -232,10 +231,10 @@ class __TwigTemplate_6a4b6f667460a2b073a48bd6ad13f285 extends Template
   <div class=\"modal-dialog modal-dialog-centered\">
     <div class=\"modal-content\">
       <form action=\"";
-        // line 146
+        // line 145
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/caregiver/update/";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "user_id", [], "any", false, false, false, 146), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "user_id", [], "any", false, false, false, 145), "html", null, true);
         echo "\" method=\"POST\">
         <div class=\"modal-header\">
           <h1 class=\"modal-title fs-5\" id=\"change_phone\">
@@ -246,8 +245,8 @@ class __TwigTemplate_6a4b6f667460a2b073a48bd6ad13f285 extends Template
         <div class=\"modal-body\">
           <label for=\"\" class=\"mb-2 ms-1\"><small><b>Change my phone</b></small></label>
           <input class=\"form-control form-control-sm\" type=\"text\" name=\"phone\" aria-label=\".form-control-sm example\" value=\"";
-        // line 155
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "phone", [], "any", false, false, false, 155), "html", null, true);
+        // line 154
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "phone", [], "any", false, false, false, 154), "html", null, true);
         echo "\">
         </div>
         <div class=\"modal-footer\">
@@ -265,10 +264,10 @@ class __TwigTemplate_6a4b6f667460a2b073a48bd6ad13f285 extends Template
   <div class=\"modal-dialog modal-dialog-centered\">
     <div class=\"modal-content\">
       <form action=\"";
-        // line 171
+        // line 170
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/caregiver/update/";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "user_id", [], "any", false, false, false, 171), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "user_id", [], "any", false, false, false, 170), "html", null, true);
         echo "\" method=\"POST\">
         <div class=\"modal-header\">
           <h1 class=\"modal-title fs-5\" id=\"change_password\">
@@ -299,11 +298,11 @@ class __TwigTemplate_6a4b6f667460a2b073a48bd6ad13f285 extends Template
 ";
     }
 
-    // line 199
+    // line 198
     public function block_naslov($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 200
+        // line 199
         echo "Profile
 ";
     }
@@ -320,7 +319,7 @@ class __TwigTemplate_6a4b6f667460a2b073a48bd6ad13f285 extends Template
 
     public function getDebugInfo()
     {
-        return array (  307 => 200,  303 => 199,  269 => 171,  250 => 155,  236 => 146,  217 => 132,  205 => 125,  185 => 108,  139 => 65,  129 => 58,  107 => 41,  90 => 27,  84 => 23,  80 => 21,  73 => 19,  70 => 18,  68 => 17,  56 => 7,  54 => 6,  51 => 5,  47 => 4,  36 => 1,);
+        return array (  306 => 199,  302 => 198,  268 => 170,  249 => 154,  235 => 145,  216 => 131,  204 => 124,  184 => 107,  138 => 64,  128 => 57,  106 => 40,  90 => 27,  84 => 23,  80 => 21,  73 => 19,  70 => 18,  68 => 17,  56 => 7,  54 => 6,  51 => 5,  47 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -335,8 +334,8 @@ class __TwigTemplate_6a4b6f667460a2b073a48bd6ad13f285 extends Template
 <div class=\"container\">
   <div class=\"row d-flex justify-content-center mt-5\">
     <div class=\"col-lg-8\">
-      <div class=\"card ms-2\" style=\"background-color: #ebf6fc;\">
-        <div class=\"card-body\">
+      <div class=\"card ms-2\" style=\"background-color: #ebf6fc !important;\">
+        <div class=\"card-body\" >
           <div class=\"row\">
             <div class=\"col-lg-8\">
               <p><b>Your health. Your data</b></p>
@@ -354,25 +353,24 @@ class __TwigTemplate_6a4b6f667460a2b073a48bd6ad13f285 extends Template
                 <div class=\"text-center\"><img src=\"{{ base_url }}/assets/images/katanac1.png\" alt=\"\" style=\"width:150px; height: 120px;\"></div>
             </div>
           </div>
-
         </div>
       </div>
     </div>
     <div class=\"col-lg-8 mt-5\">
-      <div class=\"card border-0\">
+      <div class=\"card border-0\" style=\"background-color: #f8f9fc !important;\">
         <div class=\"card-body\">
           <p class=\"ms-1\"><b>Personal information</b></p>
           <hr style=\"margin-bottom: -1px;\">
           <a href=\"\" class=\"text-decoration-none d-block profile grey\" data-bs-toggle=\"modal\" data-bs-target=\"#name\">
             <div class=\"d-flex justify-content-between p-2 rounded\">
-              <div><small><b class=\"teget\"><i class=\"bi bi-person-fill\"></i> My Profile</b></small><br><small >{{caregiver.name}} {{caregiver.surname}}</small></div>
+              <div><small><b class=\"teget\" style=\"color: #01264d !important;\"><i class=\"bi bi-person-fill\"></i> My Profile</b></small><br><small >{{caregiver.name}} {{caregiver.surname}}</small></div>
               <div class=\"d-flex align-items-center\"><i class=\"bi bi-caret-right-fill grey\"></i></div>
             </div>
           </a>   
           <hr style=\"margin-bottom: -1px; margin-top:-1px;\">
           <a href=\"\" class=\"text-decoration-none d-block profile grey\">
             <div class=\"d-flex justify-content-between p-2 rounded\">
-              <div><small><b class=\"teget\"><i class=\"bi bi-sticky-fill\"></i> My Rights</b></small><br><small>See your rights</small></div>
+              <div><small><b class=\"teget\" style=\"color: #01264d !important;\"><i class=\"bi bi-sticky-fill\"></i> My Rights</b></small><br><small>See your rights</small></div>
               <div class=\"d-flex align-items-center\"><i class=\"bi bi-caret-right-fill grey\"></i></div>
             </div>
           </a>
@@ -382,21 +380,21 @@ class __TwigTemplate_6a4b6f667460a2b073a48bd6ad13f285 extends Template
           <hr style=\"margin-bottom: -1px;\">
           <a href=\"\" class=\"text-decoration-none d-block profile grey\"  data-bs-toggle=\"modal\" data-bs-target=\"#phone\">
             <div class=\"d-flex justify-content-between p-2 rounded\">
-              <div><small><b class=\"teget\"><i class=\"bi bi-telephone-fill\"></i> Phones</b></small><br><small>{{caregiver.phone}}</small></div>
+              <div><small><b class=\"teget\" style=\"color: #01264d !important;\"><i class=\"bi bi-telephone-fill\"></i> Phones</b></small><br><small>{{caregiver.phone}}</small></div>
               <div class=\"d-flex align-items-center\"><i class=\"bi bi-caret-right-fill grey\"></i></div>
             </div>
           </a>
           <hr style=\"margin-bottom: -1px; margin-top:-1px;\">
           <a href=\"#\" class=\"text-decoration-none d-block profile grey\">
             <div class=\"d-flex justify-content-between p-2 rounded\">
-              <div><small><b class=\"teget\"><i class=\"bi bi-envelope-fill\"></i> Email</b></small><br><small >{{caregiver.email}}</small></div>
+              <div><small><b class=\"teget\" style=\"color: #01264d !important;\"><i class=\"bi bi-envelope-fill\"></i> Email</b></small><br><small >{{caregiver.email}}</small></div>
               <div class=\"d-flex align-items-center\"><i class=\"bi bi-caret-right-fill grey\"></i></div>
             </div>
           </a>
           <hr style=\"margin-bottom: -1px; margin-top:-1px;\">
           <a href=\"#\" class=\"text-decoration-none d-block profile grey\" data-bs-toggle=\"modal\" data-bs-target=\"#password\">
             <div class=\"d-flex justify-content-between p-2 rounded\">
-              <div><small><b class=\"teget\"><i class=\"bi bi-shield-lock-fill\"></i> Password</b></small><br><small ><i class=\"bi bi-three-dots\" style=\"font-size: 24px;\"></i><i class=\"bi bi-three-dots\" style=\"font-size: 24px;\"></i></small></div>
+              <div><small><b class=\"teget\" style=\"color: #01264d !important;\"><i class=\"bi bi-shield-lock-fill\"></i> Password</b></small><br><small ><i class=\"bi bi-three-dots\" style=\"font-size: 24px;\"></i><i class=\"bi bi-three-dots\" style=\"font-size: 24px;\"></i></small></div>
               <div class=\"d-flex align-items-center\"><i class=\"bi bi-caret-right-fill grey\"></i></div>
             </div>
           </a>
@@ -404,14 +402,14 @@ class __TwigTemplate_6a4b6f667460a2b073a48bd6ad13f285 extends Template
           <hr style=\"margin-bottom: -1px;\">
           <a href=\"#\" class=\"text-decoration-none d-block profile grey\">
             <div class=\"d-flex justify-content-between p-2 rounded\">
-              <div><small><b class=\"teget\"><i class=\"bi bi-credit-card-2-back-fill\"></i> Payment Methods</b></small><br><small >See your rights</small></div>
+              <div><small><b class=\"teget\" style=\"color: #01264d !important;\"><i class=\"bi bi-credit-card-2-back-fill\"></i> Payment Methods</b></small><br><small >See your rights</small></div>
               <div class=\"d-flex align-items-center\"><i class=\"bi bi-caret-right-fill grey\"></i></div>
             </div>
           </a>
           <hr style=\"margin-bottom: -1px; margin-top:-1px;\">
           <a href=\"#\" class=\"text-decoration-none d-block profile grey\">
             <div class=\"d-flex justify-content-between p-2 rounded\">
-              <div><small><b class=\"teget\"><i class=\"bi bi-credit-card-2-back-fill\"></i> Online Payment Settings</b></small><br><small >See your rights</small></div>
+              <div><small><b class=\"teget\" style=\"color: #01264d !important;\"><i class=\"bi bi-credit-card-2-back-fill\"></i> Online Payment Settings</b></small><br><small >See your rights</small></div>
               <div class=\"d-flex align-items-center\"><i class=\"bi bi-caret-right-fill grey\"></i></div>
             </div>
           </a>

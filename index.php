@@ -12,9 +12,6 @@ use App\Core\Session\Session;
 use App\Core\TwigService;
 
 
-
-
-
    $databaseConfig= new DatabaseConfiguration(
       Configruation::DATABASE_HOST,
       Configruation::DATABASE_USER,

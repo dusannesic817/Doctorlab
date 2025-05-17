@@ -67,7 +67,6 @@ class __TwigTemplate_ce3700ee9ca62a1743c37422bb0a3af3 extends Template
   <!-- Custom styles for this template-->
   <!-- Bootstrap 4 CSS (via sb-admin-2) -->
   <link href=\"css/sb-admin-2.min.css\" rel=\"stylesheet\">
-
   <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\">
 </head>
 
@@ -75,23 +74,23 @@ class __TwigTemplate_ce3700ee9ca62a1743c37422bb0a3af3 extends Template
   <div id=\"wrapper\">
 
     ";
+        // line 33
+        $this->loadTemplate("./inc/caregiver/sidebar.html", "_global/caregiver_index.html", 33)->display($context);
         // line 34
-        $this->loadTemplate("./inc/caregiver/sidebar.html", "_global/caregiver_index.html", 34)->display($context);
-        // line 35
         echo "
     <div id=\"content-wrapper\" class=\"d-flex flex-column\">
       <!-- Main Content -->
       <div id=\"content\">
         ";
+        // line 38
+        $this->loadTemplate("./inc/caregiver/topbar_caregiver.html", "_global/caregiver_index.html", 38)->display($context);
         // line 39
-        $this->loadTemplate("./inc/caregiver/topbar_caregiver.html", "_global/caregiver_index.html", 39)->display($context);
-        // line 40
         echo "       
 
         ";
-        // line 42
+        // line 41
         $this->displayBlock('caregiver', $context, $blocks);
-        // line 45
+        // line 44
         echo "
       </div>
     </div>
@@ -100,17 +99,21 @@ class __TwigTemplate_ce3700ee9ca62a1743c37422bb0a3af3 extends Template
 
   <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js\"></script>
   <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js\"></script>
+    <script src=\"";
+        // line 52
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/assets/main.js\" defer></script>
   
 </body>
 
 </html>";
     }
 
-    // line 42
+    // line 41
     public function block_caregiver($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 43
+        // line 42
         echo "
         ";
     }
@@ -127,7 +130,7 @@ class __TwigTemplate_ce3700ee9ca62a1743c37422bb0a3af3 extends Template
 
     public function getDebugInfo()
     {
-        return array (  114 => 43,  110 => 42,  95 => 45,  93 => 42,  89 => 40,  87 => 39,  81 => 35,  79 => 34,  55 => 13,  48 => 9,  38 => 1,);
+        return array (  117 => 42,  113 => 41,  104 => 52,  94 => 44,  92 => 41,  88 => 39,  86 => 38,  80 => 34,  78 => 33,  55 => 13,  48 => 9,  38 => 1,);
     }
 
     public function getSourceContext()
@@ -158,7 +161,6 @@ class __TwigTemplate_ce3700ee9ca62a1743c37422bb0a3af3 extends Template
   <!-- Custom styles for this template-->
   <!-- Bootstrap 4 CSS (via sb-admin-2) -->
   <link href=\"css/sb-admin-2.min.css\" rel=\"stylesheet\">
-
   <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\">
 </head>
 
@@ -184,6 +186,7 @@ class __TwigTemplate_ce3700ee9ca62a1743c37422bb0a3af3 extends Template
 
   <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js\"></script>
   <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js\"></script>
+    <script src=\"{{ base_url }}/assets/main.js\" defer></script>
   
 </body>
 

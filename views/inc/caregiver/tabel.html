@@ -127,11 +127,11 @@
     const query = form.find('input[name="query"]').val();
 
     $.ajax({
-      url: form.attr('action'),  // URL iz action atributa forme
+      url: form.attr('action'), 
       method: 'POST',
       data: { query: query },
       success: function (response) {
-        // Ubaci dobivene rezultate u tbody tabele sa id="pc-dt-simple"
+       
         $('#pc-dt-simple tbody').html(response);
       },
       error: function () {
@@ -140,6 +140,5 @@
     });
   });
 });
-
 
 </script>

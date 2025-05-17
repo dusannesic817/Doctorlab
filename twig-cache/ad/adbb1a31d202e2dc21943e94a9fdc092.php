@@ -250,11 +250,11 @@ $context["client"], "status", [], "any", false, false, false, 53) == "canceled")
     const query = form.find('input[name=\"query\"]').val();
 
     \$.ajax({
-      url: form.attr('action'),  // URL iz action atributa forme
+      url: form.attr('action'), 
       method: 'POST',
       data: { query: query },
       success: function (response) {
-        // Ubaci dobivene rezultate u tbody tabele sa id=\"pc-dt-simple\"
+       
         \$('#pc-dt-simple tbody').html(response);
       },
       error: function () {
@@ -263,7 +263,6 @@ $context["client"], "status", [], "any", false, false, false, 53) == "canceled")
     });
   });
 });
-
 
 </script>";
     }
@@ -414,11 +413,11 @@ $context["client"], "status", [], "any", false, false, false, 53) == "canceled")
     const query = form.find('input[name=\"query\"]').val();
 
     \$.ajax({
-      url: form.attr('action'),  // URL iz action atributa forme
+      url: form.attr('action'), 
       method: 'POST',
       data: { query: query },
       success: function (response) {
-        // Ubaci dobivene rezultate u tbody tabele sa id=\"pc-dt-simple\"
+       
         \$('#pc-dt-simple tbody').html(response);
       },
       error: function () {
@@ -427,7 +426,6 @@ $context["client"], "status", [], "any", false, false, false, 53) == "canceled")
     });
   });
 });
-
 
 </script>", "./inc/caregiver/tabel.html", "C:\\laragon\\www\\doctorlab\\views\\inc\\caregiver\\tabel.html");
     }

@@ -125,6 +125,7 @@ class AppointmentModel extends Model{
             a.caregiver_data as type, 
             a.start_time as start_time, 
             a.updated_at as updated_at,
+            u.phone as user_phone,
             u.name AS user_name, 
             u.surname AS user_surname,
             u.email as user_email

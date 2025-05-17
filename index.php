@@ -9,6 +9,7 @@ use App\Core\DatabaseConnection;
 use App\Core\Router;
 use App\Core\Session\FileSessionStorage;
 use App\Core\Session\Session;
+use App\Core\TwigService;
 
 
 
@@ -60,26 +61,8 @@ use App\Core\Session\Session;
    $data = $controller->getData();
 
 
-   $loader = new \Twig\Loader\FilesystemLoader('./views');
-   $twig = new \Twig\Environment($loader, [
-      'debug' => true,
-      'cache' => './twig-cache',
-      'auto_reload'=> true
+   $twig = TwigService::getTwig($controller);
 
-   ]);
-   $twig->addExtension(new \Twig\Extension\DebugExtension());
-
-
-   $twig->addGlobal('base_url', 'http://localhost/doctorlab');
-
-   $auth = $controller->getSession()->get('user_id');
-   $role = $controller->getSession()->get('role');
-   $caregiver_id = $controller->getSession()->get('caregiver_id');
-   
-   $twig->addGlobal('auth', $auth); 
-   $twig->addGlobal('role', $role);
-   $twig->addGlobal('caregiver_id', $caregiver_id);
-   
   if (!str_starts_with($route->getControllerName(), 'Api')) {
     $html = $twig->render(
         $route->getControllerName() . '/' . $route->getMethodName() . '.html',

@@ -208,10 +208,14 @@ class AppointmentController extends UserRoleController{
         $keywords = trim($q);
         $keywords = preg_replace('/ +/', ' ', $keywords);
 
-        $users = $appointmentModel->getAllSearch($keywords);
+        $myclients = $appointmentModel->getAllSearch($keywords);
 
-       var_dump($users);
-       exit();
+        $twig = \App\Core\TwigService::getTwig($this);
+        echo $twig->render('Appointment/search.html', [
+    'myclients' => $myclients,
+        ]);
+        exit;
+      
     }
 
 

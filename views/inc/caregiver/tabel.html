@@ -117,3 +117,29 @@
       </ul>
     </nav>
   </div>
+
+  <script>
+  $(document).ready(function () {
+  $('form[role="search"]').on('submit', function (e) {
+    e.preventDefault();
+
+    const form = $(this);
+    const query = form.find('input[name="query"]').val();
+
+    $.ajax({
+      url: form.attr('action'),  // URL iz action atributa forme
+      method: 'POST',
+      data: { query: query },
+      success: function (response) {
+        // Ubaci dobivene rezultate u tbody tabele sa id="pc-dt-simple"
+        $('#pc-dt-simple tbody').html(response);
+      },
+      error: function () {
+        alert('Došlo je do greške prilikom pretrage.');
+      }
+    });
+  });
+});
+
+
+</script>

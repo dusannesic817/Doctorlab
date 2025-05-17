@@ -239,7 +239,33 @@ $context["client"], "status", [], "any", false, false, false, 53) == "canceled")
         </li>
       </ul>
     </nav>
-  </div>";
+  </div>
+
+  <script>
+  \$(document).ready(function () {
+  \$('form[role=\"search\"]').on('submit', function (e) {
+    e.preventDefault();
+
+    const form = \$(this);
+    const query = form.find('input[name=\"query\"]').val();
+
+    \$.ajax({
+      url: form.attr('action'),  // URL iz action atributa forme
+      method: 'POST',
+      data: { query: query },
+      success: function (response) {
+        // Ubaci dobivene rezultate u tbody tabele sa id=\"pc-dt-simple\"
+        \$('#pc-dt-simple tbody').html(response);
+      },
+      error: function () {
+        alert('Došlo je do greške prilikom pretrage.');
+      }
+    });
+  });
+});
+
+
+</script>";
     }
 
     public function getTemplateName()
@@ -377,6 +403,32 @@ $context["client"], "status", [], "any", false, false, false, 53) == "canceled")
         </li>
       </ul>
     </nav>
-  </div>", "./inc/caregiver/tabel.html", "C:\\laragon\\www\\doctorlab\\views\\inc\\caregiver\\tabel.html");
+  </div>
+
+  <script>
+  \$(document).ready(function () {
+  \$('form[role=\"search\"]').on('submit', function (e) {
+    e.preventDefault();
+
+    const form = \$(this);
+    const query = form.find('input[name=\"query\"]').val();
+
+    \$.ajax({
+      url: form.attr('action'),  // URL iz action atributa forme
+      method: 'POST',
+      data: { query: query },
+      success: function (response) {
+        // Ubaci dobivene rezultate u tbody tabele sa id=\"pc-dt-simple\"
+        \$('#pc-dt-simple tbody').html(response);
+      },
+      error: function () {
+        alert('Došlo je do greške prilikom pretrage.');
+      }
+    });
+  });
+});
+
+
+</script>", "./inc/caregiver/tabel.html", "C:\\laragon\\www\\doctorlab\\views\\inc\\caregiver\\tabel.html");
     }
 }

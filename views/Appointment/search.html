@@ -1,0 +1,69 @@
+{% for client in myclients %}
+<tr>
+  <td>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox">
+    </div>
+  </td>
+  <td>{{client.user_id}}</td>
+  <td>
+    <div class="d-flex align-items-center">
+      <img src="{{base_url}}/assets/images/undraw_profile.svg" alt="user-image" class="rounded-circle me-2"
+        style="width: 30px; height: 30px;">
+      <div>
+        <h6 class="mb-0">{{client.user_name}} {{client.user_surname}}</h6>
+        <p class="text-muted f-12 mb-0 text-truncate" style="max-width: 150px;">{{client.user_email}}</p>
+      </div>
+    </div>
+  </td>
+  <td class="text-nowrap">{{client.user_phone}}</td>
+  <td>{{client.appointment_date|date("F j, l")}} - {{client.start_time|date("H:i")}}</td>
+  <td>{{client.type}}</td>
+  <td>
+    {% if client.status == 'scheduled' %}
+    <span class="badge bg-success rounded-pill" style="font-size: 12px;">Verify</span>
+    {% elseif client.status == 'canceled' %}
+    <span class="badge bg-danger rounded-pill" style="font-size: 12px;">{{ client.status|capitalize }}</span>
+    {% else %}
+    <span class="badge bg-primary rounded-pill" style="font-size: 12px;">{{ client.status|capitalize }}</span>
+    {% endif %}
+  </td>
+  <td class="text-center">
+    <ul class="list-inline me-auto mb-0">
+      {% if client.status=='scheduled' %}
+      <li class="list-inline-item" data-bs-toggle="tooltip" title="Complete">
+        <form id="complete-form-{{ client.appointment_id }}"
+          action="{{ base_url }}/appointments/update/{{ client.appointment_id }}" method="POST"
+          class="d-inline">
+          <a href="#" class="avtar avtar-xs btn-link-secondary"
+            onclick="event.preventDefault(); document.getElementById('complete-form-{{ client.appointment_id }}').submit();">
+            <i class="fa-solid fa-circle-check" style="color: green;"></i>
+          </a>
+        </form>
+      </li>
+      {% endif %}
+      <li class="list-inline-item" data-bs-toggle="tooltip" title="Contact">
+        <a href="mailto:{{client.patient_email}}" class="avtar avtar-xs btn-link-primary">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+      </li>
+      {% if client.status=='scheduled' %}
+      <li class="list-inline-item" data-bs-toggle="tooltip" title="Cancel">
+        <form id="cancel-form-{{ client.appointment_id }}"
+          action="{{ base_url }}/appointments/cancel/{{  client.appointment_id}}" method="POST"
+          class="d-inline">
+          <a href="#" class="avtar avtar-xs btn-link-danger"
+            onclick="event.preventDefault(); document.getElementById('cancel-form-{{ client.appointment_id }}').submit();">
+            <i class="fa-solid fa-user-slash" style="color: rgb(212, 7, 7);"></i>
+          </a>
+        </form>
+      </li>
+      {% endif %}
+    </ul>
+  </td>
+</tr>
+{% else %}
+<tr><td colspan="8" class="text-center text-muted">No results found.</td></tr>
+{% endfor %}
+
+

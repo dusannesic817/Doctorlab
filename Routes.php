@@ -57,6 +57,11 @@ return [
     App\Core\Route::post('|^caregiver/update/([0-9]+)/?$|', "CaregiverProfile", 'update'),
     App\Core\Route::get('|^caregiver/appointments/?$|',     "CaregiverProfile",'appointmens'),
     App\Core\Route::get('|^caregiver/logout/out?$|',           "CaregiverProfile", 'logout'),
+
+
+    #ChatGpt
+    App\Core\Route::get('|^assistent?$|', "ChatGpt", 'index'),
+
     
 
     #Api

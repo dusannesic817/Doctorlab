@@ -61,29 +61,31 @@ class __TwigTemplate_5ea54c7ed6922403a42678871894b191 extends Template
 <div class=\"container-fluid\">
   <div class=\"row justify-content-center\">
     <div class=\"col-10 col-md-8 col-lg-10 mx-auto d-flex flex-column\" style=\"height: 75vh;\">
+
+      <div class=\"card flex-grow-1 mb-3\" style=\"height: 75vh;\">
+        <div class=\"card-body d-flex flex-column-reverse overflow-auto\" style=\"height: 100%;\">
+          <!-- poruke -->
       
-      <div class=\"card flex-grow-1 mb-3\">
-        <div class=\"card-body d-flex flex-column justify-content-end\">
-
-          <div class=\"d-flex justify-content-start align-items-center mb-2\">
-  <img src=\"";
-        // line 24
-        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
-        echo "/assets/images/doctor.jpg\" alt=\"Avatar\" class=\"rounded-circle me-2 img-fluid\" style=\"width: 40px; height: 40px;\">
-  <span class=\"d-inline p-2 text-bg-info rounded text-white\">Poruka gpt</span>
-</div>
-
           <div class=\"d-flex justify-content-end align-items-center\">
             <span class=\"d-inline p-2 text-bg-primary rounded\">Moja poruka koju cu pitati nesto gpt</span>
             <img src=\"";
+        // line 26
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/assets/images/undraw_profile.svg\" alt=\"Avatar\" class=\"rounded-circle ms-2 img-fluid\"
+              style=\"width: 40px; height: 40px;\">
+          </div>
+              <div class=\"d-flex justify-content-start align-items-center mb-2\">
+            <img src=\"";
         // line 30
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
-        echo "/assets/images/undraw_profile.svg\" alt=\"Avatar\" class=\"rounded-circle ms-2 img-fluid\" style=\"width: 40px; height: 40px;\">
+        echo "/assets/images/doctor.jpg\" alt=\"Avatar\" class=\"rounded-circle me-2 img-fluid\"
+              style=\"width: 40px; height: 40px;\">
+            <span class=\"d-inline p-2 text-bg-info rounded text-white\">Poruka gpt</span>
           </div>
-
+          
+          <!-- više poruka -->
         </div>
       </div>
-
       <form>
         <div class=\"input-group\">
           <input type=\"text\" class=\"form-control\" placeholder=\"Provide us your problem\" aria-label=\"Problem\" required>
@@ -115,7 +117,7 @@ class __TwigTemplate_5ea54c7ed6922403a42678871894b191 extends Template
 
     public function getDebugInfo()
     {
-        return array (  80 => 30,  71 => 24,  50 => 5,  46 => 4,  35 => 1,);
+        return array (  80 => 30,  73 => 26,  50 => 5,  46 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -138,23 +140,25 @@ class __TwigTemplate_5ea54c7ed6922403a42678871894b191 extends Template
 <div class=\"container-fluid\">
   <div class=\"row justify-content-center\">
     <div class=\"col-10 col-md-8 col-lg-10 mx-auto d-flex flex-column\" style=\"height: 75vh;\">
+
+      <div class=\"card flex-grow-1 mb-3\" style=\"height: 75vh;\">
+        <div class=\"card-body d-flex flex-column-reverse overflow-auto\" style=\"height: 100%;\">
+          <!-- poruke -->
       
-      <div class=\"card flex-grow-1 mb-3\">
-        <div class=\"card-body d-flex flex-column justify-content-end\">
-
-          <div class=\"d-flex justify-content-start align-items-center mb-2\">
-  <img src=\"{{base_url}}/assets/images/doctor.jpg\" alt=\"Avatar\" class=\"rounded-circle me-2 img-fluid\" style=\"width: 40px; height: 40px;\">
-  <span class=\"d-inline p-2 text-bg-info rounded text-white\">Poruka gpt</span>
-</div>
-
           <div class=\"d-flex justify-content-end align-items-center\">
             <span class=\"d-inline p-2 text-bg-primary rounded\">Moja poruka koju cu pitati nesto gpt</span>
-            <img src=\"{{base_url}}/assets/images/undraw_profile.svg\" alt=\"Avatar\" class=\"rounded-circle ms-2 img-fluid\" style=\"width: 40px; height: 40px;\">
+            <img src=\"{{base_url}}/assets/images/undraw_profile.svg\" alt=\"Avatar\" class=\"rounded-circle ms-2 img-fluid\"
+              style=\"width: 40px; height: 40px;\">
           </div>
-
+              <div class=\"d-flex justify-content-start align-items-center mb-2\">
+            <img src=\"{{base_url}}/assets/images/doctor.jpg\" alt=\"Avatar\" class=\"rounded-circle me-2 img-fluid\"
+              style=\"width: 40px; height: 40px;\">
+            <span class=\"d-inline p-2 text-bg-info rounded text-white\">Poruka gpt</span>
+          </div>
+          
+          <!-- više poruka -->
         </div>
       </div>
-
       <form>
         <div class=\"input-group\">
           <input type=\"text\" class=\"form-control\" placeholder=\"Provide us your problem\" aria-label=\"Problem\" required>

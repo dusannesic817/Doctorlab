@@ -178,6 +178,13 @@ class UserController extends Controller{
     
         $userModel = new UserModel($this->getDatabaseConnection());
         $email = $userModel->getByFieldName('email', $email);
+        
+        $is_verified = $email->is_verified;
+
+        if($is_verified==0){
+            $this->set('message', 'Invalid password or email');
+            return;
+        }
     
         if (!$email) {
             $this->set('message', 'Invalid password or email');
@@ -233,10 +240,8 @@ class UserController extends Controller{
 
     if ($user) {
         $userModel->verifyUser($token); 
-        echo "Uspešno ste verifikovali nalog!";
-    } else {
-        echo "Nevažeći ili istekao verifikacioni link.";
     }
+    $this->redirect("{{base_url}}/login");
 }
 
 

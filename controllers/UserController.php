@@ -156,8 +156,7 @@ class UserController extends Controller{
             return;
         }
 
-          
-        $this->getSession()->put('successRegistration',"Thank you, registration has been completed.");
+        $this->getSession()->put('successRegistration',"Thank you, you will get confirmation link, check your email address.");
         $this->getSession()->save();
         $this->redirect('/');
        
@@ -222,19 +221,19 @@ class UserController extends Controller{
 
     }
 
-   /* PRILAGODITI 
+ 
    public function verify($token)
 {
-    $userModel = new User(); // assuming User model exists
-    $user = $userModel->findByToken($token); // metoda koja pronalazi korisnika po tokenu
+    $userModel = new UserModel($this->getDatabaseConnection()); 
+    $user = $userModel->findByToken($token);
 
     if ($user) {
-        $userModel->verifyUser($token); // metoda koja setuje is_verified = 1 i verify_token = null
+        $userModel->verifyUser($token); 
         echo "Uspešno ste verifikovali nalog!";
     } else {
         echo "Nevažeći ili istekao verifikacioni link.";
     }
-}*/
+}
 
 
 

@@ -239,9 +239,10 @@ class UserController extends Controller{
     $user = $userModel->findByToken($token);
 
     if ($user) {
-        $userModel->verifyUser($token); 
+        $userModel->verifyUser($token);
+         $this->redirect("/login");
     }
-    $this->redirect("{{base_url}}/login");
+   
 }
 
 

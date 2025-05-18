@@ -12,7 +12,7 @@ class TwigService {
         ]);
 
         $twig->addExtension(new \Twig\Extension\DebugExtension());
-        $twig->addGlobal('base_url', 'http://localhost/doctorlab');
+        $twig->addGlobal('base_url', \Configruation::BASE_URL);
 
         $session = $controller->getSession();
         $twig->addGlobal('auth', $session->get('user_id'));

@@ -8,6 +8,11 @@ return [
     App\Core\Route::get('|^login/?$|',          "User", 'index'),
     App\Core\Route::get('|^googleauth/?$|',     "User", 'googleAuth'),
     App\Core\Route::post('|^user/login/?$|',    "User", "authenticate" ),
+    App\Core\Route::get('|^confirm/[a-zA-Z0-9_-]+$|',     "User", 'verify'),
+   
+
+   
+
 
 
     #Caregiver

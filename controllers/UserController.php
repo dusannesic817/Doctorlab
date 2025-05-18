@@ -10,6 +10,7 @@ use App\Models\UserModel;
 use App\Validators\NumberValidator;
 use App\Validators\StringValidator;
 use App\Core\MailService;
+use Configruation;
 
 class UserController extends Controller{
 
@@ -121,9 +122,9 @@ class UserController extends Controller{
         }
 
         $stringValidator = (new StringValidator())->setMinLength(7)->setMaxLength(30)->firstCharUpper();
-        $numberValidator = (new NumberValidator())->setMustContainDigit();
+        //$numberValidator = (new NumberValidator())->setMustContainDigit();
        
-        if (!$stringValidator->isValid($password1) || !$numberValidator->isValid($password1)){
+        if (!$stringValidator->isValid($password1)){
             $this->set('message', 'Your password must be 8-30 characters long, with an uppercase letter and contain numbers.');
             return;
         }
@@ -147,7 +148,7 @@ class UserController extends Controller{
             'password_hash'=>$pass_hash,
             'role'=>'client',
             'birth'=>$date,
-            'verfiy_token'=>$verify_token,
+            'verify_token'=>$verify_token,
            
         ]);
 
@@ -155,6 +156,10 @@ class UserController extends Controller{
             $this->set('message', "Doslo je do greske, neuspela registracija");
             return;
         }
+        $mailer = new MailService();
+        $addres = Configruation::BASE_URL."/confirm/$verify_token";
+        $mailer->sendMail($email,'Confirm mail',$addres);
+       
 
         $this->getSession()->put('successRegistration',"Thank you, you will get confirmation link, check your email address.");
         $this->getSession()->save();
@@ -222,8 +227,7 @@ class UserController extends Controller{
     }
 
  
-   public function verify($token)
-{
+   public function verify($token){
     $userModel = new UserModel($this->getDatabaseConnection()); 
     $user = $userModel->findByToken($token);
 

@@ -65,9 +65,8 @@ return [
 
 
     #ChatGpt
-    App\Core\Route::get('|^assistent?$|', "ChatGpt", 'index'),
+    App\Core\Route::any('|^assistent?$|', "ChatGpt", 'index'),
 
-    
 
     #Api
     App\Core\Route::get( '|^api/appointments/notifications?$|',       "Appointment", "sendNotification"),

@@ -3,6 +3,7 @@ namespace App\Services;
 
 use GuzzleHttp\Client;
 
+
 class GptService
 {
     private $client;
@@ -14,8 +15,7 @@ class GptService
         $this->apiKey = \Configruation::GPT_API_KEY;
     }
 
-   public function askGpt($prompt)
-{
+   public function askGpt($prompt){
     $response = $this->client->post('https://api.openai.com/v1/chat/completions', [
         'headers' => [
             'Authorization' => 'Bearer ' . $this->apiKey,
@@ -33,7 +33,8 @@ class GptService
                 [
                     'role' => 'user',
                     'content' => $prompt
-                ]
+                ],
+                 'temperature' => 0.7,
             ],
         ]
     ]);

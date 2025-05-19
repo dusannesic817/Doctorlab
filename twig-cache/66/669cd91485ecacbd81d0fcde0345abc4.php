@@ -284,25 +284,29 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
 </div>
 
 <!--Stats-->
-<div class=\"container\" style=\"height: 30vh\">
-  <div class=\"row mt-5\">
+<div class=\"container d-flex align-items-center justify-content-center\" style=\"height: 30vh;\">
+  <div class=\"row w-100\">
     <div class=\"col-md-12 col-lg-12\">
-      <div class=\"d-flex flex-wrap justify-content-around\">
+      <div class=\"d-flex flex-wrap justify-content-between\">
         <div class=\"p-2 text-center\">
-          <h1><b>80 Milion </b><i class=\"bi bi-check-circle-fill\" style=\"color:  green\"></i></h1><br><small>Better
-            Cared People</small>
+          <i class=\"fa-solid fa-user-nurse\" style=\"font-size: 120px; color:rgb(236, 209, 177)\"></i><br>
+          <h5 class=\"mt-4 teget\">80 Milion</h5>
+          <span>Cared People</span>
         </div>
         <div class=\"p-2 text-center\">
-          <h1><b>410K </b><i class=\"bi bi-check-circle-fill\" style=\"color:  green\"></i></h1><br><small>Caregivers
-            using Doctolab</small>
+          <i class=\"fa-solid fa-users teget\" style=\"font-size: 120px;\"></i><br>
+          <h5 class=\"mt-4 teget\">410K</h5>
+          <span>Caregivers using Doctolab</span>
         </div>
         <div class=\"p-2 text-center\">
-          <h1><b>4 Milion </b><i class=\"bi bi-check-circle-fill\" style=\"color:  green\"></i></h1><br><small>Documents
-            Shared Each Month</small>
+          <i class=\"fa-solid fa-file-contract\" style=\"font-size: 120px;\"></i><br>
+          <h5 class=\"mt-4 teget\">4 Milion</h5>
+          <span>Documents Shared Each Month</span>
         </div>
         <div class=\"p-2 text-center\">
-          <h1><b>1 Milion </b><i class=\"bi bi-check-circle-fill\" style=\"color:  green\"></i></h1><br><small>Visits Each
-            Month</small>
+          <i class=\"fa-solid fa-eye\" style=\"font-size: 120px; color:green\"></i><br>
+          <h5 class=\"mt-4 teget\">1 Milion</h5>
+          <span>Visits Each Month</span>
         </div>
       </div>
     </div>
@@ -311,17 +315,18 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
 
 
 
+
 ";
     }
 
-    // line 195
+    // line 200
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 196
+        // line 201
         echo "    ";
-        $this->loadTemplate("./inc/footer.html", "Main/home.html", 196)->display($context);
-        // line 197
+        $this->loadTemplate("./inc/footer.html", "Main/home.html", 201)->display($context);
+        // line 202
         echo "  ";
     }
 
@@ -337,7 +342,7 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
 
     public function getDebugInfo()
     {
-        return array (  325 => 197,  322 => 196,  318 => 195,  280 => 160,  270 => 156,  266 => 155,  260 => 154,  257 => 153,  253 => 152,  246 => 147,  236 => 143,  232 => 142,  226 => 141,  223 => 140,  219 => 139,  210 => 133,  188 => 114,  167 => 96,  149 => 81,  137 => 72,  125 => 63,  105 => 46,  94 => 38,  83 => 30,  60 => 9,  58 => 8,  56 => 7,  54 => 6,  51 => 5,  47 => 4,  36 => 1,);
+        return array (  330 => 202,  327 => 201,  323 => 200,  280 => 160,  270 => 156,  266 => 155,  260 => 154,  257 => 153,  253 => 152,  246 => 147,  236 => 143,  232 => 142,  226 => 141,  223 => 140,  219 => 139,  210 => 133,  188 => 114,  167 => 96,  149 => 81,  137 => 72,  125 => 63,  105 => 46,  94 => 38,  83 => 30,  60 => 9,  58 => 8,  56 => 7,  54 => 6,  51 => 5,  47 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -508,30 +513,35 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
 </div>
 
 <!--Stats-->
-<div class=\"container\" style=\"height: 30vh\">
-  <div class=\"row mt-5\">
+<div class=\"container d-flex align-items-center justify-content-center\" style=\"height: 30vh;\">
+  <div class=\"row w-100\">
     <div class=\"col-md-12 col-lg-12\">
-      <div class=\"d-flex flex-wrap justify-content-around\">
+      <div class=\"d-flex flex-wrap justify-content-between\">
         <div class=\"p-2 text-center\">
-          <h1><b>80 Milion </b><i class=\"bi bi-check-circle-fill\" style=\"color:  green\"></i></h1><br><small>Better
-            Cared People</small>
+          <i class=\"fa-solid fa-user-nurse\" style=\"font-size: 120px; color:rgb(236, 209, 177)\"></i><br>
+          <h5 class=\"mt-4 teget\">80 Milion</h5>
+          <span>Cared People</span>
         </div>
         <div class=\"p-2 text-center\">
-          <h1><b>410K </b><i class=\"bi bi-check-circle-fill\" style=\"color:  green\"></i></h1><br><small>Caregivers
-            using Doctolab</small>
+          <i class=\"fa-solid fa-users teget\" style=\"font-size: 120px;\"></i><br>
+          <h5 class=\"mt-4 teget\">410K</h5>
+          <span>Caregivers using Doctolab</span>
         </div>
         <div class=\"p-2 text-center\">
-          <h1><b>4 Milion </b><i class=\"bi bi-check-circle-fill\" style=\"color:  green\"></i></h1><br><small>Documents
-            Shared Each Month</small>
+          <i class=\"fa-solid fa-file-contract\" style=\"font-size: 120px;\"></i><br>
+          <h5 class=\"mt-4 teget\">4 Milion</h5>
+          <span>Documents Shared Each Month</span>
         </div>
         <div class=\"p-2 text-center\">
-          <h1><b>1 Milion </b><i class=\"bi bi-check-circle-fill\" style=\"color:  green\"></i></h1><br><small>Visits Each
-            Month</small>
+          <i class=\"fa-solid fa-eye\" style=\"font-size: 120px; color:green\"></i><br>
+          <h5 class=\"mt-4 teget\">1 Milion</h5>
+          <span>Visits Each Month</span>
         </div>
       </div>
     </div>
   </div>
 </div>
+
 
 
 

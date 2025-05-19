@@ -36,7 +36,6 @@ class __TwigTemplate_98f7913ea081110e0b6c53a5ca4b5965 extends Template
         // line 1
         echo "  <!-- Tvoj footer (sa već pripremljenim kodom) -->
   <footer class=\"mt-auto pt-3 border\">
-    
     <div class=\"container py-3\">
       <div class=\"row mt-5 text-center text-lg-start d-flex justify-content-center align-items-center\">
         <div class=\"col-12 col-lg-4\">
@@ -47,7 +46,7 @@ class __TwigTemplate_98f7913ea081110e0b6c53a5ca4b5965 extends Template
           <div class=\"d-flex flex-row-reverse\">
             <div class=\"p-2\">
               <a class=\"btn btn-primary\" href=\"";
-        // line 13
+        // line 12
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/assistent\" role=\"button\" style=\"width: 200px;\">
                 <i class=\"bi bi-chat-dots-fill\"></i> Chat
@@ -61,7 +60,7 @@ class __TwigTemplate_98f7913ea081110e0b6c53a5ca4b5965 extends Template
         <div class=\"col-12 col-lg-4\">
           <div class=\"mb-2\">
             <img src=\"";
-        // line 24
+        // line 23
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/assets/images/logo_white.png\" alt=\"DoctorLab Logo\">
           </div>
@@ -71,7 +70,7 @@ class __TwigTemplate_98f7913ea081110e0b6c53a5ca4b5965 extends Template
           <div class=\"d-flex flex-row-reverse\">
             <div class=\"p-2\">
               <img src=\"";
-        // line 31
+        // line 30
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/assets/images/app_download.png\" alt=\"...\" style=\"height: 6rem;\">
             </div>
@@ -113,14 +112,13 @@ class __TwigTemplate_98f7913ea081110e0b6c53a5ca4b5965 extends Template
 
     public function getDebugInfo()
     {
-        return array (  75 => 31,  65 => 24,  51 => 13,  37 => 1,);
+        return array (  74 => 30,  64 => 23,  50 => 12,  37 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("  <!-- Tvoj footer (sa već pripremljenim kodom) -->
   <footer class=\"mt-auto pt-3 border\">
-    
     <div class=\"container py-3\">
       <div class=\"row mt-5 text-center text-lg-start d-flex justify-content-center align-items-center\">
         <div class=\"col-12 col-lg-4\">

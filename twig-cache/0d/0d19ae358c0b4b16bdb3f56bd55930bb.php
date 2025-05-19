@@ -84,33 +84,19 @@ class __TwigTemplate_5ea54c7ed6922403a42678871894b191 extends Template
         }
         // line 30
         echo "
-          ";
-        // line 31
-        if (($context["gptResponse"] ?? null)) {
-            // line 32
-            echo "          <div class=\"d-flex justify-content-start align-items-center mt-2\">
-            <img src=\"";
-            // line 33
-            echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
-            echo "/assets/images/doctor.jpg\" alt=\"Avatar\" class=\"rounded-circle me-2 img-fluid\"
-              style=\"width: 40px; height: 40px;\">
-            <span class=\"d-inline p-2 text-bg-info rounded text-white\">";
-            // line 35
-            echo twig_escape_filter($this->env, ($context["gptResponse"] ?? null), "html", null, true);
-            echo "</span>
-          </div>
-          ";
-        }
-        // line 38
-        echo "
+        <div id=\"chat-messages\">
+        
+        </div>
+
         </div>
       </div>
-      <form method=\"POST\" url=\"";
-        // line 41
+      <form method=\"POST\" action=\"";
+        // line 37
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/assistent\">
         <div class=\"input-group\">
-          <input type=\"text\" class=\"form-control\" name=\"prompt\" placeholder=\"Provide us your problem\" aria-label=\"Problem\" required>
+          <input type=\"text\" class=\"form-control\" name=\"prompt\" placeholder=\"Provide us your problem\"
+            aria-label=\"Problem\" required>
           <button class=\"btn btn-primary\" type=\"submit\">
             <i class=\"fa-solid fa-paper-plane\"></i>
           </button>
@@ -121,45 +107,99 @@ class __TwigTemplate_5ea54c7ed6922403a42678871894b191 extends Template
   </div>
 </div>
 
-
 <script>
-  // Omogući logovanje u konzolu radi debugovanja
+  
   Pusher.logToConsole = true;
-
-  // Inicijalizuj Pusher
+  var base_url = \"";
+        // line 54
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "\"; 
   var pusher = new Pusher('6d7d51c13b5451452dd9', {
     cluster: 'eu'
   });
 
-  // Pretplati se na kanal
-  var channel = pusher.subscribe('my-channel');
+var channel = pusher.subscribe('my-channel');
+channel.bind('gpt', function(data) {
+console.log('Pusher data:', data);
 
-  // Slušaj događaj 'gpt'
-  channel.bind('gpt', function(data) {
-    console.log('Primljena poruka od servera:', data);
+  var container = document.getElementById('chat-messages');
 
-    if (data.message) {
-      const container = document.createElement('div');
-      container.className = 'alert alert-info mt-2';
-      container.innerText = 'GPT odgovor: ' + data.message;
+  var wrapper = document.createElement('div');
+  wrapper.className = \"d-flex justify-content-start align-items-center mt-2\";
 
-      // Dodaj poruku na vrh stranice
-      document.body.prepend(container);
-    }
-  });
+  var img = document.createElement('img');
+  img.src = base_url + \"/assets/images/doctor.jpg\";
+  img.alt = \"Avatar\";
+  img.className = \"rounded-circle me-2 img-fluid\";
+  img.style.width = \"40px\";
+  img.style.height = \"40px\";
 
-  // === Test prikaz bez Pusher servera ===
-  // Ako hoćeš samo da vidiš kako izgleda u DOM-u:
-  /*
-  document.addEventListener(\"DOMContentLoaded\", function () {
-    const testData = { message: 'Ovo je lokalna test poruka bez Pusher-a' };
-    const container = document.createElement('div');
-    container.className = 'alert alert-warning mt-2';
-    container.innerText = 'GPT odgovor: ' + testData.message;
-    document.body.prepend(container);
-  });
-  */
+  var span = document.createElement('span');
+  span.className = \"d-inline p-2 text-bg-info rounded text-white\";
+
+  if (typeof data === 'string') {
+    span.textContent = data;
+  } else if (typeof data === 'object' && data.message){
+    span.textContent = data.message;
+  } else {
+    span.textContent = '[Prazna poruka]';
+  }
+
+  wrapper.appendChild(img);
+  wrapper.appendChild(span);
+  container.appendChild(wrapper);
+});
+
+
+document.querySelector('form').addEventListener('submit', function(e){
+  e.preventDefault();
+  var input = this.querySelector('input[name=\"prompt\"]');
+  var userText = input.value.trim();
+  if (!userText) return;
+
+  // Prikaži korisničku poruku odmah
+  var container = document.getElementById('chat-messages');
+
+  var wrapper = document.createElement('div');
+  wrapper.className = \"d-flex justify-content-end align-items-center mt-2\";
+
+  var span = document.createElement('span');
+  span.className = \"d-inline p-2 text-bg-primary rounded\";
+  span.textContent = userText;
+
+  var img = document.createElement('img');
+  img.src = base_url + \"/assets/images/undraw_profile.svg\";
+  img.alt = \"Avatar\";
+  img.className = \"rounded-circle ms-2 img-fluid\";
+  img.style.width = \"40px\";
+  img.style.height = \"40px\";
+
+  wrapper.appendChild(span);
+  wrapper.appendChild(img);
+  container.appendChild(wrapper);
+
+  input.value = '';
+
+  fetch(\"";
+        // line 121
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/assistent\", {
+    method: \"POST\",
+    headers: {
+      \"Content-Type\": \"application/x-www-form-urlencoded\",
+    },
+    body: \"prompt=\" + encodeURIComponent(userText),
+  }).then(response => {
+    
+  }).catch(console.error);
+
+  container.scrollTop = container.scrollHeight;
+});
+
+
+
 </script>
+
 
 
 ";
@@ -177,7 +217,7 @@ class __TwigTemplate_5ea54c7ed6922403a42678871894b191 extends Template
 
     public function getDebugInfo()
     {
-        return array (  110 => 41,  105 => 38,  99 => 35,  94 => 33,  91 => 32,  89 => 31,  86 => 30,  79 => 26,  75 => 25,  72 => 24,  70 => 23,  50 => 5,  46 => 4,  35 => 1,);
+        return array (  185 => 121,  115 => 54,  95 => 37,  86 => 30,  79 => 26,  75 => 25,  72 => 24,  70 => 23,  50 => 5,  46 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -212,19 +252,16 @@ class __TwigTemplate_5ea54c7ed6922403a42678871894b191 extends Template
           </div>
           {% endif %}
 
-          {% if gptResponse %}
-          <div class=\"d-flex justify-content-start align-items-center mt-2\">
-            <img src=\"{{base_url}}/assets/images/doctor.jpg\" alt=\"Avatar\" class=\"rounded-circle me-2 img-fluid\"
-              style=\"width: 40px; height: 40px;\">
-            <span class=\"d-inline p-2 text-bg-info rounded text-white\">{{ gptResponse }}</span>
-          </div>
-          {% endif %}
+        <div id=\"chat-messages\">
+        
+        </div>
 
         </div>
       </div>
-      <form method=\"POST\" url=\"{{base_url}}/assistent\">
+      <form method=\"POST\" action=\"{{base_url}}/assistent\">
         <div class=\"input-group\">
-          <input type=\"text\" class=\"form-control\" name=\"prompt\" placeholder=\"Provide us your problem\" aria-label=\"Problem\" required>
+          <input type=\"text\" class=\"form-control\" name=\"prompt\" placeholder=\"Provide us your problem\"
+            aria-label=\"Problem\" required>
           <button class=\"btn btn-primary\" type=\"submit\">
             <i class=\"fa-solid fa-paper-plane\"></i>
           </button>
@@ -235,45 +272,93 @@ class __TwigTemplate_5ea54c7ed6922403a42678871894b191 extends Template
   </div>
 </div>
 
-
 <script>
-  // Omogući logovanje u konzolu radi debugovanja
+  
   Pusher.logToConsole = true;
-
-  // Inicijalizuj Pusher
+  var base_url = \"{{ base_url }}\"; 
   var pusher = new Pusher('6d7d51c13b5451452dd9', {
     cluster: 'eu'
   });
 
-  // Pretplati se na kanal
-  var channel = pusher.subscribe('my-channel');
+var channel = pusher.subscribe('my-channel');
+channel.bind('gpt', function(data) {
+console.log('Pusher data:', data);
 
-  // Slušaj događaj 'gpt'
-  channel.bind('gpt', function(data) {
-    console.log('Primljena poruka od servera:', data);
+  var container = document.getElementById('chat-messages');
 
-    if (data.message) {
-      const container = document.createElement('div');
-      container.className = 'alert alert-info mt-2';
-      container.innerText = 'GPT odgovor: ' + data.message;
+  var wrapper = document.createElement('div');
+  wrapper.className = \"d-flex justify-content-start align-items-center mt-2\";
 
-      // Dodaj poruku na vrh stranice
-      document.body.prepend(container);
-    }
-  });
+  var img = document.createElement('img');
+  img.src = base_url + \"/assets/images/doctor.jpg\";
+  img.alt = \"Avatar\";
+  img.className = \"rounded-circle me-2 img-fluid\";
+  img.style.width = \"40px\";
+  img.style.height = \"40px\";
 
-  // === Test prikaz bez Pusher servera ===
-  // Ako hoćeš samo da vidiš kako izgleda u DOM-u:
-  /*
-  document.addEventListener(\"DOMContentLoaded\", function () {
-    const testData = { message: 'Ovo je lokalna test poruka bez Pusher-a' };
-    const container = document.createElement('div');
-    container.className = 'alert alert-warning mt-2';
-    container.innerText = 'GPT odgovor: ' + testData.message;
-    document.body.prepend(container);
-  });
-  */
+  var span = document.createElement('span');
+  span.className = \"d-inline p-2 text-bg-info rounded text-white\";
+
+  if (typeof data === 'string') {
+    span.textContent = data;
+  } else if (typeof data === 'object' && data.message){
+    span.textContent = data.message;
+  } else {
+    span.textContent = '[Prazna poruka]';
+  }
+
+  wrapper.appendChild(img);
+  wrapper.appendChild(span);
+  container.appendChild(wrapper);
+});
+
+
+document.querySelector('form').addEventListener('submit', function(e){
+  e.preventDefault();
+  var input = this.querySelector('input[name=\"prompt\"]');
+  var userText = input.value.trim();
+  if (!userText) return;
+
+  // Prikaži korisničku poruku odmah
+  var container = document.getElementById('chat-messages');
+
+  var wrapper = document.createElement('div');
+  wrapper.className = \"d-flex justify-content-end align-items-center mt-2\";
+
+  var span = document.createElement('span');
+  span.className = \"d-inline p-2 text-bg-primary rounded\";
+  span.textContent = userText;
+
+  var img = document.createElement('img');
+  img.src = base_url + \"/assets/images/undraw_profile.svg\";
+  img.alt = \"Avatar\";
+  img.className = \"rounded-circle ms-2 img-fluid\";
+  img.style.width = \"40px\";
+  img.style.height = \"40px\";
+
+  wrapper.appendChild(span);
+  wrapper.appendChild(img);
+  container.appendChild(wrapper);
+
+  input.value = '';
+
+  fetch(\"{{ base_url }}/assistent\", {
+    method: \"POST\",
+    headers: {
+      \"Content-Type\": \"application/x-www-form-urlencoded\",
+    },
+    body: \"prompt=\" + encodeURIComponent(userText),
+  }).then(response => {
+    
+  }).catch(console.error);
+
+  container.scrollTop = container.scrollHeight;
+});
+
+
+
 </script>
+
 
 
 {%endblock%}", "ChatGpt/index.html", "C:\\laragon\\www\\doctorlab\\views\\ChatGpt\\index.html");

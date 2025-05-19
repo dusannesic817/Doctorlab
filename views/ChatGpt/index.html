@@ -28,19 +28,16 @@
           </div>
           {% endif %}
 
-          {% if gptResponse %}
-          <div class="d-flex justify-content-start align-items-center mt-2">
-            <img src="{{base_url}}/assets/images/doctor.jpg" alt="Avatar" class="rounded-circle me-2 img-fluid"
-              style="width: 40px; height: 40px;">
-            <span class="d-inline p-2 text-bg-info rounded text-white">{{ gptResponse }}</span>
-          </div>
-          {% endif %}
+        <div id="chat-messages">
+        
+        </div>
 
         </div>
       </div>
-      <form method="POST" url="{{base_url}}/assistent">
+      <form method="POST" action="{{base_url}}/assistent">
         <div class="input-group">
-          <input type="text" class="form-control" name="prompt" placeholder="Provide us your problem" aria-label="Problem" required>
+          <input type="text" class="form-control" name="prompt" placeholder="Provide us your problem"
+            aria-label="Problem" required>
           <button class="btn btn-primary" type="submit">
             <i class="fa-solid fa-paper-plane"></i>
           </button>
@@ -51,45 +48,93 @@
   </div>
 </div>
 
-
 <script>
-  // Omogući logovanje u konzolu radi debugovanja
+  
   Pusher.logToConsole = true;
-
-  // Inicijalizuj Pusher
+  var base_url = "{{ base_url }}"; 
   var pusher = new Pusher('6d7d51c13b5451452dd9', {
     cluster: 'eu'
   });
 
-  // Pretplati se na kanal
-  var channel = pusher.subscribe('my-channel');
+var channel = pusher.subscribe('my-channel');
+channel.bind('gpt', function(data) {
+console.log('Pusher data:', data);
 
-  // Slušaj događaj 'gpt'
-  channel.bind('gpt', function(data) {
-    console.log('Primljena poruka od servera:', data);
+  var container = document.getElementById('chat-messages');
 
-    if (data.message) {
-      const container = document.createElement('div');
-      container.className = 'alert alert-info mt-2';
-      container.innerText = 'GPT odgovor: ' + data.message;
+  var wrapper = document.createElement('div');
+  wrapper.className = "d-flex justify-content-start align-items-center mt-2";
 
-      // Dodaj poruku na vrh stranice
-      document.body.prepend(container);
-    }
-  });
+  var img = document.createElement('img');
+  img.src = base_url + "/assets/images/doctor.jpg";
+  img.alt = "Avatar";
+  img.className = "rounded-circle me-2 img-fluid";
+  img.style.width = "40px";
+  img.style.height = "40px";
 
-  // === Test prikaz bez Pusher servera ===
-  // Ako hoćeš samo da vidiš kako izgleda u DOM-u:
-  /*
-  document.addEventListener("DOMContentLoaded", function () {
-    const testData = { message: 'Ovo je lokalna test poruka bez Pusher-a' };
-    const container = document.createElement('div');
-    container.className = 'alert alert-warning mt-2';
-    container.innerText = 'GPT odgovor: ' + testData.message;
-    document.body.prepend(container);
-  });
-  */
+  var span = document.createElement('span');
+  span.className = "d-inline p-2 text-bg-info rounded text-white";
+
+  if (typeof data === 'string') {
+    span.textContent = data;
+  } else if (typeof data === 'object' && data.message){
+    span.textContent = data.message;
+  } else {
+    span.textContent = '[Prazna poruka]';
+  }
+
+  wrapper.appendChild(img);
+  wrapper.appendChild(span);
+  container.appendChild(wrapper);
+});
+
+
+document.querySelector('form').addEventListener('submit', function(e){
+  e.preventDefault();
+  var input = this.querySelector('input[name="prompt"]');
+  var userText = input.value.trim();
+  if (!userText) return;
+
+  // Prikaži korisničku poruku odmah
+  var container = document.getElementById('chat-messages');
+
+  var wrapper = document.createElement('div');
+  wrapper.className = "d-flex justify-content-end align-items-center mt-2";
+
+  var span = document.createElement('span');
+  span.className = "d-inline p-2 text-bg-primary rounded";
+  span.textContent = userText;
+
+  var img = document.createElement('img');
+  img.src = base_url + "/assets/images/undraw_profile.svg";
+  img.alt = "Avatar";
+  img.className = "rounded-circle ms-2 img-fluid";
+  img.style.width = "40px";
+  img.style.height = "40px";
+
+  wrapper.appendChild(span);
+  wrapper.appendChild(img);
+  container.appendChild(wrapper);
+
+  input.value = '';
+
+  fetch("{{ base_url }}/assistent", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body: "prompt=" + encodeURIComponent(userText),
+  }).then(response => {
+    
+  }).catch(console.error);
+
+  container.scrollTop = container.scrollHeight;
+});
+
+
+
 </script>
+
 
 
 {%endblock%}

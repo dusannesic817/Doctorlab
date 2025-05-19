@@ -26,6 +26,7 @@ class __TwigTemplate_647fa31cf132783b89117ed0f0373249 extends Template
 
         $this->blocks = [
             'main' => [$this, 'block_main'],
+            'naslov' => [$this, 'block_naslov'],
         ];
     }
 
@@ -276,6 +277,15 @@ class __TwigTemplate_647fa31cf132783b89117ed0f0373249 extends Template
 ";
     }
 
+    // line 189
+    public function block_naslov($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        // line 190
+        echo "Profile
+";
+    }
+
     public function getTemplateName()
     {
         return "UserProfile/show.html";
@@ -288,7 +298,7 @@ class __TwigTemplate_647fa31cf132783b89117ed0f0373249 extends Template
 
     public function getDebugInfo()
     {
-        return array (  251 => 166,  233 => 151,  219 => 142,  199 => 127,  187 => 120,  165 => 101,  119 => 58,  109 => 51,  88 => 35,  71 => 21,  55 => 7,  53 => 6,  50 => 5,  46 => 4,  35 => 1,);
+        return array (  285 => 190,  281 => 189,  252 => 166,  234 => 151,  220 => 142,  200 => 127,  188 => 120,  166 => 101,  120 => 58,  110 => 51,  89 => 35,  72 => 21,  56 => 7,  54 => 6,  51 => 5,  47 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -480,6 +490,9 @@ class __TwigTemplate_647fa31cf132783b89117ed0f0373249 extends Template
   </div>
 </div>
 
+{% endblock %}
+{% block naslov %}
+Profile
 {% endblock %}
 ", "UserProfile/show.html", "C:\\laragon\\www\\doctorlab\\views\\UserProfile\\show.html");
     }

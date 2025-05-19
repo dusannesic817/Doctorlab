@@ -308,68 +308,11 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
   </div>
 </div>
 
-<!--Footer-->
-<div class=\"container-fluid\">
-  <hr class=\"shadow-lg\" style=\"color: #6da7f7;\">
-  <div class=\"container py-3\">
-    <div class=\"row mt-5 text-center text-lg-start d-flex justify-content-center align-items-center\">
-      <div class=\"col-12 col-lg-4\">
-        <div><b class=\"teget\">Have a question?</b></div>
-        <small class=\"grey\">Get help online for quick advice, or contact us for consultation</small>
-      </div>
-      <div class=\" col-12 col-lg-8 d-flex justify-content-center justify-content-lg-end mt-3 mt-lg-0\">
-        <div class=\"d-flex flex-row-reverse\">
-          <div class=\"p-2\"><a class=\"btn btn-primary\" href=\"";
-        // line 203
-        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
-        echo "/assistent\" role=\"button\" style=\"width: 200px;\"><i
-                class=\"bi bi-chat-dots-fill\"></i> Chat</a></div>
-        </div>
-      </div>
-    </div>
-    <hr style=\"color: #6da7f7;\">
-    <div class=\"row text-center text-lg-start d-flex justify-content-center align-items-center\">
-      <div class=\"col-12 col-lg-4\">
-        <div class=\"mb-2\"><img src=\"";
-        // line 211
-        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
-        echo "/assets/images/logo_white.png\" alt=\"DoctorLab Logo\"></div>
-        <small class=\"grey\">Copyright 2025 Docotorlab, all right reserved</small>
-      </div>
-      <div class=\"col-12 col-lg-8 d-flex justify-content-center justify-content-lg-end mt-3 mt-lg-0\">
-        <div class=\"d-flex flex-row-reverse\">
-          <div class=\"p-2\">
-            <img src=\"";
-        // line 217
-        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
-        echo "/assets/images/app_download.png\" alt=\"...\" style=\"height: 6rem;\">
-          </div>
-
-        </div>
-      </div>
-      <div class=\"row mt-5\" style=\"margin-left: -40px;\">
-        <div class=\"col-lg-12 pb-5\">
-          <small class=\"grey\">
-            Doctolib, united for your health
-            Terms and conditions of use
-            • Terms of use agreement
-            • Personal data protection policy
-            • Cookie policy
-            • Cookie management and consent settings
-            • Listing rules
-            • Legal notice
-            • Signal illicit content
-            CNOM directory of doctors
-            • ONCD directory of dentists
-            • Ordre National des Médecins
-            • Ordre National des Chirurgiens-Dentistes
-          </small>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
+";
+        // line 192
+        $this->loadTemplate("./inc/footer.html", "Main/home.html", 192)->display($context);
+        // line 193
+        echo "
 ";
     }
 
@@ -385,7 +328,7 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
 
     public function getDebugInfo()
     {
-        return array (  344 => 217,  335 => 211,  324 => 203,  279 => 160,  269 => 156,  265 => 155,  259 => 154,  256 => 153,  252 => 152,  245 => 147,  235 => 143,  231 => 142,  225 => 141,  222 => 140,  218 => 139,  209 => 133,  187 => 114,  166 => 96,  148 => 81,  136 => 72,  124 => 63,  104 => 46,  93 => 38,  82 => 30,  59 => 9,  57 => 8,  55 => 7,  53 => 6,  50 => 5,  46 => 4,  35 => 1,);
+        return array (  315 => 193,  313 => 192,  279 => 160,  269 => 156,  265 => 155,  259 => 154,  256 => 153,  252 => 152,  245 => 147,  235 => 143,  231 => 142,  225 => 141,  222 => 140,  218 => 139,  209 => 133,  187 => 114,  166 => 96,  148 => 81,  136 => 72,  124 => 63,  104 => 46,  93 => 38,  82 => 30,  59 => 9,  57 => 8,  55 => 7,  53 => 6,  50 => 5,  46 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -581,58 +524,7 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
   </div>
 </div>
 
-<!--Footer-->
-<div class=\"container-fluid\">
-  <hr class=\"shadow-lg\" style=\"color: #6da7f7;\">
-  <div class=\"container py-3\">
-    <div class=\"row mt-5 text-center text-lg-start d-flex justify-content-center align-items-center\">
-      <div class=\"col-12 col-lg-4\">
-        <div><b class=\"teget\">Have a question?</b></div>
-        <small class=\"grey\">Get help online for quick advice, or contact us for consultation</small>
-      </div>
-      <div class=\" col-12 col-lg-8 d-flex justify-content-center justify-content-lg-end mt-3 mt-lg-0\">
-        <div class=\"d-flex flex-row-reverse\">
-          <div class=\"p-2\"><a class=\"btn btn-primary\" href=\"{{base_url}}/assistent\" role=\"button\" style=\"width: 200px;\"><i
-                class=\"bi bi-chat-dots-fill\"></i> Chat</a></div>
-        </div>
-      </div>
-    </div>
-    <hr style=\"color: #6da7f7;\">
-    <div class=\"row text-center text-lg-start d-flex justify-content-center align-items-center\">
-      <div class=\"col-12 col-lg-4\">
-        <div class=\"mb-2\"><img src=\"{{ base_url }}/assets/images/logo_white.png\" alt=\"DoctorLab Logo\"></div>
-        <small class=\"grey\">Copyright 2025 Docotorlab, all right reserved</small>
-      </div>
-      <div class=\"col-12 col-lg-8 d-flex justify-content-center justify-content-lg-end mt-3 mt-lg-0\">
-        <div class=\"d-flex flex-row-reverse\">
-          <div class=\"p-2\">
-            <img src=\"{{ base_url }}/assets/images/app_download.png\" alt=\"...\" style=\"height: 6rem;\">
-          </div>
-
-        </div>
-      </div>
-      <div class=\"row mt-5\" style=\"margin-left: -40px;\">
-        <div class=\"col-lg-12 pb-5\">
-          <small class=\"grey\">
-            Doctolib, united for your health
-            Terms and conditions of use
-            • Terms of use agreement
-            • Personal data protection policy
-            • Cookie policy
-            • Cookie management and consent settings
-            • Listing rules
-            • Legal notice
-            • Signal illicit content
-            CNOM directory of doctors
-            • ONCD directory of dentists
-            • Ordre National des Médecins
-            • Ordre National des Chirurgiens-Dentistes
-          </small>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+{% include './inc/footer.html'%}
 
 {% endblock %}", "Main/home.html", "C:\\laragon\\www\\doctorlab\\views\\Main\\home.html");
     }

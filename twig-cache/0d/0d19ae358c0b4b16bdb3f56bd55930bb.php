@@ -47,42 +47,54 @@ class __TwigTemplate_5ea54c7ed6922403a42678871894b191 extends Template
     {
         $macros = $this->macros;
         // line 5
-        echo "
+        echo "<body style=\"background-color: #ebf6fc !important;\">
+  
+
 <div class=\"container\">
   <div class=\"row mt-3\">
     <div class=\"col-12\">
       <div class=\"text-center\">
-        Welcome to Doctorlab Virtual assistent.
+        <div class=\"d-flex justify-content-center align-items-center mt-2\">
+          <img src=\"";
+        // line 13
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/assets/images/doctor.jpg\" alt=\"Avatar\" class=\"rounded-circle me-2 img-fluid\"
+              style=\"width: 70px; height: 70px;\">
+             
+            
+          </div>
+          <h4 class=\"teget pt-3\">Doctorlab assistent</h4>
+       
       </div>
     </div>
   </div>
 </div>
 
-<div class=\"container-fluid\">
+<div class=\"container-fluid mt-3\">
   <div class=\"row justify-content-center\">
-    <div class=\"col-10 col-md-8 col-lg-10 mx-auto d-flex flex-column\" style=\"height: 75vh;\">
+    <div class=\"col-10 col-md-8 col-lg-8 mx-auto d-flex flex-column\" style=\"height: 75vh;\">
 
       <div class=\"card flex-grow-1 mb-3\" style=\"height: 75vh;\">
         <div class=\"card-body d-flex flex-column-reverse overflow-auto\" style=\"height: 100%;\">
           <!-- poruke -->
           ";
-        // line 23
+        // line 32
         if (($context["userPrompt"] ?? null)) {
-            // line 24
+            // line 33
             echo "          <div class=\"d-flex justify-content-end align-items-center mt-2\">
             <span class=\"d-inline p-2 text-bg-primary rounded\">";
-            // line 25
+            // line 34
             echo twig_escape_filter($this->env, ($context["userPrompt"] ?? null), "html", null, true);
             echo "</span>
             <img src=\"";
-            // line 26
+            // line 35
             echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
             echo "/assets/images/undraw_profile.svg\" alt=\"Avatar\" class=\"rounded-circle ms-2 img-fluid\"
               style=\"width: 40px; height: 40px;\">
           </div>
           ";
         }
-        // line 30
+        // line 39
         echo "
         <div id=\"chat-messages\">
         
@@ -91,7 +103,7 @@ class __TwigTemplate_5ea54c7ed6922403a42678871894b191 extends Template
         </div>
       </div>
       <form method=\"POST\" action=\"";
-        // line 37
+        // line 46
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/assistent\">
         <div class=\"input-group\">
@@ -106,12 +118,12 @@ class __TwigTemplate_5ea54c7ed6922403a42678871894b191 extends Template
     </div>
   </div>
 </div>
-
+</body>
 <script>
   
   Pusher.logToConsole = true;
   var base_url = \"";
-        // line 54
+        // line 63
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "\"; 
   var pusher = new Pusher('6d7d51c13b5451452dd9', {
@@ -181,7 +193,7 @@ document.querySelector('form').addEventListener('submit', function(e){
   input.value = '';
 
   fetch(\"";
-        // line 121
+        // line 130
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/assistent\", {
     method: \"POST\",
@@ -217,7 +229,7 @@ document.querySelector('form').addEventListener('submit', function(e){
 
     public function getDebugInfo()
     {
-        return array (  185 => 121,  115 => 54,  95 => 37,  86 => 30,  79 => 26,  75 => 25,  72 => 24,  70 => 23,  50 => 5,  46 => 4,  35 => 1,);
+        return array (  197 => 130,  127 => 63,  107 => 46,  98 => 39,  91 => 35,  87 => 34,  84 => 33,  82 => 32,  60 => 13,  50 => 5,  46 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -226,20 +238,29 @@ document.querySelector('form').addEventListener('submit', function(e){
 
 
 {% block main %}
+<body style=\"background-color: #ebf6fc !important;\">
+  
 
 <div class=\"container\">
   <div class=\"row mt-3\">
     <div class=\"col-12\">
       <div class=\"text-center\">
-        Welcome to Doctorlab Virtual assistent.
+        <div class=\"d-flex justify-content-center align-items-center mt-2\">
+          <img src=\"{{base_url}}/assets/images/doctor.jpg\" alt=\"Avatar\" class=\"rounded-circle me-2 img-fluid\"
+              style=\"width: 70px; height: 70px;\">
+             
+            
+          </div>
+          <h4 class=\"teget pt-3\">Doctorlab assistent</h4>
+       
       </div>
     </div>
   </div>
 </div>
 
-<div class=\"container-fluid\">
+<div class=\"container-fluid mt-3\">
   <div class=\"row justify-content-center\">
-    <div class=\"col-10 col-md-8 col-lg-10 mx-auto d-flex flex-column\" style=\"height: 75vh;\">
+    <div class=\"col-10 col-md-8 col-lg-8 mx-auto d-flex flex-column\" style=\"height: 75vh;\">
 
       <div class=\"card flex-grow-1 mb-3\" style=\"height: 75vh;\">
         <div class=\"card-body d-flex flex-column-reverse overflow-auto\" style=\"height: 100%;\">
@@ -271,7 +292,7 @@ document.querySelector('form').addEventListener('submit', function(e){
     </div>
   </div>
 </div>
-
+</body>
 <script>
   
   Pusher.logToConsole = true;

@@ -26,6 +26,7 @@ class __TwigTemplate_946462a6d1f6bbabdbd9c929ce2520d4 extends Template
 
         $this->blocks = [
             'caregiver' => [$this, 'block_caregiver'],
+            'naslov' => [$this, 'block_naslov'],
         ];
     }
 
@@ -157,6 +158,15 @@ class __TwigTemplate_946462a6d1f6bbabdbd9c929ce2520d4 extends Template
 ";
     }
 
+    // line 57
+    public function block_naslov($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        // line 58
+        echo "Create Schedule
+";
+    }
+
     public function getTemplateName()
     {
         return "Availability/create.html";
@@ -169,7 +179,7 @@ class __TwigTemplate_946462a6d1f6bbabdbd9c929ce2520d4 extends Template
 
     public function getDebugInfo()
     {
-        return array (  137 => 37,  131 => 33,  112 => 30,  106 => 29,  103 => 28,  86 => 27,  74 => 18,  67 => 14,  63 => 13,  56 => 9,  50 => 5,  46 => 4,  35 => 1,);
+        return array (  166 => 58,  162 => 57,  138 => 37,  132 => 33,  113 => 30,  107 => 29,  104 => 28,  87 => 27,  75 => 18,  68 => 14,  64 => 13,  57 => 9,  51 => 5,  47 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -229,6 +239,9 @@ class __TwigTemplate_946462a6d1f6bbabdbd9c929ce2520d4 extends Template
 <script>
 
 </script>
+{% endblock %}
+{% block naslov %}
+Create Schedule
 {% endblock %}", "Availability/create.html", "C:\\laragon\\www\\doctorlab\\views\\Availability\\create.html");
     }
 }

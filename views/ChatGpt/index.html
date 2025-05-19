@@ -2,20 +2,29 @@
 
 
 {% block main %}
+<body style="background-color: #ebf6fc !important;">
+  
 
 <div class="container">
   <div class="row mt-3">
     <div class="col-12">
       <div class="text-center">
-        Welcome to Doctorlab Virtual assistent.
+        <div class="d-flex justify-content-center align-items-center mt-2">
+          <img src="{{base_url}}/assets/images/doctor.jpg" alt="Avatar" class="rounded-circle me-2 img-fluid"
+              style="width: 70px; height: 70px;">
+             
+            
+          </div>
+          <h4 class="teget pt-3">Doctorlab assistent</h4>
+       
       </div>
     </div>
   </div>
 </div>
 
-<div class="container-fluid">
+<div class="container-fluid mt-3">
   <div class="row justify-content-center">
-    <div class="col-10 col-md-8 col-lg-10 mx-auto d-flex flex-column" style="height: 75vh;">
+    <div class="col-10 col-md-8 col-lg-8 mx-auto d-flex flex-column" style="height: 75vh;">
 
       <div class="card flex-grow-1 mb-3" style="height: 75vh;">
         <div class="card-body d-flex flex-column-reverse overflow-auto" style="height: 100%;">
@@ -47,7 +56,7 @@
     </div>
   </div>
 </div>
-
+</body>
 <script>
   
   Pusher.logToConsole = true;

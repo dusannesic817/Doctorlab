@@ -83,20 +83,16 @@ class __TwigTemplate_22b8ebdfd845176830f2a2fd3e10787a extends Template
   </body>
 
  
-  ";
-        // line 37
-        $this->displayBlock('naslov', $context, $blocks);
-        // line 40
-        echo "
+
 
 ";
     }
 
-    // line 37
+    // line 40
     public function block_naslov($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 38
+        // line 41
         echo "    Login
   ";
     }
@@ -113,7 +109,7 @@ class __TwigTemplate_22b8ebdfd845176830f2a2fd3e10787a extends Template
 
     public function getDebugInfo()
     {
-        return array (  100 => 38,  96 => 37,  90 => 40,  88 => 37,  61 => 13,  51 => 5,  47 => 4,  36 => 1,);
+        return array (  96 => 41,  92 => 40,  61 => 13,  51 => 5,  47 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -154,11 +150,12 @@ class __TwigTemplate_22b8ebdfd845176830f2a2fd3e10787a extends Template
   </body>
 
  
+
+
+{% endblock %}
   {% block naslov %}
     Login
   {% endblock %}
-
-
-{% endblock %}", "User/login.html", "C:\\laragon\\www\\doctorlab\\views\\User\\login.html");
+", "User/login.html", "C:\\laragon\\www\\doctorlab\\views\\User\\login.html");
     }
 }

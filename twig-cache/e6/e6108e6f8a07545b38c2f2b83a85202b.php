@@ -156,7 +156,10 @@ class __TwigTemplate_50224a08d9a49685f418e06832038247 extends Template
                   
                 </li>
                 <li class=\"nav-item\">
-                  <a class=\"nav-link mt-2 ms-2\" href=\"/\"><b><small>Tarrifs</small></b></a>
+                  <a class=\"nav-link mt-2 ms-2\" href=\"";
+        // line 60
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/assistent\"><b><small>Assistent Doctorlab</small></b></a>
                 </li>
 
                 ";
@@ -230,7 +233,7 @@ class __TwigTemplate_50224a08d9a49685f418e06832038247 extends Template
 
     public function getDebugInfo()
     {
-        return array (  212 => 86,  205 => 82,  199 => 79,  194 => 76,  182 => 71,  172 => 68,  166 => 64,  164 => 63,  150 => 51,  135 => 48,  132 => 47,  128 => 46,  124 => 44,  109 => 41,  106 => 40,  102 => 39,  97 => 36,  82 => 33,  79 => 32,  75 => 31,  49 => 8,  45 => 7,  37 => 1,);
+        return array (  215 => 86,  208 => 82,  202 => 79,  197 => 76,  185 => 71,  175 => 68,  169 => 64,  167 => 63,  161 => 60,  150 => 51,  135 => 48,  132 => 47,  128 => 46,  124 => 44,  109 => 41,  106 => 40,  102 => 39,  97 => 36,  82 => 33,  79 => 32,  75 => 31,  49 => 8,  45 => 7,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -294,7 +297,7 @@ class __TwigTemplate_50224a08d9a49685f418e06832038247 extends Template
                   
                 </li>
                 <li class=\"nav-item\">
-                  <a class=\"nav-link mt-2 ms-2\" href=\"/\"><b><small>Tarrifs</small></b></a>
+                  <a class=\"nav-link mt-2 ms-2\" href=\"{{base_url}}/assistent\"><b><small>Assistent Doctorlab</small></b></a>
                 </li>
 
                 {%if auth %}

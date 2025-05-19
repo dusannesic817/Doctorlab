@@ -58,7 +58,7 @@ class __TwigTemplate_f632f0baf0787e18abb394f43ba17bc4 extends Template
   
  
 
-  <title>Doctorlab | ";
+  <title>";
         // line 17
         $this->displayBlock('naslov', $context, $blocks);
         echo "</title>
@@ -77,15 +77,13 @@ class __TwigTemplate_f632f0baf0787e18abb394f43ba17bc4 extends Template
         $this->displayBlock('main', $context, $blocks);
         // line 28
         echo "  </main>
-  <footer>
-    footer
-  </footer>
+
   <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js\"
     integrity=\"sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz\"
     crossorigin=\"anonymous\"></script>
     
     <script src=\"";
-        // line 36
+        // line 34
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/assets/main.js\" defer></script>
 </body>
@@ -97,7 +95,7 @@ class __TwigTemplate_f632f0baf0787e18abb394f43ba17bc4 extends Template
     public function block_naslov($context, array $blocks = [])
     {
         $macros = $this->macros;
-        echo "Home";
+        echo "Doctorlab";
     }
 
     // line 25
@@ -121,7 +119,7 @@ class __TwigTemplate_f632f0baf0787e18abb394f43ba17bc4 extends Template
 
     public function getDebugInfo()
     {
-        return array (  108 => 26,  104 => 25,  97 => 17,  89 => 36,  79 => 28,  77 => 25,  73 => 23,  71 => 22,  63 => 17,  56 => 13,  49 => 9,  39 => 1,);
+        return array (  106 => 26,  102 => 25,  95 => 17,  87 => 34,  79 => 28,  77 => 25,  73 => 23,  71 => 22,  63 => 17,  56 => 13,  49 => 9,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -142,7 +140,7 @@ class __TwigTemplate_f632f0baf0787e18abb394f43ba17bc4 extends Template
   
  
 
-  <title>Doctorlab | {%block naslov%}Home{%endblock%}</title>
+  <title>{%block naslov%}Doctorlab{%endblock%}</title>
 </head>
 
 <body>
@@ -154,9 +152,7 @@ class __TwigTemplate_f632f0baf0787e18abb394f43ba17bc4 extends Template
 
     {% endblock %}
   </main>
-  <footer>
-    footer
-  </footer>
+
   <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js\"
     integrity=\"sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz\"
     crossorigin=\"anonymous\"></script>

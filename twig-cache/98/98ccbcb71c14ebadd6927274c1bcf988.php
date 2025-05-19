@@ -118,11 +118,7 @@ class __TwigTemplate_ecd1ffa695c0260ea6b51f2a0a31984c extends Template
     </div>
   </div>
 
-  ";
-        // line 69
-        $this->displayBlock('naslov', $context, $blocks);
-        // line 72
-        echo "
+
 
 
 
@@ -148,11 +144,11 @@ class __TwigTemplate_ecd1ffa695c0260ea6b51f2a0a31984c extends Template
 ";
     }
 
-    // line 69
+    // line 93
     public function block_naslov($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 70
+        // line 94
         echo "   Client Register 
   ";
     }
@@ -169,7 +165,7 @@ class __TwigTemplate_ecd1ffa695c0260ea6b51f2a0a31984c extends Template
 
     public function getDebugInfo()
     {
-        return array (  156 => 70,  152 => 69,  125 => 72,  123 => 69,  112 => 61,  62 => 14,  51 => 5,  47 => 4,  36 => 1,);
+        return array (  152 => 94,  148 => 93,  112 => 61,  62 => 14,  51 => 5,  47 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -242,9 +238,6 @@ class __TwigTemplate_ecd1ffa695c0260ea6b51f2a0a31984c extends Template
     </div>
   </div>
 
-  {% block naslov %}
-   Client Register 
-  {% endblock %}
 
 
 
@@ -268,6 +261,10 @@ class __TwigTemplate_ecd1ffa695c0260ea6b51f2a0a31984c extends Template
 
 
 
-{% endblock %}", "User/create.html", "C:\\laragon\\www\\doctorlab\\views\\User\\create.html");
+{% endblock %}
+  {% block naslov %}
+   Client Register 
+  {% endblock %}
+", "User/create.html", "C:\\laragon\\www\\doctorlab\\views\\User\\create.html");
     }
 }

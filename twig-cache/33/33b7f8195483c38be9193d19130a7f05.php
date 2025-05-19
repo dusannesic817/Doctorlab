@@ -26,6 +26,7 @@ class __TwigTemplate_9eeab2894a4594ac53078db2037a1741 extends Template
 
         $this->blocks = [
             'main' => [$this, 'block_main'],
+            'naslov' => [$this, 'block_naslov'],
         ];
     }
 
@@ -259,6 +260,15 @@ class __TwigTemplate_9eeab2894a4594ac53078db2037a1741 extends Template
 ";
     }
 
+    // line 107
+    public function block_naslov($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        // line 108
+        echo "Appointments
+";
+    }
+
     public function getTemplateName()
     {
         return "Appointment/client.html";
@@ -271,7 +281,7 @@ class __TwigTemplate_9eeab2894a4594ac53078db2037a1741 extends Template
 
     public function getDebugInfo()
     {
-        return array (  234 => 81,  215 => 76,  205 => 69,  199 => 68,  191 => 65,  185 => 61,  170 => 51,  167 => 50,  165 => 49,  160 => 47,  156 => 46,  147 => 41,  130 => 40,  117 => 30,  107 => 22,  90 => 19,  86 => 18,  83 => 17,  66 => 16,  55 => 7,  53 => 6,  50 => 5,  46 => 4,  35 => 1,);
+        return array (  268 => 108,  264 => 107,  235 => 81,  216 => 76,  206 => 69,  200 => 68,  192 => 65,  186 => 61,  171 => 51,  168 => 50,  166 => 49,  161 => 47,  157 => 46,  148 => 41,  131 => 40,  118 => 30,  108 => 22,  91 => 19,  87 => 18,  84 => 17,  67 => 16,  56 => 7,  54 => 6,  51 => 5,  47 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -381,6 +391,10 @@ class __TwigTemplate_9eeab2894a4594ac53078db2037a1741 extends Template
   </script>
 </body>
 
-{% endblock %}", "Appointment/client.html", "C:\\laragon\\www\\doctorlab\\views\\Appointment\\client.html");
+{% endblock %}
+{% block naslov %}
+Appointments
+{% endblock %}
+", "Appointment/client.html", "C:\\laragon\\www\\doctorlab\\views\\Appointment\\client.html");
     }
 }

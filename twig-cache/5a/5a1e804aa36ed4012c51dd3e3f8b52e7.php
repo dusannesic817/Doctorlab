@@ -26,6 +26,7 @@ class __TwigTemplate_55b0bdf23fe62b2b04abf0597d27e7c7 extends Template
 
         $this->blocks = [
             'caregiver' => [$this, 'block_caregiver'],
+            'naslov' => [$this, 'block_naslov'],
         ];
     }
 
@@ -70,6 +71,15 @@ class __TwigTemplate_55b0bdf23fe62b2b04abf0597d27e7c7 extends Template
 ";
     }
 
+    // line 19
+    public function block_naslov($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        // line 20
+        echo "Dashoboard
+";
+    }
+
     public function getTemplateName()
     {
         return "Appointment/show.html";
@@ -82,7 +92,7 @@ class __TwigTemplate_55b0bdf23fe62b2b04abf0597d27e7c7 extends Template
 
     public function getDebugInfo()
     {
-        return array (  65 => 12,  63 => 11,  57 => 7,  55 => 6,  53 => 5,  50 => 4,  46 => 3,  35 => 1,);
+        return array (  79 => 20,  75 => 19,  66 => 12,  64 => 11,  58 => 7,  56 => 6,  54 => 5,  51 => 4,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -105,6 +115,9 @@ class __TwigTemplate_55b0bdf23fe62b2b04abf0597d27e7c7 extends Template
 
 {% endblock %}
 
+{% block naslov %}
+Dashoboard
+{% endblock %}
 ", "Appointment/show.html", "C:\\laragon\\www\\doctorlab\\views\\Appointment\\show.html");
     }
 }

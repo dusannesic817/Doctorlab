@@ -26,6 +26,7 @@ class __TwigTemplate_ef0ddbf4fa78c87c3895315fdfd1b6ff extends Template
 
         $this->blocks = [
             'caregiver' => [$this, 'block_caregiver'],
+            'naslov' => [$this, 'block_naslov'],
         ];
     }
 
@@ -378,8 +379,21 @@ class __TwigTemplate_ef0ddbf4fa78c87c3895315fdfd1b6ff extends Template
   });
   </script>
   
+";
+        // line 235
+        $this->displayBlock('naslov', $context, $blocks);
+        // line 238
+        echo "
 
+";
+    }
 
+    // line 235
+    public function block_naslov($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        // line 236
+        echo "Settings
 ";
     }
 
@@ -395,7 +409,7 @@ class __TwigTemplate_ef0ddbf4fa78c87c3895315fdfd1b6ff extends Template
 
     public function getDebugInfo()
     {
-        return array (  342 => 199,  323 => 183,  309 => 174,  288 => 158,  276 => 151,  237 => 115,  228 => 108,  217 => 106,  212 => 105,  206 => 103,  202 => 101,  200 => 100,  192 => 94,  181 => 92,  176 => 91,  170 => 89,  166 => 87,  164 => 86,  143 => 68,  133 => 61,  121 => 52,  105 => 41,  89 => 27,  81 => 25,  75 => 23,  73 => 22,  53 => 7,  50 => 6,  46 => 5,  35 => 1,);
+        return array (  396 => 236,  392 => 235,  386 => 238,  384 => 235,  343 => 199,  324 => 183,  310 => 174,  289 => 158,  277 => 151,  238 => 115,  229 => 108,  218 => 106,  213 => 105,  207 => 103,  203 => 101,  201 => 100,  193 => 94,  182 => 92,  177 => 91,  171 => 89,  167 => 87,  165 => 86,  144 => 68,  134 => 61,  122 => 52,  106 => 41,  90 => 27,  82 => 25,  76 => 23,  74 => 22,  54 => 7,  51 => 6,  47 => 5,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -634,6 +648,9 @@ class __TwigTemplate_ef0ddbf4fa78c87c3895315fdfd1b6ff extends Template
   });
   </script>
   
+{% block naslov %}
+Settings
+{% endblock %}
 
 
 {% endblock %}", "CaregiverProfile/edit.html", "C:\\laragon\\www\\doctorlab\\views\\CaregiverProfile\\edit.html");

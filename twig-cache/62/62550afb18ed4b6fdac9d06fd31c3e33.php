@@ -250,8 +250,11 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
   </div>
 </form>
 
-
-<script>
+";
+        // line 81
+        $this->loadTemplate("./inc/footer.html", "Caregiver/index.html", 81)->display($context);
+        // line 82
+        echo "<script>
   document.addEventListener(\"DOMContentLoaded\", function () {
 
     const allCaregivers = document.querySelectorAll(\".day[data-caregiver-id]\");
@@ -376,22 +379,17 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
 
 
 
-";
-        // line 201
-        $this->displayBlock('naslov', $context, $blocks);
-        // line 205
-        echo "
+
 
 ";
     }
 
-    // line 201
+    // line 204
     public function block_naslov($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 202
-        echo "Search
-
+        // line 205
+        echo "Doctors
 ";
     }
 
@@ -407,7 +405,7 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
 
     public function getDebugInfo()
     {
-        return array (  393 => 202,  389 => 201,  383 => 205,  381 => 201,  357 => 180,  345 => 171,  248 => 76,  238 => 71,  232 => 70,  226 => 69,  223 => 68,  217 => 65,  213 => 64,  209 => 63,  204 => 62,  195 => 58,  190 => 56,  182 => 55,  174 => 54,  170 => 53,  166 => 52,  161 => 51,  158 => 50,  155 => 49,  150 => 48,  145 => 47,  143 => 46,  139 => 45,  130 => 40,  121 => 37,  114 => 36,  110 => 35,  106 => 34,  92 => 25,  79 => 19,  71 => 16,  63 => 12,  59 => 11,  51 => 5,  47 => 4,  36 => 1,);
+        return array (  392 => 205,  388 => 204,  360 => 180,  348 => 171,  257 => 82,  255 => 81,  248 => 76,  238 => 71,  232 => 70,  226 => 69,  223 => 68,  217 => 65,  213 => 64,  209 => 63,  204 => 62,  195 => 58,  190 => 56,  182 => 55,  174 => 54,  170 => 53,  166 => 52,  161 => 51,  158 => 50,  155 => 49,  150 => 48,  145 => 47,  143 => 46,  139 => 45,  130 => 40,  121 => 37,  114 => 36,  110 => 35,  106 => 34,  92 => 25,  79 => 19,  71 => 16,  63 => 12,  59 => 11,  51 => 5,  47 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -492,7 +490,7 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
   </div>
 </form>
 
-
+{% include './inc/footer.html'%}
 <script>
   document.addEventListener(\"DOMContentLoaded\", function () {
 
@@ -612,12 +610,12 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
 
 
 
-{% block naslov %}
-Search
+
 
 {% endblock %}
-
-
-{% endblock %}", "Caregiver/index.html", "C:\\laragon\\www\\doctorlab\\views\\Caregiver\\index.html");
+{% block naslov %}
+Doctors
+{% endblock %}
+", "Caregiver/index.html", "C:\\laragon\\www\\doctorlab\\views\\Caregiver\\index.html");
     }
 }

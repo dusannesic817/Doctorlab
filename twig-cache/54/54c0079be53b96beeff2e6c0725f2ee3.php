@@ -27,6 +27,7 @@ class __TwigTemplate_ce3700ee9ca62a1743c37422bb0a3af3 extends Template
         $this->parent = false;
 
         $this->blocks = [
+            'naslov' => [$this, 'block_naslov'],
             'caregiver' => [$this, 'block_caregiver'],
         ];
     }
@@ -56,7 +57,10 @@ class __TwigTemplate_ce3700ee9ca62a1743c37422bb0a3af3 extends Template
         echo "/assets/css/sb-admin-2.min.css\">
    <script src=\"https://js.pusher.com/8.4.0/pusher.min.js\"></script>
 
-  <title>Change</title>
+ <title>";
+        // line 16
+        $this->displayBlock('naslov', $context, $blocks);
+        echo "</title>
 
   <!-- Custom fonts for this template-->
   <link href=\"vendor/fontawesome-free/css/all.min.css\" rel=\"stylesheet\" type=\"text/css\">
@@ -109,6 +113,13 @@ class __TwigTemplate_ce3700ee9ca62a1743c37422bb0a3af3 extends Template
 </html>";
     }
 
+    // line 16
+    public function block_naslov($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        echo "  ";
+    }
+
     // line 41
     public function block_caregiver($context, array $blocks = [])
     {
@@ -130,7 +141,7 @@ class __TwigTemplate_ce3700ee9ca62a1743c37422bb0a3af3 extends Template
 
     public function getDebugInfo()
     {
-        return array (  117 => 42,  113 => 41,  104 => 52,  94 => 44,  92 => 41,  88 => 39,  86 => 38,  80 => 34,  78 => 33,  55 => 13,  48 => 9,  38 => 1,);
+        return array (  128 => 42,  124 => 41,  117 => 16,  108 => 52,  98 => 44,  96 => 41,  92 => 39,  90 => 38,  84 => 34,  82 => 33,  62 => 16,  56 => 13,  49 => 9,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -150,7 +161,7 @@ class __TwigTemplate_ce3700ee9ca62a1743c37422bb0a3af3 extends Template
   <link rel=\"stylesheet\" href=\"{{ base_url }}/assets/css/sb-admin-2.min.css\">
    <script src=\"https://js.pusher.com/8.4.0/pusher.min.js\"></script>
 
-  <title>Change</title>
+ <title>{%block naslov%}  {%endblock%}</title>
 
   <!-- Custom fonts for this template-->
   <link href=\"vendor/fontawesome-free/css/all.min.css\" rel=\"stylesheet\" type=\"text/css\">

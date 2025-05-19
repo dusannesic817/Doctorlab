@@ -123,8 +123,10 @@
 
 
 
+{% include './inc/footer.html'%}
+{% endblock %}
 
-{% endblock %}
 {% block naslov %}
-{{caregiver.name}} {{caregiver.surname}}
+Dr {{caregiver.name}} {{caregiver.surname}}
 {% endblock %}
+

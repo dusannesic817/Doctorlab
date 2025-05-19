@@ -36,7 +36,7 @@ class __TwigTemplate_98f7913ea081110e0b6c53a5ca4b5965 extends Template
         // line 1
         echo "<!--Footer-->
 <div class=\"container-fluid\">
-  <hr class=\"shadow-lg\" style=\"color: #6da7f7;\">
+
   <div class=\"container py-3\">
     <div class=\"row mt-5 text-center text-lg-start d-flex justify-content-center align-items-center\">
       <div class=\"col-12 col-lg-4\">
@@ -116,7 +116,7 @@ class __TwigTemplate_98f7913ea081110e0b6c53a5ca4b5965 extends Template
     {
         return new Source("<!--Footer-->
 <div class=\"container-fluid\">
-  <hr class=\"shadow-lg\" style=\"color: #6da7f7;\">
+
   <div class=\"container py-3\">
     <div class=\"row mt-5 text-center text-lg-start d-flex justify-content-center align-items-center\">
       <div class=\"col-12 col-lg-4\">

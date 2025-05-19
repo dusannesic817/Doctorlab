@@ -182,18 +182,20 @@ class __TwigTemplate_cc6dc1163ed366974106606bceb37d4d extends Template
 
 
 
-
 ";
+        // line 126
+        $this->loadTemplate("./inc/footer.html", "Caregiver/show.html", 126)->display($context);
     }
 
-    // line 128
+    // line 129
     public function block_naslov($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 129
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "name", [], "any", false, false, false, 129), "html", null, true);
+        // line 130
+        echo "Dr ";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "name", [], "any", false, false, false, 130), "html", null, true);
         echo " ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "surname", [], "any", false, false, false, 129), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "surname", [], "any", false, false, false, 130), "html", null, true);
         echo "
 ";
     }
@@ -210,7 +212,7 @@ class __TwigTemplate_cc6dc1163ed366974106606bceb37d4d extends Template
 
     public function getDebugInfo()
     {
-        return array (  194 => 129,  190 => 128,  79 => 21,  73 => 20,  61 => 13,  51 => 5,  47 => 4,  36 => 1,);
+        return array (  195 => 130,  191 => 129,  187 => 126,  79 => 21,  73 => 20,  61 => 13,  51 => 5,  47 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -340,10 +342,13 @@ class __TwigTemplate_cc6dc1163ed366974106606bceb37d4d extends Template
 
 
 
-
+{% include './inc/footer.html'%}
 {% endblock %}
+
 {% block naslov %}
-{{caregiver.name}} {{caregiver.surname}}
-{% endblock %}", "Caregiver/show.html", "C:\\laragon\\www\\doctorlab\\views\\Caregiver\\show.html");
+Dr {{caregiver.name}} {{caregiver.surname}}
+{% endblock %}
+
+", "Caregiver/show.html", "C:\\laragon\\www\\doctorlab\\views\\Caregiver\\show.html");
     }
 }

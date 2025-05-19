@@ -54,7 +54,7 @@ class __TwigTemplate_9eeab2894a4594ac53078db2037a1741 extends Template
         $this->loadTemplate("./inc/session_alerts/edit_banner.html", "Appointment/client.html", 6)->display($context);
         // line 7
         echo "
-<body class=\"light-blue\">
+<body class=\"light-blue\" style='background-color: #e4ecf7 !important'>
 
   <div class=\"container-fluid\">
     <div class=\"row vh-100\">
@@ -293,7 +293,7 @@ class __TwigTemplate_9eeab2894a4594ac53078db2037a1741 extends Template
 
 {% include './inc/session_alerts/edit_banner.html' %}
 
-<body class=\"light-blue\">
+<body class=\"light-blue\" style='background-color: #e4ecf7 !important'>
 
   <div class=\"container-fluid\">
     <div class=\"row vh-100\">

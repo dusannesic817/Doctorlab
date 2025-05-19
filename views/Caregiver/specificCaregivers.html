@@ -13,8 +13,8 @@
           <div class="row">
             <div class="col-12 col-lg-4">
               <div class="d-flex flex-row mb-3">
-                <img src="{{base_url}}/assets/uploads/images/{{caregiver.profile_photo}}" class="rounded-circle ms-3 mt-3"
-                  alt="..." style="width: 65px; height: 65px; object-fit: cover;">
+                <img src="{{base_url}}/assets/uploads/images/{{caregiver.profile_photo}}"
+                  class="rounded-circle ms-3 mt-3" alt="..." style="width: 65px; height: 65px; object-fit: cover;">
                 <div class="p-2 ms-2 mt-3">
                   <b>Dr. {{caregiver.name}} {{caregiver.surname}}</b> <br> <small>{{caregiver.doctor}}</small>
                 </div>
@@ -31,13 +31,15 @@
               <div class="row">
                 <div class="col-12 mt-2 mb-3">
                   <div class="d-flex justify-content-around">
-                    <i class="bi bi-arrow-left-circle-fill prevDate" id="prevDate-{{caregiver.user_id}}" style="cursor: pointer;"></i>
+                    <i class="bi bi-arrow-left-circle-fill prevDate" id="prevDate-{{caregiver.user_id}}"
+                      style="cursor: pointer;"></i>
                     {% for day, value in caregiver.schedule %}
                     <header class="day" data-caregiver-id="{{caregiver.user_id}}" data-day="{{ day }}">
                       <b>{{ day }}</b>
                     </header>
                     {% endfor %}
-                    <i class="bi bi-arrow-right-circle-fill nextDate" id="nextDate-{{caregiver.user_id}}" style="cursor: pointer;"></i>
+                    <i class="bi bi-arrow-right-circle-fill nextDate" id="nextDate-{{caregiver.user_id}}"
+                      style="cursor: pointer;"></i>
                   </div>
                 </div>
 
@@ -50,19 +52,21 @@
                 {% if time.status == "free" %}
                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 time-slot" data-day="{{day}}"
                   data-caregiver-id="{{caregiver.user_id}}">
-                <input type="checkbox" class="btn-check w-100 calendar-input" value="{{ time.time }}" 
-                name="appointment[{{ caregiver.user_id }}][{{ caregiver.name }}][{{ day }}][]" 
-                id="{{ input_id }}" data-caregiver-id="{{ caregiver.user_id }}" data-caregiver-name="{{ caregiver.name }}" 
-                data-day="{{ day }}" onclick="saveToSession(this)">
-            
-            <label class="btn calendar-input w-100 text-truncate overflow-hidden" for="{{ input_id }}">{{ time.time }}</label>
-            
+                  <input type="checkbox" class="btn-check w-100 calendar-input" value="{{ time.time }}"
+                    name="appointment[{{ caregiver.user_id }}][{{ caregiver.name }}][{{ day }}][]" id="{{ input_id }}"
+                    data-caregiver-id="{{ caregiver.user_id }}" data-caregiver-name="{{ caregiver.name }}"
+                    data-day="{{ day }}" onclick="saveToSession(this)">
+
+                  <label class="btn calendar-input w-100 text-truncate overflow-hidden" for="{{ input_id }}">{{
+                    time.time }}</label>
+
                 </div>
                 {% else %}
                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 time-slot" data-day="{{day}}"
                   data-caregiver-id="{{caregiver.user_id}}">
                   <input type="checkbox" class="btn-check w-100 calendar-input" value="" id="{{ input_id }}" disabled>
-                  <label class="btn calendar-input-busy w-100 text-truncate overflow-hidden" for="{{ input_id }}">-</label>
+                  <label class="btn calendar-input-busy w-100 text-truncate overflow-hidden"
+                    for="{{ input_id }}">-</label>
                 </div>
                 {% endif %}
                 {% set index = index + 1 %}
@@ -159,38 +163,37 @@
     const caregiverName = checkbox.getAttribute('data-caregiver-name');
     const day = checkbox.getAttribute('data-day');
     const time = checkbox.value;
-  
+
     const xhr = new XMLHttpRequest();
     const params = new URLSearchParams({
-        caregiver_id: caregiverId,
-        caregiver_name: caregiverName,
-        day: day,
-        time: time
+      caregiver_id: caregiverId,
+      caregiver_name: caregiverName,
+      day: day,
+      time: time
     });
-  
+
     const url = '{{ base_url }}/makeappointment/store/';
     xhr.open('POST', url, true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-  
 
-  
-    xhr.onload = function() {
-        if (xhr.status === 200) {
 
-             window.location.href = '{{ base_url }}/makeappointment/type/' + caregiverId;
-        } else {
-            console.error('Error');
-        }
-    };
-  
-    xhr.onerror = function() {
+
+    xhr.onload = function () {
+      if (xhr.status === 200) {
+
+        window.location.href = '{{ base_url }}/makeappointment/type/' + caregiverId;
+      } else {
         console.error('Error');
+      }
     };
-  
+
+    xhr.onerror = function () {
+      console.error('Error');
+    };
+
     xhr.send(params.toString());
   }
-  </script>
-  
+</script>
 
 
 
@@ -198,10 +201,13 @@
 
 
 
-{% block naslov %}
-Search
+
+
 
 {% endblock %}
-
-
+{% block footer %}
+{% include './inc/footer.html'%}
+{% endblock %}
+{% block naslov %}
+Search
 {% endblock %}

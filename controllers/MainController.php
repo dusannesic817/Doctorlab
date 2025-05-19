@@ -17,7 +17,17 @@ class MainController extends Controller{
      $clinices= $clinicModel->getAll();
      $doctors=$this->getJson('caregiver_data.json');
 
-     $appointment = $this->getSession()->get('appointment');
+    $appointment = $this->getSession()->get('appointment');
+    $caregiver = null; 
+
+    if (!empty($appointment) && isset($appointment['caregiver_id'])) {
+        $doctor_session_id = $appointment['caregiver_id'];
+
+        $userModel = new UserModel($this->getDatabaseConnection());
+        $caregiver = $userModel->getById((int)$doctor_session_id);
+    }
+     $this->set('caregiver', $caregiver);
+
      $user_id = $this->getSession()->get('user_id');
      $successRegistration = $this->getSession()->get('successRegistration');
 
@@ -27,6 +37,7 @@ class MainController extends Controller{
 
 
      $this->set('doctors', $doctors);
+    
      
      $this->set('clinices',$clinices);
 

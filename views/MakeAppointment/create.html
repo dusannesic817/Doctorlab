@@ -15,7 +15,8 @@
     <div class="row ms-5">
       <div class="col-12 col-lg-6 mt-4">
         <div class="card">
-          <p class="mt-5 ms-4"><a href="{{base_url}}/makeappointment/type/{{appointment.caregiver_id}}"><small><b><i class="bi bi-arrow-left"></i> Previous step</b></small></a></p>
+          <p class="mt-5 ms-4"><a href="{{base_url}}/makeappointment/type/{{appointment.caregiver_id}}"><small><b><i
+                    class="bi bi-arrow-left"></i> Previous step</b></small></a></p>
           <div class="card-body">
             <p class="ms-2 mb-4"><small><b>Confirm the appointment time</b></small></p>
             <div class="text-center">
@@ -26,50 +27,54 @@
             </div>
 
             <!-- Modal -->
-          <form id="autoSubmitForm" action="{{base_url}}/makeappointment/storeappointment" method="POST" >
-            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-              aria-labelledby="staticBackdropLabel" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                  <div class="modal-header border-0">
+            <form id="autoSubmitForm" action="{{base_url}}/makeappointment/storeappointment" method="POST">
+              <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header border-0">
 
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 
-                  </div>
-                  <div class="modal-body">
-                    <h5 class="text-center">Read before making an appointemt</h5>
-                    <small>Reason of consultation</small>
-                    <p ><small><b>{{appointment.caregiver_data}}</b></small></p>
-                    <p class="border-top mt-2"><small>Instruciton</small></p>
-                    <p>If not slot is avalibale during the day please call {{caregiver.phone}}</p>
-                    <p>An appointment is dedicated to a single patient. For the same family member, please make an
-                      appointemt per person.</p>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary w-100"><b>Yes i have read and accept
-                        instruction</b></button>
+                    </div>
+                    <div class="modal-body">
+                      <h5 class="text-center">Read before making an appointemt</h5>
+                      <small>Reason of consultation</small>
+                      <p><small><b>{{appointment.caregiver_data}}</b></small></p>
+                      <p class="border-top mt-2"><small>Instruciton</small></p>
+                      <p>If not slot is avalibale during the day please call {{caregiver.phone}}</p>
+                      <p>An appointment is dedicated to a single patient. For the same family member, please make an
+                        appointemt per person.</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="submit" class="btn btn-primary w-100"><b>Yes i have read and accept
+                          instruction</b></button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </form>
+            </form>
 
           </div>
         </div>
       </div>
       <div class="col-12 col-lg-4 mt-4">
         <div class="card" style="width: 18rem;">
-          <div>
-            <img src="..." class="card-img-top " alt="...">
-            
-          </div>
-          <div>
-          <p><small><b>{{caregiver.name}} {{caregiver.surname}}</b></small></p>
-          <small>{{caregiver.caregiver_data.title}}</small>
+          <div class="card-body">
+            <div class="d-flex align-items-center">
+              <div class="p-2">
+                <img src="{{base_url}}/assets/uploads/images/{{caregiver.profile_photo}}" alt="user-image" class="rounded-circle me-2"
+                  style="width: 50px; height: 50px;">
+              </div>
+              <div class="p-2">
+                <span><b>Dr {{caregiver.name}} {{caregiver.surname}}</b></span><br>
+                <small class="fs-6 text-muted">{{caregiver.caregiver_data.title}}</small>
+              </div>
+            </div>
           </div>
           <div class="card-body text-center border-top">
             <div class="card-text"><small><b>Your appointment in detail</b></small></div>
-            <small class="grey"> <i class="bi bi-check2"></i> {{appointment.day}} {{appointment.time}}</small>
+            <small class="grey"> <i class="bi bi-check2"></i> {{appointment.day|date("F j, l")}} at {{appointment.time|date("H:i")}}h</small>
           </div>
         </div>
       </div>
@@ -80,13 +85,13 @@
 
 </body>
 <script>
-  window.onload = function() {
+  window.onload = function () {
     var form = document.getElementById('autoSubmitForm');
     if (form) {
-        form.submit(); 
+      form.submit();
     }
-};
-  
+  };
+
 </script>
 
 {% block naslov %}

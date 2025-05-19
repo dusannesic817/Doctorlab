@@ -126,7 +126,8 @@ class MakeAppointmentController extends Controller{
         $userModel = new UserModel($this->getDatabaseConnection());
     
         $caregiver = $userModel->getById($id);
-
+        $appointment = $this->getSession()->get('appointment');
+       
         $caregiverData = $this->getJson('caregiver_data.json');
         
         if ($caregiver->role =='caregiver'){
@@ -146,6 +147,7 @@ class MakeAppointmentController extends Controller{
         }
 
         $this->set('caregiver',$caregiver);
+         $this->set('appointment',$appointment);
         
        
     }

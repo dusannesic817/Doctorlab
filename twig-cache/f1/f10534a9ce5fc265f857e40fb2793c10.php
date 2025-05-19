@@ -66,15 +66,16 @@ class __TwigTemplate_cce75a21795928050b04daac702e06bb extends Template
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/makeappointment/type/";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["appointment"] ?? null), "caregiver_id", [], "any", false, false, false, 18), "html", null, true);
-        echo "\"><small><b><i class=\"bi bi-arrow-left\"></i> Previous step</b></small></a></p>
+        echo "\"><small><b><i
+                    class=\"bi bi-arrow-left\"></i> Previous step</b></small></a></p>
           <div class=\"card-body\">
             <p class=\"ms-2 mb-4\"><small><b>Confirm the appointment time</b></small></p>
             <div class=\"text-center\">
               <small>You have selected the <b>";
-        // line 22
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["appointment"] ?? null), "day", [], "any", false, false, false, 22), "html", null, true);
+        // line 23
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["appointment"] ?? null), "day", [], "any", false, false, false, 23), "html", null, true);
         echo "</b> to <b>";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["appointment"] ?? null), "time", [], "any", false, false, false, 22), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["appointment"] ?? null), "time", [], "any", false, false, false, 23), "html", null, true);
         echo "</b></small>
               <button type=\"button\" class=\"btn btn-primary  w-100  mt-3 mb-3\" data-bs-toggle=\"modal\"
                 data-bs-target=\"#staticBackdrop\"><b>Continue</b></button>
@@ -82,72 +83,81 @@ class __TwigTemplate_cce75a21795928050b04daac702e06bb extends Template
             </div>
 
             <!-- Modal -->
-          <form id=\"autoSubmitForm\" action=\"";
-        // line 29
+            <form id=\"autoSubmitForm\" action=\"";
+        // line 30
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
-        echo "/makeappointment/storeappointment\" method=\"POST\" >
-            <div class=\"modal fade\" id=\"staticBackdrop\" data-bs-backdrop=\"static\" data-bs-keyboard=\"false\" tabindex=\"-1\"
-              aria-labelledby=\"staticBackdropLabel\" aria-hidden=\"true\">
-              <div class=\"modal-dialog modal-dialog-centered\">
-                <div class=\"modal-content\">
-                  <div class=\"modal-header border-0\">
+        echo "/makeappointment/storeappointment\" method=\"POST\">
+              <div class=\"modal fade\" id=\"staticBackdrop\" data-bs-backdrop=\"static\" data-bs-keyboard=\"false\"
+                tabindex=\"-1\" aria-labelledby=\"staticBackdropLabel\" aria-hidden=\"true\">
+                <div class=\"modal-dialog modal-dialog-centered\">
+                  <div class=\"modal-content\">
+                    <div class=\"modal-header border-0\">
 
-                    <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>
+                      <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>
 
-                  </div>
-                  <div class=\"modal-body\">
-                    <h5 class=\"text-center\">Read before making an appointemt</h5>
-                    <small>Reason of consultation</small>
-                    <p ><small><b>";
-        // line 42
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["appointment"] ?? null), "caregiver_data", [], "any", false, false, false, 42), "html", null, true);
+                    </div>
+                    <div class=\"modal-body\">
+                      <h5 class=\"text-center\">Read before making an appointemt</h5>
+                      <small>Reason of consultation</small>
+                      <p><small><b>";
+        // line 43
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["appointment"] ?? null), "caregiver_data", [], "any", false, false, false, 43), "html", null, true);
         echo "</b></small></p>
-                    <p class=\"border-top mt-2\"><small>Instruciton</small></p>
-                    <p>If not slot is avalibale during the day please call ";
-        // line 44
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "phone", [], "any", false, false, false, 44), "html", null, true);
+                      <p class=\"border-top mt-2\"><small>Instruciton</small></p>
+                      <p>If not slot is avalibale during the day please call ";
+        // line 45
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "phone", [], "any", false, false, false, 45), "html", null, true);
         echo "</p>
-                    <p>An appointment is dedicated to a single patient. For the same family member, please make an
-                      appointemt per person.</p>
-                  </div>
-                  <div class=\"modal-footer\">
-                    <button type=\"submit\" class=\"btn btn-primary w-100\"><b>Yes i have read and accept
-                        instruction</b></button>
+                      <p>An appointment is dedicated to a single patient. For the same family member, please make an
+                        appointemt per person.</p>
+                    </div>
+                    <div class=\"modal-footer\">
+                      <button type=\"submit\" class=\"btn btn-primary w-100\"><b>Yes i have read and accept
+                          instruction</b></button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </form>
+            </form>
 
           </div>
         </div>
       </div>
       <div class=\"col-12 col-lg-4 mt-4\">
         <div class=\"card\" style=\"width: 18rem;\">
-          <div>
-            <img src=\"...\" class=\"card-img-top \" alt=\"...\">
-            
-          </div>
-          <div>
-          <p><small><b>";
-        // line 67
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "name", [], "any", false, false, false, 67), "html", null, true);
+          <div class=\"card-body\">
+            <div class=\"d-flex align-items-center\">
+              <div class=\"p-2\">
+                <img src=\"";
+        // line 66
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/assets/uploads/images/";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "profile_photo", [], "any", false, false, false, 66), "html", null, true);
+        echo "\" alt=\"user-image\" class=\"rounded-circle me-2\"
+                  style=\"width: 50px; height: 50px;\">
+              </div>
+              <div class=\"p-2\">
+                <span><b>Dr ";
+        // line 70
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "name", [], "any", false, false, false, 70), "html", null, true);
         echo " ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "surname", [], "any", false, false, false, 67), "html", null, true);
-        echo "</b></small></p>
-          <small>";
-        // line 68
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "caregiver_data", [], "any", false, false, false, 68), "title", [], "any", false, false, false, 68), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "surname", [], "any", false, false, false, 70), "html", null, true);
+        echo "</b></span><br>
+                <small class=\"fs-6 text-muted\">";
+        // line 71
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "caregiver_data", [], "any", false, false, false, 71), "title", [], "any", false, false, false, 71), "html", null, true);
         echo "</small>
+              </div>
+            </div>
           </div>
           <div class=\"card-body text-center border-top\">
             <div class=\"card-text\"><small><b>Your appointment in detail</b></small></div>
             <small class=\"grey\"> <i class=\"bi bi-check2\"></i> ";
-        // line 72
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["appointment"] ?? null), "day", [], "any", false, false, false, 72), "html", null, true);
-        echo " ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["appointment"] ?? null), "time", [], "any", false, false, false, 72), "html", null, true);
-        echo "</small>
+        // line 77
+        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["appointment"] ?? null), "day", [], "any", false, false, false, 77), "F j, l"), "html", null, true);
+        echo " at ";
+        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["appointment"] ?? null), "time", [], "any", false, false, false, 77), "H:i"), "html", null, true);
+        echo "h</small>
           </div>
         </div>
       </div>
@@ -158,28 +168,28 @@ class __TwigTemplate_cce75a21795928050b04daac702e06bb extends Template
 
 </body>
 <script>
-  window.onload = function() {
+  window.onload = function () {
     var form = document.getElementById('autoSubmitForm');
     if (form) {
-        form.submit(); 
+      form.submit();
     }
-};
-  
+  };
+
 </script>
 
 ";
-        // line 92
+        // line 97
         $this->displayBlock('naslov', $context, $blocks);
-        // line 95
+        // line 100
         echo "
 ";
     }
 
-    // line 92
+    // line 97
     public function block_naslov($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 93
+        // line 98
         echo "Type
 ";
     }
@@ -196,7 +206,7 @@ class __TwigTemplate_cce75a21795928050b04daac702e06bb extends Template
 
     public function getDebugInfo()
     {
-        return array (  183 => 93,  179 => 92,  174 => 95,  172 => 92,  147 => 72,  140 => 68,  134 => 67,  108 => 44,  103 => 42,  87 => 29,  75 => 22,  66 => 18,  51 => 5,  47 => 4,  36 => 1,);
+        return array (  193 => 98,  189 => 97,  184 => 100,  182 => 97,  157 => 77,  148 => 71,  142 => 70,  133 => 66,  109 => 45,  104 => 43,  88 => 30,  76 => 23,  66 => 18,  51 => 5,  47 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -218,7 +228,8 @@ class __TwigTemplate_cce75a21795928050b04daac702e06bb extends Template
     <div class=\"row ms-5\">
       <div class=\"col-12 col-lg-6 mt-4\">
         <div class=\"card\">
-          <p class=\"mt-5 ms-4\"><a href=\"{{base_url}}/makeappointment/type/{{appointment.caregiver_id}}\"><small><b><i class=\"bi bi-arrow-left\"></i> Previous step</b></small></a></p>
+          <p class=\"mt-5 ms-4\"><a href=\"{{base_url}}/makeappointment/type/{{appointment.caregiver_id}}\"><small><b><i
+                    class=\"bi bi-arrow-left\"></i> Previous step</b></small></a></p>
           <div class=\"card-body\">
             <p class=\"ms-2 mb-4\"><small><b>Confirm the appointment time</b></small></p>
             <div class=\"text-center\">
@@ -229,50 +240,54 @@ class __TwigTemplate_cce75a21795928050b04daac702e06bb extends Template
             </div>
 
             <!-- Modal -->
-          <form id=\"autoSubmitForm\" action=\"{{base_url}}/makeappointment/storeappointment\" method=\"POST\" >
-            <div class=\"modal fade\" id=\"staticBackdrop\" data-bs-backdrop=\"static\" data-bs-keyboard=\"false\" tabindex=\"-1\"
-              aria-labelledby=\"staticBackdropLabel\" aria-hidden=\"true\">
-              <div class=\"modal-dialog modal-dialog-centered\">
-                <div class=\"modal-content\">
-                  <div class=\"modal-header border-0\">
+            <form id=\"autoSubmitForm\" action=\"{{base_url}}/makeappointment/storeappointment\" method=\"POST\">
+              <div class=\"modal fade\" id=\"staticBackdrop\" data-bs-backdrop=\"static\" data-bs-keyboard=\"false\"
+                tabindex=\"-1\" aria-labelledby=\"staticBackdropLabel\" aria-hidden=\"true\">
+                <div class=\"modal-dialog modal-dialog-centered\">
+                  <div class=\"modal-content\">
+                    <div class=\"modal-header border-0\">
 
-                    <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>
+                      <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>
 
-                  </div>
-                  <div class=\"modal-body\">
-                    <h5 class=\"text-center\">Read before making an appointemt</h5>
-                    <small>Reason of consultation</small>
-                    <p ><small><b>{{appointment.caregiver_data}}</b></small></p>
-                    <p class=\"border-top mt-2\"><small>Instruciton</small></p>
-                    <p>If not slot is avalibale during the day please call {{caregiver.phone}}</p>
-                    <p>An appointment is dedicated to a single patient. For the same family member, please make an
-                      appointemt per person.</p>
-                  </div>
-                  <div class=\"modal-footer\">
-                    <button type=\"submit\" class=\"btn btn-primary w-100\"><b>Yes i have read and accept
-                        instruction</b></button>
+                    </div>
+                    <div class=\"modal-body\">
+                      <h5 class=\"text-center\">Read before making an appointemt</h5>
+                      <small>Reason of consultation</small>
+                      <p><small><b>{{appointment.caregiver_data}}</b></small></p>
+                      <p class=\"border-top mt-2\"><small>Instruciton</small></p>
+                      <p>If not slot is avalibale during the day please call {{caregiver.phone}}</p>
+                      <p>An appointment is dedicated to a single patient. For the same family member, please make an
+                        appointemt per person.</p>
+                    </div>
+                    <div class=\"modal-footer\">
+                      <button type=\"submit\" class=\"btn btn-primary w-100\"><b>Yes i have read and accept
+                          instruction</b></button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </form>
+            </form>
 
           </div>
         </div>
       </div>
       <div class=\"col-12 col-lg-4 mt-4\">
         <div class=\"card\" style=\"width: 18rem;\">
-          <div>
-            <img src=\"...\" class=\"card-img-top \" alt=\"...\">
-            
-          </div>
-          <div>
-          <p><small><b>{{caregiver.name}} {{caregiver.surname}}</b></small></p>
-          <small>{{caregiver.caregiver_data.title}}</small>
+          <div class=\"card-body\">
+            <div class=\"d-flex align-items-center\">
+              <div class=\"p-2\">
+                <img src=\"{{base_url}}/assets/uploads/images/{{caregiver.profile_photo}}\" alt=\"user-image\" class=\"rounded-circle me-2\"
+                  style=\"width: 50px; height: 50px;\">
+              </div>
+              <div class=\"p-2\">
+                <span><b>Dr {{caregiver.name}} {{caregiver.surname}}</b></span><br>
+                <small class=\"fs-6 text-muted\">{{caregiver.caregiver_data.title}}</small>
+              </div>
+            </div>
           </div>
           <div class=\"card-body text-center border-top\">
             <div class=\"card-text\"><small><b>Your appointment in detail</b></small></div>
-            <small class=\"grey\"> <i class=\"bi bi-check2\"></i> {{appointment.day}} {{appointment.time}}</small>
+            <small class=\"grey\"> <i class=\"bi bi-check2\"></i> {{appointment.day|date(\"F j, l\")}} at {{appointment.time|date(\"H:i\")}}h</small>
           </div>
         </div>
       </div>
@@ -283,13 +298,13 @@ class __TwigTemplate_cce75a21795928050b04daac702e06bb extends Template
 
 </body>
 <script>
-  window.onload = function() {
+  window.onload = function () {
     var form = document.getElementById('autoSubmitForm');
     if (form) {
-        form.submit(); 
+      form.submit();
     }
-};
-  
+  };
+
 </script>
 
 {% block naslov %}

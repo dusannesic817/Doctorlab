@@ -324,10 +324,7 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
     {
         $macros = $this->macros;
         // line 201
-        echo "    ";
         $this->loadTemplate("./inc/footer.html", "Main/home.html", 201)->display($context);
-        // line 202
-        echo "  ";
     }
 
     public function getTemplateName()
@@ -342,7 +339,7 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
 
     public function getDebugInfo()
     {
-        return array (  330 => 202,  327 => 201,  323 => 200,  280 => 160,  270 => 156,  266 => 155,  260 => 154,  257 => 153,  253 => 152,  246 => 147,  236 => 143,  232 => 142,  226 => 141,  223 => 140,  219 => 139,  210 => 133,  188 => 114,  167 => 96,  149 => 81,  137 => 72,  125 => 63,  105 => 46,  94 => 38,  83 => 30,  60 => 9,  58 => 8,  56 => 7,  54 => 6,  51 => 5,  47 => 4,  36 => 1,);
+        return array (  327 => 201,  323 => 200,  280 => 160,  270 => 156,  266 => 155,  260 => 154,  257 => 153,  253 => 152,  246 => 147,  236 => 143,  232 => 142,  226 => 141,  223 => 140,  219 => 139,  210 => 133,  188 => 114,  167 => 96,  149 => 81,  137 => 72,  125 => 63,  105 => 46,  94 => 38,  83 => 30,  60 => 9,  58 => 8,  56 => 7,  54 => 6,  51 => 5,  47 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -546,8 +543,8 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
 
 
 {% endblock %}
-    {% block footer %}
-    {% include './inc/footer.html'%}
-  {% endblock %}", "Main/home.html", "C:\\laragon\\www\\doctorlab\\views\\Main\\home.html");
+{% block footer %}
+{% include './inc/footer.html'%}
+{% endblock %}", "Main/home.html", "C:\\laragon\\www\\doctorlab\\views\\Main\\home.html");
     }
 }

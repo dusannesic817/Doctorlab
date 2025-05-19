@@ -26,6 +26,7 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
 
         $this->blocks = [
             'main' => [$this, 'block_main'],
+            'footer' => [$this, 'block_footer'],
             'naslov' => [$this, 'block_naslov'],
         ];
     }
@@ -250,11 +251,8 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
   </div>
 </form>
 
-";
-        // line 81
-        $this->loadTemplate("./inc/footer.html", "Caregiver/index.html", 81)->display($context);
-        // line 82
-        echo "<script>
+
+<script>
   document.addEventListener(\"DOMContentLoaded\", function () {
 
     const allCaregivers = document.querySelectorAll(\".day[data-caregiver-id]\");
@@ -385,10 +383,21 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
     }
 
     // line 204
-    public function block_naslov($context, array $blocks = [])
+    public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
         // line 205
+        echo "    ";
+        $this->loadTemplate("./inc/footer.html", "Caregiver/index.html", 205)->display($context);
+        // line 206
+        echo "  ";
+    }
+
+    // line 207
+    public function block_naslov($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        // line 208
         echo "Doctors
 ";
     }
@@ -405,7 +414,7 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
 
     public function getDebugInfo()
     {
-        return array (  392 => 205,  388 => 204,  360 => 180,  348 => 171,  257 => 82,  255 => 81,  248 => 76,  238 => 71,  232 => 70,  226 => 69,  223 => 68,  217 => 65,  213 => 64,  209 => 63,  204 => 62,  195 => 58,  190 => 56,  182 => 55,  174 => 54,  170 => 53,  166 => 52,  161 => 51,  158 => 50,  155 => 49,  150 => 48,  145 => 47,  143 => 46,  139 => 45,  130 => 40,  121 => 37,  114 => 36,  110 => 35,  106 => 34,  92 => 25,  79 => 19,  71 => 16,  63 => 12,  59 => 11,  51 => 5,  47 => 4,  36 => 1,);
+        return array (  401 => 208,  397 => 207,  393 => 206,  390 => 205,  386 => 204,  358 => 180,  346 => 171,  249 => 76,  239 => 71,  233 => 70,  227 => 69,  224 => 68,  218 => 65,  214 => 64,  210 => 63,  205 => 62,  196 => 58,  191 => 56,  183 => 55,  175 => 54,  171 => 53,  167 => 52,  162 => 51,  159 => 50,  156 => 49,  151 => 48,  146 => 47,  144 => 46,  140 => 45,  131 => 40,  122 => 37,  115 => 36,  111 => 35,  107 => 34,  93 => 25,  80 => 19,  72 => 16,  64 => 12,  60 => 11,  52 => 5,  48 => 4,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -490,7 +499,7 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
   </div>
 </form>
 
-{% include './inc/footer.html'%}
+
 <script>
   document.addEventListener(\"DOMContentLoaded\", function () {
 
@@ -613,6 +622,9 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
 
 
 {% endblock %}
+    {% block footer %}
+    {% include './inc/footer.html'%}
+  {% endblock %}
 {% block naslov %}
 Doctors
 {% endblock %}

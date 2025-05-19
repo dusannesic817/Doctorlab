@@ -26,6 +26,7 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
 
         $this->blocks = [
             'main' => [$this, 'block_main'],
+            'footer' => [$this, 'block_footer'],
         ];
     }
 
@@ -308,12 +309,20 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
   </div>
 </div>
 
+
+
 ";
-        // line 192
-        $this->loadTemplate("./inc/footer.html", "Main/home.html", 192)->display($context);
-        // line 193
-        echo "
-";
+    }
+
+    // line 195
+    public function block_footer($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        // line 196
+        echo "    ";
+        $this->loadTemplate("./inc/footer.html", "Main/home.html", 196)->display($context);
+        // line 197
+        echo "  ";
     }
 
     public function getTemplateName()
@@ -328,7 +337,7 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
 
     public function getDebugInfo()
     {
-        return array (  315 => 193,  313 => 192,  279 => 160,  269 => 156,  265 => 155,  259 => 154,  256 => 153,  252 => 152,  245 => 147,  235 => 143,  231 => 142,  225 => 141,  222 => 140,  218 => 139,  209 => 133,  187 => 114,  166 => 96,  148 => 81,  136 => 72,  124 => 63,  104 => 46,  93 => 38,  82 => 30,  59 => 9,  57 => 8,  55 => 7,  53 => 6,  50 => 5,  46 => 4,  35 => 1,);
+        return array (  325 => 197,  322 => 196,  318 => 195,  280 => 160,  270 => 156,  266 => 155,  260 => 154,  257 => 153,  253 => 152,  246 => 147,  236 => 143,  232 => 142,  226 => 141,  223 => 140,  219 => 139,  210 => 133,  188 => 114,  167 => 96,  149 => 81,  137 => 72,  125 => 63,  105 => 46,  94 => 38,  83 => 30,  60 => 9,  58 => 8,  56 => 7,  54 => 6,  51 => 5,  47 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -524,8 +533,11 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
   </div>
 </div>
 
-{% include './inc/footer.html'%}
 
-{% endblock %}", "Main/home.html", "C:\\laragon\\www\\doctorlab\\views\\Main\\home.html");
+
+{% endblock %}
+    {% block footer %}
+    {% include './inc/footer.html'%}
+  {% endblock %}", "Main/home.html", "C:\\laragon\\www\\doctorlab\\views\\Main\\home.html");
     }
 }

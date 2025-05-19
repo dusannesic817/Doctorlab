@@ -26,6 +26,7 @@ class __TwigTemplate_cc6dc1163ed366974106606bceb37d4d extends Template
 
         $this->blocks = [
             'main' => [$this, 'block_main'],
+            'footer' => [$this, 'block_footer'],
             'naslov' => [$this, 'block_naslov'],
         ];
     }
@@ -61,22 +62,20 @@ class __TwigTemplate_cc6dc1163ed366974106606bceb37d4d extends Template
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/assets/uploads/images/";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "profile_photo", [], "any", false, false, false, 13), "html", null, true);
-        echo "\" 
-                 class=\"card-img-top w-100 h-100 object-fit-cover border rounded\" 
-                 alt=\"...\" 
-                 >
+        echo "\"
+              class=\"card-img-top w-100 h-100 object-fit-cover border rounded\" alt=\"...\">
           </div>
-          
+
           <div class=\"p-2 mt-4 ms-3\">
             <h3><b style=\"color: white;\">Dr ";
-        // line 20
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "name", [], "any", false, false, false, 20), "html", null, true);
+        // line 18
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "name", [], "any", false, false, false, 18), "html", null, true);
         echo " ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "surname", [], "any", false, false, false, 20), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "surname", [], "any", false, false, false, 18), "html", null, true);
         echo "</b></h3>
             <small style=\"color: white;\">";
-        // line 21
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "profile_photo", [], "any", false, false, false, 21), "html", null, true);
+        // line 19
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "profile_photo", [], "any", false, false, false, 19), "html", null, true);
         echo "</small>
           </div>
         </div>
@@ -105,11 +104,11 @@ class __TwigTemplate_cc6dc1163ed366974106606bceb37d4d extends Template
       <div class=\"col-12 col-lg-8\">
         <div class=\"card mt-5\">
           <div class=\"card-body p-0 d-flex\">
-             <p>Razmisliti sta kao sliku ubaciti za dekoraciju</p>
-                   
+            <p>Razmisliti sta kao sliku ubaciti za dekoraciju</p>
+
           </div>
         </div>
-      
+
         <div class=\"card mt-2\">
           <div class=\"row\">
             <div class=\"col-4\">
@@ -182,9 +181,16 @@ class __TwigTemplate_cc6dc1163ed366974106606bceb37d4d extends Template
 
 
 
+
 ";
-        // line 126
-        $this->loadTemplate("./inc/footer.html", "Caregiver/show.html", 126)->display($context);
+    }
+
+    // line 126
+    public function block_footer($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        // line 127
+        $this->loadTemplate("./inc/footer.html", "Caregiver/show.html", 127)->display($context);
     }
 
     // line 129
@@ -212,7 +218,7 @@ class __TwigTemplate_cc6dc1163ed366974106606bceb37d4d extends Template
 
     public function getDebugInfo()
     {
-        return array (  195 => 130,  191 => 129,  187 => 126,  79 => 21,  73 => 20,  61 => 13,  51 => 5,  47 => 4,  36 => 1,);
+        return array (  201 => 130,  197 => 129,  193 => 127,  189 => 126,  78 => 19,  72 => 18,  62 => 13,  52 => 5,  48 => 4,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -229,12 +235,10 @@ class __TwigTemplate_cc6dc1163ed366974106606bceb37d4d extends Template
       <div class=\"col-md-12\">
         <div class=\"d-flex flex-row mb-3\">
           <div class=\"card mt-3 mb-3\" style=\"width: 8rem;\">
-            <img src=\"{{base_url}}/assets/uploads/images/{{caregiver.profile_photo}}\" 
-                 class=\"card-img-top w-100 h-100 object-fit-cover border rounded\" 
-                 alt=\"...\" 
-                 >
+            <img src=\"{{base_url}}/assets/uploads/images/{{caregiver.profile_photo}}\"
+              class=\"card-img-top w-100 h-100 object-fit-cover border rounded\" alt=\"...\">
           </div>
-          
+
           <div class=\"p-2 mt-4 ms-3\">
             <h3><b style=\"color: white;\">Dr {{caregiver.name}} {{caregiver.surname}}</b></h3>
             <small style=\"color: white;\">{{caregiver.profile_photo}}</small>
@@ -265,11 +269,11 @@ class __TwigTemplate_cc6dc1163ed366974106606bceb37d4d extends Template
       <div class=\"col-12 col-lg-8\">
         <div class=\"card mt-5\">
           <div class=\"card-body p-0 d-flex\">
-             <p>Razmisliti sta kao sliku ubaciti za dekoraciju</p>
-                   
+            <p>Razmisliti sta kao sliku ubaciti za dekoraciju</p>
+
           </div>
         </div>
-      
+
         <div class=\"card mt-2\">
           <div class=\"row\">
             <div class=\"col-4\">
@@ -342,13 +346,13 @@ class __TwigTemplate_cc6dc1163ed366974106606bceb37d4d extends Template
 
 
 
+
+{% endblock %}
+{% block footer %}
 {% include './inc/footer.html'%}
 {% endblock %}
-
 {% block naslov %}
 Dr {{caregiver.name}} {{caregiver.surname}}
-{% endblock %}
-
-", "Caregiver/show.html", "C:\\laragon\\www\\doctorlab\\views\\Caregiver\\show.html");
+{% endblock %}", "Caregiver/show.html", "C:\\laragon\\www\\doctorlab\\views\\Caregiver\\show.html");
     }
 }

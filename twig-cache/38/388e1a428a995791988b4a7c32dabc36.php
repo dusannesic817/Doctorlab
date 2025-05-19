@@ -29,6 +29,7 @@ class __TwigTemplate_f632f0baf0787e18abb394f43ba17bc4 extends Template
         $this->blocks = [
             'naslov' => [$this, 'block_naslov'],
             'main' => [$this, 'block_main'],
+            'footer' => [$this, 'block_footer'],
         ];
     }
 
@@ -64,26 +65,30 @@ class __TwigTemplate_f632f0baf0787e18abb394f43ba17bc4 extends Template
         echo "</title>
 </head>
 
-<body>
+<body class=\"d-flex flex-column min-vh-100\">
   <header>
     ";
         // line 22
         $this->loadTemplate("./inc/header.html", "_global/index.html", 22)->display($context);
         // line 23
         echo "  </header>
-  <main>
+  <main class=\"flex-grow-1\">
     ";
         // line 25
         $this->displayBlock('main', $context, $blocks);
         // line 28
         echo "  </main>
-
+    ";
+        // line 29
+        $this->displayBlock('footer', $context, $blocks);
+        // line 31
+        echo "
   <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js\"
     integrity=\"sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz\"
     crossorigin=\"anonymous\"></script>
     
     <script src=\"";
-        // line 34
+        // line 36
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/assets/main.js\" defer></script>
 </body>
@@ -107,6 +112,14 @@ class __TwigTemplate_f632f0baf0787e18abb394f43ba17bc4 extends Template
     ";
     }
 
+    // line 29
+    public function block_footer($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        // line 30
+        echo "  ";
+    }
+
     public function getTemplateName()
     {
         return "_global/index.html";
@@ -119,7 +132,7 @@ class __TwigTemplate_f632f0baf0787e18abb394f43ba17bc4 extends Template
 
     public function getDebugInfo()
     {
-        return array (  106 => 26,  102 => 25,  95 => 17,  87 => 34,  79 => 28,  77 => 25,  73 => 23,  71 => 22,  63 => 17,  56 => 13,  49 => 9,  39 => 1,);
+        return array (  120 => 30,  116 => 29,  111 => 26,  107 => 25,  100 => 17,  92 => 36,  85 => 31,  83 => 29,  80 => 28,  78 => 25,  74 => 23,  72 => 22,  64 => 17,  57 => 13,  50 => 9,  40 => 1,);
     }
 
     public function getSourceContext()
@@ -143,15 +156,17 @@ class __TwigTemplate_f632f0baf0787e18abb394f43ba17bc4 extends Template
   <title>{%block naslov%}Doctorlab{%endblock%}</title>
 </head>
 
-<body>
+<body class=\"d-flex flex-column min-vh-100\">
   <header>
     {% include './inc/header.html' %}
   </header>
-  <main>
+  <main class=\"flex-grow-1\">
     {% block main %}
 
     {% endblock %}
   </main>
+    {% block footer %}
+  {% endblock %}
 
   <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js\"
     integrity=\"sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz\"

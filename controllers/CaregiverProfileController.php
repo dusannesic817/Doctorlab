@@ -163,7 +163,11 @@ class CaregiverProfileController extends UserRoleController{
 
 
    public function destroy($id){
-
+        $userModel = new UserModel($this->getDatabaseConnection());
+        $caregiver = $userModel->deleteById($id);
+        $this->getSession()->remove("user_id");
+        $this->getSession()->save();  
+        $this->redirect('/');
    }
 
    public function logout() {

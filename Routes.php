@@ -37,7 +37,6 @@ return [
     App\Core\Route::get('|^caregiver/appointments/index?$|',    "Appointment", 'index'),
     App\Core\Route::get('|^client/appointments/([0-9]+)/?$|',    "Appointment", 'client'),
     App\Core\Route::get('|^caregiver/appointments/([0-9]+)/?$|', "Appointment", 'show'),
-    App\Core\Route::post('|^client/appointments/delete/([0-9]+)/?$|', "Appointment", 'destroy'),
     App\Core\Route::post('|^appointments/update/([0-9]+)/?$|', "Appointment", 'update'),
     App\Core\Route::post('|^appointments/cancel/([0-9]+)/?$|', "Appointment", 'cancel'),
     App\Core\Route::any( '|^appointment/search/?$|',          "Appointment", 'search'),
@@ -47,6 +46,7 @@ return [
     App\Core\Route::get( '|^client/profile/([0-9]+)/?$|', "UserProfile", 'show'),
     App\Core\Route::post('|^client/update/([0-9]+)/?$|',  "UserProfile", 'update'),
     App\Core\Route::get( '|^client/logout/?$|',           "UserProfile", 'logout'),
+    App\Core\Route::post('|^client/delete/([0-9]+)/?$|',  "UserProfile", 'destroy'),
     
 
 
@@ -61,6 +61,7 @@ return [
     App\Core\Route::get('|^caregiver/profile/([0-9]+)/?$|', "CaregiverProfile", 'show'),
     App\Core\Route::get('|^caregiver/edit/([0-9]+)/?$|',    "CaregiverProfile", 'edit'),
     App\Core\Route::post('|^caregiver/update/([0-9]+)/?$|', "CaregiverProfile", 'update'),
+    App\Core\Route::post('|^caregiver/delete/([0-9]+)/?$|', "CaregiverProfile", 'destroy'),
     App\Core\Route::get('|^caregiver/appointments/?$|',     "CaregiverProfile",'appointmens'),
     App\Core\Route::get('|^caregiver/logout/out?$|',           "CaregiverProfile", 'logout'),
 

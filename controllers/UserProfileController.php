@@ -103,6 +103,22 @@ class UserProfileController extends UserRoleController{
          
       
    }
+    public function destroy($id){
+        $userModel = new UserModel($this->getDatabaseConnection());
+        $client = $userModel->deleteById($id);
+
+            $this->getSession()->put('success_delete',"Successfully deleted your profile");
+            $this->getSession()->save();
+            $this->getSession()->remove("user_id");
+            $this->getSession()->save();
+            
+            $this->redirect('/');
+        
+        
+
+
+   }
+
 
     public function logout() {
         $this->getSession()->remove("user_id");

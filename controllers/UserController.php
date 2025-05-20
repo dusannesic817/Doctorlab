@@ -179,14 +179,14 @@ class UserController extends Controller{
         $userModel = new UserModel($this->getDatabaseConnection());
         $email = $userModel->getByFieldName('email', $email);
         
-        $is_verified = $email->is_verified;
-
-        if($is_verified==0){
+       
+        if (!$email) {
             $this->set('message', 'Invalid password or email');
             return;
         }
-    
-        if (!$email) {
+
+        $is_verified = $email->is_verified;
+        if($is_verified==0){
             $this->set('message', 'Invalid password or email');
             return;
         }
@@ -240,7 +240,7 @@ class UserController extends Controller{
 
     if ($user) {
         $userModel->verifyUser($token);
-         $this->redirect("/login");
+         $this->redirect("/user/login");
     }
    
 }

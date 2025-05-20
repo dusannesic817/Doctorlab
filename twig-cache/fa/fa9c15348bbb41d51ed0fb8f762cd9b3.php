@@ -289,6 +289,31 @@ class __TwigTemplate_6a4b6f667460a2b073a48bd6ad13f285 extends Template
     </div>
   </div>
 </div>
+<!-- Delete Profile Modal -->
+ <div class=\"modal fade\" id=\"delete_profile\" tabindex=\"-1\" aria-labelledby=\"delete_profile\" aria-hidden=\"true\">
+      <div class=\"modal-dialog modal-dialog-centered\">
+        <div class=\"modal-content\">
+          <form action=\"";
+        // line 195
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/caregiver/delete/";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "user_id", [], "any", false, false, false, 195), "html", null, true);
+        echo "\" method=\"POST\">
+            <div class=\"modal-header\">
+              <h1 class=\"modal-title fs-5\" id=\"delete_profile\"><small><b class=\"teget\"><i class=\"bi bi-person-fill\"></i> Delete My Profile</b></small><br><small></small></h1>
+              <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>
+            </div>
+            <div class=\"modal-body\">
+             <p>Do you really want to delete your profile?</p>
+            </div>
+            <div class=\"modal-footer\">
+              <button type=\"submit\" class=\"btn btn-primary\">Yes I'm sure</button>
+              <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
 
 
 
@@ -298,11 +323,11 @@ class __TwigTemplate_6a4b6f667460a2b073a48bd6ad13f285 extends Template
 ";
     }
 
-    // line 198
+    // line 218
     public function block_naslov($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 199
+        // line 219
         echo "Profile
 ";
     }
@@ -319,7 +344,7 @@ class __TwigTemplate_6a4b6f667460a2b073a48bd6ad13f285 extends Template
 
     public function getDebugInfo()
     {
-        return array (  306 => 199,  302 => 198,  268 => 170,  249 => 154,  235 => 145,  216 => 131,  204 => 124,  184 => 107,  138 => 64,  128 => 57,  106 => 40,  90 => 27,  84 => 23,  80 => 21,  73 => 19,  70 => 18,  68 => 17,  56 => 7,  54 => 6,  51 => 5,  47 => 4,  36 => 1,);
+        return array (  331 => 219,  327 => 218,  298 => 195,  268 => 170,  249 => 154,  235 => 145,  216 => 131,  204 => 124,  184 => 107,  138 => 64,  128 => 57,  106 => 40,  90 => 27,  84 => 23,  80 => 21,  73 => 19,  70 => 18,  68 => 17,  56 => 7,  54 => 6,  51 => 5,  47 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -514,6 +539,26 @@ class __TwigTemplate_6a4b6f667460a2b073a48bd6ad13f285 extends Template
     </div>
   </div>
 </div>
+<!-- Delete Profile Modal -->
+ <div class=\"modal fade\" id=\"delete_profile\" tabindex=\"-1\" aria-labelledby=\"delete_profile\" aria-hidden=\"true\">
+      <div class=\"modal-dialog modal-dialog-centered\">
+        <div class=\"modal-content\">
+          <form action=\"{{ base_url }}/caregiver/delete/{{caregiver.user_id}}\" method=\"POST\">
+            <div class=\"modal-header\">
+              <h1 class=\"modal-title fs-5\" id=\"delete_profile\"><small><b class=\"teget\"><i class=\"bi bi-person-fill\"></i> Delete My Profile</b></small><br><small></small></h1>
+              <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>
+            </div>
+            <div class=\"modal-body\">
+             <p>Do you really want to delete your profile?</p>
+            </div>
+            <div class=\"modal-footer\">
+              <button type=\"submit\" class=\"btn btn-primary\">Yes I'm sure</button>
+              <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
 
 
 

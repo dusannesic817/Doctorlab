@@ -41,11 +41,22 @@ class MainController extends Controller{
      
      $this->set('clinices',$clinices);
 
-      if(isset($successRegistration)){
+    if(isset($successRegistration)){
          $this->set('successRegistration',$successRegistration);
      }
-      $this->getSession()->remove('successRegistration');
+        $this->getSession()->remove('successRegistration');
+        $this->getSession()->save();
+
+        $deleteProfile = $this->getSession()->get('success_delete');
+        
+        if(isset($deleteProfile)){
+            $this->set('deleteProfile',$deleteProfile);
+        }
+        $this->getSession()->remove('success_delete');
         $this->getSession()->save();
 
     }
+
+  
+
 }

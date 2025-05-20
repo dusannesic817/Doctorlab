@@ -188,6 +188,26 @@
     </div>
   </div>
 </div>
+<!-- Delete Profile Modal -->
+ <div class="modal fade" id="delete_profile" tabindex="-1" aria-labelledby="delete_profile" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <form action="{{ base_url }}/caregiver/delete/{{caregiver.user_id}}" method="POST">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="delete_profile"><small><b class="teget"><i class="bi bi-person-fill"></i> Delete My Profile</b></small><br><small></small></h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+             <p>Do you really want to delete your profile?</p>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary">Yes I'm sure</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
 
 
 

@@ -123,9 +123,6 @@ private function checkFields($data) {
     $supportedFieldsNames = array_keys($fields);
     $requestedFieldNames = array_keys($data);
 
-   // var_dump($supportedFieldsNames); // Prikazuje sva podržana polja
-   // var_dump($requestedFieldNames); // Prikazuje polja koja korisnik pokušava da doda
-
 
     foreach ($requestedFieldNames as $value) {
         if (!in_array($value, $supportedFieldsNames)) {

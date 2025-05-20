@@ -35,7 +35,7 @@ class __TwigTemplate_98f7913ea081110e0b6c53a5ca4b5965 extends Template
         $macros = $this->macros;
         // line 1
         echo "  <!-- Tvoj footer (sa već pripremljenim kodom) -->
-  <footer class=\"mt-auto pt-3 border\">
+  <footer class=\"mt-auto pt-3 border\" id=\"scrollspyHeading3\">
     <div class=\"container py-3\">
       <div class=\"row mt-5 text-center text-lg-start d-flex justify-content-center align-items-center\">
         <div class=\"col-12 col-lg-4\">
@@ -118,7 +118,7 @@ class __TwigTemplate_98f7913ea081110e0b6c53a5ca4b5965 extends Template
     public function getSourceContext()
     {
         return new Source("  <!-- Tvoj footer (sa već pripremljenim kodom) -->
-  <footer class=\"mt-auto pt-3 border\">
+  <footer class=\"mt-auto pt-3 border\" id=\"scrollspyHeading3\">
     <div class=\"container py-3\">
       <div class=\"row mt-5 text-center text-lg-start d-flex justify-content-center align-items-center\">
         <div class=\"col-12 col-lg-4\">

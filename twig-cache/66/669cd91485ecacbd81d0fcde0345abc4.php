@@ -62,15 +62,15 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
   <div class=\"row mt-5\">
     <div class=\"col-12\">
       <div class=\"d-flex flex-row mb-3\">
-        <div class=\"p-2 links me-3\"><a href=\"\"><b>Profits</b></a></div>
-        <div class=\"p-2 links me-3\"><a href=\"\"><b>Solutions</b></a></div>
-        <div class=\"p-2 links\"><a href=\"\"><b>Innovations</b></a></div>
+        <div class=\"p-2 links me-3\"><a href=\"#scrollspyHeading2\"><b>Profits</b></a></div>
+        <div class=\"p-2 links me-3\"><a href=\"#scrollspyHeading1\"><b>Solutions</b></a></div>
+        <div class=\"p-2 links\"><a href=\"#scrollspyHeading3\"><b>Innovations</b></a></div>
       </div>
     </div>
     <hr>
   </div>
   <!--Benefits to improve your daily life-->
-  <div class=\"row mb-2 mt-3\">
+  <div class=\"row mb-2 mt-3\" id=\"scrollspyHeading2\">
     <div class=\"col-12 text-center\">
       <h2><b>Benefits to improve your daily life</b></h2>
     </div>
@@ -112,7 +112,7 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
   </div>
 
   <!--Your health partner every day-->
-  <div class=\"row row-health mb-5\">
+  <div class=\"row row-health mb-5 \">
     <div class=\"col-12\">
       <h2 class=\"text-center\"><b>Your health partner every day</b></h2>
     </div>
@@ -157,7 +157,7 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
   </div>
 </div>
 
-<div class=\"container-fluid background mt-5 d-flex align-items-center border-bottom shadow-lg\" style=\"height: 50vh;\">
+<div class=\"container-fluid background mt-5 d-flex align-items-center border-bottom shadow-lg\" id=\"scrollspyHeading1\" style=\"height: 50vh;\">
   <div class=\"container\">
     <div class=\"row\">
       <div class=\"col-lg-3 col-12 d-flex justify-content-center\">
@@ -357,15 +357,15 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
   <div class=\"row mt-5\">
     <div class=\"col-12\">
       <div class=\"d-flex flex-row mb-3\">
-        <div class=\"p-2 links me-3\"><a href=\"\"><b>Profits</b></a></div>
-        <div class=\"p-2 links me-3\"><a href=\"\"><b>Solutions</b></a></div>
-        <div class=\"p-2 links\"><a href=\"\"><b>Innovations</b></a></div>
+        <div class=\"p-2 links me-3\"><a href=\"#scrollspyHeading2\"><b>Profits</b></a></div>
+        <div class=\"p-2 links me-3\"><a href=\"#scrollspyHeading1\"><b>Solutions</b></a></div>
+        <div class=\"p-2 links\"><a href=\"#scrollspyHeading3\"><b>Innovations</b></a></div>
       </div>
     </div>
     <hr>
   </div>
   <!--Benefits to improve your daily life-->
-  <div class=\"row mb-2 mt-3\">
+  <div class=\"row mb-2 mt-3\" id=\"scrollspyHeading2\">
     <div class=\"col-12 text-center\">
       <h2><b>Benefits to improve your daily life</b></h2>
     </div>
@@ -398,7 +398,7 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
   </div>
 
   <!--Your health partner every day-->
-  <div class=\"row row-health mb-5\">
+  <div class=\"row row-health mb-5 \">
     <div class=\"col-12\">
       <h2 class=\"text-center\"><b>Your health partner every day</b></h2>
     </div>
@@ -434,7 +434,7 @@ class __TwigTemplate_047252456a51f919d61e3b75245b6a5d extends Template
   </div>
 </div>
 
-<div class=\"container-fluid background mt-5 d-flex align-items-center border-bottom shadow-lg\" style=\"height: 50vh;\">
+<div class=\"container-fluid background mt-5 d-flex align-items-center border-bottom shadow-lg\" id=\"scrollspyHeading1\" style=\"height: 50vh;\">
   <div class=\"container\">
     <div class=\"row\">
       <div class=\"col-lg-3 col-12 d-flex justify-content-center\">

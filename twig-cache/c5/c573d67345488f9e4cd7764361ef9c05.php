@@ -56,14 +56,14 @@ class __TwigTemplate_cc6dc1163ed366974106606bceb37d4d extends Template
     <div class=\"row\">
       <div class=\"col-md-12\">
         <div class=\"d-flex flex-row mb-3\">
-          <div class=\"card mt-3 mb-3\" style=\"width: 8rem;\">
+          <div class=\"mt-3 mb-3\">
             <img src=\"";
         // line 13
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/assets/uploads/images/";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "profile_photo", [], "any", false, false, false, 13), "html", null, true);
-        echo "\"
-              class=\"card-img-top w-100 h-100 object-fit-cover border rounded\" alt=\"...\">
+        echo "\" alt=\"user-image\" class=\"rounded-circle me-2\"
+                        style=\"width: 100px; height: 100px;\">
           </div>
 
           <div class=\"p-2 mt-4 ms-3\">
@@ -169,7 +169,12 @@ class __TwigTemplate_cc6dc1163ed366974106606bceb37d4d extends Template
             <p><small>Accepy new pattent</small></p>
             <small>Jagodina</small><br>
             <small>Knjegine Milice 15, Jagodina, Serbia</small><br>
-            <div class=\"mt-4\"><a href=\"#\" class=\"btn btn-primary\" style=\"width: 100%;\"><b>MAKE AN APPOINTMENT</b></a>
+            <div class=\"mt-4\"><a href=\"";
+        // line 112
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/makeappointment/show/";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "user_id", [], "any", false, false, false, 112), "html", null, true);
+        echo "\" class=\"btn btn-primary\" style=\"width: 100%;\"><b>MAKE AN APPOINTMENT</b></a>
             </div>
           </div>
         </div>
@@ -218,7 +223,7 @@ class __TwigTemplate_cc6dc1163ed366974106606bceb37d4d extends Template
 
     public function getDebugInfo()
     {
-        return array (  201 => 130,  197 => 129,  193 => 127,  189 => 126,  78 => 19,  72 => 18,  62 => 13,  52 => 5,  48 => 4,  37 => 1,);
+        return array (  206 => 130,  202 => 129,  198 => 127,  194 => 126,  174 => 112,  78 => 19,  72 => 18,  62 => 13,  52 => 5,  48 => 4,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -234,9 +239,9 @@ class __TwigTemplate_cc6dc1163ed366974106606bceb37d4d extends Template
     <div class=\"row\">
       <div class=\"col-md-12\">
         <div class=\"d-flex flex-row mb-3\">
-          <div class=\"card mt-3 mb-3\" style=\"width: 8rem;\">
-            <img src=\"{{base_url}}/assets/uploads/images/{{caregiver.profile_photo}}\"
-              class=\"card-img-top w-100 h-100 object-fit-cover border rounded\" alt=\"...\">
+          <div class=\"mt-3 mb-3\">
+            <img src=\"{{base_url}}/assets/uploads/images/{{caregiver.profile_photo}}\" alt=\"user-image\" class=\"rounded-circle me-2\"
+                        style=\"width: 100px; height: 100px;\">
           </div>
 
           <div class=\"p-2 mt-4 ms-3\">
@@ -334,7 +339,7 @@ class __TwigTemplate_cc6dc1163ed366974106606bceb37d4d extends Template
             <p><small>Accepy new pattent</small></p>
             <small>Jagodina</small><br>
             <small>Knjegine Milice 15, Jagodina, Serbia</small><br>
-            <div class=\"mt-4\"><a href=\"#\" class=\"btn btn-primary\" style=\"width: 100%;\"><b>MAKE AN APPOINTMENT</b></a>
+            <div class=\"mt-4\"><a href=\"{{base_url}}/makeappointment/show/{{caregiver.user_id}}\" class=\"btn btn-primary\" style=\"width: 100%;\"><b>MAKE AN APPOINTMENT</b></a>
             </div>
           </div>
         </div>

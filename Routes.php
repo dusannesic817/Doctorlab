@@ -25,6 +25,7 @@ return [
 
     #MakeAppointment
     App\Core\Route::get('|^makeappointment/type/([0-9]+)/?$|', "MakeAppointment", 'type'),
+    App\Core\Route::get('|^makeappointment/show/([0-9]+)/?$|', "MakeAppointment", 'show'),
     App\Core\Route::get('|^makeappointment/create/?$|', "MakeAppointment", 'create'),
     App\Core\Route::post('|^makeappointment/store/?$|', "MakeAppointment", 'store'),
     App\Core\Route::any('|^makeappointment/storeappointment/?$|', "MakeAppointment", 'storeAppointment'),

@@ -7,6 +7,7 @@ use App\Models\AppointmentModel;
 use App\Models\AvailabilityModel;
 use App\Models\UserModel;
 use App\Core\MailService;
+use Google\Service\Doubleclicksearch\Availability;
 
 class MakeAppointmentController extends Controller{
 
@@ -25,6 +26,16 @@ class MakeAppointmentController extends Controller{
        $this->set('caregiver',$caregiver);
        $this->set('appointment',$appointment);
       
+    }
+
+    public function show($id){
+      $availabilityModel = new AvailabilityModel($this->getDatabaseConnection());
+      $data = $availabilityModel->getCaregiverAvailability($id);
+
+      $caregiverControler = new CaregiverController($this->getDatabaseConnection());
+      $caregivers=$caregiverControler->caregiverData($data);
+
+      $this->set('caregivers',$caregivers);
     }
 
     public function store() {

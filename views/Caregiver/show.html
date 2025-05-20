@@ -9,9 +9,9 @@
     <div class="row">
       <div class="col-md-12">
         <div class="d-flex flex-row mb-3">
-          <div class="card mt-3 mb-3" style="width: 8rem;">
-            <img src="{{base_url}}/assets/uploads/images/{{caregiver.profile_photo}}"
-              class="card-img-top w-100 h-100 object-fit-cover border rounded" alt="...">
+          <div class="mt-3 mb-3">
+            <img src="{{base_url}}/assets/uploads/images/{{caregiver.profile_photo}}" alt="user-image" class="rounded-circle me-2"
+                        style="width: 100px; height: 100px;">
           </div>
 
           <div class="p-2 mt-4 ms-3">
@@ -109,7 +109,7 @@
             <p><small>Accepy new pattent</small></p>
             <small>Jagodina</small><br>
             <small>Knjegine Milice 15, Jagodina, Serbia</small><br>
-            <div class="mt-4"><a href="#" class="btn btn-primary" style="width: 100%;"><b>MAKE AN APPOINTMENT</b></a>
+            <div class="mt-4"><a href="{{base_url}}/makeappointment/show/{{caregiver.user_id}}" class="btn btn-primary" style="width: 100%;"><b>MAKE AN APPOINTMENT</b></a>
             </div>
           </div>
         </div>

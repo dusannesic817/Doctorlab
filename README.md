@@ -7,7 +7,7 @@
 - Twig  
 
 ### 📦 Composer (PHP Dependency Manager)
-- PHPMailer – Library for sending email messages (e.g. registration confirmations, notifications).  
+- PHPMailer – Library for sending email messages.
 - codeguy/upload – Library for secure and efficient file/image uploading with validation and file system handling.
 
 ### 🎨 Frontend
@@ -19,4 +19,3 @@
 ### 🌐 API Services
 - Pusher – Real-time API service for implementing features like notifications and live updates.  
 - OpenAI ChatGPT API – AI-powered service for text generation and automated user interactions.
-

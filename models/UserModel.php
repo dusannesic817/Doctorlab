@@ -26,7 +26,6 @@ class UserModel extends Model{
             'profile_photo'=>new Field((new StringValidator())->setMaxLength(150)),
             'role'=>new Field((new StringValidator())->setMaxLength(20)),
             'birth'=>new Field((new DateTimeValidator())->allowDate()),
-            'verify_token'=>new Field((new StringValidator())->setMaxLength(255)),
             'diploma_pdf'=>new Field((new StringValidator())->setMaxLength(150)),
             'caregiver_data'=>new Field((new JSONValidator())),
             'university_data'=>new Field((new JSONValidator())),
@@ -64,29 +63,7 @@ class UserModel extends Model{
     }
 
 
-    public function findByToken($token){
-    
-        $sql="SELECT * FROM user WHERE verify_token = ? AND is_verified = 0";
-        $prep = $this->getConnection()->prepare($sql);
-        $res=$prep->execute([$token]);
-        
-        $item = NULL;
 
-        if($res){
-            $item = $prep->fetch(PDO::FETCH_OBJ);
-        }
-
-        return $item;
-    }
-   
-
-    public function verifyUser($token){
-
-        $sql="UPDATE user SET is_verified = 1, verify_token = NULL WHERE verify_token = ?";
-        $prep = $this->getConnection()->prepare($sql);
-        $prep->execute([$token]);
-
-    }
 
 
 

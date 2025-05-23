@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 
+use App\Models\TokenModel;
 use Google\Client;
 use Google\Service\Oauth2;
 use App\Core\Controller;
@@ -115,7 +116,7 @@ class UserController extends Controller{
             return;
         }
 
-        $verify_token = bin2hex(random_bytes(16));
+        $token = bin2hex(random_bytes(16));
         $pass_hash = password_hash($password1, PASSWORD_DEFAULT);
 
         $user_id=$userModel->add([
@@ -126,16 +127,25 @@ class UserController extends Controller{
             'password_hash'=>$pass_hash,
             'role'=>'client',
             'birth'=>$date,
-            'verify_token'=>$verify_token,
+           
            
         ]);
 
+       
         if(!$user_id){
             $this->set('message', "Doslo je do greske, neuspela registracija");
             return;
         }
+        $tokenModel = new TokenModel($this->getDatabaseConnection());
+        $tokenModel->add([
+            'user_id'=>$user_id,
+            'token'=>$token,
+            'type'=>'verify_email',
+            'expires_at' => date('Y-m-d H:i:s', strtotime('+1 day')),
+        ]);
+
         $mailer = new MailService();
-        $addres = Configruation::BASE_URL."/confirm/$verify_token";
+        $addres = Configruation::BASE_URL."/confirm/$token";
         $mailer->sendMail($email,'Confirm mail',$addres);
        
 
@@ -156,6 +166,8 @@ class UserController extends Controller{
     
         $userModel = new UserModel($this->getDatabaseConnection());
         $email = $userModel->getByFieldName('email', $email);
+        $user_id = $email->user_id;
+        
         
        
         if (!$email) {
@@ -163,7 +175,10 @@ class UserController extends Controller{
             return;
         }
 
-        $is_verified = $email->is_verified;
+        $tokenModel = new TokenModel($this->getDatabaseConnection());
+        $token=$tokenModel->isVerified($user_id);
+
+        $is_verified = $token->is_used;
         if($is_verified==0){
             $this->set('message', 'Invalid password or email');
             return;
@@ -210,21 +225,6 @@ class UserController extends Controller{
     $this->redirect('/');
 
     }
-
- 
-   public function verify($token){
-    $userModel = new UserModel($this->getDatabaseConnection()); 
-    $user = $userModel->findByToken($token);
-
-    if ($user) {
-        $userModel->verifyUser($token);
-         $this->redirect("/user/login");
-    }
-   
-}
-
-
-
 
 
     public function googleLogIn() {

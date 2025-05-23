@@ -1,3 +1,14 @@
+# Doctorlab
+
+**Doctorlab** is a modern web application that enables efficient communication and appointment scheduling between patients and doctors. 
+The app serves as a mediator, streamlining the process of booking medical appointments through a user-friendly interface optimized for all devices.
+
+## Key Features
+- 🗓️ **Online Appointment Booking** – Patients can choose available time slots, appointment types, and preferred doctors.
+- 👨‍⚕️ **Doctor Dashboard** – Doctors have an overview of their scheduled appointments and can manage content.
+- 📱 **Responsive Design** – The application is fully optimized for all devices: smartphones, tablets, and desktop computers.
+- 🤖 **Virtual Assistant** – An integrated AI-powered assistant helps patients get quick advice based on their symptoms.
+
 ## 🛠️ Technologies Used
 
 ### 🔧 Backend

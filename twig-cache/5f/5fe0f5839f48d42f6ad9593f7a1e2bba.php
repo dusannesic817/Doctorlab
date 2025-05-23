@@ -61,13 +61,13 @@ class __TwigTemplate_39ed99ce3669a9374e4cac531cad97f9 extends Template
               <a class=\"btn btn-warning mb-2\" href=\"";
         // line 15
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
-        echo "/user/login\" role=\"button\"><b>Login</b></a>
+        echo "/user/login\" role=\"button\"><b class=\"text-light\">Login</b></a>
 
               <small class=\"text-center mb-2 mt-5\"><b>Do you have Google Account?</b></small>
               <a href=\"";
         // line 18
         echo twig_escape_filter($this->env, ($context["googleAuth"] ?? null), "html", null, true);
-        echo "\" class=\"btn btn-primary mb-2\"><b>Google</b></a>
+        echo "\" class=\"btn btn-primary mb-2\"><b class=\"text-warning\">Google</b></a>
               <small class=\"text-center mb-2\"><b>New to Doctolab?</b></small>
               <a class=\"btn btn-primary\" href=\"";
         // line 20
@@ -134,10 +134,10 @@ class __TwigTemplate_39ed99ce3669a9374e4cac531cad97f9 extends Template
           <div class=\"card-body d-flex flex-column justify-content-center align-items-center\">
             <div class=\"d-flex flex-column mb-3 w-100\">
               <small class=\"text-center mb-2\"><b>I already have an account</b></small>
-              <a class=\"btn btn-warning mb-2\" href=\"{{ base_url }}/user/login\" role=\"button\"><b>Login</b></a>
+              <a class=\"btn btn-warning mb-2\" href=\"{{ base_url }}/user/login\" role=\"button\"><b class=\"text-light\">Login</b></a>
 
               <small class=\"text-center mb-2 mt-5\"><b>Do you have Google Account?</b></small>
-              <a href=\"{{googleAuth}}\" class=\"btn btn-primary mb-2\"><b>Google</b></a>
+              <a href=\"{{googleAuth}}\" class=\"btn btn-primary mb-2\"><b class=\"text-warning\">Google</b></a>
               <small class=\"text-center mb-2\"><b>New to Doctolab?</b></small>
               <a class=\"btn btn-primary\" href=\"{{ base_url }}/user/register\" role=\"button\"><b>Sing Up</b></a>
 

@@ -62,7 +62,7 @@ class UserController extends Controller{
             'name' => $userInfo->given_name,
             'surname' => $userInfo->family_name,
             'email' => $userInfo->email,
-            // ostali podaci ako imaš
+          
         ]);
         $user = $userModel->getByFieldName('email', $userInfo->email);
     }

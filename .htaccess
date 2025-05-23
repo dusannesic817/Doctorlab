@@ -1,5 +1,9 @@
 RewriteEngine On
-#RewriteBase /
+RewriteBase /doctorlab/
+
+# Ako fajl ili direktorijum ne postoji
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ ./index.php?URL=$1 [L]
+
+# Preusmeri sve na index.php bez URL query parametra
+RewriteRule ^ index.php [QSA,L]

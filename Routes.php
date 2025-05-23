@@ -11,10 +11,6 @@ return [
     App\Core\Route::get('|^confirm/([a-zA-Z0-9_-]+)$|', "User", 'verify'),
 
 
-   
-
-
-
     #Caregiver
     App\Core\Route::get('|^caregiver/index/?$|',         "Caregiver", 'index'),
     App\Core\Route::get('|^caregiver/register/?$|',      "Caregiver", 'create'),

@@ -26,55 +26,45 @@ class UserController extends Controller{
         }
     }
     
-    public function googleAuth(){
+    public function googleAuth() {
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
 
-    if (session_status() === PHP_SESSION_NONE) {
-        session_start();
-    }
+        if (!isset($_GET['code'])) {
+            exit("Login failed: 'code' parameter missing.");
+        }
 
-    if (!isset($_GET['code'])) {
-        exit("Login failed: 'code' parameter missing.");
-    }
+        $client = $this->getGoogleClient();
 
-    $client = new Client();
-    $client->setClientId(Configruation::GOOGLE_CLIENT_ID);
-    $client->setClientSecret(Configruation::GOGLE_CLIENT_SECRET);
-    $client->setRedirectUri("http://localhost/doctorlab/googleauth"); 
+        $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
+        if (isset($token['error'])) {
+            exit("Failed to get access token: " . htmlspecialchars($token['error']));
+        }
+        $client->setAccessToken($token['access_token']);
 
-    $client->addScope("email");
-    $client->addScope("profile");
+        $oauth2 = new Oauth2($client);
+        $userInfo = $oauth2->userinfo->get();
 
-    $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
-    if (isset($token['error'])) {
-        exit("Failed to get access token: " . htmlspecialchars($token['error']));
-    }
-    $client->setAccessToken($token['access_token']);
-
-    $oauth2 = new Oauth2($client);
-    $userInfo = $oauth2->userinfo->get();
-
-    $userModel = new UserModel($this->getDatabaseConnection());
-    $user = $userModel->getByFieldName('email', $userInfo->email);
-
-    if (!$user) {
-        // Registracija novog korisnika
-        $userModel->add([
-            'name' => $userInfo->given_name,
-            'surname' => $userInfo->family_name,
-            'email' => $userInfo->email,
-          
-        ]);
+        $userModel = new UserModel($this->getDatabaseConnection());
         $user = $userModel->getByFieldName('email', $userInfo->email);
+
+        if (!$user) {
+            $userModel->add([
+                'name' => $userInfo->given_name,
+                'surname' => $userInfo->family_name,
+                'email' => $userInfo->email,
+            ]);
+            $user = $userModel->getByFieldName('email', $userInfo->email);
+        }
+
+        $this->getSession()->put('user_id', $user->user_id);
+        $this->getSession()->put('role', $user->role ?? 'user');
+        $this->getSession()->save();
+
+        $this->redirect('/client/appointments/' . $user->user_id);
+        exit();
     }
-
-    // Logovanje korisnika (postojeći ili novi)
-    $this->getSession()->put('user_id', $user->user_id);
-    $this->getSession()->put('role', $user->role ?? 'user'); // Ako nema role, dodeli npr. 'user'
-    $this->getSession()->save();
-
-    $this->redirect('/client/appointments/' . $user->user_id);
-    exit();
-}
 
     
 
@@ -238,70 +228,18 @@ class UserController extends Controller{
 
 
     public function googleLogIn() {
+        return $this->getGoogleClient()->createAuthUrl();
+    }
 
-        // Generiši URL za Google login
+    private function getGoogleClient() {
         $client = new Client();
         $client->setClientId(Configruation::GOOGLE_CLIENT_ID);
         $client->setClientSecret(Configruation::GOGLE_CLIENT_SECRET);
         $client->setRedirectUri("http://localhost/doctorlab/googleauth");
         $client->addScope("email");
         $client->addScope("profile");
-    
-        return $client->createAuthUrl();
+        return $client;
     }
-    
-
-
-
-
-      /*  if (isset($_GET['code'])) {
-            $client = new Client();
-            $client->setClientId("423354902811-tcfb9qqig2rv27h31gu8raik0n2hu5rr.apps.googleusercontent.com");
-            $client->setClientSecret("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");
-            $client->setRedirectUri("http://localhost/doctorlab/");
-    
-            // Dodavanje scope-ova
-            $client->addScope("email");
-            $client->addScope("profile");
-            //$client->addScope("https://www.googleapis.com/auth/userinfo.profile");
-            //$client->addScope("https://www.googleapis.com/auth/userinfo.phone");
-    
-            // Dobijanje tokena
-            $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
-            $client->setAccessToken($token);
-    
-            // Spremi token u sesiju
-            $this->getSession()->put('access_token', $token['access_token']);
-            $this->getSession()->save();
-    
-            // Dobavi korisničke podatke
-            $oauth2 = new Oauth2($client);
-            $userInfo = $oauth2->userinfo->get();
-    
-            // Proveri da li korisnik već postoji u bazi
-            $userModel = new UserModel($this->getDatabaseConnection());
-            $client_email = $userInfo->email; // Koristi korisnikov email
-            $user = $userModel->getByFieldName('email', $client_email);
-            
-            if (!$user) {
-                // Ako korisnik ne postoji, dodaj ga u bazu
-                $phone = isset($userInfo->phoneNumber) ? $userInfo->phoneNumber : null;
-                $birth = isset($userInfo->birthday) ? $userInfo->birthday : null;
-    
-                $userModel->add([
-                    'name' => $userInfo->givenName,
-                    'surname' => $userInfo->familyName,
-                    'email' => $userInfo->email,
-                    
-                ]);
-            }
-    
-            // Preusmeri korisnika
-            $this->redirect("/");
-            exit;
-        } else {
-            echo "Google autentifikacija nije uspela!";
-        }*/
 
 
         

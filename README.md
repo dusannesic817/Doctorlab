@@ -19,3 +19,4 @@
 ### 🌐 API Services
 - Pusher – Real-time API service for implementing features like notifications and live updates.  
 - OpenAI ChatGPT API – AI-powered service for text generation and automated user interactions.
+- Google Identity Services (OAuth 2.0) – Used for user registration and login via Google accounts.

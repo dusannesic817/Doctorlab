@@ -8,9 +8,14 @@ return [
     App\Core\Route::get('|^login/?$|',          "User", 'index'),
     App\Core\Route::get('|^googleauth/?$|',     "User", 'googleAuth'),
     App\Core\Route::post('|^user/login/?$|',    "User", "authenticate" ),
+    App\Core\Route::get('|^user/forgotpassword/?$|',    "User", "forgotPassword" ),
+    App\Core\Route::post('|^user/resetpassword/?$|',    "User", "resetPassword" ),
 
     #Token
     App\Core\Route::get('|^confirm/([a-zA-Z0-9_-]+)$|', "Token", 'verify'),
+    App\Core\Route::get('|^reset/([a-zA-Z0-9_-]+)$|', "Token", 'reset'),
+    App\Core\Route::get('|^resetform/([a-zA-Z0-9_-]+)$|', "Token", 'resetForm'),
+    App\Core\Route::post('|^confirmreset/?$|', "Token", 'confirmReset'),
 
 
     #Caregiver

@@ -27,7 +27,7 @@ class TokenModel extends Model{
     }
 
 public function findByToken($token){
-    $sql = "SELECT * FROM token WHERE `token` = ? AND `type` = 'verify_email' AND is_used = 0;";
+    $sql = "SELECT * FROM token WHERE `token` = ? AND is_used = 0;";
     $prep = $this->getConnection()->prepare($sql);
     $res = $prep->execute([$token]);
 

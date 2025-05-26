@@ -241,6 +241,41 @@ class UserController extends Controller{
         return $client;
     }
 
+    public function forgotPassword(){
+
+        
+    }
+
+    public function resetPassword(){
+
+        $email = filter_input(INPUT_POST, 'email_reset', FILTER_VALIDATE_EMAIL);
+        $userModel = new UserModel($this->getDatabaseConnection());
+        $user = $userModel->getByFieldName('email', $email);
+        $user_id= $user->user_id;
+
+        if (!$user) {
+            $this->set('errorReset',"Email doesn't exist.");
+            return;
+        }
+
+         $token_reset = bin2hex(random_bytes(16));
+
+         $tokenModel = new TokenModel($this->getDatabaseConnection());
+         $tokenModel->add([
+            'user_id'=>$user_id,
+            'token'=>$token_reset,
+            'type'=>'forgot_password',
+            'expires_at' => date('Y-m-d H:i:s', strtotime('+1 day')),
+
+         ]);
+
+        $mailer = new MailService();
+        $addres = Configruation::BASE_URL."/resetform/$token_reset";
+        $mailer->sendMail($email,'Reset Password',$addres);
+       
+
+    }
+
 
         
 }

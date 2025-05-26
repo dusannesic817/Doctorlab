@@ -12,8 +12,8 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* User/login.html */
-class __TwigTemplate_22b8ebdfd845176830f2a2fd3e10787a extends Template
+/* User/resetPassword.html */
+class __TwigTemplate_f34d45fc1d0aefad187cc159383a43d9 extends Template
 {
     private $source;
     private $macros = [];
@@ -39,7 +39,7 @@ class __TwigTemplate_22b8ebdfd845176830f2a2fd3e10787a extends Template
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
-        $this->parent = $this->loadTemplate("_global/index.html", "User/login.html", 1);
+        $this->parent = $this->loadTemplate("_global/index.html", "User/resetPassword.html", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
@@ -51,7 +51,7 @@ class __TwigTemplate_22b8ebdfd845176830f2a2fd3e10787a extends Template
         echo "  <body class=\"light-blue\" style='background-color: #e4ecf7 !important'>
     <div class=\"container d-flex justify-content-center align-items-start min-vh-100 pt-5 mt-5\">
       <div class=\"row\">
-        <h4 class=\"text-center\"><small><b>Login</b></small></h4>
+        <h4 class=\"text-center\"><small><b>Reset Password</b></small></h4>
         <div class=\"col-12 d-flex justify-content-center\">
           <div class=\"card p-4 border-0\" style=\"width: 500px; height: 350px;\">
             <div class=\"card-body d-flex flex-column justify-content-center align-items-center\">
@@ -59,20 +59,15 @@ class __TwigTemplate_22b8ebdfd845176830f2a2fd3e10787a extends Template
                 <form action=\"";
         // line 13
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
-        echo "/user/login\" method=\"POST\">
+        echo "/user/resetpassword\" method=\"POST\">
                   <div class=\"mb-3\">
-                    <label for=\"input_email\" class=\"form-label\"><small><b><small class=\"ms-1\"><b><i class=\"bi bi-envelope-fill\"></i> Email address</b></small></label>
-                    <input type=\"email\" class=\"form-control\" id=\"email_login\" name=\"email_login\" aria-describedby=\"emailHelp\">
-                    
+                    <label for=\"email_reset\" class=\"form-label\"><small><b><i class=\"bi bi-envelope-fill me-1\"></i>Email address</b></small></label>
+                    <input type=\"email\" class=\"form-control\" id=\"email_reset\" name=\"email_reset\" aria-describedby=\"emailHelp\">
+                    <div class=\"text-center mt-1\"><small><b>";
+        // line 17
+        echo twig_escape_filter($this->env, ($context["errorReset"] ?? null), "html", null, true);
+        echo "</b></small></div>
                   </div>
-                  <div class=\"mb-3\">
-                    <label for=\"input_password_1\" class=\"form-label\"><small><b><i class=\"bi bi-lock-fill\"></i> Password</b></small></label>
-                    <input type=\"password\" class=\"form-control\" id=\"password_login\" name=\"password_login\">
-                  </div>
-                    <div class=\"text-center\"><a href=\"";
-        // line 23
-        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
-        echo "/user/forgotpassword\">Forgot Password?</a></div>
                   <div class=\"mt-4\">
                     <button type=\"submit\" class=\"btn btn-primary\" style=\"width: 100%;\">Submit</button>                    
                   </div>
@@ -91,18 +86,18 @@ class __TwigTemplate_22b8ebdfd845176830f2a2fd3e10787a extends Template
 ";
     }
 
-    // line 40
+    // line 35
     public function block_naslov($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 41
-        echo "    Login
+        // line 36
+        echo "    Forhot Password
   ";
     }
 
     public function getTemplateName()
     {
-        return "User/login.html";
+        return "User/resetPassword.html";
     }
 
     public function isTraitable()
@@ -112,7 +107,7 @@ class __TwigTemplate_22b8ebdfd845176830f2a2fd3e10787a extends Template
 
     public function getDebugInfo()
     {
-        return array (  99 => 41,  95 => 40,  74 => 23,  61 => 13,  51 => 5,  47 => 4,  36 => 1,);
+        return array (  94 => 36,  90 => 35,  68 => 17,  61 => 13,  51 => 5,  47 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -124,22 +119,17 @@ class __TwigTemplate_22b8ebdfd845176830f2a2fd3e10787a extends Template
   <body class=\"light-blue\" style='background-color: #e4ecf7 !important'>
     <div class=\"container d-flex justify-content-center align-items-start min-vh-100 pt-5 mt-5\">
       <div class=\"row\">
-        <h4 class=\"text-center\"><small><b>Login</b></small></h4>
+        <h4 class=\"text-center\"><small><b>Reset Password</b></small></h4>
         <div class=\"col-12 d-flex justify-content-center\">
           <div class=\"card p-4 border-0\" style=\"width: 500px; height: 350px;\">
             <div class=\"card-body d-flex flex-column justify-content-center align-items-center\">
               <div class=\"d-flex flex-column mb-3 w-100\">
-                <form action=\"{{ base_url }}/user/login\" method=\"POST\">
+                <form action=\"{{base_url}}/user/resetpassword\" method=\"POST\">
                   <div class=\"mb-3\">
-                    <label for=\"input_email\" class=\"form-label\"><small><b><small class=\"ms-1\"><b><i class=\"bi bi-envelope-fill\"></i> Email address</b></small></label>
-                    <input type=\"email\" class=\"form-control\" id=\"email_login\" name=\"email_login\" aria-describedby=\"emailHelp\">
-                    
+                    <label for=\"email_reset\" class=\"form-label\"><small><b><i class=\"bi bi-envelope-fill me-1\"></i>Email address</b></small></label>
+                    <input type=\"email\" class=\"form-control\" id=\"email_reset\" name=\"email_reset\" aria-describedby=\"emailHelp\">
+                    <div class=\"text-center mt-1\"><small><b>{{errorReset}}</b></small></div>
                   </div>
-                  <div class=\"mb-3\">
-                    <label for=\"input_password_1\" class=\"form-label\"><small><b><i class=\"bi bi-lock-fill\"></i> Password</b></small></label>
-                    <input type=\"password\" class=\"form-control\" id=\"password_login\" name=\"password_login\">
-                  </div>
-                    <div class=\"text-center\"><a href=\"{{ base_url }}/user/forgotpassword\">Forgot Password?</a></div>
                   <div class=\"mt-4\">
                     <button type=\"submit\" class=\"btn btn-primary\" style=\"width: 100%;\">Submit</button>                    
                   </div>
@@ -157,8 +147,8 @@ class __TwigTemplate_22b8ebdfd845176830f2a2fd3e10787a extends Template
 
 {% endblock %}
   {% block naslov %}
-    Login
+    Forhot Password
   {% endblock %}
-", "User/login.html", "C:\\laragon\\www\\doctorlab\\views\\User\\login.html");
+", "User/resetPassword.html", "C:\\laragon\\www\\doctorlab\\views\\User\\resetPassword.html");
     }
 }

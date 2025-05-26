@@ -35,39 +35,10 @@ public function verify($tokenString){
         $this->getSession()->save();
         $this->redirect("/reset/$tokenString");
         
-
-        
-    }
-    public function reset(){
-
     }
 
 
-    public function confirmReset(){
-        $token = $this->getSession()->get('token');
-        
-        $tokenModel = new TokenModel($this->getDatabaseConnection()); 
-        $token_obj = $tokenModel->findByToken($token);
-        $user_id = $token_obj->user_id;
 
-        $userModel= new UserModel($this->getDatabaseConnection());
-        $user= $userModel->getById($user_id);
-
-        $password = filter_input(INPUT_POST,'password_reset');
-        $password1 = filter_input(INPUT_POST,'password_reset1');
-
-        if($password!== $password1){
-            $this->set("message",'Password must be same');
-            return;
-        }
-
-        
-
-
-        var_dump($user_id,$token);
-        exit();
-
-    }
 
    
 }

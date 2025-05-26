@@ -157,7 +157,10 @@ class UserController extends Controller{
    }
 
     public function login(){
-
+         $successReset=$this->getSession()->get('successReset');
+         $this->set('successReset',$successReset);
+         $this->getSession()->remove('successReset');
+         
     }
 
     public function authenticate(){
@@ -275,6 +278,54 @@ class UserController extends Controller{
        
 
     }
+        public function reset(){
+
+        }
+
+        public function confirmReset(){
+        $token = $this->getSession()->get('token');
+        
+        $tokenModel = new TokenModel($this->getDatabaseConnection()); 
+        $token_obj = $tokenModel->findByToken($token);
+        $user_id = $token_obj->user_id;
+
+        $userModel= new UserModel($this->getDatabaseConnection());
+        $user= $userModel->getById($user_id);
+
+        $password = filter_input(INPUT_POST,'password_reset');
+        $password1 = filter_input(INPUT_POST,'password_reset1');
+
+        if($password!== $password1){
+            $this->set("message","The password doesn't match.");
+            return;
+        }
+        $stringValidator = (new StringValidator())->setMinLength(7)->setMaxLength(30)->firstCharUpper();
+        //$numberValidator = (new NumberValidator())->setMustContainDigit();
+       
+        if (!$stringValidator->isValid($password1)){
+            $this->set('message', 'Your password must be 8-30 characters long, with an uppercase letter and contain numbers.');
+            return;
+        }
+
+        $password_hash=password_hash($password, PASSWORD_DEFAULT);
+
+        $data=$userModel->editById($user_id,[
+            'password_hash'=>$password_hash
+        ]);
+
+        if($data){
+            $tokenModel->verifyUser($token);
+        }
+
+        $this->getSession()->remove('token');
+        $this->getSession()->save();
+       
+        $this->getSession()->put('successReset','Successfully reset your password');
+        $this->redirect('/user/login');
+       
+
+    }
+
 
 
         

@@ -10,13 +10,13 @@ return [
     App\Core\Route::post('|^user/login/?$|',    "User", "authenticate" ),
     App\Core\Route::get('|^user/forgotpassword/?$|',    "User", "forgotPassword" ),
     App\Core\Route::post('|^user/resetpassword/?$|',    "User", "resetPassword" ),
+    App\Core\Route::get('|^reset/([a-zA-Z0-9_-]+)$|', "User", 'reset'),
+    App\Core\Route::post('|^confirmreset/?$|',        "User", 'confirmReset'),
 
     #Token
     App\Core\Route::get('|^confirm/([a-zA-Z0-9_-]+)$|', "Token", 'verify'),
-    App\Core\Route::get('|^reset/([a-zA-Z0-9_-]+)$|', "Token", 'reset'),
     App\Core\Route::get('|^resetform/([a-zA-Z0-9_-]+)$|', "Token", 'resetForm'),
-    App\Core\Route::post('|^confirmreset/?$|', "Token", 'confirmReset'),
-
+   
 
     #Caregiver
     App\Core\Route::get('|^caregiver/index/?$|',         "Caregiver", 'index'),

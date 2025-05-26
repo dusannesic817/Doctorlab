@@ -158,7 +158,10 @@ class UserController extends Controller{
 
     public function login(){
          $successReset=$this->getSession()->get('successReset');
-         $this->set('successReset',$successReset);
+         if($successReset){
+              $this->set('successReset',$successReset);
+         }
+       
          $this->getSession()->remove('successReset');
          
     }

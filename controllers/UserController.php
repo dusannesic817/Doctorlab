@@ -281,15 +281,22 @@ class UserController extends Controller{
        
 
     }
-        public function reset(){
+    public function reset(){
 
-        }
+    }
 
-        public function confirmReset(){
+    public function confirmReset(){
+        
         $token = $this->getSession()->get('token');
         
         $tokenModel = new TokenModel($this->getDatabaseConnection()); 
         $token_obj = $tokenModel->findByToken($token);
+        if (!$token_obj || $token_obj->is_used==1 || $token_obj->expires_at <= date('Y-m-d H:i:s')){
+
+            $this->set('message', 'Token is invalid or has expired.');
+            return;
+        }
+
         $user_id = $token_obj->user_id;
 
         $userModel= new UserModel($this->getDatabaseConnection());
@@ -303,7 +310,7 @@ class UserController extends Controller{
             return;
         }
         $stringValidator = (new StringValidator())->setMinLength(7)->setMaxLength(30)->firstCharUpper();
-        //$numberValidator = (new NumberValidator())->setMustContainDigit();
+       
        
         if (!$stringValidator->isValid($password1)){
             $this->set('message', 'Your password must be 8-30 characters long, with an uppercase letter and contain numbers.');
@@ -328,7 +335,6 @@ class UserController extends Controller{
        
 
     }
-
 
 
         

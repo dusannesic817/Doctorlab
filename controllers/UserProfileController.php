@@ -27,13 +27,15 @@ class UserProfileController extends UserRoleController{
         
       }
       $this->getSession()->remove('success_edit');
-      
+       $doctors=$this->getJson('caregiver_data.json');
+        $this->set('doctors',$doctors);
       
     } 
 
 
     public function edit($id){
-      
+       $doctors=$this->getJson('caregiver_data.json');
+        $this->set('doctors',$doctors);
     }
 
     public function update($id){

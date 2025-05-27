@@ -14,8 +14,5 @@ class UserRoleController extends Controller{
             return;
         }
 
-     
-
-
     }  
 }

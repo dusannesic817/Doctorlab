@@ -22,6 +22,9 @@ class CaregiverProfileController extends UserRoleController{
         }
 
         $this->getSession()->remove('success_edit');
+
+         $doctors=$this->getJson('caregiver_data.json');
+        $this->set('doctors',$doctors);
     }
 
 
@@ -51,6 +54,9 @@ class CaregiverProfileController extends UserRoleController{
         $this->set('title',$title);
         $this->set('university',$university);
     }
+
+     $doctors=$this->getJson('caregiver_data.json');
+        $this->set('doctors',$doctors);
     
    }
 

@@ -20,7 +20,8 @@ class AppointmentController extends UserRoleController{
         $myclients = $appointmentModel->getScheduleDoctor($user_id);
 
         $this->set('myclients',$myclients);
-        
+         $doctors=$this->getJson('caregiver_data.json');
+        $this->set('doctors',$doctors);
     }
 
 
@@ -47,6 +48,8 @@ class AppointmentController extends UserRoleController{
        
     
         $this->getSession()->remove('success_schedule');
+         $doctors=$this->getJson('caregiver_data.json');
+        $this->set('doctors',$doctors);
     }
 
     public function client($id){
@@ -58,7 +61,9 @@ class AppointmentController extends UserRoleController{
 
 
             $this->set('change',$change);
-            $this->set('schedules',$schedules);  
+            $this->set('schedules',$schedules);
+             $doctors=$this->getJson('caregiver_data.json');
+        $this->set('doctors',$doctors);
     }
 
 

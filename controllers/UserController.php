@@ -17,6 +17,9 @@ class UserController extends Controller{
 
 
     public function index() {
+
+        $doctors=$this->getJson('caregiver_data.json');
+        $this->set('doctors',$doctors);
       
         if (isset($_GET['code'])) {
             $this->googleAuth();
@@ -74,7 +77,8 @@ class UserController extends Controller{
     }
 
    public function create(){
-
+    $doctors=$this->getJson('caregiver_data.json');
+    $this->set('doctors',$doctors);
 
    }
 
@@ -152,6 +156,8 @@ class UserController extends Controller{
         $this->getSession()->put('successRegistration',"Thank you, you will get confirmation link, check your email address.");
         $this->getSession()->save();
         $this->redirect('/');
+
+        
        
 
    }
@@ -161,8 +167,10 @@ class UserController extends Controller{
          if($successReset){
               $this->set('successReset',$successReset);
          }
-       
-         $this->getSession()->remove('successReset');
+
+        $doctors=$this->getJson('caregiver_data.json');
+        $this->set('doctors',$doctors);
+        $this->getSession()->remove('successReset');
          
     }
 
@@ -185,6 +193,7 @@ class UserController extends Controller{
         $token=$tokenModel->isVerified($user_id);
 
         $is_verified = $token->is_used;
+        
         if($is_verified==0){
             $this->set('message', 'Invalid password or email');
             return;
@@ -286,13 +295,13 @@ class UserController extends Controller{
     }
 
     public function confirmReset(){
-        
+
         $token = $this->getSession()->get('token');
         
         $tokenModel = new TokenModel($this->getDatabaseConnection()); 
         $token_obj = $tokenModel->findByToken($token);
-        if (!$token_obj || $token_obj->is_used==1 || $token_obj->expires_at <= date('Y-m-d H:i:s')){
 
+        if (!$token_obj || $token_obj->is_used==1 || $token_obj->expires_at <= date('Y-m-d H:i:s')){
             $this->set('message', 'Token is invalid or has expired.');
             return;
         }

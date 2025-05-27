@@ -24,6 +24,8 @@ class ChatGptController extends Controller{
 
         
         }
+        $doctors=$this->getJson('caregiver_data.json');
+        $this->set('doctors',$doctors);
 
     }
 }

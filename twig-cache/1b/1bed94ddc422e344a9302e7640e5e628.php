@@ -48,7 +48,7 @@ class __TwigTemplate_83ad43a2c00f54a2edb316a897bfa79a extends Template
         $macros = $this->macros;
         // line 5
         echo "
-<body class=\"light-blue\">
+<body class=\"light-blue\" style='background-color: #e4ecf7 !important'>
   <div class=\"container d-flex justify-content-center align-items-start min-vh-100 pt-5 mt-5\">
     <div class=\"row\">
       <h4 class=\"text-center\"><small><b>Login</b></small></h4>
@@ -108,7 +108,7 @@ class __TwigTemplate_83ad43a2c00f54a2edb316a897bfa79a extends Template
 
 {% block main %}
 
-<body class=\"light-blue\">
+<body class=\"light-blue\" style='background-color: #e4ecf7 !important'>
   <div class=\"container d-flex justify-content-center align-items-start min-vh-100 pt-5 mt-5\">
     <div class=\"row\">
       <h4 class=\"text-center\"><small><b>Login</b></small></h4>

@@ -21,7 +21,9 @@ class CaregiverController extends Controller{
         foreach($caregivers as $value){
            $count++;
         }
-        
+
+        $doctors=$this->getJson('caregiver_data.json');
+        $this->set('doctors',$doctors);
         $this->set('caregivers', $caregivers);
         $this->set('count', $count);
 
@@ -40,7 +42,8 @@ class CaregiverController extends Controller{
            $count++;
         }
 
-        
+        $doctors=$this->getJson('caregiver_data.json');
+        $this->set('doctors',$doctors);
         $this->set('caregivers', $caregivers);
         $this->set('count', $count);
     }
@@ -52,11 +55,14 @@ class CaregiverController extends Controller{
         if($caregiver->role=='caregiver'){
             $this->set('caregiver',$caregiver);
         }
+         $doctors=$this->getJson('caregiver_data.json');
+        $this->set('doctors',$doctors);
     }
 
     public function create(){
 
-
+        $doctors=$this->getJson('caregiver_data.json');
+        $this->set('doctors',$doctors);
     }
 
 

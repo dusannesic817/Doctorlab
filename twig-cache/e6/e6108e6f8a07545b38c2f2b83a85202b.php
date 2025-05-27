@@ -57,7 +57,6 @@ class __TwigTemplate_50224a08d9a49685f418e06832038247 extends Template
                     d=\"M4 7h22M4 15h22M4 23h22\" />
             </svg>
           </button>
-      
             <div class=\"collapse navbar-collapse\" id=\"navbarNav\">
               <ul class=\"navbar-nav\">
                 <li class=\"nav-item dropdown\">
@@ -71,21 +70,21 @@ class __TwigTemplate_50224a08d9a49685f418e06832038247 extends Template
                     <div class=\"mt-5 mb-5\">
                       <div class=\"d-flex flex-column flex-lg-row mb-3 justify-content-start ms-5 caregiver\">
                         ";
-        // line 31
+        // line 30
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_slice($this->env, twig_get_attribute($this->env, $this->source, ($context["doctors"] ?? null), "doctors", [], "any", false, false, false, 31), 0, 4));
+        $context['_seq'] = twig_ensure_traversable(twig_slice($this->env, twig_get_attribute($this->env, $this->source, ($context["doctors"] ?? null), "doctors", [], "any", false, false, false, 30), 0, 4));
         foreach ($context['_seq'] as $context["_key"] => $context["doctor"]) {
-            // line 32
+            // line 31
             echo "                          <div class=\"p-2 mb-2 me-2\">
                             <li><a href=\"";
-            // line 33
+            // line 32
             echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
             echo "/caregiver/";
-            echo twig_escape_filter($this->env, twig_lower_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "title", [], "any", false, false, false, 33)), "html", null, true);
+            echo twig_escape_filter($this->env, twig_lower_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "title", [], "any", false, false, false, 32)), "html", null, true);
             echo "\" style=\"color: black !important;\"><i class=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "icon", [], "any", false, false, false, 33), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "icon", [], "any", false, false, false, 32), "html", null, true);
             echo "\"></i><b> ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "title", [], "any", false, false, false, 33), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "title", [], "any", false, false, false, 32), "html", null, true);
             echo "</b> </a></li>
                           </div>
                         ";
@@ -93,26 +92,26 @@ class __TwigTemplate_50224a08d9a49685f418e06832038247 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['doctor'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 36
+        // line 35
         echo "                      </div>
                       
                       <div class=\"d-flex flex-column flex-lg-row mb-3 justify-content-start ms-5 caregiver\">
                         ";
-        // line 39
+        // line 38
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_slice($this->env, twig_get_attribute($this->env, $this->source, ($context["doctors"] ?? null), "doctors", [], "any", false, false, false, 39), 4, 4));
+        $context['_seq'] = twig_ensure_traversable(twig_slice($this->env, twig_get_attribute($this->env, $this->source, ($context["doctors"] ?? null), "doctors", [], "any", false, false, false, 38), 4, 4));
         foreach ($context['_seq'] as $context["_key"] => $context["doctor"]) {
-            // line 40
+            // line 39
             echo "                          <div class=\"p-2  mb-2 me-2\">
                             <li><a href=\"";
-            // line 41
+            // line 40
             echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
             echo "/caregiver/";
-            echo twig_escape_filter($this->env, twig_lower_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "title", [], "any", false, false, false, 41)), "html", null, true);
+            echo twig_escape_filter($this->env, twig_lower_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "title", [], "any", false, false, false, 40)), "html", null, true);
             echo "\" style=\"color: black !important;\"><i class=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "icon", [], "any", false, false, false, 41), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "icon", [], "any", false, false, false, 40), "html", null, true);
             echo " \"></i> <b> ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "title", [], "any", false, false, false, 41), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "title", [], "any", false, false, false, 40), "html", null, true);
             echo "</b></a></li>
                           </div>
                         ";
@@ -120,25 +119,25 @@ class __TwigTemplate_50224a08d9a49685f418e06832038247 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['doctor'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 44
+        // line 43
         echo "                      </div>
                       <div class=\"d-flex flex-column flex-lg-row mb-3 justify-content-start ms-5 caregiver\">
                         ";
-        // line 46
+        // line 45
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_slice($this->env, twig_get_attribute($this->env, $this->source, ($context["doctors"] ?? null), "doctors", [], "any", false, false, false, 46), 8, 2));
+        $context['_seq'] = twig_ensure_traversable(twig_slice($this->env, twig_get_attribute($this->env, $this->source, ($context["doctors"] ?? null), "doctors", [], "any", false, false, false, 45), 8, 2));
         foreach ($context['_seq'] as $context["_key"] => $context["doctor"]) {
-            // line 47
+            // line 46
             echo "                          <div class=\"p-2  mb-2 me-2\">
                             <li><a href=\"";
-            // line 48
+            // line 47
             echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
             echo "/caregiver/";
-            echo twig_escape_filter($this->env, twig_lower_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "title", [], "any", false, false, false, 48)), "html", null, true);
+            echo twig_escape_filter($this->env, twig_lower_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "title", [], "any", false, false, false, 47)), "html", null, true);
             echo "\" style=\"color: black !important;\"><i class=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "icon", [], "any", false, false, false, 48), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "icon", [], "any", false, false, false, 47), "html", null, true);
             echo "\"></i> <b> ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "title", [], "any", false, false, false, 48), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "title", [], "any", false, false, false, 47), "html", null, true);
             echo "</b></a></li>
                           </div>
                         ";
@@ -146,32 +145,28 @@ class __TwigTemplate_50224a08d9a49685f418e06832038247 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['doctor'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 51
+        // line 50
         echo "                      </div>
                     </div>
-                  </ul>
-                  
-                
-       
-                  
+                  </ul>                  
                 </li>
                 <li class=\"nav-item\">
                   <a class=\"nav-link mt-2 ms-2\" href=\"";
-        // line 60
+        // line 55
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/assistent\"><b><small>Assistent Doctorlab</small></b></a>
                 </li>
 
                 ";
-        // line 63
+        // line 58
         if (($context["auth"] ?? null)) {
-            // line 64
+            // line 59
             echo "                      
               </ul>
               <ul class=\"navbar-nav ms-auto mt-2\">
                 <li class=\"nav-item\">
                   <a class=\"nav-link ms-2\" href=\"";
-            // line 68
+            // line 63
             echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
             echo "/";
             echo twig_escape_filter($this->env, ($context["role"] ?? null), "html", null, true);
@@ -181,7 +176,7 @@ class __TwigTemplate_50224a08d9a49685f418e06832038247 extends Template
                 </li>
                 <li class=\"nav-item\">
                   <a class=\"nav-link ms-2\" href=\"";
-            // line 71
+            // line 66
             echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
             echo "/";
             echo twig_escape_filter($this->env, ($context["role"] ?? null), "html", null, true);
@@ -193,25 +188,25 @@ class __TwigTemplate_50224a08d9a49685f418e06832038247 extends Template
              
               ";
         } else {
-            // line 76
+            // line 71
             echo "              </ul>
               <ul class=\"navbar-nav ms-auto mt-2\">
                 <li class=\"nav-item border rounded me-2 border-success ps-1 pe-1 mb-1\">
                   <a class=\"nav-link\" href=\"";
-            // line 79
+            // line 74
             echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
             echo "/caregiver/register\"><b><small>Are you a health professional?</small></b></a>
                 </li>
                 <li class=\"nav-item\">
                   <a class=\"nav-link ms-2\" href=\"";
-            // line 82
+            // line 77
             echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
             echo "/login\"><b><small>Make appoitment?</small></b></a>
                 </li>
               </ul>
               ";
         }
-        // line 86
+        // line 81
         echo "            </div>
           </div>
         </nav>
@@ -233,7 +228,7 @@ class __TwigTemplate_50224a08d9a49685f418e06832038247 extends Template
 
     public function getDebugInfo()
     {
-        return array (  215 => 86,  208 => 82,  202 => 79,  197 => 76,  185 => 71,  175 => 68,  169 => 64,  167 => 63,  161 => 60,  150 => 51,  135 => 48,  132 => 47,  128 => 46,  124 => 44,  109 => 41,  106 => 40,  102 => 39,  97 => 36,  82 => 33,  79 => 32,  75 => 31,  49 => 8,  45 => 7,  37 => 1,);
+        return array (  210 => 81,  203 => 77,  197 => 74,  192 => 71,  180 => 66,  170 => 63,  164 => 59,  162 => 58,  156 => 55,  149 => 50,  134 => 47,  131 => 46,  127 => 45,  123 => 43,  108 => 40,  105 => 39,  101 => 38,  96 => 35,  81 => 32,  78 => 31,  74 => 30,  49 => 8,  45 => 7,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -255,7 +250,6 @@ class __TwigTemplate_50224a08d9a49685f418e06832038247 extends Template
                     d=\"M4 7h22M4 15h22M4 23h22\" />
             </svg>
           </button>
-      
             <div class=\"collapse navbar-collapse\" id=\"navbarNav\">
               <ul class=\"navbar-nav\">
                 <li class=\"nav-item dropdown\">
@@ -290,11 +284,7 @@ class __TwigTemplate_50224a08d9a49685f418e06832038247 extends Template
                         {% endfor %}
                       </div>
                     </div>
-                  </ul>
-                  
-                
-       
-                  
+                  </ul>                  
                 </li>
                 <li class=\"nav-item\">
                   <a class=\"nav-link mt-2 ms-2\" href=\"{{base_url}}/assistent\"><b><small>Assistent Doctorlab</small></b></a>

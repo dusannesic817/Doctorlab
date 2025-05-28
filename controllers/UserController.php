@@ -194,10 +194,10 @@ class UserController extends Controller{
 
         $is_verified = $token->is_used;
         
-        if($is_verified==0){
+        /*if($is_verified==0){
             $this->set('message', 'Invalid password or email');
             return;
-        }
+        }*/
     
         $pass = $email->password_hash;
     

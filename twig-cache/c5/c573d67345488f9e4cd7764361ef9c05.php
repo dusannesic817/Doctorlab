@@ -174,7 +174,7 @@ class __TwigTemplate_cc6dc1163ed366974106606bceb37d4d extends Template
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/makeappointment/show/";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "user_id", [], "any", false, false, false, 112), "html", null, true);
-        echo "\" class=\"btn btn-primary\" style=\"width: 100%;\"><b>MAKE AN APPOINTMENT</b></a>
+        echo "\" class=\"btn btn-primary\" style=\"width: 100%;\"><b><small><i class=\"fa-solid fa-calendar-days me-2\"></i>MAKE AN APPOINTMENT</small></b></a>
             </div>
           </div>
         </div>
@@ -339,7 +339,7 @@ class __TwigTemplate_cc6dc1163ed366974106606bceb37d4d extends Template
             <p><small>Accepy new pattent</small></p>
             <small>Jagodina</small><br>
             <small>Knjegine Milice 15, Jagodina, Serbia</small><br>
-            <div class=\"mt-4\"><a href=\"{{base_url}}/makeappointment/show/{{caregiver.user_id}}\" class=\"btn btn-primary\" style=\"width: 100%;\"><b>MAKE AN APPOINTMENT</b></a>
+            <div class=\"mt-4\"><a href=\"{{base_url}}/makeappointment/show/{{caregiver.user_id}}\" class=\"btn btn-primary\" style=\"width: 100%;\"><b><small><i class=\"fa-solid fa-calendar-days me-2\"></i>MAKE AN APPOINTMENT</small></b></a>
             </div>
           </div>
         </div>

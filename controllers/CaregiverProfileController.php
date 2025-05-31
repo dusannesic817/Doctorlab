@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 
 use App\Core\Role\UserRoleController;
+use App\Models\ClinicModel;
 use App\Models\UserModel;
 use Exception;
 
@@ -61,6 +62,25 @@ class CaregiverProfileController extends UserRoleController{
    }
 
    public function update($id){
+
+    
+
+    $clinicModel = new ClinicModel($this->getDatabaseConnection());
+    $clinicData = [
+        'name'=>'',
+        'address'=>'',
+        'city'=>'',
+        'latitude'=>'',
+        'longitude'=>''
+
+    ];
+
+    $lastInsertId = $clinicModel->add($clinicData);
+
+    var_dump($lastInsertId);
+    exit();
+
+
 
     $userModel = new UserModel($this->getDatabaseConnection());
     $user = $userModel->getById($id);
@@ -149,8 +169,8 @@ class CaregiverProfileController extends UserRoleController{
         'university_data' => json_encode(["university" => $finalUniversity]),
     ];
 
-   
     $edit = $userModel->editById($id,$editData);
+
 
     if(!$edit){
         $this->set("message", "Nije moguce izmeti profile");
@@ -160,9 +180,7 @@ class CaregiverProfileController extends UserRoleController{
     $this->getSession()->put('success_edit',"Successfully changed data");
     $this->getSession()->save();
     
-        $this->redirect("/caregiver/profile/".$id);
-
-    
+    $this->redirect("/caregiver/profile/".$id);
 
    }
    

@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Core\Controller;
 use App\Core\Role\UserRoleController;
 use App\Models\AvailabilityModel;
+use App\Models\ClinicModel;
 use App\Models\UserModel;
 use App\Validators\StringValidator;
 
@@ -69,8 +70,8 @@ class CaregiverController extends Controller{
 
     public function store(){
 
+
         $userModel = new UserModel($this->getDatabaseConnection());
-        
         
         $forename = filter_input(INPUT_POST,'first_name');
         $surname = filter_input(INPUT_POST,'last_name');

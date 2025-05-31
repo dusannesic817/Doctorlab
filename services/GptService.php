@@ -4,8 +4,7 @@ namespace App\Services;
 use GuzzleHttp\Client;
 
 
-class GptService
-{
+class GptService{
     private $client;
     private $apiKey;
 

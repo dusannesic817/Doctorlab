@@ -157,9 +157,6 @@ class UserController extends Controller{
         $this->getSession()->save();
         $this->redirect('/');
 
-        
-       
-
    }
 
     public function login(){

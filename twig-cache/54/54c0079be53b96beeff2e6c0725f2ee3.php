@@ -55,9 +55,9 @@ class __TwigTemplate_ce3700ee9ca62a1743c37422bb0a3af3 extends Template
         // line 13
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/assets/css/sb-admin-2.min.css\">
-   <script src=\"https://js.pusher.com/8.4.0/pusher.min.js\"></script>
+  <script src=\"https://js.pusher.com/8.4.0/pusher.min.js\"></script>
 
- <title>";
+  <title>";
         // line 16
         $this->displayBlock('naslov', $context, $blocks);
         echo "</title>
@@ -89,7 +89,7 @@ class __TwigTemplate_ce3700ee9ca62a1743c37422bb0a3af3 extends Template
         // line 38
         $this->loadTemplate("./inc/caregiver/topbar_caregiver.html", "_global/caregiver_index.html", 38)->display($context);
         // line 39
-        echo "       
+        echo "
 
         ";
         // line 41
@@ -99,15 +99,20 @@ class __TwigTemplate_ce3700ee9ca62a1743c37422bb0a3af3 extends Template
       </div>
     </div>
 
-  </div>
+ <!-- Extended component library za <gmpx-placeautocomplete> -->
+
+
+<!-- Google Maps API sa Places + callback -->
+
+
 
   <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js\"></script>
   <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js\"></script>
-    <script src=\"";
-        // line 52
+  <script src=\"";
+        // line 57
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/assets/main.js\" defer></script>
-  
+
 </body>
 
 </html>";
@@ -117,7 +122,7 @@ class __TwigTemplate_ce3700ee9ca62a1743c37422bb0a3af3 extends Template
     public function block_naslov($context, array $blocks = [])
     {
         $macros = $this->macros;
-        echo "  ";
+        echo " ";
     }
 
     // line 41
@@ -141,7 +146,7 @@ class __TwigTemplate_ce3700ee9ca62a1743c37422bb0a3af3 extends Template
 
     public function getDebugInfo()
     {
-        return array (  128 => 42,  124 => 41,  117 => 16,  108 => 52,  98 => 44,  96 => 41,  92 => 39,  90 => 38,  84 => 34,  82 => 33,  62 => 16,  56 => 13,  49 => 9,  39 => 1,);
+        return array (  133 => 42,  129 => 41,  122 => 16,  113 => 57,  98 => 44,  96 => 41,  92 => 39,  90 => 38,  84 => 34,  82 => 33,  62 => 16,  56 => 13,  49 => 9,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -159,9 +164,9 @@ class __TwigTemplate_ce3700ee9ca62a1743c37422bb0a3af3 extends Template
   <script src=\"https://kit.fontawesome.com/3f1d14d928.js\" crossorigin=\"anonymous\"></script>
   <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
   <link rel=\"stylesheet\" href=\"{{ base_url }}/assets/css/sb-admin-2.min.css\">
-   <script src=\"https://js.pusher.com/8.4.0/pusher.min.js\"></script>
+  <script src=\"https://js.pusher.com/8.4.0/pusher.min.js\"></script>
 
- <title>{%block naslov%}  {%endblock%}</title>
+  <title>{%block naslov%} {%endblock%}</title>
 
   <!-- Custom fonts for this template-->
   <link href=\"vendor/fontawesome-free/css/all.min.css\" rel=\"stylesheet\" type=\"text/css\">
@@ -184,7 +189,7 @@ class __TwigTemplate_ce3700ee9ca62a1743c37422bb0a3af3 extends Template
       <!-- Main Content -->
       <div id=\"content\">
         {% include './inc/caregiver/topbar_caregiver.html' %}
-       
+
 
         {% block caregiver %}
 
@@ -193,12 +198,17 @@ class __TwigTemplate_ce3700ee9ca62a1743c37422bb0a3af3 extends Template
       </div>
     </div>
 
-  </div>
+ <!-- Extended component library za <gmpx-placeautocomplete> -->
+
+
+<!-- Google Maps API sa Places + callback -->
+
+
 
   <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js\"></script>
   <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js\"></script>
-    <script src=\"{{ base_url }}/assets/main.js\" defer></script>
-  
+  <script src=\"{{ base_url }}/assets/main.js\" defer></script>
+
 </body>
 
 </html>", "_global/caregiver_index.html", "C:\\laragon\\www\\doctorlab\\views\\_global\\caregiver_index.html");

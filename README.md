@@ -22,7 +22,8 @@ Doctorlab further enhances the user experience with the integration of a virtual
 
 ### 📦 Composer (PHP Dependency Manager)
 - PHPMailer – Library for sending email messages.
-- codeguy/upload – Library for secure and efficient file/image uploading with validation and file system handling.
+- Codeguy/upload – Library for secure and efficient file/image uploading with validation and file system handling.
+- Opencage/geocode - A PHP library that provides a simple interface for interacting with the OpenCage Geocoding API, enabling address-to-coordinate and coordinate-to-address conversions.
 
 ### 🎨 Frontend
 - HTML5 & CSS3  
@@ -34,3 +35,4 @@ Doctorlab further enhances the user experience with the integration of a virtual
 - Pusher – Real-time API service for implementing features like notifications and live updates.  
 - OpenAI ChatGPT API – AI-powered service for text generation and automated user interactions.
 - Google Identity Services (OAuth 2.0) – Used for user registration and login via Google accounts.
+- OpenCage Geocoding API -  A service for converting addresses into geographic coordinates (geocoding) and vice versa, useful for locating places on a map.

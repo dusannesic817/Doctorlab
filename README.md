@@ -36,3 +36,5 @@ Doctorlab further enhances the user experience with the integration of a virtual
 - OpenAI ChatGPT API – AI-powered service for text generation and automated user interactions.
 - Google Identity Services (OAuth 2.0) – Used for user registration and login via Google accounts.
 - OpenCage Geocoding API -  A service for converting addresses into geographic coordinates (geocoding) and vice versa, useful for locating places on a map.
+- Google Maps JavaScript API – Enables embedding and customizing interactive maps on web pages, including features like markers, geolocation, and route display.
+

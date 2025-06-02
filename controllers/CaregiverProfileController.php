@@ -6,6 +6,7 @@ namespace App\Controllers;
 use App\Core\Role\UserRoleController;
 use App\Models\ClinicModel;
 use App\Models\UserModel;
+use App\Services\GeoCodic;
 use Exception;
 
 
@@ -32,7 +33,7 @@ class CaregiverProfileController extends UserRoleController{
    public function edit($id){
     
     $user = new UserModel($this->getDatabaseConnection());
-    $caregiver = $user->getById($id);
+    $caregiver = $user->getUser($id);
     $doctor = $caregiver->caregiver_data;
     $university_data = $caregiver->university_data;
     $decodedData = json_decode($doctor, true);
@@ -61,29 +62,41 @@ class CaregiverProfileController extends UserRoleController{
     
    }
 
-   public function update($id){
+ public function update($id){
+
+    $clinic = filter_input(INPUT_POST,'clinic');
+    $address = filter_input(INPUT_POST,'clinic_address');
+    $city = filter_input(INPUT_POST,"clinic_city");
+
+
+    $last_clinic_id=null;
+
+    $userModel= new UserModel($this->getDatabaseConnection());
+    $user = $userModel->getById($id);
+    $clinicModel = new ClinicModel($this->getDatabaseConnection());
+
+    if($user->clinic_id!=null){
+    $clinc_data =$clinicModel->getById($user->clinic_id);
+    $last_clinic_id=$clinc_data->clinic_id;
+
+    }
+
+    if (!empty($clinic) && !empty($address) && !empty($city)) {
+
+    $geoCodic = new GeoCodic();
+    $data = $geoCodic->geocode($address. ', '. $city);
+        
+    $clinicData = [
+        'clinic_name'=>$clinic,
+        'address'=>$address,
+        'city'=>$city,
+        'latitude'=>$data['lat'],
+        'longitude'=>$data['lng']
+    ];
+     $last_clinic_id = $this->findOrCreate($clinicData);
+    }
 
     
-
-    $clinicModel = new ClinicModel($this->getDatabaseConnection());
-    $clinicData = [
-        'name'=>'',
-        'address'=>'',
-        'city'=>'',
-        'latitude'=>'',
-        'longitude'=>''
-
-    ];
-
-    $lastInsertId = $clinicModel->add($clinicData);
-
-    var_dump($lastInsertId);
-    exit();
-
-
-
-    $userModel = new UserModel($this->getDatabaseConnection());
-    $user = $userModel->getById($id);
     $pass=$user->password_hash;
     $photo=$user->profile_photo;
     $pdf = $user->diploma_pdf;
@@ -93,8 +106,6 @@ class CaregiverProfileController extends UserRoleController{
     $caregiverData = json_decode($user->caregiver_data, true);
     $universityData = json_decode($user->university_data, true);
 
-  
-   
 
     $doctorFor = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_SPECIAL_CHARS);
     $university = filter_input(INPUT_POST, 'university', FILTER_SANITIZE_SPECIAL_CHARS);
@@ -159,6 +170,7 @@ class CaregiverProfileController extends UserRoleController{
     }
 
     $editData=[
+        'clinic_id' =>$last_clinic_id,
         'name'=>$first_name,
         'surname'=>$last_name,
         'phone'=> $phone_input,
@@ -247,6 +259,19 @@ class CaregiverProfileController extends UserRoleController{
 }
 
 
+public function findOrCreate(array $clinicData){
+    $clinicModel = new ClinicModel($this->getDatabaseConnection());
+   
+    $clinic = $clinicModel->findClinic($clinicData);
+
+    if ($clinic) {
+        return $clinic->clinic_id; 
+    }else{
+    return $clinicModel->add($clinicData); 
+
+    }
+
+}
 
 
 

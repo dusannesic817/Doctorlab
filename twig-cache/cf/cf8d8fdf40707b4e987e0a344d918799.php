@@ -255,21 +255,35 @@ class __TwigTemplate_ef0ddbf4fa78c87c3895315fdfd1b6ff extends Template
         echo "</small></div>
               </div>
             </div>
+
             <p class=\"mt-4 ms-1\"><b>Place where you work</b></p>
-            <!-- Novi autocomplete input -->
+            <div class=\"mb-3\">
 
- <gmpx-placeautocomplete
-    id=\"clinic-location\"
-    placeholder=\"Provide us your work place\"
-    autocomplete=\"off\"
-    style=\"width: 100%; height: 40px\"
-  ></gmpx-placeautocomplete>
+              <input class=\"form-control form-control-sm\" type=\"text\" placeholder=\"Clinic Name\" name=\"clinic\"
+                aria-label=\".form-control-sm example\" value=\"";
+        // line 135
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "clinic_name", [], "any", false, false, false, 135), "html", null, true);
+        echo "\">
 
-  <input type=\"hidden\" id=\"clinic-address\" name=\"address\" autocomplete=\"address-line1\">
-  <input type=\"hidden\" id=\"clinic-latitude\" name=\"latitude\" autocomplete=\"off\">
-  <input type=\"hidden\" id=\"clinic-longitude\" name=\"longitude\" autocomplete=\"off\">
+            </div>
+            <div class=\"mb-3\">
 
+              <input class=\"form-control form-control-sm\" type=\"text\" placeholder=\"City\" name=\"clinic_city\"
+                aria-label=\".form-control-sm example\" value=\"";
+        // line 141
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "city", [], "any", false, false, false, 141), "html", null, true);
+        echo "\">
 
+            </div>
+            <div class=\"mb-5\">
+
+              <input class=\"form-control form-control-sm\" type=\"text\" placeholder=\"Address\" name=\"clinic_address\"
+                aria-label=\".form-control-sm example\" value=\"";
+        // line 147
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "address", [], "any", false, false, false, 147), "html", null, true);
+        echo "\">
+
+            </div>
             <hr style=\"margin-bottom: -1px;\">
             <a href=\"\" class=\"text-decoration-none d-block profile\">
               <div class=\"d-flex justify-content-between p-2 rounded\">
@@ -302,10 +316,10 @@ class __TwigTemplate_ef0ddbf4fa78c87c3895315fdfd1b6ff extends Template
     <div class=\"modal-content\">
       <!-- Forma treba da bude pravilno postavljena -->
       <form action=\"";
-        // line 176
+        // line 181
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/caregiver/update/";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "user_id", [], "any", false, false, false, 176), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "user_id", [], "any", false, false, false, 181), "html", null, true);
         echo "\" method=\"POST\">
         <div class=\"modal-header\">
           <h1 class=\"modal-title fs-5\" id=\"change_name\"><small><b class=\"teget\"><i class=\"bi bi-person-fill\"></i>Edit My
@@ -316,10 +330,10 @@ class __TwigTemplate_ef0ddbf4fa78c87c3895315fdfd1b6ff extends Template
           <label for=\"\" class=\"mb-2 ms-1\"><small><b>Change my name</b></small></label>
           <input class=\"form-control form-control-sm\" type=\"text\" name=\"new_name\"
             placeholder=\"";
-        // line 185
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "name", [], "any", false, false, false, 185), "html", null, true);
+        // line 190
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "name", [], "any", false, false, false, 190), "html", null, true);
         echo " ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "surname", [], "any", false, false, false, 185), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "surname", [], "any", false, false, false, 190), "html", null, true);
         echo "\" aria-label=\".form-control-sm example\">
         </div>
         <div class=\"modal-footer\">
@@ -331,15 +345,16 @@ class __TwigTemplate_ef0ddbf4fa78c87c3895315fdfd1b6ff extends Template
   </div>
 </div>
 
+
 <!--Phone-->
 <div class=\"modal fade\" id=\"phone\" tabindex=\"-1\" aria-labelledby=\"change_phone\" aria-hidden=\"true\">
   <div class=\"modal-dialog modal-dialog-centered\">
     <div class=\"modal-content\">
       <form action=\"";
-        // line 200
+        // line 206
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/caregiver/update/";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "user_id", [], "any", false, false, false, 200), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "user_id", [], "any", false, false, false, 206), "html", null, true);
         echo "\" method=\"POST\">
         <div class=\"modal-header\">
           <h1 class=\"modal-title fs-5\" id=\"change_phone\">
@@ -351,8 +366,8 @@ class __TwigTemplate_ef0ddbf4fa78c87c3895315fdfd1b6ff extends Template
           <label for=\"\" class=\"mb-2 ms-1\"><small><b>Change my phone</b></small></label>
           <input class=\"form-control form-control-sm\" type=\"text\" name=\"phone\" aria-label=\".form-control-sm example\"
             value=\"";
-        // line 210
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "phone", [], "any", false, false, false, 210), "html", null, true);
+        // line 216
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "phone", [], "any", false, false, false, 216), "html", null, true);
         echo "\">
         </div>
         <div class=\"modal-footer\">
@@ -370,10 +385,10 @@ class __TwigTemplate_ef0ddbf4fa78c87c3895315fdfd1b6ff extends Template
   <div class=\"modal-dialog modal-dialog-centered\">
     <div class=\"modal-content\">
       <form action=\"";
-        // line 226
+        // line 232
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/caregiver/update/";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "user_id", [], "any", false, false, false, 226), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "user_id", [], "any", false, false, false, 232), "html", null, true);
         echo "\" method=\"POST\">
         <div class=\"modal-header\">
           <h1 class=\"modal-title fs-5\" id=\"change_password\">
@@ -397,24 +412,6 @@ class __TwigTemplate_ef0ddbf4fa78c87c3895315fdfd1b6ff extends Template
     </div>
   </div>
 </div>
-<script>
-  (g=>{var h,a,k,p=\"The Google Maps JavaScript API\",c=\"google\",l=\"importLibrary\",q=\"__ib__\",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement(\"script\"));e.set(\"libraries\",[...r]+\"\");for(k in g)e.set(k.replace(/[A-Z]/g,t=>\"_\"+t[0].toLowerCase()),g[k]);e.set(\"callback\",c+\".maps.\"+q);a.src=`https://maps.\${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+\" could not load.\"));a.nonce=m.querySelector(\"script[nonce]\")?.nonce||\"\";m.head.append(a)}));d[l]?console.warn(p+\" only loads once. Ignoring:\",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
-    key: \"";
-        // line 251
-        echo twig_escape_filter($this->env, ($context["google_api"] ?? null), "html", null, true);
-        echo "\",
-    v: \"weekly\",
-    // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
-    // Add other bootstrap parameters as needed, using camel case.
-  });
-</script>
-<script async defer
-  src=\"https://maps.googleapis.com/maps/api/js?key=";
-        // line 258
-        echo twig_escape_filter($this->env, ($context["google_api"] ?? null), "html", null, true);
-        echo "&libraries=places\">
-</script>
-<script src=\"https://unpkg.com/@googlemaps/extended-web-components/dist/index.min.js\"></script>
 
 
 <script>
@@ -428,38 +425,7 @@ class __TwigTemplate_ef0ddbf4fa78c87c3895315fdfd1b6ff extends Template
       reader.readAsDataURL(file);
     }
   });
-  // Podrška za prikaz slike
-  document.getElementById(\"image\").addEventListener(\"change\", function (event) {
-    var file = event.target.files[0];
-    if (file) {
-      var reader = new FileReader();
-      reader.onload = function (e) {
-        document.getElementById(\"preview\").src = e.target.result;
-      };
-      reader.readAsDataURL(file);
-    }
-  });
-
- 
-
 </script>
-
-  <script>
-    document.getElementById('clinic-location').addEventListener('gmpx-place-changed', (event) => {
-      const place = event.detail;
-
-      if (!place.geometry) {
-        alert(\"Please select a place from the dropdown\");
-        return;
-      }
-
-      document.getElementById('clinic-address').value = place.formatted_address || '';
-      document.getElementById('clinic-latitude').value = place.geometry.location.lat();
-      document.getElementById('clinic-longitude').value = place.geometry.location.lng();
-    });
-
-    window.initAutocomplete = initAutocomplete; // registruj globalno
-  </script>
 
 
 
@@ -467,11 +433,11 @@ class __TwigTemplate_ef0ddbf4fa78c87c3895315fdfd1b6ff extends Template
 ";
     }
 
-    // line 311
+    // line 274
     public function block_naslov($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 312
+        // line 275
         echo "Settings
 ";
     }
@@ -488,7 +454,7 @@ class __TwigTemplate_ef0ddbf4fa78c87c3895315fdfd1b6ff extends Template
 
     public function getDebugInfo()
     {
-        return array (  475 => 312,  471 => 311,  414 => 258,  404 => 251,  374 => 226,  355 => 210,  340 => 200,  320 => 185,  306 => 176,  254 => 127,  243 => 118,  232 => 116,  227 => 115,  221 => 113,  217 => 111,  215 => 110,  207 => 104,  196 => 102,  191 => 101,  185 => 99,  181 => 97,  179 => 96,  155 => 75,  144 => 67,  130 => 56,  113 => 44,  96 => 29,  88 => 26,  85 => 25,  79 => 22,  76 => 21,  74 => 20,  54 => 5,  51 => 4,  47 => 3,  36 => 1,);
+        return array (  441 => 275,  437 => 274,  389 => 232,  370 => 216,  355 => 206,  334 => 190,  320 => 181,  283 => 147,  274 => 141,  265 => 135,  254 => 127,  243 => 118,  232 => 116,  227 => 115,  221 => 113,  217 => 111,  215 => 110,  207 => 104,  196 => 102,  191 => 101,  185 => 99,  181 => 97,  179 => 96,  155 => 75,  144 => 67,  130 => 56,  113 => 44,  96 => 29,  88 => 26,  85 => 25,  79 => 22,  76 => 21,  74 => 20,  54 => 5,  51 => 4,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -622,21 +588,26 @@ class __TwigTemplate_ef0ddbf4fa78c87c3895315fdfd1b6ff extends Template
                 <div class=\"mt-1 ms-1 grey\"><small>{{caregiver.diploma_pdf}}</small></div>
               </div>
             </div>
+
             <p class=\"mt-4 ms-1\"><b>Place where you work</b></p>
-            <!-- Novi autocomplete input -->
+            <div class=\"mb-3\">
 
- <gmpx-placeautocomplete
-    id=\"clinic-location\"
-    placeholder=\"Provide us your work place\"
-    autocomplete=\"off\"
-    style=\"width: 100%; height: 40px\"
-  ></gmpx-placeautocomplete>
+              <input class=\"form-control form-control-sm\" type=\"text\" placeholder=\"Clinic Name\" name=\"clinic\"
+                aria-label=\".form-control-sm example\" value=\"{{caregiver.clinic_name}}\">
 
-  <input type=\"hidden\" id=\"clinic-address\" name=\"address\" autocomplete=\"address-line1\">
-  <input type=\"hidden\" id=\"clinic-latitude\" name=\"latitude\" autocomplete=\"off\">
-  <input type=\"hidden\" id=\"clinic-longitude\" name=\"longitude\" autocomplete=\"off\">
+            </div>
+            <div class=\"mb-3\">
 
+              <input class=\"form-control form-control-sm\" type=\"text\" placeholder=\"City\" name=\"clinic_city\"
+                aria-label=\".form-control-sm example\" value=\"{{caregiver.city}}\">
 
+            </div>
+            <div class=\"mb-5\">
+
+              <input class=\"form-control form-control-sm\" type=\"text\" placeholder=\"Address\" name=\"clinic_address\"
+                aria-label=\".form-control-sm example\" value=\"{{caregiver.address}}\">
+
+            </div>
             <hr style=\"margin-bottom: -1px;\">
             <a href=\"\" class=\"text-decoration-none d-block profile\">
               <div class=\"d-flex justify-content-between p-2 rounded\">
@@ -687,6 +658,7 @@ class __TwigTemplate_ef0ddbf4fa78c87c3895315fdfd1b6ff extends Template
     </div>
   </div>
 </div>
+
 
 <!--Phone-->
 <div class=\"modal fade\" id=\"phone\" tabindex=\"-1\" aria-labelledby=\"change_phone\" aria-hidden=\"true\">
@@ -741,18 +713,6 @@ class __TwigTemplate_ef0ddbf4fa78c87c3895315fdfd1b6ff extends Template
     </div>
   </div>
 </div>
-<script>
-  (g=>{var h,a,k,p=\"The Google Maps JavaScript API\",c=\"google\",l=\"importLibrary\",q=\"__ib__\",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement(\"script\"));e.set(\"libraries\",[...r]+\"\");for(k in g)e.set(k.replace(/[A-Z]/g,t=>\"_\"+t[0].toLowerCase()),g[k]);e.set(\"callback\",c+\".maps.\"+q);a.src=`https://maps.\${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+\" could not load.\"));a.nonce=m.querySelector(\"script[nonce]\")?.nonce||\"\";m.head.append(a)}));d[l]?console.warn(p+\" only loads once. Ignoring:\",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
-    key: \"{{google_api}}\",
-    v: \"weekly\",
-    // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
-    // Add other bootstrap parameters as needed, using camel case.
-  });
-</script>
-<script async defer
-  src=\"https://maps.googleapis.com/maps/api/js?key={{google_api}}&libraries=places\">
-</script>
-<script src=\"https://unpkg.com/@googlemaps/extended-web-components/dist/index.min.js\"></script>
 
 
 <script>
@@ -766,38 +726,7 @@ class __TwigTemplate_ef0ddbf4fa78c87c3895315fdfd1b6ff extends Template
       reader.readAsDataURL(file);
     }
   });
-  // Podrška za prikaz slike
-  document.getElementById(\"image\").addEventListener(\"change\", function (event) {
-    var file = event.target.files[0];
-    if (file) {
-      var reader = new FileReader();
-      reader.onload = function (e) {
-        document.getElementById(\"preview\").src = e.target.result;
-      };
-      reader.readAsDataURL(file);
-    }
-  });
-
- 
-
 </script>
-
-  <script>
-    document.getElementById('clinic-location').addEventListener('gmpx-place-changed', (event) => {
-      const place = event.detail;
-
-      if (!place.geometry) {
-        alert(\"Please select a place from the dropdown\");
-        return;
-      }
-
-      document.getElementById('clinic-address').value = place.formatted_address || '';
-      document.getElementById('clinic-latitude').value = place.geometry.location.lat();
-      document.getElementById('clinic-longitude').value = place.geometry.location.lng();
-    });
-
-    window.initAutocomplete = initAutocomplete; // registruj globalno
-  </script>
 
 
 

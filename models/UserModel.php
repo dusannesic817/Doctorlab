@@ -15,7 +15,7 @@ class UserModel extends Model{
     protected function getFields(){
         return [
             'user_id'=>new Field((new NumberValidator())->setIntegerLength(10), false),
-            'clinic_id'=>new Field((new NumberValidator())->setIntegerLength(10)),
+            'clinic_id' => new Field((new NumberValidator())->setIntegerLength(10)->canBeNull()),
             'google_id'=>new Field((new NumberValidator())->setIntegerLength(10)),
             'name'=>new Field((new StringValidator())->setMaxLength(255)),
             'surname'=>new Field((new StringValidator())->setMaxLength(255)),
@@ -38,6 +38,23 @@ class UserModel extends Model{
         return $this->getByFieldName('username',$username);
     }
 
+    
+	public function getUser($id){
+        $sql = 'SELECT * FROM doctorlab.user
+                LEFT JOIN clinic on clinic.clinic_id = user.clinic_id
+                WHERE user.user_id=?;';
+
+        $prep = $this->getConnection()->prepare($sql);
+        $res = $prep->execute([$id]);
+
+        $user=NULL;
+
+        if($res){
+            return $prep->fetch(PDO::FETCH_OBJ);
+        }
+
+        return $user;    
+    }
 
 
     public function getAllCaregivers($fieldName,$value){

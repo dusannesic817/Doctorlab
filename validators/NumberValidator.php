@@ -11,6 +11,7 @@ class NumberValidator implements Validator {
     private bool $isReal;
     private int $maxDecimalDigits;
     private bool $mustContainDigit;
+     private bool $allowNull = false;  
 
     public function __construct() {
         $this->isSigned = false;
@@ -57,8 +58,17 @@ class NumberValidator implements Validator {
 
 
 
+   public function &canBeNull(): NumberValidator {
+        $this->allowNull = true;
+        return $this;
+    }
+
     public function isValid($value): bool {
-        
+        // Ako je dozvoljen null i vrednost je null, validno je
+        if ($this->allowNull && $value === null) {
+            return true;
+        }
+
         if ($this->mustContainDigit && !preg_match('/[0-9]/', $value)) {
             return false;
         }

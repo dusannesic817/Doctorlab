@@ -15,7 +15,8 @@
         "pusher/pusher-php-server": "^7.2",
         "phpmailer/phpmailer": "^6.10",
         "guzzlehttp/guzzle": "^7.9",
-        "alexpechkarev/google-maps": "^12.1"
+        "alexpechkarev/google-maps": "^12.1",
+        "opencage/geocode": "^3.3"
     },
     "autoload": {
         "psr-4": {

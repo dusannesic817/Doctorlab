@@ -15,7 +15,7 @@ class UserModel extends Model{
     protected function getFields(){
         return [
             'user_id'=>new Field((new NumberValidator())->setIntegerLength(10), false),
-            'clinic_id'=>new Field((new NumberValidator())->setIntegerLength(10)),
+            'clinic_id' => new Field((new NumberValidator())->setIntegerLength(10)->canBeNull()),
             'google_id'=>new Field((new NumberValidator())->setIntegerLength(10)),
             'name'=>new Field((new StringValidator())->setMaxLength(255)),
             'surname'=>new Field((new StringValidator())->setMaxLength(255)),
@@ -37,6 +37,31 @@ class UserModel extends Model{
     public function getByUsername(string $username){
         return $this->getByFieldName('username',$username);
     }
+
+    
+    public function getUser($id) {
+        $sql = 'SELECT * FROM doctorlab.user
+                LEFT JOIN clinic ON clinic.clinic_id = user.clinic_id
+                WHERE user.user_id = ?;';
+
+        $prep = $this->getConnection()->prepare($sql);
+        $res = $prep->execute([$id]);
+
+        if ($res) {
+            $user = $prep->fetch(PDO::FETCH_OBJ);
+
+            if ($user) {
+                $user->caregiver_data = json_decode($user->caregiver_data, true);
+                $user->university_data = json_decode($user->university_data, true); 
+            }
+
+            return $user;
+        }
+
+        return null;
+    }
+
+
 
 
 

@@ -51,13 +51,17 @@ class CaregiverController extends Controller{
 
     public function show($id){
         $user = new UserModel($this->getDatabaseConnection());
-        $caregiver = $user->getById($id);
+        $caregiver = $user->getUser($id);
 
         if($caregiver->role=='caregiver'){
             $this->set('caregiver',$caregiver);
         }
-         $doctors=$this->getJson('caregiver_data.json');
+
+
+        #menu
+        $doctors=$this->getJson('caregiver_data.json');
         $this->set('doctors',$doctors);
+
     }
 
     public function create(){

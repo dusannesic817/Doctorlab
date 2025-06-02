@@ -56,6 +56,10 @@ class ComposerStaticIniteb4d7737dac1ce9c072375dcf6c69f62
             'ParagonIE\\ConstantTime\\' => 23,
             'PHPMailer\\PHPMailer\\' => 20,
         ),
+        'O' => 
+        array (
+            'OpenCage\\Geocoder\\' => 18,
+        ),
         'M' => 
         array (
             'Monolog\\' => 8,
@@ -170,6 +174,10 @@ class ComposerStaticIniteb4d7737dac1ce9c072375dcf6c69f62
         'PHPMailer\\PHPMailer\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
+        ),
+        'OpenCage\\Geocoder\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/opencage/geocode/src',
         ),
         'Monolog\\' => 
         array (

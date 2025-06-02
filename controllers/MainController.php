@@ -36,6 +36,7 @@ class MainController extends Controller{
      }
 
 
+
      $this->set('doctors', $doctors);
     
      
@@ -50,6 +51,8 @@ class MainController extends Controller{
         
 
     }
+
+   
 
   
 

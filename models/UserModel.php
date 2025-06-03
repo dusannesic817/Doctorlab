@@ -39,14 +39,22 @@ class UserModel extends Model{
     }
 
     
+<<<<<<< HEAD
     public function getUser($id) {
         $sql = 'SELECT * FROM doctorlab.user
                 LEFT JOIN clinic ON clinic.clinic_id = user.clinic_id
                 WHERE user.user_id = ?;';
+=======
+	public function getUser($id){
+        $sql = 'SELECT * FROM doctorlab.user
+                LEFT JOIN clinic on clinic.clinic_id = user.clinic_id
+                WHERE user.user_id=?;';
+>>>>>>> 37740b0d96ff7ca8e98eb485a5d9ada65295e0f4
 
         $prep = $this->getConnection()->prepare($sql);
         $res = $prep->execute([$id]);
 
+<<<<<<< HEAD
         if ($res) {
             $user = $prep->fetch(PDO::FETCH_OBJ);
 
@@ -63,6 +71,16 @@ class UserModel extends Model{
 
 
 
+=======
+        $user=NULL;
+
+        if($res){
+            return $prep->fetch(PDO::FETCH_OBJ);
+        }
+
+        return $user;    
+    }
+>>>>>>> 37740b0d96ff7ca8e98eb485a5d9ada65295e0f4
 
 
     public function getAllCaregivers($fieldName,$value){

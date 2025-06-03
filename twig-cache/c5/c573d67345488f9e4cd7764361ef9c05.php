@@ -103,32 +103,28 @@ class __TwigTemplate_cc6dc1163ed366974106606bceb37d4d extends Template
     <div class=\"row\">
       <div class=\"col-12 col-lg-8\">
         <div class=\"card mt-5 overflow-hidden\" style=\"height: 250px;\">
-  <div class=\"card-body p-0\">
-    <img src=\"";
+          <div class=\"card-body p-0\">
+            <img src=\"";
         // line 47
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
-        echo "/assets/images/e_medicine.jpg\" 
-         class=\"w-100 h-50 object-fit-cover \" 
-         alt=\"...\">
-  </div>
-</div>
-
-
+        echo "/assets/images/e_medicine.jpg\" class=\"w-100 h-50 object-fit-cover \" alt=\"...\">
+          </div>
+        </div>
         <div class=\"card mt-2\">
           <div class=\"row\">
             <div class=\"col-4\">
               <div class=\"card-body\">
                 <small><i class=\"fa-solid fa-location-dot me-2\"></i><b>Maps and access information</b></small><br>
                 <small>";
-        // line 59
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "clinic_name", [], "any", false, false, false, 59), "html", null, true);
+        // line 55
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "clinic_name", [], "any", false, false, false, 55), "html", null, true);
         echo "</small><br>
                 <small>Serbia</small><br>
                 <p><small>";
-        // line 61
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "address", [], "any", false, false, false, 61), "html", null, true);
+        // line 57
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "address", [], "any", false, false, false, 57), "html", null, true);
         echo ", ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "city", [], "any", false, false, false, 61), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "city", [], "any", false, false, false, 57), "html", null, true);
         echo "</small></p>
                 <small><b>Public Parking</b></small>
                 <p><small>3 Places of Parking</small></p>
@@ -181,20 +177,20 @@ class __TwigTemplate_cc6dc1163ed366974106606bceb37d4d extends Template
             <hr>
             <p><small>Accepy new pattent <i class=\"fa-solid fa-circle-check\" style=\"color: green;\"></i></small></p>
             <small><i class=\"fa-solid fa-location-dot me-1\"></i>";
-        // line 112
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "city", [], "any", false, false, false, 112), "html", null, true);
+        // line 108
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "city", [], "any", false, false, false, 108), "html", null, true);
         echo "</small><br>
             <small>";
-        // line 113
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "address", [], "any", false, false, false, 113), "html", null, true);
+        // line 109
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "address", [], "any", false, false, false, 109), "html", null, true);
         echo ", ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "city", [], "any", false, false, false, 113), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "city", [], "any", false, false, false, 109), "html", null, true);
         echo ", Serbia</small><br>
             <div class=\"mt-4\"><a href=\"";
-        // line 114
+        // line 110
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/makeappointment/show/";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "user_id", [], "any", false, false, false, 114), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "user_id", [], "any", false, false, false, 110), "html", null, true);
         echo "\" class=\"btn btn-primary\"
                 style=\"width: 100%;\"><b><small><i class=\"fa-solid fa-calendar-days me-2\"></i>MAKE AN
                     APPOINTMENT</small></b></a>
@@ -202,7 +198,6 @@ class __TwigTemplate_cc6dc1163ed366974106606bceb37d4d extends Template
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </div>
@@ -213,23 +208,23 @@ class __TwigTemplate_cc6dc1163ed366974106606bceb37d4d extends Template
 ";
     }
 
-    // line 130
+    // line 125
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 131
-        $this->loadTemplate("./inc/footer.html", "Caregiver/show.html", 131)->display($context);
+        // line 126
+        $this->loadTemplate("./inc/footer.html", "Caregiver/show.html", 126)->display($context);
     }
 
-    // line 133
+    // line 128
     public function block_naslov($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 134
+        // line 129
         echo "Dr ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "name", [], "any", false, false, false, 134), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "name", [], "any", false, false, false, 129), "html", null, true);
         echo " ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "surname", [], "any", false, false, false, 134), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "surname", [], "any", false, false, false, 129), "html", null, true);
         echo "
 ";
     }
@@ -246,7 +241,7 @@ class __TwigTemplate_cc6dc1163ed366974106606bceb37d4d extends Template
 
     public function getDebugInfo()
     {
-        return array (  229 => 134,  225 => 133,  221 => 131,  217 => 130,  195 => 114,  189 => 113,  185 => 112,  129 => 61,  124 => 59,  109 => 47,  78 => 19,  72 => 18,  62 => 13,  52 => 5,  48 => 4,  37 => 1,);
+        return array (  224 => 129,  220 => 128,  216 => 126,  212 => 125,  191 => 110,  185 => 109,  181 => 108,  125 => 57,  120 => 55,  109 => 47,  78 => 19,  72 => 18,  62 => 13,  52 => 5,  48 => 4,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -296,14 +291,10 @@ class __TwigTemplate_cc6dc1163ed366974106606bceb37d4d extends Template
     <div class=\"row\">
       <div class=\"col-12 col-lg-8\">
         <div class=\"card mt-5 overflow-hidden\" style=\"height: 250px;\">
-  <div class=\"card-body p-0\">
-    <img src=\"{{base_url}}/assets/images/e_medicine.jpg\" 
-         class=\"w-100 h-50 object-fit-cover \" 
-         alt=\"...\">
-  </div>
-</div>
-
-
+          <div class=\"card-body p-0\">
+            <img src=\"{{base_url}}/assets/images/e_medicine.jpg\" class=\"w-100 h-50 object-fit-cover \" alt=\"...\">
+          </div>
+        </div>
         <div class=\"card mt-2\">
           <div class=\"row\">
             <div class=\"col-4\">
@@ -371,7 +362,6 @@ class __TwigTemplate_cc6dc1163ed366974106606bceb37d4d extends Template
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </div>

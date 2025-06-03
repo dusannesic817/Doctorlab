@@ -101,6 +101,7 @@ class AvailabilityModel extends Model{
     }
 
    public function searchFlexible(string $query = '', string $place = '') {
+    
     $sql = "SELECT * FROM availability 
             LEFT JOIN user ON user.user_id = availability.user_id
             LEFT JOIN clinic ON user.clinic_id = clinic.clinic_id
@@ -114,8 +115,10 @@ class AvailabilityModel extends Model{
             JSON_UNQUOTE(JSON_EXTRACT(caregiver_data, '$.title')) LIKE ?
             OR user.name LIKE ?
             OR user.surname LIKE ?
+            OR clinic.clinic_name LIKE ?
         )";
         $searchTerm = '%' . $query . '%';
+        $params[] = $searchTerm;
         $params[] = $searchTerm;
         $params[] = $searchTerm;
         $params[] = $searchTerm;

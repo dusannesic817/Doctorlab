@@ -51,20 +51,15 @@ class CaregiverController extends Controller{
 
     public function query(){
 
-      
-    $query = trim(filter_input(INPUT_GET, 'query') ?? "");
-    $place = trim(filter_input(INPUT_GET, 'place') ?? "");
-
-
+        $query = trim(filter_input(INPUT_GET, 'query') ?? "");
+        $place = trim(filter_input(INPUT_GET, 'place') ?? "");
     
-          $caregiverModel = new AvailabilityModel($this->getDatabaseConnection());
-           $data = $caregiverModel->searchFlexible($query, $place);  // vidi dole funkciju
-          $caregivers=$this->caregiverData($data);
+        $caregiverModel = new AvailabilityModel($this->getDatabaseConnection());
+        $data = $caregiverModel->searchFlexible($query, $place);  
+        $caregivers=$this->caregiverData($data);
 
-          var_dump($caregivers);
-          exit();
-
-          $this->set('caregivers', $caregivers);
+        
+        $this->set('caregivers', $caregivers);
 
     }
 

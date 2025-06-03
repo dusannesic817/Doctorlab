@@ -91,10 +91,11 @@ class __TwigTemplate_f632f0baf0787e18abb394f43ba17bc4 extends Template
         // line 36
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/assets/main.js\" defer></script>
+
  <script src=\"https://maps.googleapis.com/maps/api/js?key=";
-        // line 37
+        // line 38
         echo twig_escape_filter($this->env, ($context["google_api"] ?? null), "html", null, true);
-        echo "&libraries=places\" async defer></script>
+        echo "&loading=async&callback=initMap\" async defer></script>
 
 </body>
 
@@ -137,7 +138,7 @@ class __TwigTemplate_f632f0baf0787e18abb394f43ba17bc4 extends Template
 
     public function getDebugInfo()
     {
-        return array (  125 => 30,  121 => 29,  116 => 26,  112 => 25,  105 => 17,  96 => 37,  92 => 36,  85 => 31,  83 => 29,  80 => 28,  78 => 25,  74 => 23,  72 => 22,  64 => 17,  57 => 13,  50 => 9,  40 => 1,);
+        return array (  126 => 30,  122 => 29,  117 => 26,  113 => 25,  106 => 17,  97 => 38,  92 => 36,  85 => 31,  83 => 29,  80 => 28,  78 => 25,  74 => 23,  72 => 22,  64 => 17,  57 => 13,  50 => 9,  40 => 1,);
     }
 
     public function getSourceContext()
@@ -178,7 +179,8 @@ class __TwigTemplate_f632f0baf0787e18abb394f43ba17bc4 extends Template
     crossorigin=\"anonymous\"></script>
 
   <script src=\"{{ base_url }}/assets/main.js\" defer></script>
- <script src=\"https://maps.googleapis.com/maps/api/js?key={{google_api}}&libraries=places\" async defer></script>
+
+ <script src=\"https://maps.googleapis.com/maps/api/js?key={{google_api}}&loading=async&callback=initMap\" async defer></script>
 
 </body>
 

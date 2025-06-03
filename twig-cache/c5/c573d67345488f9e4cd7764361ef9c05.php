@@ -131,7 +131,8 @@ class __TwigTemplate_cc6dc1163ed366974106606bceb37d4d extends Template
               </div>
             </div>
             <div class=\"col-8\">
-              <p>MAPS</p>
+              <div id=\"map\"></div>
+
             </div>
           </div>
         </div>
@@ -177,20 +178,20 @@ class __TwigTemplate_cc6dc1163ed366974106606bceb37d4d extends Template
             <hr>
             <p><small>Accepy new pattent <i class=\"fa-solid fa-circle-check\" style=\"color: green;\"></i></small></p>
             <small><i class=\"fa-solid fa-location-dot me-1\"></i>";
-        // line 108
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "city", [], "any", false, false, false, 108), "html", null, true);
+        // line 109
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "city", [], "any", false, false, false, 109), "html", null, true);
         echo "</small><br>
             <small>";
-        // line 109
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "address", [], "any", false, false, false, 109), "html", null, true);
+        // line 110
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "address", [], "any", false, false, false, 110), "html", null, true);
         echo ", ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "city", [], "any", false, false, false, 109), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "city", [], "any", false, false, false, 110), "html", null, true);
         echo ", Serbia</small><br>
             <div class=\"mt-4\"><a href=\"";
-        // line 110
+        // line 111
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/makeappointment/show/";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "user_id", [], "any", false, false, false, 110), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "user_id", [], "any", false, false, false, 111), "html", null, true);
         echo "\" class=\"btn btn-primary\"
                 style=\"width: 100%;\"><b><small><i class=\"fa-solid fa-calendar-days me-2\"></i>MAKE AN
                     APPOINTMENT</small></b></a>
@@ -202,29 +203,47 @@ class __TwigTemplate_cc6dc1163ed366974106606bceb37d4d extends Template
   </div>
 </div>
 
+<script>
+
+  function initMap(){
+    var options={
+      zoom: 15,
+      center: {lat:43.9783243 , lng:21.2612967}
+    }
+    var map = new google.maps.Map(document.getElementById('map'),options);
+
+    var marker = new google.maps.Marker({
+      position:{lat:43.9783243, lng:21.2612967},
+      map:map
+    });
+  }
+
+
+
+</script>
 
 
 
 ";
     }
 
-    // line 125
+    // line 144
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 126
-        $this->loadTemplate("./inc/footer.html", "Caregiver/show.html", 126)->display($context);
+        // line 145
+        $this->loadTemplate("./inc/footer.html", "Caregiver/show.html", 145)->display($context);
     }
 
-    // line 128
+    // line 147
     public function block_naslov($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 129
+        // line 148
         echo "Dr ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "name", [], "any", false, false, false, 129), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "name", [], "any", false, false, false, 148), "html", null, true);
         echo " ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "surname", [], "any", false, false, false, 129), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "surname", [], "any", false, false, false, 148), "html", null, true);
         echo "
 ";
     }
@@ -241,7 +260,7 @@ class __TwigTemplate_cc6dc1163ed366974106606bceb37d4d extends Template
 
     public function getDebugInfo()
     {
-        return array (  224 => 129,  220 => 128,  216 => 126,  212 => 125,  191 => 110,  185 => 109,  181 => 108,  125 => 57,  120 => 55,  109 => 47,  78 => 19,  72 => 18,  62 => 13,  52 => 5,  48 => 4,  37 => 1,);
+        return array (  243 => 148,  239 => 147,  235 => 145,  231 => 144,  192 => 111,  186 => 110,  182 => 109,  125 => 57,  120 => 55,  109 => 47,  78 => 19,  72 => 18,  62 => 13,  52 => 5,  48 => 4,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -308,7 +327,8 @@ class __TwigTemplate_cc6dc1163ed366974106606bceb37d4d extends Template
               </div>
             </div>
             <div class=\"col-8\">
-              <p>MAPS</p>
+              <div id=\"map\"></div>
+
             </div>
           </div>
         </div>
@@ -366,6 +386,24 @@ class __TwigTemplate_cc6dc1163ed366974106606bceb37d4d extends Template
   </div>
 </div>
 
+<script>
+
+  function initMap(){
+    var options={
+      zoom: 15,
+      center: {lat:43.9783243 , lng:21.2612967}
+    }
+    var map = new google.maps.Map(document.getElementById('map'),options);
+
+    var marker = new google.maps.Marker({
+      position:{lat:43.9783243, lng:21.2612967},
+      map:map
+    });
+  }
+
+
+
+</script>
 
 
 

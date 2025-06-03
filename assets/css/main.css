@@ -305,3 +305,8 @@ input.calendar-input:checked + label.calendar-input {
   .links a {
     color: black !important;
   }
+
+#map{
+    height: 100%;
+    width: 100%;
+}

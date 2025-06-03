@@ -60,7 +60,8 @@
               </div>
             </div>
             <div class="col-8">
-              <p>MAPS</p>
+              <div id="map"></div>
+
             </div>
           </div>
         </div>
@@ -118,6 +119,24 @@
   </div>
 </div>
 
+<script>
+
+  function initMap(){
+    var options={
+      zoom: 15,
+      center: {lat:43.9783243 , lng:21.2612967}
+    }
+    var map = new google.maps.Map(document.getElementById('map'),options);
+
+    var marker = new google.maps.Marker({
+      position:{lat:43.9783243, lng:21.2612967},
+      map:map
+    });
+  }
+
+
+
+</script>
 
 
 

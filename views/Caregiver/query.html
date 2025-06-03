@@ -6,6 +6,13 @@
 
 <form action="" method="POST" id="appointmentForm">
   <div class="container">
+     <div class="row">
+      <div class="col-12 mt-2">
+        <small><b>994 Reults</b></small><br>
+        <small>Find in Paris a Cardiologist(or a profesional offering acts of cardilogy and vascluar)offering online
+          appointment booking</small>
+      </div>
+    </div>
     <div class="row mt-3 gy-3">
       <div class="col-12 col-lg-8">
         {% for caregiver in caregivers %}
@@ -78,9 +85,23 @@
         </div>
         {% endfor %}
       </div>
+      </form>
+       <!-- Col-4 for aside content -->
+    <div class="col-12 col-lg-4">
+      <div class="card sticky-top" style="height: 400px; width: 100%; overflow: hidden;">
+
+        <div class="card-body p-0">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d45973.02516856684!2d21.354716326223837!3d43.93217331171238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4756bf451d4d0011%3A0x22d95992c68c3da7!2zxIZ1cHJpamE!5e0!3m2!1sbs!2srs!4v1740178064511!5m2!1sbs!2srs"
+            style="border:0; width: 100%; height: 100%;"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
     </div>
   </div>
-</form>
+
 
 
 <script>

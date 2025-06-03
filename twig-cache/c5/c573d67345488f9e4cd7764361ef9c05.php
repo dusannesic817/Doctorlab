@@ -112,7 +112,7 @@ class __TwigTemplate_cc6dc1163ed366974106606bceb37d4d extends Template
         </div>
         <div class=\"card mt-2\">
           <div class=\"row\">
-            <div class=\"col-4\">
+            <div class=\"col-5\">
               <div class=\"card-body\">
                 <small><i class=\"fa-solid fa-location-dot me-2\"></i><b>Maps and access information</b></small><br>
                 <small>";
@@ -130,8 +130,13 @@ class __TwigTemplate_cc6dc1163ed366974106606bceb37d4d extends Template
                 <p><small>3 Places of Parking</small></p>
               </div>
             </div>
-            <div class=\"col-8\">
-              <div id=\"map\"></div>
+            <div class=\"col-7\">
+              <div id=\"map\" data-lat=\"";
+        // line 63
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "latitude", [], "any", false, false, false, 63), "html", null, true);
+        echo "\" data-lng=\"";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "longitude", [], "any", false, false, false, 63), "html", null, true);
+        echo "\"></div>
 
             </div>
           </div>
@@ -203,47 +208,49 @@ class __TwigTemplate_cc6dc1163ed366974106606bceb37d4d extends Template
   </div>
 </div>
 
-<script>
+<script >
+  function initMap() {
+    var mapDiv = document.getElementById('map');
+    var lat = parseFloat(mapDiv.dataset.lat);
+    var lng = parseFloat(mapDiv.dataset.lng);
 
-  function initMap(){
-    var options={
+    var options = {
       zoom: 15,
-      center: {lat:43.9783243 , lng:21.2612967}
-    }
-    var map = new google.maps.Map(document.getElementById('map'),options);
+      center: { lat: lat, lng: lng }
+    };
+
+    var map = new google.maps.Map(mapDiv, options);
 
     var marker = new google.maps.Marker({
-      position:{lat:43.9783243, lng:21.2612967},
-      map:map
+      position: { lat: lat, lng: lng },
+      map: map
     });
   }
-
-
-
 </script>
+
 
 
 
 ";
     }
 
-    // line 144
+    // line 146
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 145
-        $this->loadTemplate("./inc/footer.html", "Caregiver/show.html", 145)->display($context);
+        // line 147
+        $this->loadTemplate("./inc/footer.html", "Caregiver/show.html", 147)->display($context);
     }
 
-    // line 147
+    // line 149
     public function block_naslov($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 148
+        // line 150
         echo "Dr ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "name", [], "any", false, false, false, 148), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "name", [], "any", false, false, false, 150), "html", null, true);
         echo " ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "surname", [], "any", false, false, false, 148), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["caregiver"] ?? null), "surname", [], "any", false, false, false, 150), "html", null, true);
         echo "
 ";
     }
@@ -260,7 +267,7 @@ class __TwigTemplate_cc6dc1163ed366974106606bceb37d4d extends Template
 
     public function getDebugInfo()
     {
-        return array (  243 => 148,  239 => 147,  235 => 145,  231 => 144,  192 => 111,  186 => 110,  182 => 109,  125 => 57,  120 => 55,  109 => 47,  78 => 19,  72 => 18,  62 => 13,  52 => 5,  48 => 4,  37 => 1,);
+        return array (  250 => 150,  246 => 149,  242 => 147,  238 => 146,  197 => 111,  191 => 110,  187 => 109,  136 => 63,  125 => 57,  120 => 55,  109 => 47,  78 => 19,  72 => 18,  62 => 13,  52 => 5,  48 => 4,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -316,7 +323,7 @@ class __TwigTemplate_cc6dc1163ed366974106606bceb37d4d extends Template
         </div>
         <div class=\"card mt-2\">
           <div class=\"row\">
-            <div class=\"col-4\">
+            <div class=\"col-5\">
               <div class=\"card-body\">
                 <small><i class=\"fa-solid fa-location-dot me-2\"></i><b>Maps and access information</b></small><br>
                 <small>{{caregiver.clinic_name}}</small><br>
@@ -326,8 +333,8 @@ class __TwigTemplate_cc6dc1163ed366974106606bceb37d4d extends Template
                 <p><small>3 Places of Parking</small></p>
               </div>
             </div>
-            <div class=\"col-8\">
-              <div id=\"map\"></div>
+            <div class=\"col-7\">
+              <div id=\"map\" data-lat=\"{{ caregiver.latitude }}\" data-lng=\"{{ caregiver.longitude }}\"></div>
 
             </div>
           </div>
@@ -386,24 +393,26 @@ class __TwigTemplate_cc6dc1163ed366974106606bceb37d4d extends Template
   </div>
 </div>
 
-<script>
+<script >
+  function initMap() {
+    var mapDiv = document.getElementById('map');
+    var lat = parseFloat(mapDiv.dataset.lat);
+    var lng = parseFloat(mapDiv.dataset.lng);
 
-  function initMap(){
-    var options={
+    var options = {
       zoom: 15,
-      center: {lat:43.9783243 , lng:21.2612967}
-    }
-    var map = new google.maps.Map(document.getElementById('map'),options);
+      center: { lat: lat, lng: lng }
+    };
+
+    var map = new google.maps.Map(mapDiv, options);
 
     var marker = new google.maps.Marker({
-      position:{lat:43.9783243, lng:21.2612967},
-      map:map
+      position: { lat: lat, lng: lng },
+      map: map
     });
   }
-
-
-
 </script>
+
 
 
 

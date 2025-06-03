@@ -24,6 +24,7 @@ return [
     App\Core\Route::post('|^caregiver/register/?$|',     "Caregiver", "store" ),
     App\Core\Route::get('|^caregiver/show/([0-9]+)/?$|', "Caregiver", "show"),
     App\Core\Route::get('|^caregiver/([a-z]+)/?$|',     "Caregiver", "specificCaregivers"),
+    App\Core\Route::get('|^caregiver/search/([a-z]+)/?$|',     "Caregiver", "search"),
 
 
     #MakeAppointment

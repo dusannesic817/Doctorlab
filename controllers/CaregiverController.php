@@ -70,6 +70,10 @@ class CaregiverController extends Controller{
         $this->set('doctors',$doctors);
     }
 
+    public function search(string $type){
+        
+    }
+
 
 
     public function store(){

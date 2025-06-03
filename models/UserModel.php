@@ -47,13 +47,18 @@ class UserModel extends Model{
         $prep = $this->getConnection()->prepare($sql);
         $res = $prep->execute([$id]);
 
-        $user=NULL;
-
         if($res){
-            return $prep->fetch(PDO::FETCH_OBJ);
+            $user= $prep->fetch(PDO::FETCH_OBJ);
+
+            if ($user) {
+                
+            $user->caregiver_data = json_decode($user->caregiver_data, true);
+            $user->university_data = json_decode($user->university_data, true);
+        }
+        return $user;
         }
 
-        return $user;    
+        return null;    
     }
 
 

@@ -49,6 +49,25 @@ class CaregiverController extends Controller{
         $this->set('count', $count);
     }
 
+    public function query(){
+
+      
+    $query = trim(filter_input(INPUT_GET, 'query') ?? "");
+    $place = trim(filter_input(INPUT_GET, 'place') ?? "");
+
+
+    
+          $caregiverModel = new AvailabilityModel($this->getDatabaseConnection());
+           $data = $caregiverModel->searchFlexible($query, $place);  // vidi dole funkciju
+          $caregivers=$this->caregiverData($data);
+
+          var_dump($caregivers);
+          exit();
+
+          $this->set('caregivers', $caregivers);
+
+    }
+
     public function show($id){
         $user = new UserModel($this->getDatabaseConnection());
         $caregiver = $user->getUser($id);
@@ -68,10 +87,6 @@ class CaregiverController extends Controller{
 
         $doctors=$this->getJson('caregiver_data.json');
         $this->set('doctors',$doctors);
-    }
-
-    public function search(string $type){
-        
     }
 
 

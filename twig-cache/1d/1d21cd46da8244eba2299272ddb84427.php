@@ -41,19 +41,23 @@ class __TwigTemplate_7cb3473b22529ae5a95449f2f730985a extends Template
 
       <h1 class=\"ms-1 pb-4\" style=\"color: white;\"><b>Live a <span style=\"color: #9dc6ff;\">healthier life</span></b></h1>
       <div class=\"search-container\">
-        <form action=\"/search\" method=\"GET\" class=\"search-box\">
+        <form action=\"";
+        // line 8
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/search\" method=\"GET\" class=\"search-box\">
           <div class=\"search-field\">
             <i class=\"bi bi-search\"></i>
-            <input type=\"text\" placeholder=\"Name, specialty, practice\">
+            <input type=\"text\" name=\"query\" placeholder=\"Name, specialty, practice\">
           </div>
           <div class=\"divider\"></div>
           <div class=\"search-field\">
             <i class=\"bi bi-geo-alt\"></i>
-            <input type=\"text\" placeholder=\"Where?\">
+            <input type=\"text\" name=\"place\" placeholder=\"Where?\">
           </div>
-          <button class=\"search-button\">
+          <button type=\"submit\" class=\"search-button\">
             Search <i class=\"bi bi-chevron-right\"></i>
           </button>
+
         </form>
       </div>
     </div>
@@ -67,7 +71,7 @@ class __TwigTemplate_7cb3473b22529ae5a95449f2f730985a extends Template
   <div class=\"position-absolute bottom-0 end-0 d-none d-xl-block\">
     <div class=\"float-end\">
       <img src=\"";
-        // line 33
+        // line 34
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/assets/images/patient_background.png\" class=\"rounded\" alt=\"...\">
     </div>
@@ -87,7 +91,7 @@ class __TwigTemplate_7cb3473b22529ae5a95449f2f730985a extends Template
 
     public function getDebugInfo()
     {
-        return array (  71 => 33,  37 => 1,);
+        return array (  75 => 34,  46 => 8,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -99,19 +103,20 @@ class __TwigTemplate_7cb3473b22529ae5a95449f2f730985a extends Template
 
       <h1 class=\"ms-1 pb-4\" style=\"color: white;\"><b>Live a <span style=\"color: #9dc6ff;\">healthier life</span></b></h1>
       <div class=\"search-container\">
-        <form action=\"/search\" method=\"GET\" class=\"search-box\">
+        <form action=\"{{base_url}}/search\" method=\"GET\" class=\"search-box\">
           <div class=\"search-field\">
             <i class=\"bi bi-search\"></i>
-            <input type=\"text\" placeholder=\"Name, specialty, practice\">
+            <input type=\"text\" name=\"query\" placeholder=\"Name, specialty, practice\">
           </div>
           <div class=\"divider\"></div>
           <div class=\"search-field\">
             <i class=\"bi bi-geo-alt\"></i>
-            <input type=\"text\" placeholder=\"Where?\">
+            <input type=\"text\" name=\"place\" placeholder=\"Where?\">
           </div>
-          <button class=\"search-button\">
+          <button type=\"submit\" class=\"search-button\">
             Search <i class=\"bi bi-chevron-right\"></i>
           </button>
+
         </form>
       </div>
     </div>

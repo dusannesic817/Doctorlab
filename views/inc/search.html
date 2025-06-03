@@ -5,19 +5,20 @@
 
       <h1 class="ms-1 pb-4" style="color: white;"><b>Live a <span style="color: #9dc6ff;">healthier life</span></b></h1>
       <div class="search-container">
-        <form action="/search" method="GET" class="search-box">
+        <form action="{{base_url}}/search" method="GET" class="search-box">
           <div class="search-field">
             <i class="bi bi-search"></i>
-            <input type="text" placeholder="Name, specialty, practice">
+            <input type="text" name="query" placeholder="Name, specialty, practice">
           </div>
           <div class="divider"></div>
           <div class="search-field">
             <i class="bi bi-geo-alt"></i>
-            <input type="text" placeholder="Where?">
+            <input type="text" name="place" placeholder="Where?">
           </div>
-          <button class="search-button">
+          <button type="submit" class="search-button">
             Search <i class="bi bi-chevron-right"></i>
           </button>
+
         </form>
       </div>
     </div>

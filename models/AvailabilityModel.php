@@ -100,6 +100,53 @@ class AvailabilityModel extends Model{
 
     }
 
+   public function searchFlexible(string $query = '', string $place = '') {
+    $sql = "SELECT * FROM availability 
+            LEFT JOIN user ON user.user_id = availability.user_id
+            LEFT JOIN clinic ON user.clinic_id = clinic.clinic_id
+            WHERE user.role = 'caregiver'";
+
+    $params = [];
+    $conditions = [];
+
+    if (!empty($query)) {
+        $conditions[] = "(
+            JSON_UNQUOTE(JSON_EXTRACT(caregiver_data, '$.title')) LIKE ?
+            OR user.name LIKE ?
+            OR user.surname LIKE ?
+        )";
+        $searchTerm = '%' . $query . '%';
+        $params[] = $searchTerm;
+        $params[] = $searchTerm;
+        $params[] = $searchTerm;
+    }
+
+    if (!empty($place)) {
+        $conditions[] = "clinic.city LIKE ?";
+        $params[] = '%' . $place . '%';
+    }
+
+    if (!empty($conditions)) {
+        $sql .= " AND (" . implode(" AND ", $conditions) . ")";
+    }
+
+    $prep = $this->getConnection()->prepare($sql);
+    $res = $prep->execute($params);
+
+    $data = [];
+
+    if ($res) {
+        $data = $prep->fetchAll(\PDO::FETCH_OBJ);
+        foreach ($data as $value) {
+            $value->schedule = json_decode($value->schedule, true);
+            $value->caregiver_data = json_decode($value->caregiver_data, true);
+        }
+    }
+
+    return $data;
+}
+
+
 
 
     public function editAvailability($id, $date, $time,$type) {

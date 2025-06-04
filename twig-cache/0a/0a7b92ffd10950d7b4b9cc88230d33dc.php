@@ -94,7 +94,10 @@ class __TwigTemplate_90b015f093453103b31222eaa90e04ce extends Template
               </div>
               <div class=\"card-body ms-3\">
                 <p class=\"card-text\"><b><i class=\"bi bi-geo-alt-fill mt-2\"></i></b><small class=\"ms-2\"><b>Rue de
-                      Villiers</b></small> <br> <small class=\"ms-4\"><b>Paris</b></small></p>
+                      Villiers</b></small> <br> <small class=\"ms-4\"><b>";
+            // line 31
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["caregiver"], "city", [], "any", false, false, false, 31), "html", null, true);
+            echo "</b></small></p>
                 <a href=\"";
             // line 32
             echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
@@ -260,15 +263,14 @@ $context["time"], "time", [], "any", false, false, false, 68), "html", null, tru
         echo "      </div>
       </form>
        <!-- Col-4 for aside content -->
-    <div class=\"col-12 col-lg-4\">
+    <div class=\"col-12 col-lg-4 mb-5\">
       <div class=\"card sticky-top\" style=\"height: 400px; width: 100%; overflow: hidden;\">
 
         <div class=\"card-body p-0\">
-          <iframe 
-            src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d45973.02516856684!2d21.354716326223837!3d43.93217331171238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4756bf451d4d0011%3A0x22d95992c68c3da7!2zxIZ1cHJpamE!5e0!3m2!1sbs!2srs!4v1740178064511!5m2!1sbs!2srs\"
-            style=\"border:0; width: 100%; height: 100%;\"
-            allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\">
-          </iframe>
+          <div id=\"map\" data-caregivers='";
+        // line 94
+        echo json_encode(($context["caregivers"] ?? null));
+        echo "'></div>
         </div>
       </div>
     </div>
@@ -367,7 +369,7 @@ $context["time"], "time", [], "any", false, false, false, 68), "html", null, tru
     });
 
     const url = '";
-        // line 196
+        // line 192
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/makeappointment/store/';
     xhr.open('POST', url, true);
@@ -379,7 +381,7 @@ $context["time"], "time", [], "any", false, false, false, 68), "html", null, tru
       if (xhr.status === 200) {
 
         window.location.href = '";
-        // line 205
+        // line 201
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/makeappointment/type/' + caregiverId;
       } else {
@@ -394,6 +396,34 @@ $context["time"], "time", [], "any", false, false, false, 68), "html", null, tru
     xhr.send(params.toString());
   }
 </script>
+<script>
+  
+  function initMap() {
+    const mapDiv = document.getElementById('map');
+    const caregivers = JSON.parse(mapDiv.dataset.caregivers);
+
+    if (caregivers.length === 0) return;
+
+    const map = new google.maps.Map(mapDiv, {
+      zoom: 13,
+      center: {
+        lat: parseFloat(caregivers[0].latitude),
+        lng: parseFloat(caregivers[0].longitude)
+      }
+    });
+
+    caregivers.forEach(cg => {
+      new google.maps.Marker({
+        position: {
+          lat: parseFloat(cg.latitude),
+          lng: parseFloat(cg.longitude)
+        },
+        map: map
+      });
+    });
+  }
+</script>
+
 
 
 
@@ -407,19 +437,19 @@ $context["time"], "time", [], "any", false, false, false, 68), "html", null, tru
 ";
     }
 
-    // line 229
+    // line 253
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 230
-        $this->loadTemplate("./inc/footer.html", "Caregiver/query.html", 230)->display($context);
+        // line 254
+        $this->loadTemplate("./inc/footer.html", "Caregiver/query.html", 254)->display($context);
     }
 
-    // line 232
+    // line 256
     public function block_naslov($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 233
+        // line 257
         echo "Search
 ";
     }
@@ -436,7 +466,7 @@ $context["time"], "time", [], "any", false, false, false, 68), "html", null, tru
 
     public function getDebugInfo()
     {
-        return array (  423 => 233,  419 => 232,  415 => 230,  411 => 229,  383 => 205,  371 => 196,  260 => 87,  250 => 82,  244 => 81,  238 => 80,  235 => 79,  229 => 76,  224 => 74,  220 => 73,  215 => 72,  208 => 68,  205 => 67,  200 => 65,  194 => 64,  184 => 63,  180 => 62,  176 => 61,  171 => 60,  168 => 59,  165 => 58,  160 => 57,  155 => 56,  153 => 55,  149 => 54,  139 => 48,  130 => 45,  123 => 44,  119 => 43,  114 => 41,  100 => 32,  87 => 26,  79 => 23,  71 => 19,  67 => 18,  52 => 5,  48 => 4,  37 => 1,);
+        return array (  453 => 257,  449 => 256,  445 => 254,  441 => 253,  385 => 201,  373 => 192,  272 => 94,  263 => 87,  253 => 82,  247 => 81,  241 => 80,  238 => 79,  232 => 76,  227 => 74,  223 => 73,  218 => 72,  211 => 68,  208 => 67,  203 => 65,  197 => 64,  187 => 63,  183 => 62,  179 => 61,  174 => 60,  171 => 59,  168 => 58,  163 => 57,  158 => 56,  156 => 55,  152 => 54,  142 => 48,  133 => 45,  126 => 44,  122 => 43,  117 => 41,  103 => 32,  99 => 31,  87 => 26,  79 => 23,  71 => 19,  67 => 18,  52 => 5,  48 => 4,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -471,7 +501,7 @@ $context["time"], "time", [], "any", false, false, false, 68), "html", null, tru
               </div>
               <div class=\"card-body ms-3\">
                 <p class=\"card-text\"><b><i class=\"bi bi-geo-alt-fill mt-2\"></i></b><small class=\"ms-2\"><b>Rue de
-                      Villiers</b></small> <br> <small class=\"ms-4\"><b>Paris</b></small></p>
+                      Villiers</b></small> <br> <small class=\"ms-4\"><b>{{caregiver.city}}</b></small></p>
                 <a href=\"{{base_url}}/caregiver/show/{{caregiver.user_id}}\" class=\"btn btn-primary mt-2\"
                   style=\"width: 100%;\">Make Appointment</a>
               </div>
@@ -530,15 +560,11 @@ $context["time"], "time", [], "any", false, false, false, 68), "html", null, tru
       </div>
       </form>
        <!-- Col-4 for aside content -->
-    <div class=\"col-12 col-lg-4\">
+    <div class=\"col-12 col-lg-4 mb-5\">
       <div class=\"card sticky-top\" style=\"height: 400px; width: 100%; overflow: hidden;\">
 
         <div class=\"card-body p-0\">
-          <iframe 
-            src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d45973.02516856684!2d21.354716326223837!3d43.93217331171238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4756bf451d4d0011%3A0x22d95992c68c3da7!2zxIZ1cHJpamE!5e0!3m2!1sbs!2srs!4v1740178064511!5m2!1sbs!2srs\"
-            style=\"border:0; width: 100%; height: 100%;\"
-            allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\">
-          </iframe>
+          <div id=\"map\" data-caregivers='{{ caregivers|json_encode|raw }}'></div>
         </div>
       </div>
     </div>
@@ -658,6 +684,34 @@ $context["time"], "time", [], "any", false, false, false, 68), "html", null, tru
     xhr.send(params.toString());
   }
 </script>
+<script>
+  
+  function initMap() {
+    const mapDiv = document.getElementById('map');
+    const caregivers = JSON.parse(mapDiv.dataset.caregivers);
+
+    if (caregivers.length === 0) return;
+
+    const map = new google.maps.Map(mapDiv, {
+      zoom: 13,
+      center: {
+        lat: parseFloat(caregivers[0].latitude),
+        lng: parseFloat(caregivers[0].longitude)
+      }
+    });
+
+    caregivers.forEach(cg => {
+      new google.maps.Marker({
+        position: {
+          lat: parseFloat(cg.latitude),
+          lng: parseFloat(cg.longitude)
+        },
+        map: map
+      });
+    });
+  }
+</script>
+
 
 
 

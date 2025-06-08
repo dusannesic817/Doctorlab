@@ -8,7 +8,7 @@
    use App\Core\Router;
    use App\Core\Session\FileSessionStorage;
    use App\Core\Session\Session;
-   use App\Core\TwigService;
+   use App\Services\TwigService;
 
 
    $databaseConfig = new DatabaseConfiguration(

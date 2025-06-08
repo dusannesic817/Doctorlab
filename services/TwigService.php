@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Core;
+namespace App\Services;
 
 class TwigService {
     public static function getTwig($controller) {

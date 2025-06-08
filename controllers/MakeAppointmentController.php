@@ -6,7 +6,7 @@ use App\Core\Controller;
 use App\Models\AppointmentModel;
 use App\Models\AvailabilityModel;
 use App\Models\UserModel;
-use App\Core\MailService;
+use App\Services\MailService;
 use Google\Service\Doubleclicksearch\Availability;
 
 class MakeAppointmentController extends Controller{

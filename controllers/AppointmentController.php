@@ -2,7 +2,8 @@
 
 namespace App\Controllers;
 
-use App\Core\MailService;
+use App\Services\MailService;
+use App\Services\TwigService;
 use App\Core\Role\UserRoleController;
 use App\Models\AppointmentModel;
 use App\Models\AvailabilityModel;
@@ -204,7 +205,7 @@ class AppointmentController extends UserRoleController{
 
         $myclients = $appointmentModel->getAllSearch($keywords);
 
-        $twig = \App\Core\TwigService::getTwig($this);
+        $twig = TwigService::getTwig($this);
         
         echo $twig->render('Appointment/search.html', [
             'myclients' => $myclients,

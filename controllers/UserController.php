@@ -10,7 +10,7 @@ use App\Core\Controller;
 use App\Models\UserModel;
 use App\Validators\NumberValidator;
 use App\Validators\StringValidator;
-use App\Core\MailService;
+use App\Services\MailService;
 use Configruation;
 
 class UserController extends Controller{

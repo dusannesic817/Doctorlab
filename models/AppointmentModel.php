@@ -28,7 +28,7 @@ class AppointmentModel extends Model{
 
 
     public function getSchedule($id){
-
+        
         $sql='SELECT 
                 appointment.*,
                 u1.name AS patient_name,
@@ -58,6 +58,7 @@ class AppointmentModel extends Model{
 
 
     public function getScheduleDoctor($id){
+
         $sql="SELECT 
                 appointment.*,
                 u1.name AS patient_name,
@@ -91,6 +92,7 @@ class AppointmentModel extends Model{
     }
 
     public function getNotification($id){
+
        $sql = "SELECT 
             a.appointment_id AS appointment_id, 
             a.status as status, 
@@ -117,7 +119,7 @@ class AppointmentModel extends Model{
     }
 
 
-        public function getAllSearch(string $keywords){
+    public function getAllSearch(string $keywords){
 
         $sql= "SELECT  a.appointment_id AS appointment_id, 
             a.status as status, 

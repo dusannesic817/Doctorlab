@@ -38,7 +38,7 @@ class CaregiverController extends Controller{
         $data = $caregiver->getCaregiverData($title);
         $caregivers=$this->caregiverData($data);
 
-          $count=0;
+        $count=0;
         foreach($caregivers as $value){
            $count++;
         }
@@ -101,22 +101,20 @@ class CaregiverController extends Controller{
        
         
         if($password1 !== $password2){
-            $this->set('message','Doslo je do greske: Lozinke se ne poklapaju');
+            $this->set('message','Password doesnt match');
             return;
-
         }
 
         $stringValidator = (new StringValidator())->setMinLength(7)->setMaxLength(120);
         if(!$stringValidator->isValid(($password1))){
-            $this->set('message','Doslo je do greske: Lozinke nije ispravnog formata');
+            $this->set('message','Wronf format of password.');
             return;
-
         }
+
         $user = $userModel->getByFieldName('email',$email);
-        
 
         if($user){
-            $this->set('message','Doslo je do greske: Email vec postoji');
+            $this->set('message','Email already exist.');
             return;
         }
 
@@ -141,7 +139,7 @@ class CaregiverController extends Controller{
         }
 
 
-        $this->set("message", "Napravljen je novi nalog");
+        $this->set("message", "Account is created.");
 
     }
 

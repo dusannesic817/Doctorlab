@@ -11,7 +11,8 @@ use App\Models\UserModel;
 
 class TokenController extends Controller{
 
-public function verify($tokenString){
+    public function verify($tokenString){
+
         $tokenModel = new TokenModel($this->getDatabaseConnection()); 
         $token_obj = $tokenModel->findByToken($tokenString);
 

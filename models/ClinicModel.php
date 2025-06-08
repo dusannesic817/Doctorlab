@@ -30,17 +30,22 @@ class ClinicModel extends Model{
         ];
     }
 
-    public function findClinic(array $data)
-{
-    $sql = "SELECT clinic_name,address,city FROM clinic WHERE clinic_name = ? AND address = ? AND city = ? LIMIT 1";
-    $stmt = $this->getConnection()->prepare($sql);
-    $success = $stmt->execute([$data['clinic_name'], $data['address'], $data['city']]);
+    public function findClinic(array $data){
 
-    if ($success) {
-        return $stmt->fetch(PDO::FETCH_OBJ) ?: null;
-    }
+        $sql = "SELECT clinic_name,address,city 
+                FROM clinic 
+                WHERE clinic_name = ? 
+                AND address = ? 
+                AND city = ? LIMIT 1";
+                
+        $stmt = $this->getConnection()->prepare($sql);
+        $success = $stmt->execute([$data['clinic_name'], $data['address'], $data['city']]);
 
-    return null;
+        if ($success) {
+            return $stmt->fetch(PDO::FETCH_OBJ) ?: null;
+        }
+
+        return null;
 }
 
 }

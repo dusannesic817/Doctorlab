@@ -60,12 +60,12 @@ class AvailabilityController extends UserRoleController{
     
         if($user_id !== false){
             $availabilityModel->updateAvailability($id,$date);
-     }else{
+        }else{
          $availabilityModel->add([
              'user_id'=>$id,
              'schedule'=>$file['json'],
         ]);
-     }
+        }
 
         $this->getSession()->put('success_schedule','Slots has been opened successfully ');
         $this->getSession()->save();
@@ -91,16 +91,16 @@ class AvailabilityController extends UserRoleController{
 
     public function getMonths(){
        
-    $currentDate = new \DateTime();
-    $currentMonth = $currentDate->format('n'); 
-    $months = [];
+        $currentDate = new \DateTime();
+        $currentMonth = $currentDate->format('n'); 
+        $months = [];
 
-    for ($month = $currentMonth; $month <= 12; $month++) {
-    $months[] = \DateTime::createFromFormat('n', $month)->format('F'); 
+        for ($month = $currentMonth; $month <= 12; $month++) {
+            $months[] = \DateTime::createFromFormat('n', $month)->format('F'); 
 
-    }
+        }
 
-    return $months;
+        return $months;
 
     }
     public function getUserSchedule($monthName, $times, $userId) {

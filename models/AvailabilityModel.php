@@ -19,8 +19,6 @@ class AvailabilityModel extends Model{
             'user_id'=>new Field((new NumberValidator())->setIntegerLength(10)),
             'schedule'=>new Field((new JSONValidator())),
             'created_at'=>new Field((new DateTimeValidator())->allowDate()->allowTime(), false),
-           
-            
         ];
     }
 
@@ -50,6 +48,7 @@ class AvailabilityModel extends Model{
     }
 
     public function getCaregiverAvailability($id){
+
         $sql = "SELECT * FROM availability 
                 LEFT JOIN user on user.user_id = availability.user_id
                 WHERE user.role= 'caregiver' AND user.user_id=?";
@@ -70,18 +69,16 @@ class AvailabilityModel extends Model{
 
         return $data;
 
-
     }
 
 
 
-        public function getCaregiverData(string $title){
+    public function getCaregiverData(string $title){
 
         $sql = "SELECT * FROM availability 
-                    LEFT JOIN user ON user.user_id = availability.user_id
-                    WHERE user.role = 'caregiver' 
-                    AND JSON_UNQUOTE(JSON_EXTRACT(caregiver_data, '$.title')) = ?;
-                    ";
+                LEFT JOIN user ON user.user_id = availability.user_id
+                WHERE user.role = 'caregiver' 
+                AND JSON_UNQUOTE(JSON_EXTRACT(caregiver_data, '$.title')) = ?;";
         
         $prep = $this->getConnection()->prepare($sql);
         $res = $prep->execute([$title]);
@@ -116,8 +113,8 @@ class AvailabilityModel extends Model{
             JSON_UNQUOTE(JSON_EXTRACT(caregiver_data, '$.title')) LIKE ?
             OR user.name LIKE ?
             OR user.surname LIKE ?
-            OR clinic.clinic_name LIKE ?
-        )";
+            OR clinic.clinic_name LIKE ?)";
+
         $searchTerm = '%' . $query . '%';
         $params[] = $searchTerm;
         $params[] = $searchTerm;
@@ -154,7 +151,10 @@ class AvailabilityModel extends Model{
 
 
     public function editAvailability($id, $date, $time,$type) {
-        $sql = "SELECT schedule FROM availability WHERE user_id=?";
+        $sql = "SELECT schedule 
+                FROM availability 
+                WHERE user_id=?";
+
         $prep = $this->getConnection()->prepare($sql);
         $prep->execute([$id]);
     
@@ -177,12 +177,17 @@ class AvailabilityModel extends Model{
     
         $sql = "UPDATE availability SET schedule = ? WHERE user_id = ?";
         $prep = $this->getConnection()->prepare($sql);
+
         return $prep->execute([$updatedSchedule, $id]);
     }
 
 
     public function updateAvailability($id,$array){
-        $sql='SELECT schedule FROM availability WHERE user_id=?';
+
+        $sql='SELECT schedule 
+              FROM availability 
+              WHERE user_id=?';
+
         $prep=$this->getConnection()->prepare($sql);
         $prep->execute([$id]);
 

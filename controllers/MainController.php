@@ -13,47 +13,41 @@ class MainController extends Controller{
 
     public function home(){
 
-     $clinicModel = new ClinicModel($this->getDatabaseConnection());
-     $clinices= $clinicModel->getAll();
-     $doctors=$this->getJson('caregiver_data.json');
+        $clinicModel = new ClinicModel($this->getDatabaseConnection());
+        $clinices= $clinicModel->getAll();
+        $doctors=$this->getJson('caregiver_data.json');
 
-    $appointment = $this->getSession()->get('appointment');
-    $caregiver = null; 
+        $appointment = $this->getSession()->get('appointment');
+        $caregiver = null; 
 
-    if (!empty($appointment) && isset($appointment['caregiver_id'])) {
-        $doctor_session_id = $appointment['caregiver_id'];
+        if (!empty($appointment) && isset($appointment['caregiver_id'])) {
+            $doctor_session_id = $appointment['caregiver_id'];
 
-        $userModel = new UserModel($this->getDatabaseConnection());
-        $caregiver = $userModel->getById((int)$doctor_session_id);
-    }
-     $this->set('caregiver', $caregiver);
+            $userModel = new UserModel($this->getDatabaseConnection());
+            $caregiver = $userModel->getById((int)$doctor_session_id);
+        }
 
-     $user_id = $this->getSession()->get('user_id');
-     $successRegistration = $this->getSession()->get('successRegistration');
+        $this->set('caregiver', $caregiver);
 
-     if(isset($appointment) && !isset($user_id)){
-     $this->set('appointment',$appointment);
-     }
+        $user_id = $this->getSession()->get('user_id');
+        $successRegistration = $this->getSession()->get('successRegistration');
 
+        if(isset($appointment) && !isset($user_id)){
+            $this->set('appointment',$appointment);
 
+        }
 
-     $this->set('doctors', $doctors);
-    
-     
-     $this->set('clinices',$clinices);
+        $this->set('doctors', $doctors);
+        $this->set('clinices',$clinices);
 
-    if(isset($successRegistration)){
-         $this->set('successRegistration',$successRegistration);
-     }
-        $this->getSession()->remove('successRegistration');
-        $this->getSession()->save();
-
-        
-
+        if(isset($successRegistration)){
+            $this->set('successRegistration',$successRegistration);
+        }
+            $this->getSession()->remove('successRegistration');
+            $this->getSession()->save();
+            
     }
 
    
-
-  
 
 }

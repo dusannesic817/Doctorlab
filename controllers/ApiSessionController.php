@@ -5,8 +5,7 @@ use App\Core\Controller;
 
 class ApiSessionController extends Controller
 {
-public function getCaregiverId()
-{
+public function getCaregiverId(){
     header('Content-Type: application/json');
 
     $caregiver_id = $this->getSession()->get('caregiver_id');

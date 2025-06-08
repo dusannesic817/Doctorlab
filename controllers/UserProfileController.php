@@ -13,28 +13,24 @@ class UserProfileController extends UserRoleController{
 
     public function show($id){
       
-      $user = new UserModel($this->getDatabaseConnection());
-
-      $client = $user->getById($id);
-
-      $change=$this->getSession()->get('success_edit');
+        $user = new UserModel($this->getDatabaseConnection());
+        $client = $user->getById($id);
+        $change=$this->getSession()->get('success_edit');
      
-
-
-      if($client->role=='client'){
-         $this->set('client',$client);
-         $this->set('change',$change);
+        if($client->role=='client'){
+            $this->set('client',$client);
+            $this->set('change',$change);
+        }
         
-      }
-      $this->getSession()->remove('success_edit');
-       $doctors=$this->getJson('caregiver_data.json');
+        $this->getSession()->remove('success_edit');
+        $doctors=$this->getJson('caregiver_data.json');
         $this->set('doctors',$doctors);
       
     } 
 
 
     public function edit($id){
-       $doctors=$this->getJson('caregiver_data.json');
+        $doctors=$this->getJson('caregiver_data.json');
         $this->set('doctors',$doctors);
     }
 
@@ -66,8 +62,8 @@ class UserProfileController extends UserRoleController{
         $lastName = isset($nameParts[1]) ? $nameParts[1] : ''; 
     
         if(!empty($fullName)){
-        $first_name = $firstName;
-        $last_name = $lastName;
+            $first_name = $firstName;
+            $last_name = $lastName;
         }else{
             $first_name=$user_name;
             $last_name=$user_surname;
@@ -103,8 +99,7 @@ class UserProfileController extends UserRoleController{
         $this->redirect("/client/profile/".$id);
 
          
-      
-   }
+    }
     public function destroy($id){
         $userModel = new UserModel($this->getDatabaseConnection());
         $client = $userModel->deleteById($id);
@@ -116,9 +111,6 @@ class UserProfileController extends UserRoleController{
             
             $this->redirect('/');
         
-        
-
-
    }
 
 

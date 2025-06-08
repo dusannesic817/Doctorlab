@@ -26,18 +26,22 @@ class TokenModel extends Model{
         ];
     }
 
-public function findByToken($token){
-    $sql = "SELECT * FROM token WHERE `token` = ? AND is_used = 0;";
-    $prep = $this->getConnection()->prepare($sql);
-    $res = $prep->execute([$token]);
+    public function findByToken($token){
+        $sql = "SELECT * 
+                FROM token 
+                WHERE `token` = ? 
+                AND is_used = 0;";
+                
+        $prep = $this->getConnection()->prepare($sql);
+        $res = $prep->execute([$token]);
 
-    $item = NULL;
-    if($res){
-        $item = $prep->fetch(PDO::FETCH_OBJ);
+        $item = NULL;
+        if($res){
+            $item = $prep->fetch(PDO::FETCH_OBJ);
+        }
+
+        return $item;
     }
-
-    return $item;
-}
 
 
     public function verifyUser($token){
@@ -51,7 +55,11 @@ public function findByToken($token){
     }
 
     public function isVerified($id){
-        $sql="SELECT * FROM token WHERE type='verify_email' AND user_id=?";
+        $sql="SELECT * 
+            FROM token 
+            WHERE type='verify_email'  
+            AND user_id=?";
+
         $prep = $this->getConnection()->prepare($sql);
         $res=$prep->execute([$id]);
         

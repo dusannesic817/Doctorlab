@@ -17,7 +17,7 @@ class MakeAppointmentController extends Controller{
        $appointment= $this->getSession()->get("appointment");
 
        if(!isset($appointment)){
-        $this->redirect('/');
+          $this->redirect('/');
        }
        
        $userModel= new UserModel($this->getDatabaseConnection());
@@ -29,6 +29,7 @@ class MakeAppointmentController extends Controller{
     }
 
     public function show($id){
+
       $availabilityModel = new AvailabilityModel($this->getDatabaseConnection());
       $data = $availabilityModel->getCaregiverAvailability($id);
 
@@ -41,6 +42,7 @@ class MakeAppointmentController extends Controller{
     public function store() {
        
         if (!empty($_POST['caregiver_data']) && empty($_POST['caregiver_id'])) {
+
             $this->getSession()->update('appointment', [
                 'caregiver_data' => filter_input(INPUT_POST, 'caregiver_data')
             ]);
@@ -49,6 +51,7 @@ class MakeAppointmentController extends Controller{
 
     
         if (!empty($_POST['caregiver_id'])) {
+
             $caregiverId   = (int) filter_input(INPUT_POST, 'caregiver_id', FILTER_SANITIZE_NUMBER_INT);
             $caregiverName = filter_input(INPUT_POST, 'caregiver_name');
             $day           = (new \DateTime(filter_input(INPUT_POST, 'day')))->format('Y-m-d');
@@ -97,12 +100,11 @@ class MakeAppointmentController extends Controller{
                 
             ];
         }else{
+
             return $this->redirect('/');
         }
  
-        
-   
-       
+    
         $model = new AppointmentModel($this->getDatabaseConnection());
         $insert=$model->add($dataToInsert);
      
@@ -114,19 +116,18 @@ class MakeAppointmentController extends Controller{
         $id = $appointment['caregiver_id'];
 
         if($insert){
+
             $avalabilityModel = new AvailabilityModel($this->getDatabaseConnection());
             $avalabilityModel->editAvailability($id,$formatted_date,$formatted_time,'busy');
             $mailer = new MailService();
             $mailer->sendMail($user_email,"You scheduled your appointment","Your appointment has been scheduled. Time: ".$formatted_date ." at ". $formatted_time);
-              
-           
+                
         }
     
         $this->getSession()->remove('appointment');
         $this->getSession()->save();
         sleep(2);
         $this->redirect('/client/appointments/'.$user_id);
-
 
     }
     

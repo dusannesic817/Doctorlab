@@ -207,13 +207,13 @@ class CaregiverProfileController extends UserRoleController{
    }
 
    public function logout() {
-    $this->getSession()->remove("user_id");
-    $this->getSession()->save();
+        $this->getSession()->remove("user_id");
+        $this->getSession()->save();
 
-    sleep(2);
+        sleep(2);
 
-    $this->redirect('/');
-}
+        $this->redirect('/');
+    }   
 
 
    private function imageUpload($fieldName, $fileName ){
@@ -240,23 +240,21 @@ class CaregiverProfileController extends UserRoleController{
    
    private function pdfUpload($fieldName, $fileName ){
 
-    $uploadPath = new \Upload\Storage\FileSystem(\Configruation::UPLOAD_DIR_PDF);
-    $file = new \Upload\File($fieldName,$uploadPath);
+        $uploadPath = new \Upload\Storage\FileSystem(\Configruation::UPLOAD_DIR_PDF);
+        $file = new \Upload\File($fieldName,$uploadPath);
 
 
-    $file->setName($fileName);
+        $file->setName($fileName);
+        try{
+            $file->upload();
+            return $file->getNameWithExtension();
 
+        }catch(Exception $e){
+            $this->set('message', "Error " .implode(', ', $file->getErrors()));
+            return false;
+        }
 
-    try{
-        $file->upload();
-        return $file->getNameWithExtension();
-
-    }catch(Exception $e){
-        $this->set('message', "Error " .implode(', ', $file->getErrors()));
-        return false;
     }
-
-}
 
 
 public function findOrCreate(array $clinicData){
@@ -267,6 +265,7 @@ public function findOrCreate(array $clinicData){
     if ($clinic) {
         return $clinic->clinic_id; 
     }else{
+        
     return $clinicModel->add($clinicData); 
 
     }

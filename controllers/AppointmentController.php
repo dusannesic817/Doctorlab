@@ -14,13 +14,11 @@ class AppointmentController extends UserRoleController{
     public function index(){
         
         $appointmentModel = new AppointmentModel($this->getDatabaseConnection());
-
         $user_id=$this->getSession()->get('user_id');
-
         $myclients = $appointmentModel->getScheduleDoctor($user_id);
 
         $this->set('myclients',$myclients);
-         $doctors=$this->getJson('caregiver_data.json');
+        $doctors=$this->getJson('caregiver_data.json');
         $this->set('doctors',$doctors);
     }
 
@@ -41,14 +39,11 @@ class AppointmentController extends UserRoleController{
         $change=$this->getSession()->get('success_schedule');
         $this->set('change',$change);
      
-            $this->set('schedules',$schedules);      
-            $this->set('myclients', $myclients);
-
-    
-       
+        $this->set('schedules',$schedules);      
+        $this->set('myclients', $myclients);
     
         $this->getSession()->remove('success_schedule');
-         $doctors=$this->getJson('caregiver_data.json');
+        $doctors=$this->getJson('caregiver_data.json');
         $this->set('doctors',$doctors);
     }
 
@@ -56,13 +51,12 @@ class AppointmentController extends UserRoleController{
 
         $appointmentModel = new AppointmentModel($this->getDatabaseConnection());
         $schedules = $appointmentModel->getSchedule($id);
-         $change=$this->getSession()->get('success_schedule');
+        $change=$this->getSession()->get('success_schedule');
 
 
-
-            $this->set('change',$change);
-            $this->set('schedules',$schedules);
-             $doctors=$this->getJson('caregiver_data.json');
+        $this->set('change',$change);
+        $this->set('schedules',$schedules);
+        $doctors=$this->getJson('caregiver_data.json');
         $this->set('doctors',$doctors);
     }
 
@@ -81,6 +75,7 @@ class AppointmentController extends UserRoleController{
     }
 
     public function update($id){
+
         $auth = $this->getSession()->get('user_id');
         $appointmentModel = new AppointmentModel($this->getDatabaseConnection());
         $updateStatus = $appointmentModel->editById($id,['status'=>'completed']);
@@ -93,6 +88,7 @@ class AppointmentController extends UserRoleController{
     }
 
     public function cancel($id){
+
         $auth = $this->getSession()->get('user_id');
         $appointmentModel = new AppointmentModel($this->getDatabaseConnection());
         $details = $appointmentModel->getById($id);
@@ -100,13 +96,9 @@ class AppointmentController extends UserRoleController{
 
         $userModel = new UserModel($this->getDatabaseConnection());
         $user = $userModel->getById($user_id);
-
         $user_email = $user->email;
-       
-
-       
+    
         $caregiver_id=$details->provider_id;
-
         $doctor = $userModel->getById($caregiver_id);
         $role = $doctor->role;
 
@@ -141,14 +133,13 @@ class AppointmentController extends UserRoleController{
 
 
     public function destroy($id){
+
         $auth= $this->getSession()->get('user_id');
-
         $appointmentModel= new AppointmentModel($this->getDatabaseConnection());
-
         $deleteAppointment = $appointmentModel->deleteById($id);
 
        if($deleteAppointment){
-        $this->redirect('/caregiver/appointments/'.$auth);
+            $this->redirect('/caregiver/appointments/'.$auth);
        }
 
     }
@@ -156,8 +147,8 @@ class AppointmentController extends UserRoleController{
     public function readNotification() {
         $id = $this->getSession()->get("user_id");
         $appointmentModel = new AppointmentModel($this->getDatabaseConnection());
-
         $read = $appointmentModel->updateByField('provider_id', $id, 'is_read', 1);
+
 
         header('Content-Type: application/json');
         if ($read) {
@@ -199,8 +190,6 @@ class AppointmentController extends UserRoleController{
 
         }
 
-
-
         header('Content-Type: application/json');
         echo json_encode($notifications);
         exit; 
@@ -216,9 +205,11 @@ class AppointmentController extends UserRoleController{
         $myclients = $appointmentModel->getAllSearch($keywords);
 
         $twig = \App\Core\TwigService::getTwig($this);
+        
         echo $twig->render('Appointment/search.html', [
-    'myclients' => $myclients,
+            'myclients' => $myclients,
         ]);
+
         exit;
       
     }

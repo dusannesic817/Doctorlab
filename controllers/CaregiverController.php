@@ -232,6 +232,11 @@ class CaregiverController extends Controller{
                     'name' => $value->name,
                     'surname' => $value->surname,
                     'profile_photo' => $value->profile_photo,
+                    'cilinic_name'=>$value->clinic_name,
+                    'city'=>$value->city,
+                    'longitude'=>$value->longitude,
+                    'latitude'=>$value->latitude,
+                    'clinic_address'=>$value->address,
                     'doctor' => $value->caregiver_data['title'],
                     'schedule' => $sortedSchedule
                 ];

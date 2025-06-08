@@ -86,13 +86,17 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
                 </div>
               </div>
               <div class=\"card-body ms-3\">
-                <p class=\"card-text\"><b><i class=\"bi bi-geo-alt-fill mt-2\"></i></b><small class=\"ms-2\"><b>Rue de
-                      Villiers</b></small> <br> <small class=\"ms-4\"><b>Paris</b></small></p>
+                <p class=\"card-text\"><b><i class=\"bi bi-geo-alt-fill mt-2\"></i></b><small class=\"ms-2\"><b>";
+            // line 23
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["caregiver"], "clinic_address", [], "any", false, false, false, 23), "html", null, true);
+            echo "</b></small> <br> <small class=\"ms-4\"><b>";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["caregiver"], "city", [], "any", false, false, false, 23), "html", null, true);
+            echo "</b></small></p>
                 <a href=\"";
-            // line 25
+            // line 24
             echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
             echo "/caregiver/show/";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["caregiver"], "user_id", [], "any", false, false, false, 25), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["caregiver"], "user_id", [], "any", false, false, false, 24), "html", null, true);
             echo "\" class=\"btn btn-primary mt-2\"
                   style=\"width: 100%;\">Make Appointment</a>
               </div>
@@ -103,22 +107,22 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
                 <div class=\"col-12 mt-2 mb-3\">
                   <div class=\"d-flex justify-content-around\">
                     <i class=\"bi bi-arrow-left-circle-fill prevDate\" id=\"prevDate-";
-            // line 34
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["caregiver"], "user_id", [], "any", false, false, false, 34), "html", null, true);
+            // line 33
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["caregiver"], "user_id", [], "any", false, false, false, 33), "html", null, true);
             echo "\" style=\"cursor: pointer;\"></i>
                     ";
-            // line 35
+            // line 34
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["caregiver"], "schedule", [], "any", false, false, false, 35));
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["caregiver"], "schedule", [], "any", false, false, false, 34));
             foreach ($context['_seq'] as $context["day"] => $context["value"]) {
-                // line 36
+                // line 35
                 echo "                    <header class=\"day\" data-caregiver-id=\"";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["caregiver"], "user_id", [], "any", false, false, false, 36), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["caregiver"], "user_id", [], "any", false, false, false, 35), "html", null, true);
                 echo "\" data-day=\"";
                 echo twig_escape_filter($this->env, $context["day"], "html", null, true);
                 echo "\">
                       <b>";
-                // line 37
+                // line 36
                 echo twig_escape_filter($this->env, $context["day"], "html", null, true);
                 echo "</b>
                     </header>
@@ -127,115 +131,115 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['day'], $context['value'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 40
+            // line 39
             echo "                    <i class=\"bi bi-arrow-right-circle-fill nextDate\" id=\"nextDate-";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["caregiver"], "user_id", [], "any", false, false, false, 40), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["caregiver"], "user_id", [], "any", false, false, false, 39), "html", null, true);
             echo "\" style=\"cursor: pointer;\"></i>
                   </div>
                 </div>
 
               </div>
               <div class=\"row gx-1 gy-2 time-slots\" data-caregiver-id=\"";
-            // line 45
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["caregiver"], "user_id", [], "any", false, false, false, 45), "html", null, true);
+            // line 44
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["caregiver"], "user_id", [], "any", false, false, false, 44), "html", null, true);
             echo "\">
                 ";
-            // line 46
+            // line 45
             $context["index"] = 0;
-            // line 47
+            // line 46
             echo "                ";
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["caregiver"], "schedule", [], "any", false, false, false, 47));
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["caregiver"], "schedule", [], "any", false, false, false, 46));
             foreach ($context['_seq'] as $context["day"] => $context["times"]) {
-                // line 48
+                // line 47
                 echo "                ";
                 $context['_parent'] = $context;
-                $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["times"], "times", [], "any", false, false, false, 48));
+                $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["times"], "times", [], "any", false, false, false, 47));
                 foreach ($context['_seq'] as $context["_key"] => $context["time"]) {
+                    // line 48
+                    echo "                ";
+                    $context["input_id"] = ((((("time_" . twig_get_attribute($this->env, $this->source, $context["caregiver"], "user_id", [], "any", false, false, false, 48)) . "_") . $context["day"]) . "_") . ($context["index"] ?? null));
                     // line 49
                     echo "                ";
-                    $context["input_id"] = ((((("time_" . twig_get_attribute($this->env, $this->source, $context["caregiver"], "user_id", [], "any", false, false, false, 49)) . "_") . $context["day"]) . "_") . ($context["index"] ?? null));
-                    // line 50
-                    echo "                ";
-                    if ((twig_get_attribute($this->env, $this->source, $context["time"], "status", [], "any", false, false, false, 50) == "free")) {
-                        // line 51
+                    if ((twig_get_attribute($this->env, $this->source, $context["time"], "status", [], "any", false, false, false, 49) == "free")) {
+                        // line 50
                         echo "                <div class=\"col-xl-3 col-lg-6 col-md-6 col-sm-12 time-slot\" data-day=\"";
                         echo twig_escape_filter($this->env, $context["day"], "html", null, true);
                         echo "\"
                   data-caregiver-id=\"";
-                        // line 52
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["caregiver"], "user_id", [], "any", false, false, false, 52), "html", null, true);
+                        // line 51
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["caregiver"], "user_id", [], "any", false, false, false, 51), "html", null, true);
                         echo "\">
                 <input type=\"checkbox\" class=\"btn-check w-100 calendar-input\" value=\"";
-                        // line 53
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["time"], "time", [], "any", false, false, false, 53), "html", null, true);
+                        // line 52
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["time"], "time", [], "any", false, false, false, 52), "html", null, true);
                         echo "\" 
                 name=\"appointment[";
-                        // line 54
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["caregiver"], "user_id", [], "any", false, false, false, 54), "html", null, true);
+                        // line 53
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["caregiver"], "user_id", [], "any", false, false, false, 53), "html", null, true);
                         echo "][";
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["caregiver"], "name", [], "any", false, false, false, 54), "html", null, true);
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["caregiver"], "name", [], "any", false, false, false, 53), "html", null, true);
                         echo "][";
                         echo twig_escape_filter($this->env, $context["day"], "html", null, true);
                         echo "][]\" 
                 id=\"";
-                        // line 55
+                        // line 54
                         echo twig_escape_filter($this->env, ($context["input_id"] ?? null), "html", null, true);
                         echo "\" data-caregiver-id=\"";
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["caregiver"], "user_id", [], "any", false, false, false, 55), "html", null, true);
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["caregiver"], "user_id", [], "any", false, false, false, 54), "html", null, true);
                         echo "\" data-caregiver-name=\"";
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["caregiver"], "name", [], "any", false, false, false, 55), "html", null, true);
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["caregiver"], "name", [], "any", false, false, false, 54), "html", null, true);
                         echo "\" 
                 data-day=\"";
-                        // line 56
+                        // line 55
                         echo twig_escape_filter($this->env, $context["day"], "html", null, true);
                         echo "\" onclick=\"saveToSession(this)\">
             
             <label class=\"btn calendar-input w-100 text-truncate overflow-hidden\" for=\"";
-                        // line 58
+                        // line 57
                         echo twig_escape_filter($this->env, ($context["input_id"] ?? null), "html", null, true);
                         echo "\">";
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["time"], "time", [], "any", false, false, false, 58), "html", null, true);
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["time"], "time", [], "any", false, false, false, 57), "html", null, true);
                         echo "</label>
             
                 </div>
                 ";
                     } else {
-                        // line 62
+                        // line 61
                         echo "                <div class=\"col-xl-3 col-lg-6 col-md-6 col-sm-12 time-slot\" data-day=\"";
                         echo twig_escape_filter($this->env, $context["day"], "html", null, true);
                         echo "\"
                   data-caregiver-id=\"";
-                        // line 63
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["caregiver"], "user_id", [], "any", false, false, false, 63), "html", null, true);
+                        // line 62
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["caregiver"], "user_id", [], "any", false, false, false, 62), "html", null, true);
                         echo "\">
                   <input type=\"checkbox\" class=\"btn-check w-100 calendar-input\" value=\"\" id=\"";
-                        // line 64
+                        // line 63
                         echo twig_escape_filter($this->env, ($context["input_id"] ?? null), "html", null, true);
                         echo "\" disabled>
                   <label class=\"btn calendar-input-busy w-100 text-truncate overflow-hidden\" for=\"";
-                        // line 65
+                        // line 64
                         echo twig_escape_filter($this->env, ($context["input_id"] ?? null), "html", null, true);
                         echo "\">-</label>
                 </div>
                 ";
                     }
-                    // line 68
+                    // line 67
                     echo "                ";
                     $context["index"] = (($context["index"] ?? null) + 1);
-                    // line 69
+                    // line 68
                     echo "                ";
                 }
                 $_parent = $context['_parent'];
                 unset($context['_seq'], $context['_iterated'], $context['_key'], $context['time'], $context['_parent'], $context['loop']);
                 $context = array_intersect_key($context, $_parent) + $_parent;
-                // line 70
+                // line 69
                 echo "                ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['day'], $context['times'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 71
+            // line 70
             echo "              </div>
             </div>
           </div>
@@ -245,7 +249,7 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['caregiver'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 76
+        // line 75
         echo "      </div>
     </div>
   </div>
@@ -342,7 +346,7 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
     });
   
     const url = '";
-        // line 171
+        // line 170
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/makeappointment/store/';
     xhr.open('POST', url, true);
@@ -354,7 +358,7 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
         if (xhr.status === 200) {
 
              window.location.href = '";
-        // line 180
+        // line 179
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/makeappointment/type/' + caregiverId;
         } else {
@@ -382,22 +386,22 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
 ";
     }
 
-    // line 204
+    // line 203
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 205
+        // line 204
         echo "    ";
-        $this->loadTemplate("./inc/footer.html", "Caregiver/index.html", 205)->display($context);
-        // line 206
+        $this->loadTemplate("./inc/footer.html", "Caregiver/index.html", 204)->display($context);
+        // line 205
         echo "  ";
     }
 
-    // line 207
+    // line 206
     public function block_naslov($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 208
+        // line 207
         echo "Doctors
 ";
     }
@@ -414,7 +418,7 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
 
     public function getDebugInfo()
     {
-        return array (  401 => 208,  397 => 207,  393 => 206,  390 => 205,  386 => 204,  358 => 180,  346 => 171,  249 => 76,  239 => 71,  233 => 70,  227 => 69,  224 => 68,  218 => 65,  214 => 64,  210 => 63,  205 => 62,  196 => 58,  191 => 56,  183 => 55,  175 => 54,  171 => 53,  167 => 52,  162 => 51,  159 => 50,  156 => 49,  151 => 48,  146 => 47,  144 => 46,  140 => 45,  131 => 40,  122 => 37,  115 => 36,  111 => 35,  107 => 34,  93 => 25,  80 => 19,  72 => 16,  64 => 12,  60 => 11,  52 => 5,  48 => 4,  37 => 1,);
+        return array (  405 => 207,  401 => 206,  397 => 205,  394 => 204,  390 => 203,  362 => 179,  350 => 170,  253 => 75,  243 => 70,  237 => 69,  231 => 68,  228 => 67,  222 => 64,  218 => 63,  214 => 62,  209 => 61,  200 => 57,  195 => 55,  187 => 54,  179 => 53,  175 => 52,  171 => 51,  166 => 50,  163 => 49,  160 => 48,  155 => 47,  150 => 46,  148 => 45,  144 => 44,  135 => 39,  126 => 36,  119 => 35,  115 => 34,  111 => 33,  97 => 24,  91 => 23,  80 => 19,  72 => 16,  64 => 12,  60 => 11,  52 => 5,  48 => 4,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -441,8 +445,7 @@ class __TwigTemplate_6b6eb6f33d69f59d05cac13c55a907c1 extends Template
                 </div>
               </div>
               <div class=\"card-body ms-3\">
-                <p class=\"card-text\"><b><i class=\"bi bi-geo-alt-fill mt-2\"></i></b><small class=\"ms-2\"><b>Rue de
-                      Villiers</b></small> <br> <small class=\"ms-4\"><b>Paris</b></small></p>
+                <p class=\"card-text\"><b><i class=\"bi bi-geo-alt-fill mt-2\"></i></b><small class=\"ms-2\"><b>{{caregiver.clinic_address}}</b></small> <br> <small class=\"ms-4\"><b>{{caregiver.city}}</b></small></p>
                 <a href=\"{{base_url}}/caregiver/show/{{caregiver.user_id}}\" class=\"btn btn-primary mt-2\"
                   style=\"width: 100%;\">Make Appointment</a>
               </div>

@@ -28,6 +28,7 @@ class AvailabilityModel extends Model{
 
         $sql = "SELECT * FROM availability 
                 LEFT JOIN user on user.user_id = availability.user_id
+                LEFT JOIN clinic ON user.clinic_id = clinic.clinic_id
                 WHERE user.role= 'caregiver';";
         
         $prep = $this->getConnection()->prepare($sql);

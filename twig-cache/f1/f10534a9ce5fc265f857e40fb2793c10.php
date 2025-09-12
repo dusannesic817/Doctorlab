@@ -190,7 +190,7 @@ class __TwigTemplate_cce75a21795928050b04daac702e06bb extends Template
     {
         $macros = $this->macros;
         // line 98
-        echo "Type
+        echo "
 ";
     }
 
@@ -308,7 +308,7 @@ class __TwigTemplate_cce75a21795928050b04daac702e06bb extends Template
 </script>
 
 {% block naslov %}
-Type
+
 {% endblock %}
 
 {% endblock %}", "MakeAppointment/create.html", "C:\\laragon\\www\\doctorlab\\views\\MakeAppointment\\create.html");

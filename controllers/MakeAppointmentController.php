@@ -72,42 +72,37 @@ class MakeAppointmentController extends Controller{
     
 
     public function storeAppointment() {
-       
         $user_id = $this->getSession()->get('user_id');
-        $userModel= new UserModel($this->getDatabaseConnection());
-        $user= $userModel->getById($user_id);
-        $user_email=$user->email;
 
         if ($user_id === null) {
-           
             $this->getSession()->put('post_login_redirect', '/makeappointment/storeappointment');
             $this->getSession()->save();
-           
             $this->redirect('/user/login');
-            
+            return; 
         }
-        
+
+        $userModel = new UserModel($this->getDatabaseConnection());
+        $user = $userModel->getById($user_id);
+        $user_email = $user->email;
+
         $appointment = $this->getSession()->get('appointment');
 
-        if($appointment){
-            $dataToInsert = [
-                'user_id'          => $user_id,
-                'provider_id'      => $appointment['caregiver_id'],
-                'caregiver_data'   => $appointment['caregiver_data'],
-                'appointment_date' => $appointment['day'],
-                'start_time'       => $appointment['time'],
-                'status'           => 'scheduled',
-                
-            ];
-        }else{
-
+        if (!$appointment) {
             return $this->redirect('/');
         }
- 
-    
+
+        $dataToInsert = [
+            'user_id'          => $user_id,
+            'provider_id'      => $appointment['caregiver_id'],
+            'caregiver_data'   => $appointment['caregiver_data'],
+            'appointment_date' => $appointment['day'],
+            'start_time'       => $appointment['time'],
+            'status'           => 'scheduled',
+        ];
+
         $model = new AppointmentModel($this->getDatabaseConnection());
-        $insert=$model->add($dataToInsert);
-     
+        $insert = $model->add($dataToInsert);
+
         $date = new \DateTime($appointment['day']);
         $formatted_date = $date->format('F j l');
 
@@ -115,21 +110,24 @@ class MakeAppointmentController extends Controller{
         $formatted_time = $time->format('H:i');
         $id = $appointment['caregiver_id'];
 
-        if($insert){
+        if ($insert) {
+            $availabilityModel = new AvailabilityModel($this->getDatabaseConnection());
+            $availabilityModel->editAvailability($id, $formatted_date, $formatted_time, 'busy');
 
-            $avalabilityModel = new AvailabilityModel($this->getDatabaseConnection());
-            $avalabilityModel->editAvailability($id,$formatted_date,$formatted_time,'busy');
             $mailer = new MailService();
-            $mailer->sendMail($user_email,"You scheduled your appointment","Your appointment has been scheduled. Time: ".$formatted_date ." at ". $formatted_time);
-                
+            $mailer->sendMail(
+                $user_email,
+                "You scheduled your appointment",
+                "Your appointment has been scheduled. Time: ".$formatted_date." at ".$formatted_time
+            );
         }
-    
+
         $this->getSession()->remove('appointment');
         $this->getSession()->save();
         sleep(2);
         $this->redirect('/client/appointments/'.$user_id);
-
     }
+
     
     
 

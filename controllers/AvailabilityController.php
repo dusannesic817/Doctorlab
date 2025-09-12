@@ -22,18 +22,17 @@ class AvailabilityController extends UserRoleController{
     public function create() {
         $timesData = $this->getJson('times.json');
         $months = $this->getMonths(); 
-        
-       
-        $currentMonthIndex = date('n')-4; 
-        $currentMonth = $months[$currentMonthIndex]; 
-        
-      
+
+        $currentMonth = $months[0] ?? null; 
+        $currentMonthIndex = 0;
+
         $this->set('timesData', $timesData);
         $this->set('months', $months);
-        $this->set('currentMonth', $currentMonth); 
-        $this->set('currentMonthIndex', $currentMonthIndex); 
+        $this->set('currentMonth', $currentMonth);
+        $this->set('currentMonthIndex', $currentMonthIndex);
     }
-    
+
+
     
     
     public function store(){
@@ -74,7 +73,6 @@ class AvailabilityController extends UserRoleController{
        
     }
 
-
     public function edit($id){
 
     }
@@ -89,20 +87,18 @@ class AvailabilityController extends UserRoleController{
     }
 
 
-    public function getMonths(){
-       
-        $currentDate = new \DateTime();
-        $currentMonth = $currentDate->format('n'); 
+    public function getMonths() {
         $months = [];
+        $currentMonth = (int)date('n'); 
 
         for ($month = $currentMonth; $month <= 12; $month++) {
-            $months[] = \DateTime::createFromFormat('n', $month)->format('F'); 
-
+            $months[] = \DateTime::createFromFormat('!m', $month)->format('F');
         }
 
         return $months;
-
     }
+
+
     public function getUserSchedule($monthName, $times, $userId) {
         $year = date('Y');
         $month = date('n', strtotime($monthName)); 

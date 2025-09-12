@@ -77,6 +77,7 @@ class AvailabilityModel extends Model{
 
         $sql = "SELECT * FROM availability 
                 LEFT JOIN user ON user.user_id = availability.user_id
+                LEFT JOIN clinic ON user.clinic_id = clinic.clinic_id
                 WHERE user.role = 'caregiver' 
                 AND JSON_UNQUOTE(JSON_EXTRACT(caregiver_data, '$.title')) = ?;";
         

@@ -180,8 +180,14 @@ class UserController extends Controller{
         $user_id = $email->user_id;
         
         
-       
         if (!$email) {
+            $this->set('message', 'Invalid password or email');
+            return;
+        }
+        $pass = $email->password_hash;
+    
+        if (!password_verify($password, $pass)) {
+            sleep(2);
             $this->set('message', 'Invalid password or email');
             return;
         }
@@ -191,18 +197,10 @@ class UserController extends Controller{
 
         $is_verified = $token->is_used;
         
-        /*if($is_verified==0){
+       /* if($is_verified==false){
             $this->set('message', 'Invalid password or email');
             return;
         }*/
-    
-        $pass = $email->password_hash;
-    
-        if (!password_verify($password, $pass)) {
-            sleep(2);
-            $this->set('message', 'Invalid password or email');
-            return;
-        }
     
         $this->getSession()->put('user_id', $email->user_id);
         $this->getSession()->save();

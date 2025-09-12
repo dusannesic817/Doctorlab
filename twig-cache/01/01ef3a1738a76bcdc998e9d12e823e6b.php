@@ -87,7 +87,10 @@ class __TwigTemplate_1a15067f0cd8ff99f18b7f01fa62360b extends Template
               </div>
               <div class=\"card-body ms-3\">
                 <p class=\"card-text\"><b><i class=\"bi bi-geo-alt-fill mt-2\"></i></b><small class=\"ms-2\"><b>Rue de
-                      Villiers</b></small> <br> <small class=\"ms-4\"><b>Paris</b></small></p>
+                      Villiers</b></small> <br> <small class=\"ms-4\"><b>";
+            // line 24
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["caregiver"], "city", [], "any", false, false, false, 24), "html", null, true);
+            echo "</b></small></p>
                 <a href=\"";
             // line 25
             echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
@@ -414,7 +417,7 @@ class __TwigTemplate_1a15067f0cd8ff99f18b7f01fa62360b extends Template
 
     public function getDebugInfo()
     {
-        return array (  401 => 208,  397 => 207,  393 => 206,  390 => 205,  386 => 204,  358 => 180,  346 => 171,  249 => 76,  239 => 71,  233 => 70,  227 => 69,  224 => 68,  218 => 65,  214 => 64,  210 => 63,  205 => 62,  196 => 58,  191 => 56,  183 => 55,  175 => 54,  171 => 53,  167 => 52,  162 => 51,  159 => 50,  156 => 49,  151 => 48,  146 => 47,  144 => 46,  140 => 45,  131 => 40,  122 => 37,  115 => 36,  111 => 35,  107 => 34,  93 => 25,  80 => 19,  72 => 16,  64 => 12,  60 => 11,  52 => 5,  48 => 4,  37 => 1,);
+        return array (  404 => 208,  400 => 207,  396 => 206,  393 => 205,  389 => 204,  361 => 180,  349 => 171,  252 => 76,  242 => 71,  236 => 70,  230 => 69,  227 => 68,  221 => 65,  217 => 64,  213 => 63,  208 => 62,  199 => 58,  194 => 56,  186 => 55,  178 => 54,  174 => 53,  170 => 52,  165 => 51,  162 => 50,  159 => 49,  154 => 48,  149 => 47,  147 => 46,  143 => 45,  134 => 40,  125 => 37,  118 => 36,  114 => 35,  110 => 34,  96 => 25,  92 => 24,  80 => 19,  72 => 16,  64 => 12,  60 => 11,  52 => 5,  48 => 4,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -442,7 +445,7 @@ class __TwigTemplate_1a15067f0cd8ff99f18b7f01fa62360b extends Template
               </div>
               <div class=\"card-body ms-3\">
                 <p class=\"card-text\"><b><i class=\"bi bi-geo-alt-fill mt-2\"></i></b><small class=\"ms-2\"><b>Rue de
-                      Villiers</b></small> <br> <small class=\"ms-4\"><b>Paris</b></small></p>
+                      Villiers</b></small> <br> <small class=\"ms-4\"><b>{{caregiver.city}}</b></small></p>
                 <a href=\"{{base_url}}/caregiver/show/{{caregiver.user_id}}\" class=\"btn btn-primary mt-2\"
                   style=\"width: 100%;\">Make Appointment</a>
               </div>

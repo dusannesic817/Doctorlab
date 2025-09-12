@@ -66,7 +66,7 @@ class __TwigTemplate_9084df527555b8ebe45fbfbc96762bc4 extends Template
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
         echo "/caregiver/index\"><p class=\"mt-5 ms-4\"><small><i class=\"fa-solid fa-arrow-left-long\"></i> <b>Previous step</b></small></p></a>
           <div class=\"card-body\">
-            <p class=\"ms-2 mb-4\"><small><b>Choose your piace of consultation</b></small></p>
+            <p class=\"ms-2 mb-4\"><i class=\"fa-solid fa-user-doctor\"></i> <small><b>Choose your piace of consultation</b></small></p>
             <div class=\"list-group\" id=\"services-list\">
               ";
         // line 22
@@ -229,7 +229,7 @@ class __TwigTemplate_9084df527555b8ebe45fbfbc96762bc4 extends Template
         <div class=\"card\">
           <a href=\"{{base_url}}/caregiver/index\"><p class=\"mt-5 ms-4\"><small><i class=\"fa-solid fa-arrow-left-long\"></i> <b>Previous step</b></small></p></a>
           <div class=\"card-body\">
-            <p class=\"ms-2 mb-4\"><small><b>Choose your piace of consultation</b></small></p>
+            <p class=\"ms-2 mb-4\"><i class=\"fa-solid fa-user-doctor\"></i> <small><b>Choose your piace of consultation</b></small></p>
             <div class=\"list-group\" id=\"services-list\">
               {% for service in caregiver.caregiver_data.services %}
               <label class=\"list-group-item list-group-item-action\" style=\"cursor: pointer;\">

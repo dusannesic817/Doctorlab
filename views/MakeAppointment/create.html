@@ -15,12 +15,15 @@
     <div class="row ms-5">
       <div class="col-12 col-lg-6 mt-4">
         <div class="card">
-          <p class="mt-5 ms-4"><a href="{{base_url}}/makeappointment/type/{{appointment.caregiver_id}}"><small><b><i
+          <p class="mt-4 ms-4"><a href="{{base_url}}/makeappointment/type/{{appointment.caregiver_id}}"><small><b><i
                     class="bi bi-arrow-left"></i> Previous step</b></small></a></p>
           <div class="card-body">
-            <p class="ms-2 mb-4"><small><b>Confirm the appointment time</b></small></p>
+            <p class="ms-2 mb-4">
+              <small><b>Confirm the appointment time</b> <i class="fa-regular fa-circle-check"
+                  style="color: green;"></i></small></p>
             <div class="text-center">
-              <small>You have selected the <b>{{appointment.day}}</b> to <b>{{appointment.time}}</b></small>
+              <p>You have selected the</p> <b><i class="fa-solid fa-calendar"></i> {{appointment.day|date("F j, l")}}</b>  <i
+                  class="fa-regular fa-clock"></i> <b>{{appointment.time|date("H:i")}}</b>
               <button type="button" class="btn btn-primary  w-100  mt-3 mb-3" data-bs-toggle="modal"
                 data-bs-target="#staticBackdrop"><b>Continue</b></button>
 
@@ -39,12 +42,13 @@
                     </div>
                     <div class="modal-body">
                       <h5 class="text-center">Read before making an appointemt</h5>
-                      <small>Reason of consultation</small>
-                      <p><small><b>{{appointment.caregiver_data}}</b></small></p>
-                      <p class="border-top mt-2"><small>Instruciton</small></p>
-                      <p>If not slot is avalibale during the day please call {{caregiver.phone}}</p>
-                      <p>An appointment is dedicated to a single patient. For the same family member, please make an
-                        appointemt per person.</p>
+                      <small><i class="fa-solid fa-list"></i> Reason of consultation</small>
+                      <p class="mt-1"><small><b>{{appointment.caregiver_data}}</b></small></p>
+                      <div class="border-bottom"></div>
+                      <p class="mt-2"><i class="fa-solid fa-list"></i> Instruciton</p>
+                      <p> <small>If not slot is avalibale during the day please call {{caregiver.phone}} <i class="fa-solid fa-phone"></i> </small></p>
+                      <p><small>An appointment is dedicated to a single patient. For the same family member, please make an
+                        appointemt <b>per person</b>.</small></p>
                     </div>
                     <div class="modal-footer">
                       <button type="submit" class="btn btn-primary w-100"><b>Yes i have read and accept
@@ -63,8 +67,8 @@
           <div class="card-body">
             <div class="d-flex align-items-center">
               <div class="p-2">
-                <img src="{{base_url}}/assets/uploads/images/{{caregiver.profile_photo}}" alt="user-image" class="rounded-circle me-2"
-                  style="width: 50px; height: 50px;">
+                <img src="{{base_url}}/assets/uploads/images/{{caregiver.profile_photo}}" alt="user-image"
+                  class="rounded-circle me-2" style="width: 50px; height: 50px;">
               </div>
               <div class="p-2">
                 <span><b>Dr {{caregiver.name}} {{caregiver.surname}}</b></span><br>
@@ -74,7 +78,8 @@
           </div>
           <div class="card-body text-center border-top">
             <div class="card-text"><small><b>Your appointment in detail</b></small></div>
-            <small class="grey"> <i class="bi bi-check2"></i> {{appointment.day|date("F j, l")}} at {{appointment.time|date("H:i")}}h</small>
+            <small class="grey"> <i class="bi bi-check2"></i> {{appointment.day|date("F j, l")}} at
+              {{appointment.time|date("H:i")}}h</small>
           </div>
         </div>
       </div>

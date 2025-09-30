@@ -3,7 +3,7 @@
         'name' => 'mtair/test-app',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '1c98482fe6082538d652d87874ed2584b44c8e61',
+        'reference' => '6ccb4cf4b4ee0431e303c2227509b341613cba07',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -193,7 +193,7 @@
         'mtair/test-app' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '1c98482fe6082538d652d87874ed2584b44c8e61',
+            'reference' => '6ccb4cf4b4ee0431e303c2227509b341613cba07',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

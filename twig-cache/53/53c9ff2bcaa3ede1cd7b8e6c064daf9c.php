@@ -1,0 +1,189 @@
+<?php
+
+use Twig\Environment;
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Extension\SandboxExtension;
+use Twig\Markup;
+use Twig\Sandbox\SecurityError;
+use Twig\Sandbox\SecurityNotAllowedTagError;
+use Twig\Sandbox\SecurityNotAllowedFilterError;
+use Twig\Sandbox\SecurityNotAllowedFunctionError;
+use Twig\Source;
+use Twig\Template;
+
+/* _global/index.html */
+class __TwigTemplate_00dfa34e4fc6a6711e695389d2fe5880 extends Template
+{
+    private $source;
+    private $macros = [];
+
+    public function __construct(Environment $env)
+    {
+        parent::__construct($env);
+
+        $this->source = $this->getSourceContext();
+
+        $this->parent = false;
+
+        $this->blocks = [
+            'naslov' => [$this, 'block_naslov'],
+            'main' => [$this, 'block_main'],
+            'footer' => [$this, 'block_footer'],
+        ];
+    }
+
+    protected function doDisplay(array $context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        // line 1
+        echo "<!DOCTYPE html>
+<html lang=\"en\">
+
+<head>
+  <meta charset=\"UTF-8\">
+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+  <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\"
+    integrity=\"sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH\" crossorigin=\"anonymous\">
+  <link rel=\"icon\" type=\"image/png\" href=\"";
+        // line 9
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/assets/images/logo_browser.png\">
+  <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css\">
+  <script src=\"https://kit.fontawesome.com/3f1d14d928.js\" crossorigin=\"anonymous\"></script>
+  <script src=\"https://js.pusher.com/8.4.0/pusher.min.js\"></script>
+  <link rel=\"stylesheet\" href=\"";
+        // line 13
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/assets/css/main.css\">
+
+
+
+  <title>";
+        // line 17
+        $this->displayBlock('naslov', $context, $blocks);
+        echo "</title>
+</head>
+
+<body class=\"d-flex flex-column min-vh-100\">
+  <header>
+    ";
+        // line 22
+        $this->loadTemplate("./inc/header.html", "_global/index.html", 22)->display($context);
+        // line 23
+        echo "  </header>
+  <main class=\"flex-grow-1\">
+    ";
+        // line 25
+        $this->displayBlock('main', $context, $blocks);
+        // line 28
+        echo "  </main>
+  ";
+        // line 29
+        $this->displayBlock('footer', $context, $blocks);
+        // line 31
+        echo "
+  <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js\"
+    integrity=\"sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz\"
+    crossorigin=\"anonymous\"></script>
+
+  <script src=\"";
+        // line 36
+        echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
+        echo "/assets/main.js\" defer></script>
+
+ <script src=\"https://maps.googleapis.com/maps/api/js?key=";
+        // line 38
+        echo twig_escape_filter($this->env, ($context["google_api"] ?? null), "html", null, true);
+        echo "&loading=async&callback=initMap\" async defer></script>
+
+</body>
+
+</html>";
+    }
+
+    // line 17
+    public function block_naslov($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        echo "Doctorlab";
+    }
+
+    // line 25
+    public function block_main($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        // line 26
+        echo "
+    ";
+    }
+
+    // line 29
+    public function block_footer($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        // line 30
+        echo "  ";
+    }
+
+    public function getTemplateName()
+    {
+        return "_global/index.html";
+    }
+
+    public function isTraitable()
+    {
+        return false;
+    }
+
+    public function getDebugInfo()
+    {
+        return array (  126 => 30,  122 => 29,  117 => 26,  113 => 25,  106 => 17,  97 => 38,  92 => 36,  85 => 31,  83 => 29,  80 => 28,  78 => 25,  74 => 23,  72 => 22,  64 => 17,  57 => 13,  50 => 9,  40 => 1,);
+    }
+
+    public function getSourceContext()
+    {
+        return new Source("<!DOCTYPE html>
+<html lang=\"en\">
+
+<head>
+  <meta charset=\"UTF-8\">
+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+  <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\"
+    integrity=\"sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH\" crossorigin=\"anonymous\">
+  <link rel=\"icon\" type=\"image/png\" href=\"{{ base_url }}/assets/images/logo_browser.png\">
+  <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css\">
+  <script src=\"https://kit.fontawesome.com/3f1d14d928.js\" crossorigin=\"anonymous\"></script>
+  <script src=\"https://js.pusher.com/8.4.0/pusher.min.js\"></script>
+  <link rel=\"stylesheet\" href=\"{{ base_url }}/assets/css/main.css\">
+
+
+
+  <title>{%block naslov%}Doctorlab{%endblock%}</title>
+</head>
+
+<body class=\"d-flex flex-column min-vh-100\">
+  <header>
+    {% include './inc/header.html' %}
+  </header>
+  <main class=\"flex-grow-1\">
+    {% block main %}
+
+    {% endblock %}
+  </main>
+  {% block footer %}
+  {% endblock %}
+
+  <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js\"
+    integrity=\"sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz\"
+    crossorigin=\"anonymous\"></script>
+
+  <script src=\"{{ base_url }}/assets/main.js\" defer></script>
+
+ <script src=\"https://maps.googleapis.com/maps/api/js?key={{google_api}}&loading=async&callback=initMap\" async defer></script>
+
+</body>
+
+</html>", "_global/index.html", "C:\\xampp\\htdocs\\Doctorlab\\views\\_global\\index.html");
+    }
+}

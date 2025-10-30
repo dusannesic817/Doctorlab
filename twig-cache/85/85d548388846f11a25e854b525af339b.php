@@ -73,7 +73,7 @@ class __TwigTemplate_cc5831f69a45f6c42f04919b1808e25c extends Template
       <img src=\"";
         // line 34
         echo twig_escape_filter($this->env, ($context["base_url"] ?? null), "html", null, true);
-        echo "/assets/images/patient_background.png\" class=\"rounded\" alt=\"...\">
+        echo "/assets/images/patient_background.png\" class=\"rounded\" alt=\"...\" style=\"height: 399px;\">
     </div>
   </div>
 </div>";
@@ -129,7 +129,7 @@ class __TwigTemplate_cc5831f69a45f6c42f04919b1808e25c extends Template
 <div class=\"position-relative z-0\">
   <div class=\"position-absolute bottom-0 end-0 d-none d-xl-block\">
     <div class=\"float-end\">
-      <img src=\"{{base_url}}/assets/images/patient_background.png\" class=\"rounded\" alt=\"...\">
+      <img src=\"{{base_url}}/assets/images/patient_background.png\" class=\"rounded\" alt=\"...\" style=\"height: 399px;\">
     </div>
   </div>
 </div>", "./inc/search.html", "C:\\xampp\\htdocs\\Doctorlab\\views\\inc\\search.html");

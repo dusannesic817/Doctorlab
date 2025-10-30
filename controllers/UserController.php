@@ -177,8 +177,8 @@ class UserController extends Controller{
     
         $userModel = new UserModel($this->getDatabaseConnection());
         $email = $userModel->getByFieldName('email', $email);
-        $user_id = $email->user_id;
         
+         
         
         if (!$email) {
             $this->set('message', 'Invalid password or email');
@@ -191,7 +191,7 @@ class UserController extends Controller{
             $this->set('message', 'Invalid password or email');
             return;
         }
-
+        $user_id = $email->user_id;
         $tokenModel = new TokenModel($this->getDatabaseConnection());
         $token=$tokenModel->isVerified($user_id);
 
